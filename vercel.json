@@ -1,0 +1,57 @@
+﻿{
+  version: 2,
+  functions: {
+    api/*.php: {
+      runtime: vercel-php@0.7.3
+    },
+    *.php: {
+      runtime: vercel-php@0.7.3
+    }
+  },
+  routes: [
+    {
+      src: /assets/(.*),
+      dest: /assets/
+    },
+    {
+      src: /,
+      dest: /index.php
+    },
+    {
+      src: /about-us,
+      dest: /about-us.php
+    },
+    {
+      src: /academics,
+      dest: /academics.php
+    },
+    {
+      src: /admission,
+      dest: /admission.php
+    },
+    {
+      src: /campus,
+      dest: /campus.php
+    },
+    {
+      src: /contact-us,
+      dest: /contact-us.php
+    },
+    {
+      src: /events,
+      dest: /events.php
+    },
+    {
+      src: /faculty,
+      dest: /faculty.php
+    },
+    {
+      src: /gallery,
+      dest: /gallery.php
+    },
+    {
+      src: /(.*),
+      dest: /
+    }
+  ]
+}

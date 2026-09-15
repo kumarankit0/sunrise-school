@@ -1,0 +1,377 @@
+/* ==========================================================================
+   St. Aurelius International Academy - Pages Specific Component Styles
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Academics Page Components
+   -------------------------------------------------------------------------- */
+.level-btn {
+  text-align: left;
+  padding: 1.25rem;
+  border-radius: var(--radius-lg);
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all var(--transition-fast);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid transparent;
+  cursor: pointer;
+  background-color: var(--surface-container-low);
+  color: var(--primary);
+  width: 100%;
+}
+
+.level-btn:hover {
+  background-color: var(--surface-container);
+}
+
+.level-btn.active {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  box-shadow: 0 4px 14px rgba(0, 17, 41, 0.15);
+}
+
+.level-content {
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+/* --------------------------------------------------------------------------
+   Gallery Page Components & Lightbox
+   -------------------------------------------------------------------------- */
+.gallery-filter-btn {
+  padding: 0.6rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all var(--transition-fast);
+  background-color: var(--surface-container);
+  color: var(--on-surface-variant);
+  border: none;
+  cursor: pointer;
+}
+
+.gallery-filter-btn:hover {
+  background-color: var(--surface-container-high);
+  color: var(--primary);
+}
+
+.gallery-filter-btn.active {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  box-shadow: 0 2px 8px rgba(0, 17, 41, 0.15);
+}
+
+.gallery-item {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
+}
+
+/* Lightbox Modal */
+.lightbox-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 17, 41, 0.92);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition-normal), visibility var(--transition-normal);
+}
+
+.lightbox-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightbox-dialog {
+  position: relative;
+  max-width: 54rem;
+  width: 100%;
+  background-color: var(--surface);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: modalScaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-full);
+  background-color: rgba(0, 17, 41, 0.7);
+  color: #ffffff;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: background-color var(--transition-fast);
+}
+
+.lightbox-close:hover {
+  background-color: var(--primary);
+}
+
+.lightbox-img {
+  width: 100%;
+  max-height: 60vh;
+  object-fit: cover;
+}
+
+.lightbox-caption {
+  padding: 1.5rem;
+  background-color: var(--surface);
+}
+
+/* --------------------------------------------------------------------------
+   Events Page Components
+   -------------------------------------------------------------------------- */
+.event-badge-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4.5rem;
+  background-color: var(--primary);
+  color: var(--on-primary);
+  border-radius: var(--radius-md);
+  box-shadow: 0 4px 10px rgba(0, 17, 41, 0.15);
+}
+
+.event-badge-date .date-number {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.event-badge-date .date-month {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* --------------------------------------------------------------------------
+   Admission & Fee Components
+   -------------------------------------------------------------------------- */
+.fee-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.fee-table th {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.fee-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border-warm);
+  font-size: 0.9375rem;
+  color: var(--on-surface);
+}
+
+.fee-table tr:nth-child(even) td {
+  background-color: var(--surface-container-low);
+}
+
+.fee-table tr:hover td {
+  background-color: var(--surface-container);
+}
+
+/* --------------------------------------------------------------------------
+   Animations
+   -------------------------------------------------------------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalScaleUp {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Performance & Content Visibility Optimizations
+   -------------------------------------------------------------------------- */
+.gallery-item,
+.event-card,
+.level-content {
+  content-visibility: auto;
+  contain-intrinsic-size: 300px 300px;
+}
+
+img {
+  image-rendering: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Welcome Toppers Announcement Popup Modal
+   -------------------------------------------------------------------------- */
+.toppers-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toppers-modal.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.toppers-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 17, 41, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.toppers-modal-dialog {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  max-height: 94vh;
+  background-color: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px -12px rgba(0, 17, 41, 0.5), 0 0 0 1px rgba(229, 226, 218, 0.7);
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+  transform: scale(0.92) translateY(20px);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.toppers-modal.open .toppers-modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+.toppers-close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 9999px;
+  background-color: rgba(0, 17, 41, 0.88);
+  color: #ffffff;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.toppers-close-btn:hover {
+  background-color: #ba1a1a;
+  border-color: #ffffff;
+  transform: scale(1.08) rotate(90deg);
+}
+
+.toppers-modal-header {
+  background: linear-gradient(135deg, #001129 0%, #0b2647 100%);
+  color: #ffffff;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #C9A24B;
+  padding-right: 3.2rem;
+}
+
+.toppers-img-container {
+  position: relative;
+  width: 100%;
+  max-height: 68vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+}
+
+.toppers-modal-img {
+  width: 100%;
+  height: auto;
+  max-height: 68vh;
+  object-fit: contain;
+  display: block;
+}
+
+.toppers-modal-footer {
+  background-color: #faf9f6;
+  padding: 0.75rem 1rem;
+  border-top: 1px solid #E5E2DA;
+}
+
+@media (max-width: 480px) {
+  .toppers-modal {
+    padding: 0.5rem;
+  }
+  .toppers-modal-dialog {
+    max-width: 100%;
+    border-radius: 14px;
+    max-height: 96vh;
+  }
+  .toppers-img-container {
+    max-height: 62vh;
+  }
+  .toppers-modal-img {
+    max-height: 62vh;
+  }
+  .toppers-modal-header {
+    padding: 0.65rem 0.85rem;
+    padding-right: 3rem;
+  }
+  .toppers-modal-footer {
+    padding: 0.65rem 0.85rem;
+  }
+}
+
+

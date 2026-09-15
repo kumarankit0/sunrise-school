@@ -1,0 +1,333 @@
+/* ==========================================================================
+   St. Aurelius International Academy - Global Stylesheet
+   ========================================================================== */
+
+:root {
+  --primary: #001129;
+  --primary-container: #0b2647;
+  --on-primary: #ffffff;
+  --on-primary-container: #778eb4;
+  --primary-fixed: #d5e3ff;
+  --primary-fixed-dim: #b0c8f1;
+  --on-primary-fixed: #001b3b;
+  --on-primary-fixed-variant: #30476a;
+
+  --secondary: #795902;
+  --secondary-container: #fdd275;
+  --on-secondary: #ffffff;
+  --on-secondary-container: #775800;
+  --secondary-fixed: #ffdf9e;
+  --secondary-fixed-dim: #ebc166;
+  --on-secondary-fixed: #261a00;
+  --on-secondary-fixed-variant: #5b4300;
+
+  --gold: #C9A24B;
+  --gold-hover: #B38C37;
+  --gold-light: #F9F4E8;
+
+  --tertiary: #061121;
+  --tertiary-container: #1b2637;
+  --on-tertiary: #ffffff;
+  --on-tertiary-container: #828da1;
+  --tertiary-fixed: #d8e3f9;
+  --tertiary-fixed-dim: #bcc7dd;
+  --on-tertiary-fixed: #111c2c;
+  --on-tertiary-fixed-variant: #3c4759;
+
+  --surface: #faf9f6;
+  --surface-dim: #dbdad7;
+  --surface-bright: #faf9f6;
+  --surface-pure: #ffffff;
+  --surface-cream: #F3EFEA;
+  --surface-container-lowest: #ffffff;
+  --surface-container-low: #f4f3f0;
+  --surface-container: #efeeeb;
+  --surface-container-high: #e9e8e5;
+  --surface-container-highest: #e3e2df;
+  --surface-variant: #e3e2df;
+  --on-surface: #1a1c1a;
+  --on-surface-variant: #44474e;
+  --inverse-surface: #2f312f;
+  --inverse-on-surface: #f2f1ee;
+  --surface-tint: #485f83;
+
+  --background: #faf9f6;
+  --on-background: #1a1c1a;
+  --text-charcoal: #121926;
+
+  --outline: #74777f;
+  --outline-variant: #c4c6cf;
+  --border-warm: #E5E2DA;
+
+  --error: #ba1a1a;
+  --on-error: #ffffff;
+  --error-container: #ffdad6;
+  --on-error-container: #93000a;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-subtle: 0 2px 8px rgba(11, 38, 71, 0.04);
+  --shadow-card: 0 4px 14px rgba(11, 38, 71, 0.06);
+  --shadow-hover: 0 14px 30px rgba(11, 38, 71, 0.12);
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--surface);
+  color: var(--on-surface);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+main > :first-child {
+  margin-top: 0 !important;
+}
+
+main > :last-child {
+  margin-bottom: 0 !important;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--surface-container);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--outline-variant);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
+}
+
+/* Typography Helpers & Hierarchy Scale */
+.font-headline-lg {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+.font-headline-md {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+.font-headline-sm {
+  font-family: var(--font-serif);
+  font-weight: 600;
+}
+.font-display-hero {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.font-body {
+  font-family: var(--font-sans);
+}
+.font-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+}
+.text-eyebrow {
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.15em;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* Responsive Headline & Display Utilities */
+.text-display-hero {
+  font-size: 2.75rem;
+  line-height: 1.15;
+}
+@media (min-width: 640px) {
+  .text-display-hero {
+    font-size: 3.25rem;
+    line-height: 1.15;
+  }
+}
+@media (min-width: 1024px) {
+  .text-display-hero {
+    font-size: 4rem;
+    line-height: 1.12;
+  }
+}
+@media (min-width: 1280px) {
+  .text-display-hero {
+    font-size: 4.5rem;
+    line-height: 1.1;
+  }
+}
+
+.text-display-hero-mobile {
+  font-size: 2.35rem;
+  line-height: 1.2;
+}
+
+.text-headline-lg {
+  font-size: 2.25rem;
+  line-height: 1.25;
+}
+@media (min-width: 768px) {
+  .text-headline-lg {
+    font-size: 2.75rem;
+    line-height: 1.2;
+  }
+}
+
+.text-headline-md {
+  font-size: 1.75rem;
+  line-height: 1.3;
+}
+@media (min-width: 768px) {
+  .text-headline-md {
+    font-size: 2.15rem;
+    line-height: 1.25;
+  }
+}
+
+.text-headline-sm {
+  font-size: 1.35rem;
+  line-height: 1.35;
+}
+
+.text-body-lg {
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+@media (min-width: 768px) {
+  .text-body-lg {
+    font-size: 1.25rem;
+    line-height: 1.7;
+  }
+}
+
+.text-body-md {
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.text-body-sm {
+  font-size: 0.925rem;
+  line-height: 1.55;
+}
+
+/* Button Components */
+.btn-gold {
+  background-color: var(--gold);
+  color: var(--primary);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+  box-shadow: 0 4px 12px rgba(201, 162, 75, 0.25);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-gold:hover {
+  background-color: var(--gold-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(201, 162, 75, 0.35);
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: var(--on-primary);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background-color: var(--primary-container);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  padding: 0.75rem 1.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+.btn-outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: #ffffff;
+}
+
+/* Card Transitions */
+.card-hover-effect {
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+.card-hover-effect:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+/* Material Symbols alignment */
+.material-symbols-outlined {
+  vertical-align: middle;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}

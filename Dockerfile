@@ -1,7 +1,7 @@
 FROM php:8.2-apache
 
-# Enable Apache mod_rewrite for clean URLs
-RUN a2enmod rewrite
+# Enable Apache modules for clean URLs, security headers, and caching
+RUN a2enmod rewrite headers expires
 
 # Set working directory
 WORKDIR /var/www/html

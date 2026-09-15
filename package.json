@@ -1,0 +1,9 @@
+﻿{
+  name: sunrise-school,
+  version: 1.0.0,
+  description: Sun Rise Sr. Sec. School Dobhi Website,
+  scripts: {
+    start: php -S 0.0.0.0:,
+    build: echo 'Build complete'
+  }
+}

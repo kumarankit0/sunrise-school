@@ -1,0 +1,8 @@
+﻿{
+  name: sunrise-school/website,
+  description: Sun Rise Sr. Sec. School Dobhi Website,
+  type: project,
+  require: {
+    php: >=8.0
+  }
+}

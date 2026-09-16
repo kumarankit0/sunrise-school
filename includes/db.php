@@ -37,6 +37,11 @@ if (!empty($raw_db_url)) {
     $user   = isset($parsed['user']) ? urldecode($parsed['user']) : '';
     $pass   = isset($parsed['pass']) ? urldecode($parsed['pass']) : '';
     
+    // Auto-correct any typo in project reference if old URL was pasted (pos 11 is 'i')
+    if (strpos($user, 'dbobrnclzanltjcvsakm') !== false) {
+        $user = str_replace('dbobrnclzanltjcvsakm', 'dbobrnclzanitjcvsakm', $user);
+    }
+    
     $path_clean = isset($parsed['path']) ? ltrim($parsed['path'], '/') : '';
     if (strpos($path_clean, '@') !== false) {
         $path_clean = explode('@', $path_clean)[0];
@@ -48,11 +53,11 @@ if (!empty($raw_db_url)) {
 } else {
     // Individual Environment Variables (with Render cloud or local XAMPP defaults)
     if ($is_render) {
-        // Fallback to configured Supabase credentials on Render if env var isn't set
+        // Fallback to verified Supabase credentials on Render if env var isn't set
         $host   = getenv('DB_HOST') ?: 'aws-0-ap-northeast-1.pooler.supabase.com';
         $port   = getenv('DB_PORT') ?: '6543';
         $dbname = getenv('DB_NAME') ?: 'postgres';
-        $user   = getenv('DB_USER') ?: 'postgres.dbobrnclzanltjcvsakm';
+        $user   = getenv('DB_USER') ?: 'postgres.dbobrnclzanitjcvsakm';
         $pass   = getenv('DB_PASS') !== false ? getenv('DB_PASS') : 'MHn.R6c!_W*%Re!';
         $driver = 'pgsql';
     } else {
@@ -103,8 +108,8 @@ function get_db_connection() {
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         // Return query results as associative arrays by default
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        // Emulate prepares off
-        PDO::ATTR_EMULATE_PREPARES   => false,
+        // Emulate prepares on for PgBouncer pooler compatibility
+        PDO::ATTR_EMULATE_PREPARES   => (DB_DRIVER === 'pgsql') ? true : false,
         PDO::ATTR_PERSISTENT         => false,
         PDO::ATTR_TIMEOUT            => 5,
     ];
@@ -112,6 +117,7 @@ function get_db_connection() {
     try {
         $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
     } catch (PDOException $e) {
+        $GLOBALS['db_last_error'] = $e->getMessage();
         error_log("Database connection error (" . DB_DRIVER . "): " . $e->getMessage());
         $pdo = null;
     }

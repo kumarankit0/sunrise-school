@@ -63,9 +63,10 @@ function get_logged_in_user() {
 function attempt_login($username, $password) {
     $db = get_db_connection();
     if (!$db) {
+        $errMsg = !empty($GLOBALS['db_last_error']) ? $GLOBALS['db_last_error'] : 'Please check includes/db.php configuration.';
         return [
             'success' => false,
-            'error'   => 'Database connection failed. Please check includes/db.php configuration.'
+            'error'   => 'Database connection failed: ' . $errMsg
         ];
     }
 

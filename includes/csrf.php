@@ -5,12 +5,23 @@
  *
  * Protects forms from Cross-Site Request Forgery (CSRF) attacks using
  * cryptographically secure random tokens and timing-attack-safe comparison.
+ * Fully compatible with reverse proxies like Render & Cloudflare.
  */
+
+// Detect HTTPS directly or via reverse proxy (Render / Cloudflare / Load Balancers)
+$is_https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
+    || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)
+    || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && strtolower($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https')
+    || (isset($_SERVER['HTTP_X_FORWARDED_SSL']) && strtolower($_SERVER['HTTP_X_FORWARDED_SSL']) === 'on');
 
 // Ensure session is started before accessing session tokens
 if (session_status() === PHP_SESSION_NONE) {
-    // Configure secure cookie defaults if not already set
-    $is_https = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443);
+    ini_set('session.cookie_httponly', '1');
+    ini_set('session.use_only_cookies', '1');
+    if ($is_https) {
+        ini_set('session.cookie_secure', '1');
+    }
+
     session_set_cookie_params([
         'lifetime' => 0,
         'path'     => '/',
@@ -19,6 +30,7 @@ if (session_status() === PHP_SESSION_NONE) {
         'httponly' => true,
         'samesite' => 'Lax'
     ]);
+    
     session_start();
 }
 

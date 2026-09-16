@@ -1,8 +1,8 @@
 <?php
 $current_page = 'about-us';
 $page_title = 'About Us | Institutional Legacy & Vision';
-$page_description = 'Learn about Sun Rise Sr. Sec. School, Dobhi. Our mission is to provide exemplary HBSC education, moral character cultivation, and holistic student development.';
-$page_keywords = 'about Sun Rise school Dobhi, school history, HBSC affiliation, school vision mission, Dobhi Hisar school, holistic learning';
+$page_description = 'Learn about Sun Rise Sr. Sec. School, Dobhi. Our mission is to provide exemplary HBSE education, moral character cultivation, and holistic student development.';
+$page_keywords = 'about Sun Rise school Dobhi, school history, HBSE affiliation, school vision mission, Dobhi Hisar school, holistic learning';
 
 require_once __DIR__ . '/core/header.php';
 ?>
@@ -81,7 +81,7 @@ require_once __DIR__ . '/core/header.php';
           <span class="text-eyebrow text-secondary uppercase font-bold">Our Mission</span>
           <h3 class="font-headline-md text-headline-md text-primary"><?= get_text('about', 'mission_title', 'Holistic Education for Mind, Body &amp; Soul') ?></h3>
           <p class="font-body-lg text-on-surface-variant">
-            <?= get_text('about', 'mission_text', 'We are dedicated to delivering a comprehensive HBSC curriculum enriched by hands-on science laboratories, digital learning, sportsmanship, moral values, and cultural activities that nurture well-rounded global citizens.') ?>
+            <?= get_text('about', 'mission_text', 'We are dedicated to delivering a comprehensive HBSE curriculum enriched by hands-on science laboratories, digital learning, sportsmanship, moral values, and cultural activities that nurture well-rounded global citizens.') ?>
           </p>
         </div>
         <div class="mt-8 pt-6 border-t border-border-warm flex items-center gap-2 text-primary font-label-md">
@@ -113,9 +113,9 @@ require_once __DIR__ . '/core/header.php';
         <div class="relative flex flex-col gap-2">
           <div class="absolute -left-[41px] md:-left-[57px] top-1 w-6 h-6 rounded-full bg-primary border-4 border-surface-container-low flex items-center justify-center"></div>
           <span class="text-eyebrow text-secondary font-eyebrow font-bold"><?= get_text('about', 'm2_tag', 'Upgradation') ?></span>
-          <h3 class="font-headline-md text-headline-md text-primary"><?= get_text('about', 'm2_title', 'HBSC Affiliation &amp; Senior Secondary Streams') ?></h3>
+          <h3 class="font-headline-md text-headline-md text-primary"><?= get_text('about', 'm2_title', 'HBSE Affiliation &amp; Senior Secondary Streams') ?></h3>
           <p class="font-body-md text-on-surface-variant max-w-2xl">
-            <?= get_text('about', 'm2_desc', 'Upgraded to Senior Secondary (10+2) under HBSC with specialized streams in Science (Medical/Non-Medical), Commerce, and Arts alongside modern physics, chemistry, and biology labs.') ?>
+            <?= get_text('about', 'm2_desc', 'Upgraded to Senior Secondary (10+2) under HBSE with specialized streams in Science (Medical/Non-Medical), Commerce, and Arts alongside modern physics, chemistry, and biology labs.') ?>
           </p>
         </div>
         <div class="relative flex flex-col gap-2">

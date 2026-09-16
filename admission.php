@@ -2,7 +2,7 @@
 $current_page = 'admissions';
 $page_title = 'Admissions 2026-27 | Application Process & Eligibility';
 $page_description = 'Apply for admissions 2026-27 at Sun Rise Sr. Sec. School, Dobhi. Learn about our admission process, age eligibility criteria, fee structure, and online registration.';
-$page_keywords = 'admissions 2026-27, school application, admission process, HBSC school admission Dobhi Hisar, eligibility criteria, enroll online';
+$page_keywords = 'admissions 2026-27, school application, admission process, HBSE school admission Dobhi Hisar, eligibility criteria, enroll online';
 
 require_once __DIR__ . '/core/header.php';
 ?>
@@ -40,7 +40,7 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-wrap items-center gap-3 pt-2">
 <div class="flex items-center gap-2 bg-surface-pure px-3.5 py-2 rounded-lg shadow-sm text-label-sm text-text-charcoal font-semibold">
 <span class="material-symbols-outlined text-[#C9A24B] text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
-              <?= get_text('admissions', 'badge_hbsc', 'HBSC Affiliation #530XXX (Dobhi, Hisar)') ?>
+              <?= get_text('admissions', 'badge_HBSE', 'HBSE Affiliation #530XXX (Dobhi, Hisar)') ?>
             </div>
 <div class="flex items-center gap-2 bg-surface-pure px-3.5 py-2 rounded-lg shadow-sm text-label-sm text-text-charcoal font-semibold">
 <span class="material-symbols-outlined text-[#C9A24B] text-[20px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
@@ -63,7 +63,7 @@ require_once __DIR__ . '/core/header.php';
 <img alt="Sun Rise Sr. Sec. School Dobhi Official Crest" class="w-20 h-20 object-contain drop-shadow-sm" src="<?= $site_logo ?>" width="80" height="80" loading="eager" decoding="async">
 </div>
 <div class="flex flex-col items-center">
-<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-widest">Affiliated to HBSC, Haryana</span>
+<span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-widest">Affiliated to HBSE, Haryana</span>
 <span class="font-headline-sm text-headline-sm text-primary">Sun Rise Sr. Sec. School</span>
 <span class="text-body-sm font-body-sm text-on-surface-variant">Dobhi, Dist. Hisar, Haryana – 125001</span>
 </div>
@@ -147,7 +147,7 @@ require_once __DIR__ . '/core/header.php';
         </div>
         <div class="flex flex-col gap-3">
           <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 bg-surface-cream text-primary rounded font-label-sm font-bold text-xs uppercase">HBSC Stream</span>
+            <span class="px-2.5 py-1 bg-surface-cream text-primary rounded font-label-sm font-bold text-xs uppercase">HBSE Stream</span>
             <span class="text-xs font-bold text-error bg-error-container/30 px-2 py-0.5 rounded flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span> 12 Seats Left
             </span>
@@ -184,7 +184,7 @@ require_once __DIR__ . '/core/header.php';
       <div class="grade-card group relative bg-surface-pure rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer" data-grade-id="xi-med" data-grade-name="Class 11 - Science (Medical)" data-group="senior" data-reg-fee="300" data-seats="8" data-tuition-fee="1000">
         <div class="flex flex-col gap-3">
           <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 bg-surface-cream text-primary rounded font-label-sm font-bold text-xs uppercase">HBSC Stream</span>
+            <span class="px-2.5 py-1 bg-surface-cream text-primary rounded font-label-sm font-bold text-xs uppercase">HBSE Stream</span>
             <span class="text-xs font-bold text-amber-800 bg-secondary-fixed/50 px-2 py-0.5 rounded flex items-center gap-1">
               <span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> 8 Seats Left
             </span>
@@ -221,7 +221,7 @@ require_once __DIR__ . '/core/header.php';
       <div class="grade-card group relative bg-surface-pure rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer" data-grade-id="xi-comm" data-grade-name="Class 11 - Commerce &amp; Humanities" data-group="senior" data-reg-fee="300" data-seats="22" data-tuition-fee="950">
         <div class="flex flex-col gap-3">
           <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 bg-surface-cream text-primary rounded font-label-sm font-bold text-xs uppercase">HBSC Stream</span>
+            <span class="px-2.5 py-1 bg-surface-cream text-primary rounded font-label-sm font-bold text-xs uppercase">HBSE Stream</span>
             <span class="text-xs font-bold text-emerald-800 bg-emerald-50 px-2 py-0.5 rounded flex items-center gap-1">
               22 Seats Available
             </span>
@@ -258,14 +258,14 @@ require_once __DIR__ . '/core/header.php';
       <div class="grade-card group relative bg-surface-pure rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer" data-grade-id="ix-x" data-grade-name="Class 9 &amp; 10 (Secondary High)" data-group="secondary" data-reg-fee="250" data-seats="16" data-tuition-fee="900">
         <div class="flex flex-col gap-3">
           <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 bg-surface-cream text-primary rounded font-label-sm font-bold text-xs uppercase">HBSC Core</span>
+            <span class="px-2.5 py-1 bg-surface-cream text-primary rounded font-label-sm font-bold text-xs uppercase">HBSE Core</span>
             <span class="text-xs font-bold text-amber-800 bg-secondary-fixed/50 px-2 py-0.5 rounded flex items-center gap-1">
               16 Seats Open
             </span>
           </div>
           <div>
             <h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">Class IX &amp; X (Secondary)</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Holistic HBSC syllabus with Robotics lab, Vedic Math, Sports academy &amp; NTSE training module.</p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Holistic HBSE syllabus with Robotics lab, Vedic Math, Sports academy &amp; NTSE training module.</p>
           </div>
           <div class="pt-3 flex flex-col gap-1.5 text-body-sm text-text-charcoal bg-surface-container-low/60 p-3 rounded-lg">
             <div class="flex justify-between">
@@ -400,12 +400,12 @@ require_once __DIR__ . '/core/header.php';
       <div class="grade-card group relative bg-surface-pure rounded-xl p-6 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between cursor-pointer" data-grade-id="xii-transfer" data-grade-name="Class 12 - Board Transfer Entry" data-group="senior" data-reg-fee="350" data-seats="5" data-tuition-fee="1000">
         <div class="flex flex-col gap-3">
           <div class="flex justify-between items-start">
-            <span class="px-2.5 py-1 bg-surface-cream text-primary rounded font-label-sm font-bold text-xs uppercase">HBSC Board Transfer</span>
+            <span class="px-2.5 py-1 bg-surface-cream text-primary rounded font-label-sm font-bold text-xs uppercase">HBSE Board Transfer</span>
             <span class="text-xs font-bold text-error bg-error-container/30 px-2 py-0.5 rounded">5 Seats Only</span>
           </div>
           <div>
             <h3 class="font-headline-sm text-headline-sm text-primary group-hover:text-secondary transition-colors">Class XII – Transfer Entry</h3>
-            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Direct admission subject to HBSC Regional Office clearance, TC from previous affiliated institution.</p>
+            <p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Direct admission subject to HBSE Regional Office clearance, TC from previous affiliated institution.</p>
           </div>
           <div class="pt-3 flex flex-col gap-1.5 text-body-sm text-text-charcoal bg-surface-container-low/60 p-3 rounded-lg">
             <div class="flex justify-between">
@@ -487,7 +487,7 @@ require_once __DIR__ . '/core/header.php';
 <!-- Prior School Details -->
 <div class="flex flex-col gap-1.5 md:col-span-2">
 <label class="font-label-sm text-label-sm text-primary font-bold">Previous School Name &amp; Board *</label>
-<input class="w-full h-12 px-4 rounded-lg bg-surface-container-low text-text-charcoal font-body-md text-body-md focus:bg-surface-pure focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" placeholder="e.g. Model Public School, Balsamand / HBSC" type="text" value="Government Model Sr. Sec. School, Dobhi (HBSC)">
+<input class="w-full h-12 px-4 rounded-lg bg-surface-container-low text-text-charcoal font-body-md text-body-md focus:bg-surface-pure focus:outline-none focus:ring-2 focus:ring-primary shadow-inner" placeholder="e.g. Model Public School, Balsamand / HBSE" type="text" value="Government Model Sr. Sec. School, Dobhi (HBSE)">
 </div>
 <!-- Last Grade Percentage -->
 <div class="flex flex-col gap-1.5">
@@ -741,7 +741,7 @@ require_once __DIR__ . '/core/header.php';
 <span class="font-bold text-text-charcoal" id="fee-transit">₹300</span>
 </div>
 <div class="flex justify-between items-center text-body-sm">
-<span class="text-on-surface-variant">HBSC Affiliation &amp; Activity Fund</span>
+<span class="text-on-surface-variant">HBSE Affiliation &amp; Activity Fund</span>
 <span class="font-bold text-text-charcoal">₹100</span>
 </div>
 <!-- Early Bird Coupon Applied -->
@@ -953,7 +953,7 @@ require_once __DIR__ . '/core/header.php';
       <div class="p-4 bg-surface-pure rounded-lg shadow-sm flex items-start gap-3">
         <span class="material-symbols-outlined text-[#C9A24B] text-[24px]">military_tech</span>
         <div class="text-xs">
-          <span class="font-bold text-primary block">Merit Scholarship (HBSC 90%+)</span>
+          <span class="font-bold text-primary block">Merit Scholarship (HBSE 90%+)</span>
           <span class="text-on-surface-variant">Up to 25% waiver on monthly tuition fees for students scoring above 90% in prior board exams.</span>
         </div>
       </div>
@@ -1331,7 +1331,7 @@ require_once __DIR__ . '/core/header.php';
           const studentName = document.getElementById('input_student_name').value || 'Student';
           const originalText = btnCheckout.innerHTML;
           btnCheckout.disabled = true;
-          btnCheckout.innerHTML = '<span class="material-symbols-outlined animate-spin text-[22px]">progress_activity</span> <span>Securing Dobhi HBSC Seat...</span>';
+          btnCheckout.innerHTML = '<span class="material-symbols-outlined animate-spin text-[22px]">progress_activity</span> <span>Securing Dobhi HBSE Seat...</span>';
 
           setTimeout(() => {
             btnCheckout.innerHTML = '<span class="material-symbols-outlined text-emerald-800 text-[24px]">verified</span> <span class="text-primary font-bold">Provisional Seat Booked Successfully!</span>';

@@ -144,14 +144,27 @@ try {
     $old_file_path = $old_record['file_path'] ?? '';
 
     // 2. Insert or update the new image path
-    $upsert_stmt = $db->prepare("
-        INSERT INTO site_images (page_key, image_key, file_path, alt_text)
-        VALUES (:page_key, :image_key, :file_path, :alt_text)
-        ON DUPLICATE KEY UPDATE 
-            file_path = VALUES(file_path),
-            alt_text = VALUES(alt_text),
-            updated_at = CURRENT_TIMESTAMP
-    ");
+    $driver = $db->getAttribute(PDO::ATTR_DRIVER_NAME);
+    if ($driver === 'pgsql') {
+        $upsert_stmt = $db->prepare("
+            INSERT INTO site_images (page_key, image_key, file_path, alt_text)
+            VALUES (:page_key, :image_key, :file_path, :alt_text)
+            ON CONFLICT (page_key, image_key)
+            DO UPDATE SET 
+                file_path = EXCLUDED.file_path,
+                alt_text = EXCLUDED.alt_text,
+                updated_at = CURRENT_TIMESTAMP
+        ");
+    } else {
+        $upsert_stmt = $db->prepare("
+            INSERT INTO site_images (page_key, image_key, file_path, alt_text)
+            VALUES (:page_key, :image_key, :file_path, :alt_text)
+            ON DUPLICATE KEY UPDATE 
+                file_path = VALUES(file_path),
+                alt_text = VALUES(alt_text),
+                updated_at = CURRENT_TIMESTAMP
+        ");
+    }
 
     $upsert_stmt->execute([
         ':page_key'   => $page_key,

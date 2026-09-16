@@ -3,16 +3,76 @@
  * Database Connection Configuration (PDO)
  * Sun Rise Sr. Sec. School, Dobhi - CMS Layer
  *
- * This file sets up a secure, reusable PDO database connection to MySQL.
- * Configured with prepared statement emulation disabled for maximum security.
+ * Supports both:
+ * 1. Supabase (Cloud PostgreSQL) - Ideal for Render & live hosting
+ * 2. MySQL / MariaDB (Local XAMPP)
+ *
+ * Can be configured via:
+ * - Environment Variable: DATABASE_URL (Render dashboard)
+ * - Environment Variables: DB_HOST, DB_NAME, DB_USER, DB_PASS, DB_PORT, DB_DRIVER
+ * - Or fallback constants defined below
  */
 
-// Define MySQL Database Credentials (adjust if your hosting/XAMPP uses different settings)
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'sunrise_school');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_CHARSET', 'utf8mb4');
+// -----------------------------------------------------------------------------
+// Read Connection Parameters (Render Environment Variables or defaults)
+// -----------------------------------------------------------------------------
+$raw_db_url = getenv('DATABASE_URL') ?: (getenv('SUPABASE_DB_URL') ?: '');
+
+// Sanitize URL if accidental trailing string was pasted
+if (!empty($raw_db_url)) {
+    $raw_db_url = trim($raw_db_url);
+    if (strpos($raw_db_url, '@[') !== false) {
+        $raw_db_url = substr($raw_db_url, 0, strpos($raw_db_url, '@['));
+    }
+}
+
+$is_render = getenv('RENDER') !== false || isset($_SERVER['RENDER']);
+
+if (!empty($raw_db_url)) {
+    // Parse DATABASE_URL / SUPABASE_DB_URL (e.g. postgresql://user:pass@host:port/dbname)
+    $parsed = parse_url($raw_db_url);
+    $driver = (!empty($parsed['scheme']) && (strpos($parsed['scheme'], 'postgres') !== false || strpos($parsed['scheme'], 'pgsql') !== false)) ? 'pgsql' : 'mysql';
+    $host   = $parsed['host'] ?? 'localhost';
+    $port   = $parsed['port'] ?? ($driver === 'pgsql' ? 6543 : 3306);
+    $user   = isset($parsed['user']) ? urldecode($parsed['user']) : '';
+    $pass   = isset($parsed['pass']) ? urldecode($parsed['pass']) : '';
+    
+    $path_clean = isset($parsed['path']) ? ltrim($parsed['path'], '/') : '';
+    if (strpos($path_clean, '@') !== false) {
+        $path_clean = explode('@', $path_clean)[0];
+    }
+    if (strpos($path_clean, '?') !== false) {
+        $path_clean = explode('?', $path_clean)[0];
+    }
+    $dbname = !empty($path_clean) ? $path_clean : ($driver === 'pgsql' ? 'postgres' : 'sunrise_school');
+} else {
+    // Individual Environment Variables (with Render cloud or local XAMPP defaults)
+    if ($is_render) {
+        // Fallback to configured Supabase credentials on Render if env var isn't set
+        $host   = getenv('DB_HOST') ?: 'aws-0-ap-northeast-1.pooler.supabase.com';
+        $port   = getenv('DB_PORT') ?: '6543';
+        $dbname = getenv('DB_NAME') ?: 'postgres';
+        $user   = getenv('DB_USER') ?: 'postgres.dbobrnclzanltjcvsakm';
+        $pass   = getenv('DB_PASS') !== false ? getenv('DB_PASS') : 'MHn.R6c!_W*%Re!';
+        $driver = 'pgsql';
+    } else {
+        // Local XAMPP MySQL defaults
+        $host   = getenv('DB_HOST') ?: 'localhost';
+        $port   = getenv('DB_PORT') ?: '';
+        $dbname = getenv('DB_NAME') ?: 'sunrise_school';
+        $user   = getenv('DB_USER') ?: 'root';
+        $pass   = getenv('DB_PASS') !== false ? getenv('DB_PASS') : '';
+        $driver = getenv('DB_DRIVER') ?: 'mysql';
+    }
+}
+
+if (!defined('DB_DRIVER')) define('DB_DRIVER', $driver);
+if (!defined('DB_HOST'))   define('DB_HOST', $host);
+if (!defined('DB_PORT'))   define('DB_PORT', $port ?: ($driver === 'pgsql' ? 6543 : 3306));
+if (!defined('DB_NAME'))   define('DB_NAME', $dbname);
+if (!defined('DB_USER'))   define('DB_USER', $user);
+if (!defined('DB_PASS'))   define('DB_PASS', $pass);
+if (!defined('DB_CHARSET'))define('DB_CHARSET', 'utf8mb4');
 
 /**
  * Returns the active PDO database connection instance (Singleton pattern)
@@ -28,26 +88,31 @@ function get_db_connection() {
     }
 
     $connection_attempted = true;
-    $dsn = "mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
-    
+
+    if (DB_DRIVER === 'pgsql') {
+        // Supabase / PostgreSQL DSN (requires SSL)
+        $dsn = "pgsql:host=" . DB_HOST . ";port=" . DB_PORT . ";dbname=" . DB_NAME . ";sslmode=require";
+    } else {
+        // MySQL DSN
+        $port_str = !empty(DB_PORT) ? ";port=" . DB_PORT : "";
+        $dsn = "mysql:host=" . DB_HOST . $port_str . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET;
+    }
+
     $options = [
         // Throw PDOException on errors so they can be handled cleanly
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         // Return query results as associative arrays by default
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        // Force true prepared statements at the MySQL server level (prevents SQL injection)
+        // Emulate prepares off
         PDO::ATTR_EMULATE_PREPARES   => false,
-        // Persistent connections off by default for clean connection cycling
         PDO::ATTR_PERSISTENT         => false,
-        // Short timeout in case MySQL is offline
-        PDO::ATTR_TIMEOUT            => 2,
+        PDO::ATTR_TIMEOUT            => 5,
     ];
 
     try {
         $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
     } catch (PDOException $e) {
-        // Log the error internally without exposing credentials to visitors
-        error_log("Database connection error: " . $e->getMessage());
+        error_log("Database connection error (" . DB_DRIVER . "): " . $e->getMessage());
         $pdo = null;
     }
 

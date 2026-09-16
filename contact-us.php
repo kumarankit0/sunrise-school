@@ -139,7 +139,7 @@ require_once __DIR__ . '/core/header.php';
             </div>
             <div class="p-4 bg-surface-pure rounded-xl border border-border-warm">
               <h4 class="font-label-md text-primary font-bold"><?= get_text('contact', 'wing2_title', 'Secondary & Senior Secondary Wing') ?></h4>
-              <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('contact', 'wing2_desc', 'Class 9 to 12 – HBSC Board, Science (Medical/Non-Med), Commerce & Arts') ?></p>
+              <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('contact', 'wing2_desc', 'Class 9 to 12 – HBSE Board, Science (Medical/Non-Med), Commerce & Arts') ?></p>
             </div>
           </div>
         </div>

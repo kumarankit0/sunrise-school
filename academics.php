@@ -1,8 +1,8 @@
 <?php
 $current_page = 'academics';
-$page_title = 'Academics & HBSC Curriculum | Pre-Primary to 10+2';
-$page_description = 'Explore the comprehensive HBSC curriculum at Sun Rise Sr. Sec. School, Dobhi from Pre-Primary to Senior Secondary streams (Science, Commerce, Arts).';
-$page_keywords = 'academics, HBSC curriculum, Science stream, Commerce stream, Arts stream, Sun Rise School Dobhi, lab practicals, high school';
+$page_title = 'Academics & HBSE Curriculum | Pre-Primary to 10+2';
+$page_description = 'Explore the comprehensive HBSE curriculum at Sun Rise Sr. Sec. School, Dobhi from Pre-Primary to Senior Secondary streams (Science, Commerce, Arts).';
+$page_keywords = 'academics, HBSE curriculum, Science stream, Commerce stream, Arts stream, Sun Rise School Dobhi, lab practicals, high school';
 
 require_once __DIR__ . '/core/header.php';
 ?>
@@ -17,7 +17,7 @@ require_once __DIR__ . '/core/header.php';
         <?= get_text('academics', 'hero_badge', 'Academic Excellence') ?>
       </span>
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg text-white w-full max-w-5xl tracking-tight leading-[1.15] drop-shadow-md">
-        <?= get_text('academics', 'hero_title', 'Rigorous HBSC Curriculum Designed for Success') ?>
+        <?= get_text('academics', 'hero_title', 'Rigorous HBSE Curriculum Designed for Success') ?>
       </h1>
       <p class="text-lg sm:text-xl md:text-2xl text-surface-cream/95 w-full max-w-4xl leading-relaxed drop-shadow">
         <?= get_text('academics', 'hero_subtitle', 'Discover an enriching academic framework from Pre-Primary to Class 12, fostering analytical thinking, practical lab experimentation, moral values, and board examination distinction.') ?>
@@ -34,7 +34,7 @@ require_once __DIR__ . '/core/header.php';
     <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 text-center">
       <div class="flex flex-col items-center p-2 sm:p-0">
         <span class="font-display-hero text-2xl sm:text-3xl lg:text-4xl text-primary font-bold"><?= get_text('academics', 'stat1_num', '100%') ?></span>
-        <span class="font-eyebrow text-[10px] sm:text-xs md:text-sm text-on-surface-variant uppercase mt-1 sm:mt-2 font-bold leading-tight"><?= get_text('academics', 'stat1_lbl', 'HBSC Pass Record') ?></span>
+        <span class="font-eyebrow text-[10px] sm:text-xs md:text-sm text-on-surface-variant uppercase mt-1 sm:mt-2 font-bold leading-tight"><?= get_text('academics', 'stat1_lbl', 'HBSE Pass Record') ?></span>
       </div>
       <div class="flex flex-col items-center p-2 sm:p-0">
         <span class="font-display-hero text-2xl sm:text-3xl lg:text-4xl text-primary font-bold"><?= get_text('academics', 'stat2_num', '1:15') ?></span>
@@ -182,11 +182,11 @@ require_once __DIR__ . '/core/header.php';
         <!-- Secondary School -->
         <div class="level-content hidden flex flex-col gap-6" id="content-secondary">
           <div class="flex items-center gap-3">
-            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35">HBSC Board Stage</span>
+            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35">HBSE Board Stage</span>
             <span class="text-on-surface-variant text-body-sm">Classes 9 to 10</span>
           </div>
-          <h3 class="font-headline-md text-headline-md text-primary">HBSC Class 10 Board Examination Rigor</h3>
-          <p class="font-body-md text-on-surface-variant">Intensive preparation for HBSC examinations through chapter-wise tests, regular mock examinations, doubt-solving sessions, and practical assessments.</p>
+          <h3 class="font-headline-md text-headline-md text-primary">HBSE Class 10 Board Examination Rigor</h3>
+          <p class="font-body-md text-on-surface-variant">Intensive preparation for HBSE examinations through chapter-wise tests, regular mock examinations, doubt-solving sessions, and practical assessments.</p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
@@ -247,7 +247,7 @@ require_once __DIR__ . '/core/header.php';
     <div class="text-center max-w-2xl mx-auto mb-16">
       <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('academics', 'streams_eyebrow', 'Class 11 &amp; 12 Streams') ?></span>
       <h2 class="font-headline-lg text-headline-lg text-primary mt-2"><?= get_text('academics', 'streams_heading', 'Senior Secondary Academic Streams') ?></h2>
-      <p class="font-body-md text-on-surface-variant mt-3"><?= get_text('academics', 'streams_desc', 'Tailored academic pathways equipping students for HBSC board excellence and leading university admissions.') ?></p>
+      <p class="font-body-md text-on-surface-variant mt-3"><?= get_text('academics', 'streams_desc', 'Tailored academic pathways equipping students for HBSE board excellence and leading university admissions.') ?></p>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <!-- Science Stream -->

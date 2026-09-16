@@ -14,7 +14,7 @@ require_once __DIR__ . '/config.php';
             <span class="footer-brand-name"><?= htmlspecialchars($site_name) ?></span>
           </a>
           <p class="footer-description">
-            Providing exceptional HBSC education, cultivating wisdom, moral integrity, scientific inquiry, and academic excellence in every student.
+            Providing exceptional HBSE education, cultivating wisdom, moral integrity, scientific inquiry, and academic excellence in every student.
           </p>
           <div class="footer-social-strip">
             <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Facebook">

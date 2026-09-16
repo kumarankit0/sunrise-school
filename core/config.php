@@ -8,7 +8,7 @@ require_once __DIR__ . '/../includes/content_helper.php';
 
 // Site Information (Dynamic with fallback defaults)
 $site_name       = get_text('general', 'site_name', 'Sun Rise Sr. Sec. School, Dobhi');
-$site_tagline    = get_text('general', 'site_tagline', 'Nurturing Knowledge, Character & Academic Excellence | Affiliated to HBSC');
+$site_tagline    = get_text('general', 'site_tagline', 'Nurturing Knowledge, Character & Academic Excellence | Affiliated to HBSE');
 $site_phone      = get_text('general', 'site_phone', '+91 98123 45678');
 $site_email      = get_text('general', 'site_email', 'info@sunrisesrsec.edu');
 $site_info_email = get_text('general', 'site_info_email', 'admissions@sunrisesrsec.edu');
@@ -60,7 +60,7 @@ $nav_menu = [
                 'title' => 'Academics Overview',
                 'url' => 'academics.php',
                 'icon' => 'school',
-                'desc' => 'HBSC Curriculum & Streams'
+                'desc' => 'HBSE Curriculum & Streams'
             ],
             'admissions' => [
                 'title' => 'Admissions 2026-27',

@@ -79,11 +79,11 @@ require_once __DIR__ . '/core/header.php';
             <span class="text-eyebrow text-[#C9A24B] uppercase font-bold"><?= get_text('campus', 'fac2_tag', 'Hands-On Discovery') ?></span>
             <h3 class="font-headline-sm text-headline-sm text-primary"><?= get_text('campus', 'fac2_title', 'Advanced Science Lab') ?></h3>
             <p class="text-body-md text-on-surface-variant">
-              <?= get_text('campus', 'fac2_desc', 'Fully equipped practical laboratories for Physics, Chemistry, and Biology adhering strictly to HBSC safety benchmarks and experimental standards.') ?>
+              <?= get_text('campus', 'fac2_desc', 'Fully equipped practical laboratories for Physics, Chemistry, and Biology adhering strictly to HBSE safety benchmarks and experimental standards.') ?>
             </p>
           </div>
           <div class="pt-4 border-t border-border-warm flex items-center justify-between">
-            <span class="text-label-sm text-primary font-bold">HBSC Norms Compliant</span>
+            <span class="text-label-sm text-primary font-bold">HBSE Norms Compliant</span>
             <span class="material-symbols-outlined text-[#C9A24B] group-hover:translate-x-1 transition-transform">arrow_forward</span>
           </div>
         </div>

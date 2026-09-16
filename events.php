@@ -136,7 +136,7 @@ require_once __DIR__ . '/core/header.php';
             <div class="p-6 flex flex-col flex-1 justify-between gap-4">
               <div>
                 <h3 class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-[#C9A24B] transition-colors"><?= get_text('events', 'news4_title', 'Media Coverage: Board Exam Triumphs') ?></h3>
-                <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-3"><?= get_text('events', 'news4_desc', 'Prominent regional newspapers report on the extraordinary 100% HBSC board passing rate and high scoring records of our students.') ?></p>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-3"><?= get_text('events', 'news4_desc', 'Prominent regional newspapers report on the extraordinary 100% HBSE board passing rate and high scoring records of our students.') ?></p>
               </div>
               <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="admission.php">
                 View Academic Results <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>

@@ -2,8 +2,8 @@
 require_once __DIR__ . '/config.php';
 
 $seo_title = isset($page_title) ? htmlspecialchars($page_title) . ' | ' . htmlspecialchars($site_name) : htmlspecialchars($site_name) . ' | Nurturing Knowledge, Character & Excellence';
-$seo_desc = isset($page_description) ? htmlspecialchars($page_description) : 'Sun Rise Sr. Sec. School, Dobhi offers premier HBSC education from Pre-Primary to Senior Secondary streams with modern labs, sports, and holistic character development.';
-$seo_keywords = isset($page_keywords) ? htmlspecialchars($page_keywords) : 'Sun Rise Sr. Sec. School Dobhi, HBSC school Hisar, best school Dobhi Haryana, admissions 2026-27, senior secondary school, academic excellence';
+$seo_desc = isset($page_description) ? htmlspecialchars($page_description) : 'Sun Rise Sr. Sec. School, Dobhi offers premier HBSE education from Pre-Primary to Senior Secondary streams with modern labs, sports, and holistic character development.';
+$seo_keywords = isset($page_keywords) ? htmlspecialchars($page_keywords) : 'Sun Rise Sr. Sec. School Dobhi, HBSE school Hisar, best school Dobhi Haryana, admissions 2026-27, senior secondary school, academic excellence';
 $current_page = isset($current_page) ? $current_page : 'home';
 ?>
 <!DOCTYPE html>
@@ -175,7 +175,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
         <img alt="<?= htmlspecialchars($site_name) ?> Crest" class="brand-logo-img" src="<?= $site_logo ?>" width="40" height="40"/>
         <div class="brand-logo-text-group">
           <span class="brand-logo-text"><?= htmlspecialchars($site_name) ?></span>
-          <span class="brand-logo-sub">Dobhi, Hisar • HBSC</span>
+          <span class="brand-logo-sub">Dobhi, Hisar • HBSE</span>
         </div>
       </a>
 
@@ -241,7 +241,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
           <img src="<?= $site_logo ?>" alt="Logo" class="h-9 w-auto flex-shrink-0 object-contain"/>
           <div class="flex flex-col min-w-0">
             <span class="font-bold text-primary text-sm sm:text-base font-sans truncate">Sun Rise Sr. Sec. School</span>
-            <span class="text-[11px] text-on-surface-variant font-medium">Dobhi, Hisar • HBSC Affiliated</span>
+            <span class="text-[11px] text-on-surface-variant font-medium">Dobhi, Hisar • HBSE Affiliated</span>
           </div>
         </div>
         <button id="mobileMenuClose" class="mobile-close-btn" aria-label="Close Navigation Menu" type="button">

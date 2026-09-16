@@ -1,5 +1,11 @@
 FROM php:8.2-apache
 
+# Install PostgreSQL development libraries & PHP PDO extensions
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_mysql pdo_pgsql \
+    && rm -rf /var/lib/apt/lists/*
+
 # Enable Apache modules for clean URLs, security headers, and caching
 RUN a2enmod rewrite headers expires
 

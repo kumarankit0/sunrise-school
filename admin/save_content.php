@@ -90,13 +90,23 @@ if (!$db) {
 }
 
 try {
-    // Upsert into site_content using prepared statement
-    $sql = "INSERT INTO site_content (page_key, section_key, content_type, content_value)
-            VALUES (:page_key, :section_key, :content_type, :content_value)
-            ON DUPLICATE KEY UPDATE 
-                content_value = VALUES(content_value),
-                content_type = VALUES(content_type),
-                updated_at = CURRENT_TIMESTAMP";
+    $driver = $db->getAttribute(PDO::ATTR_DRIVER_NAME);
+    if ($driver === 'pgsql') {
+        $sql = "INSERT INTO site_content (page_key, section_key, content_type, content_value)
+                VALUES (:page_key, :section_key, :content_type, :content_value)
+                ON CONFLICT (page_key, section_key)
+                DO UPDATE SET 
+                    content_value = EXCLUDED.content_value,
+                    content_type = EXCLUDED.content_type,
+                    updated_at = CURRENT_TIMESTAMP";
+    } else {
+        $sql = "INSERT INTO site_content (page_key, section_key, content_type, content_value)
+                VALUES (:page_key, :section_key, :content_type, :content_value)
+                ON DUPLICATE KEY UPDATE 
+                    content_value = VALUES(content_value),
+                    content_type = VALUES(content_type),
+                    updated_at = CURRENT_TIMESTAMP";
+    }
 
     $stmt = $db->prepare($sql);
     $stmt->execute([

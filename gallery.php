@@ -115,7 +115,7 @@ require_once __DIR__ . '/core/header.php';
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Board Toppers</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Merit Ranks</span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title5', 'HBSC Board Exam Toppers') ?></h3>
+          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title5', 'HBSE Board Exam Toppers') ?></h3>
           <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc5', 'Celebrating our star achievers securing top percentiles in Class 10 &amp; 12 exams.') ?></p>
         </div>
         <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">

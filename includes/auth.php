@@ -106,16 +106,12 @@ function attempt_login($username, $password) {
 
         if ($admin) {
             $newAttempts = $admin['failed_attempts'] + 1;
-            $lockSql = "";
-            $params = [$newAttempts];
+            $lockedUntil = ($newAttempts >= MAX_LOGIN_ATTEMPTS) 
+                ? date('Y-m-d H:i:s', time() + (LOCKOUT_DURATION_MINUTES * 60)) 
+                : $admin['locked_until'];
 
-            if ($newAttempts >= MAX_LOGIN_ATTEMPTS) {
-                // Lock account for 15 minutes
-                $lockSql = ", locked_until = DATE_ADD(NOW(), INTERVAL " . LOCKOUT_DURATION_MINUTES . " MINUTE)";
-            }
-
-            $updateStmt = $db->prepare("UPDATE admins SET failed_attempts = ? {$lockSql} WHERE id = ?");
-            $updateStmt->execute([$newAttempts, $admin['id']]);
+            $updateStmt = $db->prepare("UPDATE admins SET failed_attempts = ?, locked_until = ? WHERE id = ?");
+            $updateStmt->execute([$newAttempts, $lockedUntil, $admin['id']]);
 
             if ($newAttempts >= MAX_LOGIN_ATTEMPTS) {
                 return [

@@ -1,8 +1,8 @@
 <?php
 $current_page = 'home';
 $page_title = 'Welcome to Sun Rise Sr. Sec. School, Dobhi';
-$page_description = 'Sun Rise Sr. Sec. School, Dobhi offers premier HBSC education from Pre-Primary to Senior Secondary streams with state-of-the-art infrastructure, experienced faculty, and holistic learning.';
-$page_keywords = 'Sun Rise Sr. Sec. School Dobhi, best HBSC school Hisar, admissions 2026-27, senior secondary school, science commerce arts streams, top school Haryana';
+$page_description = 'Sun Rise Sr. Sec. School, Dobhi offers premier HBSE education from Pre-Primary to Senior Secondary streams with state-of-the-art infrastructure, experienced faculty, and holistic learning.';
+$page_keywords = 'Sun Rise Sr. Sec. School Dobhi, best HBSE school Hisar, admissions 2026-27, senior secondary school, science commerce arts streams, top school Haryana';
 
 require_once __DIR__ . '/core/header.php';
 ?>
@@ -15,13 +15,13 @@ require_once __DIR__ . '/core/header.php';
     <div class="relative z-20 max-w-6xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center text-center gap-7">
       <div class="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md border border-[#C9A24B]/50 px-5 py-2 rounded-full text-gold-light text-eyebrow font-bold shadow-lg">
         <span class="material-symbols-outlined text-[18px] text-[#C9A24B]">military_tech</span>
-        <?= get_text('home', 'hero_badge', 'AFFILIATED TO HBSC &bull; PRE-PRIMARY TO SENIOR SECONDARY (10+2)') ?>
+        <?= get_text('home', 'hero_badge', 'AFFILIATED TO HBSE &bull; PRE-PRIMARY TO SENIOR SECONDARY (10+2)') ?>
       </div>
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg text-white w-full max-w-5xl tracking-tight leading-[1.12] drop-shadow-md">
         <?= get_text('home', 'hero_title', 'Empowering Minds, Inspiring Character & <span class="text-[#C9A24B] italic">Academic Excellence</span>') ?>
       </h1>
       <p class="text-lg sm:text-xl md:text-2xl text-surface-cream/95 w-full max-w-4xl font-body leading-relaxed drop-shadow">
-        <?= get_text('home', 'hero_subtitle', 'Welcome to Sun Rise Sr. Sec. School, Dobhi. We foster an enriching educational environment combining rigorous HBSC scholarship, moral values, modern technology, and sportsmanship.') ?>
+        <?= get_text('home', 'hero_subtitle', 'Welcome to Sun Rise Sr. Sec. School, Dobhi. We foster an enriching educational environment combining rigorous HBSE scholarship, moral values, modern technology, and sportsmanship.') ?>
       </p>
       <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-3">
         <a class="btn-gold text-base sm:text-lg px-8 py-4 shadow-xl" href="admission.php">
@@ -45,12 +45,12 @@ require_once __DIR__ . '/core/header.php';
           <?= get_text('home', 'legacy_heading', 'A Tradition of Holistic Education &amp; Outstanding Results') ?>
         </h2>
         <p class="text-sm sm:text-base lg:text-body-lg text-on-surface-variant font-body leading-relaxed">
-          <?= get_text('home', 'legacy_description', "At Sun Rise Sr. Sec. School, Dobhi, we are dedicated to nurturing each student's intellectual, physical, and moral growth. Through cutting-edge science labs, dedicated sports facilities, and exemplary faculty mentorship, our students consistently achieve top honours in HBSC board exams and competitive Olympiads.") ?>
+          <?= get_text('home', 'legacy_description', "At Sun Rise Sr. Sec. School, Dobhi, we are dedicated to nurturing each student's intellectual, physical, and moral growth. Through cutting-edge science labs, dedicated sports facilities, and exemplary faculty mentorship, our students consistently achieve top honours in HBSE board exams and competitive Olympiads.") ?>
         </p>
         <div class="grid grid-cols-2 gap-3 sm:gap-6 pt-2 sm:pt-4">
           <div class="p-3.5 sm:p-5 lg:p-6 bg-surface-container-low rounded-xl border border-border-warm">
             <div class="text-xl sm:text-2xl lg:text-[32px] font-headline-lg font-bold text-primary"><?= get_text('home', 'stat_pass_rate', '100%') ?></div>
-            <div class="text-body-sm text-[11px] sm:text-xs lg:text-sm text-on-surface-variant mt-1 leading-snug">HBSC Board Pass Result</div>
+            <div class="text-body-sm text-[11px] sm:text-xs lg:text-sm text-on-surface-variant mt-1 leading-snug">HBSE Board Pass Result</div>
           </div>
           <div class="p-3.5 sm:p-5 lg:p-6 bg-surface-container-low rounded-xl border border-border-warm">
             <div class="text-xl sm:text-2xl lg:text-[32px] font-headline-lg font-bold text-primary"><?= get_text('home', 'stat_student_ratio', '1:15') ?></div>
@@ -111,7 +111,7 @@ require_once __DIR__ . '/core/header.php';
           <div class="h-64 w-full bg-cover bg-center overflow-hidden" style="background-image: url('<?= get_image('home', 'card1_image', school_img('project.webp')) ?>')"></div>
           <div class="p-8 flex flex-col flex-1 justify-between gap-6">
             <div class="flex flex-col gap-3">
-              <span class="text-eyebrow text-[#C9A24B]"><?= get_text('home', 'card1_tag', 'HBSC CURRICULUM') ?></span>
+              <span class="text-eyebrow text-[#C9A24B]"><?= get_text('home', 'card1_tag', 'HBSE CURRICULUM') ?></span>
               <h3 class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'card1_title', 'Science &amp; Practical Labs') ?></h3>
               <p class="text-body-md text-on-surface-variant"><?= get_text('home', 'card1_desc', 'State-of-the-art Physics, Chemistry, Biology, and Computer Science laboratories enabling experiential, hands-on scientific learning.') ?></p>
             </div>
@@ -320,7 +320,7 @@ require_once __DIR__ . '/core/header.php';
       <div class="text-eyebrow text-on-surface-variant uppercase tracking-widest text-center font-bold">Affiliated &amp; Recognized By</div>
       <div class="flex flex-wrap items-center justify-center gap-12 lg:gap-20 opacity-85">
         <span class="font-headline-lg font-bold text-primary tracking-wider text-xl flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#C9A24B]">verified</span> HBSC AFFILIATED
+          <span class="material-symbols-outlined text-[#C9A24B]">verified</span> HBSE AFFILIATED
         </span>
         <span class="font-headline-lg font-bold text-primary tracking-wider text-xl flex items-center gap-2">
           <span class="material-symbols-outlined text-[#C9A24B]">school</span> CO-EDUCATIONAL (10+2)

@@ -72,7 +72,7 @@ require_once __DIR__ . '/core/header.php';
         <div class="mt-8 pt-6 border-t border-border-warm flex items-center justify-between">
           <span class="text-label-sm text-primary font-bold">Academic Head</span>
           <span class="text-label-sm text-[#B38C37] font-bold flex items-center gap-1">
-            <span class="material-symbols-outlined text-[16px]">school</span> HBSC Lead
+            <span class="material-symbols-outlined text-[16px]">school</span> HBSE Lead
           </span>
         </div>
       </div>
@@ -192,7 +192,7 @@ require_once __DIR__ . '/core/header.php';
     <div class="text-center max-w-2xl mx-auto mb-16">
       <span class="text-eyebrow text-[#B38C37] uppercase tracking-widest block mb-2 font-bold">Academic Departments</span>
       <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-4">Subject Faculties</h2>
-      <p class="text-body-md text-on-surface-variant">Our academic faculties comprise qualified, HBSC-trained educators with specialized postgraduate degrees in their respective disciplines.</p>
+      <p class="text-body-md text-on-surface-variant">Our academic faculties comprise qualified, HBSE-trained educators with specialized postgraduate degrees in their respective disciplines.</p>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

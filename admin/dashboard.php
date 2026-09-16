@@ -66,7 +66,7 @@ $pages_config = [
                         'key' => 'hero_badge',
                         'label' => 'Hero Affiliation Badge / Eyebrow',
                         'type' => 'text',
-                        'default' => 'AFFILIATED TO HBSC • PRE-PRIMARY TO SENIOR SECONDARY (10+2)',
+                        'default' => 'AFFILIATED TO HBSE • PRE-PRIMARY TO SENIOR SECONDARY (10+2)',
                         'help' => 'Top pill badge displayed in the hero section.'
                     ],
                     [
@@ -82,7 +82,7 @@ $pages_config = [
                         'key' => 'hero_subtitle',
                         'label' => 'Hero Intro Paragraph',
                         'type' => 'text',
-                        'default' => 'Welcome to Sun Rise Sr. Sec. School, Dobhi. We foster an enriching educational environment combining rigorous HBSC scholarship, moral values, modern technology, and sportsmanship.',
+                        'default' => 'Welcome to Sun Rise Sr. Sec. School, Dobhi. We foster an enriching educational environment combining rigorous HBSE scholarship, moral values, modern technology, and sportsmanship.',
                         'help' => 'Subtitle text below the main hero headline.'
                     ]
                 ]
@@ -113,13 +113,13 @@ $pages_config = [
                         'key' => 'legacy_description',
                         'label' => 'Spotlight Overview Paragraph',
                         'type' => 'text',
-                        'default' => "At Sun Rise Sr. Sec. School, Dobhi, we are dedicated to nurturing each student's intellectual, physical, and moral growth. Through cutting-edge science labs, dedicated sports facilities, and exemplary faculty mentorship, our students consistently achieve top honours in HBSC board exams and competitive Olympiads.",
+                        'default' => "At Sun Rise Sr. Sec. School, Dobhi, we are dedicated to nurturing each student's intellectual, physical, and moral growth. Through cutting-edge science labs, dedicated sports facilities, and exemplary faculty mentorship, our students consistently achieve top honours in HBSE board exams and competitive Olympiads.",
                         'help' => 'Detailed introductory overview paragraph.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'stat_pass_rate',
-                        'label' => 'Stat 1: HBSC Board Pass Result',
+                        'label' => 'Stat 1: HBSE Board Pass Result',
                         'type' => 'text',
                         'default' => '100%',
                         'help' => 'Percentage or number for board pass rate.'
@@ -201,7 +201,7 @@ $pages_config = [
                         'key' => 'card1_tag',
                         'label' => 'Pillar 1 Category Tag',
                         'type' => 'text',
-                        'default' => 'HBSC CURRICULUM',
+                        'default' => 'HBSE CURRICULUM',
                         'help' => 'Tag for card 1.'
                     ],
                     [
@@ -772,7 +772,7 @@ $pages_config = [
                         'key' => 'mission_text',
                         'label' => 'Mission Description',
                         'type' => 'html',
-                        'default' => 'We are dedicated to delivering a comprehensive HBSC curriculum enriched by hands-on science laboratories, digital learning, sportsmanship, moral values, and cultural activities that nurture well-rounded global citizens.',
+                        'default' => 'We are dedicated to delivering a comprehensive HBSE curriculum enriched by hands-on science laboratories, digital learning, sportsmanship, moral values, and cultural activities that nurture well-rounded global citizens.',
                         'help' => 'Mission statement (HTML allowed).'
                     ]
                 ]
@@ -819,7 +819,7 @@ $pages_config = [
                         'key' => 'm2_title',
                         'label' => 'Milestone 2 Title (Upgradation)',
                         'type' => 'text',
-                        'default' => 'HBSC Affiliation & Senior Secondary Streams',
+                        'default' => 'HBSE Affiliation & Senior Secondary Streams',
                         'help' => 'Milestone 2 title.'
                     ],
                     [
@@ -827,7 +827,7 @@ $pages_config = [
                         'key' => 'm2_desc',
                         'label' => 'Milestone 2 Description',
                         'type' => 'text',
-                        'default' => 'Upgraded to Senior Secondary (10+2) under HBSC with specialized streams in Science (Medical/Non-Medical), Commerce, and Arts alongside modern physics, chemistry, and biology labs.',
+                        'default' => 'Upgraded to Senior Secondary (10+2) under HBSE with specialized streams in Science (Medical/Non-Medical), Commerce, and Arts alongside modern physics, chemistry, and biology labs.',
                         'help' => 'Milestone 2 text.'
                     ],
                     [
@@ -1011,7 +1011,7 @@ $pages_config = [
     'academics' => [
         'title' => 'Academics Page',
         'icon'  => 'school',
-        'desc'  => 'HBSC Curriculum, Stages (Pre-Primary to 12th), 3 Streams, and Teaching Methodology',
+        'desc'  => 'HBSE Curriculum, Stages (Pre-Primary to 12th), 3 Streams, and Teaching Methodology',
         'sections' => [
             [
                 'title' => 'Section 1: Hero Banner & Header',
@@ -1039,7 +1039,7 @@ $pages_config = [
                         'key' => 'hero_title',
                         'label' => 'Main Hero Title',
                         'type' => 'text',
-                        'default' => 'Rigorous HBSC Curriculum Designed for Success',
+                        'default' => 'Rigorous HBSE Curriculum Designed for Success',
                         'help' => 'Main headline.'
                     ],
                     [
@@ -1070,7 +1070,7 @@ $pages_config = [
                         'key' => 'stat1_lbl',
                         'label' => 'Stat 1 Label',
                         'type' => 'text',
-                        'default' => 'HBSC Pass Record',
+                        'default' => 'HBSE Pass Record',
                         'help' => 'Label.'
                     ],
                     [
@@ -1357,10 +1357,10 @@ $pages_config = [
                 'fields' => [
                     [
                         'kind' => 'text',
-                        'key' => 'badge_hbsc',
-                        'label' => 'Badge 1 (HBSC Affiliation)',
+                        'key' => 'badge_HBSE',
+                        'label' => 'Badge 1 (HBSE Affiliation)',
                         'type' => 'text',
-                        'default' => 'HBSC Affiliation #530XXX (Dobhi, Hisar)',
+                        'default' => 'HBSE Affiliation #530XXX (Dobhi, Hisar)',
                         'help' => 'Badge 1.'
                     ],
                     [
@@ -1596,7 +1596,7 @@ $pages_config = [
                         'key' => 'fac2_desc',
                         'label' => 'Facility 2 Description',
                         'type' => 'text',
-                        'default' => 'Fully equipped practical laboratories for Physics, Chemistry, and Biology adhering strictly to HBSC safety benchmarks and experimental standards.',
+                        'default' => 'Fully equipped practical laboratories for Physics, Chemistry, and Biology adhering strictly to HBSE safety benchmarks and experimental standards.',
                         'help' => 'Description.'
                     ],
                     // Facility 3
@@ -2039,7 +2039,7 @@ $pages_config = [
                         'key' => 'news4_desc',
                         'label' => 'News 4 Summary',
                         'type' => 'text',
-                        'default' => 'Prominent regional newspapers report on the extraordinary 100% HBSC board passing rate and high scoring records of our students.',
+                        'default' => 'Prominent regional newspapers report on the extraordinary 100% HBSE board passing rate and high scoring records of our students.',
                         'help' => 'Description.'
                     ]
                 ]
@@ -2542,7 +2542,7 @@ $pages_config = [
                         'key' => 'gallery_img5',
                         'label' => 'Photo 5 (Board Exam Toppers)',
                         'default' => 'assets/images/sunrise school image/toppers.webp',
-                        'alt' => 'HBSC Board Exam Toppers',
+                        'alt' => 'HBSE Board Exam Toppers',
                         'help' => 'Photo 5.'
                     ],
                     [
@@ -2550,7 +2550,7 @@ $pages_config = [
                         'key' => 'gallery_title5',
                         'label' => 'Photo 5 Title',
                         'type' => 'text',
-                        'default' => 'HBSC Board Exam Toppers',
+                        'default' => 'HBSE Board Exam Toppers',
                         'help' => 'Title.'
                     ],
                     [
@@ -2780,7 +2780,7 @@ $pages_config = [
                         'key' => 'wing2_desc',
                         'label' => 'Wing 2 Description',
                         'type' => 'text',
-                        'default' => 'Class 9 to 12 – HBSC Board, Science (Medical/Non-Med), Commerce & Arts',
+                        'default' => 'Class 9 to 12 – HBSE Board, Science (Medical/Non-Med), Commerce & Arts',
                         'help' => 'Description.'
                     ]
                 ]
@@ -2818,7 +2818,7 @@ $pages_config = [
                         'key' => 'site_tagline',
                         'label' => 'School Tagline / Affiliation Motto',
                         'type' => 'text',
-                        'default' => 'Nurturing Knowledge, Character & Academic Excellence | Affiliated to HBSC',
+                        'default' => 'Nurturing Knowledge, Character & Academic Excellence | Affiliated to HBSE',
                         'help' => 'Header tagline and SEO description default.'
                     ]
                 ]

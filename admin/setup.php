@@ -15,15 +15,28 @@ $can_connect = false;
 $setup_done = false;
 $error = '';
 
-// Test raw MySQL connection
-try {
-    $raw_dsn = "mysql:host=" . DB_HOST . ";charset=" . DB_CHARSET;
-    $raw_pdo = new PDO($raw_dsn, DB_USER, DB_PASS, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    ]);
-    $can_connect = true;
-} catch (PDOException $e) {
-    $error = "Cannot connect to MySQL server (" . DB_HOST . "): " . $e->getMessage();
+// Test database connection based on DB_DRIVER
+if (DB_DRIVER === 'pgsql') {
+    try {
+        $db = get_db_connection();
+        if ($db) {
+            $can_connect = true;
+        } else {
+            $error = "Cannot connect to Supabase PostgreSQL server (" . DB_HOST . "). Verify credentials or network connection.";
+        }
+    } catch (Exception $e) {
+        $error = "Supabase connection error: " . $e->getMessage();
+    }
+} else {
+    try {
+        $raw_dsn = "mysql:host=" . DB_HOST . ";charset=" . DB_CHARSET;
+        $raw_pdo = new PDO($raw_dsn, DB_USER, DB_PASS, [
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+        ]);
+        $can_connect = true;
+    } catch (PDOException $e) {
+        $error = "Cannot connect to MySQL server (" . DB_HOST . "): " . $e->getMessage();
+    }
 }
 
 // Handle Setup Form Submission
@@ -39,45 +52,62 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $can_connect) {
             $error = 'Please provide both admin username and password.';
         } else {
             try {
-                // 1. Create Database if not exists
-                $raw_pdo->exec("CREATE DATABASE IF NOT EXISTS `" . DB_NAME . "` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
-                $step_results[] = "Database `" . DB_NAME . "` checked/created successfully.";
-
-                // Connect to the specific database
-                $db = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET, DB_USER, DB_PASS, [
-                    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-                ]);
-
-                // 2. Read schema.sql
-                $schema_file = __DIR__ . '/../schema.sql';
-                if (!file_exists($schema_file)) {
-                    throw new Exception("schema.sql file not found at {$schema_file}");
-                }
-
-                $sql = file_get_contents($schema_file);
-
-                // Split statements safely
-                $statements = array_filter(array_map('trim', explode(';', $sql)));
-
-                foreach ($statements as $stmt_sql) {
-                    if (empty($stmt_sql)) continue;
-                    // Skip USE or CREATE DATABASE commands since we handled that
-                    if (stripos($stmt_sql, 'CREATE DATABASE') === 0 || stripos($stmt_sql, 'USE ') === 0) {
-                        continue;
+                if (DB_DRIVER === 'pgsql') {
+                    $schema_file = __DIR__ . '/../supabase_schema.sql';
+                    if (!file_exists($schema_file)) {
+                        throw new Exception("supabase_schema.sql file not found at {$schema_file}");
                     }
-                    $db->exec($stmt_sql);
-                }
-                $step_results[] = "Tables (`admins`, `site_content`, `site_images`) created and seeded.";
+                    $sql = file_get_contents($schema_file);
+                    $db->exec($sql);
+                    $step_results[] = "Supabase tables (`admins`, `site_content`, `site_images`) checked and created.";
 
-                // 3. Create or Update the chosen Admin user with bcrypt hash
-                $hash = password_hash($admin_pass, PASSWORD_BCRYPT);
-                $adminStmt = $db->prepare("
-                    INSERT INTO admins (username, password_hash, failed_attempts, locked_until)
-                    VALUES (?, ?, 0, NULL)
-                    ON DUPLICATE KEY UPDATE password_hash = VALUES(password_hash), failed_attempts = 0, locked_until = NULL
-                ");
-                $adminStmt->execute([$admin_user, $hash]);
-                $step_results[] = "Superuser account [{$admin_user}] configured with encrypted bcrypt password.";
+                    // Update admin user password
+                    $hash = password_hash($admin_pass, PASSWORD_BCRYPT);
+                    $adminStmt = $db->prepare("
+                        INSERT INTO admins (username, password_hash, failed_attempts, locked_until)
+                        VALUES (?, ?, 0, NULL)
+                        ON CONFLICT (username) DO UPDATE SET password_hash = EXCLUDED.password_hash, failed_attempts = 0, locked_until = NULL
+                    ");
+                    $adminStmt->execute([$admin_user, $hash]);
+                    $step_results[] = "Superuser account [{$admin_user}] configured with encrypted bcrypt password in Supabase.";
+                } else {
+                    // 1. Create Database if not exists in MySQL
+                    $raw_pdo->exec("CREATE DATABASE IF NOT EXISTS `" . DB_NAME . "` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci");
+                    $step_results[] = "Database `" . DB_NAME . "` checked/created successfully.";
+
+                    // Connect to the specific database
+                    $db = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=" . DB_CHARSET, DB_USER, DB_PASS, [
+                        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+                    ]);
+
+                    // 2. Read schema.sql
+                    $schema_file = __DIR__ . '/../schema.sql';
+                    if (!file_exists($schema_file)) {
+                        throw new Exception("schema.sql file not found at {$schema_file}");
+                    }
+
+                    $sql = file_get_contents($schema_file);
+                    $statements = array_filter(array_map('trim', explode(';', $sql)));
+
+                    foreach ($statements as $stmt_sql) {
+                        if (empty($stmt_sql)) continue;
+                        if (stripos($stmt_sql, 'CREATE DATABASE') === 0 || stripos($stmt_sql, 'USE ') === 0) {
+                            continue;
+                        }
+                        $db->exec($stmt_sql);
+                    }
+                    $step_results[] = "Tables (`admins`, `site_content`, `site_images`) created and seeded.";
+
+                    // 3. Create or Update chosen Admin
+                    $hash = password_hash($admin_pass, PASSWORD_BCRYPT);
+                    $adminStmt = $db->prepare("
+                        INSERT INTO admins (username, password_hash, failed_attempts, locked_until)
+                        VALUES (?, ?, 0, NULL)
+                        ON DUPLICATE KEY UPDATE password_hash = VALUES(password_hash), failed_attempts = 0, locked_until = NULL
+                    ");
+                    $adminStmt->execute([$admin_user, $hash]);
+                    $step_results[] = "Superuser account [{$admin_user}] configured with encrypted bcrypt password.";
+                }
 
                 // 4. Ensure uploads directory exists
                 $upload_dir = __DIR__ . '/../uploads';
@@ -158,6 +188,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $can_connect) {
                 <div class="bg-gray-50 p-4 rounded-xl border border-gray-200 text-xs space-y-2">
                     <div class="font-bold text-gray-700 uppercase tracking-wider text-[11px]">Database Configuration (from includes/db.php):</div>
                     <div class="grid grid-cols-2 gap-2 text-gray-600 font-mono">
+                        <div>Engine: <strong><?= strtoupper(DB_DRIVER) === 'PGSQL' ? 'Supabase (PostgreSQL)' : 'MySQL / MariaDB' ?></strong></div>
                         <div>Host: <strong><?= DB_HOST ?></strong></div>
                         <div>Database: <strong><?= DB_NAME ?></strong></div>
                         <div>User: <strong><?= DB_USER ?></strong></div>

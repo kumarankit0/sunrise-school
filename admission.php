@@ -28,31 +28,31 @@ require_once __DIR__ . '/core/header.php';
 <div class="lg:col-span-8 flex flex-col gap-4">
 <div class="inline-flex items-center gap-2 self-start px-3.5 py-1.5 rounded-full bg-gold-light text-secondary font-eyebrow text-eyebrow uppercase tracking-wider">
 <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
-            Academic Session 2025–26 Registrations Open
+            <?= get_text('admissions', 'session_badge', 'Academic Session 2026–27 Registrations Open') ?>
           </div>
 <h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">
-            Admissions Open: Sun Rise Sr. Sec. School, Dobhi
+            <?= get_text('admissions', 'hero_title', 'Admissions Open: Sun Rise Sr. Sec. School, Dobhi') ?>
           </h1>
 <p class="font-body-lg text-body-lg text-on-surface-variant w-full leading-relaxed">
-            Cultivating scholarship, strong character, and competitive excellence in Hisar district. Select your grade stream, verify student credentials, choose village transit, and secure provisional seat enrollment instantly via direct digital checkout.
+            <?= get_text('admissions', 'hero_desc', 'Cultivating scholarship, strong character, and competitive excellence in Hisar district. Select your grade stream, verify student credentials, choose village transit, and secure provisional seat enrollment instantly via direct digital checkout.') ?>
           </p>
 <!-- Key Highlights Badges -->
 <div class="flex flex-wrap items-center gap-3 pt-2">
 <div class="flex items-center gap-2 bg-surface-pure px-3.5 py-2 rounded-lg shadow-sm text-label-sm text-text-charcoal font-semibold">
 <span class="material-symbols-outlined text-[#C9A24B] text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
-              HBSC Affiliation #530XXX (Dobhi, Hisar)
+              <?= get_text('admissions', 'badge_hbsc', 'HBSC Affiliation #530XXX (Dobhi, Hisar)') ?>
             </div>
 <div class="flex items-center gap-2 bg-surface-pure px-3.5 py-2 rounded-lg shadow-sm text-label-sm text-text-charcoal font-semibold">
 <span class="material-symbols-outlined text-[#C9A24B] text-[20px]" style="font-variation-settings: 'FILL' 1;">bolt</span>
-              100% Digital Fast-Track Entry
+              <?= get_text('admissions', 'badge_digital', '100% Digital Fast-Track Entry') ?>
             </div>
 <div class="flex items-center gap-2 bg-surface-pure px-3.5 py-2 rounded-lg shadow-sm text-label-sm text-text-charcoal font-semibold">
 <span class="material-symbols-outlined text-[#C9A24B] text-[20px]" style="font-variation-settings: 'FILL' 1;">assignment_turned_in</span>
-              Instant Seat Allocation Token
+              <?= get_text('admissions', 'badge_token', 'Instant Seat Allocation Token') ?>
             </div>
 <div class="flex items-center gap-2 bg-surface-pure px-3.5 py-2 rounded-lg shadow-sm text-label-sm text-text-charcoal font-semibold">
 <span class="material-symbols-outlined text-[#C9A24B] text-[20px]" style="font-variation-settings: 'FILL' 1;">security</span>
-              RBI &amp; PCI-DSS 256-Bit Escrow
+              <?= get_text('admissions', 'badge_escrow', 'RBI &amp; PCI-DSS 256-Bit Escrow') ?>
             </div>
 </div>
 </div>
@@ -125,9 +125,9 @@ require_once __DIR__ . '/core/header.php';
 <section class="py-12 px-6 lg:px-12 max-w-7xl mx-auto w-full">
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
 <div>
-<div class="font-eyebrow text-eyebrow text-secondary uppercase tracking-widest">Select Admission Grade</div>
-<h2 class="font-headline-md text-headline-md text-primary mt-1">Available Classes &amp; Available Vacancies</h2>
-<p class="font-body-md text-body-md text-on-surface-variant mt-1">Choose the prospective level to populate academic fees, syllabi criteria, and batch schedules.</p>
+<div class="font-eyebrow text-eyebrow text-secondary uppercase tracking-widest"><?= get_text('admissions', 'grade_selector_eyebrow', 'Select Admission Grade') ?></div>
+<h2 class="font-headline-md text-headline-md text-primary mt-1"><?= get_text('admissions', 'grade_selector_heading', 'Available Classes & Available Vacancies') ?></h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1"><?= get_text('admissions', 'grade_selector_desc', 'Choose the prospective level to populate academic fees, syllabi criteria, and batch schedules.') ?></p>
 </div>
 <!-- Segment Filters -->
 <div class="flex flex-wrap gap-2 p-1.5 bg-surface-container-low rounded-xl" id="grade-filter-container">
@@ -1109,14 +1109,14 @@ require_once __DIR__ . '/core/header.php';
       </div>
       <div>
         <span class="text-xs font-bold text-secondary-fixed uppercase tracking-wider">Admissions Directorate – Dobhi Campus</span>
-        <h3 class="font-headline-sm text-headline-sm text-white">Need Personalized Guidance on Stream Selection?</h3>
-        <p class="font-body-sm text-body-sm text-on-primary-container mt-1">Speak directly with our senior educational advisors or Dean of Admissions.</p>
+        <h3 class="font-headline-sm text-headline-sm text-white"><?= get_text('admissions', 'help_heading', 'Need Assistance with Online Admissions?') ?></h3>
+        <p class="font-body-sm text-body-sm text-on-primary-container mt-1"><?= get_text('admissions', 'help_desc', 'Our administrative office is open Monday to Saturday from 8:00 AM to 2:30 PM to assist parents with document verification, fee concessions, and transport routes.') ?></p>
       </div>
     </div>
     <div class="flex flex-wrap items-center gap-4">
-      <a class="px-6 h-12 rounded-lg bg-surface-pure hover:bg-surface-cream text-primary font-label-md font-bold flex items-center gap-2 shadow-md transition-colors" href="tel:+919812455432">
+      <a class="px-6 h-12 rounded-lg bg-surface-pure hover:bg-surface-cream text-primary font-label-md font-bold flex items-center gap-2 shadow-md transition-colors" href="tel:<?= urlencode(get_text('admissions', 'help_phone', '+91 98123 45678')) ?>">
         <span class="material-symbols-outlined text-[18px]">call</span>
-        <span>+91 (9812) 455-432</span>
+        <span><?= get_text('admissions', 'help_phone', '+91 98123 45678') ?></span>
       </a>
       <a class="px-6 h-12 rounded-lg bg-[#C9A24B] hover:bg-gold-hover text-primary font-label-md font-bold flex items-center gap-2 shadow-md transition-colors" href="https://wa.me/919812455432" target="_blank">
         <span class="material-symbols-outlined text-[18px]">chat</span>

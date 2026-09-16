@@ -11,7 +11,7 @@ require_once __DIR__ . '/config.php';
         <div class="footer-col">
           <a href="index.php" class="footer-brand">
             <img alt="<?= htmlspecialchars($site_name) ?> Logo" class="footer-brand-img" src="<?= $site_logo ?>" width="36" height="36" loading="lazy"/>
-            <span class="footer-brand-name">Sun Rise Sr. Sec. School</span>
+            <span class="footer-brand-name"><?= htmlspecialchars($site_name) ?></span>
           </a>
           <p class="footer-description">
             Providing exceptional HBSC education, cultivating wisdom, moral integrity, scientific inquiry, and academic excellence in every student.
@@ -92,6 +92,8 @@ require_once __DIR__ . '/config.php';
           <a href="about-us.php" class="hover:text-primary transition-colors">Terms of Service</a>
           <span>•</span>
           <a href="contact-us.php" class="hover:text-primary transition-colors">Sitemap</a>
+          <span>•</span>
+          <a href="admin/login.php" class="hover:text-primary transition-colors inline-flex items-center gap-1 opacity-75 hover:opacity-100"><span class="material-symbols-outlined text-[13px]">lock</span> Admin Portal</a>
         </div>
       </div>
     </div>

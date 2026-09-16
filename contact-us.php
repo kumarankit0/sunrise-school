@@ -10,12 +10,12 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full">
   <!-- Hero Section -->
   <section class="relative w-full min-h-[80vh] lg:min-h-[85vh] py-20 lg:py-28 bg-primary px-6 lg:px-12 text-on-primary overflow-hidden flex items-center justify-center text-center">
-    <div class="absolute inset-0 opacity-65 bg-cover bg-center pointer-events-none" style="background-image: url('<?= school_img('school3.webp') ?>')"></div>
+    <div class="absolute inset-0 opacity-65 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('contact', 'hero_banner', school_img('school3.webp')) ?>')"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/75"></div>
     <div class="max-w-6xl w-full mx-auto relative z-10 flex flex-col items-center text-center gap-6">
-      <span class="font-eyebrow text-eyebrow uppercase text-gold-light tracking-[0.2em] font-bold bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full shadow-md">Get in Touch</span>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg font-bold tracking-tight text-white w-full max-w-5xl leading-[1.15] drop-shadow-md">Connect with Sun Rise School</h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-surface-cream/95 w-full max-w-4xl leading-relaxed drop-shadow">We welcome parents, prospective students, and guardians to visit our campus or get in touch for admissions, bus routes, and general inquiries.</p>
+      <span class="font-eyebrow text-eyebrow uppercase text-gold-light tracking-[0.2em] font-bold bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full shadow-md"><?= get_text('contact', 'hero_badge', 'Get in Touch') ?></span>
+      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg font-bold tracking-tight text-white w-full max-w-5xl leading-[1.15] drop-shadow-md"><?= get_text('contact', 'hero_title', 'Connect with Sun Rise School') ?></h1>
+      <p class="text-lg sm:text-xl md:text-2xl text-surface-cream/95 w-full max-w-4xl leading-relaxed drop-shadow"><?= get_text('contact', 'hero_subtitle', 'We welcome parents, prospective students, and guardians to visit our campus or get in touch for admissions, bus routes, and general inquiries.') ?></p>
     </div>
   </section>
 
@@ -26,9 +26,9 @@ require_once __DIR__ . '/core/header.php';
       <div class="lg:col-span-7 bg-surface-pure p-8 lg:p-12 rounded-2xl shadow-sm relative border border-border-warm">
         <div class="absolute top-0 left-0 w-full h-1.5 bg-[#C9A24B] rounded-t-2xl"></div>
         <div class="mb-8">
-          <span class="font-eyebrow text-eyebrow uppercase text-[#C9A24B] mb-2 block font-bold">Inquiry Desk</span>
-          <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-bold">Send Us a Message</h2>
-          <p class="font-body-md text-on-surface-variant mt-2">Fill out the quick form below and our administrative team will respond to your queries promptly.</p>
+          <span class="font-eyebrow text-eyebrow uppercase text-[#C9A24B] mb-2 block font-bold"><?= get_text('contact', 'form_eyebrow', 'Inquiry Desk') ?></span>
+          <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-bold"><?= get_text('contact', 'form_heading', 'Send Us a Message') ?></h2>
+          <p class="font-body-md text-on-surface-variant mt-2"><?= get_text('contact', 'form_desc', 'Fill out the quick form below and our administrative team will respond to your queries promptly.') ?></p>
         </div>
         <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Sun Rise Sr. Sec. School. Your message has been received.'); this.reset();">
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -114,7 +114,7 @@ require_once __DIR__ . '/core/header.php';
               </div>
               <div>
                 <h4 class="font-label-md text-primary font-bold">Visiting &amp; Office Hours</h4>
-                <p class="font-body-sm text-on-surface-variant mt-0.5">Monday – Saturday: 8:00 AM – 2:30 PM<br/>Sunday: Closed</p>
+                <p class="font-body-sm text-on-surface-variant mt-0.5"><?= get_text('contact', 'office_hours', 'Monday – Saturday: 8:00 AM – 2:30 PM') ?><br/><?= get_text('contact', 'office_days', 'Sunday: Closed') ?></p>
               </div>
             </div>
           </div>
@@ -122,10 +122,10 @@ require_once __DIR__ . '/core/header.php';
 
         <!-- Campus Image Card -->
         <div class="w-full h-64 rounded-2xl overflow-hidden shadow-sm relative border border-border-warm cursor-pointer" onclick="openLightbox(this)">
-          <div class="w-full h-full bg-cover bg-center" style="background-image: url('<?= school_img('school2.webp') ?>')"></div>
+          <div class="w-full h-full bg-cover bg-center" style="background-image: url('<?= get_image('contact', 'campus_photo', school_img('school2.webp')) ?>')"></div>
           <div class="absolute bottom-3 left-3 bg-surface/90 backdrop-blur-md px-3.5 py-1.5 rounded-lg text-body-sm font-bold text-primary shadow-sm flex items-center gap-1.5">
             <span class="material-symbols-outlined text-[#C9A24B] text-[16px]">domain</span>
-            <span>Sun Rise Campus View, Dobhi</span>
+            <span><?= get_text('contact', 'campus_caption', 'Sun Rise Campus View, Dobhi') ?></span>
           </div>
         </div>
 
@@ -134,12 +134,12 @@ require_once __DIR__ . '/core/header.php';
           <h3 class="font-headline-sm text-primary font-bold mb-4">Academic Wings</h3>
           <div class="space-y-4">
             <div class="p-4 bg-surface-pure rounded-xl border border-border-warm">
-              <h4 class="font-label-md text-primary font-bold">Primary &amp; Middle Wing</h4>
-              <p class="font-body-sm text-on-surface-variant mt-1">Nursery to Class 8 – Holistic foundation and activity-based learning</p>
+              <h4 class="font-label-md text-primary font-bold"><?= get_text('contact', 'wing1_title', 'Primary & Middle Wing') ?></h4>
+              <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('contact', 'wing1_desc', 'Nursery to Class 8 – Holistic foundation and activity-based learning') ?></p>
             </div>
             <div class="p-4 bg-surface-pure rounded-xl border border-border-warm">
-              <h4 class="font-label-md text-primary font-bold">Secondary &amp; Senior Secondary Wing</h4>
-              <p class="font-body-sm text-on-surface-variant mt-1">Class 9 to 12 – HBSC Board, Science (Medical/Non-Med), Commerce &amp; Arts</p>
+              <h4 class="font-label-md text-primary font-bold"><?= get_text('contact', 'wing2_title', 'Secondary & Senior Secondary Wing') ?></h4>
+              <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('contact', 'wing2_desc', 'Class 9 to 12 – HBSC Board, Science (Medical/Non-Med), Commerce & Arts') ?></p>
             </div>
           </div>
         </div>

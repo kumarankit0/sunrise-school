@@ -174,7 +174,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
       <a href="index.php" class="brand-logo-link" title="<?= htmlspecialchars($site_name) ?>">
         <img alt="<?= htmlspecialchars($site_name) ?> Crest" class="brand-logo-img" src="<?= $site_logo ?>" width="40" height="40"/>
         <div class="brand-logo-text-group">
-          <span class="brand-logo-text">Sun Rise Sr. Sec. School</span>
+          <span class="brand-logo-text"><?= htmlspecialchars($site_name) ?></span>
           <span class="brand-logo-sub">Dobhi, Hisar • HBSC</span>
         </div>
       </a>

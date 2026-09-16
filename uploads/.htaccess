@@ -1,0 +1,28 @@
+# ------------------------------------------------------------------------------
+# Sun Rise School CMS - Uploads Directory Security Hardening
+# Prevents execution of scripts and limits MIME types
+# ------------------------------------------------------------------------------
+
+# Disable script execution engines
+Options -ExecCGI -Indexes
+RemoveHandler .php .phtml .php3 .php4 .php5 .php7 .phps .cgi .pl .py .jsp .asp .htm .shtml .sh
+
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|phps|cgi|pl|py|exe|sh|bat)$">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order deny,allow
+        Deny from all
+    </IfModule>
+</FilesMatch>
+
+# Only allow legitimate static image files
+<FilesMatch "\.(?i:jpg|jpeg|png|webp|gif|svg)$">
+    <IfModule mod_authz_core.c>
+        Require all granted
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Allow from all
+    </IfModule>
+</FilesMatch>

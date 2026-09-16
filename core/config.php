@@ -3,14 +3,17 @@
  * Sun Rise Sr. Sec. School, Dobhi - Configuration & Constants
  */
 
-// Site Information
-$site_name = 'Sun Rise Sr. Sec. School, Dobhi';
-$site_tagline = 'Nurturing Knowledge, Character & Academic Excellence | Affiliated to HBSC';
-$site_phone = '+91 98123 45678';
-$site_email = 'info@sunrisesrsec.edu';
-$site_info_email = 'admissions@sunrisesrsec.edu';
-$site_address = 'Sun Rise Sr. Sec. School, VPO Dobhi, Hisar, Haryana - 125001';
-$site_logo = 'assets/images/logo.svg';
+// Load CMS Dynamic Content Helper
+require_once __DIR__ . '/../includes/content_helper.php';
+
+// Site Information (Dynamic with fallback defaults)
+$site_name       = get_text('general', 'site_name', 'Sun Rise Sr. Sec. School, Dobhi');
+$site_tagline    = get_text('general', 'site_tagline', 'Nurturing Knowledge, Character & Academic Excellence | Affiliated to HBSC');
+$site_phone      = get_text('general', 'site_phone', '+91 98123 45678');
+$site_email      = get_text('general', 'site_email', 'info@sunrisesrsec.edu');
+$site_info_email = get_text('general', 'site_info_email', 'admissions@sunrisesrsec.edu');
+$site_address    = get_text('general', 'site_address', 'Sun Rise Sr. Sec. School, VPO Dobhi, Hisar, Haryana - 125001');
+$site_logo       = get_image('general', 'site_logo', 'assets/images/logo.svg');
 
 // Base path for original school images
 define('SCHOOL_IMG_DIR', 'assets/images/sunrise school image/');

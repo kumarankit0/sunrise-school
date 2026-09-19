@@ -120,10 +120,10 @@ $current_page = isset($current_page) ? $current_page : 'home';
             "body": ["Inter", "sans-serif"]
           },
           fontSize: {
-            "headline-lg": ["2.75rem", { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "700" }],
-            "headline-lg-mobile": ["1.875rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
-            "headline-md": ["1.875rem", { lineHeight: "1.25", fontWeight: "600" }],
-            "headline-sm": ["1.35rem", { lineHeight: "1.3", fontWeight: "600" }]
+            "headline-lg": ["1.5rem", { lineHeight: "1.3", letterSpacing: "-0.015em", fontWeight: "700" }],
+            "headline-lg-mobile": ["1.5rem", { lineHeight: "1.3", letterSpacing: "-0.015em", fontWeight: "700" }],
+            "headline-md": ["1.5rem", { lineHeight: "1.35", fontWeight: "600" }],
+            "headline-sm": ["1.5rem", { lineHeight: "1.35", fontWeight: "600" }]
           }
         }
       }

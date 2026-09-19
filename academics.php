@@ -10,8 +10,8 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full">
   <!-- Hero Banner -->
   <section class="relative w-full min-h-[80vh] lg:min-h-[85vh] py-20 lg:py-28 bg-primary text-on-primary px-6 lg:px-12 overflow-hidden flex items-center justify-center text-center">
-    <div class="absolute inset-0 opacity-65 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('academics', 'hero_banner', school_img('exhibition.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/75"></div>
+    <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('academics', 'hero_banner', school_img('exhibition.webp')) ?>')"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
     <div class="max-w-6xl w-full mx-auto relative z-10 flex flex-col items-center text-center gap-6">
       <span class="font-eyebrow text-eyebrow text-gold-light uppercase tracking-widest bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full font-bold shadow-md">
         <?= get_text('academics', 'hero_badge', 'Academic Excellence') ?>

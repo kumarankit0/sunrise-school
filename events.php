@@ -10,8 +10,8 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full">
   <!-- Hero Section with Background Banner -->
   <section class="relative w-full min-h-[80vh] lg:min-h-[85vh] py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary text-on-primary">
-    <div class="absolute inset-0 z-0 bg-cover bg-center opacity-65" style="background-image: url('<?= get_image('events', 'featured_banner', school_img('award_ceremony.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/75 z-10"></div>
+    <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('<?= get_image('events', 'featured_banner', school_img('award_ceremony.webp')) ?>')"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50 z-10"></div>
     <div class="relative z-20 max-w-6xl w-full mx-auto px-6 lg:px-12 flex flex-col items-center text-center gap-6">
       <div class="inline-flex items-center gap-2 bg-[#C9A24B] text-primary px-5 py-1.5 rounded-full text-eyebrow font-eyebrow uppercase tracking-widest font-bold shadow-md">
         <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>

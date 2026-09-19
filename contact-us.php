@@ -10,8 +10,8 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full">
   <!-- Hero Section -->
   <section class="relative w-full min-h-[80vh] lg:min-h-[85vh] py-20 lg:py-28 bg-primary px-6 lg:px-12 text-on-primary overflow-hidden flex items-center justify-center text-center">
-    <div class="absolute inset-0 opacity-65 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('contact', 'hero_banner', school_img('school3.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/75"></div>
+    <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('contact', 'hero_banner', school_img('school3.webp')) ?>')"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
     <div class="max-w-6xl w-full mx-auto relative z-10 flex flex-col items-center text-center gap-6">
       <span class="font-eyebrow text-eyebrow uppercase text-gold-light tracking-[0.2em] font-bold bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full shadow-md"><?= get_text('contact', 'hero_badge', 'Get in Touch') ?></span>
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg font-bold tracking-tight text-white w-full max-w-5xl leading-[1.15] drop-shadow-md"><?= get_text('contact', 'hero_title', 'Connect with Sun Rise School') ?></h1>

@@ -158,9 +158,9 @@ require_once __DIR__ . '/config.php';
         <span class="text-[11px] bg-[#C9A24B] text-primary px-2.5 py-0.5 rounded-full font-bold uppercase">100% Results</span>
       </div>
 
-      <!-- Image Container for toppers.webp -->
+      <!-- Image Container for pop-up image.webp -->
       <div class="toppers-img-container">
-        <img src="<?= school_img('toppers.webp') ?>" alt="Sun Rise Sr. Sec. School Board Toppers" class="toppers-modal-img" loading="eager"/>
+        <img src="assets/images/pop-up%20image.webp" alt="Sun Rise Sr. Sec. School 10th Class Board Result Toppers" class="toppers-modal-img" loading="eager"/>
       </div>
 
       <!-- Modal Footer -->

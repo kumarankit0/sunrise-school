@@ -10,8 +10,8 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full bg-surface">
   <!-- Hero Section with Background Banner -->
   <section class="relative w-full min-h-[80vh] lg:min-h-[85vh] py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary text-on-primary">
-    <div class="absolute inset-0 opacity-65 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('gallery', 'hero_banner', school_img('exhibition1.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/60 via-primary/40 to-primary/75"></div>
+    <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('gallery', 'hero_banner', school_img('exhibition1.webp')) ?>')"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
     <div class="max-w-6xl w-full mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center text-center gap-6">
       <span class="text-eyebrow text-gold-light uppercase font-bold tracking-widest bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full shadow-md"><?= get_text('gallery', 'hero_badge', 'Visual Chronicle') ?></span>
       <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg text-white tracking-tight leading-[1.15] w-full max-w-5xl drop-shadow-md"><?= get_text('gallery', 'hero_title', 'Life & Moments at Sun Rise School') ?></h1>
@@ -43,7 +43,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 1: Exhibitions -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="exhibitions" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img1', school_img('exhibition.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Exhibition</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Science &amp; Innovation</span>
@@ -60,7 +60,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 2: Events & Awards -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="events" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img2', school_img('award_ceremony.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Awards</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Felicitation</span>
@@ -77,7 +77,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 3: Sports & Fitness -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="sports" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img3', school_img('students_ground.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Sports</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Athletics</span>
@@ -94,7 +94,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 4: Yoga & Wellness -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="sports" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img4', school_img('yoga.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Wellness</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Morning Assembly</span>
@@ -111,7 +111,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 5: Toppers & Merit -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="toppers" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img5', school_img('toppers.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Board Toppers</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Merit Ranks</span>
@@ -128,7 +128,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 6: Shining Stars -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="toppers" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img6', school_img('shinning_stars.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Merit Board</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Star Performers</span>
@@ -145,7 +145,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 7: Campus Building -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="campus" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img7', school_img('school_home1.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Campus</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Architecture</span>
@@ -162,7 +162,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 8: Classroom Sessions -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="campus" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img8', school_img('children_sitting.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Classroom</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Student Focus</span>
@@ -179,7 +179,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 9: Science Lab Class -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="exhibitions" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= school_img('lab_class.webp') ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Science Lab</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Practical Learning</span>
@@ -196,7 +196,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 10: Faculty Group -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="faculty" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= school_img('all_staffmembers.webp') ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Staff Team</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Academic Mentors</span>
@@ -213,7 +213,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 11: Exhibition Project Display -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="exhibitions" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= school_img('exhibition3.webp') ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">Projects</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Student Innovation</span>
@@ -230,7 +230,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Item 12: Independence Day Celebration -->
       <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="events" onclick="openLightbox(this)">
         <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= school_img('IMG_20210815_093156~2.webp') ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-90"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
         <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase">National Day</div>
         <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
           <span class="text-eyebrow text-gold-light uppercase mb-1">Patriotism</span>

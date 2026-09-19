@@ -28,7 +28,7 @@ $hero_slides = [
       <div id="heroSliderIndicators" class="hero-slider-indicators"></div>
     </div>
     <!-- Soft Light Brand Gradient Overlay for vibrant bright campus photos & crisp text -->
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/45 via-primary/20 to-primary/55 z-10 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/45 z-10 pointer-events-none"></div>
     <div class="relative z-20 max-w-6xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center text-center gap-7">
       <div class="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md border border-[#C9A24B]/50 px-5 py-2 rounded-full text-gold-light text-eyebrow font-bold shadow-lg">
         <span class="material-symbols-outlined text-[18px] text-[#C9A24B]">military_tech</span>
@@ -136,7 +136,7 @@ $hero_slides = [
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
       <div class="lg:col-span-6 flex flex-col gap-5 sm:gap-6">
         <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'legacy_tagline', 'THE SUN RISE LEGACY') ?></div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline-lg font-bold text-primary tracking-tight leading-tight">
+        <h2 class="text-2xl font-headline-lg font-bold text-primary tracking-tight leading-snug">
           <?= get_text('home', 'legacy_heading', 'A Tradition of Holistic Education &amp; Outstanding Results') ?>
         </h2>
         <p class="text-sm sm:text-base lg:text-body-lg text-on-surface-variant font-body leading-relaxed">
@@ -235,7 +235,7 @@ $hero_slides = [
       <!-- Section Header (Centered, 100% Width, Mobile Responsive) -->
       <div class="w-full max-w-4xl mx-auto flex flex-col items-center text-center gap-3">
         <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'pillars_eyebrow', 'WHY CHOOSE SUN RISE') ?></div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline-lg font-bold text-primary tracking-tight leading-tight">
+        <h2 class="text-2xl font-headline-lg font-bold text-primary tracking-tight leading-snug">
           <?= get_text('home', 'pillars_heading', 'Pillars of Holistic Development') ?>
         </h2>
         <div class="w-14 h-1 bg-[#C9A24B] rounded-full my-1"></div>
@@ -290,33 +290,72 @@ $hero_slides = [
     </div>
   </section>
 
-  <!-- Message from the Principal / Management -->
-  <section class="w-full py-24 bg-surface relative">
+  <!-- Founder & Director's Message (Image Left, Content Right) -->
+  <section class="w-full py-16 lg:py-24 bg-surface relative">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
       <div class="lg:col-span-5 relative">
         <div class="absolute -top-4 -left-4 w-full h-full bg-[#C9A24B]/10 rounded-2xl"></div>
-        <div class="relative rounded-xl overflow-hidden shadow-xl aspect-[4/5] bg-cover bg-center" style="background-image: url('<?= get_image('home', 'leader_photo', school_img('speaker.webp')) ?>')"></div>
+        <div class="relative rounded-xl overflow-hidden shadow-xl aspect-[4/5] bg-cover bg-center" style="background-image: url('<?= get_image('home', 'director_photo', school_img('speaker.webp')) ?>')"></div>
       </div>
-      <div class="lg:col-span-7 flex flex-col gap-6 lg:pl-10">
-        <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'leader_tagline', 'LEADERSHIP MESSAGE') ?></div>
-        <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline-lg font-bold text-primary tracking-tight leading-tight">
-          <?= get_text('home', 'leader_heading', 'Guiding Young Minds Towards Bright Futures') ?>
+      <div class="lg:col-span-7 flex flex-col gap-5 lg:pl-10">
+        <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'director_tagline', "DIRECTOR'S MESSAGE") ?></div>
+        <h2 class="text-2xl font-headline-lg font-bold text-primary tracking-tight leading-snug">
+          <?= get_text('home', 'director_heading', "Empowering Dreams &amp; Shaping Tomorrow's Leaders") ?>
         </h2>
-        <blockquote class="text-title-editorial font-headline-md italic text-on-surface border-l-4 border-[#C9A24B] pl-6 py-2 my-4">
-          <?= get_text('home', 'leader_quote', '“Education at Sun Rise is not only about securing top marks, but about cultivating strong character, moral courage, and curiosity to achieve lasting success in life.”') ?>
+        <blockquote class="text-title-editorial font-headline-md italic text-on-surface border-l-4 border-[#C9A24B] pl-6 py-2 my-1">
+          <?= get_text('home', 'director_quote', '“Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society.”') ?>
         </blockquote>
-        <p class="text-body-md text-on-surface-variant font-body">
-          <?= get_text('home', 'leader_paragraph', 'At Sun Rise Sr. Sec. School, Dobhi, we provide an inspiring sanctuary of learning where every child is valued and encouraged to realize their maximum potential. Our devoted faculty strives tirelessly to ensure each student shines bright like the rising sun.') ?>
-        </p>
-        <div class="pt-4 flex items-center gap-4">
+        <div class="text-body-md text-on-surface-variant font-body flex flex-col gap-3 leading-relaxed">
+          <p>
+            <?= get_text('home', 'director_p1', 'It gives me immense pleasure to welcome you to Sun Rise Sr. Sec. School, Dobhi—a place where we believe that every child is not just a student, but a unique individual with dreams, abilities, and limitless potential. For us, education is much more than books, classrooms, and examinations. It is about shaping minds, nurturing hearts, building character, and preparing young individuals for life.') ?>
+          </p>
+          <p>
+            <?= get_text('home', 'director_p2', 'We strive for the holistic development of every student through quality academics, sports, creativity, cultural activities, discipline, and strong moral values. Along with knowledge, we seek to nurture kindness, confidence, responsibility, resilience, and respect for others. At Sun Rise Sr. Sec. School, we do not simply prepare children for tomorrow; we nurture the individuals who will shape tomorrow.') ?>
+          </p>
+        </div>
+        <div class="pt-3 flex items-center gap-4 border-t border-[#E5E2DA]">
           <div>
-            <div class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'leader_name', 'School Leadership &amp; Principal') ?></div>
-            <div class="text-body-sm text-on-surface-variant"><?= get_text('home', 'leader_title', 'Sun Rise Sr. Sec. School, Dobhi') ?></div>
+            <div class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'director_name', 'Mr. Bhader Singh Swami') ?></div>
+            <div class="text-body-sm text-on-surface-variant font-medium"><?= get_text('home', 'director_title', 'Founder &amp; Director, Sun Rise Sr. Sec. School, Dobhi') ?></div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Principal's Message (Content Left, Image Right - Inverted Layout) -->
+  <section class="w-full py-16 lg:py-24 bg-surface-container-low relative border-t border-border-warm/60">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <!-- Left Content -->
+      <div class="lg:col-span-7 flex flex-col gap-5 lg:pr-10 order-2 lg:order-1">
+        <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'principal_tagline', "PRINCIPAL'S MESSAGE") ?></div>
+        <h2 class="text-2xl font-headline-lg font-bold text-primary tracking-tight leading-snug">
+          <?= get_text('home', 'principal_heading', 'Guiding Young Minds Towards Academic Excellence &amp; Character') ?>
+        </h2>
+        <blockquote class="text-title-editorial font-headline-md italic text-on-surface border-l-4 border-[#C9A24B] pl-6 py-2 my-1">
+          <?= get_text('home', 'principal_quote', '“True education is the illumination of intellect grounded in discipline, curiosity, and compassionate leadership.”') ?>
+        </blockquote>
+        <div class="text-body-md text-on-surface-variant font-body flex flex-col gap-3 leading-relaxed">
+          <p>
+            <?= get_text('home', 'principal_p1', 'Welcome to Sun Rise Sr. Sec. School, Dobhi. As Principal, it is my privilege to lead an institution where rigorous scholarship seamlessly blends with moral integrity, creative exploration, and personal mentorship. Our dedicated faculty works with unwavering commitment to unlock the boundless potential within each student.') ?>
+          </p>
+          <p>
+            <?= get_text('home', 'principal_p2', 'Through state-of-the-art science and computer laboratories, expansive sports infrastructure, and dedicated HBSE curriculum delivery, we empower our learners to achieve exemplary distinctions in board examinations and life beyond. Together with our supportive parents, we nurture young minds to lead with knowledge, courage, and humble hearts.') ?>
+          </p>
+        </div>
+        <div class="pt-3 flex items-center gap-4 border-t border-[#E5E2DA]">
+          <div>
+            <div class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'principal_name', 'Mr. Rajbir Singh') ?></div>
+            <div class="text-body-sm text-on-surface-variant font-medium"><?= get_text('home', 'principal_title', 'Principal, Sun Rise Sr. Sec. School, Dobhi') ?></div>
+          </div>
+        </div>
+      </div>
+      <!-- Right Image -->
+      <div class="lg:col-span-5 relative order-1 lg:order-2">
+        <div class="absolute -top-4 -right-4 w-full h-full bg-[#C9A24B]/10 rounded-2xl"></div>
+        <div class="relative rounded-xl overflow-hidden shadow-xl aspect-[4/5] bg-cover bg-center" style="background-image: url('<?= get_image('home', 'principal_photo', school_img('all_staffmembers.webp')) ?>')"></div>
+      </div>
+    </div>
   </section>
 
   <!-- Upcoming Events & News Section -->
@@ -325,7 +364,7 @@ $hero_slides = [
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'events_eyebrow', 'NOTICES &amp; HAPPENINGS') ?></div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline-lg font-bold text-primary tracking-tight leading-tight mt-2"><?= get_text('home', 'events_heading', 'School Events &amp; News') ?></h2>
+          <h2 class="text-2xl font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('home', 'events_heading', 'School Events &amp; News') ?></h2>
         </div>
         <a class="inline-flex items-center gap-2 text-label-md text-primary font-bold hover:text-[#C9A24B] transition-colors" href="events.php">
           View All Events <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -387,7 +426,7 @@ $hero_slides = [
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'gallery_eyebrow', 'CAMPUS GLIMPSES') ?></div>
-          <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline-lg font-bold text-primary tracking-tight leading-tight mt-2"><?= get_text('home', 'gallery_heading', 'Life at Sun Rise Sr. Sec. School') ?></h2>
+          <h2 class="text-2xl font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('home', 'gallery_heading', 'Life at Sun Rise Sr. Sec. School') ?></h2>
         </div>
         <a class="inline-flex items-center gap-2 text-label-md text-primary font-bold hover:text-[#C9A24B] transition-colors" href="gallery.php">
           View Full Gallery <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
@@ -478,7 +517,7 @@ $hero_slides = [
     <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('<?= get_image('home', 'cta_banner', school_img('school_home2.webp')) ?>')"></div>
     <div class="relative z-10 max-w-5xl mx-auto px-6 lg:px-12 text-center flex flex-col items-center gap-8">
       <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'cta_badge', 'ADMISSIONS 2026-27') ?></div>
-      <h2 class="text-3xl sm:text-4xl md:text-5xl font-headline-lg font-bold text-white tracking-tight leading-tight">
+      <h2 class="text-2xl font-headline-lg font-bold text-white tracking-tight leading-snug">
         <?= get_text('home', 'cta_heading', 'Give Your Child the <span class="text-[#C9A24B] italic">Sun Rise Advantage</span>') ?>
       </h2>
       <p class="text-body-lg text-surface-cream max-w-2xl font-body">

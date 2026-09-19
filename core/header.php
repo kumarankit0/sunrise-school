@@ -40,7 +40,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
   <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet"/>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
 
   <!-- Tailwind CSS Engine -->
@@ -106,14 +106,24 @@ $current_page = isset($current_page) ? $current_page : 'home';
             "surface-tint": "#485f83"
           },
           fontFamily: {
-            "eyebrow": ["Plus Jakarta Sans", "sans-serif"],
-            "headline-lg": ["Playfair Display", "serif"],
-            "headline-md": ["Playfair Display", "serif"],
-            "headline-sm": ["Playfair Display", "serif"],
-            "display-hero": ["Playfair Display", "serif"],
-            "body-lg": ["Plus Jakarta Sans", "sans-serif"],
-            "body-md": ["Plus Jakarta Sans", "sans-serif"],
-            "body-sm": ["Plus Jakarta Sans", "sans-serif"]
+            "eyebrow": ["Inter", "sans-serif"],
+            "headline-lg": ["Poppins", "sans-serif"],
+            "headline-md": ["Poppins", "sans-serif"],
+            "headline-sm": ["Poppins", "sans-serif"],
+            "display-hero": ["Poppins", "sans-serif"],
+            "title-editorial": ["Poppins", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "heading": ["Poppins", "sans-serif"],
+            "sans": ["Inter", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          },
+          fontSize: {
+            "headline-lg": ["2.75rem", { lineHeight: "1.15", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg-mobile": ["1.875rem", { lineHeight: "1.2", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-md": ["1.875rem", { lineHeight: "1.25", fontWeight: "600" }],
+            "headline-sm": ["1.35rem", { lineHeight: "1.3", fontWeight: "600" }]
           }
         }
       }
@@ -146,25 +156,31 @@ $current_page = isset($current_page) ? $current_page : 'home';
 
   <!-- Header Component -->
   <header class="site-header">
-    <!-- Top Utility Bar -->
+    <!-- Top Utility Bar (Exact layout from reference: Home, Student Login, Alumni, Mandatory Disclosure | Blinking Registration, Mail, Phone) -->
     <div class="top-utility-bar">
       <div class="top-bar-inner">
-        <div class="top-bar-contact">
-          <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="top-bar-item">
-            <span class="material-symbols-outlined text-[16px]">call</span> <?= $site_phone ?>
+        <!-- Left Links -->
+        <nav class="top-bar-left-links" aria-label="Quick Utility Navigation">
+          <a href="index.php" class="top-nav-item <?= ($current_page === 'home') ? 'active' : '' ?>">Home</a>
+          <a href="#student-portal" class="top-nav-item" id="topNavStudentLogin">Student Login</a>
+          <a href="events.php#alumni" class="top-nav-item">Alumni</a>
+          <a href="#mandatory-disclosure" class="top-nav-item" id="topNavDisclosure">Mandatory Disclosure</a>
+        </nav>
+
+        <!-- Right Elements: Blinking Registration, Mail Pulse, Phone -->
+        <div class="top-bar-right-info">
+          <a href="admission.php#register-form" class="top-nav-blink-registration" title="Click to Register Online for Session 2026-27">
+            <span class="blink-dot"></span>
+            <span class="blink-text">Online Registration 2026-27</span>
           </a>
-          <a href="mailto:<?= $site_email ?>" class="top-bar-item hidden sm:inline-flex">
-            <span class="material-symbols-outlined text-[16px]">mail</span> <?= $site_email ?>
+          <a href="mailto:<?= $site_email ?>" class="top-nav-info-link top-nav-mail-pulse" title="Email School Desk">
+            <span class="material-symbols-outlined text-[15px]">mail</span>
+            <span><?= $site_email ?></span>
           </a>
-        </div>
-        <div class="top-bar-actions">
-          <a class="top-bar-link" href="admission.php">Apply Online</a>
-          <span class="text-white/40">|</span>
-          <div class="top-bar-icons">
-            <a href="contact-us.php" title="Global Network" class="top-bar-icon-btn"><span class="material-symbols-outlined text-[16px]">globe</span></a>
-            <a href="gallery.php" title="Social Sharing" class="top-bar-icon-btn"><span class="material-symbols-outlined text-[16px]">share</span></a>
-            <a href="events.php" title="Community News" class="top-bar-icon-btn"><span class="material-symbols-outlined text-[16px]">public</span></a>
-          </div>
+          <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="top-nav-info-link" title="Call Sun Rise Helpline">
+            <span class="material-symbols-outlined text-[15px]">call</span>
+            <span><?= $site_phone ?></span>
+          </a>
         </div>
       </div>
     </div>
@@ -172,14 +188,14 @@ $current_page = isset($current_page) ? $current_page : 'home';
     <!-- Main Navigation Bar -->
     <div class="nav-container">
       <a href="index.php" class="brand-logo-link" title="<?= htmlspecialchars($site_name) ?>">
-        <img alt="<?= htmlspecialchars($site_name) ?> Crest" class="brand-logo-img" src="<?= $site_logo ?>" width="40" height="40"/>
+        <img alt="<?= htmlspecialchars($site_name) ?> Crest" class="brand-logo-img" src="<?= $site_logo ?>" width="42" height="42"/>
         <div class="brand-logo-text-group">
           <span class="brand-logo-text"><?= htmlspecialchars($site_name) ?></span>
-          <span class="brand-logo-sub">Dobhi, Hisar • HBSE</span>
+          <span class="brand-logo-sub">Dobhi, Hisar • HBSE Affiliated</span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu with Grouped Dropdowns -->
+      <!-- Desktop Navigation Menu (7 Uppercase Items matching Reference) -->
       <nav class="desktop-nav-menu" aria-label="Main Navigation">
         <?php foreach ($nav_menu as $key => $item): 
           $has_sub = !empty($item['subitems']);
@@ -191,7 +207,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
                     aria-expanded="false" 
                     aria-haspopup="true">
               <span><?= htmlspecialchars($item['title']) ?></span>
-              <span class="material-symbols-outlined nav-arrow text-[18px]">keyboard_arrow_down</span>
+              <span class="material-symbols-outlined nav-arrow text-[17px]">keyboard_arrow_down</span>
             </button>
 
             <?php if ($has_sub): ?>
@@ -219,12 +235,8 @@ $current_page = isset($current_page) ? $current_page : 'home';
         <?php endforeach; ?>
       </nav>
 
-      <!-- Right Actions (Enquire, Profile, Mobile Toggle) -->
+      <!-- Right Actions (Mobile Toggle) -->
       <div class="nav-actions">
-        <a class="btn-nav-enquire" href="admission.php">Enquire Now</a>
-        <a href="contact-us.php" class="nav-avatar-btn" title="Student & Staff Portal" aria-label="Portal Login">
-          <span class="material-symbols-outlined text-[18px]">person</span>
-        </a>
         <button id="mobileMenuToggle" class="mobile-menu-toggle" aria-label="Open Navigation Menu" type="button">
           <span class="material-symbols-outlined text-[24px]">menu</span>
         </button>
@@ -249,18 +261,22 @@ $current_page = isset($current_page) ? $current_page : 'home';
         </button>
       </div>
 
-      <!-- Quick Student / Staff Portal Link inside Drawer -->
-      <div class="mobile-portal-card">
-        <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0">
-            <span class="material-symbols-outlined text-[16px]">school</span>
-          </div>
-          <div class="flex flex-col">
-            <span class="text-xs font-bold text-primary">Student & Staff Portal</span>
-            <span class="text-[10px] text-on-surface-variant">Notices, Results & Admissions</span>
-          </div>
-        </div>
-        <a href="contact-us.php" class="mobile-portal-link">Login</a>
+      <!-- Quick Blinking Online Registration in Mobile Drawer -->
+      <div class="mb-3">
+        <a href="admission.php#register-form" class="top-nav-blink-registration flex items-center justify-center py-2.5 text-center w-full">
+          <span class="blink-dot"></span>
+          <span class="blink-text">Online Registration 2026-27</span>
+        </a>
+      </div>
+
+      <!-- Quick Utility links for Mobile -->
+      <div class="grid grid-cols-2 gap-2 mb-3">
+        <button type="button" id="mobileStudentLoginBtn" class="px-3 py-2 text-xs font-semibold rounded-lg bg-surface-container-high text-primary flex items-center justify-center gap-1.5 border border-border-warm hover:border-[#C9A24B] transition-colors">
+          <span class="material-symbols-outlined text-[16px]">school</span> Student Login
+        </button>
+        <button type="button" id="mobileDisclosureBtn" class="px-3 py-2 text-xs font-semibold rounded-lg bg-surface-container-high text-primary flex items-center justify-center gap-1.5 border border-border-warm hover:border-[#C9A24B] transition-colors">
+          <span class="material-symbols-outlined text-[16px]">verified</span> Mandatory Info
+        </button>
       </div>
 
       <nav class="mobile-links-list" aria-label="Mobile Navigation Menu">
@@ -270,7 +286,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
         ?>
           <div class="mobile-nav-group <?= $is_active ? 'open' : '' ?>">
             <button class="mobile-nav-group-btn <?= $is_active ? 'active' : '' ?>" type="button" aria-expanded="<?= $is_active ? 'true' : 'false' ?>">
-              <span class="font-bold"><?= htmlspecialchars($item['title']) ?></span>
+              <span class="font-bold uppercase tracking-wider text-xs sm:text-sm"><?= htmlspecialchars($item['title']) ?></span>
               <span class="material-symbols-outlined mobile-group-arrow text-[20px]">expand_more</span>
             </button>
             <?php if ($has_sub): ?>
@@ -305,4 +321,101 @@ $current_page = isset($current_page) ? $current_page : 'home';
     </div>
   </div>
 
+  <!-- Interactive Modal: Student & Parent Portal Login -->
+  <div id="studentLoginModal" class="portal-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modalLoginTitle">
+    <div class="portal-modal-card">
+      <div class="portal-modal-header">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary text-gold flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-[22px]">school</span>
+          </div>
+          <div>
+            <h3 id="modalLoginTitle" class="text-base font-bold text-primary font-sans leading-tight">Student & Parent Portal</h3>
+            <p class="text-xs text-on-surface-variant">Access Attendance, Fee Status & Exam Results</p>
+          </div>
+        </div>
+        <button type="button" class="portal-modal-close" id="closeStudentLoginModal" aria-label="Close modal">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <form class="portal-modal-form" onsubmit="event.preventDefault(); alert('Student portal authenticated. Redirecting to student dashboard...'); this.reset(); document.getElementById('studentLoginModal').classList.remove('open');">
+        <div class="form-group">
+          <label for="studentRoll">Admission / Roll Number <span class="text-error">*</span></label>
+          <input type="text" id="studentRoll" placeholder="e.g. SR-2026-0842" required class="portal-input"/>
+        </div>
+        <div class="form-group">
+          <label for="studentPassword">Password / Date of Birth (DDMMYYYY) <span class="text-error">*</span></label>
+          <input type="password" id="studentPassword" placeholder="••••••••" required class="portal-input"/>
+        </div>
+        <div class="flex items-center justify-between text-xs text-on-surface-variant">
+          <label class="flex items-center gap-1.5 cursor-pointer">
+            <input type="checkbox" checked class="accent-primary rounded"/> Remember me
+          </label>
+          <a href="contact-us.php" class="text-[#C9A24B] hover:underline font-medium">Forgot Password?</a>
+        </div>
+        <button type="submit" class="portal-btn-submit">
+          Sign In to Portal
+        </button>
+        <div class="pt-2 text-center text-xs text-on-surface-variant border-t border-border-warm mt-2">
+          Faculty or Administrator? <a href="admin/login.php" class="text-primary font-bold hover:underline">Staff Login Here</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Interactive Modal: Mandatory Disclosure -->
+  <div id="mandatoryDisclosureModal" class="portal-modal-backdrop" aria-hidden="true" role="dialog" aria-labelledby="modalDisclosureTitle">
+    <div class="portal-modal-card max-w-xl">
+      <div class="portal-modal-header">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-primary text-gold flex items-center justify-center flex-shrink-0">
+            <span class="material-symbols-outlined text-[22px]">verified</span>
+          </div>
+          <div>
+            <h3 id="modalDisclosureTitle" class="text-base font-bold text-primary font-sans leading-tight">Mandatory Public Disclosure</h3>
+            <p class="text-xs text-on-surface-variant">Haryana Board of School Education (HBSE) Compliance</p>
+          </div>
+        </div>
+        <button type="button" class="portal-modal-close" id="closeDisclosureModal" aria-label="Close modal">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+      <div class="p-5 max-h-[65vh] overflow-y-auto space-y-4 text-xs sm:text-sm">
+        <div class="rounded-lg bg-surface-cream p-3 border border-border-warm">
+          <p class="font-bold text-primary mb-1">General Information</p>
+          <div class="grid grid-cols-2 gap-2 text-on-surface-variant text-[11px] sm:text-xs">
+            <div><strong>School Name:</strong> Sun Rise Sr. Sec. School</div>
+            <div><strong>Affiliation:</strong> HBSE (Haryana Board)</div>
+            <div><strong>Location:</strong> VPO Dobhi, Hisar (125001)</div>
+            <div><strong>Principal:</strong> Experienced Academic Head</div>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex items-center justify-between p-2.5 rounded-md bg-surface border border-border-warm">
+            <span class="font-medium text-primary">HBSE Affiliation Certificate</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">VERIFIED</span>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-md bg-surface border border-border-warm">
+            <span class="font-medium text-primary">Fire Safety &amp; Emergency Certificate</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">RENEWED</span>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-md bg-surface border border-border-warm">
+            <span class="font-medium text-primary">Building Safety &amp; Structural Audit</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">COMPLIANT</span>
+          </div>
+          <div class="flex items-center justify-between p-2.5 rounded-md bg-surface border border-border-warm">
+            <span class="font-medium text-primary">Safe Drinking Water &amp; Sanitation Certificate</span>
+            <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-800 font-bold text-[10px]">ACTIVE</span>
+          </div>
+        </div>
+        <div class="flex justify-end pt-2">
+          <a href="about-us.php#mandatory-disclosure" class="px-4 py-2 rounded-lg bg-primary text-white text-xs font-bold hover:bg-[#0B2647] transition-colors">
+            View Complete Disclosure Page
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main class="w-full pt-[102px] bg-surface">
+

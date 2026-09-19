@@ -88,9 +88,9 @@ $pages_config = [
                 ]
             ],
             [
-                'title' => 'Section 2: The Sun Rise Legacy & Key Statistics',
+                'title' => 'Section 2: The Sun Rise Legacy & Key Indicators',
                 'icon'  => 'history_edu',
-                'desc'  => 'Institutional overview, mission statement, and 5 highlight stat counters.',
+                'desc'  => 'Institutional overview, mission statement, and 2 highlight pass & ratio stats.',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -131,30 +131,181 @@ $pages_config = [
                         'type' => 'text',
                         'default' => '1:15',
                         'help' => 'Class ratio of teachers to students.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 2B: Live Event Tracker & Upcoming Notices',
+                'icon'  => 'campaign',
+                'desc'  => 'Manage live scrolling events ticker on homepage. Up to 8 events with titles, optional red [NEW] badges, and click links.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'live_tracker_gold',
+                        'label' => 'Tracker Headline Word 1 (Gold)',
+                        'type' => 'text',
+                        'default' => 'UPCOMING',
+                        'help' => 'First word of the tracker header, styled in Gold (e.g. UPCOMING).'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'stat_years_service',
-                        'label' => 'Stat 3: Years of Service',
+                        'key' => 'live_tracker_white',
+                        'label' => 'Tracker Headline Word 2 (White)',
                         'type' => 'text',
-                        'default' => '20+',
-                        'help' => 'Number of years school has been operating.'
+                        'default' => 'EVENTS',
+                        'help' => 'Second word of the tracker header, styled in White (e.g. EVENTS).'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'stat_enrolled_scholars',
-                        'label' => 'Stat 4: Enrolled Scholars',
+                        'key' => 'live_tracker_badge',
+                        'label' => 'Tracker Live Status Badge',
                         'type' => 'text',
-                        'default' => '1,500+',
-                        'help' => 'Total enrolled student count.'
+                        'default' => 'LIVE TRACKER',
+                        'help' => 'Small uppercase pill badge with animated green pulse dot.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'stat_dedicated_staff',
-                        'label' => 'Stat 5: Dedicated Staff',
+                        'key' => 'event_1_title',
+                        'label' => 'Event 1: Title / Notice',
                         'type' => 'text',
-                        'default' => '50+',
-                        'help' => 'Total faculty and staff members.'
+                        'default' => 'NORTH ZONE RELIANCE FOOTBALL CHAMPIONSHIP',
+                        'help' => 'Notice title displayed next to bullet (▪).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_1_badge',
+                        'label' => 'Event 1: Badge (e.g. NEW / HOT or leave blank)',
+                        'type' => 'text',
+                        'default' => '',
+                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_1_link',
+                        'label' => 'Event 1: Target Link URL',
+                        'type' => 'text',
+                        'default' => 'events.php',
+                        'help' => 'Page to open when clicked (e.g. events.php, admission.php).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_2_title',
+                        'label' => 'Event 2: Title / Notice',
+                        'type' => 'text',
+                        'default' => 'Admission Open for New Session 2026-27',
+                        'help' => 'Notice title displayed next to bullet (▪).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_2_badge',
+                        'label' => 'Event 2: Badge (e.g. NEW / HOT or leave blank)',
+                        'type' => 'text',
+                        'default' => 'NEW',
+                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_2_link',
+                        'label' => 'Event 2: Target Link URL',
+                        'type' => 'text',
+                        'default' => 'admission.php',
+                        'help' => 'Page to open when clicked.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_3_title',
+                        'label' => 'Event 3: Title / Notice',
+                        'type' => 'text',
+                        'default' => 'Annual Sports Meet & Athletic Championship Trials',
+                        'help' => 'Notice title displayed next to bullet (▪).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_3_badge',
+                        'label' => 'Event 3: Badge (e.g. NEW / HOT or leave blank)',
+                        'type' => 'text',
+                        'default' => 'NEW',
+                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_3_link',
+                        'label' => 'Event 3: Target Link URL',
+                        'type' => 'text',
+                        'default' => 'campus.php#sports',
+                        'help' => 'Page to open when clicked.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_4_title',
+                        'label' => 'Event 4: Title / Notice',
+                        'type' => 'text',
+                        'default' => 'State Level Science Exhibition & Robotic Project Display',
+                        'help' => 'Notice title displayed next to bullet (▪).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_4_badge',
+                        'label' => 'Event 4: Badge (e.g. NEW / HOT or leave blank)',
+                        'type' => 'text',
+                        'default' => '',
+                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_4_link',
+                        'label' => 'Event 4: Target Link URL',
+                        'type' => 'text',
+                        'default' => 'academics.php',
+                        'help' => 'Page to open when clicked.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_5_title',
+                        'label' => 'Event 5: Title / Notice',
+                        'type' => 'text',
+                        'default' => 'Scholarship Test for Meritorious Students (Classes 6th-12th)',
+                        'help' => 'Notice title displayed next to bullet (▪).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_5_badge',
+                        'label' => 'Event 5: Badge (e.g. NEW / HOT or leave blank)',
+                        'type' => 'text',
+                        'default' => 'NEW',
+                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_5_link',
+                        'label' => 'Event 5: Target Link URL',
+                        'type' => 'text',
+                        'default' => 'admission.php',
+                        'help' => 'Page to open when clicked.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_6_title',
+                        'label' => 'Event 6: Title / Notice',
+                        'type' => 'text',
+                        'default' => 'CBSE/HBSE Board Exam Preparation Workshop & Mock Tests',
+                        'help' => 'Notice title displayed next to bullet (▪).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_6_badge',
+                        'label' => 'Event 6: Badge (e.g. NEW / HOT or leave blank)',
+                        'type' => 'text',
+                        'default' => '',
+                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event_6_link',
+                        'label' => 'Event 6: Target Link URL',
+                        'type' => 'text',
+                        'default' => 'academics.php#academic-calendar',
+                        'help' => 'Page to open when clicked.'
                     ]
                 ]
             ],
@@ -2889,7 +3040,7 @@ $current_page_data = $pages_config[$active_tab];
     <!-- Google Fonts & Material Symbols Icons -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
     
     <!-- Tailwind CSS Engine -->
@@ -2906,8 +3057,8 @@ $current_page_data = $pages_config[$active_tab];
                         'surface-cream': '#F3EFEA'
                     },
                     fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-                        serif: ['"Playfair Display"', 'serif']
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Poppins"', 'sans-serif']
                     }
                 }
             }

@@ -6,9 +6,91 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initNavDropdowns();
+  initHeaderModals();
   initLightbox();
   initToppersModal();
 });
+
+/* --------------------------------------------------------------------------
+   Header Modals: Student Login & Mandatory Disclosure
+   -------------------------------------------------------------------------- */
+function initHeaderModals() {
+  const loginModal = document.getElementById('studentLoginModal');
+  const disclosureModal = document.getElementById('mandatoryDisclosureModal');
+
+  const openLoginBtns = [
+    document.getElementById('topNavStudentLogin'),
+    document.getElementById('mobileStudentLoginBtn'),
+    document.getElementById('footerStudentLoginBtn')
+  ];
+
+  const openDisclosureBtns = [
+    document.getElementById('topNavDisclosure'),
+    document.getElementById('mobileDisclosureBtn'),
+    document.getElementById('footerDisclosureBtn')
+  ];
+
+  const closeLoginBtn = document.getElementById('closeStudentLoginModal');
+  const closeDisclosureBtn = document.getElementById('closeDisclosureModal');
+
+  function openModal(modal) {
+    if (!modal) return;
+    modal.classList.add('open');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove('open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openLoginBtns.forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const drawer = document.getElementById('mobileNavDrawer');
+        const overlay = document.getElementById('mobileNavOverlay');
+        if (drawer) drawer.classList.remove('open');
+        if (overlay) overlay.classList.remove('open');
+        openModal(loginModal);
+      });
+    }
+  });
+
+  openDisclosureBtns.forEach(btn => {
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const drawer = document.getElementById('mobileNavDrawer');
+        const overlay = document.getElementById('mobileNavOverlay');
+        if (drawer) drawer.classList.remove('open');
+        if (overlay) overlay.classList.remove('open');
+        openModal(disclosureModal);
+      });
+    }
+  });
+
+  if (closeLoginBtn) closeLoginBtn.addEventListener('click', () => closeModal(loginModal));
+  if (closeDisclosureBtn) closeDisclosureBtn.addEventListener('click', () => closeModal(disclosureModal));
+
+  [loginModal, disclosureModal].forEach(modal => {
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal(modal);
+      });
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeModal(loginModal);
+      closeModal(disclosureModal);
+    }
+  });
+}
 
 /* --------------------------------------------------------------------------
    Desktop & Touch Navigation Dropdowns

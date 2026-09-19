@@ -171,3 +171,70 @@ function get_image_alt($page_key, $image_key, $default = '') {
 
     return htmlspecialchars($default, ENT_QUOTES, 'UTF-8');
 }
+
+/**
+ * Fetches active events for the homepage Live Event Tracker.
+ * Reads up to 8 configurable slots from `site_content` table
+ * with seamless fallback to verified defaults.
+ *
+ * @return array
+ */
+function get_live_tracker_events() {
+    $defaults = [
+        [
+            'title' => 'NORTH ZONE RELIANCE FOOTBALL CHAMPIONSHIP',
+            'badge' => '',
+            'link'  => 'events.php'
+        ],
+        [
+            'title' => 'Admission Open for New Session 2026-27',
+            'badge' => 'NEW',
+            'link'  => 'admission.php'
+        ],
+        [
+            'title' => 'Annual Sports Meet & Athletic Championship Trials',
+            'badge' => 'NEW',
+            'link'  => 'campus.php#sports'
+        ],
+        [
+            'title' => 'State Level Science Exhibition & Robotic Project Display',
+            'badge' => '',
+            'link'  => 'academics.php'
+        ],
+        [
+            'title' => 'Scholarship Test for Meritorious Students (Classes 6th-12th)',
+            'badge' => 'NEW',
+            'link'  => 'admission.php'
+        ],
+        [
+            'title' => 'CBSE/HBSE Board Exam Preparation Workshop & Mock Tests',
+            'badge' => '',
+            'link'  => 'academics.php#academic-calendar'
+        ]
+    ];
+
+    $events = [];
+
+    // Check up to 8 configurable event slots
+    for ($i = 1; $i <= 8; $i++) {
+        $default_item = $defaults[$i - 1] ?? null;
+        $title_def = $default_item ? $default_item['title'] : '';
+        $badge_def = $default_item ? $default_item['badge'] : '';
+        $link_def  = $default_item ? $default_item['link']  : 'events.php';
+
+        $title = get_text('home', "event_{$i}_title", $title_def);
+        $badge = get_text('home', "event_{$i}_badge", $badge_def);
+        $link  = get_text('home', "event_{$i}_link",  $link_def);
+
+        $clean_title = trim(strip_tags($title));
+        if (!empty($clean_title)) {
+            $events[] = [
+                'title' => $clean_title,
+                'badge' => trim(strip_tags($badge)),
+                'link'  => trim($link) ?: 'events.php'
+            ];
+        }
+    }
+
+    return !empty($events) ? $events : $defaults;
+}

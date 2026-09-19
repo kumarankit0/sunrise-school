@@ -26,77 +26,191 @@ function school_img($filename) {
     return 'assets/images/sunrise%20school%20image/' . rawurlencode($filename);
 }
 
-// Navigation Menu Items with Grouped Dropdowns
+// Navigation Menu Items matching Reference Header (ABOUT US, ADMISSIONS, ACADEMICS, ACTIVITIES, BOARDING AND CAMPUS, CAREER, CONNECT)
 $nav_menu = [
-    'home' => [
-        'title' => 'Home',
-        'url' => 'index.php',
+    'about-us' => [
+        'title' => 'ABOUT US',
+        'url' => 'about-us.php',
         'subitems' => [
-            'home' => [
-                'title' => 'Home Page',
-                'url' => 'index.php',
-                'icon' => 'home',
-                'desc' => 'Welcome & School Overview'
-            ],
             'about-us' => [
-                'title' => 'About Us',
+                'title' => 'About Sun Rise',
                 'url' => 'about-us.php',
-                'icon' => 'info',
-                'desc' => 'Vision, Mission & Leadership'
+                'icon' => 'school',
+                'desc' => 'Our Vision, Mission & Ethos'
             ],
-            'contact' => [
-                'title' => 'Contact Us',
-                'url' => 'contact-us.php',
-                'icon' => 'contact_support',
-                'desc' => 'Campus Location & Helpdesk'
+            'leadership' => [
+                'title' => 'Leadership & Management',
+                'url' => 'about-us.php#leadership',
+                'icon' => 'workspace_premium',
+                'desc' => 'Message from Chairman & Principal'
+            ],
+            'disclosure' => [
+                'title' => 'Mandatory Disclosure',
+                'url' => 'about-us.php#mandatory-disclosure',
+                'icon' => 'verified_user',
+                'desc' => 'Affiliation, Society & Compliance'
+            ],
+            'faculty-staff' => [
+                'title' => 'Faculty & Mentors',
+                'url' => 'faculty.php',
+                'icon' => 'groups',
+                'desc' => 'Our Experienced Teaching Staff'
+            ]
+        ]
+    ],
+    'admissions' => [
+        'title' => 'ADMISSIONS',
+        'url' => 'admission.php',
+        'subitems' => [
+            'admission-proc' => [
+                'title' => 'Admission Procedure',
+                'url' => 'admission.php',
+                'icon' => 'assignment_turned_in',
+                'desc' => 'Guidelines & Criteria (Nursery to 12th)'
+            ],
+            'online-apply' => [
+                'title' => 'Online Registration 2026-27',
+                'url' => 'admission.php#register-form',
+                'icon' => 'how_to_reg',
+                'desc' => 'Apply Online for Direct Admission'
+            ],
+            'fee-struct' => [
+                'title' => 'Fee Structure',
+                'url' => 'admission.php#fee-structure',
+                'icon' => 'payments',
+                'desc' => 'Transparent & Affordable Fees'
+            ],
+            'admission-faq' => [
+                'title' => 'Admission FAQs',
+                'url' => 'admission.php#faqs',
+                'icon' => 'quiz',
+                'desc' => 'Frequently Asked Questions'
             ]
         ]
     ],
     'academics' => [
-        'title' => 'Academics',
+        'title' => 'ACADEMICS',
         'url' => 'academics.php',
         'subitems' => [
-            'academics' => [
-                'title' => 'Academics Overview',
+            'curriculum' => [
+                'title' => 'Curriculum & Methodology',
                 'url' => 'academics.php',
-                'icon' => 'school',
-                'desc' => 'HBSE Curriculum & Streams'
+                'icon' => 'menu_book',
+                'desc' => 'HBSE Board Standardized Learning'
             ],
-            'admissions' => [
-                'title' => 'Admissions 2026-27',
-                'url' => 'admission.php',
-                'icon' => 'how_to_reg',
-                'desc' => 'Application & Fee Structure'
+            'streams' => [
+                'title' => 'Senior Secondary Streams',
+                'url' => 'academics.php#streams',
+                'icon' => 'science',
+                'desc' => 'Medical, Non-Med, Commerce & Arts'
             ],
-            'faculty-staff' => [
-                'title' => 'Faculty & Staff',
-                'url' => 'faculty.php',
-                'icon' => 'groups',
-                'desc' => 'Our Teachers & Educators'
+            'calendar' => [
+                'title' => 'Examinations & Calendar',
+                'url' => 'academics.php#academic-calendar',
+                'icon' => 'calendar_month',
+                'desc' => 'Evaluation Schedule & Tests'
+            ],
+            'toppers' => [
+                'title' => 'Academic Achievers & Toppers',
+                'url' => 'academics.php#toppers',
+                'icon' => 'military_tech',
+                'desc' => 'Our Pride & Board Merit Holders'
             ]
         ]
     ],
-    'events' => [
-        'title' => 'Events',
+    'activities' => [
+        'title' => 'ACTIVITIES',
         'url' => 'events.php',
         'subitems' => [
             'events-news' => [
-                'title' => 'Events & News',
+                'title' => 'Events & Annual Functions',
                 'url' => 'events.php',
                 'icon' => 'celebration',
-                'desc' => 'Celebrations & Announcements'
+                'desc' => 'Festivals, Assemblies & Competitions'
             ],
-            'campus-life' => [
-                'title' => 'Campus Life',
-                'url' => 'campus.php',
-                'icon' => 'sports_soccer',
-                'desc' => 'Labs, Sports & Infrastructure'
+            'sports-meet' => [
+                'title' => 'Sports & Physical Education',
+                'url' => 'campus.php#sports',
+                'icon' => 'sports_cricket',
+                'desc' => 'Athletics, Volleyball & Yoga'
             ],
             'gallery' => [
-                'title' => 'Photo Gallery',
+                'title' => 'Photo & Video Gallery',
                 'url' => 'gallery.php',
                 'icon' => 'photo_library',
-                'desc' => 'Moments Captured on Campus'
+                'desc' => 'Memories & Celebrations on Campus'
+            ]
+        ]
+    ],
+    'campus' => [
+        'title' => 'BOARDING AND CAMPUS',
+        'url' => 'campus.php',
+        'subitems' => [
+            'campus-life' => [
+                'title' => 'Campus Infrastructure',
+                'url' => 'campus.php',
+                'icon' => 'apartment',
+                'desc' => 'Sprawling Green Campus in Dobhi'
+            ],
+            'smart-labs' => [
+                'title' => 'Science & Computer Labs',
+                'url' => 'campus.php#labs',
+                'icon' => 'biotech',
+                'desc' => 'Modern Hands-on Practical Labs'
+            ],
+            'library' => [
+                'title' => 'Library & Learning Center',
+                'url' => 'campus.php#library',
+                'icon' => 'local_library',
+                'desc' => 'Rich Repository of Books & Periodicals'
+            ],
+            'transport' => [
+                'title' => 'Safe Transport & Boarding',
+                'url' => 'campus.php#transport',
+                'icon' => 'directions_bus',
+                'desc' => 'Safe GPS-Enabled Bus Network'
+            ]
+        ]
+    ],
+    'career' => [
+        'title' => 'CAREER',
+        'url' => 'contact-us.php#career',
+        'subitems' => [
+            'openings' => [
+                'title' => 'Join Our Faculty Team',
+                'url' => 'contact-us.php#career',
+                'icon' => 'work',
+                'desc' => 'Teaching & Non-Teaching Openings'
+            ],
+            'apply' => [
+                'title' => 'Apply Online',
+                'url' => 'contact-us.php',
+                'icon' => 'upload_file',
+                'desc' => 'Submit Resume for Review'
+            ]
+        ]
+    ],
+    'connect' => [
+        'title' => 'CONNECT',
+        'url' => 'contact-us.php',
+        'subitems' => [
+            'contact' => [
+                'title' => 'Contact Campus Office',
+                'url' => 'contact-us.php',
+                'icon' => 'support_agent',
+                'desc' => 'Phone, Email & Helpdesk'
+            ],
+            'map' => [
+                'title' => 'Campus Location & Map',
+                'url' => 'contact-us.php#map',
+                'icon' => 'location_on',
+                'desc' => 'VPO Dobhi, Hisar (Haryana)'
+            ],
+            'alumni' => [
+                'title' => 'Alumni Network',
+                'url' => 'events.php#alumni',
+                'icon' => 'diversity_3',
+                'desc' => 'Connect with Past Students'
             ]
         ]
     ]
@@ -110,6 +224,22 @@ function is_nav_active($key, $current) {
     if ($key === $current) {
         return true;
     }
+    
+    // Page to menu category mapping
+    $mapping = [
+        'about-us' => ['about-us', 'faculty-staff', 'leadership', 'disclosure'],
+        'admissions' => ['admissions', 'admission-proc', 'online-apply', 'fee-struct', 'admission-faq'],
+        'academics' => ['academics', 'curriculum', 'streams', 'calendar', 'toppers'],
+        'activities' => ['events-news', 'gallery', 'sports-meet'],
+        'campus' => ['campus-life', 'smart-labs', 'library', 'transport'],
+        'career' => ['career', 'openings', 'apply'],
+        'connect' => ['contact', 'map', 'alumni']
+    ];
+
+    if (isset($mapping[$key]) && in_array($current, $mapping[$key])) {
+        return true;
+    }
+
     if (isset($nav_menu[$key]['subitems']) && array_key_exists($current, $nav_menu[$key]['subitems'])) {
         return true;
     }

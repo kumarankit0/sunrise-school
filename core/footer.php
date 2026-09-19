@@ -3,81 +3,108 @@ require_once __DIR__ . '/config.php';
 ?>
   </main>
 
-  <!-- Site Footer -->
+  <!-- Site Footer (Matching Reference Layout: Quick Contact, Quick Links, Other Projects, Location Map) -->
   <footer class="site-footer">
     <div class="footer-container">
       <div class="footer-grid">
-        <!-- Brand & Mission Column -->
+        <!-- Column 1: Quick Contact -->
         <div class="footer-col">
-          <a href="index.php" class="footer-brand">
-            <img alt="<?= htmlspecialchars($site_name) ?> Logo" class="footer-brand-img" src="<?= $site_logo ?>" width="36" height="36" loading="lazy"/>
-            <span class="footer-brand-name"><?= htmlspecialchars($site_name) ?></span>
-          </a>
-          <p class="footer-description">
-            Providing exceptional HBSE education, cultivating wisdom, moral integrity, scientific inquiry, and academic excellence in every student.
-          </p>
-          <div class="footer-social-strip">
-            <a href="https://facebook.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Facebook">
-              <span class="material-symbols-outlined text-[18px]">public</span>
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Twitter">
-              <span class="material-symbols-outlined text-[18px]">share</span>
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="Instagram">
-              <span class="material-symbols-outlined text-[18px]">photo_camera</span>
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noopener" class="footer-social-icon" aria-label="YouTube">
-              <span class="material-symbols-outlined text-[18px]">school</span>
-            </a>
+          <h4 class="footer-heading">Quick Contact</h4>
+          <div class="footer-contact-list">
+            <div class="footer-contact-block">
+              <div class="footer-contact-icon-box">
+                <span class="material-symbols-outlined text-[20px]">domain</span>
+              </div>
+              <div>
+                <span class="footer-school-name"><?= htmlspecialchars($site_name) ?></span>
+                <p class="footer-school-address">
+                  VPO Dobhi, Hisar<br/>
+                  (Haryana) - 125001
+                </p>
+              </div>
+            </div>
+
+            <div class="footer-contact-block">
+              <div class="footer-contact-icon-box">
+                <span class="material-symbols-outlined text-[20px]">contact_phone</span>
+              </div>
+              <div>
+                <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="footer-contact-phone">
+                  <?= $site_phone ?>
+                </a>
+                <a href="mailto:<?= $site_email ?>" class="footer-contact-email">
+                  <?= $site_email ?>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Quick Navigation Links -->
+        <!-- Column 2: Quick Links -->
         <div class="footer-col">
           <h4 class="footer-heading">Quick Links</h4>
-          <nav class="footer-links-list" aria-label="Footer Navigation">
-            <a class="footer-link" href="about-us.php"><span class="material-symbols-outlined text-[14px]">chevron_right</span> About Us</a>
-            <a class="footer-link" href="academics.php"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Academics</a>
-            <a class="footer-link" href="faculty.php"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Faculty &amp; Staff</a>
-            <a class="footer-link" href="admission.php"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Admissions</a>
-            <a class="footer-link" href="campus.php"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Campus Life</a>
-            <a class="footer-link" href="gallery.php"><span class="material-symbols-outlined text-[14px]">chevron_right</span> Photo Gallery</a>
+          <nav class="footer-links-list" aria-label="Footer Quick Links">
+            <a class="footer-link" href="#student-portal" id="footerStudentLoginBtn">
+              <span class="footer-chevron">&gt;</span> Student &amp; Staff ERP
+            </a>
+            <a class="footer-link" href="academics.php#academic-calendar">
+              <span class="footer-chevron">&gt;</span> Annual Calendar
+            </a>
+            <a class="footer-link" href="admission.php">
+              <span class="footer-chevron">&gt;</span> Admission Procedure
+            </a>
+            <a class="footer-link" href="about-us.php#mandatory-disclosure" id="footerDisclosureBtn">
+              <span class="footer-chevron">&gt;</span> Mandatory Disclosure
+            </a>
+            <a class="footer-link" href="admission.php#fee-structure">
+              <span class="footer-chevron">&gt;</span> Fee Structure
+            </a>
+            <a class="footer-link" href="contact-us.php">
+              <span class="footer-chevron">&gt;</span> TC &amp; Certificates
+            </a>
           </nav>
         </div>
 
-        <!-- Contact Information -->
+        <!-- Column 3: Other Projects / Facilities -->
         <div class="footer-col">
-          <h4 class="footer-heading">Contact Info</h4>
-          <div class="footer-links-list">
-            <p class="footer-contact-item">
-              <span class="material-symbols-outlined footer-contact-icon">location_on</span>
-              <span><?= htmlspecialchars($site_address) ?></span>
-            </p>
-            <p class="footer-contact-item">
-              <span class="material-symbols-outlined footer-contact-icon">call</span>
-              <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="hover:text-primary transition-colors"><?= $site_phone ?></a>
-            </p>
-            <p class="footer-contact-item">
-              <span class="material-symbols-outlined footer-contact-icon">mail</span>
-              <a href="mailto:<?= $site_info_email ?>" class="hover:text-primary transition-colors"><?= $site_info_email ?></a>
-            </p>
-            <p class="footer-contact-item">
-              <span class="material-symbols-outlined footer-contact-icon">schedule</span>
-              <span>Mon - Sat: 8:00 AM - 3:00 PM</span>
-            </p>
-          </div>
+          <h4 class="footer-heading">Other Projects</h4>
+          <nav class="footer-links-list" aria-label="School Initiatives & Facilities">
+            <a class="footer-link" href="about-us.php">
+              <span class="footer-chevron">&gt;</span> Sun Rise Educational Society
+            </a>
+            <a class="footer-link" href="campus.php#labs">
+              <span class="footer-chevron">&gt;</span> Modern Science &amp; Computer Labs
+            </a>
+            <a class="footer-link" href="campus.php#sports">
+              <span class="footer-chevron">&gt;</span> Sports &amp; Athletics Club
+            </a>
+            <a class="footer-link" href="campus.php#transport">
+              <span class="footer-chevron">&gt;</span> Safe GPS Bus Transport Network
+            </a>
+            <a class="footer-link" href="academics.php#toppers">
+              <span class="footer-chevron">&gt;</span> Board Exam Merit Achievers
+            </a>
+          </nav>
         </div>
 
-        <!-- Newsletter Subscription -->
+        <!-- Column 4: Location Map -->
         <div class="footer-col">
-          <h4 class="footer-heading">Newsletter</h4>
-          <p class="footer-description">
-            Subscribe for official school updates, notices, admissions announcements, and newsletters.
-          </p>
-          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Sun Rise Sr. Sec. School updates!'); this.reset();">
-            <input class="newsletter-input" placeholder="Your email address" type="email" required aria-label="Email Address"/>
-            <button class="newsletter-btn" type="submit">Join</button>
-          </form>
+          <h4 class="footer-heading">Location Map</h4>
+          <div class="footer-map-frame">
+            <iframe 
+              title="Sun Rise Sr. Sec. School Location Map"
+              src="https://maps.google.com/maps?q=Sun+Rise+Sr.+Sec.+School,+Dobhi,+Hisar,+Haryana&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              width="100%" 
+              height="145" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy" 
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+          <a href="https://maps.google.com/?q=Sun+Rise+Sr.+Sec.+School+Dobhi+Hisar+Haryana" target="_blank" rel="noopener" class="footer-map-link">
+            <span class="material-symbols-outlined text-[15px]">pin_drop</span> View on Google Maps
+          </a>
         </div>
       </div>
 
@@ -87,13 +114,13 @@ require_once __DIR__ . '/config.php';
           &copy; <?= date('Y') ?> <?= htmlspecialchars($site_name) ?>. All rights reserved.
         </div>
         <div class="flex items-center gap-4 text-xs">
-          <a href="about-us.php" class="hover:text-primary transition-colors">Privacy Policy</a>
+          <a href="about-us.php" class="hover:text-[#C9A24B] transition-colors">Privacy Policy</a>
           <span>•</span>
-          <a href="about-us.php" class="hover:text-primary transition-colors">Terms of Service</a>
+          <a href="about-us.php" class="hover:text-[#C9A24B] transition-colors">Terms of Service</a>
           <span>•</span>
-          <a href="contact-us.php" class="hover:text-primary transition-colors">Sitemap</a>
+          <a href="contact-us.php" class="hover:text-[#C9A24B] transition-colors">Sitemap</a>
           <span>•</span>
-          <a href="admin/login.php" class="hover:text-primary transition-colors inline-flex items-center gap-1 opacity-75 hover:opacity-100"><span class="material-symbols-outlined text-[13px]">lock</span> Admin Portal</a>
+          <a href="admin/login.php" class="hover:text-[#C9A24B] transition-colors inline-flex items-center gap-1 opacity-75 hover:opacity-100"><span class="material-symbols-outlined text-[13px]">lock</span> Admin Portal</a>
         </div>
       </div>
     </div>
@@ -162,6 +189,8 @@ require_once __DIR__ . '/config.php';
     </a>
   </div>
 
+  <!-- Hero 4-Direction Box Slider Script -->
+  <script src="assets/js/hero-box-slider.js"></script>
   <!-- Main JavaScript File -->
   <script src="assets/js/main.js"></script>
 </body>

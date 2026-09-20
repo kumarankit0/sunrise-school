@@ -29,7 +29,7 @@ if (!function_exists('get_admin_img_preview')) {
         if (empty($src)) {
             return '../assets/images/logo.svg';
         }
-        if (strpos($src, 'http://') === 0 || strpos($src, 'https://') === 0) {
+        if (strpos($src, 'http://') === 0 || strpos($src, 'https://') === 0 || strpos($src, 'data:') === 0) {
             return $src;
         }
         // Strip any leading ../ or / and decode any existing percent-encoding to prevent %2520 double-encoding
@@ -39,6 +39,19 @@ if (!function_exists('get_admin_img_preview')) {
         $encoded_parts = array_map('rawurlencode', $parts);
         return '../' . implode('/', $encoded_parts);
     }
+}
+
+// Scan committed school assets for quick picker
+$school_assets_dir = __DIR__ . '/../assets/images/sunrise school image/';
+$available_school_images = [];
+if (is_dir($school_assets_dir)) {
+    $scanned_files = scandir($school_assets_dir);
+    foreach ($scanned_files as $f) {
+        if ($f !== '.' && $f !== '..' && preg_match('/\.(webp|jpg|jpeg|png)$/i', $f)) {
+            $available_school_images[] = $f;
+        }
+    }
+    sort($available_school_images);
 }
 
 // Define all editable sections grouped by page, ordered strictly from top to bottom
@@ -3837,11 +3850,12 @@ $current_page_data = $pages_config[$active_tab];
                                         $preview_url = get_admin_img_preview($current_img_src);
                                         $img_preview_id = "img_preview_" . $field_counter;
                                     ?>
-                                        <!-- Image Uploader Field -->
-                                        <form method="POST" action="upload_image.php" enctype="multipart/form-data" class="space-y-4">
+                                        <!-- Image Uploader Field (With Push-Safe Cloud Persistence & Asset Picker) -->
+                                        <form method="POST" action="upload_image.php" enctype="multipart/form-data" class="space-y-4 ajax-image-form" data-preview-id="<?= $img_preview_id ?>">
                                             <?= csrf_field() ?>
                                             <input type="hidden" name="page_key" value="<?= htmlspecialchars($active_tab) ?>">
                                             <input type="hidden" name="image_key" value="<?= htmlspecialchars($field['key']) ?>">
+                                            <input type="hidden" name="ajax" value="1">
 
                                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                                                 <div>
@@ -3885,9 +3899,11 @@ $current_page_data = $pages_config[$active_tab];
 
                                                 <!-- Replacement Controls -->
                                                 <div class="md:col-span-8 space-y-3">
+                                                    <!-- Option A: Direct File Upload with DB Backup -->
                                                     <div>
-                                                        <label class="block text-xs font-semibold text-gray-700 mb-1">
-                                                            Select Replacement Image (JPG, PNG, WEBP &bull; Max 2MB)
+                                                        <label class="block text-xs font-semibold text-gray-700 mb-1 flex items-center justify-between">
+                                                            <span>Upload New Photo (Auto-saved to Cloud DB for Git-Push Safety &bull; Max 2MB)</span>
+                                                            <span class="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded font-bold">Push Safe</span>
                                                         </label>
                                                         <input 
                                                             type="file" 
@@ -3896,6 +3912,34 @@ $current_page_data = $pages_config[$active_tab];
                                                             onchange="previewImage(this, '<?= $img_preview_id ?>')"
                                                             class="block w-full text-xs text-gray-500 file:mr-4 file:py-2.5 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-[#001129] file:text-white hover:file:bg-[#071f45] file:cursor-pointer cursor-pointer border border-gray-300 rounded-xl bg-gray-50/50"
                                                         />
+                                                    </div>
+
+                                                    <!-- Option B: Select Existing School Photo or Custom URL -->
+                                                    <div>
+                                                        <label class="block text-xs font-semibold text-gray-700 mb-1">
+                                                            Or Choose Existing School Photo / Enter Custom Image URL:
+                                                        </label>
+                                                        <div class="flex flex-col sm:flex-row gap-2">
+                                                            <select 
+                                                                onchange="if(this.value){ const inp = this.form.elements['custom_path']; inp.value = 'assets/images/sunrise school image/' + this.value; const prv = document.getElementById('<?= $img_preview_id ?>'); if(prv){ prv.src = '../assets/images/sunrise%20school%20image/' + encodeURIComponent(this.value); } }" 
+                                                                class="sm:w-1/2 px-3 py-2 bg-gray-50 border border-gray-300 rounded-xl text-xs text-gray-700 focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                                            >
+                                                                <option value="">-- Choose Existing School Photo --</option>
+                                                                <?php foreach ($available_school_images as $img_file): ?>
+                                                                    <option value="<?= htmlspecialchars($img_file) ?>" <?= (strpos($current_img_src, $img_file) !== false) ? 'selected' : '' ?>>
+                                                                        <?= htmlspecialchars($img_file) ?>
+                                                                    </option>
+                                                                <?php endforeach; ?>
+                                                            </select>
+                                                            <input 
+                                                                type="text" 
+                                                                name="custom_path" 
+                                                                placeholder="assets/images/... or https://..."
+                                                                value="<?= (strpos($current_img_src, 'uploads/') === false) ? htmlspecialchars(rawurldecode($current_img_src)) : '' ?>"
+                                                                onchange="if(this.value){ const prv = document.getElementById('<?= $img_preview_id ?>'); if(prv){ prv.src = (this.value.startsWith('http') ? this.value : '../' + this.value); } }"
+                                                                class="flex-1 px-3 py-2 bg-gray-50/50 border border-gray-300 rounded-xl text-gray-800 text-xs focus:ring-2 focus:ring-[#C9A24B] outline-none font-mono"
+                                                            />
+                                                        </div>
                                                     </div>
 
                                                     <div>
@@ -3914,10 +3958,10 @@ $current_page_data = $pages_config[$active_tab];
                                                     <div class="flex items-center justify-end pt-1">
                                                         <button 
                                                             type="submit" 
-                                                            class="px-4 py-2 bg-[#C9A24B] hover:bg-[#B38C37] text-[#001129] font-bold text-xs rounded-lg shadow-sm hover:shadow transition flex items-center gap-1.5"
+                                                            class="submit-btn px-4 py-2 bg-[#C9A24B] hover:bg-[#B38C37] text-[#001129] font-bold text-xs rounded-lg shadow-sm hover:shadow transition flex items-center gap-1.5"
                                                         >
-                                                            <span class="material-symbols-outlined text-base">cloud_upload</span>
-                                                            <span>Upload &amp; Replace Image</span>
+                                                            <span class="btn-icon material-symbols-outlined text-base">cloud_upload</span>
+                                                            <span class="btn-text">Save / Replace Image</span>
                                                         </button>
                                                     </div>
                                                 </div>
@@ -3939,11 +3983,12 @@ $current_page_data = $pages_config[$active_tab];
                                         }
                                     ?>
                                         <!-- Text / HTML Content Field -->
-                                        <form id="<?= $form_id ?>" method="POST" action="save_content.php" class="space-y-3">
+                                        <form id="<?= $form_id ?>" method="POST" action="save_content.php" class="space-y-3 ajax-text-form">
                                             <?= csrf_field() ?>
                                             <input type="hidden" name="page_key" value="<?= htmlspecialchars($active_tab) ?>">
                                             <input type="hidden" name="section_key" value="<?= htmlspecialchars($field['key']) ?>">
                                             <input type="hidden" name="content_type" value="<?= htmlspecialchars($field['type'] ?? 'text') ?>">
+                                            <input type="hidden" name="ajax" value="1">
 
                                             <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-1">
                                                 <div>
@@ -3982,10 +4027,10 @@ $current_page_data = $pages_config[$active_tab];
                                                 <span class="text-xs text-gray-400"></span>
                                                 <button 
                                                     type="submit" 
-                                                    class="px-4 py-2 bg-[#001129] hover:bg-[#071f45] text-white text-xs font-bold rounded-lg shadow-sm hover:shadow transition flex items-center gap-1.5"
+                                                    class="submit-btn px-4 py-2 bg-[#001129] hover:bg-[#071f45] text-white text-xs font-bold rounded-lg shadow-sm hover:shadow transition flex items-center gap-1.5"
                                                 >
-                                                    <span class="material-symbols-outlined text-base text-[#C9A24B]">save</span>
-                                                    <span>Save Field</span>
+                                                    <span class="btn-icon material-symbols-outlined text-base text-[#C9A24B]">save</span>
+                                                    <span class="btn-text">Save Field</span>
                                                 </button>
                                             </div>
                                         </form>
@@ -4000,14 +4045,53 @@ $current_page_data = $pages_config[$active_tab];
         </div>
     </div>
 
-    <!-- Interactive Scripts: Live Image Preview & Quill Initializer -->
+    <!-- Floating Toast Notification Container -->
+    <div id="adminToastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 max-w-md w-full pointer-events-none px-4" aria-live="polite"></div>
+
+    <!-- Interactive Scripts: Live Image Preview, Quill, Seamless AJAX & Scroll Restoration -->
     <script>
+        // Floating Toast Notification Helper
+        function showToast(message, type = 'success') {
+            const container = document.getElementById('adminToastContainer');
+            if (!container) return;
+            
+            const toast = document.createElement('div');
+            const isSuccess = (type === 'success');
+            toast.className = `pointer-events-auto flex items-center gap-3 p-4 rounded-xl shadow-2xl text-xs sm:text-sm font-medium transition-all duration-300 transform translate-y-4 opacity-0 ${
+                isSuccess ? 'bg-[#001129] border border-[#C9A24B]/70 text-white shadow-[#C9A24B]/10' : 'bg-red-950 border border-red-500 text-white'
+            }`;
+            
+            const icon = isSuccess ? 'check_circle' : 'error';
+            const iconColor = isSuccess ? 'text-[#C9A24B]' : 'text-red-400';
+            
+            toast.innerHTML = `
+                <span class="material-symbols-outlined ${iconColor} text-xl flex-shrink-0">${icon}</span>
+                <div class="flex-1 leading-snug">${message}</div>
+                <button type="button" class="text-white/60 hover:text-white transition ml-2" onclick="this.parentElement.remove()">
+                    <span class="material-symbols-outlined text-base">close</span>
+                </button>
+            `;
+            
+            container.appendChild(toast);
+            
+            // Animate in
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            });
+            
+            // Auto remove after 3.5s
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 350);
+            }, 3500);
+        }
+
         // Live image preview reader
         function previewImage(input, previewId) {
             if (input.files && input.files[0]) {
                 const file = input.files[0];
                 if (file.size > 2 * 1024 * 1024) {
-                    alert("Selected file is larger than 2MB. Please choose a smaller image.");
+                    showToast("Selected file is larger than 2MB. Please choose a smaller image.", "error");
                     input.value = "";
                     return;
                 }
@@ -4022,8 +4106,19 @@ $current_page_data = $pages_config[$active_tab];
             }
         }
 
+        // Global map of Quill editor instances
+        window.quillMap = {};
+
         // Initialize all active Quill Rich Text Editors
         document.addEventListener('DOMContentLoaded', () => {
+            // 1. Instant Scroll Restoration (Prevents jumping to top under all conditions)
+            const savedScrollY = sessionStorage.getItem('admin_scroll_y');
+            if (savedScrollY !== null) {
+                window.scrollTo({ top: parseInt(savedScrollY, 10), behavior: 'instant' });
+                setTimeout(() => sessionStorage.removeItem('admin_scroll_y'), 1200);
+            }
+
+            // 2. Initialize Quill Editors
             <?php foreach ($quill_editors as $qe): ?>
                 (function() {
                     const quill = new Quill('#<?= $qe['quill_id'] ?>', {
@@ -4039,6 +4134,11 @@ $current_page_data = $pages_config[$active_tab];
                         }
                     });
 
+                    window.quillMap['<?= $qe['form_id'] ?>'] = {
+                        quill: quill,
+                        txt_id: '<?= $qe['txt_id'] ?>'
+                    };
+
                     const form = document.getElementById('<?= $qe['form_id'] ?>');
                     const textarea = document.getElementById('<?= $qe['txt_id'] ?>');
 
@@ -4049,6 +4149,177 @@ $current_page_data = $pages_config[$active_tab];
                     }
                 })();
             <?php endforeach; ?>
+
+            // 3. AJAX Submission for Text & HTML Forms (Zero Page Reload, No Scroll Jump!)
+            document.querySelectorAll('.ajax-text-form').forEach(form => {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    
+                    // Sync Quill instance if present
+                    const qEntry = window.quillMap[form.id];
+                    if (qEntry && qEntry.quill) {
+                        const txtEl = document.getElementById(qEntry.txt_id);
+                        if (txtEl) txtEl.value = qEntry.quill.root.innerHTML;
+                    }
+
+                    const btn = form.querySelector('.submit-btn');
+                    const btnIcon = btn ? btn.querySelector('.btn-icon') : null;
+                    const btnText = btn ? btn.querySelector('.btn-text') : null;
+                    const origText = btnText ? btnText.textContent : 'Save Field';
+                    const origIcon = btnIcon ? btnIcon.textContent : 'save';
+
+                    // Save current scroll position
+                    sessionStorage.setItem('admin_scroll_y', window.scrollY);
+
+                    if (btn) btn.disabled = true;
+                    if (btnText) btnText.textContent = 'Saving...';
+                    if (btnIcon) {
+                        btnIcon.textContent = 'progress_activity';
+                        btnIcon.classList.add('animate-spin');
+                    }
+
+                    try {
+                        const formData = new FormData(form);
+                        const response = await fetch('save_content.php', {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            showToast(result.message || 'Field saved successfully!', 'success');
+                            if (btn) {
+                                btn.classList.remove('bg-[#001129]', 'hover:bg-[#071f45]');
+                                btn.classList.add('!bg-emerald-700');
+                            }
+                            if (btnIcon) {
+                                btnIcon.classList.remove('animate-spin');
+                                btnIcon.textContent = 'check';
+                            }
+                            if (btnText) btnText.textContent = 'Saved!';
+
+                            setTimeout(() => {
+                                if (btn) {
+                                    btn.disabled = false;
+                                    btn.classList.remove('!bg-emerald-700');
+                                    btn.classList.add('bg-[#001129]', 'hover:bg-[#071f45]');
+                                }
+                                if (btnIcon) btnIcon.textContent = origIcon;
+                                if (btnText) btnText.textContent = origText;
+                            }, 2200);
+                        } else {
+                            showToast(result.message || 'Error saving field.', 'error');
+                            if (btn) btn.disabled = false;
+                            if (btnIcon) {
+                                btnIcon.classList.remove('animate-spin');
+                                btnIcon.textContent = origIcon;
+                            }
+                            if (btnText) btnText.textContent = origText;
+                        }
+                    } catch (err) {
+                        showToast('Network error while saving. Please try again.', 'error');
+                        if (btn) btn.disabled = false;
+                        if (btnIcon) {
+                            btnIcon.classList.remove('animate-spin');
+                            btnIcon.textContent = origIcon;
+                        }
+                        if (btnText) btnText.textContent = origText;
+                    }
+                });
+            });
+
+            // 4. AJAX Submission for Image Forms (Zero Page Reload, Updates Preview Instantly)
+            document.querySelectorAll('.ajax-image-form').forEach(form => {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+
+                    const btn = form.querySelector('.submit-btn');
+                    const btnIcon = btn ? btn.querySelector('.btn-icon') : null;
+                    const btnText = btn ? btn.querySelector('.btn-text') : null;
+                    const origText = btnText ? btnText.textContent : 'Save / Replace Image';
+                    const origIcon = btnIcon ? btnIcon.textContent : 'cloud_upload';
+                    const previewId = form.getAttribute('data-preview-id');
+
+                    // Save current scroll position
+                    sessionStorage.setItem('admin_scroll_y', window.scrollY);
+
+                    if (btn) btn.disabled = true;
+                    if (btnText) btnText.textContent = 'Saving...';
+                    if (btnIcon) {
+                        btnIcon.textContent = 'progress_activity';
+                        btnIcon.classList.add('animate-spin');
+                    }
+
+                    try {
+                        const formData = new FormData(form);
+                        const response = await fetch('upload_image.php', {
+                            method: 'POST',
+                            body: formData,
+                            headers: {
+                                'X-Requested-With': 'XMLHttpRequest'
+                            }
+                        });
+
+                        const result = await response.json();
+
+                        if (result.success) {
+                            showToast(result.message || 'Image updated successfully!', 'success');
+
+                            // Instant live preview update
+                            if (result.preview_url && previewId) {
+                                const previewImg = document.getElementById(previewId);
+                                if (previewImg) {
+                                    previewImg.src = result.preview_url;
+                                }
+                            }
+
+                            // Clear file input
+                            const fileInput = form.querySelector('input[type="file"]');
+                            if (fileInput) fileInput.value = '';
+
+                            if (btn) {
+                                btn.classList.remove('bg-[#C9A24B]', 'hover:bg-[#B38C37]', 'text-[#001129]');
+                                btn.classList.add('!bg-emerald-700', '!text-white');
+                            }
+                            if (btnIcon) {
+                                btnIcon.classList.remove('animate-spin');
+                                btnIcon.textContent = 'check';
+                            }
+                            if (btnText) btnText.textContent = 'Saved!';
+
+                            setTimeout(() => {
+                                if (btn) {
+                                    btn.disabled = false;
+                                    btn.classList.remove('!bg-emerald-700', '!text-white');
+                                    btn.classList.add('bg-[#C9A24B]', 'hover:bg-[#B38C37]', 'text-[#001129]');
+                                }
+                                if (btnIcon) btnIcon.textContent = origIcon;
+                                if (btnText) btnText.textContent = origText;
+                            }, 2200);
+                        } else {
+                            showToast(result.message || 'Error updating image.', 'error');
+                            if (btn) btn.disabled = false;
+                            if (btnIcon) {
+                                btnIcon.classList.remove('animate-spin');
+                                btnIcon.textContent = origIcon;
+                            }
+                            if (btnText) btnText.textContent = origText;
+                        }
+                    } catch (err) {
+                        showToast('Network error while updating image. Please try again.', 'error');
+                        if (btn) btn.disabled = false;
+                        if (btnIcon) {
+                            btnIcon.classList.remove('animate-spin');
+                            btnIcon.textContent = origIcon;
+                        }
+                        if (btnText) btnText.textContent = origText;
+                    }
+                });
+            });
         });
     </script>
 </body>

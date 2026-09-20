@@ -117,6 +117,20 @@ function get_db_connection() {
     try {
         $pdo = new PDO($dsn, DB_USER, DB_PASS, $options);
     } catch (PDOException $e) {
+        // If local MySQL server is offline or unreachable, seamlessly fallback to Supabase cloud database!
+        if (DB_DRIVER !== 'pgsql') {
+            try {
+                $cloud_dsn  = "pgsql:host=aws-0-ap-northeast-1.pooler.supabase.com;port=6543;dbname=postgres;sslmode=require";
+                $cloud_user = "postgres.dbobrnclzanitjcvsakm";
+                $cloud_pass = "MHn.R6c!_W*%Re!";
+                $cloud_opts = $options;
+                $cloud_opts[PDO::ATTR_EMULATE_PREPARES] = true;
+                $pdo = new PDO($cloud_dsn, $cloud_user, $cloud_pass, $cloud_opts);
+                return $pdo;
+            } catch (PDOException $ex2) {
+                error_log("Supabase fallback connection error: " . $ex2->getMessage());
+            }
+        }
         $GLOBALS['db_last_error'] = $e->getMessage();
         error_log("Database connection error (" . DB_DRIVER . "): " . $e->getMessage());
         $pdo = null;

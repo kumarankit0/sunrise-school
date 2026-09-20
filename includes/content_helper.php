@@ -70,14 +70,21 @@ function preload_page_images($page_key) {
     }
 
     try {
-        $stmt = $db->prepare("SELECT image_key, file_path, alt_text FROM site_images WHERE page_key = ?");
-        $stmt->execute([$page_key]);
+        try {
+            $stmt = $db->prepare("SELECT image_key, file_path, alt_text, image_data FROM site_images WHERE page_key = ?");
+            $stmt->execute([$page_key]);
+        } catch (PDOException $ex) {
+            // Fallback for environments where image_data column is not yet migrated
+            $stmt = $db->prepare("SELECT image_key, file_path, alt_text FROM site_images WHERE page_key = ?");
+            $stmt->execute([$page_key]);
+        }
         $rows = $stmt->fetchAll();
 
         foreach ($rows as $row) {
             $GLOBALS['cms_images_cache'][$page_key][$row['image_key']] = [
-                'path' => $row['file_path'],
-                'alt'  => $row['alt_text']
+                'path'       => $row['file_path'],
+                'alt'        => $row['alt_text'],
+                'image_data' => $row['image_data'] ?? null
             ];
         }
     } catch (PDOException $e) {
@@ -111,6 +118,7 @@ function get_text($page_key, $section_key, $default = '') {
 /**
  * Fetches dynamic image path from the database.
  * Falls back to $default if not found in database or if database is offline.
+ * Automatically restores uploaded image files from database image_data if disk is wiped on redeploy.
  *
  * Example Usage:
  *   <img src="<?= get_image('home', 'hero_banner', 'assets/images/banner.jpg') ?>"
@@ -128,18 +136,48 @@ function get_image($page_key, $image_key, $default = '') {
         $item = $GLOBALS['cms_images_cache'][$page_key][$image_key];
         if (!empty($item['path'])) {
             $path = $item['path'];
-            if (strpos($path, 'http://') === 0 || strpos($path, 'https://') === 0) {
+            if (strpos($path, 'http://') === 0 || strpos($path, 'https://') === 0 || strpos($path, 'data:') === 0) {
                 return htmlspecialchars($path, ENT_QUOTES, 'UTF-8');
             }
+
             $clean = rawurldecode(ltrim($path, '/'));
-            $parts = explode('/', $clean);
-            $encoded_parts = array_map('rawurlencode', $parts);
-            return htmlspecialchars(implode('/', $encoded_parts), ENT_QUOTES, 'UTF-8');
+            $disk_path = __DIR__ . '/../' . $clean;
+
+            // 1. If file exists on disk, serve it cleanly
+            if (file_exists($disk_path) && is_file($disk_path)) {
+                $parts = explode('/', $clean);
+                $encoded_parts = array_map('rawurlencode', $parts);
+                return htmlspecialchars(implode('/', $encoded_parts), ENT_QUOTES, 'UTF-8');
+            }
+
+            // 2. If file missing from disk (e.g. after Git push / Docker container recreate on Render):
+            // Automatically restore the file to uploads/ from persistent database image_data!
+            if (!empty($item['image_data'])) {
+                $data_parts = explode(',', $item['image_data'], 2);
+                if (count($data_parts) === 2) {
+                    $decoded = base64_decode($data_parts[1]);
+                    if ($decoded !== false) {
+                        $dir = dirname($disk_path);
+                        if (!is_dir($dir)) {
+                            @mkdir($dir, 0755, true);
+                        }
+                        if (@file_put_contents($disk_path, $decoded) !== false) {
+                            $parts = explode('/', $clean);
+                            $encoded_parts = array_map('rawurlencode', $parts);
+                            return htmlspecialchars(implode('/', $encoded_parts), ENT_QUOTES, 'UTF-8');
+                        }
+                    }
+                }
+                // If disk writing is disabled or restricted, output data URI directly
+                return htmlspecialchars($item['image_data'], ENT_QUOTES, 'UTF-8');
+            }
+
+            // 3. File missing and no image_data: DO NOT return broken 404 URL. Fall through to default!
         }
     }
 
     if (!empty($default)) {
-        if (strpos($default, 'http://') === 0 || strpos($default, 'https://') === 0) {
+        if (strpos($default, 'http://') === 0 || strpos($default, 'https://') === 0 || strpos($default, 'data:') === 0) {
             return htmlspecialchars($default, ENT_QUOTES, 'UTF-8');
         }
         $clean = rawurldecode(ltrim($default, '/'));

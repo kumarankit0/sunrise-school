@@ -46,8 +46,9 @@ CREATE TABLE IF NOT EXISTS `site_images` (
     `id` INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `page_key` VARCHAR(50) NOT NULL,
     `image_key` VARCHAR(100) NOT NULL,
-    `file_path` VARCHAR(255) NOT NULL,
+    `file_path` TEXT NOT NULL,
     `alt_text` VARCHAR(255) NOT NULL DEFAULT '',
+    `image_data` LONGTEXT NULL,
     `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     UNIQUE KEY `uq_page_image` (`page_key`, `image_key`),
     INDEX `idx_page_image_key` (`page_key`)

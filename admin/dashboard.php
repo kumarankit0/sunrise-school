@@ -3497,20 +3497,53 @@ $pages_config = [
     'faculty' => [
         'title' => 'Faculty & Staff',
         'icon'  => 'groups',
-        'desc'  => 'Hero Banner, 3 Leadership Mentors, Staff Collage Photos, Departments & Careers',
+        'desc'  => 'Complete Faculty Page Control: SEO Meta, Hero Banner, 3 Leadership Mentors (Quotes, Bios, Badges), 6 Staff Gallery Photos & Badges, 4 Academic Faculties, and Recruitment CTA',
         'sections' => [
+            // Section 0: SEO & Meta Settings
             [
-                'title' => 'Section 1: Hero Banner & Header',
+                'title' => 'Section 0: SEO & Meta Settings',
+                'icon'  => 'search',
+                'desc'  => 'Control how the Faculty page appears on Google search and browser tabs.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'meta_title',
+                        'label' => 'Page Browser Title (<title>)',
+                        'type' => 'text',
+                        'default' => 'Faculty & Staff | Academic Mentors',
+                        'help' => 'Shown in the browser tab and Google search results.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'meta_desc',
+                        'label' => 'Meta Description (Search Snippet)',
+                        'type' => 'text',
+                        'default' => 'Meet the dedicated educators, mentors, and academic leadership team of Sun Rise Sr. Sec. School, Dobhi committed to holistic child development.',
+                        'help' => 'Summary snippet displayed by search engines.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'meta_keywords',
+                        'label' => 'Meta Keywords',
+                        'type' => 'text',
+                        'default' => 'faculty, teachers, school leadership, principal, department heads, staff directory, Sun Rise School Dobhi',
+                        'help' => 'Comma-separated SEO keywords.'
+                    ]
+                ]
+            ],
+            // Section 1: Hero Banner & Page Intro
+            [
+                'title' => 'Section 1: Hero Banner & Page Intro',
                 'icon'  => 'flag',
-                'desc'  => 'Top banner image, eyebrow badge, title, and intro paragraph.',
+                'desc'  => 'Top banner background image, gold eyebrow badge, main title, and introductory paragraph.',
                 'fields' => [
                     [
                         'kind' => 'image',
                         'key' => 'hero_banner',
                         'label' => 'Faculty Hero Banner Image',
                         'default' => 'assets/images/sunrise school image/teachers_and_students.webp',
-                        'alt' => 'Teachers and Mentors',
-                        'help' => 'Top background image.'
+                        'alt' => 'Sun Rise School Teachers and Mentors',
+                        'help' => 'Top background hero image.'
                     ],
                     [
                         'kind' => 'text',
@@ -3518,247 +3551,684 @@ $pages_config = [
                         'label' => 'Hero Eyebrow Badge',
                         'type' => 'text',
                         'default' => 'Dedicated Educators',
-                        'help' => 'Badge.'
+                        'help' => 'Gold rounded badge displayed above the main headline.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_title',
-                        'label' => 'Faculty Page Title',
+                        'label' => 'Faculty Main Headline',
                         'type' => 'text',
                         'default' => 'Our Distinguished Faculty & Staff',
-                        'help' => 'Main headline.'
+                        'help' => 'Primary title on the faculty page.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_subtitle',
-                        'label' => 'Faculty Page Subtitle',
+                        'label' => 'Faculty Page Subtitle / Intro',
                         'type' => 'text',
                         'default' => 'Meet the passionate educators, experienced subject mentors, and visionary leadership shaping young minds at Sun Rise Sr. Sec. School, Dobhi.',
-                        'help' => 'Subtitle.'
+                        'help' => 'Introductory text beneath the main headline.'
                     ]
                 ]
             ],
+            // Section 2: Academic Leadership (3 Profiles)
             [
-                'title' => 'Section 2: Academic Leadership (3 Profiles)',
+                'title' => 'Section 2: Academic Leadership (3 Complete Leadership Profiles)',
                 'icon'  => 'badge',
-                'desc'  => 'Managing Committee / Director, Office of Principal, Senior Coordinators.',
+                'desc'  => 'Section header and full profiles for Founder & Director, Principal, and Coordinator (Photo, Badge, Name, Qualifications, Experience, Quote, Detailed Biography, and Footer Badges).',
                 'fields' => [
-                    // Leader 1
+                    // Leadership Section Header
+                    [
+                        'kind' => 'text',
+                        'key' => 'leadership_eyebrow',
+                        'label' => 'Leadership Section Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Guiding Vision',
+                        'help' => 'Small uppercase gold text above the section headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leadership_title',
+                        'label' => 'Leadership Section Title',
+                        'type' => 'text',
+                        'default' => 'Academic Leadership',
+                        'help' => 'Main section title for leadership.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leadership_desc',
+                        'label' => 'Leadership Section Description',
+                        'type' => 'text',
+                        'default' => 'Guiding our academic ecosystem with years of pedagogical expertise, administrative brilliance, and a steadfast commitment to character building.',
+                        'help' => 'Paragraph displayed next to the leadership heading.'
+                    ],
+
+                    // Leader 1: Founder & Director
                     [
                         'kind' => 'image',
                         'key' => 'leader1_photo',
-                        'label' => 'Leader 1 Photo (Managing Director)',
+                        'label' => 'Leader 1 Photo (Founder & Director - Mr. Bhader Singh Swami)',
                         'default' => 'assets/images/sunrise school image/speaker.webp',
-                        'alt' => 'Managing Committee',
-                        'help' => 'Director photo.'
+                        'alt' => 'Mr. Bhader Singh Swami - Founder & Director',
+                        'help' => 'Director photo (recommended ratio 4:3).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_tag',
+                        'label' => 'Leader 1 Photo Overlay Badge',
+                        'type' => 'text',
+                        'default' => 'Founder & Director',
+                        'help' => 'Badge floating on the bottom-left corner of the photo.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'leader1_name',
-                        'label' => 'Leader 1 Name',
+                        'label' => 'Leader 1 Full Name',
                         'type' => 'text',
-                        'default' => 'Managing Committee',
-                        'help' => 'Name.'
+                        'default' => 'Mr. Bhader Singh Swami',
+                        'help' => 'Name of Founder & Director.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'leader1_sub',
-                        'label' => 'Leader 1 Title',
+                        'label' => 'Leader 1 Designation & Qualifications',
                         'type' => 'text',
-                        'default' => 'Sun Rise Educational Trust, Dobhi',
-                        'help' => 'Title.'
+                        'default' => 'Founder & Director | M.A., B.Ed.',
+                        'help' => 'Designation and academic degrees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_exp',
+                        'label' => 'Leader 1 Experience Highlight Badge',
+                        'type' => 'text',
+                        'default' => '36 Yrs Teaching • 26 Yrs Management',
+                        'help' => 'Gold highlight box with professional tenure.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'leader1_quote',
-                        'label' => 'Leader 1 Quote',
+                        'label' => 'Leader 1 Educational Vision / Quote',
                         'type' => 'text',
-                        'default' => '“True education is the bedrock of character, empowering students to rise above ordinary standards and achieve extraordinary goals.”',
-                        'help' => 'Quote.'
+                        'default' => '“Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society.”',
+                        'help' => 'Inspirational quote.'
                     ],
-                    // Leader 2
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_desc',
+                        'label' => 'Leader 1 Detailed Biography',
+                        'type' => 'html',
+                        'default' => 'With 36 years of teaching experience and 26 years of experience in school management, Mr. Bhader Singh Swami has devoted his journey to education. Holding M.A. and B.Ed. qualifications, his vision centres on providing students with quality education grounded in discipline, values, character, and academic excellence.',
+                        'help' => 'Comprehensive biography and message.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_foot_left',
+                        'label' => 'Leader 1 Footer Left Label',
+                        'type' => 'text',
+                        'default' => 'Institutional Founder',
+                        'help' => 'Left bottom label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_foot_right',
+                        'label' => 'Leader 1 Footer Right Label',
+                        'type' => 'text',
+                        'default' => 'Estd. 2007',
+                        'help' => 'Right bottom label.'
+                    ],
+
+                    // Leader 2: Principal
                     [
                         'kind' => 'image',
                         'key' => 'leader2_photo',
-                        'label' => 'Leader 2 Photo (Principal Office)',
+                        'label' => 'Leader 2 Photo (Principal - Mr. Rajbir Singh)',
                         'default' => 'assets/images/sunrise school image/teachers_sitting.webp',
-                        'alt' => 'Principal Office',
+                        'alt' => 'Mr. Rajbir Singh - Principal',
                         'help' => 'Principal photo.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'leader2_name',
-                        'label' => 'Leader 2 Name',
+                        'key' => 'leader2_tag',
+                        'label' => 'Leader 2 Photo Overlay Badge',
                         'type' => 'text',
-                        'default' => 'Office of the Principal',
-                        'help' => 'Name.'
+                        'default' => 'Principal Office',
+                        'help' => 'Badge on photo corner.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_name',
+                        'label' => 'Leader 2 Full Name',
+                        'type' => 'text',
+                        'default' => 'Mr. Rajbir Singh',
+                        'help' => 'Name of Principal.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'leader2_sub',
-                        'label' => 'Leader 2 Title',
+                        'label' => 'Leader 2 Designation & Qualifications',
                         'type' => 'text',
-                        'default' => 'M.A., M.Ed. – Senior Academician',
-                        'help' => 'Title.'
+                        'default' => 'Principal | M.A., B.Ed.',
+                        'help' => 'Designation and degrees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_exp',
+                        'label' => 'Leader 2 Experience Highlight Badge',
+                        'type' => 'text',
+                        'default' => '16 Years Professional Experience',
+                        'help' => 'Gold highlight box.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'leader2_quote',
-                        'label' => 'Leader 2 Quote',
+                        'label' => 'Leader 2 Academic Vision / Quote',
                         'type' => 'text',
-                        'default' => '“We cultivate an environment where discipline meets curiosity, ensuring every child discovers their inner spark and thrives academically.”',
+                        'default' => '“Fostering a disciplined and purposeful learning environment where every student receives balanced opportunities for academic and holistic development.”',
                         'help' => 'Quote.'
                     ],
-                    // Leader 3
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_desc',
+                        'label' => 'Leader 2 Detailed Biography',
+                        'type' => 'html',
+                        'default' => 'With 16 years of professional experience in education, Mr. Rajbir Singh serves as the Principal. He brings a committed approach towards academic administration, supporting teachers and driving holistic student growth.',
+                        'help' => 'Comprehensive biography.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_foot_left',
+                        'label' => 'Leader 2 Footer Left Label',
+                        'type' => 'text',
+                        'default' => 'Academic Head',
+                        'help' => 'Left bottom label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_foot_right',
+                        'label' => 'Leader 2 Footer Right Label',
+                        'type' => 'text',
+                        'default' => 'HBSE Lead',
+                        'help' => 'Right bottom label.'
+                    ],
+
+                    // Leader 3: Coordinator
                     [
                         'kind' => 'image',
                         'key' => 'leader3_photo',
-                        'label' => 'Leader 3 Photo (Academic Council)',
+                        'label' => 'Leader 3 Photo (Coordinator - Mr. Indra Dev)',
                         'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
-                        'alt' => 'Academic Council',
-                        'help' => 'Coordinators photo.'
+                        'alt' => 'Mr. Indra Dev - Coordinator',
+                        'help' => 'Coordinator photo.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_tag',
+                        'label' => 'Leader 3 Photo Overlay Badge',
+                        'type' => 'text',
+                        'default' => 'Administration & Coordination',
+                        'help' => 'Badge on photo corner.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'leader3_name',
-                        'label' => 'Leader 3 Name',
+                        'label' => 'Leader 3 Full Name',
                         'type' => 'text',
-                        'default' => 'Senior Coordinators',
-                        'help' => 'Name.'
+                        'default' => 'Mr. Indra Dev',
+                        'help' => 'Name of Coordinator.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'leader3_sub',
-                        'label' => 'Leader 3 Title',
+                        'label' => 'Leader 3 Designation & Qualifications',
                         'type' => 'text',
-                        'default' => 'Post Graduate Teachers (PGT / TGT)',
-                        'help' => 'Title.'
+                        'default' => 'Coordinator | B.A., M.A., LL.B., LL.M.',
+                        'help' => 'Designation and degrees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_exp',
+                        'label' => 'Leader 3 Experience Highlight Badge',
+                        'type' => 'text',
+                        'default' => '22 Yrs Exp • Former GM, Reserve Bank of India',
+                        'help' => 'Gold highlight box.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'leader3_quote',
-                        'label' => 'Leader 3 Quote',
+                        'label' => 'Leader 3 Administrative Vision / Quote',
                         'type' => 'text',
-                        'default' => '“Teamwork, continuous faculty workshops, and individualized student attention form the backbone of our outstanding board results.”',
+                        'default' => '“Maintaining the highest standards of organizational discipline, legal governance, and responsible institutional leadership.”',
                         'help' => 'Quote.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_desc',
+                        'label' => 'Leader 3 Detailed Biography',
+                        'type' => 'html',
+                        'default' => 'Mr. Indra Dev brings 22 years of professional experience with qualifications in law and humanities. Prior to Sun Rise, he served as General Manager at the Reserve Bank of India (RBI), contributing high administrative standards.',
+                        'help' => 'Comprehensive biography.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_foot_left',
+                        'label' => 'Leader 3 Footer Left Label',
+                        'type' => 'text',
+                        'default' => 'Administration Lead',
+                        'help' => 'Left bottom label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_foot_right',
+                        'label' => 'Leader 3 Footer Right Label',
+                        'type' => 'text',
+                        'default' => '30+ Teaching Staff',
+                        'help' => 'Right bottom label.'
                     ]
                 ]
             ],
+            // Section 3: Mentors in Action Gallery (6 Photographs)
             [
-                'title' => 'Section 3: Mentors in Action Gallery (6 Staff Photos)',
+                'title' => 'Section 3: Mentors in Action Gallery (6 Photographs)',
                 'icon'  => 'collections',
-                'desc'  => '6 photographs highlighting staff group, mentorship, meetings, and team bonding.',
+                'desc'  => 'Header text and 6 photographic showcases with category tags and titles.',
                 'fields' => [
+                    // Section Header
+                    [
+                        'kind' => 'text',
+                        'key' => 'staff_section_eyebrow',
+                        'label' => 'Gallery Section Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Our Teaching Force',
+                        'help' => 'Small uppercase gold text above title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'staff_section_title',
+                        'label' => 'Gallery Section Title',
+                        'type' => 'text',
+                        'default' => 'Mentors in Action',
+                        'help' => 'Main gallery heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'staff_section_desc',
+                        'label' => 'Gallery Section Subtitle',
+                        'type' => 'text',
+                        'default' => 'Capturing the dedication, teamwork, and pedagogical spirit of the Sun Rise Sr. Sec. School teaching community.',
+                        'help' => 'Descriptive text under the gallery heading.'
+                    ],
+
+                    // Photo 1
                     [
                         'kind' => 'image',
                         'key' => 'staff_img1',
-                        'label' => 'Staff Photo 1',
+                        'label' => 'Staff Photo 1 (Full Staff Group)',
                         'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
-                        'alt' => 'Full Staff Group',
+                        'alt' => 'All Staff Members - Sun Rise School',
                         'help' => 'Staff photo 1.'
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'staff_badge1',
+                        'label' => 'Staff Photo 1 Category Badge',
+                        'type' => 'text',
+                        'default' => 'Full Staff Group',
+                        'help' => 'Gold category pill on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'staff_title1',
-                        'label' => 'Staff Photo 1 Title',
+                        'label' => 'Staff Photo 1 Caption Title',
                         'type' => 'text',
                         'default' => 'Sun Rise Teaching & Admin Staff',
-                        'help' => 'Title.'
+                        'help' => 'Title overlay.'
                     ],
+
+                    // Photo 2
                     [
                         'kind' => 'image',
                         'key' => 'staff_img2',
-                        'label' => 'Staff Photo 2',
+                        'label' => 'Staff Photo 2 (Mentorship)',
                         'default' => 'assets/images/sunrise school image/teachers_and_students.webp',
-                        'alt' => 'Faculty & High Achievers',
+                        'alt' => 'Teachers and Students - Sun Rise School',
                         'help' => 'Staff photo 2.'
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'staff_badge2',
+                        'label' => 'Staff Photo 2 Category Badge',
+                        'type' => 'text',
+                        'default' => 'Mentorship',
+                        'help' => 'Gold category pill on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'staff_title2',
-                        'label' => 'Staff Photo 2 Title',
+                        'label' => 'Staff Photo 2 Caption Title',
                         'type' => 'text',
                         'default' => 'Faculty & High Achievers',
-                        'help' => 'Title.'
+                        'help' => 'Title overlay.'
                     ],
+
+                    // Photo 3
                     [
                         'kind' => 'image',
                         'key' => 'staff_img3',
-                        'label' => 'Staff Photo 3',
+                        'label' => 'Staff Photo 3 (Academic Planning)',
                         'default' => 'assets/images/sunrise school image/teachers_sitting.webp',
-                        'alt' => 'Faculty Planning Session',
+                        'alt' => 'Teachers Meeting - Sun Rise School',
                         'help' => 'Staff photo 3.'
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'staff_badge3',
+                        'label' => 'Staff Photo 3 Category Badge',
+                        'type' => 'text',
+                        'default' => 'Academic Session',
+                        'help' => 'Gold category pill on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'staff_title3',
-                        'label' => 'Staff Photo 3 Title',
+                        'label' => 'Staff Photo 3 Caption Title',
                         'type' => 'text',
                         'default' => 'Faculty Planning & Review',
-                        'help' => 'Title.'
+                        'help' => 'Title overlay.'
                     ],
+
+                    // Photo 4
                     [
                         'kind' => 'image',
                         'key' => 'staff_img4',
-                        'label' => 'Staff Photo 4',
+                        'label' => 'Staff Photo 4 (Department Team)',
                         'default' => 'assets/images/sunrise school image/school_staff.webp',
-                        'alt' => 'Department Educators',
+                        'alt' => 'School Staff Members',
                         'help' => 'Staff photo 4.'
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'staff_badge4',
+                        'label' => 'Staff Photo 4 Category Badge',
+                        'type' => 'text',
+                        'default' => 'Staff Team',
+                        'help' => 'Gold category pill on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'staff_title4',
-                        'label' => 'Staff Photo 4 Title',
+                        'label' => 'Staff Photo 4 Caption Title',
                         'type' => 'text',
                         'default' => 'Department Educators',
-                        'help' => 'Title.'
+                        'help' => 'Title overlay.'
                     ],
+
+                    // Photo 5
                     [
                         'kind' => 'image',
                         'key' => 'staff_img5',
-                        'label' => 'Staff Photo 5',
+                        'label' => 'Staff Photo 5 (Senior Mentors)',
                         'default' => 'assets/images/sunrise school image/teachers.webp',
                         'alt' => 'Senior School Mentors',
                         'help' => 'Staff photo 5.'
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'staff_badge5',
+                        'label' => 'Staff Photo 5 Category Badge',
+                        'type' => 'text',
+                        'default' => 'Pedagogy',
+                        'help' => 'Gold category pill on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'staff_title5',
-                        'label' => 'Staff Photo 5 Title',
+                        'label' => 'Staff Photo 5 Caption Title',
                         'type' => 'text',
                         'default' => 'Senior School Mentors',
-                        'help' => 'Title.'
+                        'help' => 'Title overlay.'
                     ],
+
+                    // Photo 6
                     [
                         'kind' => 'image',
                         'key' => 'staff_img6',
-                        'label' => 'Staff Photo 6',
+                        'label' => 'Staff Photo 6 (Campus Life Bonding)',
                         'default' => 'assets/images/sunrise school image/students_teachers.webp',
                         'alt' => 'Student & Mentor Bonding',
                         'help' => 'Staff photo 6.'
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'staff_badge6',
+                        'label' => 'Staff Photo 6 Category Badge',
+                        'type' => 'text',
+                        'default' => 'Campus Life',
+                        'help' => 'Gold category pill on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'staff_title6',
-                        'label' => 'Staff Photo 6 Title',
+                        'label' => 'Staff Photo 6 Caption Title',
                         'type' => 'text',
                         'default' => 'Student & Mentor Bonding',
-                        'help' => 'Title.'
+                        'help' => 'Title overlay.'
                     ]
                 ]
             ],
+            // Section 4: Academic Departments & Subject Faculties (4 Disciplines)
             [
-                'title' => 'Section 4: Join Our Teaching Team CTA',
+                'title' => 'Section 4: Academic Departments & Subject Faculties (4 Disciplines)',
+                'icon'  => 'menu_book',
+                'desc'  => 'Manage all 4 core subject faculties: Science, Mathematics, Commerce & Humanities, and Physical Education with icons, descriptions, and staff tags.',
+                'fields' => [
+                    // Section Header
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept_section_eyebrow',
+                        'label' => 'Departments Section Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Academic Departments',
+                        'help' => 'Small uppercase gold text above title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept_section_title',
+                        'label' => 'Departments Section Title',
+                        'type' => 'text',
+                        'default' => 'Subject Faculties',
+                        'help' => 'Main section title for academic departments.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept_section_desc',
+                        'label' => 'Departments Section Subtitle',
+                        'type' => 'text',
+                        'default' => 'Our academic faculties comprise qualified, HBSE-trained educators with specialized postgraduate degrees in their respective disciplines.',
+                        'help' => 'Descriptive summary below the heading.'
+                    ],
+
+                    // Department 1: Science
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept1_icon',
+                        'label' => 'Dept 1 Icon (Material Symbols Name e.g. science, biotech)',
+                        'type' => 'text',
+                        'default' => 'science',
+                        'help' => 'Icon identifier from Google Material Symbols.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept1_title',
+                        'label' => 'Dept 1 Title (Science Faculty)',
+                        'type' => 'text',
+                        'default' => 'Science Faculty',
+                        'help' => 'Faculty card heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept1_desc',
+                        'label' => 'Dept 1 Description',
+                        'type' => 'text',
+                        'default' => 'Physics, Chemistry, Biology & General Science with hands-on lab experiments and Olympiad guidance.',
+                        'help' => 'Card description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept1_tag1',
+                        'label' => 'Dept 1 Tag 1 (Staff Level)',
+                        'type' => 'text',
+                        'default' => 'PGT & TGT Staff',
+                        'help' => 'Left tag at bottom of card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept1_tag2',
+                        'label' => 'Dept 1 Tag 2 (Pedagogy Focus)',
+                        'type' => 'text',
+                        'default' => 'Labs & Theory',
+                        'help' => 'Right gold tag at bottom of card.'
+                    ],
+
+                    // Department 2: Mathematics
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept2_icon',
+                        'label' => 'Dept 2 Icon (e.g. calculate, functions)',
+                        'type' => 'text',
+                        'default' => 'calculate',
+                        'help' => 'Icon identifier.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept2_title',
+                        'label' => 'Dept 2 Title (Mathematics)',
+                        'type' => 'text',
+                        'default' => 'Mathematics',
+                        'help' => 'Faculty card heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept2_desc',
+                        'label' => 'Dept 2 Description',
+                        'type' => 'text',
+                        'default' => 'Focusing on conceptual clarity, speed calculations, problem-solving techniques, and competitive readiness.',
+                        'help' => 'Card description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept2_tag1',
+                        'label' => 'Dept 2 Tag 1 (Grade Level)',
+                        'type' => 'text',
+                        'default' => 'Primary to 12th',
+                        'help' => 'Left tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept2_tag2',
+                        'label' => 'Dept 2 Tag 2 (Facility Focus)',
+                        'type' => 'text',
+                        'default' => 'Math Lab',
+                        'help' => 'Right gold tag.'
+                    ],
+
+                    // Department 3: Commerce & Humanities
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept3_icon',
+                        'label' => 'Dept 3 Icon (e.g. query_stats, account_balance)',
+                        'type' => 'text',
+                        'default' => 'query_stats',
+                        'help' => 'Icon identifier.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept3_title',
+                        'label' => 'Dept 3 Title (Commerce & Humanities)',
+                        'type' => 'text',
+                        'default' => 'Commerce & Humanities',
+                        'help' => 'Faculty card heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept3_desc',
+                        'label' => 'Dept 3 Description',
+                        'type' => 'text',
+                        'default' => 'Accountancy, Business Studies, Economics, Political Science, History, and Hindi/English Languages.',
+                        'help' => 'Card description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept3_tag1',
+                        'label' => 'Dept 3 Tag 1 (Wing)',
+                        'type' => 'text',
+                        'default' => 'Senior Secondary',
+                        'help' => 'Left tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept3_tag2',
+                        'label' => 'Dept 3 Tag 2 (Orientation)',
+                        'type' => 'text',
+                        'default' => 'Career Focus',
+                        'help' => 'Right gold tag.'
+                    ],
+
+                    // Department 4: Physical Education & Yoga
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept4_icon',
+                        'label' => 'Dept 4 Icon (e.g. sports_kabaddi, fitness_center)',
+                        'type' => 'text',
+                        'default' => 'sports_kabaddi',
+                        'help' => 'Icon identifier.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept4_title',
+                        'label' => 'Dept 4 Title (Physical Ed. & Yoga)',
+                        'type' => 'text',
+                        'default' => 'Physical Ed. & Yoga',
+                        'help' => 'Faculty card heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept4_desc',
+                        'label' => 'Dept 4 Description',
+                        'type' => 'text',
+                        'default' => 'Daily physical fitness, specialized sports coaching (Cricket, Kabaddi, Athletics), and morning yoga sessions.',
+                        'help' => 'Card description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept4_tag1',
+                        'label' => 'Dept 4 Tag 1 (Staff)',
+                        'type' => 'text',
+                        'default' => 'Sports Coaches',
+                        'help' => 'Left tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'dept4_tag2',
+                        'label' => 'Dept 4 Tag 2 (Participation)',
+                        'type' => 'text',
+                        'default' => 'All Grades',
+                        'help' => 'Right gold tag.'
+                    ]
+                ]
+            ],
+            // Section 5: Join Our Teaching Team CTA
+            [
+                'title' => 'Section 5: Join Our Teaching Team CTA Banner',
                 'icon'  => 'work',
-                'desc'  => 'Recruitment message and call to action button.',
+                'desc'  => 'Recruitment message, subtitle, button text, and link destination.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'cta_eyebrow',
-                        'label' => 'Career Eyebrow',
+                        'label' => 'Career Eyebrow Badge',
                         'type' => 'text',
                         'default' => 'Career Opportunities',
-                        'help' => 'Eyebrow.'
+                        'help' => 'Small uppercase gold text.'
                     ],
                     [
                         'kind' => 'text',
@@ -3766,15 +4236,31 @@ $pages_config = [
                         'label' => 'Career Heading',
                         'type' => 'text',
                         'default' => 'Want to Join Our Teaching Team?',
-                        'help' => 'Headline.'
+                        'help' => 'Primary recruitment headline.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'cta_desc',
-                        'label' => 'Career Subtitle',
+                        'label' => 'Career Description',
                         'type' => 'text',
                         'default' => 'We are always looking for passionate, certified educators who love teaching and inspiring students. Send us your resume.',
-                        'help' => 'Subtitle.'
+                        'help' => 'Recruitment invitation message.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn_text',
+                        'label' => 'Action Button Text',
+                        'type' => 'text',
+                        'default' => 'Apply as Educator',
+                        'help' => 'Text on the call to action button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn_link',
+                        'label' => 'Action Button Link Destination',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Destination URL (e.g. contact-us.php or contact-us.php#career).'
                     ]
                 ]
             ]
@@ -4453,7 +4939,26 @@ $current_page_data = $pages_config[$active_tab];
                         <h2 class="text-2xl font-bold text-gray-900"><?= htmlspecialchars($current_page_data['title']) ?></h2>
                         <p class="text-sm text-gray-500 mt-1"><?= htmlspecialchars($current_page_data['desc']) ?></p>
                     </div>
-                    <div class="flex items-center gap-2">
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <?php 
+                        $tab_to_url = [
+                            'home'       => 'index.php',
+                            'about'      => 'about-us.php',
+                            'academics'  => 'academics.php',
+                            'admissions' => 'admission.php',
+                            'campus'     => 'campus.php',
+                            'events'     => 'events.php',
+                            'faculty'    => 'faculty.php',
+                            'gallery'    => 'gallery.php',
+                            'contact'    => 'contact-us.php',
+                            'general'    => 'index.php'
+                        ];
+                        $target_url = '../' . ($tab_to_url[$active_tab] ?? 'index.php');
+                        ?>
+                        <a href="<?= htmlspecialchars($target_url) ?>" target="_blank" class="text-xs px-3 py-1.5 bg-[#C9A24B]/15 hover:bg-[#C9A24B]/25 text-[#8c6b1e] hover:text-[#705414] font-semibold rounded-lg flex items-center gap-1.5 transition border border-[#C9A24B]/30 shadow-sm">
+                            <span class="material-symbols-outlined text-sm">visibility</span>
+                            <span>View Live <?= htmlspecialchars($current_page_data['title']) ?></span>
+                        </a>
                         <span class="text-xs px-3 py-1.5 bg-gray-100 text-gray-600 rounded-lg font-mono">
                             page_key: <strong><?= htmlspecialchars($active_tab) ?></strong>
                         </span>

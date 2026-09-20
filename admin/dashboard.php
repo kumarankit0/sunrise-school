@@ -1352,20 +1352,21 @@ $pages_config = [
     'about' => [
         'title' => 'About Us Page',
         'icon'  => 'info',
-        'desc'  => 'Institutional Legacy, Vision, Mission, History Milestones & Campus Visual Tour',
+        'desc'  => 'Complete About Us Page Control: Hero Banner, Stats Strip, Vision & Mission (with expandable text & quote), Founder Story, 5 Milestones Timeline, Symbolism & Pledge, Leadership Team, 5 Visual Tour Photos, and Mandatory Public Disclosure',
         'sections' => [
+            // Section 1: Hero Banner & Badges
             [
-                'title' => 'Section 1: Hero Banner & Intro',
+                'title' => 'Section 1: Hero Banner & Main Headlines',
                 'icon'  => 'flag',
-                'desc'  => 'Top banner image, eyebrow badge, page title, and mission summary.',
+                'desc'  => 'Top banner photo, eyebrow badge, main title, and introductory subtitle description.',
                 'fields' => [
                     [
                         'kind' => 'image',
                         'key' => 'hero_banner',
-                        'label' => 'About Us Hero Banner Image',
+                        'label' => 'Hero Banner Background Image',
                         'default' => 'assets/images/sunrise school image/school_home2.webp',
                         'alt' => 'Sun Rise School Building and Assembly Area',
-                        'help' => 'Header banner image for about-us.php.'
+                        'help' => 'Top background banner photo for About Us page (recommended: 1920x1080).'
                     ],
                     [
                         'kind' => 'text',
@@ -1373,109 +1374,113 @@ $pages_config = [
                         'label' => 'Hero Eyebrow Badge',
                         'type' => 'text',
                         'default' => 'Institutional Legacy & Future Vision',
-                        'help' => 'Eyebrow pill above About Us title.'
+                        'help' => 'Gold-bordered pill badge displayed above the main title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_title',
-                        'label' => 'About Us Hero Title',
+                        'label' => 'About Us Main Title',
                         'type' => 'text',
                         'default' => 'About Sun Rise Sr. Sec. School',
-                        'help' => 'Primary title for about-us.php.'
+                        'help' => 'Primary title heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_subtitle',
-                        'label' => 'About Us Subtitle',
+                        'label' => 'Hero Subtitle Description',
                         'type' => 'text',
                         'default' => 'Cultivating academic rigor, moral integrity, and lifelong curiosity within a vibrant and disciplined campus environment in Dobhi, Haryana.',
-                        'help' => 'Hero paragraph on About Us page.'
+                        'help' => 'Introductory paragraph below the main title.'
                     ]
                 ]
             ],
+
+            // Section 2: Milestones & Statistics Strip
             [
-                'title' => 'Section 2: Milestone Statistics Strip',
+                'title' => 'Section 2: Key Milestones & Statistics Strip',
                 'icon'  => 'pin_drop',
-                'desc'  => '4 key achievement numbers shown in the floating strip.',
+                'desc'  => '4 key achievement numbers and labels shown in the floating strip card.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'stat1_num',
-                        'label' => 'Stat 1 Number',
+                        'label' => 'Stat 1 Number (Year Founded)',
                         'type' => 'text',
-                        'default' => '20+',
-                        'help' => 'Stat 1 number.'
+                        'default' => '2007',
+                        'help' => 'First stat counter (e.g. 2007).'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'stat1_lbl',
                         'label' => 'Stat 1 Label',
                         'type' => 'text',
-                        'default' => 'Years of Excellence',
-                        'help' => 'Stat 1 label.'
+                        'default' => 'Year Established',
+                        'help' => 'First stat label.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'stat2_num',
-                        'label' => 'Stat 2 Number',
+                        'label' => 'Stat 2 Number (Students)',
                         'type' => 'text',
-                        'default' => '100%',
-                        'help' => 'Stat 2 number.'
+                        'default' => '700+',
+                        'help' => 'Second stat counter (e.g. 700+).'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'stat2_lbl',
                         'label' => 'Stat 2 Label',
                         'type' => 'text',
-                        'default' => 'Board Results',
-                        'help' => 'Stat 2 label.'
+                        'default' => 'Enrolled Students',
+                        'help' => 'Second stat label.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'stat3_num',
-                        'label' => 'Stat 3 Number',
+                        'label' => 'Stat 3 Number (Faculty)',
                         'type' => 'text',
-                        'default' => '1,500+',
-                        'help' => 'Stat 3 number.'
+                        'default' => '28+',
+                        'help' => 'Third stat counter (e.g. 28+).'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'stat3_lbl',
                         'label' => 'Stat 3 Label',
                         'type' => 'text',
-                        'default' => 'Alumni & Students',
-                        'help' => 'Stat 3 label.'
+                        'default' => 'Experienced Teachers',
+                        'help' => 'Third stat label.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'stat4_num',
-                        'label' => 'Stat 4 Number',
+                        'label' => 'Stat 4 Number (Results)',
                         'type' => 'text',
-                        'default' => '1:15',
-                        'help' => 'Stat 4 number.'
+                        'default' => '100%',
+                        'help' => 'Fourth stat counter (e.g. 100%).'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'stat4_lbl',
                         'label' => 'Stat 4 Label',
                         'type' => 'text',
-                        'default' => 'Teacher-Student Ratio',
-                        'help' => 'Stat 4 label.'
+                        'default' => 'HBSE Board Results',
+                        'help' => 'Fourth stat label.'
                     ]
                 ]
             ],
+
+            // Section 3: Educational Philosophy, Vision & Mission
             [
-                'title' => 'Section 3: Core Philosophy, Vision & Mission',
+                'title' => 'Section 3: Educational Philosophy, Vision & Mission Cards',
                 'icon'  => 'visibility',
-                'desc'  => 'Educational philosophy, school vision, and institutional mission cards.',
+                'desc'  => 'Section header, Vision card with all 4 expandable paragraphs & quotes, and Mission card.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'philosophy_tag',
-                        'label' => 'Philosophy Tagline',
+                        'label' => 'Philosophy Eyebrow Tagline',
                         'type' => 'text',
                         'default' => 'Our Core Philosophy',
-                        'help' => 'Eyebrow tag.'
+                        'help' => 'Top eyebrow tag for this section.'
                     ],
                     [
                         'kind' => 'text',
@@ -1483,23 +1488,47 @@ $pages_config = [
                         'label' => 'Philosophy Section Heading',
                         'type' => 'text',
                         'default' => 'Guiding Principles of Education',
-                        'help' => 'Section headline.'
+                        'help' => 'Main heading for philosophy section.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'vision_title',
                         'label' => 'Vision Card Title',
                         'type' => 'text',
-                        'default' => 'To Enlighten Every Mind Like the Rising Sun',
-                        'help' => 'Title for vision.'
+                        'default' => 'A Centre of Excellence for Intellect & Integrity',
+                        'help' => 'Title heading for Vision Card.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'vision_text',
-                        'label' => 'Vision Description',
+                        'key' => 'vision_text_p1',
+                        'label' => 'Vision Paragraph 1 (Primary Visible Statement)',
                         'type' => 'html',
-                        'default' => 'Sun Rise Sr. Sec. School envisions building a forward-looking student community rooted in timeless values, academic distinction, ethical integrity, and technological readiness to lead with compassion and confidence.',
-                        'help' => 'Vision statement (HTML allowed).'
+                        'default' => 'To establish Sun Rise Sr. Sec. School as a Centre of Excellence that nurtures young minds into individuals of intellect, integrity, discernment, and compassion—equipped not merely to succeed in life, but to give meaning to that success through service to society and the nation.',
+                        'help' => 'Initial visible paragraph on Vision card before expanding.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'vision_text_p2',
+                        'label' => 'Vision Paragraph 2 (Read More - Ethos)',
+                        'type' => 'html',
+                        'default' => 'We envision an educational ethos where the wisdom of traditional values converges with the possibilities of progressive thought, technology, and contemporary learning. Every student should emerge from our institution with a composed presence, articulate expression, sound judgement, and a deep sense of responsibility towards the world beyond oneself.',
+                        'help' => 'Second paragraph shown after clicking Read More.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'vision_text_p3',
+                        'label' => 'Vision Paragraph 3 (Read More - Independent Thought)',
+                        'type' => 'html',
+                        'default' => 'Our endeavour is to cultivate individuals who possess the courage to think independently, the humility to understand others, and the conviction to place collective welfare above personal interest. We aspire to prepare a generation that carries its heritage with respect, embraces the future with confidence, and contributes to the nation with dignity, integrity, and pride.',
+                        'help' => 'Third paragraph shown after clicking Read More.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'vision_text_p4',
+                        'label' => 'Vision Highlight Quote Box',
+                        'type' => 'html',
+                        'default' => '“We believe that education finds its highest purpose when knowledge becomes wisdom, achievement becomes responsibility, and the individual becomes a force for the greater good.”',
+                        'help' => 'Italicized quote block shown inside the expandable Vision card.'
                     ],
                     [
                         'kind' => 'text',
@@ -1507,172 +1536,566 @@ $pages_config = [
                         'label' => 'Mission Card Title',
                         'type' => 'text',
                         'default' => 'Holistic Education for Mind, Body & Soul',
-                        'help' => 'Title for mission.'
+                        'help' => 'Title heading for Mission Card.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'mission_text',
-                        'label' => 'Mission Description',
+                        'label' => 'Mission Statement Description',
                         'type' => 'html',
                         'default' => 'We are dedicated to delivering a comprehensive HBSE curriculum enriched by hands-on science laboratories, digital learning, sportsmanship, moral values, and cultural activities that nurture well-rounded global citizens.',
-                        'help' => 'Mission statement (HTML allowed).'
+                        'help' => 'Complete text inside the Mission Card.'
                     ]
                 ]
             ],
+
+            // Section 4: History Header & Founder's Genesis Highlight Card
             [
-                'title' => 'Section 4: History Milestones Timeline',
-                'icon'  => 'timeline',
-                'desc'  => '4 chronological journey milestones from foundation to present day.',
+                'title' => 'Section 4: Institutional History & Founder\'s Genesis Card',
+                'icon'  => 'history_edu',
+                'desc'  => 'Official history intro, Mr. Bhader Singh Swami\'s portrait, badges, and founding story paragraphs.',
                 'fields' => [
                     [
                         'kind' => 'text',
-                        'key' => 'history_eyebrow',
-                        'label' => 'Timeline Eyebrow',
+                        'key' => 'history_badge',
+                        'label' => 'History Section Eyebrow Tag',
                         'type' => 'text',
-                        'default' => 'Our Growth Journey',
-                        'help' => 'Eyebrow label.'
+                        'default' => 'Our History',
+                        'help' => 'Eyebrow tag above the history section.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'history_heading',
-                        'label' => 'Timeline Section Heading',
+                        'key' => 'history_title',
+                        'label' => 'History Section Heading',
                         'type' => 'text',
-                        'default' => 'Milestones in Our History',
-                        'help' => 'Heading.'
+                        'default' => 'From Humble Beginnings to a Legacy of Learning',
+                        'help' => 'Main headline of history section.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'history_intro',
+                        'label' => 'History Intro Paragraph',
+                        'type' => 'text',
+                        'default' => 'The journey of Sun Rise Sr. Sec. School, Dobhi began in 2007, rooted in a profound belief that education can illuminate lives, transform possibilities, and lay the foundation for a better society.',
+                        'help' => 'Introductory narrative text for the history section.'
+                    ],
+                    [
+                        'kind' => 'image',
+                        'key' => 'founder_photo',
+                        'label' => 'Founder Portrait Photo (Optional)',
+                        'default' => '',
+                        'alt' => 'Mr. Bhader Singh Swami - Founder & Director',
+                        'help' => 'Upload portrait photo of founder Mr. Bhader Singh Swami (if blank, displays classic school crest).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_badge',
+                        'label' => 'Founder Badge Label',
+                        'type' => 'text',
+                        'default' => 'Institutional Founder',
+                        'help' => 'Gold pill label above founder name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_name',
+                        'label' => 'Founder Full Name',
+                        'type' => 'text',
+                        'default' => 'Mr. Bhader Singh Swami',
+                        'help' => 'Name of the founder.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_role',
+                        'label' => 'Founder Designation / Role',
+                        'type' => 'text',
+                        'default' => 'Founder & Director',
+                        'help' => 'Official role and designation.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_est',
+                        'label' => 'Founder Card Footer Badge',
+                        'type' => 'text',
+                        'default' => 'Est. 2007 • Dobhi, Hisar',
+                        'help' => 'Footer badge with year and location.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_heading',
+                        'label' => 'Founder Story Heading',
+                        'type' => 'text',
+                        'default' => 'A Vision Born from Conviction & Dedication',
+                        'help' => 'Headline for founder story narrative.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_p1',
+                        'label' => 'Founder Story Paragraph 1 (Inception & Struggle)',
+                        'type' => 'html',
+                        'default' => 'The institution was founded by <strong>Mr. Bhader Singh Swami</strong>, whose own journey was shaped by the struggles and limitations of growing up in a lower-middle-class family. Having experienced the challenges surrounding access to quality education, he developed a deep conviction that every child, irrespective of background, deserves the opportunity to learn, grow, and aspire.',
+                        'help' => 'First story paragraph detailing background.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_p2',
+                        'label' => 'Founder Story Paragraph 2 (Teaching & 90 Students)',
+                        'type' => 'html',
+                        'default' => 'His years of teaching in different schools further strengthened this conviction and eventually gave form to the vision that became Sun Rise Sr. Sec. School. The beginning was modest: with approximately 90 students, education up to Class X, and limited resources, the school initially operated from small premises at different locations.',
+                        'help' => 'Second story paragraph detailing the beginning with 90 students.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_p3',
+                        'label' => 'Founder Story Paragraph 3 (Perseverance & Community)',
+                        'type' => 'html',
+                        'default' => 'The early years were marked by challenges and perseverance, but with unwavering dedication from the management, teachers, and the trust of local families, the foundation was steadily strengthened.',
+                        'help' => 'Third story paragraph detailing perseverance.'
+                    ]
+                ]
+            ],
+
+            // Section 5: Chronological 5-Stage Milestone Roadmap
+            [
+                'title' => 'Section 5: Chronological 5-Stage Milestone Timeline',
+                'icon'  => 'timeline',
+                'desc'  => 'All 5 milestones in chronological order: 2007 Inception, 2011 HBSE Affiliation, 2013 Science Accolades, 2017 Academic Sweep, and Today\'s Thriving Hub.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'milestones_badge',
+                        'label' => 'Timeline Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Key Milestones',
+                        'help' => 'Small eyebrow tag above timeline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'milestones_title',
+                        'label' => 'Timeline Main Title',
+                        'type' => 'text',
+                        'default' => 'Milestones in Our Institutional Journey',
+                        'help' => 'Headline for chronological timeline.'
+                    ],
+                    // Milestone 1 (2007)
+                    [
+                        'kind' => 'text',
+                        'key' => 'm1_num',
+                        'label' => 'Milestone 1 Step Badge',
+                        'type' => 'text',
+                        'default' => '01',
+                        'help' => 'Step index circle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm1_year',
+                        'label' => 'Milestone 1 Year Badge',
+                        'type' => 'text',
+                        'default' => '2007',
+                        'help' => 'Pill year badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm1_category',
+                        'label' => 'Milestone 1 Category / Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Foundation & Humble Beginnings',
+                        'help' => 'Category label.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'm1_title',
-                        'label' => 'Milestone 1 Title (Foundation)',
+                        'label' => 'Milestone 1 Title',
                         'type' => 'text',
-                        'default' => 'Establishment of Sun Rise School',
-                        'help' => 'Milestone 1 title.'
+                        'default' => 'Modest Inception with 90 Students',
+                        'help' => 'Heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'm1_desc',
                         'label' => 'Milestone 1 Description',
+                        'type' => 'html',
+                        'default' => 'Started with approximately 90 students up to Class X operating from modest premises at different locations. Overcoming initial hurdles through sheer dedication of teachers and the profound trust reposed by local families in Dobhi and surrounding villages.',
+                        'help' => 'Narrative description for Milestone 1.'
+                    ],
+
+                    // Milestone 2 (2011)
+                    [
+                        'kind' => 'text',
+                        'key' => 'm2_num',
+                        'label' => 'Milestone 2 Step Badge',
                         'type' => 'text',
-                        'default' => 'Founded with the noble aspiration to bring quality, modern, value-based English and Hindi medium education to the youth of Dobhi and surrounding regions.',
-                        'help' => 'Milestone 1 text.'
+                        'default' => '02',
+                        'help' => 'Step index circle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm2_year',
+                        'label' => 'Milestone 2 Year Badge',
+                        'type' => 'text',
+                        'default' => '2011',
+                        'help' => 'Pill year badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm2_category',
+                        'label' => 'Milestone 2 Category / Eyebrow',
+                        'type' => 'text',
+                        'default' => 'HBSE Affiliation & Senior Secondary Expansion',
+                        'help' => 'Category label.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'm2_title',
-                        'label' => 'Milestone 2 Title (Upgradation)',
+                        'label' => 'Milestone 2 Title',
                         'type' => 'text',
-                        'default' => 'HBSE Affiliation & Senior Secondary Streams',
-                        'help' => 'Milestone 2 title.'
+                        'default' => 'Upgradation to Class XII (10+2) & Infrastructure Leap',
+                        'help' => 'Heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'm2_desc',
                         'label' => 'Milestone 2 Description',
+                        'type' => 'html',
+                        'default' => 'Recognizing the urgent need for higher learning opportunities in the region, the school took a major leap forward by securing affiliation with the <strong>Board of School Education Haryana (HBSE)</strong> and expanding from Class X to Class XII (10+2). This milestone marked the transformation into a senior secondary school, opening Science and Arts streams, state-of-the-art laboratories, a resourceful library, and reliable rural bus transport routes.',
+                        'help' => 'Narrative description for Milestone 2.'
+                    ],
+
+                    // Milestone 3 (2013)
+                    [
+                        'kind' => 'text',
+                        'key' => 'm3_num',
+                        'label' => 'Milestone 3 Step Badge',
                         'type' => 'text',
-                        'default' => 'Upgraded to Senior Secondary (10+2) under HBSE with specialized streams in Science (Medical/Non-Medical), Commerce, and Arts alongside modern physics, chemistry, and biology labs.',
-                        'help' => 'Milestone 2 text.'
+                        'default' => '03',
+                        'help' => 'Step index circle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm3_year',
+                        'label' => 'Milestone 3 Year Badge',
+                        'type' => 'text',
+                        'default' => '2013',
+                        'help' => 'Pill year badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm3_category',
+                        'label' => 'Milestone 3 Category / Eyebrow',
+                        'type' => 'text',
+                        'default' => 'State-Level Science Accolades',
+                        'help' => 'Category label.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'm3_title',
-                        'label' => 'Milestone 3 Title (Infrastructure)',
+                        'label' => 'Milestone 3 Title',
                         'type' => 'text',
-                        'default' => 'Modern Science Labs, Computer Lab & Sports Ground',
-                        'help' => 'Milestone 3 title.'
+                        'default' => 'State Selection at CCSHAU Hisar Science Exhibition',
+                        'help' => 'Heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'm3_desc',
                         'label' => 'Milestone 3 Description',
+                        'type' => 'html',
+                        'default' => 'As the school grew, its students began to leave their mark on wider platforms. Sun Rise achieved notable recognition when two students were selected at the Haryana state level at a prestigious Science Exhibition organized at CCSHAU Hisar, reflecting the institution\'s commitment to nurturing scientific inquiry and innovation.',
+                        'help' => 'Narrative description for Milestone 3.'
+                    ],
+
+                    // Milestone 4 (2017)
+                    [
+                        'kind' => 'text',
+                        'key' => 'm4_num',
+                        'label' => 'Milestone 4 Step Badge',
                         'type' => 'text',
-                        'default' => 'Inauguration of modern digital smart classrooms, a high-tech computer laboratory, a wide athletic sports ground, and annual science exhibitions.',
-                        'help' => 'Milestone 3 text.'
+                        'default' => '04',
+                        'help' => 'Step index circle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm4_year',
+                        'label' => 'Milestone 4 Year Badge',
+                        'type' => 'text',
+                        'default' => '2017',
+                        'help' => 'Pill year badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm4_category',
+                        'label' => 'Milestone 4 Category / Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Block & District Level Academic Sweep',
+                        'help' => 'Category label.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'm4_title',
-                        'label' => 'Milestone 4 Title (Today)',
+                        'label' => 'Milestone 4 Title',
                         'type' => 'text',
-                        'default' => 'Empowering Future Generations',
-                        'help' => 'Milestone 4 title.'
+                        'default' => '1st, 2nd & 3rd Positions in Talent Search & Physics Point Honours',
+                        'help' => 'Heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'm4_desc',
                         'label' => 'Milestone 4 Description',
+                        'type' => 'html',
+                        'default' => 'Sun Rise students demonstrated academic brilliance at the block level Talent Search Exam, sweeping the <strong>1st, 2nd, and 3rd positions</strong> among more than 25 participating schools and over 1,500 students. In the same year, at the district level Physics Point Prize Test, 10 students from the school ranked among the top 200 out of more than 2,700 participants—highlighting competitive spirit and academic depth.',
+                        'help' => 'Narrative description for Milestone 4.'
+                    ],
+
+                    // Milestone 5 (Today)
+                    [
+                        'kind' => 'text',
+                        'key' => 'm5_num',
+                        'label' => 'Milestone 5 Step Badge',
                         'type' => 'text',
-                        'default' => 'Consistently achieving 100% board results, district academic merit awards, and sports championships, paving pathways to premier universities and professional colleges.',
-                        'help' => 'Milestone 4 text.'
+                        'default' => '05',
+                        'help' => 'Step index circle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm5_year',
+                        'label' => 'Milestone 5 Year Badge',
+                        'type' => 'text',
+                        'default' => 'Today',
+                        'help' => 'Pill year badge (e.g. Today).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm5_category',
+                        'label' => 'Milestone 5 Category / Eyebrow',
+                        'type' => 'text',
+                        'default' => 'A Thriving Campus & Community',
+                        'help' => 'Category label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm5_title',
+                        'label' => 'Milestone 5 Title',
+                        'type' => 'text',
+                        'default' => '700+ Students, 28 Teachers & 30+ Classrooms',
+                        'help' => 'Heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'm5_desc',
+                        'label' => 'Milestone 5 Description',
+                        'type' => 'html',
+                        'default' => 'Today, Sun Rise Sr. Sec. School stands tall as a thriving educational hub, serving approximately 700 students guided by a dedicated team of 28 experienced teachers across 30+ well-ventilated classrooms. Beyond academic excellence, the school emphasizes sports, creative arts, cultural programs, and educational excursions to ensure holistic growth.',
+                        'help' => 'Narrative description for Milestone 5.'
                     ]
                 ]
             ],
+
+            // Section 6: "Sun Rise" Philosophy & Enduring Pledge Banner
             [
-                'title' => 'Section 5: Leadership Address & Quote',
+                'title' => 'Section 6: "Sun Rise" Symbolism & Institutional Pledge',
+                'icon'  => 'wb_sunny',
+                'desc'  => 'The symbolism behind the school name and the royal navy enduring pledge banner card.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'symbolism_badge',
+                        'label' => 'Symbolism Card Eyebrow',
+                        'type' => 'text',
+                        'default' => 'The Symbolism',
+                        'help' => 'Eyebrow tag above symbolism title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'symbolism_title',
+                        'label' => 'Symbolism Card Title',
+                        'type' => 'text',
+                        'default' => 'The Meaning Behind "Sun Rise"',
+                        'help' => 'Headline for symbolism card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'symbolism_text',
+                        'label' => 'Symbolism Explanation Text',
+                        'type' => 'html',
+                        'default' => 'The name <strong>"Sun Rise"</strong> was chosen with purpose. Just as the rising sun brings warmth, dispels darkness, and heralds a new beginning filled with hope and possibilities, the school aspires to be a guiding light for every learner who walks through its doors.',
+                        'help' => 'Description of what the name Sun Rise stands for.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'symbolism_footer',
+                        'label' => 'Symbolism Card Footer Tag',
+                        'type' => 'text',
+                        'default' => 'Light after darkness • Hope • New Beginnings',
+                        'help' => 'Footer note at the bottom of the card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'pledge_badge',
+                        'label' => 'Pledge Banner Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Our Enduring Pledge',
+                        'help' => 'Eyebrow tag on the navy pledge card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'pledge_title',
+                        'label' => 'Pledge Banner Title',
+                        'type' => 'text',
+                        'default' => 'A Legacy of Perseverance & Community Trust',
+                        'help' => 'Headline on the pledge card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'pledge_desc',
+                        'label' => 'Pledge Banner Description',
+                        'type' => 'text',
+                        'default' => 'From a modest vision with 90 students to a senior secondary institution touching hundreds of lives, the story of Sun Rise Sr. Sec. School is a testament to perseverance, purpose, and community trust.',
+                        'help' => 'Main paragraph on pledge card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'pledge_quote_title',
+                        'label' => 'Pledge Quote Block Label',
+                        'type' => 'text',
+                        'default' => 'The Journey Continues With Our Mission:',
+                        'help' => 'Title tag above the quote.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'pledge_quote',
+                        'label' => 'Pledge Featured Mission Quote',
+                        'type' => 'text',
+                        'default' => '“To provide better education, nurture better human beings, and contribute towards a better humanity.”',
+                        'help' => 'Highlighted mission quote on the banner.'
+                    ]
+                ]
+            ],
+
+            // Section 7: Leadership Message & Administration Team
+            [
+                'title' => 'Section 7: Leadership Address & Administration Team (#leadership)',
                 'icon'  => 'record_voice_over',
-                'desc'  => 'Principal and Management Committee message card.',
+                'desc'  => 'Director\'s welcome message, leader portrait photo slot, featured quote, and leadership team credentials.',
                 'fields' => [
                     [
                         'kind' => 'image',
                         'key' => 'leader_photo',
-                        'label' => 'Leader Photo',
+                        'label' => 'Director / Leadership Portrait Photo',
                         'default' => 'assets/images/sunrise school image/speaker.webp',
-                        'alt' => 'Principal & Management Committee',
-                        'help' => 'Leader portrait.'
+                        'alt' => 'School Leadership & Management',
+                        'help' => 'Featured portrait photo in the leadership message block.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'leader_tagline',
-                        'label' => 'Leadership Tagline',
+                        'label' => 'Leadership Section Eyebrow',
                         'type' => 'text',
-                        'default' => 'Leadership Message',
-                        'help' => 'Eyebrow tag.'
+                        'default' => 'Director\'s Welcome',
+                        'help' => 'Eyebrow pill tag (e.g. Director\'s Welcome).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader_heading',
+                        'label' => 'Leadership Main Headline',
+                        'type' => 'text',
+                        'default' => 'Inspiring Minds, Cultivating Character',
+                        'help' => 'Main headline on leadership card.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'leader_quote',
-                        'label' => 'Leadership Quote',
+                        'label' => 'Featured Leadership Quote',
                         'type' => 'text',
-                        'default' => '“Our mission is to illuminate young minds with knowledge, strengthen their character with discipline, and empower them to become successful citizens of tomorrow.”',
-                        'help' => 'Featured quote.'
+                        'default' => '“Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society.”',
+                        'help' => 'Blockquote in italic font.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'leader_title',
-                        'label' => 'Signatory Title',
+                        'key' => 'leader_desc',
+                        'label' => 'Leadership Message Subtext',
                         'type' => 'text',
-                        'default' => 'Principal & Management Committee',
-                        'help' => 'Title.'
+                        'default' => 'At Sun Rise Sr. Sec. School, we do not simply prepare children for tomorrow; we nurture the individuals who will shape tomorrow.',
+                        'help' => 'Subtext paragraph below the quote.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_name',
+                        'label' => 'Leader 1 Full Name',
+                        'type' => 'text',
+                        'default' => 'Mr. Bhader Singh Swami',
+                        'help' => 'First signatory name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_role',
+                        'label' => 'Leader 1 Role & Qualifications',
+                        'type' => 'text',
+                        'default' => 'Founder & Director (M.A., B.Ed.)',
+                        'help' => 'First signatory designation.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_name',
+                        'label' => 'Leader 2 Full Name',
+                        'type' => 'text',
+                        'default' => 'Mr. Rajbir Singh',
+                        'help' => 'Second signatory name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_role',
+                        'label' => 'Leader 2 Role & Qualifications',
+                        'type' => 'text',
+                        'default' => 'Principal (M.A., B.Ed.)',
+                        'help' => 'Second signatory designation.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_name',
+                        'label' => 'Leader 3 Full Name',
+                        'type' => 'text',
+                        'default' => 'Mr. Indra Dev',
+                        'help' => 'Third signatory name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_role',
+                        'label' => 'Leader 3 Role & Qualifications',
+                        'type' => 'text',
+                        'default' => 'Coordinator (LL.M., Ex-GM RBI)',
+                        'help' => 'Third signatory designation.'
                     ]
                 ]
             ],
+
+            // Section 8: Campus Visual Tour Collage
             [
-                'title' => 'Section 6: Campus Visual Tour Collage',
+                'title' => 'Section 8: Campus Visual Tour Collage (5 Photo Slots)',
                 'icon'  => 'grid_view',
-                'desc'  => '5 collage photo cards showing campus, prayers, exhibition, and mentorship.',
+                'desc'  => 'Manage all 5 photo cards, upload custom photos, or pick from existing assets with live previews and badge labels.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'tour_tagline',
-                        'label' => 'Tour Tagline',
+                        'label' => 'Visual Tour Eyebrow',
                         'type' => 'text',
                         'default' => 'Visual Tour',
-                        'help' => 'Eyebrow.'
+                        'help' => 'Eyebrow tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'tour_title',
-                        'label' => 'Tour Heading',
+                        'label' => 'Visual Tour Heading',
                         'type' => 'text',
                         'default' => 'Moments & Campus Life',
-                        'help' => 'Heading.'
+                        'help' => 'Section headline.'
                     ],
+                    // Tour Photo 1
                     [
                         'kind' => 'image',
                         'key' => 'tour_img1',
-                        'label' => 'Tour Photo 1 (Main Building)',
+                        'label' => 'Tour Photo 1 (Top Left: Main Building)',
                         'default' => 'assets/images/sunrise school image/school.webp',
                         'alt' => 'Main Campus Building',
-                        'help' => 'Photo 1.'
+                        'help' => 'Top left photo in the 3-column collage.'
                     ],
                     [
                         'kind' => 'text',
@@ -1680,15 +2103,16 @@ $pages_config = [
                         'label' => 'Tour Photo 1 Label',
                         'type' => 'text',
                         'default' => 'Main Campus Building',
-                        'help' => 'Label for photo 1.'
+                        'help' => 'Badge label displayed over photo 1.'
                     ],
+                    // Tour Photo 2
                     [
                         'kind' => 'image',
                         'key' => 'tour_img2',
-                        'label' => 'Tour Photo 2 (Morning Prayer)',
+                        'label' => 'Tour Photo 2 (Bottom Left: Prayer & Assembly)',
                         'default' => 'assets/images/sunrise school image/children_praying.webp',
                         'alt' => 'Morning Prayer & Assembly',
-                        'help' => 'Photo 2.'
+                        'help' => 'Bottom left photo in the 3-column collage.'
                     ],
                     [
                         'kind' => 'text',
@@ -1696,15 +2120,16 @@ $pages_config = [
                         'label' => 'Tour Photo 2 Label',
                         'type' => 'text',
                         'default' => 'Morning Prayer & Assembly',
-                        'help' => 'Label for photo 2.'
+                        'help' => 'Badge label displayed over photo 2.'
                     ],
+                    // Tour Photo 3
                     [
                         'kind' => 'image',
                         'key' => 'tour_img3',
-                        'label' => 'Tour Photo 3 (Panorama View)',
+                        'label' => 'Tour Photo 3 (Center Featured: Panorama Campus View)',
                         'default' => 'assets/images/sunrise school image/school3.webp',
                         'alt' => 'Campus Panorama View',
-                        'help' => 'Photo 3 (Tall center photo).'
+                        'help' => 'Tall center highlight photo in the collage.'
                     ],
                     [
                         'kind' => 'text',
@@ -1712,15 +2137,16 @@ $pages_config = [
                         'label' => 'Tour Photo 3 Label',
                         'type' => 'text',
                         'default' => 'Campus Panorama View',
-                        'help' => 'Label for photo 3.'
+                        'help' => 'Badge label displayed over photo 3.'
                     ],
+                    // Tour Photo 4
                     [
                         'kind' => 'image',
                         'key' => 'tour_img4',
-                        'label' => 'Tour Photo 4 (Science Exhibition)',
+                        'label' => 'Tour Photo 4 (Top Right: Science Exhibitions)',
                         'default' => 'assets/images/sunrise school image/exhibition3.webp',
                         'alt' => 'Student Science Exhibitions',
-                        'help' => 'Photo 4.'
+                        'help' => 'Top right photo in the collage.'
                     ],
                     [
                         'kind' => 'text',
@@ -1728,15 +2154,16 @@ $pages_config = [
                         'label' => 'Tour Photo 4 Label',
                         'type' => 'text',
                         'default' => 'Student Science Exhibitions',
-                        'help' => 'Label for photo 4.'
+                        'help' => 'Badge label displayed over photo 4.'
                     ],
+                    // Tour Photo 5
                     [
                         'kind' => 'image',
                         'key' => 'tour_img5',
-                        'label' => 'Tour Photo 5 (Mentorship)',
+                        'label' => 'Tour Photo 5 (Bottom Right: Mentorship)',
                         'default' => 'assets/images/sunrise school image/students_teachers.webp',
                         'alt' => 'Interactive Faculty Mentorship',
-                        'help' => 'Photo 5.'
+                        'help' => 'Bottom right photo in the collage.'
                     ],
                     [
                         'kind' => 'text',
@@ -1744,7 +2171,231 @@ $pages_config = [
                         'label' => 'Tour Photo 5 Label',
                         'type' => 'text',
                         'default' => 'Interactive Faculty Mentorship',
-                        'help' => 'Label for photo 5.'
+                        'help' => 'Badge label displayed over photo 5.'
+                    ]
+                ]
+            ],
+
+            // Section 9: Mandatory Public Disclosure & Compliance
+            [
+                'title' => 'Section 9: Mandatory Public Disclosure & Regulatory Compliance (#mandatory-disclosure)',
+                'icon'  => 'verified_user',
+                'desc'  => 'HBSE compliance parameters, managing society details, school codes, and 5 statutory certificate statuses.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'disclosure_badge',
+                        'label' => 'Disclosure Section Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Official Governance & Compliance',
+                        'help' => 'Eyebrow tag above the section title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'disclosure_title',
+                        'label' => 'Disclosure Section Heading',
+                        'type' => 'text',
+                        'default' => 'Mandatory Public Disclosure (HBSE Norms)',
+                        'help' => 'Main headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'disclosure_desc',
+                        'label' => 'Disclosure Introductory Paragraph',
+                        'type' => 'text',
+                        'default' => 'In compliance with Board of School Education Haryana (HBSE) guidelines, our institutional accreditations, statutory certificates, and governance parameters are maintained transparently.',
+                        'help' => 'Introductory description text.'
+                    ],
+                    // Institutional Information
+                    [
+                        'kind' => 'text',
+                        'key' => 'disc_school_name',
+                        'label' => 'Official School Name',
+                        'type' => 'text',
+                        'default' => 'Sun Rise Sr. Sec. School, Dobhi',
+                        'help' => 'Full registered name of the institution.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'disc_board',
+                        'label' => 'Board Affiliation Details',
+                        'type' => 'text',
+                        'default' => 'HBSE (Affiliated since 2011)',
+                        'help' => 'Affiliating body and year.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'disc_code',
+                        'label' => 'Affiliation Code / Registration Number',
+                        'type' => 'text',
+                        'default' => 'HBSE Code: SR-2011-DH',
+                        'help' => 'Official board affiliation number / school code.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'disc_society',
+                        'label' => 'Managing Society / Trust Name',
+                        'type' => 'text',
+                        'default' => 'Sun Rise Educational Society, Dobhi',
+                        'help' => 'Name of the registered society managing the school.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'disc_principal',
+                        'label' => 'Principal Full Name & Degrees',
+                        'type' => 'text',
+                        'default' => 'Mr. Rajbir Singh (M.A., B.Ed.)',
+                        'help' => 'School head name and qualifications.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'disc_address',
+                        'label' => 'Campus Postal Address',
+                        'type' => 'text',
+                        'default' => 'Main Road Dobhi, Near PHC, Hisar - 125001',
+                        'help' => 'Physical location and postal code.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'disc_timings',
+                        'label' => 'Operational Timings Summary',
+                        'type' => 'text',
+                        'default' => 'Summer: 7:30 AM - 1:30 PM | Winter: 8:30 AM - 2:30 PM',
+                        'help' => 'Daily operational schedule.'
+                    ],
+                    // Certificate 1: Affiliation
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert1_name',
+                        'label' => 'Certificate 1 Name (Affiliation)',
+                        'type' => 'text',
+                        'default' => 'HBSE Affiliation Certificate',
+                        'help' => 'Title of certificate 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert1_valid',
+                        'label' => 'Certificate 1 Validity / Issuing Authority',
+                        'type' => 'text',
+                        'default' => 'Senior Secondary Level 10+2',
+                        'help' => 'Subtitle / validity note.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert1_status',
+                        'label' => 'Certificate 1 Badge Status',
+                        'type' => 'text',
+                        'default' => 'VERIFIED',
+                        'help' => 'Status pill text (e.g. VERIFIED, ACTIVE, VALID).'
+                    ],
+                    // Certificate 2: Fire Safety
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert2_name',
+                        'label' => 'Certificate 2 Name (Fire Safety)',
+                        'type' => 'text',
+                        'default' => 'Fire Safety & Emergency Certificate',
+                        'help' => 'Title of certificate 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert2_valid',
+                        'label' => 'Certificate 2 Validity / Issuing Authority',
+                        'type' => 'text',
+                        'default' => 'Certified by Fire Department Haryana',
+                        'help' => 'Subtitle / validity note.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert2_status',
+                        'label' => 'Certificate 2 Badge Status',
+                        'type' => 'text',
+                        'default' => 'RENEWED',
+                        'help' => 'Status pill text (e.g. RENEWED, ACTIVE).'
+                    ],
+                    // Certificate 3: Building Safety
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert3_name',
+                        'label' => 'Certificate 3 Name (Building Safety)',
+                        'type' => 'text',
+                        'default' => 'Building Safety & Structural Audit',
+                        'help' => 'Title of certificate 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert3_valid',
+                        'label' => 'Certificate 3 Validity / Issuing Authority',
+                        'type' => 'text',
+                        'default' => 'Certified by PWD (B&R) / Chartered Engineer',
+                        'help' => 'Subtitle / validity note.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert3_status',
+                        'label' => 'Certificate 3 Badge Status',
+                        'type' => 'text',
+                        'default' => 'COMPLIANT',
+                        'help' => 'Status pill text (e.g. COMPLIANT, CERTIFIED).'
+                    ],
+                    // Certificate 4: Water & Sanitation
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert4_name',
+                        'label' => 'Certificate 4 Name (Drinking Water & Sanitation)',
+                        'type' => 'text',
+                        'default' => 'Safe Drinking Water & Sanitation',
+                        'help' => 'Title of certificate 4.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert4_valid',
+                        'label' => 'Certificate 4 Validity / Issuing Authority',
+                        'type' => 'text',
+                        'default' => 'Certified by Public Health Engineering Dept.',
+                        'help' => 'Subtitle / validity note.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert4_status',
+                        'label' => 'Certificate 4 Badge Status',
+                        'type' => 'text',
+                        'default' => 'ACTIVE',
+                        'help' => 'Status pill text (e.g. ACTIVE, VERIFIED).'
+                    ],
+                    // Certificate 5: DEO Recognition
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert5_name',
+                        'label' => 'Certificate 5 Name (DEO Recognition)',
+                        'type' => 'text',
+                        'default' => 'DEO / Government Recognition Certificate',
+                        'help' => 'Title of certificate 5.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert5_valid',
+                        'label' => 'Certificate 5 Validity / Issuing Authority',
+                        'type' => 'text',
+                        'default' => 'District Education Officer, Hisar',
+                        'help' => 'Subtitle / validity note.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cert5_status',
+                        'label' => 'Certificate 5 Badge Status',
+                        'type' => 'text',
+                        'default' => 'PERMANENT',
+                        'help' => 'Status pill text (e.g. PERMANENT, APPROVED).'
+                    ],
+                    // Footer verification note
+                    [
+                        'kind' => 'text',
+                        'key' => 'disc_footer_note',
+                        'label' => 'Physical Inspection Office Note',
+                        'type' => 'text',
+                        'default' => 'For physical verification of original statutory records and certificates, please visit the administrative office during school hours.',
+                        'help' => 'Instructions for parents / authorities inspecting records.'
                     ]
                 ]
             ]

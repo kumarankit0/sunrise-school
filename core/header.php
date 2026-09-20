@@ -163,24 +163,24 @@ $current_page = isset($current_page) ? $current_page : 'home';
       <div class="top-bar-inner">
         <!-- Left Links -->
         <nav class="top-bar-left-links" aria-label="Quick Utility Navigation">
-          <a href="index.php" class="top-nav-item <?= ($current_page === 'home') ? 'active' : '' ?>">Home</a>
-          <a href="#student-portal" class="top-nav-item" id="topNavStudentLogin">Student Login</a>
-          <a href="events.php#alumni" class="top-nav-item">Alumni</a>
-          <a href="#mandatory-disclosure" class="top-nav-item" id="topNavDisclosure">Mandatory Disclosure</a>
+          <a href="<?= htmlspecialchars(get_text('general', 'top_link1_url', 'index.php')) ?>" class="top-nav-item <?= ($current_page === 'home') ? 'active' : '' ?>"><?= htmlspecialchars(get_text('general', 'top_link1_text', 'Home')) ?></a>
+          <a href="<?= htmlspecialchars(get_text('general', 'top_link2_url', '#student-portal')) ?>" class="top-nav-item" id="topNavStudentLogin"><?= htmlspecialchars(get_text('general', 'top_link2_text', 'Student Login')) ?></a>
+          <a href="<?= htmlspecialchars(get_text('general', 'top_link3_url', 'events.php#alumni')) ?>" class="top-nav-item"><?= htmlspecialchars(get_text('general', 'top_link3_text', 'Alumni')) ?></a>
+          <a href="<?= htmlspecialchars(get_text('general', 'top_link4_url', '#mandatory-disclosure')) ?>" class="top-nav-item" id="topNavDisclosure"><?= htmlspecialchars(get_text('general', 'top_link4_text', 'Mandatory Disclosure')) ?></a>
         </nav>
 
         <!-- Right Elements: Blinking Registration, Mail Pulse, Phone -->
         <div class="top-bar-right-info">
-          <a href="admission.php#register-form" class="top-nav-blink-registration" title="Click to Register Online for Session 2026-27">
+          <a href="<?= htmlspecialchars(get_text('general', 'top_reg_url', 'admission.php#register-form')) ?>" class="top-nav-blink-registration" title="Click to Register Online for Session 2026-27">
             <span class="blink-dot"></span>
-            <span class="blink-text">Online Registration 2026-27</span>
+            <span class="blink-text"><span class="top-nav-reg-prefix">Online </span><?= htmlspecialchars(get_text('general', 'top_reg_text', 'Registration 2026-27')) ?></span>
           </a>
-          <a href="mailto:<?= $site_email ?>" class="top-nav-info-link top-nav-mail-pulse" title="Email School Desk">
-            <span class="material-symbols-outlined text-[15px]">mail</span>
+          <a href="mailto:<?= $site_email ?>" class="top-nav-info-link top-nav-mail-pulse top-bar-email" title="Email School Desk">
+            <span class="material-symbols-outlined text-[14px]">mail</span>
             <span><?= $site_email ?></span>
           </a>
-          <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="top-nav-info-link" title="Call Sun Rise Helpline">
-            <span class="material-symbols-outlined text-[15px]">call</span>
+          <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="top-nav-info-link top-bar-phone" title="Call Sun Rise Helpline">
+            <span class="material-symbols-outlined text-[14px]">call</span>
             <span><?= $site_phone ?></span>
           </a>
         </div>
@@ -193,7 +193,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
         <img alt="<?= htmlspecialchars($site_name) ?> Crest" class="brand-logo-img" src="<?= $site_logo ?>" width="42" height="42"/>
         <div class="brand-logo-text-group">
           <span class="brand-logo-text"><?= htmlspecialchars($site_name) ?></span>
-          <span class="brand-logo-sub">Dobhi, Hisar • HBSE Affiliated</span>
+          <span class="brand-logo-sub"><?= htmlspecialchars(get_text('general', 'nav_sub_title', 'Dobhi, Hisar • HBSE Affiliated')) ?></span>
         </div>
       </a>
 
@@ -209,7 +209,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
                     aria-expanded="false" 
                     aria-haspopup="true">
               <span><?= htmlspecialchars($item['title']) ?></span>
-              <span class="material-symbols-outlined nav-arrow text-[17px]">keyboard_arrow_down</span>
+              <span class="material-symbols-outlined nav-arrow">keyboard_arrow_down</span>
             </button>
 
             <?php if ($has_sub): ?>
@@ -254,8 +254,8 @@ $current_page = isset($current_page) ? $current_page : 'home';
         <div class="flex items-center gap-2.5 min-w-0">
           <img src="<?= $site_logo ?>" alt="Logo" class="h-9 w-auto flex-shrink-0 object-contain"/>
           <div class="flex flex-col min-w-0">
-            <span class="font-bold text-primary text-sm sm:text-base font-sans truncate">Sun Rise Sr. Sec. School</span>
-            <span class="text-[11px] text-on-surface-variant font-medium">Dobhi, Hisar • HBSE Affiliated</span>
+            <span class="font-bold text-primary text-sm sm:text-base font-sans truncate"><?= htmlspecialchars($site_name) ?></span>
+            <span class="text-[11px] text-on-surface-variant font-medium"><?= htmlspecialchars(get_text('general', 'nav_sub_title', 'Dobhi, Hisar • HBSE Affiliated')) ?></span>
           </div>
         </div>
         <button id="mobileMenuClose" class="mobile-close-btn" aria-label="Close Navigation Menu" type="button">
@@ -265,9 +265,9 @@ $current_page = isset($current_page) ? $current_page : 'home';
 
       <!-- Quick Blinking Online Registration in Mobile Drawer -->
       <div class="mb-3">
-        <a href="admission.php#register-form" class="top-nav-blink-registration flex items-center justify-center py-2.5 text-center w-full">
+        <a href="<?= htmlspecialchars(get_text('general', 'top_reg_url', 'admission.php#register-form')) ?>" class="top-nav-blink-registration flex items-center justify-center py-2.5 text-center w-full">
           <span class="blink-dot"></span>
-          <span class="blink-text">Online Registration 2026-27</span>
+          <span class="blink-text"><?= htmlspecialchars(get_text('general', 'top_reg_text', 'Online Registration 2026-27')) ?></span>
         </a>
       </div>
 
@@ -308,12 +308,12 @@ $current_page = isset($current_page) ? $current_page : 'home';
       </nav>
     </div>
     <div class="mobile-drawer-footer">
-      <a class="btn-gold w-full text-center" href="admission.php">Enquire Now / Apply Online</a>
+      <a class="btn-gold w-full text-center" href="<?= htmlspecialchars(get_text('general', 'nav_mobile_cta_url', 'admission.php')) ?>"><?= htmlspecialchars(get_text('general', 'nav_mobile_cta_text', 'Enquire Now / Apply Online')) ?></a>
       <div class="flex items-center justify-between gap-2 pt-2 border-t border-border-warm">
         <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="mobile-footer-contact-item">
           <span class="material-symbols-outlined text-[15px] text-primary">call</span> Call Us
         </a>
-        <a href="https://wa.me/917015890094" target="_blank" rel="noopener" class="mobile-footer-contact-item">
+        <a href="<?= htmlspecialchars(get_text('general', 'nav_mobile_wa_url', 'https://wa.me/917015890094')) ?>" target="_blank" rel="noopener" class="mobile-footer-contact-item">
           <span class="material-symbols-outlined text-[15px] text-emerald-600">chat</span> WhatsApp
         </a>
         <a href="contact-us.php" class="mobile-footer-contact-item">

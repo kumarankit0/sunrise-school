@@ -9,7 +9,7 @@ require_once __DIR__ . '/config.php';
       <div class="footer-grid">
         <!-- Column 1: Quick Contact -->
         <div class="footer-col">
-          <h4 class="footer-heading">Quick Contact</h4>
+          <h4 class="footer-heading"><?= htmlspecialchars(get_text('general', 'footer_col1_title', 'Quick Contact')) ?></h4>
           <div class="footer-contact-list">
             <div class="footer-contact-block">
               <div class="footer-contact-icon-box">
@@ -18,8 +18,7 @@ require_once __DIR__ . '/config.php';
               <div>
                 <span class="footer-school-name"><?= htmlspecialchars($site_name) ?></span>
                 <p class="footer-school-address">
-                  Main Road Dobhi, Near Primary Health Center,<br/>
-                  Dobhi, Hisar (Haryana) - 125001
+                  <?= nl2br(htmlspecialchars($site_address)) ?>
                 </p>
               </div>
             </div>
@@ -30,13 +29,15 @@ require_once __DIR__ . '/config.php';
               </div>
               <div>
                 <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="footer-contact-phone">
-                  <?= $site_phone ?>
+                  <?= htmlspecialchars($site_phone) ?>
                 </a>
-                <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone_alt) ?>" class="footer-contact-phone text-xs block opacity-90">
-                  <?= $site_phone_alt ?>
-                </a>
-                <a href="mailto:<?= $site_email ?>" class="footer-contact-email mt-1 block">
-                  <?= $site_email ?>
+                <?php if (!empty($site_phone_alt)): ?>
+                  <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone_alt) ?>" class="footer-contact-phone text-xs block opacity-90">
+                    <?= htmlspecialchars($site_phone_alt) ?>
+                  </a>
+                <?php endif; ?>
+                <a href="mailto:<?= htmlspecialchars($site_email) ?>" class="footer-contact-email mt-1 block">
+                  <?= htmlspecialchars($site_email) ?>
                 </a>
               </div>
             </div>
@@ -46,9 +47,9 @@ require_once __DIR__ . '/config.php';
                 <span class="material-symbols-outlined text-[20px]">schedule</span>
               </div>
               <div class="text-xs text-slate-300">
-                <span class="font-bold text-white block">School Timings:</span>
-                <span>Summer: <?= $site_timings_summer ?></span><br/>
-                <span>Winter: <?= $site_timings_winter ?></span>
+                <span class="font-bold text-white block"><?= htmlspecialchars(get_text('general', 'footer_timings_title', 'School Timings:')) ?></span>
+                <span>Summer: <?= htmlspecialchars($site_timings_summer) ?></span><br/>
+                <span>Winter: <?= htmlspecialchars($site_timings_winter) ?></span>
               </div>
             </div>
           </div>
@@ -56,58 +57,58 @@ require_once __DIR__ . '/config.php';
 
         <!-- Column 2: Quick Links -->
         <div class="footer-col">
-          <h4 class="footer-heading">Quick Links</h4>
+          <h4 class="footer-heading"><?= htmlspecialchars(get_text('general', 'footer_col2_title', 'Quick Links')) ?></h4>
           <nav class="footer-links-list" aria-label="Footer Quick Links">
-            <a class="footer-link" href="#student-portal" id="footerStudentLoginBtn">
-              <span class="footer-chevron">&gt;</span> Student &amp; Staff ERP
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col2_link1_url', '#student-portal')) ?>" id="footerStudentLoginBtn">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col2_link1_text', 'Student & Staff ERP')) ?>
             </a>
-            <a class="footer-link" href="academics.php#academic-calendar">
-              <span class="footer-chevron">&gt;</span> Annual Calendar
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col2_link2_url', 'academics.php#academic-calendar')) ?>">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col2_link2_text', 'Annual Calendar')) ?>
             </a>
-            <a class="footer-link" href="admission.php">
-              <span class="footer-chevron">&gt;</span> Admission Procedure
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col2_link3_url', 'admission.php')) ?>">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col2_link3_text', 'Admission Procedure')) ?>
             </a>
-            <a class="footer-link" href="about-us.php#mandatory-disclosure" id="footerDisclosureBtn">
-              <span class="footer-chevron">&gt;</span> Mandatory Disclosure
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col2_link4_url', 'about-us.php#mandatory-disclosure')) ?>" id="footerDisclosureBtn">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col2_link4_text', 'Mandatory Disclosure')) ?>
             </a>
-            <a class="footer-link" href="admission.php#fee-structure">
-              <span class="footer-chevron">&gt;</span> Fee Structure
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col2_link5_url', 'admission.php#fee-structure')) ?>">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col2_link5_text', 'Fee Structure')) ?>
             </a>
-            <a class="footer-link" href="contact-us.php">
-              <span class="footer-chevron">&gt;</span> TC &amp; Certificates
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col2_link6_url', 'contact-us.php')) ?>">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col2_link6_text', 'TC & Certificates')) ?>
             </a>
           </nav>
         </div>
 
         <!-- Column 3: Other Projects / Facilities -->
         <div class="footer-col">
-          <h4 class="footer-heading">Other Projects</h4>
+          <h4 class="footer-heading"><?= htmlspecialchars(get_text('general', 'footer_col3_title', 'Other Projects')) ?></h4>
           <nav class="footer-links-list" aria-label="School Initiatives & Facilities">
-            <a class="footer-link" href="about-us.php">
-              <span class="footer-chevron">&gt;</span> Sun Rise Educational Society
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col3_link1_url', 'about-us.php')) ?>">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col3_link1_text', 'Sun Rise Educational Society')) ?>
             </a>
-            <a class="footer-link" href="campus.php#labs">
-              <span class="footer-chevron">&gt;</span> Modern Science &amp; Computer Labs
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col3_link2_url', 'campus.php#labs')) ?>">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col3_link2_text', 'Modern Science & Computer Labs')) ?>
             </a>
-            <a class="footer-link" href="campus.php#sports">
-              <span class="footer-chevron">&gt;</span> Sports &amp; Athletics Club
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col3_link3_url', 'campus.php#sports')) ?>">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col3_link3_text', 'Sports & Athletics Club')) ?>
             </a>
-            <a class="footer-link" href="campus.php#transport">
-              <span class="footer-chevron">&gt;</span> Safe GPS Bus Transport Network
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col3_link4_url', 'campus.php#transport')) ?>">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col3_link4_text', 'Safe GPS Bus Transport Network')) ?>
             </a>
-            <a class="footer-link" href="academics.php#toppers">
-              <span class="footer-chevron">&gt;</span> Board Exam Merit Achievers
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col3_link5_url', 'academics.php#toppers')) ?>">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col3_link5_text', 'Board Exam Merit Achievers')) ?>
             </a>
           </nav>
         </div>
 
         <!-- Column 4: Location Map -->
         <div class="footer-col">
-          <h4 class="footer-heading">Location Map</h4>
+          <h4 class="footer-heading"><?= htmlspecialchars(get_text('general', 'footer_col4_title', 'Location Map')) ?></h4>
           <div class="footer-map-frame">
             <iframe 
               title="Sun Rise Sr. Sec. School Location Map"
-              src="https://maps.google.com/maps?q=Sun+Rise+Sr.+Sec.+School,+Dobhi,+Hisar,+Haryana&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+              src="<?= htmlspecialchars(get_text('general', 'footer_map_embed', 'https://maps.google.com/maps?q=Sun+Rise+Sr.+Sec.+School,+Dobhi,+Hisar,+Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed')) ?>"
               width="100%" 
               height="145" 
               style="border:0;" 
@@ -116,8 +117,8 @@ require_once __DIR__ . '/config.php';
               referrerpolicy="no-referrer-when-downgrade">
             </iframe>
           </div>
-          <a href="https://maps.google.com/?q=Sun+Rise+Sr.+Sec.+School+Dobhi+Hisar+Haryana" target="_blank" rel="noopener" class="footer-map-link">
-            <span class="material-symbols-outlined text-[15px]">pin_drop</span> View on Google Maps
+          <a href="<?= htmlspecialchars(get_text('general', 'footer_map_btn_link', 'https://maps.google.com/?q=Sun+Rise+Sr.+Sec.+School+Dobhi+Hisar+Haryana')) ?>" target="_blank" rel="noopener" class="footer-map-link">
+            <span class="material-symbols-outlined text-[15px]">pin_drop</span> <?= htmlspecialchars(get_text('general', 'footer_map_btn_text', 'View on Google Maps')) ?>
           </a>
         </div>
       </div>
@@ -125,16 +126,16 @@ require_once __DIR__ . '/config.php';
       <!-- Bottom Bar -->
       <div class="footer-bottom-bar">
         <div>
-          &copy; <?= date('Y') ?> <?= htmlspecialchars($site_name) ?>. All rights reserved.
+          &copy; <?= date('Y') ?> <?= htmlspecialchars($site_name) ?>. <?= htmlspecialchars(get_text('general', 'footer_copyright_note', 'All rights reserved.')) ?>
         </div>
         <div class="flex items-center gap-4 text-xs">
-          <a href="about-us.php" class="hover:text-[#C9A24B] transition-colors">Privacy Policy</a>
+          <a href="<?= htmlspecialchars(get_text('general', 'footer_bottom_link1_url', 'about-us.php')) ?>" class="hover:text-[#C9A24B] transition-colors"><?= htmlspecialchars(get_text('general', 'footer_bottom_link1_text', 'Privacy Policy')) ?></a>
           <span>•</span>
-          <a href="about-us.php" class="hover:text-[#C9A24B] transition-colors">Terms of Service</a>
+          <a href="<?= htmlspecialchars(get_text('general', 'footer_bottom_link2_url', 'about-us.php')) ?>" class="hover:text-[#C9A24B] transition-colors"><?= htmlspecialchars(get_text('general', 'footer_bottom_link2_text', 'Terms of Service')) ?></a>
           <span>•</span>
-          <a href="contact-us.php" class="hover:text-[#C9A24B] transition-colors">Sitemap</a>
+          <a href="<?= htmlspecialchars(get_text('general', 'footer_bottom_link3_url', 'contact-us.php')) ?>" class="hover:text-[#C9A24B] transition-colors"><?= htmlspecialchars(get_text('general', 'footer_bottom_link3_text', 'Sitemap')) ?></a>
           <span>•</span>
-          <a href="admin/login.php" class="hover:text-[#C9A24B] transition-colors inline-flex items-center gap-1 opacity-75 hover:opacity-100"><span class="material-symbols-outlined text-[13px]">lock</span> Admin Portal</a>
+          <a href="<?= htmlspecialchars(get_text('general', 'footer_admin_link_url', 'admin/login.php')) ?>" class="hover:text-[#C9A24B] transition-colors inline-flex items-center gap-1 opacity-75 hover:opacity-100"><span class="material-symbols-outlined text-[13px]">lock</span> <?= htmlspecialchars(get_text('general', 'footer_admin_link_text', 'Admin Portal')) ?></a>
         </div>
       </div>
     </div>

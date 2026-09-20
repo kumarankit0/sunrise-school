@@ -16,8 +16,8 @@ $site_info_email     = get_text('general', 'site_info_email', 'info@sunrisesrsec
 $site_address        = get_text('general', 'site_address', 'Main Road Dobhi, Near Primary Health Center, Dobhi, Hisar (Haryana) - 125001');
 $site_timings_summer = get_text('general', 'timings_summer', '7:30 AM to 1:30 PM');
 $site_timings_winter = get_text('general', 'timings_winter', '8:30 AM to 2:30 PM');
-$site_estd           = '2007';
-$site_affiliation    = 'HBSE';
+$site_estd           = get_text('general', 'site_estd', '2007');
+$site_affiliation    = get_text('general', 'site_affiliation', 'HBSE');
 $site_logo           = get_image('general', 'site_logo', 'assets/images/logo.svg');
 
 // Base path for original school images
@@ -34,8 +34,8 @@ function school_img($filename) {
 // Navigation Menu Items matching Reference Header (ABOUT US, ADMISSIONS, ACADEMICS, ACTIVITIES, BOARDING AND CAMPUS, CAREER, CONNECT)
 $nav_menu = [
     'about-us' => [
-        'title' => 'ABOUT US',
-        'url' => 'about-us.php',
+        'title' => get_text('general', 'nav_item1_text', 'ABOUT US'),
+        'url' => get_text('general', 'nav_item1_url', 'about-us.php'),
         'subitems' => [
             'about-us' => [
                 'title' => 'About Sun Rise',
@@ -64,8 +64,8 @@ $nav_menu = [
         ]
     ],
     'admissions' => [
-        'title' => 'ADMISSIONS',
-        'url' => 'admission.php',
+        'title' => get_text('general', 'nav_item2_text', 'ADMISSIONS'),
+        'url' => get_text('general', 'nav_item2_url', 'admission.php'),
         'subitems' => [
             'admission-proc' => [
                 'title' => 'Admission Procedure',
@@ -94,8 +94,8 @@ $nav_menu = [
         ]
     ],
     'academics' => [
-        'title' => 'ACADEMICS',
-        'url' => 'academics.php',
+        'title' => get_text('general', 'nav_item3_text', 'ACADEMICS'),
+        'url' => get_text('general', 'nav_item3_url', 'academics.php'),
         'subitems' => [
             'curriculum' => [
                 'title' => 'Curriculum & Methodology',
@@ -124,8 +124,8 @@ $nav_menu = [
         ]
     ],
     'activities' => [
-        'title' => 'ACTIVITIES',
-        'url' => 'events.php',
+        'title' => get_text('general', 'nav_item4_text', 'ACTIVITIES'),
+        'url' => get_text('general', 'nav_item4_url', 'events.php'),
         'subitems' => [
             'events-news' => [
                 'title' => 'Events & Annual Functions',
@@ -148,8 +148,8 @@ $nav_menu = [
         ]
     ],
     'campus' => [
-        'title' => 'BOARDING AND CAMPUS',
-        'url' => 'campus.php',
+        'title' => get_text('general', 'nav_item5_text', 'BOARDING AND CAMPUS'),
+        'url' => get_text('general', 'nav_item5_url', 'campus.php'),
         'subitems' => [
             'campus-life' => [
                 'title' => 'Campus Infrastructure',
@@ -178,8 +178,8 @@ $nav_menu = [
         ]
     ],
     'career' => [
-        'title' => 'CAREER',
-        'url' => 'contact-us.php#career',
+        'title' => get_text('general', 'nav_item6_text', 'CAREER'),
+        'url' => get_text('general', 'nav_item6_url', 'contact-us.php#career'),
         'subitems' => [
             'openings' => [
                 'title' => 'Join Our Faculty Team',
@@ -196,8 +196,8 @@ $nav_menu = [
         ]
     ],
     'connect' => [
-        'title' => 'CONNECT',
-        'url' => 'contact-us.php',
+        'title' => get_text('general', 'nav_item7_text', 'CONNECT'),
+        'url' => get_text('general', 'nav_item7_url', 'contact-us.php'),
         'subitems' => [
             'contact' => [
                 'title' => 'Contact Campus Office',

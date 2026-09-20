@@ -9,17 +9,17 @@ require_once __DIR__ . '/core/header.php';
 
 <div class="flex flex-col w-full bg-surface text-on-surface">
   <!-- Section 1: Hero Banner -->
-  <section class="relative w-full min-h-[80vh] lg:min-h-[85vh] py-20 lg:py-28 bg-primary text-on-primary flex items-center justify-center overflow-hidden">
+  <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 bg-primary text-on-primary flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('<?= get_image('about', 'hero_banner', school_img('school_home2.webp')) ?>')"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
-    <div class="relative z-10 max-w-6xl w-full mx-auto px-6 text-center flex flex-col items-center gap-5">
-      <span class="text-eyebrow text-gold-light uppercase tracking-widest font-eyebrow font-bold bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full shadow-md">
+    <div class="hero-content relative z-10 max-w-6xl w-full mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-3 sm:gap-5">
+      <span class="hero-badge text-gold-light uppercase tracking-widest font-bold bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full shadow-md">
         <?= get_text('about', 'hero_badge', 'Institutional Legacy &amp; Future Vision') ?>
       </span>
-      <h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight leading-[1.2] drop-shadow-md">
+      <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md">
         <?= get_text('about', 'hero_title', 'About Sun Rise Sr. Sec. School') ?>
       </h1>
-      <p class="text-sm sm:text-base md:text-lg text-surface-cream/95 w-full max-w-3xl mx-auto font-body leading-relaxed drop-shadow">
+      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl mx-auto font-body drop-shadow">
         <?= get_text('about', 'hero_subtitle', 'Cultivating academic rigor, moral integrity, and lifelong curiosity within a vibrant and disciplined campus environment in Dobhi, Haryana.') ?>
       </p>
     </div>

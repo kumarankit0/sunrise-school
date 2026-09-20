@@ -9,22 +9,26 @@ require_once __DIR__ . '/core/header.php';
 
 <div class="flex flex-col w-full">
   <!-- Hero Banner -->
-  <section class="relative w-full min-h-[80vh] lg:min-h-[85vh] py-20 lg:py-28 bg-primary text-on-primary px-6 lg:px-12 overflow-hidden flex items-center justify-center text-center">
+  <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 bg-primary text-on-primary px-4 sm:px-6 lg:px-12 overflow-hidden flex items-center justify-center text-center">
     <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('academics', 'hero_banner', school_img('exhibition.webp')) ?>')"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
-    <div class="max-w-6xl w-full mx-auto relative z-10 flex flex-col items-center text-center gap-6">
-      <span class="font-eyebrow text-eyebrow text-gold-light uppercase tracking-widest bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full font-bold shadow-md">
+    <div class="hero-content max-w-6xl w-full mx-auto relative z-10 flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6">
+      <span class="hero-badge text-gold-light uppercase tracking-widest bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full font-bold shadow-md">
         <?= get_text('academics', 'hero_badge', 'Academic Excellence') ?>
       </span>
-      <h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight leading-[1.2] drop-shadow-md">
+      <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md">
         <?= get_text('academics', 'hero_title', 'Rigorous HBSE Curriculum Designed for Success') ?>
       </h1>
-      <p class="text-sm sm:text-base md:text-lg text-surface-cream/95 w-full max-w-3xl leading-relaxed drop-shadow">
+      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl drop-shadow">
         <?= get_text('academics', 'hero_subtitle', 'Discover an enriching academic framework from Pre-Primary to Class 12, fostering analytical thinking, practical lab experimentation, moral values, and board examination distinction.') ?>
       </p>
-      <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-3">
-        <a class="btn-gold text-base sm:text-lg px-8 py-3.5 shadow-xl" href="#curriculum-levels">Explore Stages</a>
-        <a class="btn-outline-white text-base sm:text-lg px-8 py-3.5 shadow-xl" href="#streams">Senior Secondary Streams</a>
+      <div class="hero-cta-group flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
+        <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('academics', 'hero_btn1_link', '#curriculum-levels')) ?>">
+          <?= get_text('academics', 'hero_btn1_text', 'Explore Stages') ?>
+        </a>
+        <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('academics', 'hero_btn2_link', '#streams')) ?>">
+          <?= get_text('academics', 'hero_btn2_text', 'Senior Secondary Streams') ?>
+        </a>
       </div>
     </div>
   </section>
@@ -66,23 +70,23 @@ require_once __DIR__ . '/core/header.php';
       <!-- Navigation Tabs -->
       <div class="lg:col-span-4 flex flex-col gap-3" id="level-tabs">
         <button class="level-btn active" data-target="pre-primary" onclick="switchLevel('pre-primary')">
-          <span>Pre-Primary (Nursery, LKG, UKG)</span>
+          <span><?= get_text('academics', 'stage1_tab', 'Pre-Primary (Nursery, LKG, UKG)') ?></span>
           <span class="material-symbols-outlined text-[20px]">chevron_right</span>
         </button>
         <button class="level-btn" data-target="primary" onclick="switchLevel('primary')">
-          <span>Primary School (Classes 1-5)</span>
+          <span><?= get_text('academics', 'stage2_tab', 'Primary School (Classes 1-5)') ?></span>
           <span class="material-symbols-outlined text-[20px]">chevron_right</span>
         </button>
         <button class="level-btn" data-target="middle" onclick="switchLevel('middle')">
-          <span>Middle School (Classes 6-8)</span>
+          <span><?= get_text('academics', 'stage3_tab', 'Middle School (Classes 6-8)') ?></span>
           <span class="material-symbols-outlined text-[20px]">chevron_right</span>
         </button>
         <button class="level-btn" data-target="secondary" onclick="switchLevel('secondary')">
-          <span>Secondary School (Classes 9-10)</span>
+          <span><?= get_text('academics', 'stage4_tab', 'Secondary School (Classes 9-10)') ?></span>
           <span class="material-symbols-outlined text-[20px]">chevron_right</span>
         </button>
         <button class="level-btn" data-target="senior" onclick="switchLevel('senior')">
-          <span>Senior Secondary (Classes 11-12)</span>
+          <span><?= get_text('academics', 'stage5_tab', 'Senior Secondary (Classes 11-12)') ?></span>
           <span class="material-symbols-outlined text-[20px]">chevron_right</span>
         </button>
       </div>
@@ -92,29 +96,29 @@ require_once __DIR__ . '/core/header.php';
         <!-- Pre-Primary -->
         <div class="level-content flex flex-col gap-6" id="content-pre-primary">
           <div class="flex items-center gap-3">
-            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35">Early Childhood Education</span>
-            <span class="text-on-surface-variant text-body-sm">Ages 3 to 5 Years</span>
+            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35"><?= get_text('academics', 'stage1_badge', 'Early Childhood Education') ?></span>
+            <span class="text-on-surface-variant text-body-sm"><?= get_text('academics', 'stage1_age', 'Ages 3 to 5 Years') ?></span>
           </div>
-          <h3 class="font-headline-md text-headline-md text-primary">Play-Based Learning &amp; Foundational Wonder</h3>
-          <p class="font-body-md text-on-surface-variant">The Pre-Primary wing provides a nurturing environment where children discover the joy of learning through play, storytelling, numbers, rhymes, phonics, and motor skill activities.</p>
+          <h3 class="font-headline-md text-headline-md text-primary"><?= get_text('academics', 'stage1_title', 'Play-Based Learning &amp; Foundational Wonder') ?></h3>
+          <p class="font-body-md text-on-surface-variant"><?= get_text('academics', 'stage1_desc', 'The Pre-Primary wing provides a nurturing environment where children discover the joy of learning through play, storytelling, numbers, rhymes, phonics, and motor skill activities.') ?></p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Phonics &amp; Language</h4>
-                <p class="font-body-sm text-on-surface-variant mt-1">Foundational English and Hindi alphabet recognition and speech development.</p>
+                <h4 class="font-label-md text-primary font-bold"><?= get_text('academics', 'stage1_f1_title', 'Phonics &amp; Language') ?></h4>
+                <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('academics', 'stage1_f1_desc', 'Foundational English and Hindi alphabet recognition and speech development.') ?></p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Creative Expression</h4>
-                <p class="font-body-sm text-on-surface-variant mt-1">Daily engagement through drawing, clay modeling, games, and music.</p>
+                <h4 class="font-label-md text-primary font-bold"><?= get_text('academics', 'stage1_f2_title', 'Creative Expression') ?></h4>
+                <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('academics', 'stage1_f2_desc', 'Daily engagement through drawing, clay modeling, games, and music.') ?></p>
               </div>
             </div>
           </div>
           <div class="mt-6 pt-6 border-t border-border-warm flex justify-between items-center">
-            <span class="font-label-sm text-on-surface-variant uppercase font-bold">Focus: Cognitive &amp; Social Readiness</span>
+            <span class="font-label-sm text-on-surface-variant uppercase font-bold"><?= get_text('academics', 'stage1_focus', 'Focus: Cognitive &amp; Social Readiness') ?></span>
             <a class="text-primary font-label-md hover:text-[#C9A24B] flex items-center gap-1 transition-colors font-bold" href="admission.php">Enroll Now <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
           </div>
         </div>
@@ -122,29 +126,29 @@ require_once __DIR__ . '/core/header.php';
         <!-- Primary -->
         <div class="level-content hidden flex flex-col gap-6" id="content-primary">
           <div class="flex items-center gap-3">
-            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35">Foundational Stage</span>
-            <span class="text-on-surface-variant text-body-sm">Classes 1 to 5</span>
+            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35"><?= get_text('academics', 'stage2_badge', 'Foundational Stage') ?></span>
+            <span class="text-on-surface-variant text-body-sm"><?= get_text('academics', 'stage2_age', 'Classes 1 to 5') ?></span>
           </div>
-          <h3 class="font-headline-md text-headline-md text-primary">Strengthening Core Concepts &amp; Curiosity</h3>
-          <p class="font-body-md text-on-surface-variant">Primary education at Sun Rise focuses on strong mathematical foundations, environmental studies (EVS), linguistic fluency, general knowledge, and computer literacy.</p>
+          <h3 class="font-headline-md text-headline-md text-primary"><?= get_text('academics', 'stage2_title', 'Strengthening Core Concepts &amp; Curiosity') ?></h3>
+          <p class="font-body-md text-on-surface-variant"><?= get_text('academics', 'stage2_desc', 'Primary education at Sun Rise focuses on strong mathematical foundations, environmental studies (EVS), linguistic fluency, general knowledge, and computer literacy.') ?></p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Activity-Based Mathematics</h4>
-                <p class="font-body-sm text-on-surface-variant mt-1">Conceptual arithmetic, mental math, and visual geometry kits.</p>
+                <h4 class="font-label-md text-primary font-bold"><?= get_text('academics', 'stage2_f1_title', 'Activity-Based Mathematics') ?></h4>
+                <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('academics', 'stage2_f1_desc', 'Conceptual arithmetic, mental math, and visual geometry kits.') ?></p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Science &amp; Environment</h4>
-                <p class="font-body-sm text-on-surface-variant mt-1">Nature observation, plants, hygiene, and daily science awareness.</p>
+                <h4 class="font-label-md text-primary font-bold"><?= get_text('academics', 'stage2_f2_title', 'Science &amp; Environment') ?></h4>
+                <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('academics', 'stage2_f2_desc', 'Nature observation, plants, hygiene, and daily science awareness.') ?></p>
               </div>
             </div>
           </div>
           <div class="mt-6 pt-6 border-t border-border-warm flex justify-between items-center">
-            <span class="font-label-sm text-on-surface-variant uppercase font-bold">Focus: Academic Discipline &amp; Values</span>
+            <span class="font-label-sm text-on-surface-variant uppercase font-bold"><?= get_text('academics', 'stage2_focus', 'Focus: Academic Discipline &amp; Values') ?></span>
             <a class="text-primary font-label-md hover:text-[#C9A24B] flex items-center gap-1 transition-colors font-bold" href="admission.php">Enroll Now <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
           </div>
         </div>
@@ -152,29 +156,29 @@ require_once __DIR__ . '/core/header.php';
         <!-- Middle School -->
         <div class="level-content hidden flex flex-col gap-6" id="content-middle">
           <div class="flex items-center gap-3">
-            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35">Preparatory Stage</span>
-            <span class="text-on-surface-variant text-body-sm">Classes 6 to 8</span>
+            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35"><?= get_text('academics', 'stage3_badge', 'Preparatory Stage') ?></span>
+            <span class="text-on-surface-variant text-body-sm"><?= get_text('academics', 'stage3_age', 'Classes 6 to 8') ?></span>
           </div>
-          <h3 class="font-headline-md text-headline-md text-primary">Developing Critical Thinking &amp; Lab Skills</h3>
-          <p class="font-body-md text-on-surface-variant">Middle school students dive into specialized subjects: Science (Physics, Chemistry, Biology), Mathematics, Social Sciences, Computer Applications, and Languages.</p>
+          <h3 class="font-headline-md text-headline-md text-primary"><?= get_text('academics', 'stage3_title', 'Developing Critical Thinking &amp; Lab Skills') ?></h3>
+          <p class="font-body-md text-on-surface-variant"><?= get_text('academics', 'stage3_desc', 'Middle school students dive into specialized subjects: Science (Physics, Chemistry, Biology), Mathematics, Social Sciences, Computer Applications, and Languages.') ?></p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Science Lab Demonstrations</h4>
-                <p class="font-body-sm text-on-surface-variant mt-1">Practical experiments, exhibition projects, and scientific reasoning.</p>
+                <h4 class="font-label-md text-primary font-bold"><?= get_text('academics', 'stage3_f1_title', 'Science Lab Demonstrations') ?></h4>
+                <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('academics', 'stage3_f1_desc', 'Practical experiments, exhibition projects, and scientific reasoning.') ?></p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Computer Science</h4>
-                <p class="font-body-sm text-on-surface-variant mt-1">Hands-on typing, digital literacy, and basic programming logic.</p>
+                <h4 class="font-label-md text-primary font-bold"><?= get_text('academics', 'stage3_f2_title', 'Computer Science') ?></h4>
+                <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('academics', 'stage3_f2_desc', 'Hands-on typing, digital literacy, and basic programming logic.') ?></p>
               </div>
             </div>
           </div>
           <div class="mt-6 pt-6 border-t border-border-warm flex justify-between items-center">
-            <span class="font-label-sm text-on-surface-variant uppercase font-bold">Focus: Analytical &amp; Practical Skills</span>
+            <span class="font-label-sm text-on-surface-variant uppercase font-bold"><?= get_text('academics', 'stage3_focus', 'Focus: Analytical &amp; Practical Skills') ?></span>
             <a class="text-primary font-label-md hover:text-[#C9A24B] flex items-center gap-1 transition-colors font-bold" href="admission.php">Enroll Now <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
           </div>
         </div>
@@ -182,29 +186,29 @@ require_once __DIR__ . '/core/header.php';
         <!-- Secondary School -->
         <div class="level-content hidden flex flex-col gap-6" id="content-secondary">
           <div class="flex items-center gap-3">
-            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35">HBSE Board Stage</span>
-            <span class="text-on-surface-variant text-body-sm">Classes 9 to 10</span>
+            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35"><?= get_text('academics', 'stage4_badge', 'HBSE Board Stage') ?></span>
+            <span class="text-on-surface-variant text-body-sm"><?= get_text('academics', 'stage4_age', 'Classes 9 to 10') ?></span>
           </div>
-          <h3 class="font-headline-md text-headline-md text-primary">HBSE Class 10 Board Examination Rigor</h3>
-          <p class="font-body-md text-on-surface-variant">Intensive preparation for HBSE examinations through chapter-wise tests, regular mock examinations, doubt-solving sessions, and practical assessments.</p>
+          <h3 class="font-headline-md text-headline-md text-primary"><?= get_text('academics', 'stage4_title', 'HBSE Class 10 Board Examination Rigor') ?></h3>
+          <p class="font-body-md text-on-surface-variant"><?= get_text('academics', 'stage4_desc', 'Intensive preparation for HBSE examinations through chapter-wise tests, regular mock examinations, doubt-solving sessions, and practical assessments.') ?></p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Thorough Exam Prep</h4>
-                <p class="font-body-sm text-on-surface-variant mt-1">Sample papers, NCERT mastery, and strategic test series.</p>
+                <h4 class="font-label-md text-primary font-bold"><?= get_text('academics', 'stage4_f1_title', 'Thorough Exam Prep') ?></h4>
+                <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('academics', 'stage4_f1_desc', 'Sample papers, NCERT mastery, and strategic test series.') ?></p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Career &amp; Stream Guidance</h4>
-                <p class="font-body-sm text-on-surface-variant mt-1">Expert counseling to select the right stream for Class 11.</p>
+                <h4 class="font-label-md text-primary font-bold"><?= get_text('academics', 'stage4_f2_title', 'Career &amp; Stream Guidance') ?></h4>
+                <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('academics', 'stage4_f2_desc', 'Expert counseling to select the right stream for Class 11.') ?></p>
               </div>
             </div>
           </div>
           <div class="mt-6 pt-6 border-t border-border-warm flex justify-between items-center">
-            <span class="font-label-sm text-on-surface-variant uppercase font-bold">Focus: 100% Board Distinction</span>
+            <span class="font-label-sm text-on-surface-variant uppercase font-bold"><?= get_text('academics', 'stage4_focus', 'Focus: 100% Board Distinction') ?></span>
             <a class="text-primary font-label-md hover:text-[#C9A24B] flex items-center gap-1 transition-colors font-bold" href="admission.php">Enroll Now <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
           </div>
         </div>
@@ -212,29 +216,29 @@ require_once __DIR__ . '/core/header.php';
         <!-- Senior Secondary -->
         <div class="level-content hidden flex flex-col gap-6" id="content-senior">
           <div class="flex items-center gap-3">
-            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35">Senior Secondary (10+2)</span>
-            <span class="text-on-surface-variant text-body-sm">Classes 11 to 12</span>
+            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35"><?= get_text('academics', 'stage5_badge', 'Senior Secondary (10+2)') ?></span>
+            <span class="text-on-surface-variant text-body-sm"><?= get_text('academics', 'stage5_age', 'Classes 11 to 12') ?></span>
           </div>
-          <h3 class="font-headline-md text-headline-md text-primary">Specialized Streams for University &amp; Competitive Exams</h3>
-          <p class="font-body-md text-on-surface-variant">Offering specialized academic streams (Science, Commerce, Arts) taught by seasoned post-graduate educators with modern practical laboratory setups.</p>
+          <h3 class="font-headline-md text-headline-md text-primary"><?= get_text('academics', 'stage5_title', 'Specialized Streams for University &amp; Competitive Exams') ?></h3>
+          <p class="font-body-md text-on-surface-variant"><?= get_text('academics', 'stage5_desc', 'Offering specialized academic streams (Science, Commerce, Arts) taught by seasoned post-graduate educators with modern practical laboratory setups.') ?></p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Multiple Stream Choices</h4>
-                <p class="font-body-sm text-on-surface-variant mt-1">Medical (PCB), Non-Medical (PCM), Commerce, and Humanities / Arts.</p>
+                <h4 class="font-label-md text-primary font-bold"><?= get_text('academics', 'stage5_f1_title', 'Multiple Stream Choices') ?></h4>
+                <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('academics', 'stage5_f1_desc', 'Medical (PCB), Non-Medical (PCM), Commerce, and Humanities / Arts.') ?></p>
               </div>
             </div>
             <div class="flex items-start gap-3 p-4 rounded-xl bg-surface-container-low">
               <span class="material-symbols-outlined text-[#C9A24B] mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Practical Mastery</h4>
-                <p class="font-body-sm text-on-surface-variant mt-1">Full syllabus practicals in physics, chemistry, biology, and IP/CS labs.</p>
+                <h4 class="font-label-md text-primary font-bold"><?= get_text('academics', 'stage5_f2_title', 'Practical Mastery') ?></h4>
+                <p class="font-body-sm text-on-surface-variant mt-1"><?= get_text('academics', 'stage5_f2_desc', 'Full syllabus practicals in physics, chemistry, biology, and IP/CS labs.') ?></p>
               </div>
             </div>
           </div>
           <div class="mt-6 pt-6 border-t border-border-warm flex justify-between items-center">
-            <span class="font-label-sm text-on-surface-variant uppercase font-bold">Focus: Higher Education &amp; Careers</span>
+            <span class="font-label-sm text-on-surface-variant uppercase font-bold"><?= get_text('academics', 'stage5_focus', 'Focus: Higher Education &amp; Careers') ?></span>
             <a class="text-primary font-label-md hover:text-[#C9A24B] flex items-center gap-1 transition-colors font-bold" href="admission.php">Enroll Now <span class="material-symbols-outlined text-[16px]">arrow_forward</span></a>
           </div>
         </div>
@@ -263,15 +267,15 @@ require_once __DIR__ . '/core/header.php';
           <div class="space-y-3">
             <div class="text-body-sm text-on-surface font-bold">Core Subjects:</div>
             <ul class="space-y-2 text-body-sm text-on-surface-variant">
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Physics &amp; Chemistry</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Mathematics / Biology</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Computer Science / Physical Education</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> English Core</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream1_sub1', 'Physics &amp; Chemistry') ?></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream1_sub2', 'Mathematics / Biology') ?></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream1_sub3', 'Computer Science / Physical Education') ?></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream1_sub4', 'English Core') ?></li>
             </ul>
           </div>
         </div>
         <div class="mt-8 pt-6 border-t border-border-warm flex items-center justify-between">
-          <span class="font-label-sm text-primary uppercase font-bold">Medical &amp; Engineering Focus</span>
+          <span class="font-label-sm text-primary uppercase font-bold"><?= get_text('academics', 'stream1_tag', 'Medical &amp; Engineering Focus') ?></span>
           <a class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-colors" href="admission.php"><span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
       </div>
@@ -289,15 +293,15 @@ require_once __DIR__ . '/core/header.php';
           <div class="space-y-3">
             <div class="text-body-sm text-on-surface font-bold">Core Subjects:</div>
             <ul class="space-y-2 text-body-sm text-on-surface-variant">
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Accountancy</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Business Studies</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Economics &amp; Mathematics / IP</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> English Core</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream2_sub1', 'Accountancy') ?></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream2_sub2', 'Business Studies') ?></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream2_sub3', 'Economics &amp; Mathematics / IP') ?></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream2_sub4', 'English Core') ?></li>
             </ul>
           </div>
         </div>
         <div class="mt-8 pt-6 border-t border-border-warm flex items-center justify-between">
-          <span class="font-label-sm text-primary uppercase font-bold">Commerce &amp; Finance Track</span>
+          <span class="font-label-sm text-primary uppercase font-bold"><?= get_text('academics', 'stream2_tag', 'Commerce &amp; Finance Track') ?></span>
           <a class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-colors" href="admission.php"><span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
       </div>
@@ -315,15 +319,15 @@ require_once __DIR__ . '/core/header.php';
           <div class="space-y-3">
             <div class="text-body-sm text-on-surface font-bold">Core Subjects:</div>
             <ul class="space-y-2 text-body-sm text-on-surface-variant">
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> History &amp; Political Science</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Geography / Economics</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Hindi / Physical Education</li>
-              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> English Core</li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream3_sub1', 'History &amp; Political Science') ?></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream3_sub2', 'Geography / Economics') ?></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream3_sub3', 'Hindi / Physical Education') ?></li>
+              <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> <?= get_text('academics', 'stream3_sub4', 'English Core') ?></li>
             </ul>
           </div>
         </div>
         <div class="mt-8 pt-6 border-t border-border-warm flex items-center justify-between">
-          <span class="font-label-sm text-primary uppercase font-bold">Civil Services &amp; Law Track</span>
+          <span class="font-label-sm text-primary uppercase font-bold"><?= get_text('academics', 'stream3_tag', 'Civil Services &amp; Law Track') ?></span>
           <a class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center hover:bg-primary-container transition-colors" href="admission.php"><span class="material-symbols-outlined">arrow_forward</span></a>
         </div>
       </div>
@@ -344,7 +348,7 @@ require_once __DIR__ . '/core/header.php';
           <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step1_title', 'Concept Clarity') ?></h3>
           <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step1_desc', 'Focus on thorough understanding of NCERT fundamentals before moving to advanced problem solving.') ?></p>
         </div>
-        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold">Core Understanding</div>
+        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step1_tag', 'Core Understanding') ?></div>
       </div>
       <div class="bg-surface-pure p-8 rounded-2xl shadow-sm border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-transform">
         <div>
@@ -352,7 +356,7 @@ require_once __DIR__ . '/core/header.php';
           <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step2_title', 'Practical Labs') ?></h3>
           <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step2_desc', 'Hands-on experiments in physics, chemistry, biology, and computer science reinforce classroom theory.') ?></p>
         </div>
-        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold">Experiential Learning</div>
+        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step2_tag', 'Experiential Learning') ?></div>
       </div>
       <div class="bg-surface-pure p-8 rounded-2xl shadow-sm border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-transform">
         <div>
@@ -360,7 +364,7 @@ require_once __DIR__ . '/core/header.php';
           <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step3_title', 'Regular Testing') ?></h3>
           <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step3_desc', 'Periodic unit tests, term exams, and mock board tests ensure continuous assessment and revision.') ?></p>
         </div>
-        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold">Exam Readiness</div>
+        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step3_tag', 'Exam Readiness') ?></div>
       </div>
       <div class="bg-surface-pure p-8 rounded-2xl shadow-sm border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-transform">
         <div>
@@ -368,7 +372,7 @@ require_once __DIR__ . '/core/header.php';
           <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step4_title', 'Individual Care') ?></h3>
           <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step4_desc', 'Remedial classes for students needing extra help and personalized attention for every scholar.') ?></p>
         </div>
-        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold">Personal Mentorship</div>
+        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step4_tag', 'Personal Mentorship') ?></div>
       </div>
     </div>
   </section>
@@ -376,9 +380,9 @@ require_once __DIR__ . '/core/header.php';
   <!-- Examination System & Evaluation Framework -->
   <section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto w-full bg-surface-container-low rounded-2xl my-8 border border-border-warm" id="examination-system">
     <div class="text-center max-w-3xl mx-auto mb-14">
-      <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold">Continuous &amp; Comprehensive Assessment</span>
-      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2">Examination &amp; Evaluation System</h2>
-      <p class="font-body-md text-on-surface-variant mt-3">At Sun Rise Sr. Sec. School, our evaluation framework ensures continuous learning, diagnostic feedback, and thorough board examination readiness.</p>
+      <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('academics', 'exam_eyebrow', 'Continuous &amp; Comprehensive Assessment') ?></span>
+      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('academics', 'exam_heading', 'Examination &amp; Evaluation System') ?></h2>
+      <p class="font-body-md text-on-surface-variant mt-3"><?= get_text('academics', 'exam_desc', 'At Sun Rise Sr. Sec. School, our evaluation framework ensures continuous learning, diagnostic feedback, and thorough board examination readiness.') ?></p>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -388,10 +392,10 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-lg bg-primary text-[#C9A24B] flex items-center justify-center">
             <span class="material-symbols-outlined text-[24px]">assignment</span>
           </div>
-          <h3 class="font-headline-sm text-base font-bold text-primary">Mid-Term &amp; Annual Exams</h3>
-          <p class="font-body-sm text-on-surface-variant">Comprehensive term-end examinations patterned on HBSE board standards, evaluating overall mastery and practical performance.</p>
+          <h3 class="font-headline-sm text-base font-bold text-primary"><?= get_text('academics', 'exam1_title', 'Mid-Term &amp; Annual Exams') ?></h3>
+          <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'exam1_desc', 'Comprehensive term-end examinations patterned on HBSE board standards, evaluating overall mastery and practical performance.') ?></p>
         </div>
-        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase">Major Milestones</div>
+        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase"><?= get_text('academics', 'exam1_tag', 'Major Milestones') ?></div>
       </div>
 
       <!-- Monthly Unit Tests -->
@@ -400,10 +404,10 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-lg bg-primary text-[#C9A24B] flex items-center justify-center">
             <span class="material-symbols-outlined text-[24px]">calendar_month</span>
           </div>
-          <h3 class="font-headline-sm text-base font-bold text-primary">Monthly Unit Tests</h3>
-          <p class="font-body-sm text-on-surface-variant">Scheduled at the close of every month across all subjects to track topic-wise retention and ensure continuous revision.</p>
+          <h3 class="font-headline-sm text-base font-bold text-primary"><?= get_text('academics', 'exam2_title', 'Monthly Unit Tests') ?></h3>
+          <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'exam2_desc', 'Scheduled at the close of every month across all subjects to track topic-wise retention and ensure continuous revision.') ?></p>
         </div>
-        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase">Monthly Assessment</div>
+        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase"><?= get_text('academics', 'exam2_tag', 'Monthly Assessment') ?></div>
       </div>
 
       <!-- Regular Class Tests -->
@@ -412,10 +416,10 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-lg bg-primary text-[#C9A24B] flex items-center justify-center">
             <span class="material-symbols-outlined text-[24px]">quiz</span>
           </div>
-          <h3 class="font-headline-sm text-base font-bold text-primary">Regular Class Tests</h3>
-          <p class="font-body-sm text-on-surface-variant">Frequent chapter-end evaluations conducted by subject educators to identify learning gaps and reinforce key concepts.</p>
+          <h3 class="font-headline-sm text-base font-bold text-primary"><?= get_text('academics', 'exam3_title', 'Regular Class Tests') ?></h3>
+          <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'exam3_desc', 'Frequent chapter-end evaluations conducted by subject educators to identify learning gaps and reinforce key concepts.') ?></p>
         </div>
-        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase">Topic-by-Topic</div>
+        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase"><?= get_text('academics', 'exam3_tag', 'Topic-by-Topic') ?></div>
       </div>
 
       <!-- Surprise Tests -->
@@ -424,10 +428,10 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-lg bg-primary text-[#C9A24B] flex items-center justify-center">
             <span class="material-symbols-outlined text-[24px]">bolt</span>
           </div>
-          <h3 class="font-headline-sm text-base font-bold text-primary">Surprise Tests</h3>
-          <p class="font-body-sm text-on-surface-variant">Unannounced quick assessments encouraging students to maintain daily revision habits and stay prepared throughout the year.</p>
+          <h3 class="font-headline-sm text-base font-bold text-primary"><?= get_text('academics', 'exam4_title', 'Surprise Tests') ?></h3>
+          <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'exam4_desc', 'Unannounced quick assessments encouraging students to maintain daily revision habits and stay prepared throughout the year.') ?></p>
         </div>
-        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase">Continuous Readiness</div>
+        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase"><?= get_text('academics', 'exam4_tag', 'Continuous Readiness') ?></div>
       </div>
     </div>
 
@@ -439,8 +443,8 @@ require_once __DIR__ . '/core/header.php';
         </div>
         <div>
           <span class="text-xs uppercase font-bold text-secondary tracking-wider">Medium of Instruction</span>
-          <h4 class="font-headline-sm text-primary font-bold text-base sm:text-lg">English Medium (Nursery to Class XII)</h4>
-          <p class="text-xs text-on-surface-variant">With strong Hindi and regional language foundations</p>
+          <h4 class="font-headline-sm text-primary font-bold text-base sm:text-lg"><?= get_text('academics', 'medium_title', 'English Medium (Nursery to Class XII)') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('academics', 'medium_desc', 'With strong Hindi and regional language foundations') ?></p>
         </div>
       </div>
       <div class="h-10 w-px bg-border-warm hidden md:block"></div>
@@ -451,9 +455,9 @@ require_once __DIR__ . '/core/header.php';
         <div>
           <span class="text-xs uppercase font-bold text-secondary tracking-wider">Official School Timings</span>
           <div class="text-xs sm:text-sm font-bold text-primary flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
-            <span><strong>Summer:</strong> 7:30 AM – 1:30 PM</span>
+            <span><strong>Summer:</strong> <?= get_text('academics', 'timing_summer', '7:30 AM – 1:30 PM') ?></span>
             <span class="hidden sm:inline">&bull;</span>
-            <span><strong>Winter:</strong> 8:30 AM – 2:30 PM</span>
+            <span><strong>Winter:</strong> <?= get_text('academics', 'timing_winter', '8:30 AM – 2:30 PM') ?></span>
           </div>
         </div>
       </div>
@@ -463,9 +467,9 @@ require_once __DIR__ . '/core/header.php';
   <!-- Academic Toppers & Board Results Spotlight -->
   <section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="toppers">
     <div class="text-center max-w-3xl mx-auto mb-14">
-      <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold">Academic Distinction</span>
-      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2">Board Examination Results &amp; Toppers</h2>
-      <p class="font-body-md text-on-surface-variant mt-3">Sun Rise Sr. Sec. School proudly celebrates a consistent 100% HBSE board examination pass rate, producing district and block rank holders.</p>
+      <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('academics', 'toppers_eyebrow', 'Academic Distinction') ?></span>
+      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('academics', 'toppers_heading', 'Board Examination Results &amp; Toppers') ?></h2>
+      <p class="font-body-md text-on-surface-variant mt-3"><?= get_text('academics', 'toppers_desc', 'Sun Rise Sr. Sec. School proudly celebrates a consistent 100% HBSE board examination pass rate, producing district and block rank holders.') ?></p>
     </div>
 
     <div class="bg-primary text-white rounded-2xl p-8 lg:p-12 shadow-xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
@@ -473,33 +477,33 @@ require_once __DIR__ . '/core/header.php';
       <div class="flex flex-col gap-4 max-w-2xl relative z-10">
         <div class="inline-flex items-center gap-2 bg-[#C9A24B] text-primary px-3.5 py-1 rounded-full text-xs font-bold uppercase self-start">
           <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">military_tech</span>
-          HBSE Board Star Achievers
+          <?= get_text('academics', 'toppers_card_badge', 'HBSE Board Star Achievers') ?>
         </div>
-        <h3 class="text-2xl sm:text-3xl font-bold font-headline-lg text-white leading-tight">Celebrating Academic Excellence &amp; Merit Ranks</h3>
+        <h3 class="text-2xl sm:text-3xl font-bold font-headline-lg text-white leading-tight"><?= get_text('academics', 'toppers_card_title', 'Celebrating Academic Excellence &amp; Merit Ranks') ?></h3>
         <p class="text-surface-cream/90 text-sm sm:text-base leading-relaxed">
-          Through systematic syllabus completion, doubt resolution clinics, and regular testing, our Class X and XII students achieve top percentiles in Haryana Board examinations year after year.
+          <?= get_text('academics', 'toppers_card_desc', 'Through systematic syllabus completion, doubt resolution clinics, and regular testing, our Class X and XII students achieve top percentiles in Haryana Board examinations year after year.') ?>
         </p>
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
           <div class="p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10">
-            <span class="block text-xl font-bold text-[#C9A24B]">100%</span>
-            <span class="text-xs text-slate-300">Board Pass Record</span>
+            <span class="block text-xl font-bold text-[#C9A24B]"><?= get_text('academics', 'toppers_stat1_num', '100%') ?></span>
+            <span class="text-xs text-slate-300"><?= get_text('academics', 'toppers_stat1_lbl', 'Board Pass Record') ?></span>
           </div>
           <div class="p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10">
-            <span class="block text-xl font-bold text-[#C9A24B]">Nursery – XII</span>
-            <span class="text-xs text-slate-300">Comprehensive Spectrum</span>
+            <span class="block text-xl font-bold text-[#C9A24B]"><?= get_text('academics', 'toppers_stat2_num', 'Nursery – XII') ?></span>
+            <span class="text-xs text-slate-300"><?= get_text('academics', 'toppers_stat2_lbl', 'Comprehensive Spectrum') ?></span>
           </div>
           <div class="p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 col-span-2 sm:col-span-1">
-            <span class="block text-xl font-bold text-[#C9A24B]">3 Streams</span>
-            <span class="text-xs text-slate-300">Science, Commerce, Arts</span>
+            <span class="block text-xl font-bold text-[#C9A24B]"><?= get_text('academics', 'toppers_stat3_num', '3 Streams') ?></span>
+            <span class="text-xs text-slate-300"><?= get_text('academics', 'toppers_stat3_lbl', 'Science, Commerce, Arts') ?></span>
           </div>
         </div>
       </div>
       <div class="relative z-10 flex flex-col items-center gap-4 flex-shrink-0">
         <div class="w-64 sm:w-72 rounded-xl overflow-hidden shadow-2xl border-2 border-[#C9A24B]/50 cursor-pointer" onclick="openLightbox(this)">
-          <img src="assets/images/pop-up%20image.webp" alt="Sun Rise Board Toppers Poster" class="w-full h-auto object-cover" loading="lazy"/>
+          <img src="<?= get_image('academics', 'toppers_poster', school_img('pop-up image.webp')) ?>" alt="<?= htmlspecialchars(get_image_alt('academics', 'toppers_poster', 'Sun Rise Board Toppers Poster')) ?>" class="w-full h-auto object-cover" loading="lazy"/>
         </div>
         <span class="text-xs text-[#C9A24B] font-semibold flex items-center gap-1">
-          <span class="material-symbols-outlined text-sm">zoom_in</span> Click to view toppers poster
+          <span class="material-symbols-outlined text-sm">zoom_in</span> <?= get_text('academics', 'toppers_poster_hint', 'Click to view toppers poster') ?>
         </span>
       </div>
     </div>

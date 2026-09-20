@@ -9,24 +9,24 @@ require_once __DIR__ . '/core/header.php';
 
 <div class="flex flex-col w-full">
   <!-- Hero Section with Background Banner -->
-  <section class="relative w-full min-h-[80vh] lg:min-h-[85vh] py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary text-on-primary">
+  <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary text-on-primary">
     <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('<?= get_image('events', 'featured_banner', school_img('award_ceremony.webp')) ?>')"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50 z-10"></div>
-    <div class="relative z-20 max-w-6xl w-full mx-auto px-6 lg:px-12 flex flex-col items-center text-center gap-6">
-      <div class="inline-flex items-center gap-2 bg-[#C9A24B] text-primary px-5 py-1.5 rounded-full text-eyebrow font-eyebrow uppercase tracking-widest font-bold shadow-md">
-        <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-        <?= get_text('events', 'featured_badge', 'Featured Event') ?>
+    <div class="hero-content relative z-20 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12 flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6">
+      <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2 bg-[#C9A24B] text-primary px-3.5 py-1 sm:px-5 sm:py-1.5 rounded-full uppercase tracking-widest font-bold shadow-md">
+        <span class="material-symbols-outlined text-[13px] sm:text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+        <span><?= get_text('events', 'featured_badge', 'Featured Event') ?></span>
       </div>
-      <h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg text-white font-bold w-full max-w-4xl leading-[1.2] drop-shadow-md"><?= get_text('events', 'featured_title', 'Annual Science & Art Exhibition 2026') ?></h1>
-      <p class="text-sm sm:text-base md:text-lg text-surface-cream/95 w-full max-w-3xl leading-relaxed drop-shadow"><?= get_text('events', 'featured_subtitle', 'Experience the ingenuity of our students as they demonstrate live working science models, robotics experiments, sustainable agriculture concepts, and artistic creations.') ?></p>
-      <div class="flex flex-wrap items-center justify-center gap-6 text-sm sm:text-base text-surface-cream font-medium">
-        <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[#C9A24B]">calendar_today</span> Annual Session</span>
-        <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[#C9A24B]">schedule</span> <?= get_text('events', 'featured_time', '09:30 AM - 03:00 PM') ?></span>
-        <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[#C9A24B]">location_on</span> <?= get_text('events', 'featured_location', 'Main Campus Auditorium & Grounds') ?></span>
+      <h1 class="hero-heading font-headline-lg text-white font-bold w-full max-w-4xl drop-shadow-md"><?= get_text('events', 'featured_title', 'Annual Science & Art Exhibition 2026') ?></h1>
+      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl drop-shadow"><?= get_text('events', 'featured_subtitle', 'Experience the ingenuity of our students as they demonstrate live working science models, robotics experiments, sustainable agriculture concepts, and artistic creations.') ?></p>
+      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-base text-surface-cream font-medium">
+        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#C9A24B] text-[15px] sm:text-[18px]">calendar_today</span> <?= get_text('events', 'featured_session_tag', 'Annual Session') ?></span>
+        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#C9A24B] text-[15px] sm:text-[18px]">schedule</span> <?= get_text('events', 'featured_time', '09:30 AM - 03:00 PM') ?></span>
+        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#C9A24B] text-[15px] sm:text-[18px]">location_on</span> <?= get_text('events', 'featured_location', 'Main Campus Auditorium & Grounds') ?></span>
       </div>
-      <a class="btn-gold text-base sm:text-lg px-8 py-3.5 shadow-xl mt-2" href="contact-us.php">
-        <span>Inquire / Visit Campus</span>
-        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+      <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all mt-1" href="<?= htmlspecialchars(get_text('events', 'featured_btn_link', 'contact-us.php')) ?>">
+        <span><?= get_text('events', 'featured_btn_text', 'Inquire / Visit Campus') ?></span>
+        <span class="material-symbols-outlined">arrow_forward</span>
       </a>
     </div>
   </section>
@@ -38,8 +38,8 @@ require_once __DIR__ . '/core/header.php';
       <div class="lg:col-span-8 flex flex-col gap-8">
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <span class="text-eyebrow text-primary uppercase font-bold text-[#B38C37]">Happenings &amp; Notices</span>
-            <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-1">School News &amp; Key Highlights</h2>
+            <span class="text-eyebrow text-primary uppercase font-bold text-[#B38C37]"><?= get_text('events', 'news_eyebrow', 'Happenings & Notices') ?></span>
+            <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-1"><?= get_text('events', 'news_heading', 'School News & Key Highlights') ?></h2>
           </div>
           <!-- Filter Chips -->
           <div class="flex items-center gap-2 flex-wrap">
@@ -75,8 +75,8 @@ require_once __DIR__ . '/core/header.php';
                 <h3 class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-[#C9A24B] transition-colors"><?= get_text('events', 'news1_title', 'District Level Science Model Showcase') ?></h3>
                 <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-3"><?= get_text('events', 'news1_desc', 'Students demonstrated innovative research prototypes and hydraulic mechanics models with outstanding presentation skills.') ?></p>
               </div>
-              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="gallery.php">
-                View Gallery Photos <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="<?= htmlspecialchars(get_text('events', 'news1_link_url', 'gallery.php')) ?>">
+                <?= get_text('events', 'news1_link_text', 'View Gallery Photos') ?> <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </a>
             </div>
           </div>
@@ -96,8 +96,8 @@ require_once __DIR__ . '/core/header.php';
                 <h3 class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-[#C9A24B] transition-colors"><?= get_text('events', 'news2_title', 'Independence Day Flag Hoisting & Parade') ?></h3>
                 <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-3"><?= get_text('events', 'news2_desc', 'Celebrated with patriotic enthusiasm, tri-color flag unfurling by management, and spirited cultural performances.') ?></p>
               </div>
-              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="gallery.php">
-                View Celebrations <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="<?= htmlspecialchars(get_text('events', 'news2_link_url', 'gallery.php')) ?>">
+                <?= get_text('events', 'news2_link_text', 'View Celebrations') ?> <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </a>
             </div>
           </div>
@@ -117,8 +117,8 @@ require_once __DIR__ . '/core/header.php';
                 <h3 class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-[#C9A24B] transition-colors"><?= get_text('events', 'news3_title', 'Institutional Excellence Award to School') ?></h3>
                 <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-3"><?= get_text('events', 'news3_desc', 'Sun Rise Sr. Sec. School recognized for exceptional academic standards and community educational leadership in Hisar region.') ?></p>
               </div>
-              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="about-us.php">
-                Read About Us <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="<?= htmlspecialchars(get_text('events', 'news3_link_url', 'about-us.php')) ?>">
+                <?= get_text('events', 'news3_link_text', 'Read About Us') ?> <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </a>
             </div>
           </div>
@@ -138,8 +138,8 @@ require_once __DIR__ . '/core/header.php';
                 <h3 class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-[#C9A24B] transition-colors"><?= get_text('events', 'news4_title', 'Media Coverage: Board Exam Triumphs') ?></h3>
                 <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-3"><?= get_text('events', 'news4_desc', 'Prominent regional newspapers report on the extraordinary 100% HBSE board passing rate and high scoring records of our students.') ?></p>
               </div>
-              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="admission.php">
-                View Academic Results <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="<?= htmlspecialchars(get_text('events', 'news4_link_url', 'admission.php')) ?>">
+                <?= get_text('events', 'news4_link_text', 'View Academic Results') ?> <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
               </a>
             </div>
           </div>
@@ -156,20 +156,20 @@ require_once __DIR__ . '/core/header.php';
               <span class="material-symbols-outlined text-[24px]">description</span>
             </div>
             <div>
-              <span class="text-eyebrow text-[#C9A24B] uppercase font-bold">Academic Schedule</span>
+              <span class="text-eyebrow text-[#C9A24B] uppercase font-bold"><?= get_text('events', 'calendar_eyebrow', 'Academic Schedule') ?></span>
               <h3 class="font-headline-sm text-headline-sm font-bold text-on-primary"><?= get_text('events', 'calendar_title', 'School Calendar') ?></h3>
             </div>
           </div>
           <p class="font-body-md text-surface-cream text-body-md"><?= get_text('events', 'calendar_desc', 'Check term schedules, periodic unit tests, quarterly assessments, board pre-boards, and gazetted school holidays.') ?></p>
-          <a class="btn-gold w-full text-center" href="academics.php">
-            <span class="material-symbols-outlined text-[18px]">calendar_month</span> View Academic Syllabus
+          <a class="btn-gold w-full text-center" href="<?= htmlspecialchars(get_text('events', 'calendar_btn_link', 'academics.php')) ?>">
+            <span class="material-symbols-outlined text-[18px]">calendar_month</span> <?= get_text('events', 'calendar_btn_text', 'View Academic Syllabus') ?>
           </a>
         </div>
 
         <!-- Upcoming Events Mini-List -->
         <div class="bg-surface-pure rounded-xl p-6 shadow-sm border border-border-warm flex flex-col gap-6">
           <div class="flex items-center justify-between border-b border-border-warm pb-4">
-            <h3 class="font-headline-sm text-headline-sm text-primary font-bold">Upcoming Agenda</h3>
+            <h3 class="font-headline-sm text-headline-sm text-primary font-bold"><?= get_text('events', 'agenda_heading', 'Upcoming Agenda') ?></h3>
             <span class="material-symbols-outlined text-primary">event_upcoming</span>
           </div>
           <div class="flex flex-col gap-5">
@@ -204,7 +204,7 @@ require_once __DIR__ . '/core/header.php';
               </div>
             </div>
           </div>
-          <a class="text-primary font-label-md hover:text-[#C9A24B] transition-colors text-center py-2 border-t border-border-warm mt-2 font-bold" href="contact-us.php">Contact School Office for Inquiries →</a>
+          <a class="text-primary font-label-md hover:text-[#C9A24B] transition-colors text-center py-2 border-t border-border-warm mt-2 font-bold" href="<?= htmlspecialchars(get_text('events', 'agenda_footer_link', 'contact-us.php')) ?>"><?= get_text('events', 'agenda_footer_text', 'Contact School Office for Inquiries →') ?></a>
         </div>
       </div>
     </div>
@@ -214,9 +214,9 @@ require_once __DIR__ . '/core/header.php';
   <section class="w-full bg-surface-container-low py-20 px-6 lg:px-12 border-y border-border-warm" id="functions-activities">
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-3xl mx-auto mb-14">
-        <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold">Holistic Development</span>
-        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2">Functions &amp; Student Activities</h2>
-        <p class="font-body-md text-on-surface-variant mt-3">From cultural pageants and annual sports meets to science exhibitions and academic olympiads, our students flourish across a vibrant calendar of events.</p>
+        <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('events', 'functions_eyebrow', 'Holistic Development') ?></span>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('events', 'functions_heading', 'Functions & Student Activities') ?></h2>
+        <p class="font-body-md text-on-surface-variant mt-3"><?= get_text('events', 'functions_desc', 'From cultural pageants and annual sports meets to science exhibitions and academic olympiads, our students flourish across a vibrant calendar of events.') ?></p>
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -225,8 +225,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">celebration</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Annual Function</h4>
-          <p class="text-xs text-on-surface-variant">Grand cultural showcase featuring theatrical acts, music, and dance.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func1_title', 'Annual Function') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func1_desc', 'Grand cultural showcase featuring theatrical acts, music, and dance.') ?></p>
         </div>
 
         <!-- 2. Annual Result Declaration Day -->
@@ -234,8 +234,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">military_tech</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Result Declaration Day</h4>
-          <p class="text-xs text-on-surface-variant">Annual academic felicitation day honoring class and board rankers.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func2_title', 'Result Declaration Day') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func2_desc', 'Annual academic felicitation day honoring class and board rankers.') ?></p>
         </div>
 
         <!-- 3. Annual Sports Meet -->
@@ -243,8 +243,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">sports_score</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Annual Sports Meet</h4>
-          <p class="text-xs text-on-surface-variant">Inter-house track and field competitions, relay races, and games.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func3_title', 'Annual Sports Meet') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func3_desc', 'Inter-house track and field competitions, relay races, and games.') ?></p>
         </div>
 
         <!-- 4. Cultural Fest -->
@@ -252,8 +252,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">theater_comedy</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Cultural Fest</h4>
-          <p class="text-xs text-on-surface-variant">Folk traditions, patriotic celebrations, skits, and instrumental music.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func4_title', 'Cultural Fest') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func4_desc', 'Folk traditions, patriotic celebrations, skits, and instrumental music.') ?></p>
         </div>
 
         <!-- 5. Farewell Ceremony -->
@@ -261,8 +261,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">waving_hand</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Farewell Ceremony</h4>
-          <p class="text-xs text-on-surface-variant">Blessings, mentorship, and warm send-off for passing-out Class 12 batches.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func5_title', 'Farewell Ceremony') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func5_desc', 'Blessings, mentorship, and warm send-off for passing-out Class 12 batches.') ?></p>
         </div>
 
         <!-- 6. Alumni Meet -->
@@ -270,8 +270,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">groups_3</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Alumni Meet</h4>
-          <p class="text-xs text-on-surface-variant">Reconnecting former students serving in administration, defence, and academia.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func6_title', 'Alumni Meet') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func6_desc', 'Reconnecting former students serving in administration, defence, and academia.') ?></p>
         </div>
 
         <!-- 7. Quiz Competition -->
@@ -279,8 +279,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">psychology</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Quiz Competition</h4>
-          <p class="text-xs text-on-surface-variant">Block and district level GK, science, and history quiz contests.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func7_title', 'Quiz Competition') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func7_desc', 'Block and district level GK, science, and history quiz contests.') ?></p>
         </div>
 
         <!-- 8. Science Exhibition -->
@@ -288,8 +288,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">science</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Science Exhibition</h4>
-          <p class="text-xs text-on-surface-variant">Interactive working models in robotics, physics, ecology, and chemistry.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func8_title', 'Science Exhibition') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func8_desc', 'Interactive working models in robotics, physics, ecology, and chemistry.') ?></p>
         </div>
 
         <!-- 9. Rangoli Competitions -->
@@ -297,8 +297,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">palette</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Rangoli Competitions</h4>
-          <p class="text-xs text-on-surface-variant">Festive creativity celebrating Indian heritage, colors, and art forms.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func9_title', 'Rangoli Competitions') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func9_desc', 'Festive creativity celebrating Indian heritage, colors, and art forms.') ?></p>
         </div>
 
         <!-- 10. Debate Competitions -->
@@ -306,8 +306,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">record_voice_over</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Debate Competitions</h4>
-          <p class="text-xs text-on-surface-variant">Honing articulate expression, critical thinking, and public speaking.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func10_title', 'Debate Competitions') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func10_desc', 'Honing articulate expression, critical thinking, and public speaking.') ?></p>
         </div>
 
         <!-- 11. Olympiad Participation -->
@@ -315,8 +315,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">award_star</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Olympiad Participation</h4>
-          <p class="text-xs text-on-surface-variant">National science, mathematics, and cyber olympiad competitive testing.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func11_title', 'Olympiad Participation') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func11_desc', 'National science, mathematics, and cyber olympiad competitive testing.') ?></p>
         </div>
 
         <!-- 12. Educational Seminars & Tours -->
@@ -324,8 +324,8 @@ require_once __DIR__ . '/core/header.php';
           <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
             <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">tour</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Seminars &amp; Tours</h4>
-          <p class="text-xs text-on-surface-variant">Career guidance workshops and educational excursions to historic and scientific sites.</p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func12_title', 'Seminars & Tours') ?></h4>
+          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func12_desc', 'Career guidance workshops and educational excursions to historic and scientific sites.') ?></p>
         </div>
       </div>
     </div>
@@ -349,8 +349,8 @@ require_once __DIR__ . '/core/header.php';
               <span class="material-symbols-outlined text-[28px]">trophy</span>
             </div>
             <div>
-              <span class="text-xs font-bold text-[#C9A24B] uppercase tracking-wider">State &amp; National Honors</span>
-              <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-primary">Sports Achievements</h3>
+              <span class="text-xs font-bold text-[#C9A24B] uppercase tracking-wider"><?= get_text('events', 'sports_achieve_tag', 'State & National Honors') ?></span>
+              <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-primary"><?= get_text('events', 'sports_achieve_title', 'Sports Achievements') ?></h3>
             </div>
           </div>
 
@@ -358,56 +358,56 @@ require_once __DIR__ . '/core/header.php';
             <!-- Wrestling 2023 -->
             <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
               <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
-                🥇
+                <?= get_text('events', 'sports_item1_badge', '🥇') ?>
               </div>
               <div>
-                <span class="text-xs font-bold text-primary uppercase">2023 &bull; National Sub-Junior Wrestling Championship</span>
-                <p class="text-sm font-semibold text-primary mt-0.5">2 Gold Medals</p>
-                <p class="text-xs text-on-surface-variant">Outstanding national glory in sub-junior wrestling representing Haryana.</p>
+                <span class="text-xs font-bold text-primary uppercase"><?= get_text('events', 'sports_item1_sub', '2023 • National Sub-Junior Wrestling Championship') ?></span>
+                <p class="text-sm font-semibold text-primary mt-0.5"><?= get_text('events', 'sports_item1_title', '2 Gold Medals') ?></p>
+                <p class="text-xs text-on-surface-variant"><?= get_text('events', 'sports_item1_desc', 'Outstanding national glory in sub-junior wrestling representing Haryana.') ?></p>
               </div>
             </div>
 
             <!-- Kickboxing 2018 & 2019 -->
             <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
               <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-800 flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
-                🥈
+                <?= get_text('events', 'sports_item2_badge', '🥈') ?>
               </div>
               <div>
-                <span class="text-xs font-bold text-primary uppercase">2018 &amp; 2019 &bull; State Level Kickboxing Championship</span>
-                <p class="text-sm font-semibold text-primary mt-0.5">2 Silver Medals &amp; 1 Bronze Medal (2018)</p>
-                <p class="text-xs text-on-surface-variant">Continuous podium finishes at the Haryana State Kickboxing Tournaments.</p>
+                <span class="text-xs font-bold text-primary uppercase"><?= get_text('events', 'sports_item2_sub', '2018 & 2019 • State Level Kickboxing Championship') ?></span>
+                <p class="text-sm font-semibold text-primary mt-0.5"><?= get_text('events', 'sports_item2_title', '2 Silver Medals & 1 Bronze Medal (2018)') ?></p>
+                <p class="text-xs text-on-surface-variant"><?= get_text('events', 'sports_item2_desc', 'Continuous podium finishes at the Haryana State Kickboxing Tournaments.') ?></p>
               </div>
             </div>
 
             <!-- Kickboxing District 2017 -->
             <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
               <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-800 flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
-                🥉
+                <?= get_text('events', 'sports_item3_badge', '🥉') ?>
               </div>
               <div>
-                <span class="text-xs font-bold text-primary uppercase">2017 &bull; District Kickboxing Tournament</span>
-                <p class="text-sm font-semibold text-primary mt-0.5">1 Bronze Medal</p>
-                <p class="text-xs text-on-surface-variant">Remarkable district level combat sports victory in Hisar.</p>
+                <span class="text-xs font-bold text-primary uppercase"><?= get_text('events', 'sports_item3_sub', '2017 • District Kickboxing Tournament') ?></span>
+                <p class="text-sm font-semibold text-primary mt-0.5"><?= get_text('events', 'sports_item3_title', '1 Bronze Medal') ?></p>
+                <p class="text-xs text-on-surface-variant"><?= get_text('events', 'sports_item3_desc', 'Remarkable district level combat sports victory in Hisar.') ?></p>
               </div>
             </div>
 
             <!-- SPAT Selections 2014, 2015, 2016 -->
             <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
               <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
-                🏃
+                <?= get_text('events', 'sports_item4_badge', '🏃') ?>
               </div>
               <div>
-                <span class="text-xs font-bold text-primary uppercase">2014, 2015 &amp; 2016 &bull; SPAT Athletic Competition</span>
-                <p class="text-sm font-semibold text-primary mt-0.5">5 Students Selected in Sports Physical Aptitude Test</p>
-                <p class="text-xs text-on-surface-variant">Selected for government athletic sponsorship through rigorous athletic testing.</p>
+                <span class="text-xs font-bold text-primary uppercase"><?= get_text('events', 'sports_item4_sub', '2014, 2015 & 2016 • SPAT Athletic Competition') ?></span>
+                <p class="text-sm font-semibold text-primary mt-0.5"><?= get_text('events', 'sports_item4_title', '5 Students Selected in Sports Physical Aptitude Test') ?></p>
+                <p class="text-xs text-on-surface-variant"><?= get_text('events', 'sports_item4_desc', 'Selected for government athletic sponsorship through rigorous athletic testing.') ?></p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="mt-6 pt-4 border-t border-border-warm flex items-center justify-between text-xs text-on-surface-variant font-bold">
-          <span>Disciplines: Wrestling &bull; Kickboxing &bull; Athletics</span>
-          <a href="campus.php#sports" class="text-[#C9A24B] hover:underline flex items-center gap-1">Sports Ground &rarr;</a>
+          <span><?= get_text('events', 'sports_achieve_footer', 'Disciplines: Wrestling • Kickboxing • Athletics') ?></span>
+          <a href="<?= htmlspecialchars(get_text('events', 'sports_achieve_link_url', 'campus.php#sports')) ?>" class="text-[#C9A24B] hover:underline flex items-center gap-1"><?= get_text('events', 'sports_achieve_link_text', 'Sports Ground →') ?></a>
         </div>
       </div>
 
@@ -419,8 +419,8 @@ require_once __DIR__ . '/core/header.php';
               <span class="material-symbols-outlined text-[28px] text-[#C9A24B]">workspace_premium</span>
             </div>
             <div>
-              <span class="text-xs font-bold text-[#C9A24B] uppercase tracking-wider">Institutional Triumphs</span>
-              <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-primary">Awards Achieved by School</h3>
+              <span class="text-xs font-bold text-[#C9A24B] uppercase tracking-wider"><?= get_text('events', 'school_awards_tag', 'Institutional Triumphs') ?></span>
+              <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-primary"><?= get_text('events', 'school_awards_title', 'Awards Achieved by School') ?></h3>
             </div>
           </div>
 
@@ -428,56 +428,56 @@ require_once __DIR__ . '/core/header.php';
             <!-- Block Quiz 2022 -->
             <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
               <div class="w-8 h-8 rounded-full bg-primary text-[#C9A24B] flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
-                ★
+                <?= get_text('events', 'award_item1_badge', '★') ?>
               </div>
               <div>
-                <span class="text-xs font-bold text-primary uppercase">2022 &bull; Block Level Quiz Competition</span>
-                <p class="text-sm font-semibold text-primary mt-0.5">1st Position / Winner</p>
-                <p class="text-xs text-on-surface-variant">Outperformed top regional institutions with deep general awareness and speed.</p>
+                <span class="text-xs font-bold text-primary uppercase"><?= get_text('events', 'award_item1_sub', '2022 • Block Level Quiz Competition') ?></span>
+                <p class="text-sm font-semibold text-primary mt-0.5"><?= get_text('events', 'award_item1_title', '1st Position / Winner') ?></p>
+                <p class="text-xs text-on-surface-variant"><?= get_text('events', 'award_item1_desc', 'Outperformed top regional institutions with deep general awareness and speed.') ?></p>
               </div>
             </div>
 
             <!-- Talent Search 2017 -->
             <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
               <div class="w-8 h-8 rounded-full bg-primary text-[#C9A24B] flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
-                ★
+                <?= get_text('events', 'award_item2_badge', '★') ?>
               </div>
               <div>
-                <span class="text-xs font-bold text-primary uppercase">2017 &bull; Talent Search Examination (Block Level)</span>
-                <p class="text-sm font-semibold text-primary mt-0.5">Winner &amp; Rural Topper &bull; 1st, 2nd &amp; 3rd Positions</p>
-                <p class="text-xs text-on-surface-variant">Swept top 3 ranks among participants from more than 25 schools and over 1,500 students.</p>
+                <span class="text-xs font-bold text-primary uppercase"><?= get_text('events', 'award_item2_sub', '2017 • Talent Search Examination (Block Level)') ?></span>
+                <p class="text-sm font-semibold text-primary mt-0.5"><?= get_text('events', 'award_item2_title', 'Winner & Rural Topper • 1st, 2nd & 3rd Positions') ?></p>
+                <p class="text-xs text-on-surface-variant"><?= get_text('events', 'award_item2_desc', 'Swept top 3 ranks among participants from more than 25 schools and over 1,500 students.') ?></p>
               </div>
             </div>
 
             <!-- Physics Point 2016 -->
             <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
               <div class="w-8 h-8 rounded-full bg-primary text-[#C9A24B] flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
-                ★
+                <?= get_text('events', 'award_item3_badge', '★') ?>
               </div>
               <div>
-                <span class="text-xs font-bold text-primary uppercase">2016 &bull; Physics Point Prize Test</span>
-                <p class="text-sm font-semibold text-primary mt-0.5">Best School Award &bull; 10 Students in Top 200</p>
-                <p class="text-xs text-on-surface-variant">Conferred Best School Award; 10 students ranked within top 200 out of 2,700+ participants.</p>
+                <span class="text-xs font-bold text-primary uppercase"><?= get_text('events', 'award_item3_sub', '2016 • Physics Point Prize Test') ?></span>
+                <p class="text-sm font-semibold text-primary mt-0.5"><?= get_text('events', 'award_item3_title', 'Best School Award • 10 Students in Top 200') ?></p>
+                <p class="text-xs text-on-surface-variant"><?= get_text('events', 'award_item3_desc', 'Conferred Best School Award; 10 students ranked within top 200 out of 2,700+ participants.') ?></p>
               </div>
             </div>
 
             <!-- Science Exhibition 2013 -->
             <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
               <div class="w-8 h-8 rounded-full bg-primary text-[#C9A24B] flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
-                ★
+                <?= get_text('events', 'award_item4_badge', '★') ?>
               </div>
               <div>
-                <span class="text-xs font-bold text-primary uppercase">2013 &bull; Science Exhibition at CCSHAU, Hisar</span>
-                <p class="text-sm font-semibold text-primary mt-0.5">State Level Selection (2 Students)</p>
-                <p class="text-xs text-on-surface-variant">Recognized for innovative scientific project design and state-level representation.</p>
+                <span class="text-xs font-bold text-primary uppercase"><?= get_text('events', 'award_item4_sub', '2013 • Science Exhibition at CCSHAU, Hisar') ?></span>
+                <p class="text-sm font-semibold text-primary mt-0.5"><?= get_text('events', 'award_item4_title', 'State Level Selection (2 Students)') ?></p>
+                <p class="text-xs text-on-surface-variant"><?= get_text('events', 'award_item4_desc', 'Recognized for innovative scientific project design and state-level representation.') ?></p>
               </div>
             </div>
           </div>
         </div>
 
         <div class="mt-6 pt-4 border-t border-border-warm flex items-center justify-between text-xs text-on-surface-variant font-bold">
-          <span>Board Examination: 100% Pass Record</span>
-          <a href="academics.php#toppers" class="text-[#C9A24B] hover:underline flex items-center gap-1">View Board Toppers &rarr;</a>
+          <span><?= get_text('events', 'school_awards_footer', 'Board Examination: 100% Pass Record') ?></span>
+          <a href="<?= htmlspecialchars(get_text('events', 'school_awards_link_url', 'academics.php#toppers')) ?>" class="text-[#C9A24B] hover:underline flex items-center gap-1"><?= get_text('events', 'school_awards_link_text', 'View Board Toppers →') ?></a>
         </div>
       </div>
     </div>

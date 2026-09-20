@@ -2404,12 +2404,13 @@ $pages_config = [
     'academics' => [
         'title' => 'Academics Page',
         'icon'  => 'school',
-        'desc'  => 'HBSE Curriculum, Stages (Pre-Primary to 12th), 3 Streams, and Teaching Methodology',
+        'desc'  => 'HBSE Curriculum, 5 Academic Stages, 3 Senior Streams, Teaching Methodology, Examination System & Board Toppers',
         'sections' => [
+            // Section 1: Hero Banner & Header
             [
                 'title' => 'Section 1: Hero Banner & Header',
                 'icon'  => 'flag',
-                'desc'  => 'Hero image, eyebrow badge, main title, and introductory text.',
+                'desc'  => 'Hero image, eyebrow badge, main title, subtitle, and call-to-action buttons.',
                 'fields' => [
                     [
                         'kind' => 'image',
@@ -2425,7 +2426,7 @@ $pages_config = [
                         'label' => 'Hero Eyebrow Badge',
                         'type' => 'text',
                         'default' => 'Academic Excellence',
-                        'help' => 'Pill badge.'
+                        'help' => 'Pill badge at the top of the hero.'
                     ],
                     [
                         'kind' => 'text',
@@ -2433,7 +2434,7 @@ $pages_config = [
                         'label' => 'Main Hero Title',
                         'type' => 'text',
                         'default' => 'Rigorous HBSE Curriculum Designed for Success',
-                        'help' => 'Main headline.'
+                        'help' => 'Main headline on the hero banner.'
                     ],
                     [
                         'kind' => 'text',
@@ -2441,14 +2442,48 @@ $pages_config = [
                         'label' => 'Hero Subtitle',
                         'type' => 'text',
                         'default' => 'Discover an enriching academic framework from Pre-Primary to Class 12, fostering analytical thinking, practical lab experimentation, moral values, and board examination distinction.',
-                        'help' => 'Subtitle text.'
+                        'help' => 'Introductory paragraph below the headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn1_text',
+                        'label' => 'Primary CTA Button Text',
+                        'type' => 'text',
+                        'default' => 'Explore Stages',
+                        'help' => 'First button label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn1_link',
+                        'label' => 'Primary CTA Button Link',
+                        'type' => 'text',
+                        'default' => '#curriculum-levels',
+                        'help' => 'Anchor or page link for button 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn2_text',
+                        'label' => 'Secondary CTA Button Text',
+                        'type' => 'text',
+                        'default' => 'Senior Secondary Streams',
+                        'help' => 'Second button label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn2_link',
+                        'label' => 'Secondary CTA Button Link',
+                        'type' => 'text',
+                        'default' => '#streams',
+                        'help' => 'Anchor or page link for button 2.'
                     ]
                 ]
             ],
+
+            // Section 2: Quick Academic Stats Strip
             [
-                'title' => 'Section 2: Quick Academic Stats Strip',
+                'title' => 'Section 2: Quick Academic Stats Strip (4 Counters)',
                 'icon'  => 'analytics',
-                'desc'  => '4 stat counters: Pass record, ratio, streams, and lab infrastructure.',
+                'desc'  => '4 stat counters: Pass record, teacher-student ratio, streams, and lab infrastructure.',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -2456,7 +2491,7 @@ $pages_config = [
                         'label' => 'Stat 1 Value',
                         'type' => 'text',
                         'default' => '100%',
-                        'help' => 'Pass record.'
+                        'help' => 'Pass record percentage.'
                     ],
                     [
                         'kind' => 'text',
@@ -2464,7 +2499,7 @@ $pages_config = [
                         'label' => 'Stat 1 Label',
                         'type' => 'text',
                         'default' => 'HBSE Pass Record',
-                        'help' => 'Label.'
+                        'help' => 'Description below stat 1.'
                     ],
                     [
                         'kind' => 'text',
@@ -2472,7 +2507,7 @@ $pages_config = [
                         'label' => 'Stat 2 Value',
                         'type' => 'text',
                         'default' => '1:15',
-                        'help' => 'Ratio.'
+                        'help' => 'Teacher to student ratio.'
                     ],
                     [
                         'kind' => 'text',
@@ -2480,7 +2515,7 @@ $pages_config = [
                         'label' => 'Stat 2 Label',
                         'type' => 'text',
                         'default' => 'Teacher-Student Ratio',
-                        'help' => 'Label.'
+                        'help' => 'Description below stat 2.'
                     ],
                     [
                         'kind' => 'text',
@@ -2488,7 +2523,7 @@ $pages_config = [
                         'label' => 'Stat 3 Value',
                         'type' => 'text',
                         'default' => '3 Streams',
-                        'help' => 'Streams.'
+                        'help' => 'Streams counter.'
                     ],
                     [
                         'kind' => 'text',
@@ -2496,7 +2531,7 @@ $pages_config = [
                         'label' => 'Stat 3 Label',
                         'type' => 'text',
                         'default' => 'Science, Commerce & Arts',
-                        'help' => 'Label.'
+                        'help' => 'Description below stat 3.'
                     ],
                     [
                         'kind' => 'text',
@@ -2504,7 +2539,7 @@ $pages_config = [
                         'label' => 'Stat 4 Value',
                         'type' => 'text',
                         'default' => 'Modern',
-                        'help' => 'Infra.'
+                        'help' => 'Infrastructure highlight.'
                     ],
                     [
                         'kind' => 'text',
@@ -2512,62 +2547,486 @@ $pages_config = [
                         'label' => 'Stat 4 Label',
                         'type' => 'text',
                         'default' => 'Labs & Smart Classes',
-                        'help' => 'Label.'
+                        'help' => 'Description below stat 4.'
                     ]
                 ]
             ],
+
+            // Section 3: Curriculum Stages Overview & Levels (5 Interactive Tabs)
             [
-                'title' => 'Section 3: Curriculum Stages Overview',
+                'title' => 'Section 3: Curriculum Stages Overview & 5 Levels (Pre-Primary to 12th)',
                 'icon'  => 'auto_stories',
-                'desc'  => 'Header for academic levels from Pre-Primary through Class 12.',
+                'desc'  => 'Manage headers and all 5 interactive tab stages: Pre-Primary, Primary, Middle, Secondary, and Senior Secondary.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'curriculum_eyebrow',
-                        'label' => 'Curriculum Eyebrow',
+                        'label' => 'Section Eyebrow Tagline',
                         'type' => 'text',
                         'default' => 'Academic Stages',
-                        'help' => 'Tagline.'
+                        'help' => 'Eyebrow tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'curriculum_heading',
-                        'label' => 'Curriculum Heading',
+                        'label' => 'Section Main Heading',
                         'type' => 'text',
                         'default' => 'Curriculum Stages by Level',
-                        'help' => 'Section heading.'
+                        'help' => 'Section title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'curriculum_desc',
-                        'label' => 'Curriculum Subtitle',
+                        'label' => 'Section Subtitle Description',
                         'type' => 'text',
                         'default' => 'Our progressive learning architecture builds conceptual clarity, self-confidence, and critical inquiry from early years to Class 12.',
-                        'help' => 'Description.'
+                        'help' => 'Overview description.'
+                    ],
+
+                    // Stage 1: Pre-Primary
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage1_tab',
+                        'label' => 'Stage 1 Tab Button Label',
+                        'type' => 'text',
+                        'default' => 'Pre-Primary (Nursery, LKG, UKG)',
+                        'help' => 'Label for the stage 1 tab button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage1_badge',
+                        'label' => 'Stage 1 Pill Badge',
+                        'type' => 'text',
+                        'default' => 'Early Childhood Education',
+                        'help' => 'Category badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage1_age',
+                        'label' => 'Stage 1 Age Group',
+                        'type' => 'text',
+                        'default' => 'Ages 3 to 5 Years',
+                        'help' => 'Age range.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage1_title',
+                        'label' => 'Stage 1 Headline',
+                        'type' => 'text',
+                        'default' => 'Play-Based Learning & Foundational Wonder',
+                        'help' => 'Stage 1 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage1_desc',
+                        'label' => 'Stage 1 Description',
+                        'type' => 'text',
+                        'default' => 'The Pre-Primary wing provides a nurturing environment where children discover the joy of learning through play, storytelling, numbers, rhymes, phonics, and motor skill activities.',
+                        'help' => 'Stage 1 body text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage1_f1_title',
+                        'label' => 'Stage 1 Feature 1 Title',
+                        'type' => 'text',
+                        'default' => 'Phonics & Language',
+                        'help' => 'First feature heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage1_f1_desc',
+                        'label' => 'Stage 1 Feature 1 Description',
+                        'type' => 'text',
+                        'default' => 'Foundational English and Hindi alphabet recognition and speech development.',
+                        'help' => 'First feature text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage1_f2_title',
+                        'label' => 'Stage 1 Feature 2 Title',
+                        'type' => 'text',
+                        'default' => 'Creative Expression',
+                        'help' => 'Second feature heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage1_f2_desc',
+                        'label' => 'Stage 1 Feature 2 Description',
+                        'type' => 'text',
+                        'default' => 'Daily engagement through drawing, clay modeling, games, and music.',
+                        'help' => 'Second feature text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage1_focus',
+                        'label' => 'Stage 1 Focus Tag',
+                        'type' => 'text',
+                        'default' => 'Focus: Cognitive & Social Readiness',
+                        'help' => 'Bottom focus bar text.'
+                    ],
+
+                    // Stage 2: Primary School
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage2_tab',
+                        'label' => 'Stage 2 Tab Button Label',
+                        'type' => 'text',
+                        'default' => 'Primary School (Classes 1-5)',
+                        'help' => 'Label for the stage 2 tab button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage2_badge',
+                        'label' => 'Stage 2 Pill Badge',
+                        'type' => 'text',
+                        'default' => 'Foundational Stage',
+                        'help' => 'Category badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage2_age',
+                        'label' => 'Stage 2 Class Range',
+                        'type' => 'text',
+                        'default' => 'Classes 1 to 5',
+                        'help' => 'Class range.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage2_title',
+                        'label' => 'Stage 2 Headline',
+                        'type' => 'text',
+                        'default' => 'Strengthening Core Concepts & Curiosity',
+                        'help' => 'Stage 2 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage2_desc',
+                        'label' => 'Stage 2 Description',
+                        'type' => 'text',
+                        'default' => 'Primary education at Sun Rise focuses on strong mathematical foundations, environmental studies (EVS), linguistic fluency, general knowledge, and computer literacy.',
+                        'help' => 'Stage 2 body text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage2_f1_title',
+                        'label' => 'Stage 2 Feature 1 Title',
+                        'type' => 'text',
+                        'default' => 'Activity-Based Mathematics',
+                        'help' => 'First feature heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage2_f1_desc',
+                        'label' => 'Stage 2 Feature 1 Description',
+                        'type' => 'text',
+                        'default' => 'Conceptual arithmetic, mental math, and visual geometry kits.',
+                        'help' => 'First feature text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage2_f2_title',
+                        'label' => 'Stage 2 Feature 2 Title',
+                        'type' => 'text',
+                        'default' => 'Science & Environment',
+                        'help' => 'Second feature heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage2_f2_desc',
+                        'label' => 'Stage 2 Feature 2 Description',
+                        'type' => 'text',
+                        'default' => 'Nature observation, plants, hygiene, and daily science awareness.',
+                        'help' => 'Second feature text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage2_focus',
+                        'label' => 'Stage 2 Focus Tag',
+                        'type' => 'text',
+                        'default' => 'Focus: Academic Discipline & Values',
+                        'help' => 'Bottom focus bar text.'
+                    ],
+
+                    // Stage 3: Middle School
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage3_tab',
+                        'label' => 'Stage 3 Tab Button Label',
+                        'type' => 'text',
+                        'default' => 'Middle School (Classes 6-8)',
+                        'help' => 'Label for the stage 3 tab button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage3_badge',
+                        'label' => 'Stage 3 Pill Badge',
+                        'type' => 'text',
+                        'default' => 'Preparatory Stage',
+                        'help' => 'Category badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage3_age',
+                        'label' => 'Stage 3 Class Range',
+                        'type' => 'text',
+                        'default' => 'Classes 6 to 8',
+                        'help' => 'Class range.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage3_title',
+                        'label' => 'Stage 3 Headline',
+                        'type' => 'text',
+                        'default' => 'Developing Critical Thinking & Lab Skills',
+                        'help' => 'Stage 3 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage3_desc',
+                        'label' => 'Stage 3 Description',
+                        'type' => 'text',
+                        'default' => 'Middle school students dive into specialized subjects: Science (Physics, Chemistry, Biology), Mathematics, Social Sciences, Computer Applications, and Languages.',
+                        'help' => 'Stage 3 body text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage3_f1_title',
+                        'label' => 'Stage 3 Feature 1 Title',
+                        'type' => 'text',
+                        'default' => 'Science Lab Demonstrations',
+                        'help' => 'First feature heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage3_f1_desc',
+                        'label' => 'Stage 3 Feature 1 Description',
+                        'type' => 'text',
+                        'default' => 'Practical experiments, exhibition projects, and scientific reasoning.',
+                        'help' => 'First feature text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage3_f2_title',
+                        'label' => 'Stage 3 Feature 2 Title',
+                        'type' => 'text',
+                        'default' => 'Computer Science',
+                        'help' => 'Second feature heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage3_f2_desc',
+                        'label' => 'Stage 3 Feature 2 Description',
+                        'type' => 'text',
+                        'default' => 'Hands-on typing, digital literacy, and basic programming logic.',
+                        'help' => 'Second feature text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage3_focus',
+                        'label' => 'Stage 3 Focus Tag',
+                        'type' => 'text',
+                        'default' => 'Focus: Analytical & Practical Skills',
+                        'help' => 'Bottom focus bar text.'
+                    ],
+
+                    // Stage 4: Secondary School
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage4_tab',
+                        'label' => 'Stage 4 Tab Button Label',
+                        'type' => 'text',
+                        'default' => 'Secondary School (Classes 9-10)',
+                        'help' => 'Label for the stage 4 tab button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage4_badge',
+                        'label' => 'Stage 4 Pill Badge',
+                        'type' => 'text',
+                        'default' => 'HBSE Board Stage',
+                        'help' => 'Category badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage4_age',
+                        'label' => 'Stage 4 Class Range',
+                        'type' => 'text',
+                        'default' => 'Classes 9 to 10',
+                        'help' => 'Class range.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage4_title',
+                        'label' => 'Stage 4 Headline',
+                        'type' => 'text',
+                        'default' => 'HBSE Class 10 Board Examination Rigor',
+                        'help' => 'Stage 4 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage4_desc',
+                        'label' => 'Stage 4 Description',
+                        'type' => 'text',
+                        'default' => 'Intensive preparation for HBSE examinations through chapter-wise tests, regular mock examinations, doubt-solving sessions, and practical assessments.',
+                        'help' => 'Stage 4 body text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage4_f1_title',
+                        'label' => 'Stage 4 Feature 1 Title',
+                        'type' => 'text',
+                        'default' => 'Thorough Exam Prep',
+                        'help' => 'First feature heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage4_f1_desc',
+                        'label' => 'Stage 4 Feature 1 Description',
+                        'type' => 'text',
+                        'default' => 'Sample papers, NCERT mastery, and strategic test series.',
+                        'help' => 'First feature text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage4_f2_title',
+                        'label' => 'Stage 4 Feature 2 Title',
+                        'type' => 'text',
+                        'default' => 'Career & Stream Guidance',
+                        'help' => 'Second feature heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage4_f2_desc',
+                        'label' => 'Stage 4 Feature 2 Description',
+                        'type' => 'text',
+                        'default' => 'Expert counseling to select the right stream for Class 11.',
+                        'help' => 'Second feature text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage4_focus',
+                        'label' => 'Stage 4 Focus Tag',
+                        'type' => 'text',
+                        'default' => 'Focus: 100% Board Distinction',
+                        'help' => 'Bottom focus bar text.'
+                    ],
+
+                    // Stage 5: Senior Secondary
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage5_tab',
+                        'label' => 'Stage 5 Tab Button Label',
+                        'type' => 'text',
+                        'default' => 'Senior Secondary (Classes 11-12)',
+                        'help' => 'Label for the stage 5 tab button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage5_badge',
+                        'label' => 'Stage 5 Pill Badge',
+                        'type' => 'text',
+                        'default' => 'Senior Secondary (10+2)',
+                        'help' => 'Category badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage5_age',
+                        'label' => 'Stage 5 Class Range',
+                        'type' => 'text',
+                        'default' => 'Classes 11 to 12',
+                        'help' => 'Class range.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage5_title',
+                        'label' => 'Stage 5 Headline',
+                        'type' => 'text',
+                        'default' => 'Specialized Streams for University & Competitive Exams',
+                        'help' => 'Stage 5 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage5_desc',
+                        'label' => 'Stage 5 Description',
+                        'type' => 'text',
+                        'default' => 'Offering specialized academic streams (Science, Commerce, Arts) taught by seasoned post-graduate educators with modern practical laboratory setups.',
+                        'help' => 'Stage 5 body text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage5_f1_title',
+                        'label' => 'Stage 5 Feature 1 Title',
+                        'type' => 'text',
+                        'default' => 'Multiple Stream Choices',
+                        'help' => 'First feature heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage5_f1_desc',
+                        'label' => 'Stage 5 Feature 1 Description',
+                        'type' => 'text',
+                        'default' => 'Medical (PCB), Non-Medical (PCM), Commerce, and Humanities / Arts.',
+                        'help' => 'First feature text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage5_f2_title',
+                        'label' => 'Stage 5 Feature 2 Title',
+                        'type' => 'text',
+                        'default' => 'Practical Mastery',
+                        'help' => 'Second feature heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage5_f2_desc',
+                        'label' => 'Stage 5 Feature 2 Description',
+                        'type' => 'text',
+                        'default' => 'Full syllabus practicals in physics, chemistry, biology, and IP/CS labs.',
+                        'help' => 'Second feature text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stage5_focus',
+                        'label' => 'Stage 5 Focus Tag',
+                        'type' => 'text',
+                        'default' => 'Focus: Higher Education & Careers',
+                        'help' => 'Bottom focus bar text.'
                     ]
                 ]
             ],
+
+            // Section 4: Senior Secondary Academic Streams
             [
-                'title' => 'Section 4: Senior Secondary Academic Streams',
+                'title' => 'Section 4: Senior Secondary Academic Streams (Science, Commerce, Arts)',
                 'icon'  => 'category',
-                'desc'  => 'Stream descriptions for Science, Commerce, and Arts (Class 11 & 12).',
+                'desc'  => 'Titles, descriptions, focus badges, and core subjects for Science, Commerce, and Arts streams.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'streams_eyebrow',
-                        'label' => 'Streams Eyebrow',
+                        'label' => 'Streams Eyebrow Tag',
                         'type' => 'text',
                         'default' => 'Class 11 & 12 Streams',
-                        'help' => 'Tag.'
+                        'help' => 'Top eyebrow tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'streams_heading',
-                        'label' => 'Streams Heading',
+                        'label' => 'Streams Section Heading',
                         'type' => 'text',
                         'default' => 'Senior Secondary Academic Streams',
-                        'help' => 'Heading.'
+                        'help' => 'Main section headline.'
                     ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'streams_desc',
+                        'label' => 'Streams Section Subtitle',
+                        'type' => 'text',
+                        'default' => 'Tailored academic pathways equipping students for HBSE board excellence and leading university admissions.',
+                        'help' => 'Section overview text.'
+                    ],
+
+                    // Stream 1: Science
                     [
                         'kind' => 'text',
                         'key' => 'stream1_name',
@@ -2582,8 +3041,50 @@ $pages_config = [
                         'label' => 'Stream 1 Description',
                         'type' => 'text',
                         'default' => 'Equipped with state-of-the-art physics, chemistry, biology, and computer science laboratories for in-depth conceptual and practical learning.',
-                        'help' => 'Science description.'
+                        'help' => 'Science stream description.'
                     ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream1_tag',
+                        'label' => 'Stream 1 Focus Tag',
+                        'type' => 'text',
+                        'default' => 'Medical & Engineering Focus',
+                        'help' => 'Bottom tag line.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream1_sub1',
+                        'label' => 'Stream 1 Subject 1',
+                        'type' => 'text',
+                        'default' => 'Physics & Chemistry',
+                        'help' => 'Core subject 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream1_sub2',
+                        'label' => 'Stream 1 Subject 2',
+                        'type' => 'text',
+                        'default' => 'Mathematics / Biology',
+                        'help' => 'Core subject 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream1_sub3',
+                        'label' => 'Stream 1 Subject 3',
+                        'type' => 'text',
+                        'default' => 'Computer Science / Physical Education',
+                        'help' => 'Core subject 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream1_sub4',
+                        'label' => 'Stream 1 Subject 4',
+                        'type' => 'text',
+                        'default' => 'English Core',
+                        'help' => 'Core subject 4.'
+                    ],
+
+                    // Stream 2: Commerce
                     [
                         'kind' => 'text',
                         'key' => 'stream2_name',
@@ -2598,8 +3099,50 @@ $pages_config = [
                         'label' => 'Stream 2 Description',
                         'type' => 'text',
                         'default' => 'Comprehensive economic, accounting, and business studies designed for careers in banking, finance, CA, and entrepreneurship.',
-                        'help' => 'Commerce description.'
+                        'help' => 'Commerce stream description.'
                     ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream2_tag',
+                        'label' => 'Stream 2 Focus Tag',
+                        'type' => 'text',
+                        'default' => 'Commerce & Finance Track',
+                        'help' => 'Bottom tag line.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream2_sub1',
+                        'label' => 'Stream 2 Subject 1',
+                        'type' => 'text',
+                        'default' => 'Accountancy',
+                        'help' => 'Core subject 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream2_sub2',
+                        'label' => 'Stream 2 Subject 2',
+                        'type' => 'text',
+                        'default' => 'Business Studies',
+                        'help' => 'Core subject 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream2_sub3',
+                        'label' => 'Stream 2 Subject 3',
+                        'type' => 'text',
+                        'default' => 'Economics & Mathematics / IP',
+                        'help' => 'Core subject 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream2_sub4',
+                        'label' => 'Stream 2 Subject 4',
+                        'type' => 'text',
+                        'default' => 'English Core',
+                        'help' => 'Core subject 4.'
+                    ],
+
+                    // Stream 3: Arts & Humanities
                     [
                         'kind' => 'text',
                         'key' => 'stream3_name',
@@ -2614,30 +3157,80 @@ $pages_config = [
                         'label' => 'Stream 3 Description',
                         'type' => 'text',
                         'default' => 'Deep exploration of history, political science, geography, literature, and social sciences for future administrative and legal leaders.',
-                        'help' => 'Arts description.'
+                        'help' => 'Arts stream description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream3_tag',
+                        'label' => 'Stream 3 Focus Tag',
+                        'type' => 'text',
+                        'default' => 'Civil Services & Law Track',
+                        'help' => 'Bottom tag line.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream3_sub1',
+                        'label' => 'Stream 3 Subject 1',
+                        'type' => 'text',
+                        'default' => 'History & Political Science',
+                        'help' => 'Core subject 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream3_sub2',
+                        'label' => 'Stream 3 Subject 2',
+                        'type' => 'text',
+                        'default' => 'Geography / Economics',
+                        'help' => 'Core subject 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream3_sub3',
+                        'label' => 'Stream 3 Subject 3',
+                        'type' => 'text',
+                        'default' => 'Hindi / Physical Education',
+                        'help' => 'Core subject 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stream3_sub4',
+                        'label' => 'Stream 3 Subject 4',
+                        'type' => 'text',
+                        'default' => 'English Core',
+                        'help' => 'Core subject 4.'
                     ]
                 ]
             ],
+
+            // Section 5: Pedagogical Approach / Teaching Methodology
             [
-                'title' => 'Section 5: Pedagogical Approach / Teaching Methodology',
+                'title' => 'Section 5: Pedagogical Approach & Teaching Methodology',
                 'icon'  => 'psychology',
-                'desc'  => '4 methodology pillars: Concept clarity, practical labs, testing, individual care.',
+                'desc'  => '4 methodology pillars: Concept clarity, practical labs, testing, and individual care.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'pedagogy_eyebrow',
-                        'label' => 'Pedagogy Eyebrow',
+                        'label' => 'Pedagogy Eyebrow Tag',
                         'type' => 'text',
                         'default' => 'Pedagogical Approach',
-                        'help' => 'Tag.'
+                        'help' => 'Eyebrow tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'pedagogy_heading',
-                        'label' => 'Pedagogy Heading',
+                        'label' => 'Pedagogy Main Heading',
                         'type' => 'text',
                         'default' => 'How We Teach at Sun Rise',
-                        'help' => 'Headline.'
+                        'help' => 'Section headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'pedagogy_desc',
+                        'label' => 'Pedagogy Subtitle Description',
+                        'type' => 'text',
+                        'default' => 'Combining traditional teacher mentorship with modern smart-class technology and experimental learning.',
+                        'help' => 'Overview text.'
                     ],
                     [
                         'kind' => 'text',
@@ -2645,7 +3238,7 @@ $pages_config = [
                         'label' => 'Pillar 1 Title',
                         'type' => 'text',
                         'default' => 'Concept Clarity',
-                        'help' => 'Pillar 1.'
+                        'help' => 'Pillar 1 title.'
                     ],
                     [
                         'kind' => 'text',
@@ -2657,11 +3250,19 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'step1_tag',
+                        'label' => 'Pillar 1 Bottom Tag',
+                        'type' => 'text',
+                        'default' => 'Core Understanding',
+                        'help' => 'Tag line at the card bottom.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'step2_title',
                         'label' => 'Pillar 2 Title',
                         'type' => 'text',
                         'default' => 'Practical Labs',
-                        'help' => 'Pillar 2.'
+                        'help' => 'Pillar 2 title.'
                     ],
                     [
                         'kind' => 'text',
@@ -2673,11 +3274,19 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'step2_tag',
+                        'label' => 'Pillar 2 Bottom Tag',
+                        'type' => 'text',
+                        'default' => 'Experiential Learning',
+                        'help' => 'Tag line at the card bottom.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'step3_title',
                         'label' => 'Pillar 3 Title',
                         'type' => 'text',
                         'default' => 'Regular Testing',
-                        'help' => 'Pillar 3.'
+                        'help' => 'Pillar 3 title.'
                     ],
                     [
                         'kind' => 'text',
@@ -2689,11 +3298,19 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'step3_tag',
+                        'label' => 'Pillar 3 Bottom Tag',
+                        'type' => 'text',
+                        'default' => 'Exam Readiness',
+                        'help' => 'Tag line at the card bottom.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'step4_title',
                         'label' => 'Pillar 4 Title',
                         'type' => 'text',
                         'default' => 'Individual Care',
-                        'help' => 'Pillar 4.'
+                        'help' => 'Pillar 4 title.'
                     ],
                     [
                         'kind' => 'text',
@@ -2702,6 +3319,296 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'Remedial classes for students needing extra help and personalized attention for every scholar.',
                         'help' => 'Pillar 4 text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'step4_tag',
+                        'label' => 'Pillar 4 Bottom Tag',
+                        'type' => 'text',
+                        'default' => 'Personal Mentorship',
+                        'help' => 'Tag line at the card bottom.'
+                    ]
+                ]
+            ],
+
+            // Section 6: Examination System & School Timings
+            [
+                'title' => 'Section 6: Examination System, Medium of Instruction & School Timings',
+                'icon'  => 'assignment_turned_in',
+                'desc'  => '4 evaluation exam types (Mid-term, Monthly, Class & Surprise Tests), Medium of Instruction, and Official Timings.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam_eyebrow',
+                        'label' => 'Exam Section Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Continuous & Comprehensive Assessment',
+                        'help' => 'Top eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam_heading',
+                        'label' => 'Exam Section Heading',
+                        'type' => 'text',
+                        'default' => 'Examination & Evaluation System',
+                        'help' => 'Main section headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam_desc',
+                        'label' => 'Exam Section Subtitle',
+                        'type' => 'text',
+                        'default' => 'At Sun Rise Sr. Sec. School, our evaluation framework ensures continuous learning, diagnostic feedback, and thorough board examination readiness.',
+                        'help' => 'Overview paragraph.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam1_title',
+                        'label' => 'Evaluation Type 1 Title',
+                        'type' => 'text',
+                        'default' => 'Mid-Term & Annual Exams',
+                        'help' => 'Exam 1 heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam1_desc',
+                        'label' => 'Evaluation Type 1 Description',
+                        'type' => 'text',
+                        'default' => 'Comprehensive term-end examinations patterned on HBSE board standards, evaluating overall mastery and practical performance.',
+                        'help' => 'Exam 1 details.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam1_tag',
+                        'label' => 'Evaluation Type 1 Tag',
+                        'type' => 'text',
+                        'default' => 'Major Milestones',
+                        'help' => 'Tag line at the card bottom.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam2_title',
+                        'label' => 'Evaluation Type 2 Title',
+                        'type' => 'text',
+                        'default' => 'Monthly Unit Tests',
+                        'help' => 'Exam 2 heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam2_desc',
+                        'label' => 'Evaluation Type 2 Description',
+                        'type' => 'text',
+                        'default' => 'Scheduled at the close of every month across all subjects to track topic-wise retention and ensure continuous revision.',
+                        'help' => 'Exam 2 details.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam2_tag',
+                        'label' => 'Evaluation Type 2 Tag',
+                        'type' => 'text',
+                        'default' => 'Monthly Assessment',
+                        'help' => 'Tag line at the card bottom.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam3_title',
+                        'label' => 'Evaluation Type 3 Title',
+                        'type' => 'text',
+                        'default' => 'Regular Class Tests',
+                        'help' => 'Exam 3 heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam3_desc',
+                        'label' => 'Evaluation Type 3 Description',
+                        'type' => 'text',
+                        'default' => 'Frequent chapter-end evaluations conducted by subject educators to identify learning gaps and reinforce key concepts.',
+                        'help' => 'Exam 3 details.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam3_tag',
+                        'label' => 'Evaluation Type 3 Tag',
+                        'type' => 'text',
+                        'default' => 'Topic-by-Topic',
+                        'help' => 'Tag line at the card bottom.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam4_title',
+                        'label' => 'Evaluation Type 4 Title',
+                        'type' => 'text',
+                        'default' => 'Surprise Tests',
+                        'help' => 'Exam 4 heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam4_desc',
+                        'label' => 'Evaluation Type 4 Description',
+                        'type' => 'text',
+                        'default' => 'Unannounced quick assessments encouraging students to maintain daily revision habits and stay prepared throughout the year.',
+                        'help' => 'Exam 4 details.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam4_tag',
+                        'label' => 'Evaluation Type 4 Tag',
+                        'type' => 'text',
+                        'default' => 'Continuous Readiness',
+                        'help' => 'Tag line at the card bottom.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'medium_title',
+                        'label' => 'Medium of Instruction Title',
+                        'type' => 'text',
+                        'default' => 'English Medium (Nursery to Class XII)',
+                        'help' => 'Main language highlight.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'medium_desc',
+                        'label' => 'Medium of Instruction Subtitle',
+                        'type' => 'text',
+                        'default' => 'With strong Hindi and regional language foundations',
+                        'help' => 'Language clarification.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'timing_summer',
+                        'label' => 'Official Summer Timings',
+                        'type' => 'text',
+                        'default' => '7:30 AM – 1:30 PM',
+                        'help' => 'Summer school hours.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'timing_winter',
+                        'label' => 'Official Winter Timings',
+                        'type' => 'text',
+                        'default' => '8:30 AM – 2:30 PM',
+                        'help' => 'Winter school hours.'
+                    ]
+                ]
+            ],
+
+            // Section 7: Board Examination Results & Toppers Spotlight
+            [
+                'title' => 'Section 7: Board Results, Merit Distinction & Toppers Spotlight',
+                'icon'  => 'military_tech',
+                'desc'  => 'Manage board results highlights, pass record stats, and upload the Board Toppers & Achievers poster.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_eyebrow',
+                        'label' => 'Toppers Section Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Academic Distinction',
+                        'help' => 'Top eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_heading',
+                        'label' => 'Toppers Section Heading',
+                        'type' => 'text',
+                        'default' => 'Board Examination Results & Toppers',
+                        'help' => 'Main section headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_desc',
+                        'label' => 'Toppers Section Subtitle',
+                        'type' => 'text',
+                        'default' => 'Sun Rise Sr. Sec. School proudly celebrates a consistent 100% HBSE board examination pass rate, producing district and block rank holders.',
+                        'help' => 'Section overview text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_card_badge',
+                        'label' => 'Achievers Card Pill Badge',
+                        'type' => 'text',
+                        'default' => 'HBSE Board Star Achievers',
+                        'help' => 'Badge inside dark banner card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_card_title',
+                        'label' => 'Achievers Card Main Title',
+                        'type' => 'text',
+                        'default' => 'Celebrating Academic Excellence & Merit Ranks',
+                        'help' => 'Title inside the banner card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_card_desc',
+                        'label' => 'Achievers Card Description',
+                        'type' => 'text',
+                        'default' => 'Through systematic syllabus completion, doubt resolution clinics, and regular testing, our Class X and XII students achieve top percentiles in Haryana Board examinations year after year.',
+                        'help' => 'Body text inside the banner card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_stat1_num',
+                        'label' => 'Achievers Stat 1 Number',
+                        'type' => 'text',
+                        'default' => '100%',
+                        'help' => 'First statistic figure.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_stat1_lbl',
+                        'label' => 'Achievers Stat 1 Label',
+                        'type' => 'text',
+                        'default' => 'Board Pass Record',
+                        'help' => 'First statistic description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_stat2_num',
+                        'label' => 'Achievers Stat 2 Number',
+                        'type' => 'text',
+                        'default' => 'Nursery – XII',
+                        'help' => 'Second statistic figure.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_stat2_lbl',
+                        'label' => 'Achievers Stat 2 Label',
+                        'type' => 'text',
+                        'default' => 'Comprehensive Spectrum',
+                        'help' => 'Second statistic description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_stat3_num',
+                        'label' => 'Achievers Stat 3 Number',
+                        'type' => 'text',
+                        'default' => '3 Streams',
+                        'help' => 'Third statistic figure.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_stat3_lbl',
+                        'label' => 'Achievers Stat 3 Label',
+                        'type' => 'text',
+                        'default' => 'Science, Commerce, Arts',
+                        'help' => 'Third statistic description.'
+                    ],
+                    [
+                        'kind' => 'image',
+                        'key' => 'toppers_poster',
+                        'label' => 'Board Toppers Poster / Photo Slot',
+                        'default' => 'assets/images/pop-up image.webp',
+                        'alt' => 'Sun Rise Board Toppers Poster',
+                        'help' => 'Upload or replace the Board Toppers & Merit Rank Holders poster with live preview and lightbox zoom.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'toppers_poster_hint',
+                        'label' => 'Poster Click Hint Label',
+                        'type' => 'text',
+                        'default' => 'Click to view toppers poster',
+                        'help' => 'Hint below poster thumbnail.'
                     ]
                 ]
             ]
@@ -2710,12 +3617,13 @@ $pages_config = [
     'admissions' => [
         'title' => 'Admissions Page',
         'icon'  => 'assignment_turned_in',
-        'desc'  => 'Session Status, Guarantee Badges, Class Vacancies Intro & Admission Helpdesk',
+        'desc'  => 'Live Admission Registration, 8 Grade Stream Vacancies & Fees, Bus Transit, UPI Checkout, Fee Matrix Table, Concessions, Documents & FAQs',
         'sections' => [
+            // Section 1: Top Hero Banner & Status
             [
-                'title' => 'Section 1: Top Hero Banner & Status',
+                'title' => 'Section 1: Top Hero Banner, Session Status & Key Badges',
                 'icon'  => 'flag',
-                'desc'  => 'Academic session open status pill, main headline, and introduction.',
+                'desc'  => 'Academic session registration status, main headline, introductory summary, and 4 institutional trust badges.',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -2723,38 +3631,55 @@ $pages_config = [
                         'label' => 'Session Status Pill Badge',
                         'type' => 'text',
                         'default' => 'Academic Session 2026–27 Registrations Open',
-                        'help' => 'Pill banner with pulsing indicator.'
+                        'help' => 'Pill banner with pulsing indicator at the top.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_title',
-                        'label' => 'Admissions Page Title',
+                        'label' => 'Admissions Page Headline',
                         'type' => 'text',
                         'default' => 'Admissions Open: Sun Rise Sr. Sec. School, Dobhi',
-                        'help' => 'Main headline.'
+                        'help' => 'Main headline on the admissions page.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_desc',
-                        'label' => 'Admissions Overview Subtitle',
-                        'type' => 'text',
+                        'label' => 'Admissions Overview Description',
+                        'type' => 'textarea',
                         'default' => 'Cultivating scholarship, strong character, and competitive excellence in Hisar district. Select your grade stream, verify student credentials, choose village transit, and secure provisional seat enrollment instantly via direct digital checkout.',
-                        'help' => 'Overview text.'
-                    ]
-                ]
-            ],
-            [
-                'title' => 'Section 2: Key Highlights Badges',
-                'icon'  => 'verified',
-                'desc'  => '4 institutional guarantee badges displayed under the header.',
-                'fields' => [
+                        'help' => 'Introductory summary text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'school_affiliation_tag',
+                        'label' => 'School Credential Affiliation Tag',
+                        'type' => 'text',
+                        'default' => 'Affiliated to HBSE, Haryana',
+                        'help' => 'Small eyebrow tag in the school crest card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'school_location_tag',
+                        'label' => 'School Location Tag',
+                        'type' => 'text',
+                        'default' => 'Dobhi, Dist. Hisar, Haryana – 125001',
+                        'help' => 'Address line in the school crest card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'admission_status_pill',
+                        'label' => 'Admission Status Indicator Pill',
+                        'type' => 'text',
+                        'default' => 'Active Now',
+                        'help' => 'Status pill in the school crest card.'
+                    ],
                     [
                         'kind' => 'text',
                         'key' => 'badge_HBSE',
                         'label' => 'Badge 1 (HBSE Affiliation)',
                         'type' => 'text',
                         'default' => 'HBSE Affiliation #530XXX (Dobhi, Hisar)',
-                        'help' => 'Badge 1.'
+                        'help' => 'First key highlight badge.'
                     ],
                     [
                         'kind' => 'text',
@@ -2762,7 +3687,7 @@ $pages_config = [
                         'label' => 'Badge 2 (Digital Entry)',
                         'type' => 'text',
                         'default' => '100% Digital Fast-Track Entry',
-                        'help' => 'Badge 2.'
+                        'help' => 'Second key highlight badge.'
                     ],
                     [
                         'kind' => 'text',
@@ -2770,7 +3695,7 @@ $pages_config = [
                         'label' => 'Badge 3 (Seat Allocation)',
                         'type' => 'text',
                         'default' => 'Instant Seat Allocation Token',
-                        'help' => 'Badge 3.'
+                        'help' => 'Third key highlight badge.'
                     ],
                     [
                         'kind' => 'text',
@@ -2778,50 +3703,1125 @@ $pages_config = [
                         'label' => 'Badge 4 (Payment Security)',
                         'type' => 'text',
                         'default' => 'RBI & PCI-DSS 256-Bit Escrow',
-                        'help' => 'Badge 4.'
+                        'help' => 'Fourth key highlight badge.'
                     ]
                 ]
             ],
+
+            // Section 2: Multi-Step Admission Process Tracker
             [
-                'title' => 'Section 3: Class & Stream Matrix Intro',
+                'title' => 'Section 2: Multi-Step Admission Process Tracker (Steps 1–4)',
+                'icon'  => 'linear_scale',
+                'desc'  => 'Labels and headings for each of the 4 horizontal steps in the registration progress bar.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'step1_title',
+                        'label' => 'Step 01 Title',
+                        'type' => 'text',
+                        'default' => 'Class & Stream Choice',
+                        'help' => 'Title for Step 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'step2_title',
+                        'label' => 'Step 02 Title',
+                        'type' => 'text',
+                        'default' => 'Student Profile Info',
+                        'help' => 'Title for Step 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'step3_title',
+                        'label' => 'Step 03 Title',
+                        'type' => 'text',
+                        'default' => 'Transit & Documents',
+                        'help' => 'Title for Step 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'step4_title',
+                        'label' => 'Step 04 Title',
+                        'type' => 'text',
+                        'default' => 'Fee Review & Checkout',
+                        'help' => 'Title for Step 4.'
+                    ]
+                ]
+            ],
+
+            // Section 3: Class & Stream Matrix Intro & Vacancies
+            [
+                'title' => 'Section 3: Class Selection Matrix & 8 Grade Cards (Seats & Fees)',
                 'icon'  => 'table_view',
-                'desc'  => 'Heading and instructions above the class selection cards.',
+                'desc'  => 'Section headers plus seats left, monthly tuition fees, registration fees, and age criteria across all 8 grade options.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'grade_selector_eyebrow',
-                        'label' => 'Selector Eyebrow',
+                        'label' => 'Selector Eyebrow Tag',
                         'type' => 'text',
                         'default' => 'Select Admission Grade',
-                        'help' => 'Eyebrow.'
+                        'help' => 'Eyebrow tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'grade_selector_heading',
-                        'label' => 'Selector Heading',
+                        'label' => 'Selector Main Heading',
                         'type' => 'text',
                         'default' => 'Available Classes & Available Vacancies',
-                        'help' => 'Heading.'
+                        'help' => 'Main section headline.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'grade_selector_desc',
-                        'label' => 'Selector Instruction Text',
+                        'label' => 'Selector Subtitle',
                         'type' => 'text',
                         'default' => 'Choose the prospective level to populate academic fees, syllabi criteria, and batch schedules.',
-                        'help' => 'Subtitle.'
+                        'help' => 'Instructions below heading.'
+                    ],
+
+                    // Card 1: Class 11 Non-Med
+                    [
+                        'kind' => 'text',
+                        'key' => 'c1_name',
+                        'label' => 'Card 1 Title (Class 11 Non-Med)',
+                        'type' => 'text',
+                        'default' => 'Class XI – Science (Non-Med)',
+                        'help' => 'Card 1 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c1_desc',
+                        'label' => 'Card 1 Description',
+                        'type' => 'text',
+                        'default' => 'Physics, Chemistry, Math + Comp. Science / Physical Edu with NDA & JEE Foundation Track.',
+                        'help' => 'Card 1 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c1_seats',
+                        'label' => 'Card 1 Vacancy Badge',
+                        'type' => 'text',
+                        'default' => '12 Seats Left',
+                        'help' => 'Card 1 seat status.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c1_age',
+                        'label' => 'Card 1 Age Criteria',
+                        'type' => 'text',
+                        'default' => '15 - 17 Years',
+                        'help' => 'Card 1 age.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c1_monthly_fee',
+                        'label' => 'Card 1 Monthly Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '1000',
+                        'help' => 'Monthly tuition fee in rupees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c1_reg_fee',
+                        'label' => 'Card 1 Registration Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '300',
+                        'help' => 'Registration form fee in rupees.'
+                    ],
+
+                    // Card 2: Class 11 Med
+                    [
+                        'kind' => 'text',
+                        'key' => 'c2_name',
+                        'label' => 'Card 2 Title (Class 11 Medical)',
+                        'type' => 'text',
+                        'default' => 'Class XI – Science (Medical)',
+                        'help' => 'Card 2 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c2_desc',
+                        'label' => 'Card 2 Description',
+                        'type' => 'text',
+                        'default' => 'Physics, Chemistry, Biology + Biotech/IP with dedicated NEET coaching orientation lab.',
+                        'help' => 'Card 2 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c2_seats',
+                        'label' => 'Card 2 Vacancy Badge',
+                        'type' => 'text',
+                        'default' => '8 Seats Left',
+                        'help' => 'Card 2 seat status.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c2_age',
+                        'label' => 'Card 2 Age Criteria',
+                        'type' => 'text',
+                        'default' => '15 - 17 Years',
+                        'help' => 'Card 2 age.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c2_monthly_fee',
+                        'label' => 'Card 2 Monthly Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '1000',
+                        'help' => 'Monthly tuition fee in rupees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c2_reg_fee',
+                        'label' => 'Card 2 Registration Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '300',
+                        'help' => 'Registration form fee in rupees.'
+                    ],
+
+                    // Card 3: Class 11 Commerce & Arts
+                    [
+                        'kind' => 'text',
+                        'key' => 'c3_name',
+                        'label' => 'Card 3 Title (Class 11 Commerce & Arts)',
+                        'type' => 'text',
+                        'default' => 'Class XI – Commerce & Arts',
+                        'help' => 'Card 3 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c3_desc',
+                        'label' => 'Card 3 Description',
+                        'type' => 'text',
+                        'default' => 'Accountancy, Business Studies, Economics, Pol. Science, Geography & Applied Mathematics.',
+                        'help' => 'Card 3 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c3_seats',
+                        'label' => 'Card 3 Vacancy Badge',
+                        'type' => 'text',
+                        'default' => '22 Seats Available',
+                        'help' => 'Card 3 seat status.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c3_age',
+                        'label' => 'Card 3 Age Criteria',
+                        'type' => 'text',
+                        'default' => '15 - 17 Years',
+                        'help' => 'Card 3 age.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c3_monthly_fee',
+                        'label' => 'Card 3 Monthly Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '950',
+                        'help' => 'Monthly tuition fee in rupees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c3_reg_fee',
+                        'label' => 'Card 3 Registration Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '300',
+                        'help' => 'Registration form fee in rupees.'
+                    ],
+
+                    // Card 4: Secondary Class 9 & 10
+                    [
+                        'kind' => 'text',
+                        'key' => 'c4_name',
+                        'label' => 'Card 4 Title (Secondary Classes 9 & 10)',
+                        'type' => 'text',
+                        'default' => 'Class IX & X (Secondary)',
+                        'help' => 'Card 4 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c4_desc',
+                        'label' => 'Card 4 Description',
+                        'type' => 'text',
+                        'default' => 'Holistic HBSE syllabus with Robotics lab, Vedic Math, Sports academy & NTSE training module.',
+                        'help' => 'Card 4 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c4_seats',
+                        'label' => 'Card 4 Vacancy Badge',
+                        'type' => 'text',
+                        'default' => '16 Seats Open',
+                        'help' => 'Card 4 seat status.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c4_age',
+                        'label' => 'Card 4 Age Criteria',
+                        'type' => 'text',
+                        'default' => '13 - 15 Years',
+                        'help' => 'Card 4 age.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c4_monthly_fee',
+                        'label' => 'Card 4 Monthly Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '900',
+                        'help' => 'Monthly tuition fee in rupees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c4_reg_fee',
+                        'label' => 'Card 4 Registration Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '250',
+                        'help' => 'Registration form fee in rupees.'
+                    ],
+
+                    // Card 5: Middle Wing 6 to 8
+                    [
+                        'kind' => 'text',
+                        'key' => 'c5_name',
+                        'label' => 'Card 5 Title (Middle Wing Classes 6 to 8)',
+                        'type' => 'text',
+                        'default' => 'Class VI – VIII (Middle Wing)',
+                        'help' => 'Card 5 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c5_desc',
+                        'label' => 'Card 5 Description',
+                        'type' => 'text',
+                        'default' => 'Foundational STEM concepts, computer coding, Hindi & English debate, and agricultural science basics.',
+                        'help' => 'Card 5 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c5_seats',
+                        'label' => 'Card 5 Vacancy Badge',
+                        'type' => 'text',
+                        'default' => '19 Seats Available',
+                        'help' => 'Card 5 seat status.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c5_age',
+                        'label' => 'Card 5 Age Criteria',
+                        'type' => 'text',
+                        'default' => '10 - 13 Years',
+                        'help' => 'Card 5 age.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c5_monthly_fee',
+                        'label' => 'Card 5 Monthly Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '800',
+                        'help' => 'Monthly tuition fee in rupees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c5_reg_fee',
+                        'label' => 'Card 5 Registration Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '200',
+                        'help' => 'Registration form fee in rupees.'
+                    ],
+
+                    // Card 6: Primary Wing 1 to 5
+                    [
+                        'kind' => 'text',
+                        'key' => 'c6_name',
+                        'label' => 'Card 6 Title (Primary School Classes 1 to 5)',
+                        'type' => 'text',
+                        'default' => 'Class I – V (Primary School)',
+                        'help' => 'Card 6 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c6_desc',
+                        'label' => 'Card 6 Description',
+                        'type' => 'text',
+                        'default' => 'Activity-based learning, phonetics, environmental studies, performing arts, and physical fitness.',
+                        'help' => 'Card 6 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c6_seats',
+                        'label' => 'Card 6 Vacancy Badge',
+                        'type' => 'text',
+                        'default' => '25 Seats Available',
+                        'help' => 'Card 6 seat status.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c6_age',
+                        'label' => 'Card 6 Age Criteria',
+                        'type' => 'text',
+                        'default' => '5 - 10 Years',
+                        'help' => 'Card 6 age.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c6_monthly_fee',
+                        'label' => 'Card 6 Monthly Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '700',
+                        'help' => 'Monthly tuition fee in rupees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c6_reg_fee',
+                        'label' => 'Card 6 Registration Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '200',
+                        'help' => 'Registration form fee in rupees.'
+                    ],
+
+                    // Card 7: Pre-Primary Nursery & KG
+                    [
+                        'kind' => 'text',
+                        'key' => 'c7_name',
+                        'label' => 'Card 7 Title (Pre-Primary Nursery & KG)',
+                        'type' => 'text',
+                        'default' => 'Pre-Primary (Nursery, KG)',
+                        'help' => 'Card 7 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c7_desc',
+                        'label' => 'Card 7 Description',
+                        'type' => 'text',
+                        'default' => 'Montessori-inspired play gym, sensorimotor training, creative storytelling & air-conditioned playzones.',
+                        'help' => 'Card 7 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c7_seats',
+                        'label' => 'Card 7 Vacancy Badge',
+                        'type' => 'text',
+                        'default' => '30 Seats Available',
+                        'help' => 'Card 7 seat status.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c7_age',
+                        'label' => 'Card 7 Age Criteria',
+                        'type' => 'text',
+                        'default' => '3 - 5 Years',
+                        'help' => 'Card 7 age.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c7_monthly_fee',
+                        'label' => 'Card 7 Monthly Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '600',
+                        'help' => 'Monthly tuition fee in rupees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c7_reg_fee',
+                        'label' => 'Card 7 Registration Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '200',
+                        'help' => 'Registration form fee in rupees.'
+                    ],
+
+                    // Card 8: Class 12 Transfer Entry
+                    [
+                        'kind' => 'text',
+                        'key' => 'c8_name',
+                        'label' => 'Card 8 Title (Class 12 Transfer Entry)',
+                        'type' => 'text',
+                        'default' => 'Class XII – Transfer Entry',
+                        'help' => 'Card 8 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c8_desc',
+                        'label' => 'Card 8 Description',
+                        'type' => 'text',
+                        'default' => 'Direct admission subject to HBSE Regional Office clearance, TC from previous affiliated institution.',
+                        'help' => 'Card 8 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c8_seats',
+                        'label' => 'Card 8 Vacancy Badge',
+                        'type' => 'text',
+                        'default' => '5 Seats Only',
+                        'help' => 'Card 8 seat status.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c8_age',
+                        'label' => 'Card 8 Age Criteria',
+                        'type' => 'text',
+                        'default' => '16 - 18 Years',
+                        'help' => 'Card 8 age.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c8_monthly_fee',
+                        'label' => 'Card 8 Monthly Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '1000',
+                        'help' => 'Monthly tuition fee in rupees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'c8_reg_fee',
+                        'label' => 'Card 8 Registration Fee (in ₹)',
+                        'type' => 'text',
+                        'default' => '350',
+                        'help' => 'Registration form fee in rupees.'
                     ]
                 ]
             ],
+
+            // Section 4: School Bus Transit Facility & Required Documents
             [
-                'title' => 'Section 4: Admission Helpdesk & Contact',
-                'icon'  => 'support_agent',
-                'desc'  => 'Office hours and helpline phone for admission queries.',
+                'title' => 'Section 4: School Bus Transit & Document Verification Checklist',
+                'icon'  => 'directions_bus',
+                'desc'  => 'Bus network coverage description, default route fare, and required document upload item titles.',
                 'fields' => [
                     [
                         'kind' => 'text',
+                        'key' => 'bus_facility_title',
+                        'label' => 'Bus Transit Facility Heading',
+                        'type' => 'text',
+                        'default' => 'Residence & Daily School Bus Facility',
+                        'help' => 'Heading above the bus transit options.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'bus_facility_desc',
+                        'label' => 'Bus Transit Coverage Description',
+                        'type' => 'text',
+                        'default' => 'Fleet covering 35+ villages in Hisar and neighboring rural belts',
+                        'help' => 'Subtitle describing bus coverage.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'bus_route_label',
+                        'label' => 'Default Bus Route Name',
+                        'type' => 'text',
+                        'default' => 'Route 4: Dobhi Village & Balsamand',
+                        'help' => 'Primary bus route title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'bus_route_desc',
+                        'label' => 'Default Bus Route Details & Fee Note',
+                        'type' => 'text',
+                        'default' => 'Pick-up at Main Stand / Doorway (₹300/month)',
+                        'help' => 'Bus route details.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'bus_route_fare',
+                        'label' => 'Default Bus Monthly Fare (in ₹)',
+                        'type' => 'text',
+                        'default' => '300',
+                        'help' => 'Numeric monthly bus fare used in checkout calculation.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'upload_doc1_title',
+                        'label' => 'Document 1 Name',
+                        'type' => 'text',
+                        'default' => '1. Student Birth Certificate / 10th TC',
+                        'help' => 'First document upload card title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'upload_doc1_sub',
+                        'label' => 'Document 1 Note',
+                        'type' => 'text',
+                        'default' => 'Official date of birth validation',
+                        'help' => 'First document note.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'upload_doc2_title',
+                        'label' => 'Document 2 Name',
+                        'type' => 'text',
+                        'default' => '2. Class 10 / Prior Marksheet',
+                        'help' => 'Second document title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'upload_doc2_sub',
+                        'label' => 'Document 2 Note',
+                        'type' => 'text',
+                        'default' => 'Provisional web copy accepted',
+                        'help' => 'Second document note.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'upload_doc3_title',
+                        'label' => 'Document 3 Name',
+                        'type' => 'text',
+                        'default' => '3. Student & Parent Aadhaar Card',
+                        'help' => 'Third document title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'upload_doc3_sub',
+                        'label' => 'Document 3 Note',
+                        'type' => 'text',
+                        'default' => 'Residence proof & biometric ID',
+                        'help' => 'Third document note.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'upload_doc4_title',
+                        'label' => 'Document 4 Name',
+                        'type' => 'text',
+                        'default' => '4. Passport Sized Photos (4)',
+                        'help' => 'Fourth document title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'upload_doc4_sub',
+                        'label' => 'Document 4 Note',
+                        'type' => 'text',
+                        'default' => 'Formal school uniform or plain bg',
+                        'help' => 'Fourth document note.'
+                    ]
+                ]
+            ],
+
+            // Section 5: Live Admission Checkout Box & UPI Gateway Settings
+            [
+                'title' => 'Section 5: Live Admission Checkout Box & UPI Gateway Settings',
+                'icon'  => 'shopping_cart_checkout',
+                'desc'  => 'Manage fee concessions, lock seat token amount, official UPI VPA address, and payment security notes.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'checkout_subheading',
+                        'label' => 'Checkout Tag / Session Banner',
+                        'type' => 'text',
+                        'default' => 'Session 2026–27 Enrollment',
+                        'help' => 'Eyebrow tag in the sticky checkout box.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'checkout_heading',
+                        'label' => 'Checkout Main Title',
+                        'type' => 'text',
+                        'default' => 'Live Admission Checkout',
+                        'help' => 'Main headline in the sticky checkout box.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'discount_title',
+                        'label' => 'Welcome Concession Title',
+                        'type' => 'text',
+                        'default' => 'Special Welcome Discount',
+                        'help' => 'Title of discount pill.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'discount_desc',
+                        'label' => 'Welcome Concession Subtitle',
+                        'type' => 'text',
+                        'default' => '₹200 concession applied on 1st month',
+                        'help' => 'Discount explanation.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'discount_val',
+                        'label' => 'Welcome Concession Amount (in ₹)',
+                        'type' => 'text',
+                        'default' => '200',
+                        'help' => 'Numeric discount subtracted in live checkout calculation.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'token_val',
+                        'label' => 'Seat Lock Token Base Amount (in ₹)',
+                        'type' => 'text',
+                        'default' => '500',
+                        'help' => 'Numeric base amount for token tier.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'upi_vpa',
+                        'label' => 'Official School UPI VPA Address',
+                        'type' => 'text',
+                        'default' => 'sunrise.dobhi@icici',
+                        'help' => 'UPI ID displayed below the QR code.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'upi_instruction',
+                        'label' => 'UPI QR Instruction Line',
+                        'type' => 'text',
+                        'default' => 'Scan via GPay, PhonePe, Paytm or BHIM',
+                        'help' => 'Instruction above the VPA address.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'checkout_cta_btn',
+                        'label' => 'Checkout Primary Button Text',
+                        'type' => 'text',
+                        'default' => 'Proceed to Secure Checkout & Reserve Seat →',
+                        'help' => 'Label for the main checkout button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'checkout_refund_note',
+                        'label' => '100% Refund Policy Guarantee Note',
+                        'type' => 'textarea',
+                        'default' => '* Note: If entrance assessment is not cleared, 100% tuition and seat advance is refunded within 7 working days to source bank.',
+                        'help' => 'Notice shown below checkout trust badges.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'checkout_help_text',
+                        'label' => 'Checkout Micro-Helpdesk Prompt',
+                        'type' => 'text',
+                        'default' => 'Facing issues with online payment?',
+                        'help' => 'Prompt text in the bottom checkout widget.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'checkout_help_phone',
+                        'label' => 'Checkout Micro-Helpdesk Contact Line',
+                        'type' => 'text',
+                        'default' => 'Direct Help Desk: +91 70158 90094 / +91 79883 5710',
+                        'help' => 'Phone numbers shown in the bottom checkout widget.'
+                    ]
+                ]
+            ],
+
+            // Section 6: Class-wise Fee Schedule Table & Prospectus Download
+            [
+                'title' => 'Section 6: Class-wise Fee Schedule Table & Prospectus Download',
+                'icon'  => 'payments',
+                'desc'  => 'Section header, prospectus PDF download button, and annual fee estimates for each grade bracket.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'fee_matrix_eyebrow',
+                        'label' => 'Fee Matrix Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Transparent Fee Schedule',
+                        'help' => 'Eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fee_matrix_heading',
+                        'label' => 'Fee Matrix Heading',
+                        'type' => 'text',
+                        'default' => 'Class-wise Academic Year Matrix (2026–27)',
+                        'help' => 'Table headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fee_matrix_desc',
+                        'label' => 'Fee Matrix Subtitle',
+                        'type' => 'text',
+                        'default' => 'No hidden charges. Highly affordable monthly tuition (₹600 – ₹1,000 / month) with concessions for merit scholars and siblings.',
+                        'help' => 'Table subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'prospectus_pdf_text',
+                        'label' => 'Prospectus Download Button Text',
+                        'type' => 'text',
+                        'default' => 'Download Official Fee Prospectus PDF',
+                        'help' => 'Button label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'prospectus_pdf_url',
+                        'label' => 'Prospectus PDF Document URL',
+                        'type' => 'text',
+                        'default' => '#',
+                        'help' => 'Target path or URL for the fee prospectus file.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'table_r1_annual',
+                        'label' => 'Pre-Primary Annual Estimate (in ₹)',
+                        'type' => 'text',
+                        'default' => '₹7,800',
+                        'help' => 'Annual estimate in row 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'table_r2_annual',
+                        'label' => 'Primary School Annual Estimate (in ₹)',
+                        'type' => 'text',
+                        'default' => '₹9,100',
+                        'help' => 'Annual estimate in row 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'table_r3_annual',
+                        'label' => 'Middle School Annual Estimate (in ₹)',
+                        'type' => 'text',
+                        'default' => '₹10,400',
+                        'help' => 'Annual estimate in row 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'table_r4_annual',
+                        'label' => 'Secondary School Annual Estimate (in ₹)',
+                        'type' => 'text',
+                        'default' => '₹11,850',
+                        'help' => 'Annual estimate in row 4.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'table_r5_annual',
+                        'label' => 'Senior Sec Science Annual Estimate (in ₹)',
+                        'type' => 'text',
+                        'default' => '₹13,300',
+                        'help' => 'Annual estimate in row 5.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'table_r6_annual',
+                        'label' => 'Senior Sec Commerce Annual Estimate (in ₹)',
+                        'type' => 'text',
+                        'default' => '₹12,500',
+                        'help' => 'Annual estimate in row 6.'
+                    ]
+                ]
+            ],
+
+            // Section 7: Fee Concessions & Welfare Schemes
+            [
+                'title' => 'Section 7: Fee Concessions & Welfare Schemes (3 Policy Cards)',
+                'icon'  => 'redeem',
+                'desc'  => 'Titles and terms for Merit Scholarships, Sibling Concessions, and Defence Personnel benefits.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'scheme1_title',
+                        'label' => 'Scheme 1 Title (Merit Scholarship)',
+                        'type' => 'text',
+                        'default' => 'Merit Scholarship (HBSE 90%+)',
+                        'help' => 'Card 1 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'scheme1_desc',
+                        'label' => 'Scheme 1 Description',
+                        'type' => 'text',
+                        'default' => 'Up to 25% waiver on monthly tuition fees for students scoring above 90% in prior board exams.',
+                        'help' => 'Card 1 details.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'scheme2_title',
+                        'label' => 'Scheme 2 Title (Sibling Concession)',
+                        'type' => 'text',
+                        'default' => 'Sibling Concession Scheme',
+                        'help' => 'Card 2 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'scheme2_desc',
+                        'label' => 'Scheme 2 Description',
+                        'type' => 'text',
+                        'default' => '15% discount on monthly tuition fees for the second biological child studying concurrently in school.',
+                        'help' => 'Card 2 details.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'scheme3_title',
+                        'label' => 'Scheme 3 Title (Defence & Police)',
+                        'type' => 'text',
+                        'default' => 'Defence & Police Personnel',
+                        'help' => 'Card 3 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'scheme3_desc',
+                        'label' => 'Scheme 3 Description',
+                        'type' => 'text',
+                        'default' => 'Special educational welfare concession of ₹300 / month for children of armed service personnel.',
+                        'help' => 'Card 3 details.'
+                    ]
+                ]
+            ],
+
+            // Section 8: Document Verification Checklist & Campus Tour Booking
+            [
+                'title' => 'Section 8: Document Verification Checklist & Campus Tour Booking',
+                'icon'  => 'fact_check',
+                'desc'  => 'Titles and descriptions for 5 physical verification documents, plus the campus visit prompt box.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'docs_eyebrow',
+                        'label' => 'Documents Section Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Verification Standards',
+                        'help' => 'Eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'docs_heading',
+                        'label' => 'Documents Section Heading',
+                        'type' => 'text',
+                        'default' => 'Required Documents & Eligibility',
+                        'help' => 'Main section headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'docs_desc',
+                        'label' => 'Documents Section Subtitle',
+                        'type' => 'text',
+                        'default' => 'Carry original copies during document physical verification at Dobhi campus.',
+                        'help' => 'Section subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'doc1_title',
+                        'label' => 'Required Doc 1 Title',
+                        'type' => 'text',
+                        'default' => 'Original Transfer Certificate (TC)',
+                        'help' => 'Document 1 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'doc1_desc',
+                        'label' => 'Required Doc 1 Details',
+                        'type' => 'text',
+                        'default' => 'Countersigned by District Education Officer (if transferring from other state board).',
+                        'help' => 'Document 1 instructions.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'doc2_title',
+                        'label' => 'Required Doc 2 Title',
+                        'type' => 'text',
+                        'default' => 'Municipal Birth Certificate',
+                        'help' => 'Document 2 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'doc2_desc',
+                        'label' => 'Required Doc 2 Details',
+                        'type' => 'text',
+                        'default' => 'Mandatory for Nursery to Class 1 admissions for proof of age cut-off.',
+                        'help' => 'Document 2 instructions.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'doc3_title',
+                        'label' => 'Required Doc 3 Title',
+                        'type' => 'text',
+                        'default' => 'Aadhaar Card (Student & Both Parents)',
+                        'help' => 'Document 3 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'doc3_desc',
+                        'label' => 'Required Doc 3 Details',
+                        'type' => 'text',
+                        'default' => 'Clear photocopy for Haryana Parivar Pehchan Patra (PPP) linkage.',
+                        'help' => 'Document 3 instructions.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'doc4_title',
+                        'label' => 'Required Doc 4 Title',
+                        'type' => 'text',
+                        'default' => 'Recent Passport-Size Photographs',
+                        'help' => 'Document 4 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'doc4_desc',
+                        'label' => 'Required Doc 4 Details',
+                        'type' => 'text',
+                        'default' => '4 copies of student and 2 joint photos with mother and father.',
+                        'help' => 'Document 4 instructions.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'doc5_title',
+                        'label' => 'Required Doc 5 Title',
+                        'type' => 'text',
+                        'default' => 'Caste / Category Certificate (If Applicable)',
+                        'help' => 'Document 5 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'doc5_desc',
+                        'label' => 'Required Doc 5 Details',
+                        'type' => 'text',
+                        'default' => 'SC/ST/OBC/EWS certificate issued by competent Tehsildar or SDM authority.',
+                        'help' => 'Document 5 instructions.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'tour_box_title',
+                        'label' => 'Campus Tour Prompt Title',
+                        'type' => 'text',
+                        'default' => 'Prefer an In-Person Campus Tour?',
+                        'help' => 'Title in the visit card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'tour_box_desc',
+                        'label' => 'Campus Tour Visiting Hours',
+                        'type' => 'text',
+                        'default' => 'Visit Dobhi campus Monday to Saturday between 9:00 AM – 2:30 PM.',
+                        'help' => 'Visiting schedule.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'tour_box_btn',
+                        'label' => 'Campus Tour Button Text',
+                        'type' => 'text',
+                        'default' => 'Book Visit',
+                        'help' => 'Button text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'tour_box_link',
+                        'label' => 'Campus Tour Button Target Link',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Destination link.'
+                    ]
+                ]
+            ],
+
+            // Section 9: Parents' Admission FAQ Desk (5 FAQs)
+            [
+                'title' => 'Section 9: Parents\' Admission FAQ Desk (5 FAQs)',
+                'icon'  => 'quiz',
+                'desc'  => 'Questions and detailed answers addressing common parent queries about admissions, fees, streams, and bus routes.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq_eyebrow',
+                        'label' => 'FAQ Section Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Parents\' FAQ Desk',
+                        'help' => 'Eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq_heading',
+                        'label' => 'FAQ Section Heading',
+                        'type' => 'text',
+                        'default' => 'Frequently Asked Admission Questions',
+                        'help' => 'Section heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq1_q',
+                        'label' => 'FAQ 1 Question',
+                        'type' => 'text',
+                        'default' => 'What happens immediately after paying the admission checkout fee?',
+                        'help' => 'Question 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq1_a',
+                        'label' => 'FAQ 1 Answer',
+                        'type' => 'textarea',
+                        'default' => 'You will receive an automated SMS and WhatsApp confirmation containing the provisional Student Enrolment ID, downloadable fee receipt PDF, and scheduled date for the baseline interaction/diagnostic test at Sun Rise Sr. Sec. School, Dobhi.',
+                        'help' => 'Answer 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq2_q',
+                        'label' => 'FAQ 2 Question',
+                        'type' => 'text',
+                        'default' => 'Can we pay the monthly tuition fee easily online or at school?',
+                        'help' => 'Question 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq2_a',
+                        'label' => 'FAQ 2 Answer',
+                        'type' => 'textarea',
+                        'default' => 'Yes. Monthly tuition fees (around ₹600 to ₹1,000 / month) can be paid through UPI QR, net banking, debit/credit cards, or directly at the school cash counter by the 10th of every month.',
+                        'help' => 'Answer 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq3_q',
+                        'label' => 'FAQ 3 Question',
+                        'type' => 'text',
+                        'default' => 'How are Science/Commerce streams allocated in Class 11?',
+                        'help' => 'Question 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq3_a',
+                        'label' => 'FAQ 3 Answer',
+                        'type' => 'textarea',
+                        'default' => 'Science (Medical & Non-Medical) stream requires an aggregate minimum of 60% in Class 10 Board examinations with strong interest in Science & Mathematics. Commerce and Humanities are allotted based on student preference and aptitude evaluation.',
+                        'help' => 'Answer 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq4_q',
+                        'label' => 'FAQ 4 Question',
+                        'type' => 'text',
+                        'default' => 'Which villages are covered under the Dobhi bus transit network?',
+                        'help' => 'Question 4.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq4_a',
+                        'label' => 'FAQ 4 Answer',
+                        'type' => 'textarea',
+                        'default' => 'Our GPS-enabled bus network covers: Dobhi, Balsamand, Arya Nagar, Rawalwas Kalan, Rawalwas Khurd, Bandaheri, Chaudhariwas, Muklan, Mirzapur, and major rural arterial stops within a 22 km radius. Female attendants accompany all pre-primary and junior bus routes.',
+                        'help' => 'Answer 4.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq5_q',
+                        'label' => 'FAQ 5 Question',
+                        'type' => 'text',
+                        'default' => 'Is the registration fee refundable if we decide to withdraw?',
+                        'help' => 'Question 5.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq5_a',
+                        'label' => 'FAQ 5 Answer',
+                        'type' => 'textarea',
+                        'default' => 'If the student does not qualify in the assessment test or if a transfer posting is documented prior to April 1st, all deposited advance tuition fees and security deposits are 100% refundable without deductions. The application prospectus fee covers processing administrative overheads.',
+                        'help' => 'Answer 5.'
+                    ]
+                ]
+            ],
+
+            // Section 10: Direct Admissions Helpline & Support Banner
+            [
+                'title' => 'Section 10: Direct Admissions Helpline & Support Banner',
+                'icon'  => 'support_agent',
+                'desc'  => 'Office hours, admissions directorate helpline phone, and direct WhatsApp contact link.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'help_eyebrow',
+                        'label' => 'Helpdesk Directorate Tag',
+                        'type' => 'text',
+                        'default' => 'Admissions Directorate – Dobhi Campus',
+                        'help' => 'Eyebrow tag in the bottom support banner.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'help_heading',
-                        'label' => 'Helpdesk Heading',
+                        'label' => 'Helpdesk Main Heading',
                         'type' => 'text',
                         'default' => 'Need Assistance with Online Admissions?',
                         'help' => 'Heading.'
@@ -2829,10 +4829,10 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'help_desc',
-                        'label' => 'Helpdesk Description',
-                        'type' => 'text',
+                        'label' => 'Helpdesk Description & Timings',
+                        'type' => 'textarea',
                         'default' => 'Our administrative office is open Monday to Saturday (Summer: 7:30 AM to 1:30 PM | Winter: 8:30 AM to 2:30 PM) to assist parents with document verification, fee concessions, and transport routes.',
-                        'help' => 'Description.'
+                        'help' => 'Office schedule and assistance note.'
                     ],
                     [
                         'kind' => 'text',
@@ -2840,7 +4840,15 @@ $pages_config = [
                         'label' => 'Helpdesk Phone Number',
                         'type' => 'text',
                         'default' => '+91 70158 90094',
-                        'help' => 'Phone.'
+                        'help' => 'Calling number for admissions desk.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'help_whatsapp',
+                        'label' => 'Helpdesk WhatsApp Number (without +)',
+                        'type' => 'text',
+                        'default' => '917015890094',
+                        'help' => 'WhatsApp destination number for chat.'
                     ]
                 ]
             ]
@@ -2849,12 +4857,13 @@ $pages_config = [
     'campus' => [
         'title' => 'Campus & Facilities',
         'icon'  => 'domain',
-        'desc'  => 'Hero Banner, 6 Infrastructure Facilities, 24/7 CCTV Safety & Experience CTA',
+        'desc'  => 'Hero Banner, 4 Campus Stats, 9 Core Infrastructure Facilities, 24/7 CCTV Safety & Experience CTA',
         'sections' => [
+            // Section 1: Hero Banner & Quick Actions
             [
-                'title' => 'Section 1: Hero Banner & Intro',
+                'title' => 'Section 1: Hero Banner & Quick Actions',
                 'icon'  => 'flag',
-                'desc'  => 'Top banner image, eyebrow badge, title, and intro text.',
+                'desc'  => 'Top hero background image, eyebrow badge, main title, subtitle, and CTA action buttons.',
                 'fields' => [
                     [
                         'kind' => 'image',
@@ -2870,35 +4879,142 @@ $pages_config = [
                         'label' => 'Hero Eyebrow Badge',
                         'type' => 'text',
                         'default' => 'Modern Campus Infrastructure',
-                        'help' => 'Badge.'
+                        'help' => 'Pill badge above headline.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_title',
-                        'label' => 'Campus Hero Title',
+                        'label' => 'Campus Hero Headline',
                         'type' => 'text',
                         'default' => 'A Vibrant & Safe Campus Built for Excellence',
-                        'help' => 'Main title.'
+                        'help' => 'Main headline on campus.php.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_subtitle',
                         'label' => 'Campus Hero Subtitle',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Explore our purpose-built campus in Dobhi, Haryana designed to nurture academic focus, athletic vigor, scientific curiosity, and cultural creativity.',
-                        'help' => 'Subtitle.'
+                        'help' => 'Descriptive summary below the headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn1_text',
+                        'label' => 'Primary Button Text',
+                        'type' => 'text',
+                        'default' => 'Explore Facilities',
+                        'help' => 'Gold action button label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn1_link',
+                        'label' => 'Primary Button Target Link',
+                        'type' => 'text',
+                        'default' => '#facilities-grid',
+                        'help' => 'Target anchor or page link.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn2_text',
+                        'label' => 'Secondary Button Text',
+                        'type' => 'text',
+                        'default' => 'Book Campus Tour',
+                        'help' => 'White outline button label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn2_link',
+                        'label' => 'Secondary Button Target Link',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Target link for tour booking.'
                     ]
                 ]
             ],
+
+            // Section 2: Campus Quick Stats Strip (4 Highlights)
             [
-                'title' => 'Section 2: Campus Infrastructure Header',
+                'title' => 'Section 2: Campus Quick Stats Strip (4 Highlights)',
+                'icon'  => 'analytics',
+                'desc'  => 'Four prominent metric highlights floating beneath the hero section.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat1_num',
+                        'label' => 'Stat 1 Value (Campus Area)',
+                        'type' => 'text',
+                        'default' => '5+ Acres',
+                        'help' => 'Number or metric.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat1_lbl',
+                        'label' => 'Stat 1 Label',
+                        'type' => 'text',
+                        'default' => 'Sprawling Green Campus',
+                        'help' => 'Label under stat 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat2_num',
+                        'label' => 'Stat 2 Value (Classrooms)',
+                        'type' => 'text',
+                        'default' => '30+',
+                        'help' => 'Number or metric.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat2_lbl',
+                        'label' => 'Stat 2 Label',
+                        'type' => 'text',
+                        'default' => 'Smart Tech Classrooms',
+                        'help' => 'Label under stat 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat3_num',
+                        'label' => 'Stat 3 Value (Transport Coverage)',
+                        'type' => 'text',
+                        'default' => '35+',
+                        'help' => 'Number or metric.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat3_lbl',
+                        'label' => 'Stat 3 Label',
+                        'type' => 'text',
+                        'default' => 'Villages Bus Transit Network',
+                        'help' => 'Label under stat 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat4_num',
+                        'label' => 'Stat 4 Value (Safety & Security)',
+                        'type' => 'text',
+                        'default' => '100%',
+                        'help' => 'Number or metric.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat4_lbl',
+                        'label' => 'Stat 4 Label',
+                        'type' => 'text',
+                        'default' => 'CCTV & Campus Perimeter Monitored',
+                        'help' => 'Label under stat 4.'
+                    ]
+                ]
+            ],
+
+            // Section 3: Campus Infrastructure Section Header
+            [
+                'title' => 'Section 3: Campus Infrastructure Section Header',
                 'icon'  => 'info',
-                'desc'  => 'Introductory heading and text above the 6 facilities grid.',
+                'desc'  => 'Introductory eyebrow, main heading, and overview subtitle for the facilities directory.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'facilities_eyebrow',
-                        'label' => 'Facilities Eyebrow',
+                        'label' => 'Facilities Section Eyebrow Tag',
                         'type' => 'text',
                         'default' => 'Campus Infrastructure',
                         'help' => 'Eyebrow tag.'
@@ -2906,33 +5022,35 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'facilities_heading',
-                        'label' => 'Facilities Section Heading',
+                        'label' => 'Facilities Section Main Heading',
                         'type' => 'text',
                         'default' => 'Facilities for Holistic Growth',
-                        'help' => 'Heading.'
+                        'help' => 'Main headline.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'facilities_desc',
                         'label' => 'Facilities Overview Subtitle',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Every wing of Sun Rise Sr. Sec. School is thoughtfully equipped to ensure total safety, hygiene, modern learning tools, and joyful childhood development.',
-                        'help' => 'Description.'
+                        'help' => 'Overview description.'
                     ]
                 ]
             ],
+
+            // Section 4: Academic & Digital Infrastructure (4 Facilities)
             [
-                'title' => 'Section 3: Core Campus Facilities (6 Cards with Photos)',
-                'icon'  => 'apartment',
-                'desc'  => 'Classrooms, Science Lab, Sports Ground, Yoga Arena, Exhibition Hall, Assembly Courtyard.',
+                'title' => 'Section 4: Academic & Digital Infrastructure (Classrooms, Labs, Computers, Library)',
+                'icon'  => 'school',
+                'desc'  => 'Manage photos, tags, titles, descriptions, and feature bullet labels for academic spaces.',
                 'fields' => [
-                    // Facility 1
+                    // Facility 1: Smart Classrooms
                     [
                         'kind' => 'image',
                         'key' => 'fac1_img',
-                        'label' => 'Facility 1 Photo (Spacious Classrooms)',
+                        'label' => 'Facility 1 Photo (Smart Classrooms)',
                         'default' => 'assets/images/sunrise school image/children_sitting.webp',
-                        'alt' => 'Spacious Interactive Classrooms',
+                        'alt' => 'Spacious Smart Classrooms',
                         'help' => 'Photo for classrooms.'
                     ],
                     [
@@ -2940,30 +5058,39 @@ $pages_config = [
                         'key' => 'fac1_tag',
                         'label' => 'Facility 1 Category Tag',
                         'type' => 'text',
-                        'default' => 'Interactive Learning',
-                        'help' => 'Tag.'
+                        'default' => '30+ Classrooms',
+                        'help' => 'Gold category tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac1_title',
                         'label' => 'Facility 1 Title',
                         'type' => 'text',
-                        'default' => 'Spacious Classrooms',
-                        'help' => 'Title.'
+                        'default' => 'Smart Classrooms',
+                        'help' => 'Card heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac1_desc',
                         'label' => 'Facility 1 Description',
-                        'type' => 'text',
-                        'default' => 'Well-ventilated, naturally lit classrooms with ergonomic student seating, audio-visual display aids, and positive wall aesthetics.',
-                        'help' => 'Description.'
+                        'type' => 'textarea',
+                        'default' => 'More than 30 spacious, well-ventilated technical and smart classrooms equipped with multimedia audio-visual aids and ergonomic furniture for interactive learning.',
+                        'help' => 'Detailed description.'
                     ],
-                    // Facility 2
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac1_feature',
+                        'label' => 'Facility 1 Feature Highlight Tag',
+                        'type' => 'text',
+                        'default' => 'Interactive AV Learning',
+                        'help' => 'Bottom highlight badge.'
+                    ],
+
+                    // Facility 2: Composite Science Labs
                     [
                         'kind' => 'image',
                         'key' => 'fac2_img',
-                        'label' => 'Facility 2 Photo (Advanced Science Lab)',
+                        'label' => 'Facility 2 Photo (Composite Science Labs)',
                         'default' => 'assets/images/sunrise school image/exhibition2.webp',
                         'alt' => 'Advanced Science Laboratory',
                         'help' => 'Photo for science lab.'
@@ -2974,29 +5101,130 @@ $pages_config = [
                         'label' => 'Facility 2 Category Tag',
                         'type' => 'text',
                         'default' => 'Hands-On Discovery',
-                        'help' => 'Tag.'
+                        'help' => 'Gold category tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac2_title',
                         'label' => 'Facility 2 Title',
                         'type' => 'text',
-                        'default' => 'Advanced Science Lab',
-                        'help' => 'Title.'
+                        'default' => 'Composite Science Labs',
+                        'help' => 'Card heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac2_desc',
                         'label' => 'Facility 2 Description',
-                        'type' => 'text',
-                        'default' => 'Fully equipped practical laboratories for Physics, Chemistry, and Biology adhering strictly to HBSE safety benchmarks and experimental standards.',
-                        'help' => 'Description.'
+                        'type' => 'textarea',
+                        'default' => 'Fully equipped practical laboratories for Physics, Chemistry, and Biology adhering to HBSE standards, enabling students to perform curriculum practicals and state-level science models.',
+                        'help' => 'Detailed description.'
                     ],
-                    // Facility 3
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac2_feature',
+                        'label' => 'Facility 2 Feature Highlight Tag',
+                        'type' => 'text',
+                        'default' => 'Physics, Chem & Bio',
+                        'help' => 'Bottom highlight badge.'
+                    ],
+
+                    // Facility 3: Modern Computer Lab
+                    [
+                        'kind' => 'image',
+                        'key' => 'fac_comp_img',
+                        'label' => 'Facility 3 Photo (Modern Computer Lab)',
+                        'default' => 'assets/images/sunrise school image/project.webp',
+                        'alt' => 'Modern Computer Laboratory',
+                        'help' => 'Photo for computer lab.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_comp_tag',
+                        'label' => 'Facility 3 Category Tag',
+                        'type' => 'text',
+                        'default' => 'Digital Education',
+                        'help' => 'Gold category tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_comp_title',
+                        'label' => 'Facility 3 Title',
+                        'type' => 'text',
+                        'default' => 'Modern Computer Lab',
+                        'help' => 'Card heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_comp_desc',
+                        'label' => 'Facility 3 Description',
+                        'type' => 'textarea',
+                        'default' => 'Dedicated IT workstation lab providing students from Primary to Senior Secondary with essential digital literacy, coding, practical typing, and computer science applications.',
+                        'help' => 'Detailed description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_comp_feature',
+                        'label' => 'Facility 3 Feature Highlight Tag',
+                        'type' => 'text',
+                        'default' => 'IT & Digital Literacy',
+                        'help' => 'Bottom highlight badge.'
+                    ],
+
+                    // Facility 4: School Library & Resource Center
+                    [
+                        'kind' => 'image',
+                        'key' => 'fac_lib_img',
+                        'label' => 'Facility 4 Photo (School Library)',
+                        'default' => 'assets/images/sunrise school image/exhibition.webp',
+                        'alt' => 'School Library & Reading Room',
+                        'help' => 'Photo for library.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_lib_tag',
+                        'label' => 'Facility 4 Category Tag',
+                        'type' => 'text',
+                        'default' => 'Resource Center',
+                        'help' => 'Gold category tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_lib_title',
+                        'label' => 'Facility 4 Title',
+                        'type' => 'text',
+                        'default' => 'School Library & Reading Room',
+                        'help' => 'Card heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_lib_desc',
+                        'label' => 'Facility 4 Description',
+                        'type' => 'textarea',
+                        'default' => 'A peaceful reading sanctuary housing an extensive repository of curriculum textbooks, reference guides, competitive test series, periodicals, and children literature.',
+                        'help' => 'Detailed description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_lib_feature',
+                        'label' => 'Facility 4 Feature Highlight Tag',
+                        'type' => 'text',
+                        'default' => 'Enriched Reading Repository',
+                        'help' => 'Bottom highlight badge.'
+                    ]
+                ]
+            ],
+
+            // Section 5: Sports, Wellness & Community Spaces (5 Facilities)
+            [
+                'title' => 'Section 5: Sports, Wellness & Community Spaces (Playground, Transport, Yoga, Exhibition, Assembly)',
+                'icon'  => 'sports_soccer',
+                'desc'  => 'Athletic grounds, bus transit fleet, yoga hall, innovation project hall, and morning assembly area.',
+                'fields' => [
+                    // Facility 5: Expansive Sports Ground
                     [
                         'kind' => 'image',
                         'key' => 'fac3_img',
-                        'label' => 'Facility 3 Photo (Sports Ground)',
+                        'label' => 'Facility 5 Photo (Sports Ground & Athletics)',
                         'default' => 'assets/images/sunrise school image/students_ground.webp',
                         'alt' => 'Sports Ground & Athletics',
                         'help' => 'Photo for sports ground.'
@@ -3004,65 +5232,125 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'fac3_tag',
-                        'label' => 'Facility 3 Category Tag',
+                        'label' => 'Facility 5 Category Tag',
                         'type' => 'text',
-                        'default' => 'Athletics & Games',
-                        'help' => 'Tag.'
+                        'default' => 'Sports & Fitness',
+                        'help' => 'Gold category tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac3_title',
-                        'label' => 'Facility 3 Title',
+                        'label' => 'Facility 5 Title',
                         'type' => 'text',
-                        'default' => 'Extensive Sports Ground',
-                        'help' => 'Title.'
+                        'default' => 'Expansive Sports Ground',
+                        'help' => 'Card heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac3_desc',
-                        'label' => 'Facility 3 Description',
-                        'type' => 'text',
-                        'default' => 'Expansive outdoor sports grounds for Cricket, Kabaddi, Volleyball, Track Athletics, and regular physical education drills under trained coaches.',
-                        'help' => 'Description.'
+                        'label' => 'Facility 5 Description',
+                        'type' => 'textarea',
+                        'default' => 'Spacious open athletic grounds equipped for cricket, kabaddi, volleyball, track events, wrestling, kickboxing, and daily morning drills under experienced coaches.',
+                        'help' => 'Detailed description.'
                     ],
-                    // Facility 4
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac3_feature',
+                        'label' => 'Facility 5 Feature Highlight Tag',
+                        'type' => 'text',
+                        'default' => 'Athletics & Games',
+                        'help' => 'Bottom highlight badge.'
+                    ],
+
+                    // Facility 6: Transport Facility
+                    [
+                        'kind' => 'image',
+                        'key' => 'fac_trans_img',
+                        'label' => 'Facility 6 Photo (School Bus Transport)',
+                        'default' => 'assets/images/sunrise school image/school_home1.webp',
+                        'alt' => 'Transport Facility and Bus Fleet',
+                        'help' => 'Photo for buses/transport.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_trans_tag',
+                        'label' => 'Facility 6 Category Tag',
+                        'type' => 'text',
+                        'default' => 'Safe Commute',
+                        'help' => 'Gold category tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_trans_title',
+                        'label' => 'Facility 6 Title',
+                        'type' => 'text',
+                        'default' => 'Transport Transit Facility',
+                        'help' => 'Card heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_trans_desc',
+                        'label' => 'Facility 6 Description',
+                        'type' => 'textarea',
+                        'default' => 'A dependable, dedicated school bus fleet connecting Dobhi with 35+ surrounding villages and townships, operated by trained drivers and safety staff.',
+                        'help' => 'Detailed description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac_trans_feature',
+                        'label' => 'Facility 6 Feature Highlight Tag',
+                        'type' => 'text',
+                        'default' => 'Doorstep Rural Routes',
+                        'help' => 'Bottom highlight badge.'
+                    ],
+
+                    // Facility 7: Yoga & Meditation Arena
                     [
                         'kind' => 'image',
                         'key' => 'fac4_img',
-                        'label' => 'Facility 4 Photo (Yoga & Meditation)',
+                        'label' => 'Facility 7 Photo (Yoga & Meditation Arena)',
                         'default' => 'assets/images/sunrise school image/yoga.webp',
                         'alt' => 'Yoga & Meditation Arena',
-                        'help' => 'Photo for yoga arena.'
+                        'help' => 'Photo for yoga hall.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac4_tag',
-                        'label' => 'Facility 4 Category Tag',
+                        'label' => 'Facility 7 Category Tag',
                         'type' => 'text',
                         'default' => 'Mind & Body',
-                        'help' => 'Tag.'
+                        'help' => 'Gold category tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac4_title',
-                        'label' => 'Facility 4 Title',
+                        'label' => 'Facility 7 Title',
                         'type' => 'text',
                         'default' => 'Yoga & Meditation Arena',
-                        'help' => 'Title.'
+                        'help' => 'Card heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac4_desc',
-                        'label' => 'Facility 4 Description',
-                        'type' => 'text',
+                        'label' => 'Facility 7 Description',
+                        'type' => 'textarea',
                         'default' => 'Daily morning pranayama, Surya Namaskar, and guided mindfulness sessions helping students cultivate razor-sharp concentration and calm emotional health.',
-                        'help' => 'Description.'
+                        'help' => 'Detailed description.'
                     ],
-                    // Facility 5
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac4_feature',
+                        'label' => 'Facility 7 Feature Highlight Tag',
+                        'type' => 'text',
+                        'default' => 'Daily Mindfulness & Asanas',
+                        'help' => 'Bottom highlight badge.'
+                    ],
+
+                    // Facility 8: Exhibition & Project Hall
                     [
                         'kind' => 'image',
                         'key' => 'fac5_img',
-                        'label' => 'Facility 5 Photo (Exhibition & Project Hall)',
+                        'label' => 'Facility 8 Photo (Exhibition & Project Hall)',
                         'default' => 'assets/images/sunrise school image/project.webp',
                         'alt' => 'Exhibition & Project Hall',
                         'help' => 'Photo for exhibition hall.'
@@ -3070,32 +5358,41 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'fac5_tag',
-                        'label' => 'Facility 5 Category Tag',
+                        'label' => 'Facility 8 Category Tag',
                         'type' => 'text',
                         'default' => 'Creative Expression',
-                        'help' => 'Tag.'
+                        'help' => 'Gold category tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac5_title',
-                        'label' => 'Facility 5 Title',
+                        'label' => 'Facility 8 Title',
                         'type' => 'text',
                         'default' => 'Exhibition & Project Hall',
-                        'help' => 'Title.'
+                        'help' => 'Card heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac5_desc',
-                        'label' => 'Facility 5 Description',
-                        'type' => 'text',
+                        'label' => 'Facility 8 Description',
+                        'type' => 'textarea',
                         'default' => 'Dedicated space for student science models, social science exhibitions, art displays, and community awareness presentations.',
-                        'help' => 'Description.'
+                        'help' => 'Detailed description.'
                     ],
-                    // Facility 6
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac5_feature',
+                        'label' => 'Facility 8 Feature Highlight Tag',
+                        'type' => 'text',
+                        'default' => 'Science Fairs & Art Displays',
+                        'help' => 'Bottom highlight badge.'
+                    ],
+
+                    // Facility 9: Morning Assembly Courtyard
                     [
                         'kind' => 'image',
                         'key' => 'fac6_img',
-                        'label' => 'Facility 6 Photo (Morning Assembly Courtyard)',
+                        'label' => 'Facility 9 Photo (Morning Assembly Courtyard)',
                         'default' => 'assets/images/sunrise school image/children_praying.webp',
                         'alt' => 'Morning Assembly Courtyard',
                         'help' => 'Photo for assembly courtyard.'
@@ -3103,72 +5400,140 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'fac6_tag',
-                        'label' => 'Facility 6 Category Tag',
+                        'label' => 'Facility 9 Category Tag',
                         'type' => 'text',
                         'default' => 'Character & Values',
-                        'help' => 'Tag.'
+                        'help' => 'Gold category tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac6_title',
-                        'label' => 'Facility 6 Title',
+                        'label' => 'Facility 9 Title',
                         'type' => 'text',
                         'default' => 'Morning Assembly Courtyard',
-                        'help' => 'Title.'
+                        'help' => 'Card heading.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'fac6_desc',
-                        'label' => 'Facility 6 Description',
-                        'type' => 'text',
+                        'label' => 'Facility 9 Description',
+                        'type' => 'textarea',
                         'default' => 'Where the whole school unites each morning for prayers, national anthem, news recitation, inspirational speeches, and student felicitations.',
-                        'help' => 'Description.'
+                        'help' => 'Detailed description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'fac6_feature',
+                        'label' => 'Facility 9 Feature Highlight Tag',
+                        'type' => 'text',
+                        'default' => 'Daily Moral Assembly',
+                        'help' => 'Bottom highlight badge.'
                     ]
                 ]
             ],
+
+            // Section 6: 24/7 CCTV Security, Boundary & Hygiene Standards
             [
-                'title' => 'Section 4: 24/7 Campus Safety & CCTV Surveillance',
+                'title' => 'Section 6: 24/7 CCTV Security, Boundary & Hygiene Standards',
                 'icon'  => 'security',
-                'desc'  => 'Safety features banner, CCTV details, RO drinking water, and boundary security.',
+                'desc'  => 'Safety showcase photo, headline, security overview, 4 safety pillars, and campus visit action button.',
                 'fields' => [
                     [
                         'kind' => 'image',
                         'key' => 'safety_img',
-                        'label' => 'Campus Safety Night Photo',
+                        'label' => 'Campus Safety Showcase Photo',
                         'default' => 'assets/images/sunrise school image/school_nightview.webp',
                         'alt' => 'Secure CCTV Monitored Campus',
-                        'help' => 'Photo on left of safety card.'
+                        'help' => 'Night/security photo for safety banner.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'safety_tag',
                         'label' => 'Safety Tagline',
                         'type' => 'text',
-                        'default' => 'Uncompromising Safety',
-                        'help' => 'Tag.'
+                        'default' => 'Comprehensive Security',
+                        'help' => 'Gold eyebrow tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'safety_title',
                         'label' => 'Safety Headline',
                         'type' => 'text',
-                        'default' => 'Secure, CCTV Monitored Campus',
-                        'help' => 'Heading.'
+                        'default' => 'CCTV Security & Campus Safety',
+                        'help' => 'Section title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'safety_desc',
                         'label' => 'Safety Description',
+                        'type' => 'textarea',
+                        'default' => 'Sun Rise Sr. Sec. School provides a strictly secure campus with comprehensive 24/7 CCTV surveillance covering classrooms, corridors, main gate, and playfields, complemented by secure boundary fencing, pure RO filtered water, and emergency medical kits.',
+                        'help' => 'Detailed security and health description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'safety_feat1',
+                        'label' => 'Safety Feature 1 Label',
                         'type' => 'text',
-                        'default' => 'Our campus in Dobhi is fully enclosed with perimeter boundary security, 24/7 CCTV surveillance across corridors, gates, and play areas, filtered RO drinking water, and dedicated power backup.',
-                        'help' => 'Description.'
+                        'default' => '24/7 CCTV Cameras',
+                        'help' => 'Feature 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'safety_feat2',
+                        'label' => 'Safety Feature 2 Label',
+                        'type' => 'text',
+                        'default' => 'Boundary Enclosure',
+                        'help' => 'Feature 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'safety_feat3',
+                        'label' => 'Safety Feature 3 Label',
+                        'type' => 'text',
+                        'default' => 'RO Pure Water',
+                        'help' => 'Feature 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'safety_feat4',
+                        'label' => 'Safety Feature 4 Label',
+                        'type' => 'text',
+                        'default' => 'PHC Proximity',
+                        'help' => 'Feature 4.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'safety_badge_text',
+                        'label' => 'Safety Assurance Subtitle',
+                        'type' => 'text',
+                        'default' => 'Peace of Mind for Parents',
+                        'help' => 'Left bottom label in safety card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'safety_btn_text',
+                        'label' => 'Safety Card Button Text',
+                        'type' => 'text',
+                        'default' => 'Plan a Campus Visit',
+                        'help' => 'CTA button label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'safety_btn_link',
+                        'label' => 'Safety Card Button Target Link',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Destination link.'
                     ]
                 ]
             ],
+
+            // Section 7: Campus Experience & Visit Invitation CTA Banner
             [
-                'title' => 'Section 5: Campus Experience CTA',
+                'title' => 'Section 7: Campus Experience & Visit Invitation CTA Banner',
                 'icon'  => 'explore',
-                'desc'  => 'Bottom banner encouraging visitors to view the photo gallery or book a tour.',
+                'desc'  => 'Bottom invitation banner encouraging parents to view photo gallery or schedule an in-person tour.',
                 'fields' => [
                     [
                         'kind' => 'image',
@@ -3181,26 +5546,58 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'cta_eyebrow',
-                        'label' => 'CTA Eyebrow',
+                        'label' => 'CTA Eyebrow Tag',
                         'type' => 'text',
                         'default' => 'Experience Sun Rise School',
-                        'help' => 'Eyebrow.'
+                        'help' => 'Eyebrow tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'cta_heading',
-                        'label' => 'CTA Heading',
+                        'label' => 'CTA Main Headline',
                         'type' => 'text',
                         'default' => 'Want to see more campus moments?',
-                        'help' => 'Heading.'
+                        'help' => 'Headline.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'cta_desc',
-                        'label' => 'CTA Description',
-                        'type' => 'text',
+                        'label' => 'CTA Detailed Description',
+                        'type' => 'textarea',
                         'default' => 'Browse through our full visual chronicle containing photographs from academic exhibitions, sports days, award ceremonies, and everyday school celebrations.',
                         'help' => 'Description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn1_text',
+                        'label' => 'Button 1 Text (Gallery)',
+                        'type' => 'text',
+                        'default' => 'Explore Photo Gallery',
+                        'help' => 'Gold button label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn1_link',
+                        'label' => 'Button 1 Target Link',
+                        'type' => 'text',
+                        'default' => 'gallery.php',
+                        'help' => 'Gold button link.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn2_text',
+                        'label' => 'Button 2 Text (Tour)',
+                        'type' => 'text',
+                        'default' => 'Book Campus Visit',
+                        'help' => 'Outline button label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn2_link',
+                        'label' => 'Button 2 Target Link',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Outline button link.'
                     ]
                 ]
             ]
@@ -3209,12 +5606,13 @@ $pages_config = [
     'events' => [
         'title' => 'Events & News',
         'icon'  => 'celebration',
-        'desc'  => 'Featured Highlight Event, School News Grid, Academic Calendar & Upcoming Agenda',
+        'desc'  => 'Featured Highlight Event, School News Grid, Academic Agenda, 12 Co-Curricular Functions & Hall of Fame Accolades',
         'sections' => [
+            // Section 1: Featured Highlight Event Banner
             [
                 'title' => 'Section 1: Featured Highlight Event Banner',
                 'icon'  => 'star',
-                'desc'  => 'Top featured event showcase with background banner, timing, and campus venue.',
+                'desc'  => 'Top featured event showcase with background banner, timing, campus venue, and visitor CTA button.',
                 'fields' => [
                     [
                         'kind' => 'image',
@@ -3244,9 +5642,17 @@ $pages_config = [
                         'kind' => 'text',
                         'key' => 'featured_subtitle',
                         'label' => 'Featured Event Description',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Experience the ingenuity of our students as they demonstrate live working science models, robotics experiments, sustainable agriculture concepts, and artistic creations.',
                         'help' => 'Summary text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'featured_session_tag',
+                        'label' => 'Session / Occasion Tag',
+                        'type' => 'text',
+                        'default' => 'Annual Session',
+                        'help' => 'Left pill item under description.'
                     ],
                     [
                         'kind' => 'text',
@@ -3263,14 +5669,49 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'Main Campus Auditorium & Grounds',
                         'help' => 'Location on campus.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'featured_btn_text',
+                        'label' => 'Hero CTA Button Text',
+                        'type' => 'text',
+                        'default' => 'Inquire / Visit Campus',
+                        'help' => 'Action button text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'featured_btn_link',
+                        'label' => 'Hero CTA Button Target Link',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Action button link.'
                     ]
                 ]
             ],
+
+            // Section 2: School News & Key Highlights (4 Main Story Cards)
             [
-                'title' => 'Section 2: School News & Happenings Grid (4 Cards)',
+                'title' => 'Section 2: School News & Key Highlights (4 Main Story Cards)',
                 'icon'  => 'newspaper',
-                'desc'  => 'News stories: Science model showcase, Independence Day, Excellence award, Press coverage.',
+                'desc'  => 'Titles, dates, category tags, images, summaries, and action links for 4 prominent school news stories.',
                 'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'news_eyebrow',
+                        'label' => 'News Section Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Happenings & Notices',
+                        'help' => 'Eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'news_heading',
+                        'label' => 'News Section Main Heading',
+                        'type' => 'text',
+                        'default' => 'School News & Key Highlights',
+                        'help' => 'Main headline.'
+                    ],
+
                     // News 1
                     [
                         'kind' => 'image',
@@ -3283,15 +5724,15 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'news1_date',
-                        'label' => 'News 1 Date',
+                        'label' => 'News 1 Date (e.g. 24 OCT)',
                         'type' => 'text',
                         'default' => '24 OCT',
-                        'help' => 'Day & month.'
+                        'help' => 'Day & Month.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'news1_tag',
-                        'label' => 'News 1 Category',
+                        'label' => 'News 1 Category Badge',
                         'type' => 'text',
                         'default' => 'Science Fair',
                         'help' => 'Badge.'
@@ -3299,19 +5740,36 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'news1_title',
-                        'label' => 'News 1 Title',
+                        'label' => 'News 1 Headline',
                         'type' => 'text',
                         'default' => 'District Level Science Model Showcase',
-                        'help' => 'Headline.'
+                        'help' => 'Card title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'news1_desc',
                         'label' => 'News 1 Summary',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Students demonstrated innovative research prototypes and hydraulic mechanics models with outstanding presentation skills.',
-                        'help' => 'Description.'
+                        'help' => 'Card summary.'
                     ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'news1_link_text',
+                        'label' => 'News 1 Link Text',
+                        'type' => 'text',
+                        'default' => 'View Gallery Photos',
+                        'help' => 'Card link label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'news1_link_url',
+                        'label' => 'News 1 Target Link',
+                        'type' => 'text',
+                        'default' => 'gallery.php',
+                        'help' => 'Card link URL.'
+                    ],
+
                     // News 2
                     [
                         'kind' => 'image',
@@ -3324,15 +5782,15 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'news2_date',
-                        'label' => 'News 2 Date',
+                        'label' => 'News 2 Date (e.g. 15 AUG)',
                         'type' => 'text',
                         'default' => '15 AUG',
-                        'help' => 'Day & month.'
+                        'help' => 'Day & Month.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'news2_tag',
-                        'label' => 'News 2 Category',
+                        'label' => 'News 2 Category Badge',
                         'type' => 'text',
                         'default' => 'National Day',
                         'help' => 'Badge.'
@@ -3340,19 +5798,36 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'news2_title',
-                        'label' => 'News 2 Title',
+                        'label' => 'News 2 Headline',
                         'type' => 'text',
                         'default' => 'Independence Day Flag Hoisting & Parade',
-                        'help' => 'Headline.'
+                        'help' => 'Card title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'news2_desc',
                         'label' => 'News 2 Summary',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Celebrated with patriotic enthusiasm, tri-color flag unfurling by management, and spirited cultural performances.',
-                        'help' => 'Description.'
+                        'help' => 'Card summary.'
                     ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'news2_link_text',
+                        'label' => 'News 2 Link Text',
+                        'type' => 'text',
+                        'default' => 'View Celebrations',
+                        'help' => 'Card link label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'news2_link_url',
+                        'label' => 'News 2 Target Link',
+                        'type' => 'text',
+                        'default' => 'gallery.php',
+                        'help' => 'Card link URL.'
+                    ],
+
                     // News 3
                     [
                         'kind' => 'image',
@@ -3365,15 +5840,15 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'news3_date',
-                        'label' => 'News 3 Date',
+                        'label' => 'News 3 Date (e.g. 05 SEP)',
                         'type' => 'text',
                         'default' => '05 SEP',
-                        'help' => 'Day & month.'
+                        'help' => 'Day & Month.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'news3_tag',
-                        'label' => 'News 3 Category',
+                        'label' => 'News 3 Category Badge',
                         'type' => 'text',
                         'default' => 'Honors',
                         'help' => 'Badge.'
@@ -3381,19 +5856,36 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'news3_title',
-                        'label' => 'News 3 Title',
+                        'label' => 'News 3 Headline',
                         'type' => 'text',
                         'default' => 'Institutional Excellence Award to School',
-                        'help' => 'Headline.'
+                        'help' => 'Card title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'news3_desc',
                         'label' => 'News 3 Summary',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Sun Rise Sr. Sec. School recognized for exceptional academic standards and community educational leadership in Hisar region.',
-                        'help' => 'Description.'
+                        'help' => 'Card summary.'
                     ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'news3_link_text',
+                        'label' => 'News 3 Link Text',
+                        'type' => 'text',
+                        'default' => 'Read About Us',
+                        'help' => 'Card link label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'news3_link_url',
+                        'label' => 'News 3 Target Link',
+                        'type' => 'text',
+                        'default' => 'about-us.php',
+                        'help' => 'Card link URL.'
+                    ],
+
                     // News 4
                     [
                         'kind' => 'image',
@@ -3406,15 +5898,15 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'news4_date',
-                        'label' => 'News 4 Date',
+                        'label' => 'News 4 Date (e.g. 12 MAY)',
                         'type' => 'text',
                         'default' => '12 MAY',
-                        'help' => 'Day & month.'
+                        'help' => 'Day & Month.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'news4_tag',
-                        'label' => 'News 4 Category',
+                        'label' => 'News 4 Category Badge',
                         'type' => 'text',
                         'default' => 'Press',
                         'help' => 'Badge.'
@@ -3422,41 +5914,101 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'news4_title',
-                        'label' => 'News 4 Title',
+                        'label' => 'News 4 Headline',
                         'type' => 'text',
                         'default' => 'Media Coverage: Board Exam Triumphs',
-                        'help' => 'Headline.'
+                        'help' => 'Card title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'news4_desc',
                         'label' => 'News 4 Summary',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Prominent regional newspapers report on the extraordinary 100% HBSE board passing rate and high scoring records of our students.',
-                        'help' => 'Description.'
+                        'help' => 'Card summary.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'news4_link_text',
+                        'label' => 'News 4 Link Text',
+                        'type' => 'text',
+                        'default' => 'View Academic Results',
+                        'help' => 'Card link label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'news4_link_url',
+                        'label' => 'News 4 Target Link',
+                        'type' => 'text',
+                        'default' => 'admission.php',
+                        'help' => 'Card link URL.'
                     ]
                 ]
             ],
+
+            // Section 3: Academic Calendar Box & Agenda Notices
             [
                 'title' => 'Section 3: Academic Calendar Box & Agenda Notices',
                 'icon'  => 'calendar_month',
-                'desc'  => 'Sidebar academic calendar highlight and upcoming agenda notices.',
+                'desc'  => 'Sidebar academic schedule highlight card and 3 upcoming agenda items with dates and times.',
                 'fields' => [
                     [
                         'kind' => 'text',
+                        'key' => 'calendar_eyebrow',
+                        'label' => 'Calendar Box Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Academic Schedule',
+                        'help' => 'Tag inside the blue calendar card.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'calendar_title',
-                        'label' => 'Calendar Box Title',
+                        'label' => 'Calendar Box Heading',
                         'type' => 'text',
                         'default' => 'School Calendar',
-                        'help' => 'Sidebar title.'
+                        'help' => 'Sidebar calendar title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'calendar_desc',
                         'label' => 'Calendar Box Description',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Check term schedules, periodic unit tests, quarterly assessments, board pre-boards, and gazetted school holidays.',
                         'help' => 'Calendar summary.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'calendar_btn_text',
+                        'label' => 'Calendar Box Button Text',
+                        'type' => 'text',
+                        'default' => 'View Academic Syllabus',
+                        'help' => 'Calendar CTA button label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'calendar_btn_link',
+                        'label' => 'Calendar Box Button Target Link',
+                        'type' => 'text',
+                        'default' => 'academics.php',
+                        'help' => 'Calendar CTA destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'agenda_heading',
+                        'label' => 'Agenda Card Main Heading',
+                        'type' => 'text',
+                        'default' => 'Upcoming Agenda',
+                        'help' => 'Heading of agenda mini-list.'
+                    ],
+
+                    // Agenda 1
+                    [
+                        'kind' => 'text',
+                        'key' => 'agenda1_date',
+                        'label' => 'Agenda 1 Date (e.g. 10 OCT)',
+                        'type' => 'text',
+                        'default' => '10 OCT',
+                        'help' => 'Day & Month.'
                     ],
                     [
                         'kind' => 'text',
@@ -3464,15 +6016,25 @@ $pages_config = [
                         'label' => 'Agenda 1 Title',
                         'type' => 'text',
                         'default' => 'Parent-Teacher Meeting (PTM)',
-                        'help' => 'Agenda item 1.'
+                        'help' => 'Title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'agenda1_time',
-                        'label' => 'Agenda 1 Time',
+                        'label' => 'Agenda 1 Time / Schedule',
                         'type' => 'text',
                         'default' => '09:00 AM - 01:00 PM',
-                        'help' => 'Timing.'
+                        'help' => 'Time.'
+                    ],
+
+                    // Agenda 2
+                    [
+                        'kind' => 'text',
+                        'key' => 'agenda2_date',
+                        'label' => 'Agenda 2 Date (e.g. 14 NOV)',
+                        'type' => 'text',
+                        'default' => '14 NOV',
+                        'help' => 'Day & Month.'
                     ],
                     [
                         'kind' => 'text',
@@ -3480,7 +6042,25 @@ $pages_config = [
                         'label' => 'Agenda 2 Title',
                         'type' => 'text',
                         'default' => "Children's Day Cultural Fest",
-                        'help' => 'Agenda item 2.'
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'agenda2_time',
+                        'label' => 'Agenda 2 Time / Schedule',
+                        'type' => 'text',
+                        'default' => 'Full School Day',
+                        'help' => 'Time.'
+                    ],
+
+                    // Agenda 3
+                    [
+                        'kind' => 'text',
+                        'key' => 'agenda3_date',
+                        'label' => 'Agenda 3 Date (e.g. 22 DEC)',
+                        'type' => 'text',
+                        'default' => '22 DEC',
+                        'help' => 'Day & Month.'
                     ],
                     [
                         'kind' => 'text',
@@ -3488,7 +6068,652 @@ $pages_config = [
                         'label' => 'Agenda 3 Title',
                         'type' => 'text',
                         'default' => 'National Mathematics Day Quiz',
-                        'help' => 'Agenda item 3.'
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'agenda3_time',
+                        'label' => 'Agenda 3 Time / Schedule',
+                        'type' => 'text',
+                        'default' => '10:00 AM - 12:30 PM',
+                        'help' => 'Time.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'agenda_footer_text',
+                        'label' => 'Agenda Footer Inquiry Link Text',
+                        'type' => 'text',
+                        'default' => 'Contact School Office for Inquiries →',
+                        'help' => 'Bottom link label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'agenda_footer_link',
+                        'label' => 'Agenda Footer Target Link',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Bottom link destination.'
+                    ]
+                ]
+            ],
+
+            // Section 4: Functions & Student Co-Curricular Activities (12 Cards)
+            [
+                'title' => 'Section 4: Functions & Student Co-Curricular Activities (12 Cards)',
+                'icon'  => 'theater_comedy',
+                'desc'  => 'Header details and custom titles/descriptions for all 12 co-curricular school function cards.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'functions_eyebrow',
+                        'label' => 'Functions Section Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Holistic Development',
+                        'help' => 'Eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'functions_heading',
+                        'label' => 'Functions Section Main Heading',
+                        'type' => 'text',
+                        'default' => 'Functions & Student Activities',
+                        'help' => 'Main headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'functions_desc',
+                        'label' => 'Functions Section Overview Subtitle',
+                        'type' => 'textarea',
+                        'default' => 'From cultural pageants and annual sports meets to science exhibitions and academic olympiads, our students flourish across a vibrant calendar of events.',
+                        'help' => 'Overview description.'
+                    ],
+
+                    // 1. Annual Function
+                    [
+                        'kind' => 'text',
+                        'key' => 'func1_title',
+                        'label' => 'Function 1 Title',
+                        'type' => 'text',
+                        'default' => 'Annual Function',
+                        'help' => 'Card 1 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func1_desc',
+                        'label' => 'Function 1 Description',
+                        'type' => 'text',
+                        'default' => 'Grand cultural showcase featuring theatrical acts, music, and dance.',
+                        'help' => 'Card 1 description.'
+                    ],
+
+                    // 2. Result Declaration Day
+                    [
+                        'kind' => 'text',
+                        'key' => 'func2_title',
+                        'label' => 'Function 2 Title',
+                        'type' => 'text',
+                        'default' => 'Result Declaration Day',
+                        'help' => 'Card 2 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func2_desc',
+                        'label' => 'Function 2 Description',
+                        'type' => 'text',
+                        'default' => 'Annual academic felicitation day honoring class and board rankers.',
+                        'help' => 'Card 2 description.'
+                    ],
+
+                    // 3. Annual Sports Meet
+                    [
+                        'kind' => 'text',
+                        'key' => 'func3_title',
+                        'label' => 'Function 3 Title',
+                        'type' => 'text',
+                        'default' => 'Annual Sports Meet',
+                        'help' => 'Card 3 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func3_desc',
+                        'label' => 'Function 3 Description',
+                        'type' => 'text',
+                        'default' => 'Inter-house track and field competitions, relay races, and games.',
+                        'help' => 'Card 3 description.'
+                    ],
+
+                    // 4. Cultural Fest
+                    [
+                        'kind' => 'text',
+                        'key' => 'func4_title',
+                        'label' => 'Function 4 Title',
+                        'type' => 'text',
+                        'default' => 'Cultural Fest',
+                        'help' => 'Card 4 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func4_desc',
+                        'label' => 'Function 4 Description',
+                        'type' => 'text',
+                        'default' => 'Folk traditions, patriotic celebrations, skits, and instrumental music.',
+                        'help' => 'Card 4 description.'
+                    ],
+
+                    // 5. Farewell Ceremony
+                    [
+                        'kind' => 'text',
+                        'key' => 'func5_title',
+                        'label' => 'Function 5 Title',
+                        'type' => 'text',
+                        'default' => 'Farewell Ceremony',
+                        'help' => 'Card 5 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func5_desc',
+                        'label' => 'Function 5 Description',
+                        'type' => 'text',
+                        'default' => 'Blessings, mentorship, and warm send-off for passing-out Class 12 batches.',
+                        'help' => 'Card 5 description.'
+                    ],
+
+                    // 6. Alumni Meet
+                    [
+                        'kind' => 'text',
+                        'key' => 'func6_title',
+                        'label' => 'Function 6 Title',
+                        'type' => 'text',
+                        'default' => 'Alumni Meet',
+                        'help' => 'Card 6 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func6_desc',
+                        'label' => 'Function 6 Description',
+                        'type' => 'text',
+                        'default' => 'Reconnecting former students serving in administration, defence, and academia.',
+                        'help' => 'Card 6 description.'
+                    ],
+
+                    // 7. Quiz Competition
+                    [
+                        'kind' => 'text',
+                        'key' => 'func7_title',
+                        'label' => 'Function 7 Title',
+                        'type' => 'text',
+                        'default' => 'Quiz Competition',
+                        'help' => 'Card 7 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func7_desc',
+                        'label' => 'Function 7 Description',
+                        'type' => 'text',
+                        'default' => 'Block and district level GK, science, and history quiz contests.',
+                        'help' => 'Card 7 description.'
+                    ],
+
+                    // 8. Science Exhibition
+                    [
+                        'kind' => 'text',
+                        'key' => 'func8_title',
+                        'label' => 'Function 8 Title',
+                        'type' => 'text',
+                        'default' => 'Science Exhibition',
+                        'help' => 'Card 8 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func8_desc',
+                        'label' => 'Function 8 Description',
+                        'type' => 'text',
+                        'default' => 'Interactive working models in robotics, physics, ecology, and chemistry.',
+                        'help' => 'Card 8 description.'
+                    ],
+
+                    // 9. Rangoli Competitions
+                    [
+                        'kind' => 'text',
+                        'key' => 'func9_title',
+                        'label' => 'Function 9 Title',
+                        'type' => 'text',
+                        'default' => 'Rangoli Competitions',
+                        'help' => 'Card 9 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func9_desc',
+                        'label' => 'Function 9 Description',
+                        'type' => 'text',
+                        'default' => 'Festive creativity celebrating Indian heritage, colors, and art forms.',
+                        'help' => 'Card 9 description.'
+                    ],
+
+                    // 10. Debate Competitions
+                    [
+                        'kind' => 'text',
+                        'key' => 'func10_title',
+                        'label' => 'Function 10 Title',
+                        'type' => 'text',
+                        'default' => 'Debate Competitions',
+                        'help' => 'Card 10 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func10_desc',
+                        'label' => 'Function 10 Description',
+                        'type' => 'text',
+                        'default' => 'Honing articulate expression, critical thinking, and public speaking.',
+                        'help' => 'Card 10 description.'
+                    ],
+
+                    // 11. Olympiad Participation
+                    [
+                        'kind' => 'text',
+                        'key' => 'func11_title',
+                        'label' => 'Function 11 Title',
+                        'type' => 'text',
+                        'default' => 'Olympiad Participation',
+                        'help' => 'Card 11 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func11_desc',
+                        'label' => 'Function 11 Description',
+                        'type' => 'text',
+                        'default' => 'National science, mathematics, and cyber olympiad competitive testing.',
+                        'help' => 'Card 11 description.'
+                    ],
+
+                    // 12. Educational Seminars & Tours
+                    [
+                        'kind' => 'text',
+                        'key' => 'func12_title',
+                        'label' => 'Function 12 Title',
+                        'type' => 'text',
+                        'default' => 'Seminars & Tours',
+                        'help' => 'Card 12 title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'func12_desc',
+                        'label' => 'Function 12 Description',
+                        'type' => 'text',
+                        'default' => 'Career guidance workshops and educational excursions to historic and scientific sites.',
+                        'help' => 'Card 12 description.'
+                    ]
+                ]
+            ],
+
+            // Section 5: Hall of Fame — Sports Achievements
+            [
+                'title' => 'Section 5: Hall of Fame — Sports Achievements (4 Honors)',
+                'icon'  => 'trophy',
+                'desc'  => 'Card headers, medals, championship titles, and achievement descriptions for state & national athletics.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_achieve_tag',
+                        'label' => 'Sports Card Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'State & National Honors',
+                        'help' => 'Eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_achieve_title',
+                        'label' => 'Sports Card Main Heading',
+                        'type' => 'text',
+                        'default' => 'Sports Achievements',
+                        'help' => 'Headline.'
+                    ],
+
+                    // Sports Item 1
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item1_badge',
+                        'label' => 'Honor 1 Medal Emoji/Icon',
+                        'type' => 'text',
+                        'default' => '🥇',
+                        'help' => 'Medal emoji or badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item1_sub',
+                        'label' => 'Honor 1 Year & Championship Name',
+                        'type' => 'text',
+                        'default' => '2023 • National Sub-Junior Wrestling Championship',
+                        'help' => 'Championship headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item1_title',
+                        'label' => 'Honor 1 Medal Count / Position',
+                        'type' => 'text',
+                        'default' => '2 Gold Medals',
+                        'help' => 'Position won.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item1_desc',
+                        'label' => 'Honor 1 Summary Description',
+                        'type' => 'text',
+                        'default' => 'Outstanding national glory in sub-junior wrestling representing Haryana.',
+                        'help' => 'Honor summary.'
+                    ],
+
+                    // Sports Item 2
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item2_badge',
+                        'label' => 'Honor 2 Medal Emoji/Icon',
+                        'type' => 'text',
+                        'default' => '🥈',
+                        'help' => 'Medal emoji or badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item2_sub',
+                        'label' => 'Honor 2 Year & Championship Name',
+                        'type' => 'text',
+                        'default' => '2018 & 2019 • State Level Kickboxing Championship',
+                        'help' => 'Championship headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item2_title',
+                        'label' => 'Honor 2 Medal Count / Position',
+                        'type' => 'text',
+                        'default' => '2 Silver Medals & 1 Bronze Medal (2018)',
+                        'help' => 'Position won.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item2_desc',
+                        'label' => 'Honor 2 Summary Description',
+                        'type' => 'text',
+                        'default' => 'Continuous podium finishes at the Haryana State Kickboxing Tournaments.',
+                        'help' => 'Honor summary.'
+                    ],
+
+                    // Sports Item 3
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item3_badge',
+                        'label' => 'Honor 3 Medal Emoji/Icon',
+                        'type' => 'text',
+                        'default' => '🥉',
+                        'help' => 'Medal emoji or badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item3_sub',
+                        'label' => 'Honor 3 Year & Championship Name',
+                        'type' => 'text',
+                        'default' => '2017 • District Kickboxing Tournament',
+                        'help' => 'Championship headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item3_title',
+                        'label' => 'Honor 3 Medal Count / Position',
+                        'type' => 'text',
+                        'default' => '1 Bronze Medal',
+                        'help' => 'Position won.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item3_desc',
+                        'label' => 'Honor 3 Summary Description',
+                        'type' => 'text',
+                        'default' => 'Remarkable district level combat sports victory in Hisar.',
+                        'help' => 'Honor summary.'
+                    ],
+
+                    // Sports Item 4
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item4_badge',
+                        'label' => 'Honor 4 Medal Emoji/Icon',
+                        'type' => 'text',
+                        'default' => '🏃',
+                        'help' => 'Medal emoji or badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item4_sub',
+                        'label' => 'Honor 4 Year & Championship Name',
+                        'type' => 'text',
+                        'default' => '2014, 2015 & 2016 • SPAT Athletic Competition',
+                        'help' => 'Championship headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item4_title',
+                        'label' => 'Honor 4 Medal Count / Position',
+                        'type' => 'text',
+                        'default' => '5 Students Selected in Sports Physical Aptitude Test',
+                        'help' => 'Position won.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_item4_desc',
+                        'label' => 'Honor 4 Summary Description',
+                        'type' => 'text',
+                        'default' => 'Selected for government athletic sponsorship through rigorous athletic testing.',
+                        'help' => 'Honor summary.'
+                    ],
+
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_achieve_footer',
+                        'label' => 'Sports Card Footer Disciplines Note',
+                        'type' => 'text',
+                        'default' => 'Disciplines: Wrestling • Kickboxing • Athletics',
+                        'help' => 'Left bottom label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_achieve_link_text',
+                        'label' => 'Sports Card Link Text',
+                        'type' => 'text',
+                        'default' => 'Sports Ground →',
+                        'help' => 'Right bottom link text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'sports_achieve_link_url',
+                        'label' => 'Sports Card Target Link',
+                        'type' => 'text',
+                        'default' => 'campus.php#sports',
+                        'help' => 'Right bottom destination.'
+                    ]
+                ]
+            ],
+
+            // Section 6: Hall of Fame — Institutional & Academic Awards
+            [
+                'title' => 'Section 6: Hall of Fame — Institutional & Academic Awards (4 Accolades)',
+                'icon'  => 'workspace_premium',
+                'desc'  => 'Titles, prize positions, and recognition details for institutional competitions and science fairs.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'school_awards_tag',
+                        'label' => 'Awards Card Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Institutional Triumphs',
+                        'help' => 'Eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'school_awards_title',
+                        'label' => 'Awards Card Main Heading',
+                        'type' => 'text',
+                        'default' => 'Awards Achieved by School',
+                        'help' => 'Headline.'
+                    ],
+
+                    // Award 1
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item1_badge',
+                        'label' => 'Award 1 Star/Icon',
+                        'type' => 'text',
+                        'default' => '★',
+                        'help' => 'Badge icon.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item1_sub',
+                        'label' => 'Award 1 Year & Competition Name',
+                        'type' => 'text',
+                        'default' => '2022 • Block Level Quiz Competition',
+                        'help' => 'Event name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item1_title',
+                        'label' => 'Award 1 Position Won',
+                        'type' => 'text',
+                        'default' => '1st Position / Winner',
+                        'help' => 'Rank/Position.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item1_desc',
+                        'label' => 'Award 1 Summary Description',
+                        'type' => 'text',
+                        'default' => 'Outperformed top regional institutions with deep general awareness and speed.',
+                        'help' => 'Summary.'
+                    ],
+
+                    // Award 2
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item2_badge',
+                        'label' => 'Award 2 Star/Icon',
+                        'type' => 'text',
+                        'default' => '★',
+                        'help' => 'Badge icon.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item2_sub',
+                        'label' => 'Award 2 Year & Competition Name',
+                        'type' => 'text',
+                        'default' => '2017 • Talent Search Examination (Block Level)',
+                        'help' => 'Event name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item2_title',
+                        'label' => 'Award 2 Position Won',
+                        'type' => 'text',
+                        'default' => 'Winner & Rural Topper • 1st, 2nd & 3rd Positions',
+                        'help' => 'Rank/Position.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item2_desc',
+                        'label' => 'Award 2 Summary Description',
+                        'type' => 'text',
+                        'default' => 'Swept top 3 ranks among participants from more than 25 schools and over 1,500 students.',
+                        'help' => 'Summary.'
+                    ],
+
+                    // Award 3
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item3_badge',
+                        'label' => 'Award 3 Star/Icon',
+                        'type' => 'text',
+                        'default' => '★',
+                        'help' => 'Badge icon.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item3_sub',
+                        'label' => 'Award 3 Year & Competition Name',
+                        'type' => 'text',
+                        'default' => '2016 • Physics Point Prize Test',
+                        'help' => 'Event name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item3_title',
+                        'label' => 'Award 3 Position Won',
+                        'type' => 'text',
+                        'default' => 'Best School Award • 10 Students in Top 200',
+                        'help' => 'Rank/Position.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item3_desc',
+                        'label' => 'Award 3 Summary Description',
+                        'type' => 'text',
+                        'default' => 'Conferred Best School Award; 10 students ranked within top 200 out of 2,700+ participants.',
+                        'help' => 'Summary.'
+                    ],
+
+                    // Award 4
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item4_badge',
+                        'label' => 'Award 4 Star/Icon',
+                        'type' => 'text',
+                        'default' => '★',
+                        'help' => 'Badge icon.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item4_sub',
+                        'label' => 'Award 4 Year & Competition Name',
+                        'type' => 'text',
+                        'default' => '2013 • Science Exhibition at CCSHAU, Hisar',
+                        'help' => 'Event name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item4_title',
+                        'label' => 'Award 4 Position Won',
+                        'type' => 'text',
+                        'default' => 'State Level Selection (2 Students)',
+                        'help' => 'Rank/Position.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'award_item4_desc',
+                        'label' => 'Award 4 Summary Description',
+                        'type' => 'text',
+                        'default' => 'Recognized for innovative scientific project design and state-level representation.',
+                        'help' => 'Summary.'
+                    ],
+
+                    [
+                        'kind' => 'text',
+                        'key' => 'school_awards_footer',
+                        'label' => 'Awards Card Footer Pass Record Note',
+                        'type' => 'text',
+                        'default' => 'Board Examination: 100% Pass Record',
+                        'help' => 'Left bottom label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'school_awards_link_text',
+                        'label' => 'Awards Card Link Text',
+                        'type' => 'text',
+                        'default' => 'View Board Toppers →',
+                        'help' => 'Right bottom link text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'school_awards_link_url',
+                        'label' => 'Awards Card Target Link',
+                        'type' => 'text',
+                        'default' => 'academics.php#toppers',
+                        'help' => 'Right bottom destination.'
                     ]
                 ]
             ]
@@ -4269,18 +7494,19 @@ $pages_config = [
     'gallery' => [
         'title' => 'Photo Gallery',
         'icon'  => 'photo_library',
-        'desc'  => 'Hero Banner and 8 Curated Visual Archive Photographs with Categories and Titles',
+        'desc'  => 'Hero Banner, Visual Stats Strip, Filter Bar Intro, 12 High-Res Showcase Cards, Campus Life Highlights & Visit CTA',
         'sections' => [
+            // Section 1: Hero Banner & Quick Actions
             [
-                'title' => 'Section 1: Hero Banner & Header',
+                'title' => 'Section 1: Hero Banner & Quick Actions',
                 'icon'  => 'flag',
-                'desc'  => 'Main header background banner, eyebrow, title, and description.',
+                'desc'  => 'Main header background banner, eyebrow badge, headline, subtitle, archive badge, and CTA buttons.',
                 'fields' => [
                     [
                         'kind' => 'image',
                         'key' => 'hero_banner',
                         'label' => 'Gallery Hero Banner Image',
-                        'default' => 'assets/images/sunrise school image/exhibition.webp',
+                        'default' => 'assets/images/sunrise school image/exhibition1.webp',
                         'alt' => 'Visual Chronicle Banner',
                         'help' => 'Top background image.'
                     ],
@@ -4290,12 +7516,12 @@ $pages_config = [
                         'label' => 'Hero Eyebrow Badge',
                         'type' => 'text',
                         'default' => 'Visual Chronicle',
-                        'help' => 'Badge.'
+                        'help' => 'Badge tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_title',
-                        'label' => 'Gallery Banner Title',
+                        'label' => 'Gallery Main Heading',
                         'type' => 'text',
                         'default' => 'Life & Moments at Sun Rise School',
                         'help' => 'Headline.'
@@ -4303,26 +7529,198 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'hero_subtitle',
-                        'label' => 'Gallery Banner Description',
-                        'type' => 'text',
+                        'label' => 'Gallery Subtitle Description',
+                        'type' => 'textarea',
                         'default' => 'Explore photographs capturing academic curiosity, hands-on science exhibitions, athletic triumphs, yoga mornings, and merit celebrations across our Dobhi campus.',
-                        'help' => 'Description.'
+                        'help' => 'Description paragraph.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_archive_badge',
+                        'label' => 'Hero Archive Pill Badge',
+                        'type' => 'text',
+                        'default' => 'Official School Photo Archive • 100+ High-Resolution Moments',
+                        'help' => 'Pill text above/below description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn1_text',
+                        'label' => 'Hero Primary Action Button Text',
+                        'type' => 'text',
+                        'default' => 'Browse Photo Categories',
+                        'help' => 'Scroll to filter bar.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn1_link',
+                        'label' => 'Hero Primary Action Button Link',
+                        'type' => 'text',
+                        'default' => '#gallery-filters',
+                        'help' => 'Destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn2_text',
+                        'label' => 'Hero Secondary Action Button Text',
+                        'type' => 'text',
+                        'default' => 'Schedule Campus Visit',
+                        'help' => 'Secondary CTA.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn2_link',
+                        'label' => 'Hero Secondary Action Button Link',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Destination.'
                     ]
                 ]
             ],
+
+            // Section 2: Campus Visual Metrics Strip
             [
-                'title' => 'Section 2: Visual Archive Photographs (8 Items)',
+                'title' => 'Section 2: Campus Visual Metrics Strip (4 Highlights)',
+                'icon'  => 'speed',
+                'desc'  => 'Prominent 4-metric statistics strip floating beneath the hero section.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat1_num',
+                        'label' => 'Metric 1 Value',
+                        'type' => 'text',
+                        'default' => '1,200+',
+                        'help' => 'Stat 1 number.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat1_lbl',
+                        'label' => 'Metric 1 Label',
+                        'type' => 'text',
+                        'default' => 'Active Students',
+                        'help' => 'Stat 1 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat2_num',
+                        'label' => 'Metric 2 Value',
+                        'type' => 'text',
+                        'default' => '25+',
+                        'help' => 'Stat 2 number.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat2_lbl',
+                        'label' => 'Metric 2 Label',
+                        'type' => 'text',
+                        'default' => 'Annual Events & Fests',
+                        'help' => 'Stat 2 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat3_num',
+                        'label' => 'Metric 3 Value',
+                        'type' => 'text',
+                        'default' => '5+ Acres',
+                        'help' => 'Stat 3 number.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat3_lbl',
+                        'label' => 'Metric 3 Label',
+                        'type' => 'text',
+                        'default' => 'Lush Green Campus',
+                        'help' => 'Stat 3 description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat4_num',
+                        'label' => 'Metric 4 Value',
+                        'type' => 'text',
+                        'default' => '100%',
+                        'help' => 'Stat 4 number.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat4_lbl',
+                        'label' => 'Metric 4 Label',
+                        'type' => 'text',
+                        'default' => 'Memorable Moments',
+                        'help' => 'Stat 4 description.'
+                    ]
+                ]
+            ],
+
+            // Section 3: Photo Directory Overview & Category Navigation
+            [
+                'title' => 'Section 3: Photo Directory Overview & Category Navigation',
+                'icon'  => 'filter_list',
+                'desc'  => 'Header eyebrow, title, and descriptive narrative introducing the category filter buttons.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_intro_eyebrow',
+                        'label' => 'Directory Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Curated Photographic Archive',
+                        'help' => 'Eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_intro_title',
+                        'label' => 'Directory Main Heading',
+                        'type' => 'text',
+                        'default' => 'Moments That Define Our School',
+                        'help' => 'Headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_intro_desc',
+                        'label' => 'Directory Overview Description',
+                        'type' => 'textarea',
+                        'default' => 'Filter by category to explore science exhibitions, sports championships, national day celebrations, board exam toppers, campus facilities, and dedicated faculty.',
+                        'help' => 'Summary text.'
+                    ]
+                ]
+            ],
+
+            // Section 4: Visual Archive Photographs (12 Curated Showcase Cards)
+            [
+                'title' => 'Section 4: Visual Archive Photographs (12 Curated Showcase Cards)',
                 'icon'  => 'grid_on',
-                'desc'  => 'Curated exhibition, awards, sports, yoga, toppers, campus, and smart class pictures.',
+                'desc'  => 'Photos, category filters, pill tags, subtitles, headlines, and descriptions for all 12 gallery cards.',
                 'fields' => [
                     // Photo 1
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img1',
-                        'label' => 'Photo 1 (Science Exhibition)',
+                        'label' => 'Photo 1 Image (Science Exhibition)',
                         'default' => 'assets/images/sunrise school image/exhibition.webp',
                         'alt' => 'Annual Science Exhibition',
                         'help' => 'Photo 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat1',
+                        'label' => 'Photo 1 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'exhibitions',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag1',
+                        'label' => 'Photo 1 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Exhibition',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow1',
+                        'label' => 'Photo 1 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Science & Innovation',
+                        'help' => 'Gold subtitle.'
                     ],
                     [
                         'kind' => 'text',
@@ -4336,18 +7734,43 @@ $pages_config = [
                         'kind' => 'text',
                         'key' => 'gallery_desc1',
                         'label' => 'Photo 1 Description',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Students presenting working models of solar technology and environmental systems.',
                         'help' => 'Description.'
                     ],
+
                     // Photo 2
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img2',
-                        'label' => 'Photo 2 (Annual Prize Distribution)',
+                        'label' => 'Photo 2 Image (Annual Prize Distribution)',
                         'default' => 'assets/images/sunrise school image/award_ceremony.webp',
                         'alt' => 'Annual Prize Distribution',
                         'help' => 'Photo 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat2',
+                        'label' => 'Photo 2 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'events',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag2',
+                        'label' => 'Photo 2 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Awards',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow2',
+                        'label' => 'Photo 2 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Felicitation',
+                        'help' => 'Gold subtitle.'
                     ],
                     [
                         'kind' => 'text',
@@ -4361,18 +7784,43 @@ $pages_config = [
                         'kind' => 'text',
                         'key' => 'gallery_desc2',
                         'label' => 'Photo 2 Description',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Honoring academic and extracurricular achievers on stage with trophies.',
                         'help' => 'Description.'
                     ],
+
                     // Photo 3
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img3',
-                        'label' => 'Photo 3 (Sports Activities)',
+                        'label' => 'Photo 3 Image (Sports Activities)',
                         'default' => 'assets/images/sunrise school image/students_ground.webp',
                         'alt' => 'Outdoor Ground Activities',
                         'help' => 'Photo 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat3',
+                        'label' => 'Photo 3 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'sports',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag3',
+                        'label' => 'Photo 3 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Sports',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow3',
+                        'label' => 'Photo 3 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Athletics',
+                        'help' => 'Gold subtitle.'
                     ],
                     [
                         'kind' => 'text',
@@ -4386,18 +7834,43 @@ $pages_config = [
                         'kind' => 'text',
                         'key' => 'gallery_desc3',
                         'label' => 'Photo 3 Description',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Students actively participating in outdoor sports, track drills, and team games.',
                         'help' => 'Description.'
                     ],
+
                     // Photo 4
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img4',
-                        'label' => 'Photo 4 (Yoga Day)',
+                        'label' => 'Photo 4 Image (Yoga Day)',
                         'default' => 'assets/images/sunrise school image/yoga.webp',
                         'alt' => 'International Yoga Day',
                         'help' => 'Photo 4.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat4',
+                        'label' => 'Photo 4 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'sports',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag4',
+                        'label' => 'Photo 4 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Wellness',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow4',
+                        'label' => 'Photo 4 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Morning Assembly',
+                        'help' => 'Gold subtitle.'
                     ],
                     [
                         'kind' => 'text',
@@ -4411,18 +7884,43 @@ $pages_config = [
                         'kind' => 'text',
                         'key' => 'gallery_desc4',
                         'label' => 'Photo 4 Description',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Mass yoga demonstration cultivating discipline, physical stamina, and peace of mind.',
                         'help' => 'Description.'
                     ],
+
                     // Photo 5
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img5',
-                        'label' => 'Photo 5 (Board Exam Toppers)',
+                        'label' => 'Photo 5 Image (Board Exam Toppers)',
                         'default' => 'assets/images/sunrise school image/toppers.webp',
                         'alt' => 'HBSE Board Exam Toppers',
                         'help' => 'Photo 5.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat5',
+                        'label' => 'Photo 5 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'toppers',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag5',
+                        'label' => 'Photo 5 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Board Toppers',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow5',
+                        'label' => 'Photo 5 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Merit Ranks',
+                        'help' => 'Gold subtitle.'
                     ],
                     [
                         'kind' => 'text',
@@ -4436,18 +7934,43 @@ $pages_config = [
                         'kind' => 'text',
                         'key' => 'gallery_desc5',
                         'label' => 'Photo 5 Description',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Celebrating our star achievers securing top percentiles in Class 10 & 12 exams.',
                         'help' => 'Description.'
                     ],
+
                     // Photo 6
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img6',
-                        'label' => 'Photo 6 (Shining Stars)',
+                        'label' => 'Photo 6 Image (Shining Stars)',
                         'default' => 'assets/images/sunrise school image/shinning_stars.webp',
                         'alt' => 'Shining Stars of Sun Rise',
                         'help' => 'Photo 6.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat6',
+                        'label' => 'Photo 6 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'toppers',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag6',
+                        'label' => 'Photo 6 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Merit Board',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow6',
+                        'label' => 'Photo 6 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Star Performers',
+                        'help' => 'Gold subtitle.'
                     ],
                     [
                         'kind' => 'text',
@@ -4461,43 +7984,93 @@ $pages_config = [
                         'kind' => 'text',
                         'key' => 'gallery_desc6',
                         'label' => 'Photo 6 Description',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Outstanding scholarship winners and position holders across all school grades.',
                         'help' => 'Description.'
                     ],
+
                     // Photo 7
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img7',
-                        'label' => 'Photo 7 (Campus Building)',
+                        'label' => 'Photo 7 Image (Campus Building)',
                         'default' => 'assets/images/sunrise school image/school_home1.webp',
                         'alt' => 'Main Campus Facade',
                         'help' => 'Photo 7.'
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'gallery_cat7',
+                        'label' => 'Photo 7 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'campus',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag7',
+                        'label' => 'Photo 7 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Campus',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow7',
+                        'label' => 'Photo 7 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Architecture',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'gallery_title7',
                         'label' => 'Photo 7 Title',
                         'type' => 'text',
-                        'default' => 'Main Campus Facade',
+                        'default' => 'Sun Rise School Front Elevation',
                         'help' => 'Title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_desc7',
                         'label' => 'Photo 7 Description',
-                        'type' => 'text',
-                        'default' => 'Modern school building architecture located in Dobhi, Hisar.',
+                        'type' => 'textarea',
+                        'default' => 'Grand campus frontage with landscaped green areas in Dobhi, Haryana.',
                         'help' => 'Description.'
                     ],
+
                     // Photo 8
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img8',
-                        'label' => 'Photo 8 (Smart Classrooms)',
+                        'label' => 'Photo 8 Image (Interactive Smart Classes)',
                         'default' => 'assets/images/sunrise school image/children_sitting.webp',
                         'alt' => 'Interactive Smart Classes',
                         'help' => 'Photo 8.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat8',
+                        'label' => 'Photo 8 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'campus',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag8',
+                        'label' => 'Photo 8 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Classroom',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow8',
+                        'label' => 'Photo 8 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Student Focus',
+                        'help' => 'Gold subtitle.'
                     ],
                     [
                         'kind' => 'text',
@@ -4511,9 +8084,393 @@ $pages_config = [
                         'kind' => 'text',
                         'key' => 'gallery_desc8',
                         'label' => 'Photo 8 Description',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Students engaged in dynamic discussion and visual conceptual learning.',
                         'help' => 'Description.'
+                    ],
+
+                    // Photo 9
+                    [
+                        'kind' => 'image',
+                        'key' => 'gallery_img9',
+                        'label' => 'Photo 9 Image (Science Lab Practicals)',
+                        'default' => 'assets/images/sunrise school image/lab_class.webp',
+                        'alt' => 'Senior Science Lab Practicals',
+                        'help' => 'Photo 9.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat9',
+                        'label' => 'Photo 9 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'exhibitions',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag9',
+                        'label' => 'Photo 9 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Science Lab',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow9',
+                        'label' => 'Photo 9 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Practical Learning',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_title9',
+                        'label' => 'Photo 9 Title',
+                        'type' => 'text',
+                        'default' => 'Senior Science Lab Practicals',
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_desc9',
+                        'label' => 'Photo 9 Description',
+                        'type' => 'textarea',
+                        'default' => 'Hands-on experimentation under the supervision of experienced physics & chemistry faculty.',
+                        'help' => 'Description.'
+                    ],
+
+                    // Photo 10
+                    [
+                        'kind' => 'image',
+                        'key' => 'gallery_img10',
+                        'label' => 'Photo 10 Image (Faculty & Mentors)',
+                        'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
+                        'alt' => 'Complete Teaching Faculty',
+                        'help' => 'Photo 10.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat10',
+                        'label' => 'Photo 10 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'faculty',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag10',
+                        'label' => 'Photo 10 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Staff Team',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow10',
+                        'label' => 'Photo 10 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Academic Mentors',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_title10',
+                        'label' => 'Photo 10 Title',
+                        'type' => 'text',
+                        'default' => 'Complete Teaching Faculty',
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_desc10',
+                        'label' => 'Photo 10 Description',
+                        'type' => 'textarea',
+                        'default' => 'The passionate educators steering Sun Rise Sr. Sec. School to educational greatness.',
+                        'help' => 'Description.'
+                    ],
+
+                    // Photo 11
+                    [
+                        'kind' => 'image',
+                        'key' => 'gallery_img11',
+                        'label' => 'Photo 11 Image (Exhibition Models & Innovation)',
+                        'default' => 'assets/images/sunrise school image/exhibition3.webp',
+                        'alt' => 'Interactive Science Models',
+                        'help' => 'Photo 11.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat11',
+                        'label' => 'Photo 11 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'exhibitions',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag11',
+                        'label' => 'Photo 11 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Projects',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow11',
+                        'label' => 'Photo 11 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Student Innovation',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_title11',
+                        'label' => 'Photo 11 Title',
+                        'type' => 'text',
+                        'default' => 'Interactive Science Models',
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_desc11',
+                        'label' => 'Photo 11 Description',
+                        'type' => 'textarea',
+                        'default' => 'Creative working models designed by students demonstrating physics principles.',
+                        'help' => 'Description.'
+                    ],
+
+                    // Photo 12
+                    [
+                        'kind' => 'image',
+                        'key' => 'gallery_img12',
+                        'label' => 'Photo 12 Image (National Day Celebration)',
+                        'default' => 'assets/images/sunrise school image/IMG_20210815_093156~2.webp',
+                        'alt' => 'Independence Day Celebration',
+                        'help' => 'Photo 12.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat12',
+                        'label' => 'Photo 12 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'type' => 'text',
+                        'default' => 'events',
+                        'help' => 'Filter key.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag12',
+                        'label' => 'Photo 12 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'National Day',
+                        'help' => 'Badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow12',
+                        'label' => 'Photo 12 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Patriotism',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_title12',
+                        'label' => 'Photo 12 Title',
+                        'type' => 'text',
+                        'default' => 'Independence Day Celebration',
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_desc12',
+                        'label' => 'Photo 12 Description',
+                        'type' => 'textarea',
+                        'default' => 'Flag hoisting, patriotic songs, and cultural march-past by students.',
+                        'help' => 'Description.'
+                    ]
+                ]
+            ],
+
+            // Section 5: Campus Life Highlights & Traditions
+            [
+                'title' => 'Section 5: Campus Life Highlights & Traditions (3 Feature Pillars)',
+                'icon'  => 'auto_stories',
+                'desc'  => 'Header titles and 3 holistic student experience cards covering prayer assemblies, fests, and sports.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'life_eyebrow',
+                        'label' => 'Life Section Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Holistic Student Experience',
+                        'help' => 'Eyebrow.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'life_heading',
+                        'label' => 'Life Section Main Heading',
+                        'type' => 'text',
+                        'default' => 'Vibrant Campus Life Beyond Classrooms',
+                        'help' => 'Headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'life_desc',
+                        'label' => 'Life Section Subtitle Description',
+                        'type' => 'textarea',
+                        'default' => 'At Sun Rise School, education flourishes through daily morning assemblies, active sports clubs, cultural celebrations, and community values.',
+                        'help' => 'Summary.'
+                    ],
+
+                    // Life Pillar 1
+                    [
+                        'kind' => 'text',
+                        'key' => 'life1_icon',
+                        'label' => 'Pillar 1 Material Icon Name',
+                        'type' => 'text',
+                        'default' => 'self_improvement',
+                        'help' => 'e.g. self_improvement, school, groups'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'life1_title',
+                        'label' => 'Pillar 1 Title',
+                        'type' => 'text',
+                        'default' => 'Morning Assembly & Moral Values',
+                        'help' => 'Pillar 1 Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'life1_desc',
+                        'label' => 'Pillar 1 Description',
+                        'type' => 'textarea',
+                        'default' => 'Daily prayer, news recitation, motivational thought sharing, and patriotic anthems shaping disciplined character.',
+                        'help' => 'Pillar 1 summary.'
+                    ],
+
+                    // Life Pillar 2
+                    [
+                        'kind' => 'text',
+                        'key' => 'life2_icon',
+                        'label' => 'Pillar 2 Material Icon Name',
+                        'type' => 'text',
+                        'default' => 'celebration',
+                        'help' => 'e.g. celebration, theater_comedy, sports_score'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'life2_title',
+                        'label' => 'Pillar 2 Title',
+                        'type' => 'text',
+                        'default' => 'Annual Cultural Pageants & Fests',
+                        'help' => 'Pillar 2 Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'life2_desc',
+                        'label' => 'Pillar 2 Description',
+                        'type' => 'textarea',
+                        'default' => 'Theatrical productions, folk dance performances, music recitals, and national festival celebrations on campus.',
+                        'help' => 'Pillar 2 summary.'
+                    ],
+
+                    // Life Pillar 3
+                    [
+                        'kind' => 'text',
+                        'key' => 'life3_icon',
+                        'label' => 'Pillar 3 Material Icon Name',
+                        'type' => 'text',
+                        'default' => 'sports_gymnastics',
+                        'help' => 'e.g. sports_gymnastics, sports_soccer, trophy'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'life3_title',
+                        'label' => 'Pillar 3 Title',
+                        'type' => 'text',
+                        'default' => 'Inter-House Athletics & Yoga Drills',
+                        'help' => 'Pillar 3 Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'life3_desc',
+                        'label' => 'Pillar 3 Description',
+                        'type' => 'textarea',
+                        'default' => 'Dedicated sports periods, athletics conditioning, yoga asanas, and district-level tournament coaching.',
+                        'help' => 'Pillar 3 summary.'
+                    ]
+                ]
+            ],
+
+            // Section 6: Guided Campus Tour & Visit Invitation CTA Banner
+            [
+                'title' => 'Section 6: Guided Campus Tour & Visit Invitation CTA Banner',
+                'icon'  => 'tour',
+                'desc'  => 'Full-width bottom invitation banner with background image, title, and action buttons.',
+                'fields' => [
+                    [
+                        'kind' => 'image',
+                        'key' => 'cta_bg',
+                        'label' => 'CTA Background Image',
+                        'default' => 'assets/images/sunrise school image/school_nightview.webp',
+                        'alt' => 'Campus Evening View',
+                        'help' => 'Banner background image.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_eyebrow',
+                        'label' => 'CTA Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Experience In Person',
+                        'help' => 'Small tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_heading',
+                        'label' => 'CTA Headline Title',
+                        'type' => 'text',
+                        'default' => 'Witness the Vibrant Energy of Sun Rise School',
+                        'help' => 'Main headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_desc',
+                        'label' => 'CTA Description Paragraph',
+                        'type' => 'textarea',
+                        'default' => 'Photographs only tell part of the story. Visit our Dobhi campus to experience our smart classrooms, open playgrounds, science labs, and meet our teachers.',
+                        'help' => 'Description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn1_text',
+                        'label' => 'CTA Button 1 Label (Primary)',
+                        'type' => 'text',
+                        'default' => 'Schedule Campus Visit',
+                        'help' => 'Primary button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn1_link',
+                        'label' => 'CTA Button 1 Target Link',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn2_text',
+                        'label' => 'CTA Button 2 Label (Secondary)',
+                        'type' => 'text',
+                        'default' => 'Admissions Information',
+                        'help' => 'Secondary button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn2_link',
+                        'label' => 'CTA Button 2 Target Link',
+                        'type' => 'text',
+                        'default' => 'admission.php',
+                        'help' => 'Destination.'
                     ]
                 ]
             ]
@@ -4522,12 +8479,12 @@ $pages_config = [
     'contact' => [
         'title' => 'Contact Us',
         'icon'  => 'contact_support',
-        'desc'  => 'Hero Banner, Inquiry Desk Intro, Office Hours, Campus Photo Card & Academic Wings',
+        'desc'  => 'Hero Banner, Inquiry Form, Office Hours, 4 Department Desks, 3 Academic Wings, Interactive Google Map, WhatsApp Banner & FAQ Accordion',
         'sections' => [
             [
-                'title' => 'Section 1: Hero Banner & Header',
+                'title' => 'Section 1: Hero Banner & Quick Contact Links',
                 'icon'  => 'flag',
-                'desc'  => 'Top banner image, eyebrow, page title, and subtitle.',
+                'desc'  => 'Top banner image, badge, headline, subtitle, quick info pill badges, and direct call-to-action button.',
                 'fields' => [
                     [
                         'kind' => 'image',
@@ -4543,7 +8500,7 @@ $pages_config = [
                         'label' => 'Hero Eyebrow Badge',
                         'type' => 'text',
                         'default' => 'Get in Touch',
-                        'help' => 'Badge.'
+                        'help' => 'Top pill tag.'
                     ],
                     [
                         'kind' => 'text',
@@ -4551,22 +8508,62 @@ $pages_config = [
                         'label' => 'Contact Page Title',
                         'type' => 'text',
                         'default' => 'Connect with Sun Rise School',
-                        'help' => 'Headline at top of contact-us.php.'
+                        'help' => 'Main headline on contact page.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_subtitle',
                         'label' => 'Contact Subtitle',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'We welcome parents, prospective students, and guardians to visit our campus or get in touch for admissions, bus routes, and general inquiries.',
                         'help' => 'Intro text for contact page.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_pill1_text',
+                        'label' => 'Hero Contact Pill 1',
+                        'type' => 'text',
+                        'default' => 'Dobhi, Hisar (Haryana)',
+                        'help' => 'Location pill badge in hero.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_pill2_text',
+                        'label' => 'Hero Contact Pill 2',
+                        'type' => 'text',
+                        'default' => '+91 70158 90094',
+                        'help' => 'Phone helpline pill in hero.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_pill3_text',
+                        'label' => 'Hero Contact Pill 3',
+                        'type' => 'text',
+                        'default' => 'Mon–Sat: 8:00 AM – 2:30 PM',
+                        'help' => 'Timings pill in hero.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn_text',
+                        'label' => 'Hero CTA Button Text',
+                        'type' => 'text',
+                        'default' => 'Send an Online Message',
+                        'help' => 'CTA button label scrolling to inquiry form.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn_link',
+                        'label' => 'Hero CTA Button Anchor/Link',
+                        'type' => 'text',
+                        'default' => '#inquiry-form',
+                        'help' => 'Target anchor or URL for hero button.'
                     ]
                 ]
             ],
             [
-                'title' => 'Section 2: Inquiry Desk Intro',
+                'title' => 'Section 2: Inquiry Desk & Contact Form Header',
                 'icon'  => 'mail',
-                'desc'  => 'Heading and subtitle above the contact form.',
+                'desc'  => 'Form eyebrow tag, main heading, explanatory note, submit button label, and submission confirmation message.',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -4574,7 +8571,7 @@ $pages_config = [
                         'label' => 'Form Eyebrow',
                         'type' => 'text',
                         'default' => 'Inquiry Desk',
-                        'help' => 'Tag.'
+                        'help' => 'Small uppercase tag above form title.'
                     ],
                     [
                         'kind' => 'text',
@@ -4582,85 +8579,529 @@ $pages_config = [
                         'label' => 'Form Heading',
                         'type' => 'text',
                         'default' => 'Send Us a Message',
-                        'help' => 'Heading.'
+                        'help' => 'Main heading for the contact form.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'form_desc',
                         'label' => 'Form Description',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Fill out the quick form below and our administrative team will respond to your queries promptly.',
-                        'help' => 'Description.'
+                        'help' => 'Helpful note above the form fields.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'form_btn_text',
+                        'label' => 'Form Submit Button Text',
+                        'type' => 'text',
+                        'default' => 'Submit Message',
+                        'help' => 'Text inside the gold submit button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'form_success_msg',
+                        'label' => 'Form Success Alert Message',
+                        'type' => 'textarea',
+                        'default' => 'Thank you for reaching out to Sun Rise Sr. Sec. School. Your message has been received by our office desk and we will contact you shortly.',
+                        'help' => 'Alert message displayed to parents upon submission.'
                     ]
                 ]
             ],
             [
-                'title' => 'Section 3: Office Hours & Campus Photo Card',
+                'title' => 'Section 3: Campus Office Information & Visiting Hours',
                 'icon'  => 'schedule',
-                'desc'  => 'Visiting hours and campus card on the right sidebar.',
+                'desc'  => 'Campus office address, phone lines, email address, seasonal timings, weekly visiting days, and photo card.',
                 'fields' => [
                     [
                         'kind' => 'text',
-                        'key' => 'office_hours',
-                        'label' => 'Office Hours Summary',
+                        'key' => 'info_card_title',
+                        'label' => 'Campus Information Card Title',
                         'type' => 'text',
-                        'default' => 'Monday to Saturday: 8:00 AM – 2:30 PM',
-                        'help' => 'Visiting hours.'
+                        'default' => 'Campus Information',
+                        'help' => 'Card header title.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'office_days',
-                        'label' => 'Weekly Schedule Detail',
+                        'key' => 'info_address_title',
+                        'label' => 'Address Block Title',
                         'type' => 'text',
-                        'default' => 'Monday – Saturday: 8:00 AM – 2:30 PM (Sunday Closed)',
-                        'help' => 'Detailed schedule.'
+                        'default' => 'School Address',
+                        'help' => 'Label for address section.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'info_phone_title',
+                        'label' => 'Phone Helpline Title',
+                        'type' => 'text',
+                        'default' => 'Office Helpline',
+                        'help' => 'Label for phone numbers.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'info_email_title',
+                        'label' => 'Email Block Title',
+                        'type' => 'text',
+                        'default' => 'Official Email',
+                        'help' => 'Label for official email.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'timing_title',
+                        'label' => 'Timings Block Title',
+                        'type' => 'text',
+                        'default' => 'School & Office Timings',
+                        'help' => 'Header for timings schedule.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'timing_summer',
+                        'label' => 'Summer Season Timings',
+                        'type' => 'text',
+                        'default' => 'Summer Season: 7:30 AM – 1:30 PM',
+                        'help' => 'Summer working hours.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'timing_winter',
+                        'label' => 'Winter Season Timings',
+                        'type' => 'text',
+                        'default' => 'Winter Season: 8:30 AM – 2:30 PM',
+                        'help' => 'Winter working hours.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'timing_days',
+                        'label' => 'Visiting Days & Off Note',
+                        'type' => 'text',
+                        'default' => 'Visiting Days: Monday to Saturday (Sunday Closed)',
+                        'help' => 'Visiting policy note.'
                     ],
                     [
                         'kind' => 'image',
                         'key' => 'campus_photo',
-                        'label' => 'Sidebar Campus View Photo',
+                        'label' => 'Campus View Photo',
                         'default' => 'assets/images/sunrise school image/school2.webp',
                         'alt' => 'Sun Rise Campus View, Dobhi',
-                        'help' => 'Right sidebar photo card.'
+                        'help' => 'Featured photo card image.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'campus_caption',
+                        'label' => 'Campus Photo Caption Badge',
+                        'type' => 'text',
+                        'default' => 'Sun Rise Campus View, Dobhi',
+                        'help' => 'Caption pill on top of the campus photo.'
                     ]
                 ]
             ],
             [
-                'title' => 'Section 4: Academic Wings Summary',
-                'icon'  => 'school',
-                'desc'  => 'Summary cards for Primary/Middle wing and Secondary/Senior Secondary wing.',
+                'title' => 'Section 4: Key Departmental Desks & Helplines',
+                'icon'  => 'support_agent',
+                'desc'  => 'Four specialized point-of-contact desks for Admissions, Transport, Accounts, and Principal Office.',
                 'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'desks_eyebrow',
+                        'label' => 'Desks Section Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Direct Helplines',
+                        'help' => 'Small eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desks_heading',
+                        'label' => 'Desks Section Heading',
+                        'type' => 'text',
+                        'default' => 'Key Departmental Contacts',
+                        'help' => 'Main section title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk1_name',
+                        'label' => 'Desk 1 Title (Admissions)',
+                        'type' => 'text',
+                        'default' => 'Admissions & Student Enrollment',
+                        'help' => 'Desk 1 heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk1_role',
+                        'label' => 'Desk 1 Department Tag',
+                        'type' => 'text',
+                        'default' => 'Admission Counselor Cell',
+                        'help' => 'Desk 1 badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk1_contact',
+                        'label' => 'Desk 1 Helpline Number',
+                        'type' => 'text',
+                        'default' => '+91 70158 90094',
+                        'help' => 'Desk 1 contact phone.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk1_timing',
+                        'label' => 'Desk 1 Available Hours',
+                        'type' => 'text',
+                        'default' => '8:00 AM – 2:30 PM (Mon–Sat)',
+                        'help' => 'Desk 1 working timing.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk2_name',
+                        'label' => 'Desk 2 Title (Transport)',
+                        'type' => 'text',
+                        'default' => 'School Bus & Transport Incharge',
+                        'help' => 'Desk 2 heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk2_role',
+                        'label' => 'Desk 2 Department Tag',
+                        'type' => 'text',
+                        'default' => 'Fleet & Route Operations',
+                        'help' => 'Desk 2 badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk2_contact',
+                        'label' => 'Desk 2 Helpline Number',
+                        'type' => 'text',
+                        'default' => '+91 99920 89284',
+                        'help' => 'Desk 2 contact phone.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk2_timing',
+                        'label' => 'Desk 2 Available Hours',
+                        'type' => 'text',
+                        'default' => '7:00 AM – 3:30 PM (School Days)',
+                        'help' => 'Desk 2 working timing.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk3_name',
+                        'label' => 'Desk 3 Title (Accounts)',
+                        'type' => 'text',
+                        'default' => 'Accounts & Fee Counter',
+                        'help' => 'Desk 3 heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk3_role',
+                        'label' => 'Desk 3 Department Tag',
+                        'type' => 'text',
+                        'default' => 'Finance & Scholarship Desk',
+                        'help' => 'Desk 3 badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk3_contact',
+                        'label' => 'Desk 3 Helpline / Email',
+                        'type' => 'text',
+                        'default' => '+91 70158 90094 / accounts@sunriseschool.com',
+                        'help' => 'Desk 3 contact info.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk3_timing',
+                        'label' => 'Desk 3 Available Hours',
+                        'type' => 'text',
+                        'default' => '9:00 AM – 2:00 PM (Working Days)',
+                        'help' => 'Desk 3 working timing.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk4_name',
+                        'label' => 'Desk 4 Title (Principal Office)',
+                        'type' => 'text',
+                        'default' => 'Principal Office & Appointments',
+                        'help' => 'Desk 4 heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk4_role',
+                        'label' => 'Desk 4 Department Tag',
+                        'type' => 'text',
+                        'default' => 'Executive Administration',
+                        'help' => 'Desk 4 badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk4_contact',
+                        'label' => 'Desk 4 Email / Helpline',
+                        'type' => 'text',
+                        'default' => 'info@sunriseschool.com',
+                        'help' => 'Desk 4 contact info.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'desk4_timing',
+                        'label' => 'Desk 4 Available Hours',
+                        'type' => 'text',
+                        'default' => '11:00 AM – 1:30 PM (By Prior Appointment)',
+                        'help' => 'Desk 4 working timing.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 5: Academic Wings Summary (3 Wings)',
+                'icon'  => 'school',
+                'desc'  => 'Detailed cards for Pre-Primary/Primary, Middle School, and Secondary/Senior Secondary wings.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'wings_heading',
+                        'label' => 'Academic Wings Section Heading',
+                        'type' => 'text',
+                        'default' => 'Academic Wings at a Glance',
+                        'help' => 'Header title.'
+                    ],
                     [
                         'kind' => 'text',
                         'key' => 'wing1_title',
                         'label' => 'Wing 1 Title',
                         'type' => 'text',
-                        'default' => 'Primary & Middle Wing',
-                        'help' => 'Title.'
+                        'default' => 'Pre-Primary & Primary Wing',
+                        'help' => 'First wing title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'wing1_desc',
                         'label' => 'Wing 1 Description',
-                        'type' => 'text',
-                        'default' => 'Nursery to Class 8 – Holistic foundation and activity-based learning',
-                        'help' => 'Description.'
+                        'type' => 'textarea',
+                        'default' => 'Nursery to Class 5 – Foundational literacy, numeracy, activity-based exploration, and warm caring mentors.',
+                        'help' => 'First wing description.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'wing2_title',
                         'label' => 'Wing 2 Title',
                         'type' => 'text',
-                        'default' => 'Secondary & Senior Secondary Wing',
-                        'help' => 'Title.'
+                        'default' => 'Middle School Wing',
+                        'help' => 'Second wing title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'wing2_desc',
                         'label' => 'Wing 2 Description',
+                        'type' => 'textarea',
+                        'default' => 'Class 6 to 8 – Experiential science labs, bilingual language competence, sports, and competitive foundation.',
+                        'help' => 'Second wing description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'wing3_title',
+                        'label' => 'Wing 3 Title',
                         'type' => 'text',
-                        'default' => 'Class 9 to 12 – HBSE Board, Science (Medical/Non-Med), Commerce & Arts',
-                        'help' => 'Description.'
+                        'default' => 'Secondary & Senior Secondary Wing',
+                        'help' => 'Third wing title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'wing3_desc',
+                        'label' => 'Wing 3 Description',
+                        'type' => 'textarea',
+                        'default' => 'Class 9 to 12 – HBSE Board excellence, dedicated streams in Science (Med/Non-Med), Commerce & Arts.',
+                        'help' => 'Third wing description.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 6: Interactive Google Map & Campus Location',
+                'icon'  => 'map',
+                'desc'  => 'Google Map embed URL, location headings, landmark directions, and external map link.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'map_eyebrow',
+                        'label' => 'Map Section Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Find Us on Map',
+                        'help' => 'Tag above the map.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'map_heading',
+                        'label' => 'Map Section Heading',
+                        'type' => 'text',
+                        'default' => 'Campus Location & Driving Directions',
+                        'help' => 'Main headline above Google Map.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'map_desc',
+                        'label' => 'Map Section Description',
+                        'type' => 'textarea',
+                        'default' => 'Conveniently situated on Balsamand Road in Dobhi, Hisar with direct highway connectivity and dedicated school bus bays.',
+                        'help' => 'Subtext providing travel directions.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'map_landmark',
+                        'label' => 'Prominent Landmark & Address Note',
+                        'type' => 'text',
+                        'default' => 'Landmark: Near Balsamand Road, Village Dobhi, Tehsil & Distt. Hisar, Haryana - 125001',
+                        'help' => 'Landmark details for visiting parents.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'map_btn_text',
+                        'label' => 'Map Button Text',
+                        'type' => 'text',
+                        'default' => 'Open in Google Maps',
+                        'help' => 'Label for directions button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'map_btn_link',
+                        'label' => 'Map Button Target URL',
+                        'type' => 'text',
+                        'default' => 'https://maps.google.com/?q=Sun+Rise+Sr+Sec+School+Dobhi+Hisar',
+                        'help' => 'URL opened when clicking map button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'map_embed_url',
+                        'label' => 'Google Maps Embed iframe URL',
+                        'type' => 'textarea',
+                        'default' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.5786358172945!2d75.5898517!3d29.0718507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391235bc6cfa35d3%3A0xe54ec09228d7b379!2sSun%20Rise%20Sr.%20Sec.%20School!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin',
+                        'help' => 'Embed src URL for Google Maps iframe.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 7: Quick WhatsApp Helpline Banner',
+                'icon'  => 'chat',
+                'desc'  => 'WhatsApp instant chat strip eyebrow, heading, description, and direct chat link.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'wa_eyebrow',
+                        'label' => 'WhatsApp Strip Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Quick WhatsApp Helpline',
+                        'help' => 'Eyebrow badge above WhatsApp title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'wa_heading',
+                        'label' => 'WhatsApp Strip Heading',
+                        'type' => 'text',
+                        'default' => 'Chat Instantly with Admission Desk',
+                        'help' => 'Main headline on WhatsApp card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'wa_desc',
+                        'label' => 'WhatsApp Strip Description',
+                        'type' => 'textarea',
+                        'default' => 'Have quick questions regarding admissions, transport routes, or fees? Reach us directly on WhatsApp.',
+                        'help' => 'Explanatory text for WhatsApp helpline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'wa_btn_text',
+                        'label' => 'WhatsApp Button Text',
+                        'type' => 'text',
+                        'default' => 'Open WhatsApp Chat',
+                        'help' => 'Text inside WhatsApp button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'wa_btn_link',
+                        'label' => 'WhatsApp Chat Link / Phone URL',
+                        'type' => 'text',
+                        'default' => 'https://wa.me/917015890094',
+                        'help' => 'Direct WhatsApp click-to-chat URL.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 8: Frequently Asked Questions (FAQ) Accordion',
+                'icon'  => 'help',
+                'desc'  => 'Four common inquiries regarding visiting hours, appointments, transport routes, and response times.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq_eyebrow',
+                        'label' => 'FAQ Section Eyebrow',
+                        'type' => 'text',
+                        'default' => 'Frequently Asked Questions',
+                        'help' => 'Small eyebrow tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq_heading',
+                        'label' => 'FAQ Section Heading',
+                        'type' => 'text',
+                        'default' => 'Common Contact & Visiting Inquiries',
+                        'help' => 'Main heading for FAQ accordion.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq1_q',
+                        'label' => 'FAQ 1 Question',
+                        'type' => 'text',
+                        'default' => 'What are the ideal hours for visiting the campus for admission inquiries?',
+                        'help' => 'Question 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq1_a',
+                        'label' => 'FAQ 1 Answer',
+                        'type' => 'textarea',
+                        'default' => 'Our campus admissions desk is active Monday through Saturday from 8:00 AM to 2:30 PM. We recommend visiting before 1:00 PM for guided campus walk-throughs and counselor consultations.',
+                        'help' => 'Answer 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq2_q',
+                        'label' => 'FAQ 2 Question',
+                        'type' => 'text',
+                        'default' => 'Is prior appointment required to meet the Principal?',
+                        'help' => 'Question 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq2_a',
+                        'label' => 'FAQ 2 Answer',
+                        'type' => 'textarea',
+                        'default' => 'Yes, to ensure dedicated time without interruptions, we request parents to schedule appointments with the Principal office by calling +91 70158 90094 or emailing info@sunriseschool.com.',
+                        'help' => 'Answer 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq3_q',
+                        'label' => 'FAQ 3 Question',
+                        'type' => 'text',
+                        'default' => 'How can I check if school bus transportation covers our village or neighborhood?',
+                        'help' => 'Question 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq3_a',
+                        'label' => 'FAQ 3 Answer',
+                        'type' => 'textarea',
+                        'default' => 'You can call our dedicated Transport Coordinator helpline at +91 99920 89284 or indicate your residential area in the contact form. We operate 15+ GPS-tracked bus routes covering 30+ villages around Dobhi.',
+                        'help' => 'Answer 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq4_q',
+                        'label' => 'FAQ 4 Question',
+                        'type' => 'text',
+                        'default' => 'How soon can I expect a response to my online inquiry?',
+                        'help' => 'Question 4.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'faq4_a',
+                        'label' => 'FAQ 4 Answer',
+                        'type' => 'textarea',
+                        'default' => 'Our administrative team typically reviews and replies to online inquiry desk messages within 24 business hours. For urgent inquiries, please call our primary helpline directly.',
+                        'help' => 'Answer 4.'
                     ]
                 ]
             ]
@@ -4669,12 +9110,12 @@ $pages_config = [
     'general' => [
         'title' => 'General Settings',
         'icon'  => 'settings',
-        'desc'  => 'School Branding, Logo, Global Phone, Email, Address, and Taglines',
+        'desc'  => 'School Branding, Logo, Global Helplines, Header Navbar, Top Utility Bar, and Complete Footer Links',
         'sections' => [
             [
-                'title' => 'Section 1: Identity & Official Crest',
+                'title' => 'Section 1: Identity, Official Logo & Branding',
                 'icon'  => 'shield',
-                'desc'  => 'Official School Name, Logo, and Affiliation Motto.',
+                'desc'  => 'Official School Name, Logo Image, Header Subtitle, Affiliation Motto, and Foundation Year.',
                 'fields' => [
                     [
                         'kind' => 'image',
@@ -4682,7 +9123,7 @@ $pages_config = [
                         'label' => 'Official School Logo / Crest',
                         'default' => 'assets/images/logo.svg',
                         'alt' => 'Sun Rise Sr. Sec. School Crest',
-                        'help' => 'Displayed across headers, navigation, and badges.'
+                        'help' => 'Displayed across header navbar, mobile drawer, and site crests.'
                     ],
                     [
                         'kind' => 'text',
@@ -4694,18 +9135,42 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'nav_sub_title',
+                        'label' => 'Header Logo Subtitle',
+                        'type' => 'text',
+                        'default' => 'Dobhi, Hisar • HBSE Affiliated',
+                        'help' => 'Small subtitle directly below school name in navbar and mobile drawer.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'site_tagline',
                         'label' => 'School Tagline / Affiliation Motto',
                         'type' => 'text',
                         'default' => 'Nurturing Knowledge, Character & Academic Excellence | Affiliated to HBSE',
                         'help' => 'Header tagline and SEO description default.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'site_affiliation',
+                        'label' => 'Affiliation Board',
+                        'type' => 'text',
+                        'default' => 'HBSE',
+                        'help' => 'Education Board name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'site_estd',
+                        'label' => 'Established Year',
+                        'type' => 'text',
+                        'default' => '2007',
+                        'help' => 'Founding year.'
                     ]
                 ]
             ],
             [
-                'title' => 'Section 2: Communication Channels & Helplines',
+                'title' => 'Section 2: Global Helplines, Emails & Campus Address',
                 'icon'  => 'contact_phone',
-                'desc'  => 'Phone number, official email, admissions inbox.',
+                'desc'  => 'Primary and secondary phone lines, inquiry emails, postal address, and seasonal timings.',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -4713,7 +9178,7 @@ $pages_config = [
                         'label' => 'Primary Contact Phone',
                         'type' => 'text',
                         'default' => '+91 70158 90094',
-                        'help' => 'Click-to-call phone number in header and footer.'
+                        'help' => 'Click-to-call phone number in top bar, header, and footer.'
                     ],
                     [
                         'kind' => 'text',
@@ -4721,7 +9186,7 @@ $pages_config = [
                         'label' => 'Secondary Contact Phone',
                         'type' => 'text',
                         'default' => '+91 79883 5710',
-                        'help' => 'Secondary phone number in header and footer.'
+                        'help' => 'Secondary phone number displayed in footer and contact desks.'
                     ],
                     [
                         'kind' => 'text',
@@ -4729,7 +9194,7 @@ $pages_config = [
                         'label' => 'Official Inquiries Email',
                         'type' => 'text',
                         'default' => 'info@sunrisesrsecschool.com',
-                        'help' => 'Main school inbox.'
+                        'help' => 'Main school inbox displayed in header top bar and footer.'
                     ],
                     [
                         'kind' => 'text',
@@ -4738,21 +9203,593 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'info@sunrisesrsecschool.com',
                         'help' => 'Admissions inquiries inbox.'
-                    ]
-                ]
-            ],
-            [
-                'title' => 'Section 3: Physical Campus Location',
-                'icon'  => 'pin_drop',
-                'desc'  => 'Physical postal address shown in footer and contact sections.',
-                'fields' => [
+                    ],
                     [
                         'kind' => 'text',
                         'key' => 'site_address',
                         'label' => 'Physical Campus Address',
-                        'type' => 'text',
+                        'type' => 'textarea',
                         'default' => 'Main Road Dobhi, Near Primary Health Center, Dobhi, Hisar (Haryana) - 125001',
-                        'help' => 'Full postal address.'
+                        'help' => 'Full postal address displayed in footer and schema data.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'timings_summer',
+                        'label' => 'Summer Season School Timings',
+                        'type' => 'text',
+                        'default' => '7:30 AM to 1:30 PM',
+                        'help' => 'Summer working hours shown in footer.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'timings_winter',
+                        'label' => 'Winter Season School Timings',
+                        'type' => 'text',
+                        'default' => '8:30 AM to 2:30 PM',
+                        'help' => 'Winter working hours shown in footer.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 3: Header Top Utility Bar & Online Registration Link',
+                'icon'  => 'tab',
+                'desc'  => 'Top bar utility links (Home, Student Login, Alumni, Mandatory Disclosure) and pulsing Online Registration badge.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'top_link1_text',
+                        'label' => 'Top Bar Link 1 Text',
+                        'type' => 'text',
+                        'default' => 'Home',
+                        'help' => 'Label for top bar link 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'top_link1_url',
+                        'label' => 'Top Bar Link 1 URL',
+                        'type' => 'text',
+                        'default' => 'index.php',
+                        'help' => 'URL for top bar link 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'top_link2_text',
+                        'label' => 'Top Bar Link 2 Text',
+                        'type' => 'text',
+                        'default' => 'Student Login',
+                        'help' => 'Label for top bar link 2 (opens student login modal).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'top_link2_url',
+                        'label' => 'Top Bar Link 2 URL',
+                        'type' => 'text',
+                        'default' => '#student-portal',
+                        'help' => 'URL or modal anchor for top bar link 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'top_link3_text',
+                        'label' => 'Top Bar Link 3 Text',
+                        'type' => 'text',
+                        'default' => 'Alumni',
+                        'help' => 'Label for top bar link 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'top_link3_url',
+                        'label' => 'Top Bar Link 3 URL',
+                        'type' => 'text',
+                        'default' => 'events.php#alumni',
+                        'help' => 'URL for top bar link 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'top_link4_text',
+                        'label' => 'Top Bar Link 4 Text',
+                        'type' => 'text',
+                        'default' => 'Mandatory Disclosure',
+                        'help' => 'Label for top bar link 4.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'top_link4_url',
+                        'label' => 'Top Bar Link 4 URL',
+                        'type' => 'text',
+                        'default' => '#mandatory-disclosure',
+                        'help' => 'URL or modal anchor for top bar link 4.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'top_reg_text',
+                        'label' => 'Blinking Registration Badge Text',
+                        'type' => 'text',
+                        'default' => 'Online Registration 2026-27',
+                        'help' => 'Text inside the animated pulsing badge in top bar & mobile drawer.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'top_reg_url',
+                        'label' => 'Blinking Registration Target URL',
+                        'type' => 'text',
+                        'default' => 'admission.php#register-form',
+                        'help' => 'Destination link for the registration badge.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 4: Main Navigation Bar Menu Items & Mobile Drawer',
+                'icon'  => 'menu',
+                'desc'  => 'All 7 main navigation menu links, mobile drawer quick CTA button, and mobile WhatsApp chat link.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item1_text',
+                        'label' => 'Menu Item 1 Label (About Us)',
+                        'type' => 'text',
+                        'default' => 'ABOUT US',
+                        'help' => 'First navbar item label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item1_url',
+                        'label' => 'Menu Item 1 URL',
+                        'type' => 'text',
+                        'default' => 'about-us.php',
+                        'help' => 'First navbar item destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item2_text',
+                        'label' => 'Menu Item 2 Label (Admissions)',
+                        'type' => 'text',
+                        'default' => 'ADMISSIONS',
+                        'help' => 'Second navbar item label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item2_url',
+                        'label' => 'Menu Item 2 URL',
+                        'type' => 'text',
+                        'default' => 'admission.php',
+                        'help' => 'Second navbar item destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item3_text',
+                        'label' => 'Menu Item 3 Label (Academics)',
+                        'type' => 'text',
+                        'default' => 'ACADEMICS',
+                        'help' => 'Third navbar item label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item3_url',
+                        'label' => 'Menu Item 3 URL',
+                        'type' => 'text',
+                        'default' => 'academics.php',
+                        'help' => 'Third navbar item destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item4_text',
+                        'label' => 'Menu Item 4 Label (Activities)',
+                        'type' => 'text',
+                        'default' => 'ACTIVITIES',
+                        'help' => 'Fourth navbar item label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item4_url',
+                        'label' => 'Menu Item 4 URL',
+                        'type' => 'text',
+                        'default' => 'events.php',
+                        'help' => 'Fourth navbar item destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item5_text',
+                        'label' => 'Menu Item 5 Label (Campus)',
+                        'type' => 'text',
+                        'default' => 'BOARDING AND CAMPUS',
+                        'help' => 'Fifth navbar item label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item5_url',
+                        'label' => 'Menu Item 5 URL',
+                        'type' => 'text',
+                        'default' => 'campus.php',
+                        'help' => 'Fifth navbar item destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item6_text',
+                        'label' => 'Menu Item 6 Label (Career)',
+                        'type' => 'text',
+                        'default' => 'CAREER',
+                        'help' => 'Sixth navbar item label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item6_url',
+                        'label' => 'Menu Item 6 URL',
+                        'type' => 'text',
+                        'default' => 'contact-us.php#career',
+                        'help' => 'Sixth navbar item destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item7_text',
+                        'label' => 'Menu Item 7 Label (Connect)',
+                        'type' => 'text',
+                        'default' => 'CONNECT',
+                        'help' => 'Seventh navbar item label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_item7_url',
+                        'label' => 'Menu Item 7 URL',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Seventh navbar item destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_mobile_cta_text',
+                        'label' => 'Mobile Drawer CTA Button Text',
+                        'type' => 'text',
+                        'default' => 'Enquire Now / Apply Online',
+                        'help' => 'Gold button text at bottom of mobile menu.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_mobile_cta_url',
+                        'label' => 'Mobile Drawer CTA Button URL',
+                        'type' => 'text',
+                        'default' => 'admission.php',
+                        'help' => 'Target link for mobile drawer button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'nav_mobile_wa_url',
+                        'label' => 'Mobile Drawer WhatsApp URL',
+                        'type' => 'text',
+                        'default' => 'https://wa.me/917015890094',
+                        'help' => 'WhatsApp link inside mobile menu.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 5: Footer Column 1 & 2 (Quick Contact & Quick Links)',
+                'icon'  => 'link',
+                'desc'  => 'Footer Column 1 headers and all 6 Column 2 Quick Links with custom titles and destinations.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col1_title',
+                        'label' => 'Footer Column 1 Heading',
+                        'type' => 'text',
+                        'default' => 'Quick Contact',
+                        'help' => 'First column header.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_timings_title',
+                        'label' => 'Footer Timings Block Label',
+                        'type' => 'text',
+                        'default' => 'School Timings:',
+                        'help' => 'Header above summer/winter timings.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_title',
+                        'label' => 'Footer Column 2 Heading',
+                        'type' => 'text',
+                        'default' => 'Quick Links',
+                        'help' => 'Second column header.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link1_text',
+                        'label' => 'Col 2 - Link 1 Text',
+                        'type' => 'text',
+                        'default' => 'Student & Staff ERP',
+                        'help' => 'Link 1 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link1_url',
+                        'label' => 'Col 2 - Link 1 URL',
+                        'type' => 'text',
+                        'default' => '#student-portal',
+                        'help' => 'Link 1 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link2_text',
+                        'label' => 'Col 2 - Link 2 Text',
+                        'type' => 'text',
+                        'default' => 'Annual Calendar',
+                        'help' => 'Link 2 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link2_url',
+                        'label' => 'Col 2 - Link 2 URL',
+                        'type' => 'text',
+                        'default' => 'academics.php#academic-calendar',
+                        'help' => 'Link 2 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link3_text',
+                        'label' => 'Col 2 - Link 3 Text',
+                        'type' => 'text',
+                        'default' => 'Admission Procedure',
+                        'help' => 'Link 3 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link3_url',
+                        'label' => 'Col 2 - Link 3 URL',
+                        'type' => 'text',
+                        'default' => 'admission.php',
+                        'help' => 'Link 3 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link4_text',
+                        'label' => 'Col 2 - Link 4 Text',
+                        'type' => 'text',
+                        'default' => 'Mandatory Disclosure',
+                        'help' => 'Link 4 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link4_url',
+                        'label' => 'Col 2 - Link 4 URL',
+                        'type' => 'text',
+                        'default' => 'about-us.php#mandatory-disclosure',
+                        'help' => 'Link 4 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link5_text',
+                        'label' => 'Col 2 - Link 5 Text',
+                        'type' => 'text',
+                        'default' => 'Fee Structure',
+                        'help' => 'Link 5 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link5_url',
+                        'label' => 'Col 2 - Link 5 URL',
+                        'type' => 'text',
+                        'default' => 'admission.php#fee-structure',
+                        'help' => 'Link 5 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link6_text',
+                        'label' => 'Col 2 - Link 6 Text',
+                        'type' => 'text',
+                        'default' => 'TC & Certificates',
+                        'help' => 'Link 6 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col2_link6_url',
+                        'label' => 'Col 2 - Link 6 URL',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Link 6 destination.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 6: Footer Column 3 & 4 (Other Projects & Campus Map)',
+                'icon'  => 'map',
+                'desc'  => 'Column 3 Initiative links, and Column 4 Google Map embed iframe with external map button.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_title',
+                        'label' => 'Footer Column 3 Heading',
+                        'type' => 'text',
+                        'default' => 'Other Projects',
+                        'help' => 'Third column header.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_link1_text',
+                        'label' => 'Col 3 - Link 1 Text',
+                        'type' => 'text',
+                        'default' => 'Sun Rise Educational Society',
+                        'help' => 'Initiative 1 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_link1_url',
+                        'label' => 'Col 3 - Link 1 URL',
+                        'type' => 'text',
+                        'default' => 'about-us.php',
+                        'help' => 'Initiative 1 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_link2_text',
+                        'label' => 'Col 3 - Link 2 Text',
+                        'type' => 'text',
+                        'default' => 'Modern Science & Computer Labs',
+                        'help' => 'Initiative 2 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_link2_url',
+                        'label' => 'Col 3 - Link 2 URL',
+                        'type' => 'text',
+                        'default' => 'campus.php#labs',
+                        'help' => 'Initiative 2 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_link3_text',
+                        'label' => 'Col 3 - Link 3 Text',
+                        'type' => 'text',
+                        'default' => 'Sports & Athletics Club',
+                        'help' => 'Initiative 3 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_link3_url',
+                        'label' => 'Col 3 - Link 3 URL',
+                        'type' => 'text',
+                        'default' => 'campus.php#sports',
+                        'help' => 'Initiative 3 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_link4_text',
+                        'label' => 'Col 3 - Link 4 Text',
+                        'type' => 'text',
+                        'default' => 'Safe GPS Bus Transport Network',
+                        'help' => 'Initiative 4 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_link4_url',
+                        'label' => 'Col 3 - Link 4 URL',
+                        'type' => 'text',
+                        'default' => 'campus.php#transport',
+                        'help' => 'Initiative 4 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_link5_text',
+                        'label' => 'Col 3 - Link 5 Text',
+                        'type' => 'text',
+                        'default' => 'Board Exam Merit Achievers',
+                        'help' => 'Initiative 5 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col3_link5_url',
+                        'label' => 'Col 3 - Link 5 URL',
+                        'type' => 'text',
+                        'default' => 'academics.php#toppers',
+                        'help' => 'Initiative 5 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_col4_title',
+                        'label' => 'Footer Column 4 Heading',
+                        'type' => 'text',
+                        'default' => 'Location Map',
+                        'help' => 'Fourth column header.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_map_embed',
+                        'label' => 'Footer Map Embed iframe URL',
+                        'type' => 'textarea',
+                        'default' => 'https://maps.google.com/maps?q=Sun+Rise+Sr.+Sec.+School,+Dobhi,+Hisar,+Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed',
+                        'help' => 'Google Maps embed iframe URL.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_map_btn_text',
+                        'label' => 'Footer Map Button Text',
+                        'type' => 'text',
+                        'default' => 'View on Google Maps',
+                        'help' => 'Label for button under map.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_map_btn_link',
+                        'label' => 'Footer Map Button URL',
+                        'type' => 'text',
+                        'default' => 'https://maps.google.com/?q=Sun+Rise+Sr.+Sec.+School+Dobhi+Hisar+Haryana',
+                        'help' => 'External Google Maps link.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 7: Footer Bottom Bar, Legal Links & Admin Link',
+                'icon'  => 'copyright',
+                'desc'  => 'Copyright statement suffix, Privacy Policy, Terms of Service, Sitemap, and Admin Portal link.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_copyright_note',
+                        'label' => 'Copyright Note Suffix',
+                        'type' => 'text',
+                        'default' => 'All rights reserved.',
+                        'help' => 'Appears after "(Year) School Name." in bottom bar.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_bottom_link1_text',
+                        'label' => 'Legal Link 1 Text',
+                        'type' => 'text',
+                        'default' => 'Privacy Policy',
+                        'help' => 'Bottom bar link 1 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_bottom_link1_url',
+                        'label' => 'Legal Link 1 URL',
+                        'type' => 'text',
+                        'default' => 'about-us.php',
+                        'help' => 'Bottom bar link 1 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_bottom_link2_text',
+                        'label' => 'Legal Link 2 Text',
+                        'type' => 'text',
+                        'default' => 'Terms of Service',
+                        'help' => 'Bottom bar link 2 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_bottom_link2_url',
+                        'label' => 'Legal Link 2 URL',
+                        'type' => 'text',
+                        'default' => 'about-us.php',
+                        'help' => 'Bottom bar link 2 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_bottom_link3_text',
+                        'label' => 'Legal Link 3 Text',
+                        'type' => 'text',
+                        'default' => 'Sitemap',
+                        'help' => 'Bottom bar link 3 label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_bottom_link3_url',
+                        'label' => 'Legal Link 3 URL',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Bottom bar link 3 destination.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_admin_link_text',
+                        'label' => 'Admin Portal Link Text',
+                        'type' => 'text',
+                        'default' => 'Admin Portal',
+                        'help' => 'Bottom bar admin link label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'footer_admin_link_url',
+                        'label' => 'Admin Portal Link URL',
+                        'type' => 'text',
+                        'default' => 'admin/login.php',
+                        'help' => 'Bottom bar admin link destination.'
                     ]
                 ]
             ]

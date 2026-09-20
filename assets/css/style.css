@@ -155,15 +155,24 @@ a {
   font-weight: 700;
 }
 
-/* Universal Consistent Hero H1 Headings (2rem desktop, responsive mobile) */
+/* Universal Consistent Hero H1 Headings (Compact on mobile, 2rem desktop) */
 h1,
 .site-hero h1,
 section.hero h1,
 .hero-heading {
-  font-size: 1.65rem !important;
+  font-size: 1.15rem !important;
   line-height: 1.25 !important;
   letter-spacing: -0.015em !important;
   font-weight: 700 !important;
+}
+
+@media (min-width: 380px) {
+  h1,
+  .site-hero h1,
+  section.hero h1,
+  .hero-heading {
+    font-size: 1.25rem !important;
+  }
 }
 
 @media (min-width: 640px) {
@@ -171,7 +180,8 @@ section.hero h1,
   .site-hero h1,
   section.hero h1,
   .hero-heading {
-    font-size: 1.85rem !important;
+    font-size: 1.65rem !important;
+    line-height: 1.25 !important;
   }
 }
 
@@ -765,6 +775,208 @@ h3.font-headline-sm,
 }
 
 /* ==========================================================================
+   Universal Hero Section Responsive Mobile Styles (Compact & Perfect)
+   ========================================================================== */
+.hero-section {
+  min-height: 60vh;
+  padding-top: 3.25rem !important;
+  padding-bottom: 3.25rem !important;
+}
+
+@media (min-width: 480px) {
+  .hero-section {
+    min-height: 65vh;
+    padding-top: 3.75rem !important;
+    padding-bottom: 3.75rem !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-section {
+    min-height: 72vh;
+    padding-top: 4.5rem !important;
+    padding-bottom: 4.5rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section {
+    min-height: 85vh;
+    padding-top: 5.5rem !important;
+    padding-bottom: 5.5rem !important;
+  }
+}
+
+.hero-content {
+  gap: 0.75rem !important;
+}
+
+@media (min-width: 480px) {
+  .hero-content {
+    gap: 0.95rem !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-content {
+    gap: 1.25rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    gap: 1.75rem !important;
+  }
+}
+
+/* Hero Badge Pill */
+.hero-badge {
+  font-size: 9.5px !important;
+  padding: 0.2rem 0.65rem !important;
+  gap: 0.35rem !important;
+  letter-spacing: 0.04em !important;
+  line-height: 1.3 !important;
+  border-radius: 9999px !important;
+}
+
+.hero-badge .material-symbols-outlined {
+  font-size: 13px !important;
+}
+
+@media (min-width: 380px) {
+  .hero-badge {
+    font-size: 10.5px !important;
+    padding: 0.22rem 0.75rem !important;
+    gap: 0.4rem !important;
+  }
+
+  .hero-badge .material-symbols-outlined {
+    font-size: 14px !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-badge {
+    font-size: 11.5px !important;
+    padding: 0.35rem 1rem !important;
+    gap: 0.45rem !important;
+  }
+
+  .hero-badge .material-symbols-outlined {
+    font-size: 16px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-badge {
+    font-size: 12.5px !important;
+    padding: 0.45rem 1.25rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .hero-badge .material-symbols-outlined {
+    font-size: 18px !important;
+  }
+}
+
+/* Hero Subtitle */
+.hero-subtitle {
+  font-size: 0.775rem !important;
+  line-height: 1.42 !important;
+  max-width: 32rem !important;
+}
+
+@media (min-width: 380px) {
+  .hero-subtitle {
+    font-size: 0.8125rem !important;
+    line-height: 1.48 !important;
+    max-width: 36rem !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-subtitle {
+    font-size: 0.9375rem !important;
+    line-height: 1.55 !important;
+    max-width: 44rem !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-subtitle {
+    font-size: 1.05rem !important;
+    line-height: 1.65 !important;
+    max-width: 48rem !important;
+  }
+}
+
+/* Hero CTA Buttons Group */
+.hero-cta-group {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.45rem !important;
+  width: 100% !important;
+  flex-wrap: wrap !important;
+}
+
+@media (min-width: 640px) {
+  .hero-cta-group {
+    gap: 0.85rem !important;
+  }
+}
+
+/* Hero CTA Buttons */
+.hero-cta-btn {
+  font-size: 0.75rem !important;
+  padding: 0.38rem 0.85rem !important;
+  border-radius: 6px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.35rem !important;
+  line-height: 1.3 !important;
+  font-weight: 700 !important;
+  white-space: nowrap !important;
+}
+
+.hero-cta-btn .material-symbols-outlined {
+  font-size: 14px !important;
+}
+
+@media (min-width: 380px) {
+  .hero-cta-btn {
+    font-size: 0.8rem !important;
+    padding: 0.42rem 1rem !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-cta-btn {
+    font-size: 0.875rem !important;
+    padding: 0.65rem 1.35rem !important;
+    border-radius: 8px !important;
+    gap: 0.45rem !important;
+  }
+
+  .hero-cta-btn .material-symbols-outlined {
+    font-size: 16px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-cta-btn {
+    font-size: 0.95rem !important;
+    padding: 0.75rem 1.65rem !important;
+    gap: 0.5rem !important;
+  }
+
+  .hero-cta-btn .material-symbols-outlined {
+    font-size: 18px !important;
+  }
+}
+
+/* ==========================================================================
    Continuous Right-to-Left Ticker Strip (Just below Hero Section)
    ========================================================================== */
 .school-ticker-strip {
@@ -891,5 +1103,36 @@ h3.font-headline-sm,
   box-shadow: 0 10px 25px rgba(0, 17, 41, 0.16);
   border-color: rgba(201, 162, 75, 0.5);
 }
+
+/* ==========================================================================
+   Affiliation Badges Strip Responsive (Single Line Protection on Mobile)
+   ========================================================================== */
+.affiliation-badge {
+  white-space: nowrap !important;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+}
+
+@media (max-width: 639px) {
+  .affiliation-badge {
+    font-size: 0.85rem !important; /* ~13.6px - perfectly readable without breaking */
+    letter-spacing: 0.02em !important;
+  }
+  .affiliation-badge .material-symbols-outlined {
+    font-size: 1.15rem !important;
+  }
+}
+
+@media (max-width: 359px) {
+  .affiliation-badge {
+    font-size: 0.75rem !important; /* ~12px for small 320px screens */
+    letter-spacing: normal !important;
+  }
+  .affiliation-badge .material-symbols-outlined {
+    font-size: 1rem !important;
+  }
+}
+
 
 

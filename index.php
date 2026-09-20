@@ -19,7 +19,7 @@ $hero_slides = [
 
 <div class="flex flex-col w-full">
   <!-- Hero Section with Dynamic 4-Direction Box Mosaic Slider -->
-  <section class="relative w-full min-h-[80vh] lg:min-h-[85vh] py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary">
+  <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary">
     <!-- Dynamic Hero 4-Direction Box Slider Container -->
     <div id="hero-box-slider" class="hero-box-slider" data-slides='<?= htmlspecialchars(json_encode($hero_slides), ENT_QUOTES, 'UTF-8') ?>' aria-hidden="true">
       <div class="hero-slide-base" style="background-image: url('<?= $hero_slides[0] ?>')"></div>
@@ -29,25 +29,25 @@ $hero_slides = [
     </div>
     <!-- Soft Light Brand Gradient Overlay for vibrant bright campus photos & crisp text -->
     <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/45 z-10 pointer-events-none"></div>
-    <div class="relative z-20 max-w-6xl mx-auto px-6 lg:px-12 w-full flex flex-col items-center text-center gap-7">
-      <div class="inline-flex items-center gap-2.5 bg-black/40 backdrop-blur-md border border-[#C9A24B]/50 px-5 py-2 rounded-full text-gold-light text-eyebrow font-bold shadow-lg">
-        <span class="material-symbols-outlined text-[18px] text-[#C9A24B]">military_tech</span>
-        <?= get_text('home', 'hero_badge', 'AFFILIATED TO HBSE &bull; PRE-PRIMARY TO SENIOR SECONDARY (10+2)') ?>
+    <div class="hero-content relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-7">
+      <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2.5 bg-black/40 backdrop-blur-md border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full text-gold-light font-bold shadow-lg">
+        <span class="material-symbols-outlined text-[14px] sm:text-[18px] text-[#C9A24B]">military_tech</span>
+        <span><?= get_text('home', 'hero_badge', 'AFFILIATED TO HBSE &bull; PRE-PRIMARY TO SENIOR SECONDARY (10+2)') ?></span>
       </div>
-      <h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight leading-[1.2] drop-shadow-md">
+      <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md">
         <?= get_text('home', 'hero_title', 'Empowering Minds, Inspiring Character & <span class="text-[#C9A24B] italic">Academic Excellence</span>') ?>
       </h1>
-      <p class="text-sm sm:text-base md:text-lg text-surface-cream/95 w-full max-w-3xl font-body leading-relaxed drop-shadow">
+      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl font-body drop-shadow">
         <?= get_text('home', 'hero_subtitle', 'Welcome to Sun Rise Sr. Sec. School, Dobhi. We foster an enriching educational environment combining rigorous HBSE scholarship, moral values, modern technology, and sportsmanship.') ?>
       </p>
-      <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 pt-2 w-full">
-        <a class="btn-gold btn-sm w-full max-w-[210px] sm:max-w-none sm:w-auto shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('home', 'hero_btn1_link', 'admission.php')) ?>">
+      <div class="hero-cta-group flex items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2 w-full">
+        <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('home', 'hero_btn1_link', 'admission.php')) ?>">
           <span><?= get_text('home', 'hero_btn1_text', 'Admissions 2026–27') ?></span>
-          <span class="material-symbols-outlined text-[16px] sm:text-[18px]">arrow_forward</span>
+          <span class="material-symbols-outlined">arrow_forward</span>
         </a>
-        <a class="btn-outline-white btn-sm w-full max-w-[210px] sm:max-w-none sm:w-auto shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('home', 'hero_btn2_link', 'campus.php')) ?>">
+        <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('home', 'hero_btn2_link', 'campus.php')) ?>">
           <span><?= get_text('home', 'hero_btn2_text', 'Explore Campus') ?></span>
-          <span class="material-symbols-outlined text-[16px] sm:text-[18px]">domain</span>
+          <span class="material-symbols-outlined">domain</span>
         </a>
       </div>
     </div>
@@ -498,21 +498,21 @@ $hero_slides = [
   </section>
 
   <!-- Affiliations Logo Strip -->
-  <section class="w-full py-16 bg-surface-container-low border-y border-border-warm">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col items-center gap-8">
-      <div class="text-eyebrow text-on-surface-variant uppercase tracking-widest text-center font-bold"><?= get_text('home', 'affiliations_title', 'Affiliated &amp; Recognized By') ?></div>
-      <div class="flex flex-wrap items-center justify-center gap-12 lg:gap-20 opacity-85">
-        <span class="font-headline-lg font-bold text-primary tracking-wider text-xl flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#C9A24B]">verified</span> <?= get_text('home', 'affil1_text', 'HBSE AFFILIATED') ?>
+  <section class="w-full py-8 sm:py-12 lg:py-16 bg-surface-container-low border-y border-border-warm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col items-center gap-4 sm:gap-6 lg:gap-8">
+      <div class="text-eyebrow text-on-surface-variant uppercase tracking-widest text-center font-bold text-xs sm:text-sm"><?= get_text('home', 'affiliations_title', 'Affiliated &amp; Recognized By') ?></div>
+      <div class="affiliation-badge-list flex flex-wrap items-center justify-center gap-x-6 sm:gap-x-10 lg:gap-x-16 gap-y-3 sm:gap-y-4 lg:gap-y-6 opacity-90">
+        <span class="affiliation-badge font-headline-lg font-bold text-primary tracking-normal sm:tracking-wider text-xs sm:text-base lg:text-xl inline-flex items-center gap-2 whitespace-nowrap shrink-0">
+          <span class="material-symbols-outlined text-[#C9A24B] text-[18px] sm:text-[22px] lg:text-[24px]">verified</span> <?= get_text('home', 'affil1_text', 'HBSE AFFILIATED') ?>
         </span>
-        <span class="font-headline-lg font-bold text-primary tracking-wider text-xl flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#C9A24B]">school</span> <?= get_text('home', 'affil2_text', 'CO-EDUCATIONAL (10+2)') ?>
+        <span class="affiliation-badge font-headline-lg font-bold text-primary tracking-normal sm:tracking-wider text-xs sm:text-base lg:text-xl inline-flex items-center gap-2 whitespace-nowrap shrink-0">
+          <span class="material-symbols-outlined text-[#C9A24B] text-[18px] sm:text-[22px] lg:text-[24px]">school</span> <?= get_text('home', 'affil2_text', 'CO-EDUCATIONAL (10+2)') ?>
         </span>
-        <span class="font-headline-lg font-bold text-primary tracking-wider text-xl flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#C9A24B]">science</span> <?= get_text('home', 'affil3_text', 'SCIENCE, COMMERCE &amp; ARTS') ?>
+        <span class="affiliation-badge font-headline-lg font-bold text-primary tracking-normal sm:tracking-wider text-xs sm:text-base lg:text-xl inline-flex items-center gap-2 whitespace-nowrap shrink-0">
+          <span class="material-symbols-outlined text-[#C9A24B] text-[18px] sm:text-[22px] lg:text-[24px]">science</span> <?= get_text('home', 'affil3_text', 'SCIENCE, COMMERCE &amp; ARTS') ?>
         </span>
-        <span class="font-headline-lg font-bold text-primary tracking-wider text-xl flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#C9A24B]">sports_kabaddi</span> <?= get_text('home', 'affil4_text', 'SPORTS &amp; YOGA') ?>
+        <span class="affiliation-badge font-headline-lg font-bold text-primary tracking-normal sm:tracking-wider text-xs sm:text-base lg:text-xl inline-flex items-center gap-2 whitespace-nowrap shrink-0">
+          <span class="material-symbols-outlined text-[#C9A24B] text-[18px] sm:text-[22px] lg:text-[24px]">sports_kabaddi</span> <?= get_text('home', 'affil4_text', 'SPORTS &amp; YOGA') ?>
         </span>
       </div>
     </div>

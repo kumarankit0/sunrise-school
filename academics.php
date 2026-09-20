@@ -16,10 +16,10 @@ require_once __DIR__ . '/core/header.php';
       <span class="font-eyebrow text-eyebrow text-gold-light uppercase tracking-widest bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full font-bold shadow-md">
         <?= get_text('academics', 'hero_badge', 'Academic Excellence') ?>
       </span>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg text-white w-full max-w-5xl tracking-tight leading-[1.15] drop-shadow-md">
+      <h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight leading-[1.2] drop-shadow-md">
         <?= get_text('academics', 'hero_title', 'Rigorous HBSE Curriculum Designed for Success') ?>
       </h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-surface-cream/95 w-full max-w-4xl leading-relaxed drop-shadow">
+      <p class="text-sm sm:text-base md:text-lg text-surface-cream/95 w-full max-w-3xl leading-relaxed drop-shadow">
         <?= get_text('academics', 'hero_subtitle', 'Discover an enriching academic framework from Pre-Primary to Class 12, fostering analytical thinking, practical lab experimentation, moral values, and board examination distinction.') ?>
       </p>
       <div class="flex flex-wrap items-center justify-center gap-4 sm:gap-6 pt-3">
@@ -56,7 +56,7 @@ require_once __DIR__ . '/core/header.php';
     <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
       <div>
         <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('academics', 'curriculum_eyebrow', 'Academic Stages') ?></span>
-        <h2 class="font-headline-lg text-headline-lg text-primary mt-2"><?= get_text('academics', 'curriculum_heading', 'Curriculum Stages by Level') ?></h2>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('academics', 'curriculum_heading', 'Curriculum Stages by Level') ?></h2>
       </div>
       <p class="font-body-md text-on-surface-variant max-w-md"><?= get_text('academics', 'curriculum_desc', 'Our progressive learning architecture builds conceptual clarity, self-confidence, and critical inquiry from early years to Class 12.') ?></p>
     </div>
@@ -246,7 +246,7 @@ require_once __DIR__ . '/core/header.php';
   <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full bg-surface-container-low" id="streams">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('academics', 'streams_eyebrow', 'Class 11 &amp; 12 Streams') ?></span>
-      <h2 class="font-headline-lg text-headline-lg text-primary mt-2"><?= get_text('academics', 'streams_heading', 'Senior Secondary Academic Streams') ?></h2>
+      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('academics', 'streams_heading', 'Senior Secondary Academic Streams') ?></h2>
       <p class="font-body-md text-on-surface-variant mt-3"><?= get_text('academics', 'streams_desc', 'Tailored academic pathways equipping students for HBSE board excellence and leading university admissions.') ?></p>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -334,7 +334,7 @@ require_once __DIR__ . '/core/header.php';
   <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('academics', 'pedagogy_eyebrow', 'Pedagogical Approach') ?></span>
-      <h2 class="font-headline-lg text-headline-lg text-primary mt-2"><?= get_text('academics', 'pedagogy_heading', 'How We Teach at Sun Rise') ?></h2>
+      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('academics', 'pedagogy_heading', 'How We Teach at Sun Rise') ?></h2>
       <p class="font-body-md text-on-surface-variant mt-3"><?= get_text('academics', 'pedagogy_desc', 'Combining traditional teacher mentorship with modern smart-class technology and experimental learning.') ?></p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -369,6 +369,138 @@ require_once __DIR__ . '/core/header.php';
           <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step4_desc', 'Remedial classes for students needing extra help and personalized attention for every scholar.') ?></p>
         </div>
         <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold">Personal Mentorship</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Examination System & Evaluation Framework -->
+  <section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto w-full bg-surface-container-low rounded-2xl my-8 border border-border-warm" id="examination-system">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold">Continuous &amp; Comprehensive Assessment</span>
+      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2">Examination &amp; Evaluation System</h2>
+      <p class="font-body-md text-on-surface-variant mt-3">At Sun Rise Sr. Sec. School, our evaluation framework ensures continuous learning, diagnostic feedback, and thorough board examination readiness.</p>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <!-- Mid-term & Annual -->
+      <div class="bg-surface-pure p-6 rounded-xl border border-border-warm shadow-sm flex flex-col justify-between">
+        <div class="flex flex-col gap-3">
+          <div class="w-12 h-12 rounded-lg bg-primary text-[#C9A24B] flex items-center justify-center">
+            <span class="material-symbols-outlined text-[24px]">assignment</span>
+          </div>
+          <h3 class="font-headline-sm text-base font-bold text-primary">Mid-Term &amp; Annual Exams</h3>
+          <p class="font-body-sm text-on-surface-variant">Comprehensive term-end examinations patterned on HBSE board standards, evaluating overall mastery and practical performance.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase">Major Milestones</div>
+      </div>
+
+      <!-- Monthly Unit Tests -->
+      <div class="bg-surface-pure p-6 rounded-xl border border-border-warm shadow-sm flex flex-col justify-between">
+        <div class="flex flex-col gap-3">
+          <div class="w-12 h-12 rounded-lg bg-primary text-[#C9A24B] flex items-center justify-center">
+            <span class="material-symbols-outlined text-[24px]">calendar_month</span>
+          </div>
+          <h3 class="font-headline-sm text-base font-bold text-primary">Monthly Unit Tests</h3>
+          <p class="font-body-sm text-on-surface-variant">Scheduled at the close of every month across all subjects to track topic-wise retention and ensure continuous revision.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase">Monthly Assessment</div>
+      </div>
+
+      <!-- Regular Class Tests -->
+      <div class="bg-surface-pure p-6 rounded-xl border border-border-warm shadow-sm flex flex-col justify-between">
+        <div class="flex flex-col gap-3">
+          <div class="w-12 h-12 rounded-lg bg-primary text-[#C9A24B] flex items-center justify-center">
+            <span class="material-symbols-outlined text-[24px]">quiz</span>
+          </div>
+          <h3 class="font-headline-sm text-base font-bold text-primary">Regular Class Tests</h3>
+          <p class="font-body-sm text-on-surface-variant">Frequent chapter-end evaluations conducted by subject educators to identify learning gaps and reinforce key concepts.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase">Topic-by-Topic</div>
+      </div>
+
+      <!-- Surprise Tests -->
+      <div class="bg-surface-pure p-6 rounded-xl border border-border-warm shadow-sm flex flex-col justify-between">
+        <div class="flex flex-col gap-3">
+          <div class="w-12 h-12 rounded-lg bg-primary text-[#C9A24B] flex items-center justify-center">
+            <span class="material-symbols-outlined text-[24px]">bolt</span>
+          </div>
+          <h3 class="font-headline-sm text-base font-bold text-primary">Surprise Tests</h3>
+          <p class="font-body-sm text-on-surface-variant">Unannounced quick assessments encouraging students to maintain daily revision habits and stay prepared throughout the year.</p>
+        </div>
+        <div class="pt-4 mt-4 border-t border-border-warm text-xs text-[#C9A24B] font-bold uppercase">Continuous Readiness</div>
+      </div>
+    </div>
+
+    <!-- Medium of Instruction & Timings Strip -->
+    <div class="mt-10 p-6 rounded-xl bg-white border border-[#C9A24B]/30 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-[#C9A24B]/15 text-[#C9A24B] flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[26px]">translate</span>
+        </div>
+        <div>
+          <span class="text-xs uppercase font-bold text-secondary tracking-wider">Medium of Instruction</span>
+          <h4 class="font-headline-sm text-primary font-bold text-base sm:text-lg">English Medium (Nursery to Class XII)</h4>
+          <p class="text-xs text-on-surface-variant">With strong Hindi and regional language foundations</p>
+        </div>
+      </div>
+      <div class="h-10 w-px bg-border-warm hidden md:block"></div>
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+          <span class="material-symbols-outlined text-[26px]">schedule</span>
+        </div>
+        <div>
+          <span class="text-xs uppercase font-bold text-secondary tracking-wider">Official School Timings</span>
+          <div class="text-xs sm:text-sm font-bold text-primary flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-3">
+            <span><strong>Summer:</strong> 7:30 AM – 1:30 PM</span>
+            <span class="hidden sm:inline">&bull;</span>
+            <span><strong>Winter:</strong> 8:30 AM – 2:30 PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Toppers & Board Results Spotlight -->
+  <section class="py-20 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="toppers">
+    <div class="text-center max-w-3xl mx-auto mb-14">
+      <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold">Academic Distinction</span>
+      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2">Board Examination Results &amp; Toppers</h2>
+      <p class="font-body-md text-on-surface-variant mt-3">Sun Rise Sr. Sec. School proudly celebrates a consistent 100% HBSE board examination pass rate, producing district and block rank holders.</p>
+    </div>
+
+    <div class="bg-primary text-white rounded-2xl p-8 lg:p-12 shadow-xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
+      <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-[#C9A24B]/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="flex flex-col gap-4 max-w-2xl relative z-10">
+        <div class="inline-flex items-center gap-2 bg-[#C9A24B] text-primary px-3.5 py-1 rounded-full text-xs font-bold uppercase self-start">
+          <span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">military_tech</span>
+          HBSE Board Star Achievers
+        </div>
+        <h3 class="text-2xl sm:text-3xl font-bold font-headline-lg text-white leading-tight">Celebrating Academic Excellence &amp; Merit Ranks</h3>
+        <p class="text-surface-cream/90 text-sm sm:text-base leading-relaxed">
+          Through systematic syllabus completion, doubt resolution clinics, and regular testing, our Class X and XII students achieve top percentiles in Haryana Board examinations year after year.
+        </p>
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-4 pt-2">
+          <div class="p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10">
+            <span class="block text-xl font-bold text-[#C9A24B]">100%</span>
+            <span class="text-xs text-slate-300">Board Pass Record</span>
+          </div>
+          <div class="p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10">
+            <span class="block text-xl font-bold text-[#C9A24B]">Nursery – XII</span>
+            <span class="text-xs text-slate-300">Comprehensive Spectrum</span>
+          </div>
+          <div class="p-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10 col-span-2 sm:col-span-1">
+            <span class="block text-xl font-bold text-[#C9A24B]">3 Streams</span>
+            <span class="text-xs text-slate-300">Science, Commerce, Arts</span>
+          </div>
+        </div>
+      </div>
+      <div class="relative z-10 flex flex-col items-center gap-4 flex-shrink-0">
+        <div class="w-64 sm:w-72 rounded-xl overflow-hidden shadow-2xl border-2 border-[#C9A24B]/50 cursor-pointer" onclick="openLightbox(this)">
+          <img src="assets/images/pop-up%20image.webp" alt="Sun Rise Board Toppers Poster" class="w-full h-auto object-cover" loading="lazy"/>
+        </div>
+        <span class="text-xs text-[#C9A24B] font-semibold flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">zoom_in</span> Click to view toppers poster
+        </span>
       </div>
     </div>
   </section>

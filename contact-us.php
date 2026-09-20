@@ -14,8 +14,8 @@ require_once __DIR__ . '/core/header.php';
     <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
     <div class="max-w-6xl w-full mx-auto relative z-10 flex flex-col items-center text-center gap-6">
       <span class="font-eyebrow text-eyebrow uppercase text-gold-light tracking-[0.2em] font-bold bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full shadow-md"><?= get_text('contact', 'hero_badge', 'Get in Touch') ?></span>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg font-bold tracking-tight text-white w-full max-w-5xl leading-[1.15] drop-shadow-md"><?= get_text('contact', 'hero_title', 'Connect with Sun Rise School') ?></h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-surface-cream/95 w-full max-w-4xl leading-relaxed drop-shadow"><?= get_text('contact', 'hero_subtitle', 'We welcome parents, prospective students, and guardians to visit our campus or get in touch for admissions, bus routes, and general inquiries.') ?></p>
+      <h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg font-bold tracking-tight text-white w-full max-w-4xl leading-[1.2] drop-shadow-md"><?= get_text('contact', 'hero_title', 'Connect with Sun Rise School') ?></h1>
+      <p class="text-sm sm:text-base md:text-lg text-surface-cream/95 w-full max-w-3xl leading-relaxed drop-shadow"><?= get_text('contact', 'hero_subtitle', 'We welcome parents, prospective students, and guardians to visit our campus or get in touch for admissions, bus routes, and general inquiries.') ?></p>
     </div>
   </section>
 
@@ -27,7 +27,7 @@ require_once __DIR__ . '/core/header.php';
         <div class="absolute top-0 left-0 w-full h-1.5 bg-[#C9A24B] rounded-t-2xl"></div>
         <div class="mb-8">
           <span class="font-eyebrow text-eyebrow uppercase text-[#C9A24B] mb-2 block font-bold"><?= get_text('contact', 'form_eyebrow', 'Inquiry Desk') ?></span>
-          <h2 class="font-headline-lg text-headline-lg-mobile lg:text-headline-lg text-primary font-bold"><?= get_text('contact', 'form_heading', 'Send Us a Message') ?></h2>
+          <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug"><?= get_text('contact', 'form_heading', 'Send Us a Message') ?></h2>
           <p class="font-body-md text-on-surface-variant mt-2"><?= get_text('contact', 'form_desc', 'Fill out the quick form below and our administrative team will respond to your queries promptly.') ?></p>
         </div>
         <form class="space-y-6" onsubmit="event.preventDefault(); alert('Thank you for reaching out to Sun Rise Sr. Sec. School. Your message has been received.'); this.reset();">
@@ -44,7 +44,7 @@ require_once __DIR__ . '/core/header.php';
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <div class="flex flex-col gap-2">
               <label class="font-label-md text-primary font-bold" for="phone">Phone Number <span class="text-error">*</span></label>
-              <input class="h-12 px-4 bg-surface-container-low rounded-lg border border-border-warm text-on-surface text-body-md focus:outline-none focus:border-primary transition-colors" id="phone" placeholder="+91 98123 45678" required="" type="tel"/>
+              <input class="h-12 px-4 bg-surface-container-low rounded-lg border border-border-warm text-on-surface text-body-md focus:outline-none focus:border-primary transition-colors" id="phone" placeholder="+91 70158 90094" required="" type="tel"/>
             </div>
             <div class="flex flex-col gap-2">
               <label class="font-label-md text-primary font-bold" for="department">Inquiry Type</label>
@@ -92,8 +92,11 @@ require_once __DIR__ . '/core/header.php';
               </div>
               <div>
                 <h4 class="font-label-md text-primary font-bold">Office Helpline</h4>
-                <p class="font-body-sm text-on-surface-variant mt-0.5">
+                <p class="font-body-sm text-on-surface-variant mt-0.5 flex flex-col gap-1">
                   <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="text-primary font-bold hover:underline"><?= $site_phone ?></a>
+                  <?php if (!empty($site_phone_alt)): ?>
+                    <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone_alt) ?>" class="text-primary font-bold hover:underline"><?= $site_phone_alt ?></a>
+                  <?php endif; ?>
                 </p>
               </div>
             </div>
@@ -113,8 +116,12 @@ require_once __DIR__ . '/core/header.php';
                 <span class="material-symbols-outlined text-primary text-[20px]">schedule</span>
               </div>
               <div>
-                <h4 class="font-label-md text-primary font-bold">Visiting &amp; Office Hours</h4>
-                <p class="font-body-sm text-on-surface-variant mt-0.5"><?= get_text('contact', 'office_hours', 'Monday – Saturday: 8:00 AM – 2:30 PM') ?><br/><?= get_text('contact', 'office_days', 'Sunday: Closed') ?></p>
+                <h4 class="font-label-md text-primary font-bold">School &amp; Office Timings</h4>
+                <div class="font-body-sm text-on-surface-variant mt-0.5 flex flex-col gap-1">
+                  <div><strong>Summer Season:</strong> 7:30 AM – 1:30 PM</div>
+                  <div><strong>Winter Season:</strong> 8:30 AM – 2:30 PM</div>
+                  <div class="text-xs text-on-surface-variant/80">Visiting Days: Monday to Saturday (Sunday Closed)</div>
+                </div>
               </div>
             </div>
           </div>
@@ -160,7 +167,7 @@ require_once __DIR__ . '/core/header.php';
           <p class="font-body-md text-on-primary-container mt-1">Have quick questions regarding admissions, transport routes, or fees? Reach us directly on WhatsApp.</p>
         </div>
       </div>
-      <a class="bg-emerald-600 hover:bg-emerald-700 text-white font-label-md px-8 h-14 rounded-xl transition-colors flex items-center gap-3 shadow-md flex-shrink-0 font-bold" href="https://wa.me/919812345678" target="_blank" rel="noopener">
+      <a class="bg-emerald-600 hover:bg-emerald-700 text-white font-label-md px-8 h-14 rounded-xl transition-colors flex items-center gap-3 shadow-md flex-shrink-0 font-bold" href="https://wa.me/917015890094" target="_blank" rel="noopener">
         <span class="material-symbols-outlined text-[24px]">chat</span>
         <span>Open WhatsApp Chat</span>
       </a>

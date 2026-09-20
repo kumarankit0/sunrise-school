@@ -46,28 +46,21 @@ $pages_config = [
     'home' => [
         'title' => 'Home Page',
         'icon'  => 'home',
-        'desc'  => 'Main landing page: Hero, Legacy Stats, 3 Pillars, Principal Message, Events, Glimpses & CTA',
+        'desc'  => 'Complete Home Page Control: 6 Hero Slider Photos, Ticker Strip, Legacy Stats, 3 Pillars, Director & Principal Messages, Events, 12 Gallery Photos, Affiliations & CTA',
         'sections' => [
+            // Section 1: Hero Banner, 4-Direction Mosaic Box Slider & Headlines
             [
-                'title' => 'Section 1: Hero Banner & Main Headings',
+                'title' => 'Section 1: Hero Mosaic Slider & Headlines (6 Slide Photos)',
                 'icon'  => 'flag',
-                'desc'  => 'Top full-screen banner, affiliation badge, main headline, and intro subtitle.',
+                'desc'  => 'Upload and manage all 6 dynamic hero slide photos, top affiliation badge, main headline, intro text, and action buttons.',
                 'fields' => [
-                    [
-                        'kind' => 'image',
-                        'key' => 'hero_banner',
-                        'label' => 'Hero Banner Background Image',
-                        'default' => 'assets/images/sunrise school image/school_home1.webp',
-                        'alt' => 'Sun Rise School Main Entrance and Campus',
-                        'help' => 'Large background photo at the top of the homepage (recommended: 1920x1080).'
-                    ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_badge',
-                        'label' => 'Hero Affiliation Badge / Eyebrow',
+                        'label' => 'Hero Eyebrow / Affiliation Badge',
                         'type' => 'text',
                         'default' => 'AFFILIATED TO HBSE • PRE-PRIMARY TO SENIOR SECONDARY (10+2)',
-                        'help' => 'Top pill badge displayed in the hero section.'
+                        'help' => 'Top badge displayed prominently above the headline.'
                     ],
                     [
                         'kind' => 'text',
@@ -75,29 +68,180 @@ $pages_config = [
                         'label' => 'Main Hero Headline',
                         'type' => 'html',
                         'default' => 'Empowering Minds, Inspiring Character & <span class="text-[#C9A24B] italic">Academic Excellence</span>',
-                        'help' => 'Primary headline on homepage (rich formatting allowed).'
+                        'help' => 'Primary headline on homepage (HTML formatting allowed).'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'hero_subtitle',
-                        'label' => 'Hero Intro Paragraph',
+                        'label' => 'Hero Subtitle / Intro Description',
                         'type' => 'text',
                         'default' => 'Welcome to Sun Rise Sr. Sec. School, Dobhi. We foster an enriching educational environment combining rigorous HBSE scholarship, moral values, modern technology, and sportsmanship.',
                         'help' => 'Subtitle text below the main hero headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn1_text',
+                        'label' => 'Button 1 Text (Gold Button)',
+                        'type' => 'text',
+                        'default' => 'Admissions 2026–27',
+                        'help' => 'Text for primary action button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn1_link',
+                        'label' => 'Button 1 Target URL',
+                        'type' => 'text',
+                        'default' => 'admission.php',
+                        'help' => 'Destination page link for Button 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn2_text',
+                        'label' => 'Button 2 Text (Outline Button)',
+                        'type' => 'text',
+                        'default' => 'Explore Campus',
+                        'help' => 'Text for secondary action button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_btn2_link',
+                        'label' => 'Button 2 Target URL',
+                        'type' => 'text',
+                        'default' => 'campus.php',
+                        'help' => 'Destination page link for Button 2.'
+                    ],
+                    // Slide 1
+                    [
+                        'kind' => 'image',
+                        'key' => 'hero_slide_1',
+                        'label' => 'Hero Slide 1 Photo (Main Campus Entrance)',
+                        'default' => 'assets/images/sunrise school image/school_home1.webp',
+                        'alt' => 'Sun Rise School Main Campus Entrance',
+                        'help' => 'Slide 1 in the 4-direction mosaic box slider (recommended: 1920x1080).'
+                    ],
+                    // Slide 2
+                    [
+                        'kind' => 'image',
+                        'key' => 'hero_slide_2',
+                        'label' => 'Hero Slide 2 Photo (Campus Building Day View)',
+                        'default' => 'assets/images/sunrise school image/school_home2.webp',
+                        'alt' => 'School Building and Assembly Grounds',
+                        'help' => 'Slide 2 in the 4-direction mosaic box slider.'
+                    ],
+                    // Slide 3
+                    [
+                        'kind' => 'image',
+                        'key' => 'hero_slide_3',
+                        'label' => 'Hero Slide 3 Photo (Sports Ground & Athletics)',
+                        'default' => 'assets/images/sunrise school image/students_ground.webp',
+                        'alt' => 'Students on Athletics Playfield',
+                        'help' => 'Slide 3 in the 4-direction mosaic box slider.'
+                    ],
+                    // Slide 4
+                    [
+                        'kind' => 'image',
+                        'key' => 'hero_slide_4',
+                        'label' => 'Hero Slide 4 Photo (Science & Innovation Projects)',
+                        'default' => 'assets/images/sunrise school image/project.webp',
+                        'alt' => 'Science Exhibition Working Models',
+                        'help' => 'Slide 4 in the 4-direction mosaic box slider.'
+                    ],
+                    // Slide 5
+                    [
+                        'kind' => 'image',
+                        'key' => 'hero_slide_5',
+                        'label' => 'Hero Slide 5 Photo (Campus Illuminated Night View)',
+                        'default' => 'assets/images/sunrise school image/school_nightview.webp',
+                        'alt' => 'Campus Night Architecture',
+                        'help' => 'Slide 5 in the 4-direction mosaic box slider.'
+                    ],
+                    // Slide 6
+                    [
+                        'kind' => 'image',
+                        'key' => 'hero_slide_6',
+                        'label' => 'Hero Slide 6 Photo (Academic Fair & Celebrations)',
+                        'default' => 'assets/images/sunrise school image/exhibition.webp',
+                        'alt' => 'Academic Fair & Celebrations',
+                        'help' => 'Slide 6 in the 4-direction mosaic box slider.'
+                    ],
+                ]
+            ],
+            // Section 1B: Continuous Ticker Strip
+            [
+                'title' => 'Section 1B: Continuous Moving School Ticker Strip',
+                'icon'  => 'view_carousel',
+                'desc'  => 'Manage the marquee announcement strip just below the hero section.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'ticker_label',
+                        'label' => 'Ticker Left Badge Title',
+                        'type' => 'text',
+                        'default' => 'Latest Updates',
+                        'help' => 'Gold badge title on the left.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'ticker_item_1',
+                        'label' => 'Ticker Update 1 (School Timings)',
+                        'type' => 'html',
+                        'default' => '<strong class="text-[#C9A24B] font-bold">School Timings:</strong> Summer Season: 7:30 AM to 1:30 PM &bull; Winter Season: 8:30 AM to 2:30 PM.',
+                        'help' => 'First scrolling notice item.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'ticker_item_2',
+                        'label' => 'Ticker Update 2 (Admissions Open)',
+                        'type' => 'html',
+                        'default' => '<strong class="text-[#C9A24B] font-bold">Admissions 2026-27:</strong> Nursery to Class XII (10+2) &bull; Science, Commerce &amp; Arts Streams &bull; English Medium.',
+                        'help' => 'Second scrolling notice item.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'ticker_item_3',
+                        'label' => 'Ticker Update 3 (Board Exam Results)',
+                        'type' => 'html',
+                        'default' => '<strong class="text-[#C9A24B] font-bold">HBSE Board Results:</strong> Exemplary distinctions & 100% pass record in Class 10th & 12th board exams.',
+                        'help' => 'Third scrolling notice item.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'ticker_item_4',
+                        'label' => 'Ticker Update 4 (School Transport / Bus)',
+                        'type' => 'html',
+                        'default' => '<strong class="text-[#C9A24B] font-bold">School Bus & Vans:</strong> GPS-tracked transit serving Dobhi, Agroha, Balsamand, Chaudhariwas & nearby villages.',
+                        'help' => 'Fourth scrolling notice item.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'ticker_item_5',
+                        'label' => 'Ticker Update 5 (Sports Glories)',
+                        'type' => 'html',
+                        'default' => '<strong class="text-[#C9A24B] font-bold">State Sports Glories:</strong> 2 Gold Medals in National Wrestling &bull; 2 Silver in Kickboxing.',
+                        'help' => 'Fifth scrolling notice item.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'ticker_item_6',
+                        'label' => 'Ticker Update 6 (Campus Infrastructure)',
+                        'type' => 'html',
+                        'default' => '<strong class="text-[#C9A24B] font-bold">Infrastructure:</strong> Smart Classrooms &bull; Science & Computer Labs &bull; Sports Playfields.',
+                        'help' => 'Sixth scrolling notice item.'
                     ]
                 ]
             ],
+            // Section 2: Legacy Highlights & 4 Key Stat Badges
             [
-                'title' => 'Section 2: The Sun Rise Legacy & Key Indicators',
+                'title' => 'Section 2: The Sun Rise Legacy & Key Indicators (4 Stats)',
                 'icon'  => 'history_edu',
-                'desc'  => 'Institutional overview, mission statement, and 2 highlight pass & ratio stats.',
+                'desc'  => 'Institutional overview, mission statement, and 4 numeric performance badges.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'legacy_tagline',
                         'label' => 'Spotlight Eyebrow Tagline',
                         'type' => 'text',
-                        'default' => 'THE SUN RISE LEGACY',
+                        'default' => 'THE SUN RISE LEGACY • ESTD. 2007',
                         'help' => 'Small uppercase label above the spotlight headline.'
                     ],
                     [
@@ -113,31 +257,80 @@ $pages_config = [
                         'key' => 'legacy_description',
                         'label' => 'Spotlight Overview Paragraph',
                         'type' => 'text',
-                        'default' => "At Sun Rise Sr. Sec. School, Dobhi, we are dedicated to nurturing each student's intellectual, physical, and moral growth. Through cutting-edge science labs, dedicated sports facilities, and exemplary faculty mentorship, our students consistently achieve top honours in HBSE board exams and competitive Olympiads.",
+                        'default' => "At Sun Rise Sr. Sec. School, Dobhi, we are dedicated to nurturing each student's intellectual, physical, and moral growth. Through cutting-edge science labs, modern computer lab, library, spacious sports grounds, and exemplary faculty mentorship, our students consistently achieve top honours in HBSE board exams and national championships.",
                         'help' => 'Detailed introductory overview paragraph.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'stat_pass_rate',
-                        'label' => 'Stat 1: HBSE Board Pass Result',
+                        'label' => 'Stat 1: Number / Value',
                         'type' => 'text',
                         'default' => '100%',
-                        'help' => 'Percentage or number for board pass rate.'
+                        'help' => 'Highlight stat value.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'stat_student_ratio',
-                        'label' => 'Stat 2: Teacher-to-Student Ratio',
+                        'key' => 'stat_pass_label',
+                        'label' => 'Stat 1: Title Label',
                         'type' => 'text',
-                        'default' => '1:15',
-                        'help' => 'Class ratio of teachers to students.'
-                    ]
+                        'default' => 'HBSE Board Results',
+                        'help' => 'Label for stat 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat_enrolled',
+                        'label' => 'Stat 2: Number / Value',
+                        'type' => 'text',
+                        'default' => '700+',
+                        'help' => 'Highlight stat value.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat_enrolled_label',
+                        'label' => 'Stat 2: Title Label',
+                        'type' => 'text',
+                        'default' => 'Enrolled Students',
+                        'help' => 'Label for stat 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat_teachers',
+                        'label' => 'Stat 3: Number / Value',
+                        'type' => 'text',
+                        'default' => '30+',
+                        'help' => 'Highlight stat value.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat_teachers_label',
+                        'label' => 'Stat 3: Title Label',
+                        'type' => 'text',
+                        'default' => 'Teaching Faculty',
+                        'help' => 'Label for stat 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat_classrooms',
+                        'label' => 'Stat 4: Number / Value',
+                        'type' => 'text',
+                        'default' => '30+',
+                        'help' => 'Highlight stat value.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat_classrooms_label',
+                        'label' => 'Stat 4: Title Label',
+                        'type' => 'text',
+                        'default' => 'Smart Classrooms',
+                        'help' => 'Label for stat 4.'
+                    ],
                 ]
             ],
+            // Section 2B: Live Event Tracker
             [
                 'title' => 'Section 2B: Live Event Tracker & Upcoming Notices',
                 'icon'  => 'campaign',
-                'desc'  => 'Manage live scrolling events ticker on homepage. Up to 8 events with titles, optional red [NEW] badges, and click links.',
+                'desc'  => 'Manage the live scrolling events window. Up to 6 event notices with title, optional red [NEW] badge, and click URL.',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -145,7 +338,7 @@ $pages_config = [
                         'label' => 'Tracker Headline Word 1 (Gold)',
                         'type' => 'text',
                         'default' => 'UPCOMING',
-                        'help' => 'First word of the tracker header, styled in Gold (e.g. UPCOMING).'
+                        'help' => 'First word of tracker title.'
                     ],
                     [
                         'kind' => 'text',
@@ -153,15 +346,15 @@ $pages_config = [
                         'label' => 'Tracker Headline Word 2 (White)',
                         'type' => 'text',
                         'default' => 'EVENTS',
-                        'help' => 'Second word of the tracker header, styled in White (e.g. EVENTS).'
+                        'help' => 'Second word of tracker title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'live_tracker_badge',
-                        'label' => 'Tracker Live Status Badge',
+                        'label' => 'Tracker Status Badge',
                         'type' => 'text',
                         'default' => 'LIVE TRACKER',
-                        'help' => 'Small uppercase pill badge with animated green pulse dot.'
+                        'help' => 'Small uppercase pill badge with green pulse dot.'
                     ],
                     [
                         'kind' => 'text',
@@ -169,15 +362,15 @@ $pages_config = [
                         'label' => 'Event 1: Title / Notice',
                         'type' => 'text',
                         'default' => 'NORTH ZONE RELIANCE FOOTBALL CHAMPIONSHIP',
-                        'help' => 'Notice title displayed next to bullet (▪).'
+                        'help' => 'Notice title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'event_1_badge',
-                        'label' => 'Event 1: Badge (e.g. NEW / HOT or leave blank)',
+                        'label' => 'Event 1: Badge (e.g. NEW or blank)',
                         'type' => 'text',
                         'default' => '',
-                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                        'help' => 'Pulsing badge if filled.'
                     ],
                     [
                         'kind' => 'text',
@@ -185,7 +378,7 @@ $pages_config = [
                         'label' => 'Event 1: Target Link URL',
                         'type' => 'text',
                         'default' => 'events.php',
-                        'help' => 'Page to open when clicked (e.g. events.php, admission.php).'
+                        'help' => 'Destination page link.'
                     ],
                     [
                         'kind' => 'text',
@@ -193,15 +386,15 @@ $pages_config = [
                         'label' => 'Event 2: Title / Notice',
                         'type' => 'text',
                         'default' => 'Admission Open for New Session 2026-27',
-                        'help' => 'Notice title displayed next to bullet (▪).'
+                        'help' => 'Notice title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'event_2_badge',
-                        'label' => 'Event 2: Badge (e.g. NEW / HOT or leave blank)',
+                        'label' => 'Event 2: Badge (e.g. NEW or blank)',
                         'type' => 'text',
                         'default' => 'NEW',
-                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                        'help' => 'Pulsing badge if filled.'
                     ],
                     [
                         'kind' => 'text',
@@ -209,7 +402,7 @@ $pages_config = [
                         'label' => 'Event 2: Target Link URL',
                         'type' => 'text',
                         'default' => 'admission.php',
-                        'help' => 'Page to open when clicked.'
+                        'help' => 'Destination page link.'
                     ],
                     [
                         'kind' => 'text',
@@ -217,15 +410,15 @@ $pages_config = [
                         'label' => 'Event 3: Title / Notice',
                         'type' => 'text',
                         'default' => 'Annual Sports Meet & Athletic Championship Trials',
-                        'help' => 'Notice title displayed next to bullet (▪).'
+                        'help' => 'Notice title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'event_3_badge',
-                        'label' => 'Event 3: Badge (e.g. NEW / HOT or leave blank)',
+                        'label' => 'Event 3: Badge (e.g. NEW or blank)',
                         'type' => 'text',
                         'default' => 'NEW',
-                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                        'help' => 'Pulsing badge if filled.'
                     ],
                     [
                         'kind' => 'text',
@@ -233,7 +426,7 @@ $pages_config = [
                         'label' => 'Event 3: Target Link URL',
                         'type' => 'text',
                         'default' => 'campus.php#sports',
-                        'help' => 'Page to open when clicked.'
+                        'help' => 'Destination page link.'
                     ],
                     [
                         'kind' => 'text',
@@ -241,15 +434,15 @@ $pages_config = [
                         'label' => 'Event 4: Title / Notice',
                         'type' => 'text',
                         'default' => 'State Level Science Exhibition & Robotic Project Display',
-                        'help' => 'Notice title displayed next to bullet (▪).'
+                        'help' => 'Notice title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'event_4_badge',
-                        'label' => 'Event 4: Badge (e.g. NEW / HOT or leave blank)',
+                        'label' => 'Event 4: Badge (e.g. NEW or blank)',
                         'type' => 'text',
                         'default' => '',
-                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                        'help' => 'Pulsing badge if filled.'
                     ],
                     [
                         'kind' => 'text',
@@ -257,7 +450,7 @@ $pages_config = [
                         'label' => 'Event 4: Target Link URL',
                         'type' => 'text',
                         'default' => 'academics.php',
-                        'help' => 'Page to open when clicked.'
+                        'help' => 'Destination page link.'
                     ],
                     [
                         'kind' => 'text',
@@ -265,15 +458,15 @@ $pages_config = [
                         'label' => 'Event 5: Title / Notice',
                         'type' => 'text',
                         'default' => 'Scholarship Test for Meritorious Students (Classes 6th-12th)',
-                        'help' => 'Notice title displayed next to bullet (▪).'
+                        'help' => 'Notice title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'event_5_badge',
-                        'label' => 'Event 5: Badge (e.g. NEW / HOT or leave blank)',
+                        'label' => 'Event 5: Badge (e.g. NEW or blank)',
                         'type' => 'text',
                         'default' => 'NEW',
-                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                        'help' => 'Pulsing badge if filled.'
                     ],
                     [
                         'kind' => 'text',
@@ -281,7 +474,7 @@ $pages_config = [
                         'label' => 'Event 5: Target Link URL',
                         'type' => 'text',
                         'default' => 'admission.php',
-                        'help' => 'Page to open when clicked.'
+                        'help' => 'Destination page link.'
                     ],
                     [
                         'kind' => 'text',
@@ -289,15 +482,15 @@ $pages_config = [
                         'label' => 'Event 6: Title / Notice',
                         'type' => 'text',
                         'default' => 'CBSE/HBSE Board Exam Preparation Workshop & Mock Tests',
-                        'help' => 'Notice title displayed next to bullet (▪).'
+                        'help' => 'Notice title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'event_6_badge',
-                        'label' => 'Event 6: Badge (e.g. NEW / HOT or leave blank)',
+                        'label' => 'Event 6: Badge (e.g. NEW or blank)',
                         'type' => 'text',
                         'default' => '',
-                        'help' => 'Displays a pulsing red badge if filled (e.g. NEW).'
+                        'help' => 'Pulsing badge if filled.'
                     ],
                     [
                         'kind' => 'text',
@@ -305,14 +498,15 @@ $pages_config = [
                         'label' => 'Event 6: Target Link URL',
                         'type' => 'text',
                         'default' => 'academics.php#academic-calendar',
-                        'help' => 'Page to open when clicked.'
+                        'help' => 'Destination page link.'
                     ]
                 ]
             ],
+            // Section 3: Three Pillars of Holistic Development
             [
-                'title' => 'Section 3: Three Pillars of Holistic Development',
+                'title' => 'Section 3: Three Pillars of Holistic Development (3 Feature Cards)',
                 'icon'  => 'view_column',
-                'desc'  => 'Three feature cards: Academics & Labs, Sports & Fitness, Innovation & Art.',
+                'desc'  => 'Manage section headlines, category tags, images, titles, descriptions, and button links for all 3 feature cards.',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -320,7 +514,7 @@ $pages_config = [
                         'label' => 'Pillars Eyebrow',
                         'type' => 'text',
                         'default' => 'WHY CHOOSE SUN RISE',
-                        'help' => 'Small uppercase tag above the section headline.'
+                        'help' => 'Small uppercase tag above the headline.'
                     ],
                     [
                         'kind' => 'text',
@@ -342,10 +536,10 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'card1_image',
-                        'label' => 'Pillar 1 Card Image (Academics)',
+                        'label' => 'Pillar 1 Card Image (Academics & Labs)',
                         'default' => 'assets/images/sunrise school image/project.webp',
-                        'alt' => 'Science Labs and Academic Exhibition',
-                        'help' => 'Photo for the Academics & Labs card.'
+                        'alt' => 'Science Labs and Academic Learning',
+                        'help' => 'Photo for card 1.'
                     ],
                     [
                         'kind' => 'text',
@@ -353,7 +547,7 @@ $pages_config = [
                         'label' => 'Pillar 1 Category Tag',
                         'type' => 'text',
                         'default' => 'HBSE CURRICULUM',
-                        'help' => 'Tag for card 1.'
+                        'help' => 'Gold category tag.'
                     ],
                     [
                         'kind' => 'text',
@@ -371,14 +565,30 @@ $pages_config = [
                         'default' => 'State-of-the-art Physics, Chemistry, Biology, and Computer Science laboratories enabling experiential, hands-on scientific learning.',
                         'help' => 'Description for card 1.'
                     ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'card1_link_text',
+                        'label' => 'Pillar 1 Button Text',
+                        'type' => 'text',
+                        'default' => 'Read More',
+                        'help' => 'Button text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'card1_link_url',
+                        'label' => 'Pillar 1 Button Link URL',
+                        'type' => 'text',
+                        'default' => 'academics.php',
+                        'help' => 'Destination page link for card 1.'
+                    ],
                     // Pillar 2
                     [
                         'kind' => 'image',
                         'key' => 'card2_image',
-                        'label' => 'Pillar 2 Card Image (Sports)',
+                        'label' => 'Pillar 2 Card Image (Sports Ground & Yoga)',
                         'default' => 'assets/images/sunrise school image/students_ground.webp',
-                        'alt' => 'School Playground and Sports Arena',
-                        'help' => 'Photo for the Sports & Athletics card.'
+                        'alt' => 'Sports Ground & Athletics',
+                        'help' => 'Photo for card 2.'
                     ],
                     [
                         'kind' => 'text',
@@ -386,7 +596,7 @@ $pages_config = [
                         'label' => 'Pillar 2 Category Tag',
                         'type' => 'text',
                         'default' => 'ATHLETICS & FITNESS',
-                        'help' => 'Tag for card 2.'
+                        'help' => 'Gold category tag.'
                     ],
                     [
                         'kind' => 'text',
@@ -404,14 +614,30 @@ $pages_config = [
                         'default' => 'Spacious athletic playfields, track events, cricket, volleyball, football, and daily morning yoga for physical and mental vigour.',
                         'help' => 'Description for card 2.'
                     ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'card2_link_text',
+                        'label' => 'Pillar 2 Button Text',
+                        'type' => 'text',
+                        'default' => 'Read More',
+                        'help' => 'Button text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'card2_link_url',
+                        'label' => 'Pillar 2 Button Link URL',
+                        'type' => 'text',
+                        'default' => 'campus.php',
+                        'help' => 'Destination page link for card 2.'
+                    ],
                     // Pillar 3
                     [
                         'kind' => 'image',
                         'key' => 'card3_image',
-                        'label' => 'Pillar 3 Card Image (Innovation)',
+                        'label' => 'Pillar 3 Card Image (Innovation & Art Exhibitions)',
                         'default' => 'assets/images/sunrise school image/exhibition.webp',
-                        'alt' => 'Innovation and Student Projects',
-                        'help' => 'Photo for the Innovation & Exhibitions card.'
+                        'alt' => 'Innovation and Art Exhibitions',
+                        'help' => 'Photo for card 3.'
                     ],
                     [
                         'kind' => 'text',
@@ -419,7 +645,7 @@ $pages_config = [
                         'label' => 'Pillar 3 Category Tag',
                         'type' => 'text',
                         'default' => 'INNOVATION & ART',
-                        'help' => 'Tag for card 3.'
+                        'help' => 'Gold category tag.'
                     ],
                     [
                         'kind' => 'text',
@@ -436,81 +662,179 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'Annual science exhibitions, model-making fairs, cultural assemblies, debate contests, and creative arts celebrations.',
                         'help' => 'Description for card 3.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'card3_link_text',
+                        'label' => 'Pillar 3 Button Text',
+                        'type' => 'text',
+                        'default' => 'Read More',
+                        'help' => 'Button text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'card3_link_url',
+                        'label' => 'Pillar 3 Button Link URL',
+                        'type' => 'text',
+                        'default' => 'gallery.php',
+                        'help' => 'Destination page link for card 3.'
                     ]
                 ]
             ],
+            // Section 4: Founder & Director's Message
             [
-                'title' => 'Section 4: Leadership / Principal\'s Message',
-                'icon'  => 'format_quote',
-                'desc'  => 'School leadership portrait, featured inspirational quote, and executive address.',
+                'title' => 'Section 4: Founder & Director\'s Message',
+                'icon'  => 'record_voice_over',
+                'desc'  => 'Director portrait photo, quote, address paragraphs, and signatory designation.',
                 'fields' => [
                     [
                         'kind' => 'image',
-                        'key' => 'leader_photo',
-                        'label' => 'Principal / Leader Portrait Photo',
+                        'key' => 'director_photo',
+                        'label' => 'Director Portrait Photo',
                         'default' => 'assets/images/sunrise school image/speaker.webp',
-                        'alt' => 'School Leadership and Principal',
-                        'help' => 'Portrait photo displayed alongside the quote.'
+                        'alt' => 'Mr. Bhader Singh Swami, Founder & Director',
+                        'help' => 'Photo displayed on the left of director message.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'leader_tagline',
-                        'label' => 'Leadership Tagline',
+                        'key' => 'director_tagline',
+                        'label' => 'Director Eyebrow Tagline',
                         'type' => 'text',
-                        'default' => 'LEADERSHIP MESSAGE',
-                        'help' => 'Eyebrow label above quote.'
+                        'default' => 'DIRECTOR\'S MESSAGE',
+                        'help' => 'Eyebrow label above the heading.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'leader_heading',
-                        'label' => 'Leadership Section Heading',
+                        'key' => 'director_heading',
+                        'label' => 'Director Section Heading',
                         'type' => 'text',
-                        'default' => 'Guiding Young Minds Towards Bright Futures',
-                        'help' => 'Heading for leadership message.'
+                        'default' => 'Empowering Dreams & Shaping Tomorrow\'s Leaders',
+                        'help' => 'Heading.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'leader_quote',
-                        'label' => 'Featured Leadership Quote',
+                        'key' => 'director_quote',
+                        'label' => 'Featured Director Quote',
                         'type' => 'text',
-                        'default' => '“Education at Sun Rise is not only about securing top marks, but about cultivating strong character, moral courage, and curiosity to achieve lasting success in life.”',
-                        'help' => 'Prominent blockquote.'
+                        'default' => '“Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society.”',
+                        'help' => 'Prominent blockquote with gold border.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'leader_paragraph',
-                        'label' => 'Principal / Management Address Paragraph',
+                        'key' => 'director_p1',
+                        'label' => 'Director Address Paragraph 1',
                         'type' => 'text',
-                        'default' => 'At Sun Rise Sr. Sec. School, Dobhi, we provide an inspiring sanctuary of learning where every child is valued and encouraged to realize their maximum potential. Our devoted faculty strives tirelessly to ensure each student shines bright like the rising sun.',
-                        'help' => 'Main address message.'
+                        'default' => 'It gives me immense pleasure to welcome you to Sun Rise Sr. Sec. School, Dobhi—a place where we believe that every child is not just a student, but a unique individual with dreams, abilities, and limitless potential. For us, education is much more than books, classrooms, and examinations. It is about shaping minds, nurturing hearts, building character, and preparing young individuals for life.',
+                        'help' => 'First message paragraph.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'leader_name',
-                        'label' => 'Leader Signature Name',
+                        'key' => 'director_p2',
+                        'label' => 'Director Address Paragraph 2',
                         'type' => 'text',
-                        'default' => 'School Leadership & Principal',
+                        'default' => 'We strive for the holistic development of every student through quality academics, sports, creativity, cultural activities, discipline, and strong moral values. Along with knowledge, we seek to nurture kindness, confidence, responsibility, resilience, and respect for others. At Sun Rise Sr. Sec. School, we do not simply prepare children for tomorrow; we nurture the individuals who will shape tomorrow.',
+                        'help' => 'Second message paragraph.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'director_name',
+                        'label' => 'Director Name',
+                        'type' => 'text',
+                        'default' => 'Mr. Bhader Singh Swami',
                         'help' => 'Signatory name.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'leader_title',
-                        'label' => 'Leader Designation',
+                        'key' => 'director_title',
+                        'label' => 'Director Designation',
                         'type' => 'text',
-                        'default' => 'Sun Rise Sr. Sec. School, Dobhi',
-                        'help' => 'Official designation.'
+                        'default' => 'Founder & Director, Sun Rise Sr. Sec. School, Dobhi',
+                        'help' => 'Official title.'
                     ]
                 ]
             ],
+            // Section 5: Principal's Message
             [
-                'title' => 'Section 5: Notices & School Happenings',
+                'title' => 'Section 5: Principal\'s Message',
+                'icon'  => 'school',
+                'desc'  => 'Principal portrait photo, quote, address paragraphs, and signatory designation.',
+                'fields' => [
+                    [
+                        'kind' => 'image',
+                        'key' => 'principal_photo',
+                        'label' => 'Principal Photo',
+                        'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
+                        'alt' => 'Mr. Rajbir Singh, Principal',
+                        'help' => 'Photo displayed on the right of the principal message.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'principal_tagline',
+                        'label' => 'Principal Eyebrow Tagline',
+                        'type' => 'text',
+                        'default' => 'PRINCIPAL\'S MESSAGE',
+                        'help' => 'Eyebrow label above the heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'principal_heading',
+                        'label' => 'Principal Section Heading',
+                        'type' => 'text',
+                        'default' => 'Guiding Young Minds Towards Academic Excellence & Character',
+                        'help' => 'Section heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'principal_quote',
+                        'label' => 'Featured Principal Quote',
+                        'type' => 'text',
+                        'default' => '“True education is the illumination of intellect grounded in discipline, curiosity, and compassionate leadership.”',
+                        'help' => 'Prominent blockquote with gold border.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'principal_p1',
+                        'label' => 'Principal Address Paragraph 1',
+                        'type' => 'text',
+                        'default' => 'Welcome to Sun Rise Sr. Sec. School, Dobhi. As Principal, it is my privilege to lead an institution where rigorous scholarship seamlessly blends with moral integrity, creative exploration, and personal mentorship. Our dedicated faculty works with unwavering commitment to unlock the boundless potential within each student.',
+                        'help' => 'First message paragraph.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'principal_p2',
+                        'label' => 'Principal Address Paragraph 2',
+                        'type' => 'text',
+                        'default' => 'Through state-of-the-art science and computer laboratories, expansive sports infrastructure, and dedicated HBSE curriculum delivery, we empower our learners to achieve exemplary distinctions in board examinations and life beyond. Together with our supportive parents, we nurture young minds to lead with knowledge, courage, and humble hearts.',
+                        'help' => 'Second message paragraph.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'principal_name',
+                        'label' => 'Principal Name',
+                        'type' => 'text',
+                        'default' => 'Mr. Rajbir Singh',
+                        'help' => 'Signatory name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'principal_title',
+                        'label' => 'Principal Designation',
+                        'type' => 'text',
+                        'default' => 'Principal, Sun Rise Sr. Sec. School, Dobhi',
+                        'help' => 'Official title.'
+                    ]
+                ]
+            ],
+            // Section 6: School Events & News (3 Cards)
+            [
+                'title' => 'Section 6: School Events & News (3 Cards)',
                 'icon'  => 'event_note',
-                'desc'  => 'Events & news cards displayed on homepage.',
+                'desc'  => 'Three event cards displayed on homepage with tags, badges, titles, descriptions, and venue locations.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'events_eyebrow',
-                        'label' => 'Happenings Eyebrow',
+                        'label' => 'Events Eyebrow',
                         'type' => 'text',
                         'default' => 'NOTICES & HAPPENINGS',
                         'help' => 'Eyebrow label.'
@@ -518,68 +842,165 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'events_heading',
-                        'label' => 'Happenings Heading',
+                        'label' => 'Events Heading',
                         'type' => 'text',
                         'default' => 'School Events & News',
-                        'help' => 'Main section heading.'
+                        'help' => 'Main heading.'
                     ],
-                    // Event 1
+                    // Notice 1
+                    [
+                        'kind' => 'text',
+                        'key' => 'event1_tag',
+                        'label' => 'Event 1: Category Tag',
+                        'type' => 'text',
+                        'default' => 'ACADEMIC',
+                        'help' => 'Category label (e.g. ACADEMIC).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event1_badge',
+                        'label' => 'Event 1: Badge',
+                        'type' => 'text',
+                        'default' => 'ANNUAL',
+                        'help' => 'Status badge (e.g. ANNUAL / UPCOMING).'
+                    ],
                     [
                         'kind' => 'text',
                         'key' => 'event1_title',
-                        'label' => 'Notice 1 Title',
+                        'label' => 'Event 1: Title',
                         'type' => 'text',
                         'default' => 'Annual Science & Innovation Exhibition',
-                        'help' => 'Title for notice 1.'
+                        'help' => 'Title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'event1_desc',
-                        'label' => 'Notice 1 Description',
+                        'label' => 'Event 1: Description',
                         'type' => 'text',
                         'default' => 'Students display innovative working models, robotics experiments, and environmental science projects.',
-                        'help' => 'Description for notice 1.'
+                        'help' => 'Description.'
                     ],
-                    // Event 2
+                    [
+                        'kind' => 'text',
+                        'key' => 'event1_loc',
+                        'label' => 'Event 1: Venue / Location',
+                        'type' => 'text',
+                        'default' => 'School Campus',
+                        'help' => 'Location info.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event1_link',
+                        'label' => 'Event 1: Link URL',
+                        'type' => 'text',
+                        'default' => 'events.php',
+                        'help' => 'Destination page.'
+                    ],
+                    // Notice 2
+                    [
+                        'kind' => 'text',
+                        'key' => 'event2_tag',
+                        'label' => 'Event 2: Category Tag',
+                        'type' => 'text',
+                        'default' => 'CEREMONY',
+                        'help' => 'Category label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event2_badge',
+                        'label' => 'Event 2: Badge',
+                        'type' => 'text',
+                        'default' => 'AWARDS',
+                        'help' => 'Status badge.'
+                    ],
                     [
                         'kind' => 'text',
                         'key' => 'event2_title',
-                        'label' => 'Notice 2 Title',
+                        'label' => 'Event 2: Title',
                         'type' => 'text',
                         'default' => 'Prize Distribution & Felicitation Day',
-                        'help' => 'Title for notice 2.'
+                        'help' => 'Title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'event2_desc',
-                        'label' => 'Notice 2 Description',
+                        'label' => 'Event 2: Description',
                         'type' => 'text',
                         'default' => 'Honouring board exam toppers, scholarship achievers, and sports champions with merit awards.',
-                        'help' => 'Description for notice 2.'
+                        'help' => 'Description.'
                     ],
-                    // Event 3
+                    [
+                        'kind' => 'text',
+                        'key' => 'event2_loc',
+                        'label' => 'Event 2: Venue / Location',
+                        'type' => 'text',
+                        'default' => 'Main Auditorium',
+                        'help' => 'Location info.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event2_link',
+                        'label' => 'Event 2: Link URL',
+                        'type' => 'text',
+                        'default' => 'events.php',
+                        'help' => 'Destination page.'
+                    ],
+                    // Notice 3
+                    [
+                        'kind' => 'text',
+                        'key' => 'event3_tag',
+                        'label' => 'Event 3: Category Tag',
+                        'type' => 'text',
+                        'default' => 'CULTURE',
+                        'help' => 'Category label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event3_badge',
+                        'label' => 'Event 3: Badge',
+                        'type' => 'text',
+                        'default' => 'SPECIAL',
+                        'help' => 'Status badge.'
+                    ],
                     [
                         'kind' => 'text',
                         'key' => 'event3_title',
-                        'label' => 'Notice 3 Title',
+                        'label' => 'Event 3: Title',
                         'type' => 'text',
                         'default' => 'National Festivals & Cultural Assemblies',
-                        'help' => 'Title for notice 3.'
+                        'help' => 'Title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'event3_desc',
-                        'label' => 'Notice 3 Description',
+                        'label' => 'Event 3: Description',
                         'type' => 'text',
                         'default' => 'Flag hoisting ceremony, patriotic songs, cultural dances, and speeches commemorating national heritage.',
-                        'help' => 'Description for notice 3.'
+                        'help' => 'Description.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event3_loc',
+                        'label' => 'Event 3: Venue / Location',
+                        'type' => 'text',
+                        'default' => 'Open Grounds',
+                        'help' => 'Location info.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'event3_link',
+                        'label' => 'Event 3: Link URL',
+                        'type' => 'text',
+                        'default' => 'events.php',
+                        'help' => 'Destination page.'
                     ]
                 ]
             ],
+            // Section 7: Campus Glimpses Showcase (Dual-Row 12 Photos)
             [
-                'title' => 'Section 6: Campus Glimpses Showcase',
+                'title' => 'Section 7: Campus Glimpses Dual-Row Showcase (12 Photos)',
                 'icon'  => 'photo_library',
-                'desc'  => '6 photo slots highlighting campus facilities, classrooms, faculty, and student life.',
+                'desc'  => 'Upload and manage all 12 photos across Row 1 (moving left) and Row 2 (moving right) for the infinite sliding gallery strip.',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -595,13 +1016,13 @@ $pages_config = [
                         'label' => 'Glimpses Heading',
                         'type' => 'text',
                         'default' => 'Life at Sun Rise Sr. Sec. School',
-                        'help' => 'Heading.'
+                        'help' => 'Section heading.'
                     ],
-                    // Glimpse 1
+                    // Row 1 (Slots 1, 2, 3, 7, 8, 9)
                     [
                         'kind' => 'image',
                         'key' => 'glimpse1_img',
-                        'label' => 'Glimpse 1 Photo (Campus Night View)',
+                        'label' => 'Row 1 - Photo 1 (Main Campus Building)',
                         'default' => 'assets/images/sunrise school image/school_nightview.webp',
                         'alt' => 'Main Campus Building Night View',
                         'help' => 'Photo slot 1.'
@@ -609,16 +1030,15 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse1_title',
-                        'label' => 'Glimpse 1 Title',
+                        'label' => 'Row 1 - Photo 1 Caption Title',
                         'type' => 'text',
                         'default' => 'Main Campus Building',
                         'help' => 'Caption title.'
                     ],
-                    // Glimpse 2
                     [
                         'kind' => 'image',
                         'key' => 'glimpse2_img',
-                        'label' => 'Glimpse 2 Photo (Interactive Classrooms)',
+                        'label' => 'Row 1 - Photo 2 (Interactive Classrooms)',
                         'default' => 'assets/images/sunrise school image/children_sitting.webp',
                         'alt' => 'Smart Classrooms',
                         'help' => 'Photo slot 2.'
@@ -626,16 +1046,15 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse2_title',
-                        'label' => 'Glimpse 2 Title',
+                        'label' => 'Row 1 - Photo 2 Caption Title',
                         'type' => 'text',
                         'default' => 'Interactive Classrooms',
                         'help' => 'Caption title.'
                     ],
-                    // Glimpse 3
                     [
                         'kind' => 'image',
                         'key' => 'glimpse3_img',
-                        'label' => 'Glimpse 3 Photo (Dedicated Teaching Faculty)',
+                        'label' => 'Row 1 - Photo 3 (Dedicated Teaching Faculty)',
                         'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
                         'alt' => 'Teaching Faculty',
                         'help' => 'Photo slot 3.'
@@ -643,66 +1062,209 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse3_title',
-                        'label' => 'Glimpse 3 Title',
+                        'label' => 'Row 1 - Photo 3 Caption Title',
                         'type' => 'text',
                         'default' => 'Dedicated Teaching Faculty',
                         'help' => 'Caption title.'
                     ],
-                    // Glimpse 4
                     [
                         'kind' => 'image',
-                        'key' => 'glimpse4_img',
-                        'label' => 'Glimpse 4 Photo (Student Community)',
-                        'default' => 'assets/images/sunrise school image/students_grouppic.webp',
-                        'alt' => 'Student Community',
+                        'key' => 'glimpse7_img',
+                        'label' => 'Row 1 - Photo 4 (Science & Innovation Fair)',
+                        'default' => 'assets/images/sunrise school image/exhibition.webp',
+                        'alt' => 'Science & Innovation Fair',
                         'help' => 'Photo slot 4.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'glimpse4_title',
-                        'label' => 'Glimpse 4 Title',
+                        'key' => 'glimpse7_title',
+                        'label' => 'Row 1 - Photo 4 Caption Title',
                         'type' => 'text',
-                        'default' => 'Student Community',
+                        'default' => 'Science & Innovation Fair',
                         'help' => 'Caption title.'
                     ],
-                    // Glimpse 5
                     [
                         'kind' => 'image',
-                        'key' => 'glimpse5_img',
-                        'label' => 'Glimpse 5 Photo (Yoga & Holistic Health)',
-                        'default' => 'assets/images/sunrise school image/yoga.webp',
-                        'alt' => 'Yoga and Physical Health',
+                        'key' => 'glimpse8_img',
+                        'label' => 'Row 1 - Photo 5 (Annual Awards Felicitation)',
+                        'default' => 'assets/images/sunrise school image/award_ceremony.webp',
+                        'alt' => 'Annual Awards Felicitation',
                         'help' => 'Photo slot 5.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'glimpse5_title',
-                        'label' => 'Glimpse 5 Title',
+                        'key' => 'glimpse8_title',
+                        'label' => 'Row 1 - Photo 5 Caption Title',
                         'type' => 'text',
-                        'default' => 'Yoga & Holistic Health',
+                        'default' => 'Annual Awards Felicitation',
                         'help' => 'Caption title.'
                     ],
-                    // Glimpse 6
                     [
                         'kind' => 'image',
-                        'key' => 'glimpse6_img',
-                        'label' => 'Glimpse 6 Photo (Science Projects)',
-                        'default' => 'assets/images/sunrise school image/project.webp',
-                        'alt' => 'Science Projects Showcase',
+                        'key' => 'glimpse9_img',
+                        'label' => 'Row 1 - Photo 6 (Morning Assembly & Prayer)',
+                        'default' => 'assets/images/sunrise school image/children_praying.webp',
+                        'alt' => 'Morning Assembly & Prayer',
                         'help' => 'Photo slot 6.'
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'glimpse9_title',
+                        'label' => 'Row 1 - Photo 6 Caption Title',
+                        'type' => 'text',
+                        'default' => 'Morning Assembly & Prayer',
+                        'help' => 'Caption title.'
+                    ],
+                    // Row 2 (Slots 4, 5, 6, 10, 11, 12)
+                    [
+                        'kind' => 'image',
+                        'key' => 'glimpse4_img',
+                        'label' => 'Row 2 - Photo 7 (Student Community)',
+                        'default' => 'assets/images/sunrise school image/students_grouppic.webp',
+                        'alt' => 'Student Community',
+                        'help' => 'Photo slot 7.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse4_title',
+                        'label' => 'Row 2 - Photo 7 Caption Title',
+                        'type' => 'text',
+                        'default' => 'Student Community',
+                        'help' => 'Caption title.'
+                    ],
+                    [
+                        'kind' => 'image',
+                        'key' => 'glimpse5_img',
+                        'label' => 'Row 2 - Photo 8 (Yoga & Holistic Health)',
+                        'default' => 'assets/images/sunrise school image/yoga.webp',
+                        'alt' => 'Yoga and Physical Health',
+                        'help' => 'Photo slot 8.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse5_title',
+                        'label' => 'Row 2 - Photo 8 Caption Title',
+                        'type' => 'text',
+                        'default' => 'Yoga & Holistic Health',
+                        'help' => 'Caption title.'
+                    ],
+                    [
+                        'kind' => 'image',
+                        'key' => 'glimpse6_img',
+                        'label' => 'Row 2 - Photo 9 (Science Projects)',
+                        'default' => 'assets/images/sunrise school image/project.webp',
+                        'alt' => 'Science Projects Showcase',
+                        'help' => 'Photo slot 9.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'glimpse6_title',
-                        'label' => 'Glimpse 6 Title',
+                        'label' => 'Row 2 - Photo 9 Caption Title',
                         'type' => 'text',
                         'default' => 'Science Projects',
+                        'help' => 'Caption title.'
+                    ],
+                    [
+                        'kind' => 'image',
+                        'key' => 'glimpse10_img',
+                        'label' => 'Row 2 - Photo 10 (Athletics & Sports Ground)',
+                        'default' => 'assets/images/sunrise school image/students_ground.webp',
+                        'alt' => 'Athletics & Sports Ground',
+                        'help' => 'Photo slot 10.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse10_title',
+                        'label' => 'Row 2 - Photo 10 Caption Title',
+                        'type' => 'text',
+                        'default' => 'Athletics & Sports Ground',
+                        'help' => 'Caption title.'
+                    ],
+                    [
+                        'kind' => 'image',
+                        'key' => 'glimpse11_img',
+                        'label' => 'Row 2 - Photo 11 (Experiential Learning)',
+                        'default' => 'assets/images/sunrise school image/exhibition2.webp',
+                        'alt' => 'Experiential Learning',
+                        'help' => 'Photo slot 11.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse11_title',
+                        'label' => 'Row 2 - Photo 11 Caption Title',
+                        'type' => 'text',
+                        'default' => 'Experiential Learning',
+                        'help' => 'Caption title.'
+                    ],
+                    [
+                        'kind' => 'image',
+                        'key' => 'glimpse12_img',
+                        'label' => 'Row 2 - Photo 12 (Student-Faculty Mentorship)',
+                        'default' => 'assets/images/sunrise school image/teachers_and_students.webp',
+                        'alt' => 'Student-Faculty Mentorship',
+                        'help' => 'Photo slot 12.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse12_title',
+                        'label' => 'Row 2 - Photo 12 Caption Title',
+                        'type' => 'text',
+                        'default' => 'Student-Faculty Mentorship',
                         'help' => 'Caption title.'
                     ]
                 ]
             ],
+            // Section 8: Affiliations & Recognized By Strip
             [
-                'title' => 'Section 7: Final Admissions Call to Action (CTA)',
+                'title' => 'Section 8: Affiliations & Accreditations Strip',
+                'icon'  => 'verified',
+                'desc'  => 'Headline and 4 accreditation badges displayed in the horizontal strip.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'affiliations_title',
+                        'label' => 'Affiliations Strip Title',
+                        'type' => 'text',
+                        'default' => 'Affiliated & Recognized By',
+                        'help' => 'Eyebrow label above badges.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'affil1_text',
+                        'label' => 'Accreditation Badge 1',
+                        'type' => 'text',
+                        'default' => 'HBSE AFFILIATED',
+                        'help' => 'Badge 1 text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'affil2_text',
+                        'label' => 'Accreditation Badge 2',
+                        'type' => 'text',
+                        'default' => 'CO-EDUCATIONAL (10+2)',
+                        'help' => 'Badge 2 text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'affil3_text',
+                        'label' => 'Accreditation Badge 3',
+                        'type' => 'text',
+                        'default' => 'SCIENCE, COMMERCE & ARTS',
+                        'help' => 'Badge 3 text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'affil4_text',
+                        'label' => 'Accreditation Badge 4',
+                        'type' => 'text',
+                        'default' => 'SPORTS & YOGA',
+                        'help' => 'Badge 4 text.'
+                    ]
+                ]
+            ],
+            // Section 9: Final Admissions CTA Banner
+            [
+                'title' => 'Section 9: Final Admissions Call to Action (CTA)',
                 'icon'  => 'call_to_action',
                 'desc'  => 'Bottom banner prompting parents to apply online or visit campus.',
                 'fields' => [
@@ -748,11 +1310,27 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'cta_btn1_link',
+                        'label' => 'Button 1 Target URL',
+                        'type' => 'text',
+                        'default' => 'admission.php',
+                        'help' => 'Destination page link for Button 1.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'cta_btn2_text',
                         'label' => 'Button 2 Text (Contact Link)',
                         'type' => 'text',
                         'default' => 'Contact Campus Office',
                         'help' => 'Label for the secondary button.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn2_link',
+                        'label' => 'Button 2 Target URL',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Destination page link for Button 2.'
                     ]
                 ]
             ]
@@ -1589,7 +2167,7 @@ $pages_config = [
                         'key' => 'help_desc',
                         'label' => 'Helpdesk Description',
                         'type' => 'text',
-                        'default' => 'Our administrative office is open Monday to Saturday from 8:00 AM to 2:30 PM to assist parents with document verification, fee concessions, and transport routes.',
+                        'default' => 'Our administrative office is open Monday to Saturday (Summer: 7:30 AM to 1:30 PM | Winter: 8:30 AM to 2:30 PM) to assist parents with document verification, fee concessions, and transport routes.',
                         'help' => 'Description.'
                     ],
                     [
@@ -1597,7 +2175,7 @@ $pages_config = [
                         'key' => 'help_phone',
                         'label' => 'Helpdesk Phone Number',
                         'type' => 'text',
-                        'default' => '+91 98123 45678',
+                        'default' => '+91 70158 90094',
                         'help' => 'Phone.'
                     ]
                 ]
@@ -2984,15 +3562,23 @@ $pages_config = [
                         'key' => 'site_phone',
                         'label' => 'Primary Contact Phone',
                         'type' => 'text',
-                        'default' => '+91 98123 45678',
+                        'default' => '+91 70158 90094',
                         'help' => 'Click-to-call phone number in header and footer.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'site_phone_alt',
+                        'label' => 'Secondary Contact Phone',
+                        'type' => 'text',
+                        'default' => '+91 79883 5710',
+                        'help' => 'Secondary phone number in header and footer.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'site_email',
                         'label' => 'Official Inquiries Email',
                         'type' => 'text',
-                        'default' => 'info@sunrisesrsec.edu',
+                        'default' => 'info@sunrisesrsecschool.com',
                         'help' => 'Main school inbox.'
                     ],
                     [
@@ -3000,7 +3586,7 @@ $pages_config = [
                         'key' => 'site_info_email',
                         'label' => 'Admissions Desk Email',
                         'type' => 'text',
-                        'default' => 'admissions@sunrisesrsec.edu',
+                        'default' => 'info@sunrisesrsecschool.com',
                         'help' => 'Admissions inquiries inbox.'
                     ]
                 ]
@@ -3015,7 +3601,7 @@ $pages_config = [
                         'key' => 'site_address',
                         'label' => 'Physical Campus Address',
                         'type' => 'text',
-                        'default' => 'Sun Rise Sr. Sec. School, VPO Dobhi, Hisar, Haryana - 125001',
+                        'default' => 'Main Road Dobhi, Near Primary Health Center, Dobhi, Hisar (Haryana) - 125001',
                         'help' => 'Full postal address.'
                     ]
                 ]

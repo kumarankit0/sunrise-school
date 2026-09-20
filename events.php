@@ -17,8 +17,8 @@ require_once __DIR__ . '/core/header.php';
         <span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
         <?= get_text('events', 'featured_badge', 'Featured Event') ?>
       </div>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg text-white font-bold w-full max-w-5xl leading-[1.18] drop-shadow-md"><?= get_text('events', 'featured_title', 'Annual Science & Art Exhibition 2026') ?></h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-surface-cream/95 w-full max-w-4xl leading-relaxed drop-shadow"><?= get_text('events', 'featured_subtitle', 'Experience the ingenuity of our students as they demonstrate live working science models, robotics experiments, sustainable agriculture concepts, and artistic creations.') ?></p>
+      <h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg text-white font-bold w-full max-w-4xl leading-[1.2] drop-shadow-md"><?= get_text('events', 'featured_title', 'Annual Science & Art Exhibition 2026') ?></h1>
+      <p class="text-sm sm:text-base md:text-lg text-surface-cream/95 w-full max-w-3xl leading-relaxed drop-shadow"><?= get_text('events', 'featured_subtitle', 'Experience the ingenuity of our students as they demonstrate live working science models, robotics experiments, sustainable agriculture concepts, and artistic creations.') ?></p>
       <div class="flex flex-wrap items-center justify-center gap-6 text-sm sm:text-base text-surface-cream font-medium">
         <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[#C9A24B]">calendar_today</span> Annual Session</span>
         <span class="flex items-center gap-2"><span class="material-symbols-outlined text-[#C9A24B]">schedule</span> <?= get_text('events', 'featured_time', '09:30 AM - 03:00 PM') ?></span>
@@ -39,7 +39,7 @@ require_once __DIR__ . '/core/header.php';
         <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <span class="text-eyebrow text-primary uppercase font-bold text-[#B38C37]">Happenings &amp; Notices</span>
-            <h2 class="font-headline-md text-headline-md text-primary font-bold">School News &amp; Key Highlights</h2>
+            <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-1">School News &amp; Key Highlights</h2>
           </div>
           <!-- Filter Chips -->
           <div class="flex items-center gap-2 flex-wrap">
@@ -205,6 +205,279 @@ require_once __DIR__ . '/core/header.php';
             </div>
           </div>
           <a class="text-primary font-label-md hover:text-[#C9A24B] transition-colors text-center py-2 border-t border-border-warm mt-2 font-bold" href="contact-us.php">Contact School Office for Inquiries →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- School Functions & Co-Curricular Activities Section -->
+  <section class="w-full bg-surface-container-low py-20 px-6 lg:px-12 border-y border-border-warm" id="functions-activities">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold">Holistic Development</span>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2">Functions &amp; Student Activities</h2>
+        <p class="font-body-md text-on-surface-variant mt-3">From cultural pageants and annual sports meets to science exhibitions and academic olympiads, our students flourish across a vibrant calendar of events.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6">
+        <!-- 1. Annual Function -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">celebration</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Annual Function</h4>
+          <p class="text-xs text-on-surface-variant">Grand cultural showcase featuring theatrical acts, music, and dance.</p>
+        </div>
+
+        <!-- 2. Annual Result Declaration Day -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">military_tech</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Result Declaration Day</h4>
+          <p class="text-xs text-on-surface-variant">Annual academic felicitation day honoring class and board rankers.</p>
+        </div>
+
+        <!-- 3. Annual Sports Meet -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">sports_score</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Annual Sports Meet</h4>
+          <p class="text-xs text-on-surface-variant">Inter-house track and field competitions, relay races, and games.</p>
+        </div>
+
+        <!-- 4. Cultural Fest -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">theater_comedy</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Cultural Fest</h4>
+          <p class="text-xs text-on-surface-variant">Folk traditions, patriotic celebrations, skits, and instrumental music.</p>
+        </div>
+
+        <!-- 5. Farewell Ceremony -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">waving_hand</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Farewell Ceremony</h4>
+          <p class="text-xs text-on-surface-variant">Blessings, mentorship, and warm send-off for passing-out Class 12 batches.</p>
+        </div>
+
+        <!-- 6. Alumni Meet -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3" id="alumni">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">groups_3</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Alumni Meet</h4>
+          <p class="text-xs text-on-surface-variant">Reconnecting former students serving in administration, defence, and academia.</p>
+        </div>
+
+        <!-- 7. Quiz Competition -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">psychology</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Quiz Competition</h4>
+          <p class="text-xs text-on-surface-variant">Block and district level GK, science, and history quiz contests.</p>
+        </div>
+
+        <!-- 8. Science Exhibition -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">science</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Science Exhibition</h4>
+          <p class="text-xs text-on-surface-variant">Interactive working models in robotics, physics, ecology, and chemistry.</p>
+        </div>
+
+        <!-- 9. Rangoli Competitions -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">palette</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Rangoli Competitions</h4>
+          <p class="text-xs text-on-surface-variant">Festive creativity celebrating Indian heritage, colors, and art forms.</p>
+        </div>
+
+        <!-- 10. Debate Competitions -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">record_voice_over</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Debate Competitions</h4>
+          <p class="text-xs text-on-surface-variant">Honing articulate expression, critical thinking, and public speaking.</p>
+        </div>
+
+        <!-- 11. Olympiad Participation -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">award_star</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Olympiad Participation</h4>
+          <p class="text-xs text-on-surface-variant">National science, mathematics, and cyber olympiad competitive testing.</p>
+        </div>
+
+        <!-- 12. Educational Seminars & Tours -->
+        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">tour</span>
+          </div>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary">Seminars &amp; Tours</h4>
+          <p class="text-xs text-on-surface-variant">Career guidance workshops and educational excursions to historic and scientific sites.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comprehensive Institutional Achievements Section -->
+  <section class="w-full py-20 px-6 lg:px-12 max-w-7xl mx-auto" id="achievements">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold">Hall of Fame</span>
+      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2">School Achievements &amp; Accolades</h2>
+      <p class="font-body-md text-on-surface-variant mt-3">Reflecting the perseverance of our students, the guidance of our faculty, and an enduring legacy of excellence in sports and academics.</p>
+    </div>
+
+    <!-- 2 Column Layout: Sports Honors on Left, School & Academic Awards on Right -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <!-- Left: Sports Achievements -->
+      <div class="bg-surface-pure rounded-2xl p-8 border border-border-warm shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-border-warm">
+            <div class="w-12 h-12 rounded-xl bg-amber-500/15 text-amber-600 flex items-center justify-center">
+              <span class="material-symbols-outlined text-[28px]">trophy</span>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-[#C9A24B] uppercase tracking-wider">State &amp; National Honors</span>
+              <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-primary">Sports Achievements</h3>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Wrestling 2023 -->
+            <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
+              <div class="w-8 h-8 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
+                🥇
+              </div>
+              <div>
+                <span class="text-xs font-bold text-primary uppercase">2023 &bull; National Sub-Junior Wrestling Championship</span>
+                <p class="text-sm font-semibold text-primary mt-0.5">2 Gold Medals</p>
+                <p class="text-xs text-on-surface-variant">Outstanding national glory in sub-junior wrestling representing Haryana.</p>
+              </div>
+            </div>
+
+            <!-- Kickboxing 2018 & 2019 -->
+            <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
+              <div class="w-8 h-8 rounded-full bg-slate-100 text-slate-800 flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
+                🥈
+              </div>
+              <div>
+                <span class="text-xs font-bold text-primary uppercase">2018 &amp; 2019 &bull; State Level Kickboxing Championship</span>
+                <p class="text-sm font-semibold text-primary mt-0.5">2 Silver Medals &amp; 1 Bronze Medal (2018)</p>
+                <p class="text-xs text-on-surface-variant">Continuous podium finishes at the Haryana State Kickboxing Tournaments.</p>
+              </div>
+            </div>
+
+            <!-- Kickboxing District 2017 -->
+            <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
+              <div class="w-8 h-8 rounded-full bg-orange-100 text-orange-800 flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
+                🥉
+              </div>
+              <div>
+                <span class="text-xs font-bold text-primary uppercase">2017 &bull; District Kickboxing Tournament</span>
+                <p class="text-sm font-semibold text-primary mt-0.5">1 Bronze Medal</p>
+                <p class="text-xs text-on-surface-variant">Remarkable district level combat sports victory in Hisar.</p>
+              </div>
+            </div>
+
+            <!-- SPAT Selections 2014, 2015, 2016 -->
+            <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
+              <div class="w-8 h-8 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
+                🏃
+              </div>
+              <div>
+                <span class="text-xs font-bold text-primary uppercase">2014, 2015 &amp; 2016 &bull; SPAT Athletic Competition</span>
+                <p class="text-sm font-semibold text-primary mt-0.5">5 Students Selected in Sports Physical Aptitude Test</p>
+                <p class="text-xs text-on-surface-variant">Selected for government athletic sponsorship through rigorous athletic testing.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-border-warm flex items-center justify-between text-xs text-on-surface-variant font-bold">
+          <span>Disciplines: Wrestling &bull; Kickboxing &bull; Athletics</span>
+          <a href="campus.php#sports" class="text-[#C9A24B] hover:underline flex items-center gap-1">Sports Ground &rarr;</a>
+        </div>
+      </div>
+
+      <!-- Right: Awards Achieved by School -->
+      <div class="bg-surface-pure rounded-2xl p-8 border border-border-warm shadow-sm flex flex-col justify-between">
+        <div>
+          <div class="flex items-center gap-3 mb-6 pb-4 border-b border-border-warm">
+            <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+              <span class="material-symbols-outlined text-[28px] text-[#C9A24B]">workspace_premium</span>
+            </div>
+            <div>
+              <span class="text-xs font-bold text-[#C9A24B] uppercase tracking-wider">Institutional Triumphs</span>
+              <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-primary">Awards Achieved by School</h3>
+            </div>
+          </div>
+
+          <div class="space-y-4">
+            <!-- Block Quiz 2022 -->
+            <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
+              <div class="w-8 h-8 rounded-full bg-primary text-[#C9A24B] flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
+                ★
+              </div>
+              <div>
+                <span class="text-xs font-bold text-primary uppercase">2022 &bull; Block Level Quiz Competition</span>
+                <p class="text-sm font-semibold text-primary mt-0.5">1st Position / Winner</p>
+                <p class="text-xs text-on-surface-variant">Outperformed top regional institutions with deep general awareness and speed.</p>
+              </div>
+            </div>
+
+            <!-- Talent Search 2017 -->
+            <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
+              <div class="w-8 h-8 rounded-full bg-primary text-[#C9A24B] flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
+                ★
+              </div>
+              <div>
+                <span class="text-xs font-bold text-primary uppercase">2017 &bull; Talent Search Examination (Block Level)</span>
+                <p class="text-sm font-semibold text-primary mt-0.5">Winner &amp; Rural Topper &bull; 1st, 2nd &amp; 3rd Positions</p>
+                <p class="text-xs text-on-surface-variant">Swept top 3 ranks among participants from more than 25 schools and over 1,500 students.</p>
+              </div>
+            </div>
+
+            <!-- Physics Point 2016 -->
+            <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
+              <div class="w-8 h-8 rounded-full bg-primary text-[#C9A24B] flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
+                ★
+              </div>
+              <div>
+                <span class="text-xs font-bold text-primary uppercase">2016 &bull; Physics Point Prize Test</span>
+                <p class="text-sm font-semibold text-primary mt-0.5">Best School Award &bull; 10 Students in Top 200</p>
+                <p class="text-xs text-on-surface-variant">Conferred Best School Award; 10 students ranked within top 200 out of 2,700+ participants.</p>
+              </div>
+            </div>
+
+            <!-- Science Exhibition 2013 -->
+            <div class="flex items-start gap-3.5 p-4 rounded-xl bg-surface-container-low">
+              <div class="w-8 h-8 rounded-full bg-primary text-[#C9A24B] flex items-center justify-center flex-shrink-0 font-bold text-xs mt-0.5">
+                ★
+              </div>
+              <div>
+                <span class="text-xs font-bold text-primary uppercase">2013 &bull; Science Exhibition at CCSHAU, Hisar</span>
+                <p class="text-sm font-semibold text-primary mt-0.5">State Level Selection (2 Students)</p>
+                <p class="text-xs text-on-surface-variant">Recognized for innovative scientific project design and state-level representation.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-border-warm flex items-center justify-between text-xs text-on-surface-variant font-bold">
+          <span>Board Examination: 100% Pass Record</span>
+          <a href="academics.php#toppers" class="text-[#C9A24B] hover:underline flex items-center gap-1">View Board Toppers &rarr;</a>
         </div>
       </div>
     </div>

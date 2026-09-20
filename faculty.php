@@ -16,8 +16,8 @@ require_once __DIR__ . '/core/header.php';
     <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-[#C9A24B]/10 blur-3xl pointer-events-none"></div>
     <div class="relative z-10 max-w-6xl w-full mx-auto flex flex-col items-center gap-6">
       <span class="px-5 py-2 rounded-full bg-black/40 text-gold-light text-eyebrow uppercase font-bold tracking-widest border border-[#C9A24B]/50 shadow-md"><?= get_text('faculty', 'hero_badge', 'Dedicated Educators') ?></span>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg text-white w-full max-w-5xl tracking-tight leading-[1.15] drop-shadow-md"><?= get_text('faculty', 'hero_title', 'Our Distinguished Faculty & Staff') ?></h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-surface-cream/95 w-full max-w-4xl font-body leading-relaxed drop-shadow"><?= get_text('faculty', 'hero_subtitle', 'Meet the passionate educators, experienced subject mentors, and visionary leadership shaping young minds at Sun Rise Sr. Sec. School, Dobhi.') ?></p>
+      <h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight leading-[1.2] drop-shadow-md"><?= get_text('faculty', 'hero_title', 'Our Distinguished Faculty & Staff') ?></h1>
+      <p class="text-sm sm:text-base md:text-lg text-surface-cream/95 w-full max-w-3xl font-body leading-relaxed drop-shadow"><?= get_text('faculty', 'hero_subtitle', 'Meet the passionate educators, experienced subject mentors, and visionary leadership shaping young minds at Sun Rise Sr. Sec. School, Dobhi.') ?></p>
     </div>
   </section>
 
@@ -26,48 +26,54 @@ require_once __DIR__ . '/core/header.php';
     <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-6">
       <div>
         <span class="text-eyebrow text-[#B38C37] uppercase tracking-widest block mb-2 font-bold">Guiding Vision</span>
-        <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary">Academic Leadership</h2>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug">Academic Leadership</h2>
       </div>
       <p class="text-body-md text-on-surface-variant max-w-md">Guiding our academic ecosystem with years of pedagogical expertise, administrative brilliance, and a steadfast commitment to character building.</p>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-      <!-- Director / Managing Committee -->
+      <!-- Founder & Director: Mr. Bhader Singh Swami -->
       <div class="bg-surface-pure rounded-xl p-8 shadow-[0_2px_8px_rgba(11,38,71,0.04)] hover:shadow-[0_12px_28px_rgba(11,38,71,0.08)] transition-all duration-300 flex flex-col justify-between border border-border-warm relative group">
         <div class="absolute top-0 left-0 w-full h-2 bg-[#C9A24B] rounded-t-xl"></div>
         <div>
           <div class="relative w-full h-72 mb-6 rounded-lg overflow-hidden bg-surface-container cursor-pointer" onclick="openLightbox(this)">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="School Management & Leadership" src="<?= get_image('faculty', 'leader1_photo', school_img('speaker.webp')) ?>" width="400" height="288" loading="lazy" decoding="async"/>
-            <div class="absolute bottom-3 left-3 bg-primary/85 backdrop-blur-md text-on-primary text-label-sm px-3 py-1 rounded font-bold">Managing Director</div>
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mr. Bhader Singh Swami - Founder & Director" src="<?= get_image('faculty', 'leader1_photo', school_img('speaker.webp')) ?>" width="400" height="288" loading="lazy" decoding="async"/>
+            <div class="absolute bottom-3 left-3 bg-primary/85 backdrop-blur-md text-on-primary text-label-sm px-3 py-1 rounded font-bold">Founder &amp; Director</div>
           </div>
-          <h3 class="font-headline-sm text-headline-sm text-primary"><?= get_text('faculty', 'leader1_name', 'Managing Committee') ?></h3>
-          <p class="text-label-md text-[#B38C37] font-semibold mb-4"><?= get_text('faculty', 'leader1_sub', 'Sun Rise Educational Trust, Dobhi') ?></p>
-          <blockquote class="text-body-md italic text-on-surface-variant mb-6 font-headline-md border-l-2 border-[#C9A24B] pl-4">
-            <?= get_text('faculty', 'leader1_quote', '“True education is the bedrock of character, empowering students to rise above ordinary standards and achieve extraordinary goals.”') ?>
+          <h3 class="font-headline-sm text-headline-sm text-primary"><?= get_text('faculty', 'leader1_name', 'Mr. Bhader Singh Swami') ?></h3>
+          <p class="text-label-md text-[#B38C37] font-semibold mb-2"><?= get_text('faculty', 'leader1_sub', 'Founder &amp; Director | M.A., B.Ed.') ?></p>
+          <div class="inline-block bg-[#F9F4E8] text-[#B38C37] text-xs font-bold px-2.5 py-1 rounded mb-4 border border-[#C9A24B]/30">
+            36 Yrs Teaching &bull; 26 Yrs Management
+          </div>
+          <blockquote class="text-body-sm italic text-on-surface-variant mb-4 font-headline-md border-l-2 border-[#C9A24B] pl-3">
+            <?= get_text('faculty', 'leader1_quote', '“Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society.”') ?>
           </blockquote>
-          <p class="text-body-sm text-on-surface-variant"><?= get_text('faculty', 'leader1_desc', 'Providing strategic guidance, modern educational infrastructure, and a community-first commitment to quality education in rural and semi-urban Haryana.') ?></p>
+          <p class="text-body-sm text-on-surface-variant leading-relaxed"><?= get_text('faculty', 'leader1_desc', 'With 36 years of teaching experience and 26 years of experience in school management, Mr. Bhader Singh Swami has devoted his journey to education. Holding M.A. and B.Ed. qualifications, his vision centres on providing students with quality education grounded in discipline, values, character, and academic excellence.') ?></p>
         </div>
         <div class="mt-8 pt-6 border-t border-border-warm flex items-center justify-between">
-          <span class="text-label-sm text-primary font-bold">Executive Board</span>
+          <span class="text-label-sm text-primary font-bold">Institutional Founder</span>
           <span class="text-label-sm text-[#B38C37] font-bold flex items-center gap-1">
-            <span class="material-symbols-outlined text-[16px]">verified</span> Sun Rise School
+            <span class="material-symbols-outlined text-[16px]">verified</span> Estd. 2007
           </span>
         </div>
       </div>
 
-      <!-- Principal -->
+      <!-- Principal: Mr. Rajbir Singh -->
       <div class="bg-surface-pure rounded-xl p-8 shadow-[0_2px_8px_rgba(11,38,71,0.04)] hover:shadow-[0_12px_28px_rgba(11,38,71,0.08)] transition-all duration-300 flex flex-col justify-between border border-border-warm relative group">
         <div class="absolute top-0 left-0 w-full h-2 bg-primary rounded-t-xl"></div>
         <div>
           <div class="relative w-full h-72 mb-6 rounded-lg overflow-hidden bg-surface-container cursor-pointer" onclick="openLightbox(this)">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Principal, Sun Rise School" src="<?= get_image('faculty', 'leader2_photo', school_img('teachers_sitting.webp')) ?>" width="400" height="288" loading="lazy" decoding="async"/>
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mr. Rajbir Singh - Principal" src="<?= get_image('faculty', 'leader2_photo', school_img('teachers_sitting.webp')) ?>" width="400" height="288" loading="lazy" decoding="async"/>
             <div class="absolute bottom-3 left-3 bg-primary/85 backdrop-blur-md text-on-primary text-label-sm px-3 py-1 rounded font-bold">Principal Office</div>
           </div>
-          <h3 class="font-headline-sm text-headline-sm text-primary"><?= get_text('faculty', 'leader2_name', 'Office of the Principal') ?></h3>
-          <p class="text-label-md text-[#B38C37] font-semibold mb-4"><?= get_text('faculty', 'leader2_sub', 'M.A., M.Ed. – Senior Academician') ?></p>
-          <blockquote class="text-body-md italic text-on-surface-variant mb-6 font-headline-md border-l-2 border-[#C9A24B] pl-4">
-            <?= get_text('faculty', 'leader2_quote', '“We cultivate an environment where discipline meets curiosity, ensuring every child discovers their inner spark and thrives academically.”') ?>
+          <h3 class="font-headline-sm text-headline-sm text-primary"><?= get_text('faculty', 'leader2_name', 'Mr. Rajbir Singh') ?></h3>
+          <p class="text-label-md text-[#B38C37] font-semibold mb-2"><?= get_text('faculty', 'leader2_sub', 'Principal | M.A., B.Ed.') ?></p>
+          <div class="inline-block bg-[#F9F4E8] text-[#B38C37] text-xs font-bold px-2.5 py-1 rounded mb-4 border border-[#C9A24B]/30">
+            16 Years Professional Experience
+          </div>
+          <blockquote class="text-body-sm italic text-on-surface-variant mb-4 font-headline-md border-l-2 border-[#C9A24B] pl-3">
+            <?= get_text('faculty', 'leader2_quote', '“Fostering a disciplined and purposeful learning environment where every student receives balanced opportunities for academic and holistic development.”') ?>
           </blockquote>
-          <p class="text-body-sm text-on-surface-variant"><?= get_text('faculty', 'leader2_desc', 'Championing NEP 2020-aligned experiential learning, state-level competitive exam coaching, and holistic sports and cultural development.') ?></p>
+          <p class="text-body-sm text-on-surface-variant leading-relaxed"><?= get_text('faculty', 'leader2_desc', 'With 16 years of professional experience in education, Mr. Rajbir Singh serves as the Principal. He brings a committed approach towards academic administration, supporting teachers and driving holistic student growth.') ?></p>
         </div>
         <div class="mt-8 pt-6 border-t border-border-warm flex items-center justify-between">
           <span class="text-label-sm text-primary font-bold">Academic Head</span>
@@ -77,25 +83,28 @@ require_once __DIR__ . '/core/header.php';
         </div>
       </div>
 
-      <!-- Faculty Council -->
+      <!-- Coordinator: Mr. Indra Dev -->
       <div class="bg-surface-pure rounded-xl p-8 shadow-[0_2px_8px_rgba(11,38,71,0.04)] hover:shadow-[0_12px_28px_rgba(11,38,71,0.08)] transition-all duration-300 flex flex-col justify-between border border-border-warm relative group">
         <div class="absolute top-0 left-0 w-full h-2 bg-[#C9A24B] rounded-t-xl"></div>
         <div>
           <div class="relative w-full h-72 mb-6 rounded-lg overflow-hidden bg-surface-container cursor-pointer" onclick="openLightbox(this)">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Academic Coordinators & Faculty" src="<?= get_image('faculty', 'leader3_photo', school_img('all_staffmembers.webp')) ?>" width="400" height="288" loading="lazy" decoding="async"/>
-            <div class="absolute bottom-3 left-3 bg-primary/85 backdrop-blur-md text-on-primary text-label-sm px-3 py-1 rounded font-bold">Academic Council</div>
+            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="Mr. Indra Dev - Coordinator" src="<?= get_image('faculty', 'leader3_photo', school_img('all_staffmembers.webp')) ?>" width="400" height="288" loading="lazy" decoding="async"/>
+            <div class="absolute bottom-3 left-3 bg-primary/85 backdrop-blur-md text-on-primary text-label-sm px-3 py-1 rounded font-bold">Administration &amp; Coordination</div>
           </div>
-          <h3 class="font-headline-sm text-headline-sm text-primary"><?= get_text('faculty', 'leader3_name', 'Senior Coordinators') ?></h3>
-          <p class="text-label-md text-[#B38C37] font-semibold mb-4"><?= get_text('faculty', 'leader3_sub', 'Post Graduate Teachers (PGT / TGT)') ?></p>
-          <blockquote class="text-body-md italic text-on-surface-variant mb-6 font-headline-md border-l-2 border-[#C9A24B] pl-4">
-            <?= get_text('faculty', 'leader3_quote', '“Teamwork, continuous faculty workshops, and individualized student attention form the backbone of our outstanding board results.”') ?>
+          <h3 class="font-headline-sm text-headline-sm text-primary"><?= get_text('faculty', 'leader3_name', 'Mr. Indra Dev') ?></h3>
+          <p class="text-label-md text-[#B38C37] font-semibold mb-2"><?= get_text('faculty', 'leader3_sub', 'Coordinator | B.A., M.A., LL.B., LL.M.') ?></p>
+          <div class="inline-block bg-[#F9F4E8] text-[#B38C37] text-xs font-bold px-2.5 py-1 rounded mb-4 border border-[#C9A24B]/30">
+            22 Yrs Exp &bull; Former GM, Reserve Bank of India
+          </div>
+          <blockquote class="text-body-sm italic text-on-surface-variant mb-4 font-headline-md border-l-2 border-[#C9A24B] pl-3">
+            <?= get_text('faculty', 'leader3_quote', '“Maintaining the highest standards of organizational discipline, legal governance, and responsible institutional leadership.”') ?>
           </blockquote>
-          <p class="text-body-sm text-on-surface-variant"><?= get_text('faculty', 'leader3_desc', 'Coordinating Science, Commerce, and Arts streams with rigorous periodic assessments and personalized student counseling.') ?></p>
+          <p class="text-body-sm text-on-surface-variant leading-relaxed"><?= get_text('faculty', 'leader3_desc', 'Mr. Indra Dev brings 22 years of professional experience with qualifications in law and humanities. Prior to Sun Rise, he served as General Manager at the Reserve Bank of India (RBI), contributing high administrative standards.') ?></p>
         </div>
         <div class="mt-8 pt-6 border-t border-border-warm flex items-center justify-between">
-          <span class="text-label-sm text-primary font-bold">Department Heads</span>
+          <span class="text-label-sm text-primary font-bold">Administration Lead</span>
           <span class="text-label-sm text-[#B38C37] font-bold flex items-center gap-1">
-            <span class="material-symbols-outlined text-[16px]">groups</span> 45+ Teachers
+            <span class="material-symbols-outlined text-[16px]">groups</span> 30+ Teaching Staff
           </span>
         </div>
       </div>
@@ -107,7 +116,7 @@ require_once __DIR__ . '/core/header.php';
     <div class="max-w-7xl mx-auto">
       <div class="text-center max-w-2xl mx-auto mb-14">
         <span class="text-eyebrow text-[#B38C37] uppercase tracking-widest block mb-2 font-bold">Our Teaching Force</span>
-        <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-4">Mentors in Action</h2>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mb-4">Mentors in Action</h2>
         <p class="text-body-md text-on-surface-variant">Capturing the dedication, teamwork, and pedagogical spirit of the Sun Rise Sr. Sec. School teaching community.</p>
       </div>
 
@@ -191,7 +200,7 @@ require_once __DIR__ . '/core/header.php';
   <section class="max-w-7xl mx-auto px-6 lg:px-12 py-24 w-full">
     <div class="text-center max-w-2xl mx-auto mb-16">
       <span class="text-eyebrow text-[#B38C37] uppercase tracking-widest block mb-2 font-bold">Academic Departments</span>
-      <h2 class="text-headline-lg-mobile md:text-headline-lg font-headline-lg text-primary mb-4">Subject Faculties</h2>
+      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mb-4">Subject Faculties</h2>
       <p class="text-body-md text-on-surface-variant">Our academic faculties comprise qualified, HBSE-trained educators with specialized postgraduate degrees in their respective disciplines.</p>
     </div>
 

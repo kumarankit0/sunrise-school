@@ -18,8 +18,8 @@ require_once __DIR__ . '/config.php';
               <div>
                 <span class="footer-school-name"><?= htmlspecialchars($site_name) ?></span>
                 <p class="footer-school-address">
-                  VPO Dobhi, Hisar<br/>
-                  (Haryana) - 125001
+                  Main Road Dobhi, Near Primary Health Center,<br/>
+                  Dobhi, Hisar (Haryana) - 125001
                 </p>
               </div>
             </div>
@@ -32,9 +32,23 @@ require_once __DIR__ . '/config.php';
                 <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="footer-contact-phone">
                   <?= $site_phone ?>
                 </a>
-                <a href="mailto:<?= $site_email ?>" class="footer-contact-email">
+                <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone_alt) ?>" class="footer-contact-phone text-xs block opacity-90">
+                  <?= $site_phone_alt ?>
+                </a>
+                <a href="mailto:<?= $site_email ?>" class="footer-contact-email mt-1 block">
                   <?= $site_email ?>
                 </a>
+              </div>
+            </div>
+
+            <div class="footer-contact-block">
+              <div class="footer-contact-icon-box">
+                <span class="material-symbols-outlined text-[20px]">schedule</span>
+              </div>
+              <div class="text-xs text-slate-300">
+                <span class="font-bold text-white block">School Timings:</span>
+                <span>Summer: <?= $site_timings_summer ?></span><br/>
+                <span>Winter: <?= $site_timings_winter ?></span>
               </div>
             </div>
           </div>
@@ -181,7 +195,7 @@ require_once __DIR__ . '/config.php';
 
   <!-- Floating Action Buttons (WhatsApp / Chat & Direct Call) -->
   <div class="floating-action-group" aria-label="Quick Contact Actions">
-    <a href="https://wa.me/919812345678" target="_blank" rel="noopener" class="floating-action-btn floating-btn-chat" title="Chat on WhatsApp" aria-label="WhatsApp Chat">
+    <a href="https://wa.me/917015890094" target="_blank" rel="noopener" class="floating-action-btn floating-btn-chat" title="Chat on WhatsApp (+91 70158 90094)" aria-label="WhatsApp Chat">
       <span class="material-symbols-outlined text-[24px]">chat</span>
     </a>
     <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="floating-action-btn floating-btn-call" title="Call Admissions Helpline" aria-label="Call Helpline">

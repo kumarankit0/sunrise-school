@@ -7,13 +7,18 @@
 require_once __DIR__ . '/../includes/content_helper.php';
 
 // Site Information (Dynamic with fallback defaults)
-$site_name       = get_text('general', 'site_name', 'Sun Rise Sr. Sec. School, Dobhi');
-$site_tagline    = get_text('general', 'site_tagline', 'Nurturing Knowledge, Character & Academic Excellence | Affiliated to HBSE');
-$site_phone      = get_text('general', 'site_phone', '+91 98123 45678');
-$site_email      = get_text('general', 'site_email', 'info@sunrisesrsec.edu');
-$site_info_email = get_text('general', 'site_info_email', 'admissions@sunrisesrsec.edu');
-$site_address    = get_text('general', 'site_address', 'Sun Rise Sr. Sec. School, VPO Dobhi, Hisar, Haryana - 125001');
-$site_logo       = get_image('general', 'site_logo', 'assets/images/logo.svg');
+$site_name           = get_text('general', 'site_name', 'Sun Rise Sr. Sec. School, Dobhi');
+$site_tagline        = get_text('general', 'site_tagline', 'Nurturing Knowledge, Character & Academic Excellence | Affiliated to HBSE');
+$site_phone          = get_text('general', 'site_phone', '+91 70158 90094');
+$site_phone_alt      = get_text('general', 'site_phone_alt', '+91 79883 5710');
+$site_email          = get_text('general', 'site_email', 'info@sunrisesrsecschool.com');
+$site_info_email     = get_text('general', 'site_info_email', 'info@sunrisesrsecschool.com');
+$site_address        = get_text('general', 'site_address', 'Main Road Dobhi, Near Primary Health Center, Dobhi, Hisar (Haryana) - 125001');
+$site_timings_summer = get_text('general', 'timings_summer', '7:30 AM to 1:30 PM');
+$site_timings_winter = get_text('general', 'timings_winter', '8:30 AM to 2:30 PM');
+$site_estd           = '2007';
+$site_affiliation    = 'HBSE';
+$site_logo           = get_image('general', 'site_logo', 'assets/images/logo.svg');
 
 // Base path for original school images
 define('SCHOOL_IMG_DIR', 'assets/images/sunrise school image/');

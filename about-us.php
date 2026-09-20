@@ -16,10 +16,10 @@ require_once __DIR__ . '/core/header.php';
       <span class="text-eyebrow text-gold-light uppercase tracking-widest font-eyebrow font-bold bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full shadow-md">
         <?= get_text('about', 'hero_badge', 'Institutional Legacy &amp; Future Vision') ?>
       </span>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg text-white w-full max-w-5xl tracking-tight leading-[1.15] drop-shadow-md">
+      <h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight leading-[1.2] drop-shadow-md">
         <?= get_text('about', 'hero_title', 'About Sun Rise Sr. Sec. School') ?>
       </h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-surface-cream/95 w-full max-w-4xl mx-auto font-body leading-relaxed drop-shadow">
+      <p class="text-sm sm:text-base md:text-lg text-surface-cream/95 w-full max-w-3xl mx-auto font-body leading-relaxed drop-shadow">
         <?= get_text('about', 'hero_subtitle', 'Cultivating academic rigor, moral integrity, and lifelong curiosity within a vibrant and disciplined campus environment in Dobhi, Haryana.') ?>
       </p>
     </div>
@@ -51,7 +51,7 @@ require_once __DIR__ . '/core/header.php';
   <section class="max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-eyebrow text-secondary uppercase font-eyebrow mb-2 block font-bold"><?= get_text('about', 'philosophy_tag', 'Our Core Philosophy') ?></span>
-      <h2 class="text-[1.5rem] font-bold text-primary"><?= get_text('about', 'philosophy_heading', 'Guiding Principles of Education') ?></h2>
+      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug"><?= get_text('about', 'philosophy_heading', 'Guiding Principles of Education') ?></h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
       <!-- Vision Card -->
@@ -150,7 +150,7 @@ require_once __DIR__ . '/core/header.php';
       <!-- Section Header -->
       <div class="text-center max-w-3xl mx-auto mb-16">
         <span class="text-eyebrow text-secondary uppercase font-eyebrow mb-2 block font-bold tracking-widest">Our History</span>
-        <h2 class="text-[1.5rem] font-bold text-primary">From Humble Beginnings to a Legacy of Learning</h2>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug">From Humble Beginnings to a Legacy of Learning</h2>
         <p class="font-body-lg text-on-surface-variant mt-4 leading-relaxed">
           The journey of Sun Rise Sr. Sec. School, Dobhi began in 2007, rooted in a profound belief that education can illuminate lives, transform possibilities, and lay the foundation for a better society.
         </p>
@@ -317,25 +317,33 @@ require_once __DIR__ . '/core/header.php';
         <div class="w-64 h-80 rounded-xl overflow-hidden shadow-2xl bg-cover bg-center border-2 border-secondary" style="background-image: url('<?= get_image('about', 'leader_photo', school_img('speaker.webp')) ?>')"></div>
       </div>
       <div class="lg:col-span-7 flex flex-col gap-5">
-        <span class="text-eyebrow text-secondary uppercase tracking-widest font-eyebrow font-bold">Leadership Message</span>
+        <span class="text-eyebrow text-secondary uppercase tracking-widest font-eyebrow font-bold">Director's Welcome</span>
         <h3 class="text-[1.5rem] font-bold text-white">Inspiring Minds, Cultivating Character</h3>
         <blockquote class="text-lg sm:text-xl text-on-primary/95 italic font-serif leading-relaxed border-l-4 border-secondary pl-4 py-1">
           “Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society.”
         </blockquote>
-        <div class="flex flex-col sm:flex-row sm:items-center gap-6 mt-3 pt-4 border-t border-white/20">
+        <p class="text-body-sm text-surface-cream/90 leading-relaxed">
+          At Sun Rise Sr. Sec. School, we do not simply prepare children for tomorrow; we nurture the individuals who will shape tomorrow.
+        </p>
+        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-2 pt-4 border-t border-white/20">
           <div>
             <span class="block font-bold text-white text-base">Mr. Bhader Singh Swami</span>
-            <span class="text-xs text-secondary font-semibold uppercase tracking-wider">Founder &amp; Director</span>
+            <span class="text-xs text-secondary font-semibold uppercase tracking-wider">Founder &amp; Director (M.A., B.Ed.)</span>
           </div>
           <div class="hidden sm:block w-px h-8 bg-white/20"></div>
           <div>
             <span class="block font-bold text-white text-base">Mr. Rajbir Singh</span>
-            <span class="text-xs text-secondary font-semibold uppercase tracking-wider">Principal</span>
+            <span class="text-xs text-secondary font-semibold uppercase tracking-wider">Principal (M.A., B.Ed.)</span>
+          </div>
+          <div class="hidden sm:block w-px h-8 bg-white/20"></div>
+          <div>
+            <span class="block font-bold text-white text-base">Mr. Indra Dev</span>
+            <span class="text-xs text-secondary font-semibold uppercase tracking-wider">Coordinator (LL.M., Ex-GM RBI)</span>
           </div>
         </div>
         <div class="mt-2">
-          <a href="leadership.php" class="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors text-sm font-bold">
-            <span>Read Complete Leadership Messages</span>
+          <a href="faculty.php" class="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors text-sm font-bold">
+            <span>Meet Leadership &amp; Faculty Team</span>
             <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
           </a>
         </div>
@@ -347,7 +355,7 @@ require_once __DIR__ . '/core/header.php';
   <section class="max-w-7xl mx-auto px-6 lg:px-12 pb-24 w-full">
     <div class="text-center max-w-3xl mx-auto mb-16">
       <span class="text-eyebrow text-secondary uppercase font-eyebrow mb-2 block font-bold"><?= get_text('about', 'tour_tagline', 'Visual Tour') ?></span>
-      <h2 class="text-[1.5rem] font-bold text-primary"><?= get_text('about', 'tour_title', 'Moments &amp; Campus Life') ?></h2>
+      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug"><?= get_text('about', 'tour_title', 'Moments &amp; Campus Life') ?></h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 h-auto md:h-[600px]">
       <div class="flex flex-col gap-6 md:h-full">

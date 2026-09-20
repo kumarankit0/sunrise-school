@@ -14,8 +14,8 @@ require_once __DIR__ . '/core/header.php';
     <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
     <div class="max-w-6xl w-full mx-auto px-6 lg:px-12 relative z-10 flex flex-col items-center text-center gap-6">
       <span class="text-eyebrow text-gold-light uppercase font-bold tracking-widest bg-black/40 border border-[#C9A24B]/50 px-5 py-2 rounded-full shadow-md"><?= get_text('gallery', 'hero_badge', 'Visual Chronicle') ?></span>
-      <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-headline-lg text-white tracking-tight leading-[1.15] w-full max-w-5xl drop-shadow-md"><?= get_text('gallery', 'hero_title', 'Life & Moments at Sun Rise School') ?></h1>
-      <p class="text-lg sm:text-xl md:text-2xl text-surface-cream/95 w-full max-w-4xl leading-relaxed drop-shadow"><?= get_text('gallery', 'hero_subtitle', 'Explore photographs capturing academic curiosity, hands-on science exhibitions, athletic triumphs, yoga mornings, and merit celebrations across our Dobhi campus.') ?></p>
+      <h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg font-bold text-white tracking-tight leading-[1.2] w-full max-w-4xl drop-shadow-md"><?= get_text('gallery', 'hero_title', 'Life & Moments at Sun Rise School') ?></h1>
+      <p class="text-sm sm:text-base md:text-lg text-surface-cream/95 w-full max-w-3xl leading-relaxed drop-shadow"><?= get_text('gallery', 'hero_subtitle', 'Explore photographs capturing academic curiosity, hands-on science exhibitions, athletic triumphs, yoga mornings, and merit celebrations across our Dobhi campus.') ?></p>
       <div class="inline-flex items-center gap-2.5 bg-black/40 border border-[#C9A24B]/50 px-5 py-2.5 rounded-full text-gold-light font-bold text-sm shadow-md">
         <span class="material-symbols-outlined text-[#C9A24B]" style="font-variation-settings: 'FILL' 1;">photo_library</span>
         <span>Official School Photo Archive</span>

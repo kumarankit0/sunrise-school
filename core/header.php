@@ -120,10 +120,12 @@ $current_page = isset($current_page) ? $current_page : 'home';
             "body": ["Inter", "sans-serif"]
           },
           fontSize: {
-            "headline-lg": ["1.5rem", { lineHeight: "1.3", letterSpacing: "-0.015em", fontWeight: "700" }],
-            "headline-lg-mobile": ["1.5rem", { lineHeight: "1.3", letterSpacing: "-0.015em", fontWeight: "700" }],
-            "headline-md": ["1.5rem", { lineHeight: "1.35", fontWeight: "600" }],
-            "headline-sm": ["1.5rem", { lineHeight: "1.35", fontWeight: "600" }]
+            "hero-h1": ["2rem", { lineHeight: "1.2", letterSpacing: "-0.015em", fontWeight: "700" }],
+            "hero-h1-mobile": ["1.65rem", { lineHeight: "1.25", letterSpacing: "-0.015em", fontWeight: "700" }],
+            "headline-lg": ["1.2rem", { lineHeight: "1.35", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-lg-mobile": ["1.1rem", { lineHeight: "1.35", letterSpacing: "-0.01em", fontWeight: "700" }],
+            "headline-md": ["1.15rem", { lineHeight: "1.35", fontWeight: "600" }],
+            "headline-sm": ["1.1rem", { lineHeight: "1.35", fontWeight: "600" }]
           }
         }
       }
@@ -311,7 +313,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
         <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="mobile-footer-contact-item">
           <span class="material-symbols-outlined text-[15px] text-primary">call</span> Call Us
         </a>
-        <a href="https://wa.me/919812345678" target="_blank" rel="noopener" class="mobile-footer-contact-item">
+        <a href="https://wa.me/917015890094" target="_blank" rel="noopener" class="mobile-footer-contact-item">
           <span class="material-symbols-outlined text-[15px] text-emerald-600">chat</span> WhatsApp
         </a>
         <a href="contact-us.php" class="mobile-footer-contact-item">
@@ -383,11 +385,15 @@ $current_page = isset($current_page) ? $current_page : 'home';
       <div class="p-5 max-h-[65vh] overflow-y-auto space-y-4 text-xs sm:text-sm">
         <div class="rounded-lg bg-surface-cream p-3 border border-border-warm">
           <p class="font-bold text-primary mb-1">General Information</p>
-          <div class="grid grid-cols-2 gap-2 text-on-surface-variant text-[11px] sm:text-xs">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-on-surface-variant text-[11px] sm:text-xs">
             <div><strong>School Name:</strong> Sun Rise Sr. Sec. School</div>
-            <div><strong>Affiliation:</strong> HBSE (Haryana Board)</div>
-            <div><strong>Location:</strong> VPO Dobhi, Hisar (125001)</div>
-            <div><strong>Principal:</strong> Experienced Academic Head</div>
+            <div><strong>Affiliation:</strong> HBSE (Affiliated since 2011)</div>
+            <div><strong>Estd. Year:</strong> 2007 (Founder &amp; Director: Mr. Bhader Singh Swami)</div>
+            <div><strong>Location:</strong> Main Road Dobhi, Near PHC, Hisar (125001)</div>
+            <div><strong>Principal:</strong> Mr. Rajbir Singh (M.A., B.Ed.)</div>
+            <div><strong>Coordinator:</strong> Mr. Indra Dev (LL.M., Ex-GM RBI)</div>
+            <div><strong>School Timings (Summer):</strong> 7:30 AM – 1:30 PM</div>
+            <div><strong>School Timings (Winter):</strong> 8:30 AM – 2:30 PM</div>
           </div>
         </div>
         <div class="space-y-2">

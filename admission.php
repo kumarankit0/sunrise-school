@@ -30,10 +30,10 @@ require_once __DIR__ . '/core/header.php';
 <span class="w-2 h-2 rounded-full bg-secondary animate-ping"></span>
             <?= get_text('admissions', 'session_badge', 'Academic Session 2026–27 Registrations Open') ?>
           </div>
-<h1 class="font-headline-lg text-headline-lg text-primary tracking-tight">
+<h1 class="text-[1.65rem] sm:text-[1.85rem] md:text-[2rem] font-headline-lg font-bold text-primary tracking-tight leading-tight">
             <?= get_text('admissions', 'hero_title', 'Admissions Open: Sun Rise Sr. Sec. School, Dobhi') ?>
           </h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant w-full leading-relaxed">
+<p class="text-sm sm:text-base text-on-surface-variant w-full max-w-3xl leading-relaxed">
             <?= get_text('admissions', 'hero_desc', 'Cultivating scholarship, strong character, and competitive excellence in Hisar district. Select your grade stream, verify student credentials, choose village transit, and secure provisional seat enrollment instantly via direct digital checkout.') ?>
           </p>
 <!-- Key Highlights Badges -->
@@ -126,7 +126,7 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8">
 <div>
 <div class="font-eyebrow text-eyebrow text-secondary uppercase tracking-widest"><?= get_text('admissions', 'grade_selector_eyebrow', 'Select Admission Grade') ?></div>
-<h2 class="font-headline-md text-headline-md text-primary mt-1"><?= get_text('admissions', 'grade_selector_heading', 'Available Classes & Available Vacancies') ?></h2>
+<h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-1"><?= get_text('admissions', 'grade_selector_heading', 'Available Classes & Available Vacancies') ?></h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-1"><?= get_text('admissions', 'grade_selector_desc', 'Choose the prospective level to populate academic fees, syllabi criteria, and batch schedules.') ?></p>
 </div>
 <!-- Segment Filters -->
@@ -846,10 +846,10 @@ require_once __DIR__ . '/core/header.php';
 <span class="material-symbols-outlined text-secondary text-[24px]">support_agent</span>
 <div class="text-xs">
 <span class="font-bold text-primary block">Facing issues with online payment?</span>
-<span class="text-on-surface-variant">Direct Help Desk: +91 98123 45678</span>
+<span class="text-on-surface-variant">Direct Help Desk: +91 70158 90094 / +91 79883 5710</span>
 </div>
 </div>
-<a class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded text-xs font-bold flex items-center gap-1" href="https://wa.me/919812345678" target="_blank">
+<a class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded text-xs font-bold flex items-center gap-1" href="https://wa.me/917015890094" target="_blank">
 <span class="material-symbols-outlined text-[14px]">chat</span> WhatsApp
           </a>
 </div>
@@ -862,7 +862,7 @@ require_once __DIR__ . '/core/header.php';
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
       <div>
         <span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-wider">Transparent Fee Schedule</span>
-        <h2 class="font-headline-md text-headline-md text-primary mt-1">Class-wise Academic Year Matrix (2026–27)</h2>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-1">Class-wise Academic Year Matrix (2026–27)</h2>
         <p class="font-body-md text-body-md text-on-surface-variant mt-1">No hidden charges. Highly affordable monthly tuition (₹600 – ₹1,000 / month) with concessions for merit scholars and siblings.</p>
       </div>
       <button class="inline-flex items-center gap-2 bg-surface-pure hover:bg-surface-cream text-primary px-5 py-3 rounded-lg shadow-sm font-label-md font-bold transition-colors self-start md:self-auto">
@@ -982,7 +982,7 @@ require_once __DIR__ . '/core/header.php';
     <div class="lg:col-span-5 flex flex-col gap-6">
       <div>
         <span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-wider">Verification Standards</span>
-        <h2 class="font-headline-md text-headline-md text-primary mt-1">Required Documents &amp; Eligibility</h2>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-1">Required Documents &amp; Eligibility</h2>
         <p class="font-body-md text-body-md text-on-surface-variant mt-1">Carry original copies during document physical verification at Dobhi campus.</p>
       </div>
       <div class="bg-surface-pure rounded-xl p-6 shadow-sm flex flex-col gap-4">
@@ -1039,7 +1039,7 @@ require_once __DIR__ . '/core/header.php';
     <div class="lg:col-span-7 flex flex-col gap-4">
       <div>
         <span class="font-eyebrow text-eyebrow text-secondary uppercase tracking-wider">Parents' FAQ Desk</span>
-        <h2 class="font-headline-md text-headline-md text-primary mt-1">Frequently Asked Admission Questions</h2>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-1">Frequently Asked Admission Questions</h2>
       </div>
 
       <!-- FAQ Item 1 -->
@@ -1110,15 +1110,15 @@ require_once __DIR__ . '/core/header.php';
       <div>
         <span class="text-xs font-bold text-secondary-fixed uppercase tracking-wider">Admissions Directorate – Dobhi Campus</span>
         <h3 class="font-headline-sm text-headline-sm text-white"><?= get_text('admissions', 'help_heading', 'Need Assistance with Online Admissions?') ?></h3>
-        <p class="font-body-sm text-body-sm text-on-primary-container mt-1"><?= get_text('admissions', 'help_desc', 'Our administrative office is open Monday to Saturday from 8:00 AM to 2:30 PM to assist parents with document verification, fee concessions, and transport routes.') ?></p>
+        <p class="font-body-sm text-body-sm text-on-primary-container mt-1"><?= get_text('admissions', 'help_desc', 'Our administrative office is open Monday to Saturday (Summer: 7:30 AM to 1:30 PM | Winter: 8:30 AM to 2:30 PM) to assist parents with document verification, fee concessions, and transport routes.') ?></p>
       </div>
     </div>
     <div class="flex flex-wrap items-center gap-4">
-      <a class="px-6 h-12 rounded-lg bg-surface-pure hover:bg-surface-cream text-primary font-label-md font-bold flex items-center gap-2 shadow-md transition-colors" href="tel:<?= urlencode(get_text('admissions', 'help_phone', '+91 98123 45678')) ?>">
+      <a class="px-6 h-12 rounded-lg bg-surface-pure hover:bg-surface-cream text-primary font-label-md font-bold flex items-center gap-2 shadow-md transition-colors" href="tel:<?= urlencode(get_text('admissions', 'help_phone', '+91 70158 90094')) ?>">
         <span class="material-symbols-outlined text-[18px]">call</span>
-        <span><?= get_text('admissions', 'help_phone', '+91 98123 45678') ?></span>
+        <span><?= get_text('admissions', 'help_phone', '+91 70158 90094') ?></span>
       </a>
-      <a class="px-6 h-12 rounded-lg bg-[#C9A24B] hover:bg-gold-hover text-primary font-label-md font-bold flex items-center gap-2 shadow-md transition-colors" href="https://wa.me/919812455432" target="_blank">
+      <a class="px-6 h-12 rounded-lg bg-[#C9A24B] hover:bg-gold-hover text-primary font-label-md font-bold flex items-center gap-2 shadow-md transition-colors" href="https://wa.me/917015890094" target="_blank">
         <span class="material-symbols-outlined text-[18px]">chat</span>
         <span>WhatsApp Chat</span>
       </a>

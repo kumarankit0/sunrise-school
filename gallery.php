@@ -10,7 +10,7 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full bg-surface">
   <!-- Hero Section with Background Banner -->
   <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary text-on-primary">
-    <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('gallery', 'hero_banner', school_img('exhibition1.webp')) ?>')"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('gallery', 'hero_banner', school_img('exhibition1.webp')) ?>')"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
     <div class="hero-content max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12 relative z-10 flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6">
       <span class="hero-badge text-gold-light uppercase font-bold tracking-widest bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full shadow-md"><?= get_text('gallery', 'hero_badge', 'Visual Chronicle') ?></span>
@@ -285,8 +285,16 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Campus Life Highlights & Traditions Section -->
-  <section class="w-full bg-surface-container-low py-16 sm:py-20 px-6 lg:px-12 border-y border-border-warm">
-    <div class="max-w-7xl mx-auto">
+  <section class="relative w-full py-16 sm:py-24 px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10" style="background-color: #F7EFE8; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.10) 0%, transparent 42%), radial-gradient(circle at 85% 80%, rgba(184, 134, 102, 0.09) 0%, transparent 46%);">
+    <!-- Subtle Warm Nude Geometric / Academic Pattern Overlays -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.38]" style="background-image: radial-gradient(#8d6e53 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[0.20]" style="background-image: linear-gradient(to right, rgba(141, 110, 83, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(141, 110, 83, 0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+    <!-- Decorative Soft Glow Orbs -->
+    <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#e8d5c4]/60 blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-[#C9A24B]/12 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 w-full">
       <div class="text-center max-w-3xl mx-auto mb-12">
         <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('gallery', 'life_eyebrow', 'Holistic Student Experience') ?></span>
         <h2 class="text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('gallery', 'life_heading', 'Vibrant Campus Life Beyond Classrooms') ?></h2>
@@ -294,31 +302,31 @@ require_once __DIR__ . '/core/header.php';
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-        <!-- Pillar 1 -->
-        <div class="bg-surface-pure p-8 rounded-2xl border border-border-warm shadow-sm hover:shadow-md transition-all flex flex-col gap-4">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[28px] text-[#C9A24B]"><?= get_text('gallery', 'life1_icon', 'self_improvement') ?></span>
+        <!-- Pillar 1: Morning Assembly & Moral Values -->
+        <div class="bg-[#F5EEFD] p-8 rounded-2xl border border-[#E2CEFC] hover:border-[#7C3AED] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] text-white shadow-md flex items-center justify-center">
+            <span class="material-symbols-outlined text-[30px]"><?= get_text('gallery', 'life1_icon', 'self_improvement') ?></span>
           </div>
-          <h3 class="font-headline-sm text-lg font-bold text-primary"><?= get_text('gallery', 'life1_title', 'Morning Assembly & Moral Values') ?></h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed"><?= get_text('gallery', 'life1_desc', 'Daily prayer, news recitation, motivational thought sharing, and patriotic anthems shaping disciplined character.') ?></p>
+          <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-[#3B0764]"><?= get_text('gallery', 'life1_title', 'Morning Assembly & Moral Values') ?></h3>
+          <p class="text-sm text-[#581C87]/80 leading-relaxed"><?= get_text('gallery', 'life1_desc', 'Daily prayer, news recitation, motivational thought sharing, and patriotic anthems shaping disciplined character.') ?></p>
         </div>
 
-        <!-- Pillar 2 -->
-        <div class="bg-surface-pure p-8 rounded-2xl border border-border-warm shadow-sm hover:shadow-md transition-all flex flex-col gap-4">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[28px] text-[#C9A24B]"><?= get_text('gallery', 'life2_icon', 'celebration') ?></span>
+        <!-- Pillar 2: Annual Cultural Pageants & Fests -->
+        <div class="bg-[#FDF2F8] p-8 rounded-2xl border border-[#FBCFE8] hover:border-[#DB2777] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#EC4899] to-[#BE185D] text-white shadow-md flex items-center justify-center">
+            <span class="material-symbols-outlined text-[30px]"><?= get_text('gallery', 'life2_icon', 'celebration') ?></span>
           </div>
-          <h3 class="font-headline-sm text-lg font-bold text-primary"><?= get_text('gallery', 'life2_title', 'Annual Cultural Pageants & Fests') ?></h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed"><?= get_text('gallery', 'life2_desc', 'Theatrical productions, folk dance performances, music recitals, and national festival celebrations on campus.') ?></p>
+          <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-[#831843]"><?= get_text('gallery', 'life2_title', 'Annual Cultural Pageants & Fests') ?></h3>
+          <p class="text-sm text-[#9D174D]/80 leading-relaxed"><?= get_text('gallery', 'life2_desc', 'Theatrical productions, folk dance performances, music recitals, and national festival celebrations on campus.') ?></p>
         </div>
 
-        <!-- Pillar 3 -->
-        <div class="bg-surface-pure p-8 rounded-2xl border border-border-warm shadow-sm hover:shadow-md transition-all flex flex-col gap-4">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[28px] text-[#C9A24B]"><?= get_text('gallery', 'life3_icon', 'sports_gymnastics') ?></span>
+        <!-- Pillar 3: Inter-House Athletics & Yoga Drills -->
+        <div class="bg-[#ECFDF5] p-8 rounded-2xl border border-[#A7F3D0] hover:border-[#059669] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col gap-4">
+          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#10B981] to-[#047857] text-white shadow-md flex items-center justify-center">
+            <span class="material-symbols-outlined text-[30px]"><?= get_text('gallery', 'life3_icon', 'sports_gymnastics') ?></span>
           </div>
-          <h3 class="font-headline-sm text-lg font-bold text-primary"><?= get_text('gallery', 'life3_title', 'Inter-House Athletics & Yoga Drills') ?></h3>
-          <p class="text-sm text-on-surface-variant leading-relaxed"><?= get_text('gallery', 'life3_desc', 'Dedicated sports periods, athletics conditioning, yoga asanas, and district-level tournament coaching.') ?></p>
+          <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-[#064E3B]"><?= get_text('gallery', 'life3_title', 'Inter-House Athletics & Yoga Drills') ?></h3>
+          <p class="text-sm text-[#065F46]/80 leading-relaxed"><?= get_text('gallery', 'life3_desc', 'Dedicated sports periods, athletics conditioning, yoga asanas, and district-level tournament coaching.') ?></p>
         </div>
       </div>
     </div>

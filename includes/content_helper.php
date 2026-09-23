@@ -13,11 +13,98 @@
 
 require_once __DIR__ . '/db.php';
 
+define('CMS_CACHE_DIR', __DIR__ . '/../cache');
+define('CMS_CACHE_FILE', CMS_CACHE_DIR . '/cms_content_cache.json');
+
 /**
  * In-memory storage for loaded page content & images
  */
 $GLOBALS['cms_content_cache'] = [];
 $GLOBALS['cms_images_cache']  = [];
+$GLOBALS['cms_cache_loaded']  = false;
+
+/**
+ * Clears the file-based CMS content cache (called after admin changes)
+ */
+function cms_clear_cache() {
+    $GLOBALS['cms_cache_loaded'] = false;
+    $GLOBALS['cms_content_cache'] = [];
+    $GLOBALS['cms_images_cache']  = [];
+    if (file_exists(CMS_CACHE_FILE)) {
+        @unlink(CMS_CACHE_FILE);
+    }
+}
+
+/**
+ * Loads entire CMS cache from file or warms it up from the database in a single pass.
+ */
+function cms_load_global_cache() {
+    if ($GLOBALS['cms_cache_loaded']) {
+        return;
+    }
+
+    // 1. Try reading from fast file cache (sub-millisecond)
+    if (file_exists(CMS_CACHE_FILE)) {
+        $raw = @file_get_contents(CMS_CACHE_FILE);
+        if ($raw) {
+            $data = @json_decode($raw, true);
+            if (is_array($data) && isset($data['content']) && isset($data['images'])) {
+                $GLOBALS['cms_content_cache'] = $data['content'];
+                $GLOBALS['cms_images_cache']  = $data['images'];
+                $GLOBALS['cms_cache_loaded']  = true;
+                return;
+            }
+        }
+    }
+
+    // 2. Cache miss: warm up from database
+    $db = get_db_connection();
+    if (!$db) {
+        $GLOBALS['cms_cache_loaded'] = true;
+        return;
+    }
+
+    try {
+        // Query all content blocks
+        $stmt = $db->query("SELECT page_key, section_key, content_type, content_value FROM site_content");
+        if ($stmt) {
+            $c_rows = $stmt->fetchAll();
+            foreach ($c_rows as $row) {
+                $GLOBALS['cms_content_cache'][$row['page_key']][$row['section_key']] = [
+                    'type'  => $row['content_type'],
+                    'value' => $row['content_value']
+                ];
+            }
+        }
+
+        // Query all image references (omit bulky image_data for speed)
+        $stmt2 = $db->query("SELECT page_key, image_key, file_path, alt_text FROM site_images");
+        if ($stmt2) {
+            $i_rows = $stmt2->fetchAll();
+            foreach ($i_rows as $row) {
+                $GLOBALS['cms_images_cache'][$row['page_key']][$row['image_key']] = [
+                    'path' => $row['file_path'],
+                    'alt'  => $row['alt_text']
+                ];
+            }
+        }
+
+        // Save to file cache for subsequent 0ms page loads
+        if (!is_dir(CMS_CACHE_DIR)) {
+            @mkdir(CMS_CACHE_DIR, 0777, true);
+        }
+        @file_put_contents(CMS_CACHE_FILE, json_encode([
+            'content' => $GLOBALS['cms_content_cache'],
+            'images'  => $GLOBALS['cms_images_cache'],
+            'updated' => time()
+        ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE));
+
+        $GLOBALS['cms_cache_loaded'] = true;
+    } catch (Exception $e) {
+        error_log("CMS global cache build error: " . $e->getMessage());
+        $GLOBALS['cms_cache_loaded'] = true;
+    }
+}
 
 /**
  * Preloads all text content for a given page key into memory
@@ -25,30 +112,11 @@ $GLOBALS['cms_images_cache']  = [];
  * @param string $page_key
  */
 function preload_page_content($page_key) {
-    if (isset($GLOBALS['cms_content_cache'][$page_key])) {
-        return; // Already loaded in memory
+    if (!$GLOBALS['cms_cache_loaded']) {
+        cms_load_global_cache();
     }
-
-    $GLOBALS['cms_content_cache'][$page_key] = [];
-
-    $db = get_db_connection();
-    if (!$db) {
-        return; // Gracefully fallback to default values
-    }
-
-    try {
-        $stmt = $db->prepare("SELECT section_key, content_type, content_value FROM site_content WHERE page_key = ?");
-        $stmt->execute([$page_key]);
-        $rows = $stmt->fetchAll();
-
-        foreach ($rows as $row) {
-            $GLOBALS['cms_content_cache'][$page_key][$row['section_key']] = [
-                'type'  => $row['content_type'],
-                'value' => $row['content_value']
-            ];
-        }
-    } catch (PDOException $e) {
-        error_log("CMS Content preload error: " . $e->getMessage());
+    if (!isset($GLOBALS['cms_content_cache'][$page_key])) {
+        $GLOBALS['cms_content_cache'][$page_key] = [];
     }
 }
 
@@ -58,37 +126,11 @@ function preload_page_content($page_key) {
  * @param string $page_key
  */
 function preload_page_images($page_key) {
-    if (isset($GLOBALS['cms_images_cache'][$page_key])) {
-        return; // Already loaded in memory
+    if (!$GLOBALS['cms_cache_loaded']) {
+        cms_load_global_cache();
     }
-
-    $GLOBALS['cms_images_cache'][$page_key] = [];
-
-    $db = get_db_connection();
-    if (!$db) {
-        return; // Gracefully fallback to default values
-    }
-
-    try {
-        try {
-            $stmt = $db->prepare("SELECT image_key, file_path, alt_text, image_data FROM site_images WHERE page_key = ?");
-            $stmt->execute([$page_key]);
-        } catch (PDOException $ex) {
-            // Fallback for environments where image_data column is not yet migrated
-            $stmt = $db->prepare("SELECT image_key, file_path, alt_text FROM site_images WHERE page_key = ?");
-            $stmt->execute([$page_key]);
-        }
-        $rows = $stmt->fetchAll();
-
-        foreach ($rows as $row) {
-            $GLOBALS['cms_images_cache'][$page_key][$row['image_key']] = [
-                'path'       => $row['file_path'],
-                'alt'        => $row['alt_text'],
-                'image_data' => $row['image_data'] ?? null
-            ];
-        }
-    } catch (PDOException $e) {
-        error_log("CMS Images preload error: " . $e->getMessage());
+    if (!isset($GLOBALS['cms_images_cache'][$page_key])) {
+        $GLOBALS['cms_images_cache'][$page_key] = [];
     }
 }
 
@@ -152,8 +194,23 @@ function get_image($page_key, $image_key, $default = '') {
 
             // 2. If file missing from disk (e.g. after Git push / Docker container recreate on Render):
             // Automatically restore the file to uploads/ from persistent database image_data!
-            if (!empty($item['image_data'])) {
-                $data_parts = explode(',', $item['image_data'], 2);
+            $img_data = $item['image_data'] ?? null;
+            if (empty($img_data)) {
+                $db = get_db_connection();
+                if ($db) {
+                    try {
+                        $s_lazy = $db->prepare("SELECT image_data FROM site_images WHERE page_key = ? AND image_key = ? LIMIT 1");
+                        $s_lazy->execute([$page_key, $image_key]);
+                        $img_data = $s_lazy->fetchColumn();
+                        $GLOBALS['cms_images_cache'][$page_key][$image_key]['image_data'] = $img_data;
+                    } catch (Exception $e) {
+                        // Ignore
+                    }
+                }
+            }
+
+            if (!empty($img_data)) {
+                $data_parts = explode(',', $img_data, 2);
                 if (count($data_parts) === 2) {
                     $decoded = base64_decode($data_parts[1]);
                     if ($decoded !== false) {
@@ -169,7 +226,7 @@ function get_image($page_key, $image_key, $default = '') {
                     }
                 }
                 // If disk writing is disabled or restricted, output data URI directly
-                return htmlspecialchars($item['image_data'], ENT_QUOTES, 'UTF-8');
+                return htmlspecialchars($img_data, ENT_QUOTES, 'UTF-8');
             }
 
             // 3. File missing and no image_data: DO NOT return broken 404 URL. Fall through to default!

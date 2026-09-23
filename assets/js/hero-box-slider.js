@@ -32,7 +32,8 @@
 
     // Cache preloaded image natural dimensions for pixel-perfect cover math
     const imgDimsCache = {};
-    slides.forEach(src => {
+    function preloadSingleSlide(src) {
+      if (!src || imgDimsCache[src]) return;
       const img = new Image();
       img.onload = () => {
         imgDimsCache[src] = {
@@ -41,7 +42,20 @@
         };
       };
       img.src = src;
-    });
+    }
+
+    // Load active slide immediately
+    if (slides[0]) preloadSingleSlide(slides[0]);
+    // Preload next slide shortly after render
+    setTimeout(() => {
+      if (slides[1]) preloadSingleSlide(slides[1]);
+    }, 800);
+    // Defer remaining slides when network is completely idle
+    setTimeout(() => {
+      for (let i = 2; i < slides.length; i++) {
+        preloadSingleSlide(slides[i]);
+      }
+    }, 2500);
 
     // Set initial image on base slide
     if (baseSlide && slides.length > 0) {
@@ -147,45 +161,21 @@
           let startY = 0;
           let startRotate = 0;
 
-          // 4-Direction Inward Entry
-          const isCorner = (r === 0 || r === rows - 1) && (c === 0 || c === cols - 1);
-
-          if (isCorner) {
-            const dirX = c === 0 ? -1 : 1;
-            const dirY = r === 0 ? -1 : 1;
-            startX = dirX * (width * 0.22 + 40);
-            startY = dirY * (height * 0.22 + 40);
-            startRotate = dirX * dirY * 16;
-          } else if (minDist === dLeft) {
-            // From Left
-            startX = -(x + tileW + 40);
-            startY = (r - cy) * 12;
-            startRotate = -10;
-          } else if (minDist === dRight) {
-            // From Right
-            startX = (width - x + 40);
-            startY = (r - cy) * 12;
-            startRotate = 10;
-          } else if (minDist === dTop) {
-            // From Top
-            startX = (c - cx) * 12;
-            startY = -(y + tileH + 40);
-            startRotate = -8;
-          } else {
-            // From Bottom
-            startX = (c - cx) * 12;
-            startY = (height - y + 40);
-            startRotate = 8;
-          }
+          // In-Place Mosaic Reveal: Stay 100% within container bounds (never cross container edges or overlap navbar)
+          const dirX = (c < cx) ? -1 : (c > cx ? 1 : 0);
+          const dirY = (r < cy) ? -1 : (r > cy ? 1 : 0);
+          const startX = dirX * 12;
+          const startY = dirY * 10;
+          const startRotate = (dirX * dirY !== 0) ? (dirX * dirY * 4) : (dirX * 3 + dirY * 3);
 
           // Delay: Outer boxes start first, then smoothly cascade inward swiftly
-          const delay = (minDist * 40) + (Math.abs(c - cx) * 8) + (Math.random() * 12);
+          const delay = (minDist * 40) + (Math.abs(c - cx) * 8);
           const duration = 460; // Snappy 460ms smooth entry
 
-          // Initial starting transform: boxes enter from 4 directions
-          tile.style.transform = `translate3d(${startX.toFixed(1)}px, ${startY.toFixed(1)}px, 0) scale(0.80) rotate(${startRotate}deg)`;
+          // Initial starting transform: boxes scale up and assemble strictly within container
+          tile.style.transform = `translate3d(${startX}px, ${startY}px, 0) scale(0.86) rotate(${startRotate}deg)`;
           tile.style.opacity = '0';
-          tile.style.boxShadow = 'inset 0 0 0 1px rgba(255, 255, 255, 0.4), 0 4px 14px rgba(0, 0, 0, 0.35)';
+          tile.style.boxShadow = 'inset 0 0 0 1px rgba(255, 255, 255, 0.25), 0 2px 8px rgba(0, 0, 0, 0.25)';
 
           gridContainer.appendChild(tile);
 

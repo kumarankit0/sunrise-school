@@ -10,7 +10,7 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full">
   <!-- Hero Banner -->
   <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 bg-primary text-on-primary px-4 sm:px-6 lg:px-12 overflow-hidden flex items-center justify-center text-center">
-    <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('academics', 'hero_banner', school_img('exhibition.webp')) ?>')"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('academics', 'hero_banner', school_img('exhibition.webp')) ?>')"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
     <div class="hero-content max-w-6xl w-full mx-auto relative z-10 flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6">
       <span class="hero-badge text-gold-light uppercase tracking-widest bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full font-bold shadow-md">
@@ -56,49 +56,58 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Curriculum Overview by Level -->
-  <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full" id="curriculum-levels">
-    <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-      <div>
-        <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('academics', 'curriculum_eyebrow', 'Academic Stages') ?></span>
-        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('academics', 'curriculum_heading', 'Curriculum Stages by Level') ?></h2>
-      </div>
-      <p class="font-body-md text-on-surface-variant max-w-md"><?= get_text('academics', 'curriculum_desc', 'Our progressive learning architecture builds conceptual clarity, self-confidence, and critical inquiry from early years to Class 12.') ?></p>
-    </div>
+  <section class="relative w-full py-20 lg:py-24 px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10" id="curriculum-levels" style="background-color: #eaf0f8; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.08) 0%, transparent 40%), radial-gradient(circle at 85% 75%, rgba(11, 38, 71, 0.06) 0%, transparent 45%);">
+    <!-- Subtle Architectural / Academic Geometric Patterns -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.38]" style="background-image: radial-gradient(#001129 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[0.20]" style="background-image: linear-gradient(to right, rgba(0, 17, 41, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 17, 41, 0.05) 1px, transparent 1px); background-size: 40px 40px;"></div>
 
-    <!-- Interactive Tabs / Accordion Section -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <!-- Navigation Tabs -->
-      <div class="lg:col-span-4 flex flex-col gap-3" id="level-tabs">
-        <button class="level-btn active" data-target="pre-primary" onclick="switchLevel('pre-primary')">
-          <span><?= get_text('academics', 'stage1_tab', 'Pre-Primary (Nursery, LKG, UKG)') ?></span>
-          <span class="material-symbols-outlined text-[20px]">chevron_right</span>
-        </button>
-        <button class="level-btn" data-target="primary" onclick="switchLevel('primary')">
-          <span><?= get_text('academics', 'stage2_tab', 'Primary School (Classes 1-5)') ?></span>
-          <span class="material-symbols-outlined text-[20px]">chevron_right</span>
-        </button>
-        <button class="level-btn" data-target="middle" onclick="switchLevel('middle')">
-          <span><?= get_text('academics', 'stage3_tab', 'Middle School (Classes 6-8)') ?></span>
-          <span class="material-symbols-outlined text-[20px]">chevron_right</span>
-        </button>
-        <button class="level-btn" data-target="secondary" onclick="switchLevel('secondary')">
-          <span><?= get_text('academics', 'stage4_tab', 'Secondary School (Classes 9-10)') ?></span>
-          <span class="material-symbols-outlined text-[20px]">chevron_right</span>
-        </button>
-        <button class="level-btn" data-target="senior" onclick="switchLevel('senior')">
-          <span><?= get_text('academics', 'stage5_tab', 'Senior Secondary (Classes 11-12)') ?></span>
-          <span class="material-symbols-outlined text-[20px]">chevron_right</span>
-        </button>
+    <!-- Decorative Ambient Glow Orbs -->
+    <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#C9A24B]/15 blur-3xl pointer-events-none"></div>
+    <div class="absolute left-5 bottom-0 w-80 h-80 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 w-full">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('academics', 'curriculum_eyebrow', 'Academic Stages') ?></span>
+          <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('academics', 'curriculum_heading', 'Curriculum Stages by Level') ?></h2>
+        </div>
+        <p class="font-body-md text-on-surface-variant max-w-md"><?= get_text('academics', 'curriculum_desc', 'Our progressive learning architecture builds conceptual clarity, self-confidence, and critical inquiry from early years to Class 12.') ?></p>
       </div>
 
-      <!-- Tab Content Area -->
-      <div class="lg:col-span-8 bg-surface-container-lowest p-5 sm:p-8 lg:p-12 rounded-2xl shadow-sm border border-border-warm">
-        <!-- Pre-Primary -->
-        <div class="level-content flex flex-col gap-6" id="content-pre-primary">
-          <div class="flex items-center gap-3">
-            <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35"><?= get_text('academics', 'stage1_badge', 'Early Childhood Education') ?></span>
-            <span class="text-on-surface-variant text-body-sm"><?= get_text('academics', 'stage1_age', 'Ages 3 to 5 Years') ?></span>
-          </div>
+      <!-- Interactive Tabs / Accordion Section -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Navigation Tabs -->
+        <div class="lg:col-span-4 flex flex-col gap-3" id="level-tabs">
+          <button class="level-btn active" data-target="pre-primary" onclick="switchLevel('pre-primary')">
+            <span><?= get_text('academics', 'stage1_tab', 'Pre-Primary (Nursery, LKG, UKG)') ?></span>
+            <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+          </button>
+          <button class="level-btn" data-target="primary" onclick="switchLevel('primary')">
+            <span><?= get_text('academics', 'stage2_tab', 'Primary School (Classes 1-5)') ?></span>
+            <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+          </button>
+          <button class="level-btn" data-target="middle" onclick="switchLevel('middle')">
+            <span><?= get_text('academics', 'stage3_tab', 'Middle School (Classes 6-8)') ?></span>
+            <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+          </button>
+          <button class="level-btn" data-target="secondary" onclick="switchLevel('secondary')">
+            <span><?= get_text('academics', 'stage4_tab', 'Secondary School (Classes 9-10)') ?></span>
+            <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+          </button>
+          <button class="level-btn" data-target="senior" onclick="switchLevel('senior')">
+            <span><?= get_text('academics', 'stage5_tab', 'Senior Secondary (Classes 11-12)') ?></span>
+            <span class="material-symbols-outlined text-[20px]">chevron_right</span>
+          </button>
+        </div>
+
+        <!-- Tab Content Area -->
+        <div class="lg:col-span-8 bg-surface-pure p-5 sm:p-8 lg:p-12 rounded-2xl shadow-sm border border-border-warm">
+          <!-- Pre-Primary -->
+          <div class="level-content flex flex-col gap-6" id="content-pre-primary">
+            <div class="flex items-center gap-3">
+              <span class="bg-[#F9F4E8] text-[#C9A24B] px-3 py-1 rounded text-eyebrow uppercase font-bold border border-[#C9A24B]/35"><?= get_text('academics', 'stage1_badge', 'Early Childhood Education') ?></span>
+              <span class="text-on-surface-variant text-body-sm"><?= get_text('academics', 'stage1_age', 'Ages 3 to 5 Years') ?></span>
+            </div>
           <h3 class="font-headline-md text-headline-md text-primary"><?= get_text('academics', 'stage1_title', 'Play-Based Learning &amp; Foundational Wonder') ?></h3>
           <p class="font-body-md text-on-surface-variant"><?= get_text('academics', 'stage1_desc', 'The Pre-Primary wing provides a nurturing environment where children discover the joy of learning through play, storytelling, numbers, rhymes, phonics, and motor skill activities.') ?></p>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
@@ -244,6 +253,7 @@ require_once __DIR__ . '/core/header.php';
         </div>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- Subject / Stream Cards for Class 11-12 -->
@@ -335,44 +345,54 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Teaching Methodology -->
-  <section class="py-24 px-6 lg:px-12 max-w-7xl mx-auto w-full">
-    <div class="text-center max-w-2xl mx-auto mb-16">
-      <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('academics', 'pedagogy_eyebrow', 'Pedagogical Approach') ?></span>
-      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('academics', 'pedagogy_heading', 'How We Teach at Sun Rise') ?></h2>
-      <p class="font-body-md text-on-surface-variant mt-3"><?= get_text('academics', 'pedagogy_desc', 'Combining traditional teacher mentorship with modern smart-class technology and experimental learning.') ?></p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-      <div class="bg-surface-pure p-8 rounded-2xl shadow-sm border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-transform">
-        <div>
-          <div class="w-14 h-14 rounded-xl bg-primary text-[#C9A24B] flex items-center justify-center mb-6 text-2xl font-bold">01</div>
-          <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step1_title', 'Concept Clarity') ?></h3>
-          <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step1_desc', 'Focus on thorough understanding of NCERT fundamentals before moving to advanced problem solving.') ?></p>
-        </div>
-        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step1_tag', 'Core Understanding') ?></div>
+  <section class="relative w-full py-20 lg:py-24 px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10" style="background-color: #eaf0f8; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.08) 0%, transparent 40%), radial-gradient(circle at 85% 75%, rgba(11, 38, 71, 0.06) 0%, transparent 45%);">
+    <!-- Subtle Architectural / Academic Geometric Patterns -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.38]" style="background-image: radial-gradient(#001129 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[0.20]" style="background-image: linear-gradient(to right, rgba(0, 17, 41, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 17, 41, 0.05) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+    <!-- Decorative Ambient Glow Orbs -->
+    <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#C9A24B]/15 blur-3xl pointer-events-none"></div>
+    <div class="absolute left-5 bottom-0 w-80 h-80 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 w-full">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('academics', 'pedagogy_eyebrow', 'Pedagogical Approach') ?></span>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('academics', 'pedagogy_heading', 'How We Teach at Sun Rise') ?></h2>
+        <p class="font-body-md text-on-surface-variant mt-3"><?= get_text('academics', 'pedagogy_desc', 'Combining traditional teacher mentorship with modern smart-class technology and experimental learning.') ?></p>
       </div>
-      <div class="bg-surface-pure p-8 rounded-2xl shadow-sm border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-transform">
-        <div>
-          <div class="w-14 h-14 rounded-xl bg-primary text-[#C9A24B] flex items-center justify-center mb-6 text-2xl font-bold">02</div>
-          <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step2_title', 'Practical Labs') ?></h3>
-          <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step2_desc', 'Hands-on experiments in physics, chemistry, biology, and computer science reinforce classroom theory.') ?></p>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-surface-pure p-8 rounded-2xl shadow-sm hover:shadow-md border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-primary text-[#C9A24B] flex items-center justify-center mb-6 text-2xl font-bold">01</div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step1_title', 'Concept Clarity') ?></h3>
+            <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step1_desc', 'Focus on thorough understanding of NCERT fundamentals before moving to advanced problem solving.') ?></p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step1_tag', 'Core Understanding') ?></div>
         </div>
-        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step2_tag', 'Experiential Learning') ?></div>
-      </div>
-      <div class="bg-surface-pure p-8 rounded-2xl shadow-sm border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-transform">
-        <div>
-          <div class="w-14 h-14 rounded-xl bg-primary text-[#C9A24B] flex items-center justify-center mb-6 text-2xl font-bold">03</div>
-          <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step3_title', 'Regular Testing') ?></h3>
-          <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step3_desc', 'Periodic unit tests, term exams, and mock board tests ensure continuous assessment and revision.') ?></p>
+        <div class="bg-surface-pure p-8 rounded-2xl shadow-sm hover:shadow-md border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-primary text-[#C9A24B] flex items-center justify-center mb-6 text-2xl font-bold">02</div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step2_title', 'Practical Labs') ?></h3>
+            <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step2_desc', 'Hands-on experiments in physics, chemistry, biology, and computer science reinforce classroom theory.') ?></p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step2_tag', 'Experiential Learning') ?></div>
         </div>
-        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step3_tag', 'Exam Readiness') ?></div>
-      </div>
-      <div class="bg-surface-pure p-8 rounded-2xl shadow-sm border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-transform">
-        <div>
-          <div class="w-14 h-14 rounded-xl bg-primary text-[#C9A24B] flex items-center justify-center mb-6 text-2xl font-bold">04</div>
-          <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step4_title', 'Individual Care') ?></h3>
-          <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step4_desc', 'Remedial classes for students needing extra help and personalized attention for every scholar.') ?></p>
+        <div class="bg-surface-pure p-8 rounded-2xl shadow-sm hover:shadow-md border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-primary text-[#C9A24B] flex items-center justify-center mb-6 text-2xl font-bold">03</div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step3_title', 'Regular Testing') ?></h3>
+            <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step3_desc', 'Periodic unit tests, term exams, and mock board tests ensure continuous assessment and revision.') ?></p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step3_tag', 'Exam Readiness') ?></div>
         </div>
-        <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step4_tag', 'Personal Mentorship') ?></div>
+        <div class="bg-surface-pure p-8 rounded-2xl shadow-sm hover:shadow-md border border-border-warm flex flex-col justify-between hover:-translate-y-1 transition-all">
+          <div>
+            <div class="w-14 h-14 rounded-xl bg-primary text-[#C9A24B] flex items-center justify-center mb-6 text-2xl font-bold">04</div>
+            <h3 class="font-headline-sm text-headline-sm text-primary mb-3 font-bold"><?= get_text('academics', 'step4_title', 'Individual Care') ?></h3>
+            <p class="font-body-sm text-on-surface-variant"><?= get_text('academics', 'step4_desc', 'Remedial classes for students needing extra help and personalized attention for every scholar.') ?></p>
+          </div>
+          <div class="mt-8 pt-4 border-t border-border-warm text-eyebrow text-[#C9A24B] uppercase tracking-wider font-bold"><?= get_text('academics', 'step4_tag', 'Personal Mentorship') ?></div>
+        </div>
       </div>
     </div>
   </section>

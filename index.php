@@ -301,37 +301,106 @@ $hero_slides = [
     </div>
   </section>
 
-  <!-- Principal's Message (Content Left, Image Right - Inverted Layout) -->
+  <!-- Leadership: Principal & Coordinator (2-Column Responsive Layout) -->
   <section class="w-full py-16 lg:py-24 bg-[#eaf0f8] relative border-t border-b border-[#000e21]/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <!-- Left Content -->
-      <div class="lg:col-span-7 flex flex-col gap-5 lg:pr-10 order-2 lg:order-1">
-        <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'principal_tagline', "PRINCIPAL'S MESSAGE") ?></div>
-        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug">
-          <?= get_text('home', 'principal_heading', 'Guiding Young Minds Towards Academic Excellence &amp; Character') ?>
-        </h2>
-        <blockquote class="text-title-editorial font-headline-md italic text-on-surface border-l-4 border-[#C9A24B] pl-6 py-2 my-1">
-          <?= get_text('home', 'principal_quote', '“True education is the illumination of intellect grounded in discipline, curiosity, and compassionate leadership.”') ?>
-        </blockquote>
-        <div class="text-body-md text-on-surface-variant font-body flex flex-col gap-3 leading-relaxed">
-          <p>
-            <?= get_text('home', 'principal_p1', 'Welcome to Sun Rise Sr. Sec. School, Dobhi. As Principal, it is my privilege to lead an institution where rigorous scholarship seamlessly blends with moral integrity, creative exploration, and personal mentorship. Our dedicated faculty works with unwavering commitment to unlock the boundless potential within each student.') ?>
-          </p>
-          <p>
-            <?= get_text('home', 'principal_p2', 'Through state-of-the-art science and computer laboratories, expansive sports infrastructure, and dedicated HBSE curriculum delivery, we empower our learners to achieve exemplary distinctions in board examinations and life beyond. Together with our supportive parents, we nurture young minds to lead with knowledge, courage, and humble hearts.') ?>
-          </p>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto">
+        <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold">
+          <?= get_text('home', 'leadership_tagline', get_text('home', 'principal_tagline', "SCHOOL LEADERSHIP")) ?>
         </div>
-        <div class="pt-3 flex items-center gap-4 border-t border-[#000e21]/10">
-          <div>
-            <div class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'principal_name', 'Mr. Rajbir Singh') ?></div>
-            <div class="text-body-sm text-on-surface-variant font-medium"><?= get_text('home', 'principal_title', 'Principal, Sun Rise Sr. Sec. School, Dobhi') ?></div>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2">
+          <?= get_text('home', 'leadership_heading', get_text('home', 'principal_heading', "Guiding Young Minds Towards Academic Excellence & Character")) ?>
+        </h2>
+      </div>
+
+      <!-- 2 Columns Grid: Left = Principal, Right = Coordinator -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
+        <!-- Left Column: Principal -->
+        <div class="bg-surface rounded-2xl border border-border-warm shadow-sm hover:shadow-md transition-all duration-300 flex flex-col p-6 sm:p-8 relative overflow-hidden group">
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-[#001129]"></div>
+          
+          <div class="flex flex-col sm:flex-row gap-6 items-start">
+            <!-- Principal Image -->
+            <div class="relative w-full sm:w-44 h-56 sm:h-52 rounded-xl overflow-hidden shadow-md flex-shrink-0 bg-cover bg-center" style="background-image: url('<?= get_image('home', 'principal_photo', school_img('all_staffmembers.webp')) ?>')">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2.5 left-2.5 bg-primary/95 text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm">
+                <?= get_text('home', 'principal_role_badge', 'Principal') ?>
+              </span>
+            </div>
+            
+            <!-- Principal Info Header -->
+            <div class="flex flex-col justify-center flex-1">
+              <span class="text-xs font-bold uppercase tracking-widest text-[#C9A24B]">
+                <?= get_text('home', 'principal_tag', 'Academic Head') ?>
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold text-primary mt-1">
+                <?= get_text('home', 'principal_name', 'Mr. Rajbir Singh') ?>
+              </h3>
+              <div class="text-sm font-semibold text-[#B38C37] mt-0.5">
+                <?= get_text('home', 'principal_title', 'Principal | M.A., B.Ed.') ?>
+              </div>
+              <div class="inline-flex items-center gap-1.5 bg-[#F9F4E8] text-[#B38C37] text-xs font-bold px-2.5 py-1 rounded mt-2.5 border border-[#C9A24B]/30 self-start">
+                <span class="material-symbols-outlined text-[15px]">workspace_premium</span>
+                <?= get_text('home', 'principal_exp', '16 Years Professional Experience') ?>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="mt-6 pt-5 border-t border-border-warm flex-1 flex flex-col justify-between">
+            <p class="text-body-sm sm:text-body-md text-on-surface-variant leading-relaxed text-justify">
+              <?= nl2br(htmlspecialchars(get_text('home', 'principal_desc', 'With 16 years of professional experience in the field of education, Mr. Rajbir Singh serves as the Principal of Sun Rise Sr. Sec. School. He holds M.A. and B.Ed. qualifications and brings a committed approach towards academic administration and student development. As the academic head of the institution, his role encompasses fostering a disciplined and purposeful learning environment, supporting teachers, and ensuring that students receive balanced opportunities for academic, personal, and holistic development.'))) ?>
+            </p>
+            <div class="mt-4 pt-3 flex items-center justify-between text-xs text-on-surface-variant font-medium">
+              <span class="text-primary font-bold">Sun Rise Sr. Sec. School</span>
+              <span class="text-[#C9A24B] font-semibold">Dobhi, Hisar</span>
+            </div>
           </div>
         </div>
-      </div>
-      <!-- Right Image -->
-      <div class="lg:col-span-5 relative order-1 lg:order-2">
-        <div class="absolute -top-4 -right-4 w-full h-full bg-[#C9A24B]/10 rounded-2xl"></div>
-        <div class="relative rounded-xl overflow-hidden shadow-xl aspect-[4/5] bg-cover bg-center" style="background-image: url('<?= get_image('home', 'principal_photo', school_img('all_staffmembers.webp')) ?>')"></div>
+
+        <!-- Right Column: Coordinator -->
+        <div class="bg-surface rounded-2xl border border-border-warm shadow-sm hover:shadow-md transition-all duration-300 flex flex-col p-6 sm:p-8 relative overflow-hidden group">
+          <div class="absolute top-0 left-0 w-full h-1.5 bg-[#C9A24B]"></div>
+          
+          <div class="flex flex-col sm:flex-row gap-6 items-start">
+            <!-- Coordinator Image -->
+            <div class="relative w-full sm:w-44 h-56 sm:h-52 rounded-xl overflow-hidden shadow-md flex-shrink-0 bg-cover bg-center" style="background-image: url('<?= get_image('home', 'coordinator_photo', school_img('all_staffmembers.webp')) ?>')">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
+              <span class="absolute bottom-2.5 left-2.5 bg-[#C9A24B] text-[#001129] text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm">
+                <?= get_text('home', 'coordinator_role_badge', 'Coordinator') ?>
+              </span>
+            </div>
+            
+            <!-- Coordinator Info Header -->
+            <div class="flex flex-col justify-center flex-1">
+              <span class="text-xs font-bold uppercase tracking-widest text-[#C9A24B]">
+                <?= get_text('home', 'coordinator_tag', 'Administration & Coordination') ?>
+              </span>
+              <h3 class="text-xl sm:text-2xl font-bold text-primary mt-1">
+                <?= get_text('home', 'coordinator_name', 'Mr. Indra Dev') ?>
+              </h3>
+              <div class="text-sm font-semibold text-[#B38C37] mt-0.5">
+                <?= get_text('home', 'coordinator_title', 'Coordinator | B.A., M.A., LL.B., LL.M.') ?>
+              </div>
+              <div class="inline-flex items-center gap-1.5 bg-[#F9F4E8] text-[#B38C37] text-xs font-bold px-2.5 py-1 rounded mt-2.5 border border-[#C9A24B]/30 self-start">
+                <span class="material-symbols-outlined text-[15px]">workspace_premium</span>
+                <?= get_text('home', 'coordinator_exp', '22 Years Exp • Former GM, RBI') ?>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description -->
+          <div class="mt-6 pt-5 border-t border-border-warm flex-1 flex flex-col justify-between">
+            <p class="text-body-sm sm:text-body-md text-on-surface-variant leading-relaxed text-justify">
+              <?= nl2br(htmlspecialchars(get_text('home', 'coordinator_desc', 'Mr. Indra Dev brings 22 years of professional experience and a distinguished academic background comprising B.A., M.A., LL.B., and LL.M. qualifications. Prior to his association with Sun Rise Sr. Sec. School, he served as a General Manager at the Reserve Bank of India (RBI), a position reflecting substantial professional responsibility and administrative experience. His diverse academic and professional background brings a distinctive perspective to the institution, contributing to its organisational discipline, administrative framework, and educational development. His experience across education, law, and institutional administration strengthens the school’s endeavour to maintain high standards of professionalism and responsible leadership.'))) ?>
+            </p>
+            <div class="mt-4 pt-3 flex items-center justify-between text-xs text-on-surface-variant font-medium">
+              <span class="text-primary font-bold">Sun Rise Sr. Sec. School</span>
+              <span class="text-[#C9A24B] font-semibold">Dobhi, Hisar</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -418,7 +487,7 @@ $hero_slides = [
       ['img' => get_image('home', 'glimpse12_img', school_img('teachers_and_students.webp')), 'title' => get_text('home', 'glimpse12_title', 'Student-Faculty Mentorship'), 'desc' => get_text('home', 'glimpse12_caption', 'Personalized guidance and caring educator support.')],
     ];
   ?>
-  <section class="w-full py-16 sm:py-24 bg-surface relative overflow-hidden">
+  <section class="w-full py-16 sm:py-24 bg-[#eaf0f8] relative overflow-hidden" style="background-color: rgb(234 240 248 / var(--tw-bg-opacity, 1));">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-6 mb-8 sm:mb-10">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
@@ -434,8 +503,8 @@ $hero_slides = [
     <!-- Dual-Row Continuous Infinite Photo Showcase -->
     <div class="w-full relative overflow-hidden">
       <!-- Left & Right Soft Vignette Fades -->
-      <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-surface to-transparent z-10"></div>
-      <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-surface to-transparent z-10"></div>
+      <div class="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-r from-[#eaf0f8] to-transparent z-10"></div>
+      <div class="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-28 bg-gradient-to-l from-[#eaf0f8] to-transparent z-10"></div>
 
       <div class="gallery-marquee-container" tabindex="0" role="region" aria-label="Campus Life Photo Showcase. Hover or focus to pause.">
         <!-- Row 1: Leftward Infinite Marquee Track -->

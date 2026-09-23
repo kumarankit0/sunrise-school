@@ -10,7 +10,7 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full">
   <!-- Hero Section with Background Banner -->
   <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary text-on-primary">
-    <div class="absolute inset-0 z-0 bg-cover bg-center" style="background-image: url('<?= get_image('events', 'featured_banner', school_img('award_ceremony.webp')) ?>')"></div>
+    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('events', 'featured_banner', school_img('award_ceremony.webp')) ?>')"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50 z-10"></div>
     <div class="hero-content relative z-20 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12 flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6">
       <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2 bg-[#C9A24B] text-primary px-3.5 py-1 sm:px-5 sm:py-1.5 rounded-full uppercase tracking-widest font-bold shadow-md">
@@ -211,8 +211,16 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- School Functions & Co-Curricular Activities Section -->
-  <section class="w-full bg-surface-container-low py-20 px-6 lg:px-12 border-y border-border-warm" id="functions-activities">
-    <div class="max-w-7xl mx-auto">
+  <section class="relative w-full py-20 lg:py-24 px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10" id="functions-activities" style="background-color: #F7EFE8; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.10) 0%, transparent 42%), radial-gradient(circle at 85% 80%, rgba(184, 134, 102, 0.09) 0%, transparent 46%);">
+    <!-- Subtle Warm Nude Geometric / Academic Pattern Overlays -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.38]" style="background-image: radial-gradient(#8d6e53 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[0.20]" style="background-image: linear-gradient(to right, rgba(141, 110, 83, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(141, 110, 83, 0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+    <!-- Decorative Soft Glow Orbs -->
+    <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#e8d5c4]/60 blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-[#C9A24B]/12 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 w-full">
       <div class="text-center max-w-3xl mx-auto mb-14">
         <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('events', 'functions_eyebrow', 'Holistic Development') ?></span>
         <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('events', 'functions_heading', 'Functions & Student Activities') ?></h2>
@@ -221,111 +229,111 @@ require_once __DIR__ . '/core/header.php';
 
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 sm:gap-6">
         <!-- 1. Annual Function -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">celebration</span>
+        <div class="bg-[#F5EEFD] p-5 rounded-2xl border border-[#E2CEFC] hover:border-[#7C3AED] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">celebration</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func1_title', 'Annual Function') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func1_desc', 'Grand cultural showcase featuring theatrical acts, music, and dance.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#3B0764]"><?= get_text('events', 'func1_title', 'Annual Function') ?></h4>
+          <p class="text-xs text-[#581C87]/80"><?= get_text('events', 'func1_desc', 'Grand cultural showcase featuring theatrical acts, music, and dance.') ?></p>
         </div>
 
         <!-- 2. Annual Result Declaration Day -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">military_tech</span>
+        <div class="bg-[#FEF8E7] p-5 rounded-2xl border border-[#FDE68A] hover:border-[#D97706] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#F59E0B] to-[#B45309] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">military_tech</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func2_title', 'Result Declaration Day') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func2_desc', 'Annual academic felicitation day honoring class and board rankers.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#78350F]"><?= get_text('events', 'func2_title', 'Result Declaration Day') ?></h4>
+          <p class="text-xs text-[#92400E]/80"><?= get_text('events', 'func2_desc', 'Annual academic felicitation day honoring class and board rankers.') ?></p>
         </div>
 
         <!-- 3. Annual Sports Meet -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">sports_score</span>
+        <div class="bg-[#FFF2EA] p-5 rounded-2xl border border-[#FDBA74] hover:border-[#EA580C] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#EA580C] to-[#C2410C] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">sports_score</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func3_title', 'Annual Sports Meet') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func3_desc', 'Inter-house track and field competitions, relay races, and games.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#7C2D12]"><?= get_text('events', 'func3_title', 'Annual Sports Meet') ?></h4>
+          <p class="text-xs text-[#9A3412]/80"><?= get_text('events', 'func3_desc', 'Inter-house track and field competitions, relay races, and games.') ?></p>
         </div>
 
         <!-- 4. Cultural Fest -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">theater_comedy</span>
+        <div class="bg-[#FDF2F8] p-5 rounded-2xl border border-[#FBCFE8] hover:border-[#DB2777] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#EC4899] to-[#BE185D] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">theater_comedy</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func4_title', 'Cultural Fest') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func4_desc', 'Folk traditions, patriotic celebrations, skits, and instrumental music.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#831843]"><?= get_text('events', 'func4_title', 'Cultural Fest') ?></h4>
+          <p class="text-xs text-[#9D174D]/80"><?= get_text('events', 'func4_desc', 'Folk traditions, patriotic celebrations, skits, and instrumental music.') ?></p>
         </div>
 
         <!-- 5. Farewell Ceremony -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">waving_hand</span>
+        <div class="bg-[#EEF2FF] p-5 rounded-2xl border border-[#C7D2FE] hover:border-[#4F46E5] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#6366F1] to-[#4338CA] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">waving_hand</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func5_title', 'Farewell Ceremony') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func5_desc', 'Blessings, mentorship, and warm send-off for passing-out Class 12 batches.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#1E1B4B]"><?= get_text('events', 'func5_title', 'Farewell Ceremony') ?></h4>
+          <p class="text-xs text-[#312E81]/80"><?= get_text('events', 'func5_desc', 'Blessings, mentorship, and warm send-off for passing-out Class 12 batches.') ?></p>
         </div>
 
         <!-- 6. Alumni Meet -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3" id="alumni">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">groups_3</span>
+        <div class="bg-[#ECFDF5] p-5 rounded-2xl border border-[#A7F3D0] hover:border-[#059669] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3" id="alumni">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#10B981] to-[#047857] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">groups_3</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func6_title', 'Alumni Meet') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func6_desc', 'Reconnecting former students serving in administration, defence, and academia.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#064E3B]"><?= get_text('events', 'func6_title', 'Alumni Meet') ?></h4>
+          <p class="text-xs text-[#065F46]/80"><?= get_text('events', 'func6_desc', 'Reconnecting former students serving in administration, defence, and academia.') ?></p>
         </div>
 
         <!-- 7. Quiz Competition -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">psychology</span>
+        <div class="bg-[#F0F9FF] p-5 rounded-2xl border border-[#BAE6FD] hover:border-[#0284C7] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#0EA5E9] to-[#0369A1] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">psychology</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func7_title', 'Quiz Competition') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func7_desc', 'Block and district level GK, science, and history quiz contests.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#0C4A6E]"><?= get_text('events', 'func7_title', 'Quiz Competition') ?></h4>
+          <p class="text-xs text-[#075985]/80"><?= get_text('events', 'func7_desc', 'Block and district level GK, science, and history quiz contests.') ?></p>
         </div>
 
         <!-- 8. Science Exhibition -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">science</span>
+        <div class="bg-[#F0FDFA] p-5 rounded-2xl border border-[#99F6E4] hover:border-[#0D9488] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#14B8A6] to-[#0F766E] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">science</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func8_title', 'Science Exhibition') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func8_desc', 'Interactive working models in robotics, physics, ecology, and chemistry.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#134E4A]"><?= get_text('events', 'func8_title', 'Science Exhibition') ?></h4>
+          <p class="text-xs text-[#115E59]/80"><?= get_text('events', 'func8_desc', 'Interactive working models in robotics, physics, ecology, and chemistry.') ?></p>
         </div>
 
         <!-- 9. Rangoli Competitions -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">palette</span>
+        <div class="bg-[#FFF1F2] p-5 rounded-2xl border border-[#FECDD3] hover:border-[#E11D48] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#F43F5E] to-[#BE123C] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">palette</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func9_title', 'Rangoli Competitions') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func9_desc', 'Festive creativity celebrating Indian heritage, colors, and art forms.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#881337]"><?= get_text('events', 'func9_title', 'Rangoli Competitions') ?></h4>
+          <p class="text-xs text-[#9F1239]/80"><?= get_text('events', 'func9_desc', 'Festive creativity celebrating Indian heritage, colors, and art forms.') ?></p>
         </div>
 
         <!-- 10. Debate Competitions -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">record_voice_over</span>
+        <div class="bg-[#FFFBEB] p-5 rounded-2xl border border-[#FDE68A] hover:border-[#CA8A04] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#EAB308] to-[#A16207] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">record_voice_over</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func10_title', 'Debate Competitions') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func10_desc', 'Honing articulate expression, critical thinking, and public speaking.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#713F12]"><?= get_text('events', 'func10_title', 'Debate Competitions') ?></h4>
+          <p class="text-xs text-[#854D0E]/80"><?= get_text('events', 'func10_desc', 'Honing articulate expression, critical thinking, and public speaking.') ?></p>
         </div>
 
         <!-- 11. Olympiad Participation -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">award_star</span>
+        <div class="bg-[#EFF6FF] p-5 rounded-2xl border border-[#BFDBFE] hover:border-[#2563EB] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">award_star</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func11_title', 'Olympiad Participation') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func11_desc', 'National science, mathematics, and cyber olympiad competitive testing.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#1E3A8A]"><?= get_text('events', 'func11_title', 'Olympiad Participation') ?></h4>
+          <p class="text-xs text-[#1E40AF]/80"><?= get_text('events', 'func11_desc', 'National science, mathematics, and cyber olympiad competitive testing.') ?></p>
         </div>
 
         <!-- 12. Educational Seminars & Tours -->
-        <div class="bg-surface-pure p-5 rounded-xl border border-border-warm shadow-xs hover:shadow-md transition-all flex flex-col items-center text-center gap-3">
-          <div class="w-12 h-12 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
-            <span class="material-symbols-outlined text-[26px] text-[#C9A24B]">tour</span>
+        <div class="bg-[#F7FEE7] p-5 rounded-2xl border border-[#D9F99D] hover:border-[#65A30D] shadow-sm hover:shadow-lg hover:-translate-y-1.5 transition-all flex flex-col items-center text-center gap-3">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#84CC16] to-[#4D7C0F] text-white shadow-sm flex items-center justify-center">
+            <span class="material-symbols-outlined text-[26px]">tour</span>
           </div>
-          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-primary"><?= get_text('events', 'func12_title', 'Seminars & Tours') ?></h4>
-          <p class="text-xs text-on-surface-variant"><?= get_text('events', 'func12_desc', 'Career guidance workshops and educational excursions to historic and scientific sites.') ?></p>
+          <h4 class="font-headline-sm text-sm sm:text-base font-bold text-[#365314]"><?= get_text('events', 'func12_title', 'Seminars & Tours') ?></h4>
+          <p class="text-xs text-[#3F6212]/80"><?= get_text('events', 'func12_desc', 'Career guidance workshops and educational excursions to historic and scientific sites.') ?></p>
         </div>
       </div>
     </div>

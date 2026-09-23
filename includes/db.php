@@ -61,8 +61,8 @@ if (!empty($raw_db_url)) {
         $pass   = getenv('DB_PASS') !== false ? getenv('DB_PASS') : 'MHn.R6c!_W*%Re!';
         $driver = 'pgsql';
     } else {
-        // Local XAMPP MySQL defaults
-        $host   = getenv('DB_HOST') ?: 'localhost';
+        // Local XAMPP MySQL defaults (use 127.0.0.1 to avoid Windows IPv6 resolution latency)
+        $host   = getenv('DB_HOST') ?: '127.0.0.1';
         $port   = getenv('DB_PORT') ?: '';
         $dbname = getenv('DB_NAME') ?: 'sunrise_school';
         $user   = getenv('DB_USER') ?: 'root';
@@ -111,7 +111,7 @@ function get_db_connection() {
         // Emulate prepares on for PgBouncer pooler compatibility
         PDO::ATTR_EMULATE_PREPARES   => (DB_DRIVER === 'pgsql') ? true : false,
         PDO::ATTR_PERSISTENT         => false,
-        PDO::ATTR_TIMEOUT            => 5,
+        PDO::ATTR_TIMEOUT            => (DB_DRIVER === 'pgsql') ? 5 : 1,
     ];
 
     try {

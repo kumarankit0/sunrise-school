@@ -10,6 +10,7 @@
 require_once __DIR__ . '/../includes/auth.php';
 require_once __DIR__ . '/../includes/csrf.php';
 require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../includes/content_helper.php';
 
 // Enforce superuser authentication
 require_login();
@@ -115,6 +116,9 @@ try {
         ':content_type'  => $content_type,
         ':content_value' => $clean_value
     ]);
+
+    // Clear file-based content cache so site reflects changes instantly
+    cms_clear_cache();
 
     respond(true, "Content for [{$section_key}] saved successfully!", $page_key);
 } catch (PDOException $e) {

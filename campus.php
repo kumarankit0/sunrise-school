@@ -10,7 +10,7 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full">
   <!-- Hero Section -->
   <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 bg-primary text-on-primary px-4 sm:px-6 lg:px-12 overflow-hidden flex items-center justify-center text-center">
-    <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('campus', 'hero_banner', school_img('school.webp')) ?>')"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('campus', 'hero_banner', school_img('school.webp')) ?>')"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/15 to-primary/60"></div>
     <div class="hero-content relative max-w-6xl w-full mx-auto flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6 z-10">
       <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2.5 bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full text-gold-light uppercase font-bold shadow-md">

@@ -10,7 +10,7 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full bg-surface text-on-surface">
   <!-- Section 1: Hero Banner -->
   <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 bg-primary text-on-primary flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('<?= get_image('about', 'hero_banner', school_img('school_home2.webp')) ?>')"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('about', 'hero_banner', school_img('school_home2.webp')) ?>')"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
     <div class="hero-content relative z-10 max-w-6xl w-full mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-3 sm:gap-5">
       <span class="hero-badge text-gold-light uppercase tracking-widest font-bold bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full shadow-md">
@@ -48,75 +48,124 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Section 3: Vision & Mission Side-by-Side Cards -->
-  <section class="max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <span class="text-eyebrow text-secondary uppercase font-eyebrow mb-2 block font-bold"><?= get_text('about', 'philosophy_tag', 'Our Core Philosophy') ?></span>
-      <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug"><?= get_text('about', 'philosophy_heading', 'Guiding Principles of Education') ?></h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-      <!-- Vision Card -->
-      <div class="bg-surface-pure rounded-xl p-8 sm:p-10 shadow-[0_2px_8px_rgba(11,38,71,0.04)] hover:shadow-[0_12px_28px_rgba(11,38,71,0.08)] transition-all flex flex-col justify-between border border-border-warm h-full">
-        <div class="flex flex-col gap-4 flex-grow">
-          <div class="w-14 h-14 rounded-lg bg-gold-light flex items-center justify-center text-secondary">
-            <span class="material-symbols-outlined text-[28px]">visibility</span>
-          </div>
-          <span class="text-eyebrow text-secondary uppercase font-bold tracking-wider">Our Vision</span>
-          <h3 class="text-[1.5rem] font-bold text-primary sm:min-h-[3.5rem] flex items-center"><?= get_text('about', 'vision_title', 'A Centre of Excellence for Intellect &amp; Integrity') ?></h3>
-          
-          <!-- Primary Visible Paragraph -->
-          <p class="font-body-md text-on-surface-variant leading-relaxed">
-            <?= get_text('about', 'vision_text_p1', 'To establish Sun Rise Sr. Sec. School as a Centre of Excellence that nurtures young minds into individuals of intellect, integrity, discernment, and compassion—equipped not merely to succeed in life, but to give meaning to that success through service to society and the nation.') ?>
-          </p>
+  <section class="relative w-full mt-10 sm:mt-14 py-20 sm:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10" style="background-color: #F8F9FA; background-image: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.08) 0%, transparent 45%), radial-gradient(circle at 90% 80%, rgba(234, 88, 12, 0.08) 0%, transparent 48%), radial-gradient(circle at 50% 50%, rgba(201, 162, 75, 0.06) 0%, transparent 55%);">
+    <!-- Subtle Geometric / Academic Dot & Grid Pattern Overlays -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.38]" style="background-image: radial-gradient(#64748B 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[0.20]" style="background-image: linear-gradient(to right, rgba(100, 116, 139, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(100, 116, 139, 0.08) 1px, transparent 1px); background-size: 40px 40px;"></div>
 
-          <!-- Expandable Read More Section -->
-          <div id="visionMoreWrapper" class="hidden flex-col gap-4 pt-2 border-t border-border-warm/60 mt-1 transition-all duration-300">
-            <p class="font-body-md text-on-surface-variant leading-relaxed">
-              <?= get_text('about', 'vision_text_p2', 'We envision an educational ethos where the wisdom of traditional values converges with the possibilities of progressive thought, technology, and contemporary learning. Every student should emerge from our institution with a composed presence, articulate expression, sound judgement, and a deep sense of responsibility towards the world beyond oneself.') ?>
+    <!-- Soft Decorative Glow Orbs -->
+    <div class="absolute -left-20 -top-20 w-96 h-96 rounded-full bg-[#3B82F6]/12 blur-3xl pointer-events-none"></div>
+    <div class="absolute -right-20 -bottom-20 w-96 h-96 rounded-full bg-[#EA580C]/12 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 w-full">
+      <div class="text-center max-w-3xl mx-auto mb-14 sm:mb-16">
+        <span class="font-eyebrow text-eyebrow uppercase text-[#C9A24B] mb-2 block font-bold tracking-wider"><?= get_text('about', 'philosophy_tag', 'Our Core Philosophy') ?></span>
+        <h2 class="text-xl sm:text-3xl font-headline-lg font-bold text-primary tracking-tight"><?= get_text('about', 'philosophy_heading', 'Guiding Principles of Education') ?></h2>
+        <div class="w-16 h-1 bg-gradient-to-r from-[#2563EB] via-[#C9A24B] to-[#EA580C] mx-auto mt-4 rounded-full"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
+        <!-- Vision Card (Sapphire / Royal Azure Theme) -->
+        <div class="bg-[#EFF6FF] rounded-2xl p-7 sm:p-9 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all flex flex-col justify-between border border-[#BFDBFE] hover:border-[#2563EB] h-full relative overflow-hidden group">
+          <div class="flex flex-col gap-4 flex-grow relative z-10">
+            <div class="flex items-center justify-between">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] text-white shadow-md flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">visibility</span>
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-[#1E40AF] bg-[#DBEAFE] px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-[#93C5FD]">
+                Our Vision
+              </span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-[#1E3A8A] tracking-tight leading-snug mt-2">
+              <?= get_text('about', 'vision_title', 'A Centre of Excellence for Intellect &amp; Integrity') ?>
+            </h3>
+            
+            <!-- Primary Visible Paragraph -->
+            <p class="font-body-md text-[#1E3A8A]/90 text-sm sm:text-base leading-relaxed">
+              <?= get_text('about', 'vision_text_p1', 'To establish Sun Rise Sr. Sec. School as a Centre of Excellence that nurtures young minds into individuals of intellect, integrity, discernment, and compassion—equipped not merely to succeed in life, but to give meaning to that success through service to society and the nation.') ?>
             </p>
-            <p class="font-body-md text-on-surface-variant leading-relaxed">
-              <?= get_text('about', 'vision_text_p3', 'Our endeavour is to cultivate individuals who possess the courage to think independently, the humility to understand others, and the conviction to place collective welfare above personal interest. We aspire to prepare a generation that carries its heritage with respect, embraces the future with confidence, and contributes to the nation with dignity, integrity, and pride.') ?>
-            </p>
-            <div class="p-4 rounded-lg bg-surface-container-low border-l-4 border-secondary text-primary font-serif italic text-sm leading-relaxed shadow-sm">
-              <?= get_text('about', 'vision_text_p4', '“We believe that education finds its highest purpose when knowledge becomes wisdom, achievement becomes responsibility, and the individual becomes a force for the greater good.”') ?>
+
+            <!-- Expandable Read More Section -->
+            <div id="visionMoreWrapper" class="hidden flex-col gap-4 pt-3 border-t border-[#BFDBFE] mt-1 transition-all duration-300">
+              <p class="font-body-md text-[#1E3A8A]/85 text-sm sm:text-base leading-relaxed">
+                <?= get_text('about', 'vision_text_p2', 'We envision an educational ethos where the wisdom of traditional values converges with the possibilities of progressive thought, technology, and contemporary learning. Every student should emerge from our institution with a composed presence, articulate expression, sound judgement, and a deep sense of responsibility towards the world beyond oneself.') ?>
+              </p>
+              <p class="font-body-md text-[#1E3A8A]/85 text-sm sm:text-base leading-relaxed">
+                <?= get_text('about', 'vision_text_p3', 'Our endeavour is to cultivate individuals who possess the courage to think independently, the humility to understand others, and the conviction to place collective welfare above personal interest. We aspire to prepare a generation that carries its heritage with respect, embraces the future with confidence, and contributes to the nation with dignity, integrity, and pride.') ?>
+              </p>
+              <div class="p-4 rounded-xl bg-[#DBEAFE]/80 border-l-4 border-[#2563EB] text-[#1E3A8A] font-serif italic text-sm leading-relaxed shadow-xs">
+                <?= get_text('about', 'vision_text_p4', '“We believe that education finds its highest purpose when knowledge becomes wisdom, achievement becomes responsibility, and the individual becomes a force for the greater good.”') ?>
+              </div>
+            </div>
+
+            <!-- Read More / Read Less Toggle Button -->
+            <div class="pt-2">
+              <button type="button" 
+                      id="visionToggleBtn" 
+                      onclick="toggleVisionExpand()" 
+                      class="inline-flex items-center gap-1.5 text-xs font-bold text-[#1E40AF] hover:text-[#1E3A8A] transition-all uppercase tracking-wider py-2 px-4 rounded-xl bg-[#DBEAFE] hover:bg-[#BFDBFE] cursor-pointer border border-[#93C5FD] focus:outline-none shadow-xs">
+                <span id="visionToggleText">Read More</span>
+                <span id="visionToggleIcon" class="material-symbols-outlined text-[18px] transition-transform duration-300">expand_more</span>
+              </button>
             </div>
           </div>
 
-          <!-- Read More / Read Less Toggle Button -->
-          <div class="pt-1">
-            <button type="button" 
-                    id="visionToggleBtn" 
-                    onclick="toggleVisionExpand()" 
-                    class="inline-flex items-center gap-1.5 text-xs font-bold text-secondary hover:text-primary transition-all uppercase tracking-wider py-2 px-3.5 rounded-lg bg-gold-light/40 hover:bg-gold-light/70 cursor-pointer border border-[#C9A24B]/30 focus:outline-none shadow-xs">
-              <span id="visionToggleText">Read More</span>
-              <span id="visionToggleIcon" class="material-symbols-outlined text-[18px] transition-transform duration-300">expand_more</span>
-            </button>
+          <div class="mt-8 pt-5 border-t border-[#DBEAFE] flex items-center justify-between relative z-10">
+            <a href="academics.php" class="inline-flex items-center gap-2 text-[#1D4ED8] hover:text-[#1E3A8A] font-bold text-sm sm:text-base transition-colors group/link">
+              <span>Explore Academic Framework</span>
+              <span class="material-symbols-outlined text-[18px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
           </div>
         </div>
-        <div class="mt-8 pt-6 border-t border-border-warm flex items-center gap-2 text-primary font-label-md">
-          <a href="academics.php" class="inline-flex items-center gap-2 hover:text-[#C9A24B] transition-colors font-bold">
-            <span>Explore Academic Framework</span>
-            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </a>
-        </div>
-      </div>
 
-      <!-- Mission Card -->
-      <div class="bg-surface-pure rounded-xl p-8 sm:p-10 shadow-[0_2px_8px_rgba(11,38,71,0.04)] hover:shadow-[0_12px_28px_rgba(11,38,71,0.08)] transition-all flex flex-col justify-between border border-border-warm h-full">
-        <div class="flex flex-col gap-4 flex-grow">
-          <div class="w-14 h-14 rounded-lg bg-gold-light flex items-center justify-center text-secondary">
-            <span class="material-symbols-outlined text-[28px]">explore</span>
+        <!-- Mission Card (Warm Sunset / Amber Theme) -->
+        <div class="bg-[#FFF7ED] rounded-2xl p-7 sm:p-9 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all flex flex-col justify-between border border-[#FED7AA] hover:border-[#EA580C] h-full relative overflow-hidden group">
+          <div class="flex flex-col gap-4 flex-grow relative z-10">
+            <div class="flex items-center justify-between">
+              <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#F97316] to-[#C2410C] text-white shadow-md flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-[28px]">explore</span>
+              </div>
+              <span class="text-[11px] sm:text-xs font-bold text-[#9A3412] bg-[#FFEDD5] px-3.5 py-1.5 rounded-full uppercase tracking-wider border border-[#FDBA74]">
+                Our Mission
+              </span>
+            </div>
+
+            <h3 class="text-xl sm:text-2xl font-bold text-[#7C2D12] tracking-tight leading-snug mt-2">
+              <?= get_text('about', 'mission_title', 'Holistic Education for Mind, Body &amp; Soul') ?>
+            </h3>
+
+            <p class="font-body-md text-[#7C2D12]/90 text-sm sm:text-base leading-relaxed">
+              <?= get_text('about', 'mission_text', 'We are dedicated to delivering a comprehensive HBSE curriculum enriched by hands-on science laboratories, digital learning, sportsmanship, moral values, and cultural activities that nurture well-rounded global citizens.') ?>
+            </p>
+
+            <!-- Mission Core Commitments Badges -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3 pt-4 border-t border-[#FED7AA]/80">
+              <div class="flex items-center gap-2 text-xs font-bold text-[#9A3412] bg-[#FFEDD5] px-3 py-2 rounded-xl border border-[#FED7AA]">
+                <span class="material-symbols-outlined text-[18px] text-[#EA580C]">verified</span>
+                <span>HBSE Curriculum Rigor</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-bold text-[#9A3412] bg-[#FFEDD5] px-3 py-2 rounded-xl border border-[#FED7AA]">
+                <span class="material-symbols-outlined text-[18px] text-[#EA580C]">science</span>
+                <span>Hands-on Science Labs</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-bold text-[#9A3412] bg-[#FFEDD5] px-3 py-2 rounded-xl border border-[#FED7AA]">
+                <span class="material-symbols-outlined text-[18px] text-[#EA580C]">sports_kabaddi</span>
+                <span>Sports & Physical Fitness</span>
+              </div>
+              <div class="flex items-center gap-2 text-xs font-bold text-[#9A3412] bg-[#FFEDD5] px-3 py-2 rounded-xl border border-[#FED7AA]">
+                <span class="material-symbols-outlined text-[18px] text-[#EA580C]">psychology</span>
+                <span>Ethics & Moral Growth</span>
+              </div>
+            </div>
           </div>
-          <span class="text-eyebrow text-secondary uppercase font-bold tracking-wider">Our Mission</span>
-          <h3 class="text-[1.5rem] font-bold text-primary sm:min-h-[3.5rem] flex items-center"><?= get_text('about', 'mission_title', 'Holistic Education for Mind, Body &amp; Soul') ?></h3>
-          <p class="font-body-md text-on-surface-variant leading-relaxed">
-            <?= get_text('about', 'mission_text', 'We are dedicated to delivering a comprehensive HBSE curriculum enriched by hands-on science laboratories, digital learning, sportsmanship, moral values, and cultural activities that nurture well-rounded global citizens.') ?>
-          </p>
-        </div>
-        <div class="mt-8 pt-6 border-t border-border-warm flex items-center gap-2 text-primary font-label-md">
-          <a href="campus.php" class="inline-flex items-center gap-2 hover:text-[#C9A24B] transition-colors font-bold">
-            <span>Discover Campus Facilities</span>
-            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
-          </a>
+
+          <div class="mt-8 pt-5 border-t border-[#FFEDD5] flex items-center justify-between relative z-10">
+            <a href="campus.php" class="inline-flex items-center gap-2 text-[#C2410C] hover:text-[#7C2D12] font-bold text-sm sm:text-base transition-colors group/link">
+              <span>Discover Campus Facilities</span>
+              <span class="material-symbols-outlined text-[18px] group-hover/link:translate-x-1 transition-transform">arrow_forward</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -320,44 +369,126 @@ require_once __DIR__ . '/core/header.php';
     </div>
   </section>
 
-  <!-- Section 7: Leadership Message & Administration (Founder, Principal & Management) -->
+  <!-- Section 7: Leadership Team (3 Columns: Director, Principal & Coordinator) -->
   <section id="leadership" class="scroll-mt-28 max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full">
-    <div class="bg-primary text-on-primary rounded-2xl p-8 lg:p-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-center shadow-xl">
-      <div class="lg:col-span-5 flex flex-col items-center">
-        <div class="w-64 h-80 rounded-xl overflow-hidden shadow-2xl bg-cover bg-center border-2 border-secondary" style="background-image: url('<?= get_image('about', 'leader_photo', school_img('speaker.webp')) ?>')"></div>
-      </div>
-      <div class="lg:col-span-7 flex flex-col gap-5">
-        <span class="text-eyebrow text-secondary uppercase tracking-widest font-eyebrow font-bold"><?= get_text('about', 'leader_tagline', "Director's Welcome") ?></span>
-        <h3 class="text-[1.5rem] font-bold text-white"><?= get_text('about', 'leader_heading', 'Inspiring Minds, Cultivating Character') ?></h3>
-        <blockquote class="text-lg sm:text-xl text-on-primary/95 italic font-serif leading-relaxed border-l-4 border-secondary pl-4 py-1">
-          <?= get_text('about', 'leader_quote', '“Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society.”') ?>
-        </blockquote>
-        <p class="text-body-sm text-surface-cream/90 leading-relaxed">
-          <?= get_text('about', 'leader_desc', 'At Sun Rise Sr. Sec. School, we do not simply prepare children for tomorrow; we nurture the individuals who will shape tomorrow.') ?>
+    <div class="bg-primary text-on-primary rounded-2xl p-8 lg:p-12 shadow-xl flex flex-col gap-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto flex flex-col items-center gap-2">
+        <span class="text-eyebrow text-secondary uppercase tracking-widest font-eyebrow font-bold">
+          <?= get_text('about', 'leader_tagline', "OUR LEADERSHIP TEAM") ?>
+        </span>
+        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-white tracking-tight leading-snug">
+          <?= get_text('about', 'leader_heading', 'Inspiring Minds, Cultivating Character & Excellence') ?>
+        </h2>
+        <p class="text-body-sm sm:text-body-md text-surface-cream/80 max-w-2xl leading-relaxed mt-1">
+          <?= get_text('about', 'leader_desc', 'Guided by seasoned visionaries dedicated to academic distinction, moral integrity, and holistic student growth.') ?>
         </p>
-        <div class="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6 mt-2 pt-4 border-t border-white/20">
-          <div>
-            <span class="block font-bold text-white text-base"><?= get_text('about', 'leader1_name', 'Mr. Bhader Singh Swami') ?></span>
-            <span class="text-xs text-secondary font-semibold uppercase tracking-wider"><?= get_text('about', 'leader1_role', 'Founder & Director (M.A., B.Ed.)') ?></span>
-          </div>
-          <div class="hidden sm:block w-px h-8 bg-white/20"></div>
-          <div>
-            <span class="block font-bold text-white text-base"><?= get_text('about', 'leader2_name', 'Mr. Rajbir Singh') ?></span>
-            <span class="text-xs text-secondary font-semibold uppercase tracking-wider"><?= get_text('about', 'leader2_role', 'Principal (M.A., B.Ed.)') ?></span>
-          </div>
-          <div class="hidden sm:block w-px h-8 bg-white/20"></div>
-          <div>
-            <span class="block font-bold text-white text-base"><?= get_text('about', 'leader3_name', 'Mr. Indra Dev') ?></span>
-            <span class="text-xs text-secondary font-semibold uppercase tracking-wider"><?= get_text('about', 'leader3_role', 'Coordinator (LL.M., Ex-GM RBI)') ?></span>
-          </div>
-        </div>
-        <div class="mt-2">
-          <a href="faculty.php" class="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors text-sm font-bold">
-            <span>Meet Leadership &amp; Faculty Team</span>
-            <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-          </a>
-        </div>
       </div>
+
+      <!-- 3 Columns: Director, Principal, Coordinator -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        
+        <!-- Column 1: Founder & Director -->
+        <div class="bg-white/[0.04] rounded-2xl border border-white/10 p-6 flex flex-col justify-between hover:border-secondary/50 hover:bg-white/[0.07] transition-all duration-300 group">
+          <div>
+            <!-- Upper Image -->
+            <div class="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden mb-5 bg-cover bg-center border border-white/10 shadow-lg" style="background-image: url('<?= get_image('about', 'leader1_photo', get_image('about', 'leader_photo', school_img('speaker.webp'))) ?>')">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 bg-secondary text-primary text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm">
+                <?= get_text('about', 'leader1_badge', 'Founder & Director') ?>
+              </span>
+            </div>
+            
+            <!-- Lower Text -->
+            <span class="text-xs text-secondary font-bold uppercase tracking-wider block">
+              <?= get_text('about', 'leader1_tag', 'Visionary Leadership') ?>
+            </span>
+            <h3 class="text-xl font-bold text-white mt-1">
+              <?= get_text('about', 'leader1_name', 'Mr. Bhader Singh Swami') ?>
+            </h3>
+            <p class="text-xs text-secondary/90 font-semibold mt-0.5 mb-2">
+              <?= get_text('about', 'leader1_role', 'Founder & Director | M.A., B.Ed.') ?>
+            </p>
+            <div class="inline-block bg-white/10 text-white/90 text-xs font-semibold px-2.5 py-1 rounded mb-3 border border-white/10">
+              <?= get_text('about', 'leader1_exp', '36+ Years in Education') ?>
+            </div>
+            <p class="text-body-sm text-surface-cream/80 leading-relaxed text-justify">
+              <?= get_text('about', 'leader1_desc', 'With 36 years of teaching experience and 26 years of school management, Mr. Bhader Singh Swami has devoted his journey to education grounded in discipline, values, character, and academic excellence.') ?>
+            </p>
+          </div>
+        </div>
+
+        <!-- Column 2: Principal -->
+        <div class="bg-white/[0.04] rounded-2xl border border-white/10 p-6 flex flex-col justify-between hover:border-secondary/50 hover:bg-white/[0.07] transition-all duration-300 group">
+          <div>
+            <!-- Upper Image -->
+            <div class="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden mb-5 bg-cover bg-center border border-white/10 shadow-lg" style="background-image: url('<?= get_image('about', 'leader2_photo', get_image('home', 'principal_photo', school_img('all_staffmembers.webp'))) ?>')">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 bg-secondary text-primary text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm">
+                <?= get_text('about', 'leader2_badge', 'Principal') ?>
+              </span>
+            </div>
+            
+            <!-- Lower Text -->
+            <span class="text-xs text-secondary font-bold uppercase tracking-wider block">
+              <?= get_text('about', 'leader2_tag', 'Academic Administration') ?>
+            </span>
+            <h3 class="text-xl font-bold text-white mt-1">
+              <?= get_text('about', 'leader2_name', 'Mr. Rajbir Singh') ?>
+            </h3>
+            <p class="text-xs text-secondary/90 font-semibold mt-0.5 mb-2">
+              <?= get_text('about', 'leader2_role', 'Principal | M.A., B.Ed.') ?>
+            </p>
+            <div class="inline-block bg-white/10 text-white/90 text-xs font-semibold px-2.5 py-1 rounded mb-3 border border-white/10">
+              <?= get_text('about', 'leader2_exp', '16 Years Experience') ?>
+            </div>
+            <p class="text-body-sm text-surface-cream/80 leading-relaxed text-justify">
+              <?= get_text('about', 'leader2_desc', 'Serving as the academic head, Mr. Rajbir Singh fosters a disciplined and purposeful learning environment, supporting teachers and ensuring students receive balanced opportunities for holistic development.') ?>
+            </p>
+          </div>
+        </div>
+
+        <!-- Column 3: Coordinator -->
+        <div class="bg-white/[0.04] rounded-2xl border border-white/10 p-6 flex flex-col justify-between hover:border-secondary/50 hover:bg-white/[0.07] transition-all duration-300 group">
+          <div>
+            <!-- Upper Image -->
+            <div class="relative w-full h-64 sm:h-72 rounded-xl overflow-hidden mb-5 bg-cover bg-center border border-white/10 shadow-lg" style="background-image: url('<?= get_image('about', 'leader3_photo', school_img('all_staffmembers.webp')) ?>')">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+              <span class="absolute bottom-3 left-3 bg-secondary text-primary text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm">
+                <?= get_text('about', 'leader3_badge', 'Coordinator') ?>
+              </span>
+            </div>
+            
+            <!-- Lower Text -->
+            <span class="text-xs text-secondary font-bold uppercase tracking-wider block">
+              <?= get_text('about', 'leader3_tag', 'Administration & Coordination') ?>
+            </span>
+            <h3 class="text-xl font-bold text-white mt-1">
+              <?= get_text('about', 'leader3_name', 'Mr. Indra Dev') ?>
+            </h3>
+            <p class="text-xs text-secondary/90 font-semibold mt-0.5 mb-2">
+              <?= get_text('about', 'leader3_role', 'Coordinator | B.A., M.A., LL.B., LL.M.') ?>
+            </p>
+            <div class="inline-block bg-white/10 text-white/90 text-xs font-semibold px-2.5 py-1 rounded mb-3 border border-white/10">
+              <?= get_text('about', 'leader3_exp', '22 Years Exp • Former GM, RBI') ?>
+            </div>
+            <p class="text-body-sm text-surface-cream/80 leading-relaxed text-justify">
+              <?= get_text('about', 'leader3_desc', 'Mr. Indra Dev brings 22 years of professional experience and deep administrative acumen from the Reserve Bank of India (RBI), strengthening the school’s organizational discipline and excellence.') ?>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Button / Link to Faculty -->
+      <div class="text-center pt-2 border-t border-white/10">
+        <a href="faculty.php" class="inline-flex items-center gap-2 text-secondary hover:text-white transition-colors text-sm font-bold bg-white/5 hover:bg-white/10 px-5 py-2.5 rounded-xl border border-white/10">
+          <span>Meet Full Leadership &amp; Faculty Team</span>
+          <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+        </a>
+      </div>
+
     </div>
   </section>
 

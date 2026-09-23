@@ -12,6 +12,7 @@
 require_once __DIR__ . '/../includes/auth.php';
 require_once __DIR__ . '/../includes/csrf.php';
 require_once __DIR__ . '/../includes/db.php';
+require_once __DIR__ . '/../includes/content_helper.php';
 
 // Enforce superuser authentication
 require_login();
@@ -23,6 +24,9 @@ $is_ajax = (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HT
 
 function respond_image($success, $message, $page_key = 'home', $file_path = '', $preview_url = '') {
     global $is_ajax;
+    if ($success && function_exists('cms_clear_cache')) {
+        cms_clear_cache();
+    }
     if ($is_ajax) {
         header('Content-Type: application/json; charset=utf-8');
         echo json_encode([

@@ -40,11 +40,16 @@ $current_page = isset($current_page) ? $current_page : 'home';
   <link rel="dns-prefetch" href="https://fonts.gstatic.com"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+  <!-- Optimized Font Loading (Non-blocking with display=swap) -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" media="print" onload="this.media='all'"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" media="print" onload="this.media='all'"/>
+  <noscript>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
+  </noscript>
 
-  <!-- Tailwind CSS Engine -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Tailwind CSS Engine (Served from local assets for 0ms network latency) -->
+  <script src="assets/js/tailwind.min.js"></script>
   <script id="tailwind-config">
     tailwind.config = {
       darkMode: "class",
@@ -175,7 +180,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
             <span class="blink-dot"></span>
             <span class="blink-text"><span class="top-nav-reg-prefix">Online </span><?= htmlspecialchars(get_text('general', 'top_reg_text', 'Registration 2026-27')) ?></span>
           </a>
-          <a href="mailto:<?= $site_email ?>" class="top-nav-info-link top-nav-mail-pulse top-bar-email" title="Email School Desk">
+          <a href="mailto:<?= $site_email ?>" class="top-nav-info-link top-bar-email" title="Email School Desk">
             <span class="material-symbols-outlined text-[14px]">mail</span>
             <span><?= $site_email ?></span>
           </a>
@@ -192,7 +197,8 @@ $current_page = isset($current_page) ? $current_page : 'home';
       <a href="index.php" class="brand-logo-link" title="<?= htmlspecialchars($site_name) ?>">
         <img alt="<?= htmlspecialchars($site_name) ?> Crest" class="brand-logo-img" src="<?= $site_logo ?>" width="42" height="42"/>
         <div class="brand-logo-text-group">
-          <span class="brand-logo-text"><?= htmlspecialchars($site_name) ?></span>
+          <span class="brand-logo-line1">Sun Rise</span>
+          <span class="brand-logo-line2">Sr. Sec. School</span>
           <span class="brand-logo-sub"><?= htmlspecialchars(get_text('general', 'nav_sub_title', 'Dobhi, Hisar • HBSE Affiliated')) ?></span>
         </div>
       </a>
@@ -254,8 +260,9 @@ $current_page = isset($current_page) ? $current_page : 'home';
         <div class="flex items-center gap-2.5 min-w-0">
           <img src="<?= $site_logo ?>" alt="Logo" class="h-9 w-auto flex-shrink-0 object-contain"/>
           <div class="flex flex-col min-w-0">
-            <span class="font-bold text-primary text-sm sm:text-base font-sans truncate"><?= htmlspecialchars($site_name) ?></span>
-            <span class="text-[11px] text-on-surface-variant font-medium"><?= htmlspecialchars(get_text('general', 'nav_sub_title', 'Dobhi, Hisar • HBSE Affiliated')) ?></span>
+            <span class="font-extrabold text-[#000c1e] text-sm sm:text-base font-sans leading-tight">Sun Rise</span>
+            <span class="text-xs font-extrabold text-[#0a192f] uppercase tracking-wider leading-tight">Sr. Sec. School</span>
+            <span class="text-[11px] text-[#1e293b] font-bold mt-0.5"><?= htmlspecialchars(get_text('general', 'nav_sub_title', 'Dobhi, Hisar • HBSE Affiliated')) ?></span>
           </div>
         </div>
         <button id="mobileMenuClose" class="mobile-close-btn" aria-label="Close Navigation Menu" type="button">
@@ -423,5 +430,5 @@ $current_page = isset($current_page) ? $current_page : 'home';
     </div>
   </div>
 
-  <main class="w-full pt-[102px] bg-surface">
+  <main class="w-full pt-[102px] sm:pt-[108px] lg:pt-[110px] bg-surface relative z-0">
 

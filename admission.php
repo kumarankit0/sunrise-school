@@ -7,11 +7,16 @@ $page_keywords = 'admissions 2026-27, school application, admission process, HBS
 require_once __DIR__ . '/core/header.php';
 ?>
 
-<div class="flex flex-col w-full">
+<div class="flex flex-col w-full bg-[#f8fafc]">
 <!-- Top Breadcrumb & Page Banner -->
-<section class="relative bg-surface-container-low py-12 px-6 lg:px-12 overflow-hidden">
-<div class="absolute -right-24 -top-24 w-96 h-96 rounded-full bg-secondary-fixed/20 blur-3xl pointer-events-none"></div>
-<div class="absolute left-10 bottom-0 w-80 h-80 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
+<section class="relative py-12 px-6 lg:px-12 overflow-hidden border-b border-[#000e21]/10" style="background-color: #eef4fb; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.09) 0%, transparent 40%), radial-gradient(circle at 85% 75%, rgba(11, 38, 71, 0.07) 0%, transparent 45%);">
+  <!-- Subtle Architectural / Academic Geometric Patterns -->
+  <div class="absolute inset-0 pointer-events-none opacity-[0.38]" style="background-image: radial-gradient(#001129 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
+  <div class="absolute inset-0 pointer-events-none opacity-[0.22]" style="background-image: linear-gradient(to right, rgba(0, 17, 41, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(0, 17, 41, 0.05) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+  <!-- Decorative Ambient Glow Orbs -->
+  <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#C9A24B]/15 blur-3xl pointer-events-none"></div>
+  <div class="absolute left-5 bottom-0 w-80 h-80 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
 <div class="max-w-7xl mx-auto relative z-10 flex flex-col gap-6">
 <!-- Breadcrumb -->
 <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-label-sm text-on-surface-variant">
@@ -58,7 +63,7 @@ require_once __DIR__ . '/core/header.php';
 </div>
 <!-- School Shield Credential Card -->
 <div class="lg:col-span-4 flex justify-start lg:justify-end">
-<div class="w-full max-w-xs bg-surface-pure p-6 rounded-xl shadow-md flex flex-col items-center text-center gap-3 relative overflow-hidden">
+<div class="w-full max-w-xs bg-surface-pure p-6 rounded-xl shadow-md border border-border-warm/80 flex flex-col items-center text-center gap-3 relative overflow-hidden">
 <div class="w-24 h-24 p-2 rounded-full bg-gold-light/60 flex items-center justify-center">
 <img alt="Sun Rise Sr. Sec. School Dobhi Official Crest" class="w-20 h-20 object-contain drop-shadow-sm" src="<?= $site_logo ?>" width="80" height="80" loading="eager" decoding="async">
 </div>
@@ -75,7 +80,7 @@ require_once __DIR__ . '/core/header.php';
 </div>
 </div>
 <!-- Multi-Step Progress Tracker Bar -->
-<div class="mt-6 pt-6 bg-surface-pure rounded-xl p-4 sm:p-6 shadow-sm">
+<div class="mt-6 pt-6 bg-surface-pure rounded-xl p-4 sm:p-6 shadow-sm border border-border-warm/80">
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
 <!-- Step 1 -->
 <div class="flex items-center gap-3">

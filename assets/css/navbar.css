@@ -9,13 +9,28 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1000;
-  background-color: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  z-index: 1200 !important;
+  background-color: #ffffff;
   border-bottom: 1px solid #E5E2DA;
-  box-shadow: 0 2px 12px rgba(0, 17, 41, 0.04);
+  box-shadow: 0 4px 18px rgba(0, 17, 41, 0.08);
   transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+/* Page Main Container: Responsive Top Offset matching Fixed Navbar */
+main {
+  padding-top: 102px !important;
+}
+
+@media (min-width: 640px) {
+  main {
+    padding-top: 108px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    padding-top: 110px !important;
+  }
 }
 
 /* Top Utility Bar (Exact layout from reference with Navy/Gold Theme) */
@@ -181,11 +196,22 @@
 }
 
 .top-nav-blink-registration:hover {
-  animation-play-state: paused;
-  transform: scale(1.03);
-  background-color: #C9A24B;
+  animation: none !important;
+  transform: translateY(-1px) scale(1.04);
+  background: linear-gradient(135deg, #FFDF73 0%, #D4AF37 50%, #B8860B 100%) !important;
   color: #001129 !important;
-  border-color: #C9A24B;
+  border-color: #FFDF73 !important;
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.9), 0 2px 6px rgba(0, 0, 0, 0.3) !important;
+}
+
+.top-nav-blink-registration:hover * {
+  color: #001129 !important;
+}
+
+.top-nav-blink-registration:hover .blink-dot {
+  background-color: #001129 !important;
+  box-shadow: 0 0 6px rgba(0, 17, 41, 0.7) !important;
+  animation: none !important;
 }
 
 .top-nav-blink-registration .blink-dot {
@@ -231,22 +257,6 @@
   50% {
     transform: scale(0.65);
     opacity: 0.3;
-  }
-}
-
-/* Continuous Mail Pulse/Blink Animation */
-.top-nav-mail-pulse {
-  animation: blink-mail-pulse 2.2s infinite ease-in-out;
-}
-
-@keyframes blink-mail-pulse {
-  0%, 100% {
-    color: #ffffff;
-    opacity: 1;
-  }
-  50% {
-    color: #C9A24B;
-    opacity: 0.65;
   }
 }
 
@@ -382,13 +392,35 @@
   flex-direction: column;
   min-width: 0;
   overflow: hidden;
+  justify-content: center;
+}
+
+.brand-logo-line1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(1.06rem, 2.3vw, 1.25rem);
+  font-weight: 900;
+  color: #000c1e;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  line-height: 1.1;
+}
+
+.brand-logo-line2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: clamp(0.72rem, 1.6vw, 0.82rem);
+  font-weight: 800;
+  color: #0a192f;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  line-height: 1.15;
 }
 
 .brand-logo-text {
   font-family: 'Poppins', sans-serif;
-  font-size: clamp(0.925rem, 3.8vw, 1.15rem);
-  font-weight: 800;
-  color: #001129;
+  font-size: clamp(0.95rem, 3.8vw, 1.18rem);
+  font-weight: 900;
+  color: #000c1e;
   letter-spacing: -0.02em;
   white-space: nowrap;
   overflow: hidden;
@@ -397,15 +429,15 @@
 }
 
 .brand-logo-sub {
-  font-size: 0.6875rem;
-  color: #64748b;
-  font-weight: 600;
+  font-size: 0.66rem;
+  color: #1e293b;
+  font-weight: 700;
   letter-spacing: 0.02em;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   display: none;
-  line-height: 1.2;
+  line-height: 1.15;
   margin-top: 1px;
 }
 

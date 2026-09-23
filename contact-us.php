@@ -10,7 +10,7 @@ require_once __DIR__ . '/core/header.php';
 <div class="flex flex-col w-full">
   <!-- Hero Section -->
   <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 bg-primary px-4 sm:px-6 lg:px-12 text-on-primary overflow-hidden flex items-center justify-center text-center">
-    <div class="absolute inset-0 bg-cover bg-center pointer-events-none" style="background-image: url('<?= get_image('contact', 'hero_banner', school_img('school3.webp')) ?>')"></div>
+    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('contact', 'hero_banner', school_img('school3.webp')) ?>')"></div>
     <div class="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/20 to-primary/60"></div>
     <div class="hero-content max-w-5xl w-full mx-auto relative z-10 flex flex-col items-center text-center gap-4 sm:gap-6">
       <span class="hero-badge text-gold-light uppercase tracking-widest font-bold bg-black/45 border border-[#C9A24B]/60 px-4 py-1.5 sm:px-6 sm:py-2 rounded-full shadow-lg text-xs sm:text-sm">
@@ -184,50 +184,21 @@ require_once __DIR__ . '/core/header.php';
             <span><?= htmlspecialchars(get_text('contact', 'campus_caption', 'Sun Rise Campus View, Dobhi')) ?></span>
           </div>
         </div>
-
-        <!-- Academic Wings Summary -->
-        <div class="bg-surface-container-low p-6 sm:p-8 rounded-2xl shadow-sm border border-border-warm">
-          <h3 class="font-headline-sm text-primary font-bold mb-4 flex items-center gap-2 text-lg sm:text-xl">
-            <span class="material-symbols-outlined text-[#C9A24B]">school</span>
-            <span><?= htmlspecialchars(get_text('contact', 'wings_heading', 'Academic Wings at a Glance')) ?></span>
-          </h3>
-          <div class="space-y-3.5">
-            <div class="p-4 bg-surface-pure rounded-xl border border-border-warm">
-              <h4 class="font-label-md text-primary font-bold text-sm flex items-center justify-between">
-                <span><?= htmlspecialchars(get_text('contact', 'wing1_title', 'Pre-Primary & Primary Wing')) ?></span>
-                <span class="text-[11px] font-semibold text-[#C9A24B] bg-primary/5 px-2 py-0.5 rounded">Nur – 5th</span>
-              </h4>
-              <p class="font-body-sm text-on-surface-variant mt-1 text-xs sm:text-sm leading-relaxed">
-                <?= htmlspecialchars(get_text('contact', 'wing1_desc', 'Nursery to Class 5 – Foundational literacy, numeracy, activity-based exploration, and warm caring mentors.')) ?>
-              </p>
-            </div>
-            <div class="p-4 bg-surface-pure rounded-xl border border-border-warm">
-              <h4 class="font-label-md text-primary font-bold text-sm flex items-center justify-between">
-                <span><?= htmlspecialchars(get_text('contact', 'wing2_title', 'Middle School Wing')) ?></span>
-                <span class="text-[11px] font-semibold text-[#C9A24B] bg-primary/5 px-2 py-0.5 rounded">6th – 8th</span>
-              </h4>
-              <p class="font-body-sm text-on-surface-variant mt-1 text-xs sm:text-sm leading-relaxed">
-                <?= htmlspecialchars(get_text('contact', 'wing2_desc', 'Class 6 to 8 – Experiential science labs, bilingual language competence, sports, and competitive foundation.')) ?>
-              </p>
-            </div>
-            <div class="p-4 bg-surface-pure rounded-xl border border-border-warm">
-              <h4 class="font-label-md text-primary font-bold text-sm flex items-center justify-between">
-                <span><?= htmlspecialchars(get_text('contact', 'wing3_title', 'Secondary & Senior Secondary Wing')) ?></span>
-                <span class="text-[11px] font-semibold text-[#C9A24B] bg-primary/5 px-2 py-0.5 rounded">9th – 12th</span>
-              </h4>
-              <p class="font-body-sm text-on-surface-variant mt-1 text-xs sm:text-sm leading-relaxed">
-                <?= htmlspecialchars(get_text('contact', 'wing3_desc', 'Class 9 to 12 – HBSE Board excellence, dedicated streams in Science (Med/Non-Med), Commerce & Arts.')) ?>
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
 
   <!-- Departmental Desks Section (4 Direct Contacts) -->
-  <section class="bg-surface-container-low py-14 sm:py-20 px-4 sm:px-6 lg:px-12 border-y border-border-warm">
-    <div class="max-w-7xl mx-auto">
+  <section class="relative w-full py-16 sm:py-24 px-4 sm:px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10" style="background-color: #F7EFE8; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.10) 0%, transparent 42%), radial-gradient(circle at 85% 80%, rgba(184, 134, 102, 0.09) 0%, transparent 46%);">
+    <!-- Subtle Warm Nude Geometric / Academic Pattern Overlays -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.38]" style="background-image: radial-gradient(#8d6e53 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
+    <div class="absolute inset-0 pointer-events-none opacity-[0.20]" style="background-image: linear-gradient(to right, rgba(141, 110, 83, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(141, 110, 83, 0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
+
+    <!-- Decorative Soft Glow Orbs -->
+    <div class="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-[#e8d5c4]/60 blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-[#C9A24B]/12 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 w-full">
       <div class="text-center max-w-2xl mx-auto mb-12">
         <span class="font-eyebrow text-eyebrow uppercase text-[#C9A24B] mb-2 block font-bold tracking-wider">
           <?= htmlspecialchars(get_text('contact', 'desks_eyebrow', 'Direct Helplines')) ?>
@@ -239,27 +210,27 @@ require_once __DIR__ . '/core/header.php';
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <!-- Desk 1: Admissions -->
-        <div class="bg-surface-pure p-6 rounded-2xl border border-border-warm shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+        <div class="bg-[#EFF6FF] p-6 rounded-2xl border border-[#BFDBFE] hover:border-[#2563EB] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] text-white shadow-sm flex items-center justify-center">
                 <span class="material-symbols-outlined text-[24px]">school</span>
               </div>
-              <span class="text-[11px] font-bold text-[#C9A24B] bg-[#C9A24B]/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
+              <span class="text-[10px] sm:text-[11px] font-bold text-[#1E40AF] bg-[#DBEAFE] px-2.5 py-1 rounded-full uppercase tracking-wider border border-[#BFDBFE]">
                 <?= htmlspecialchars(get_text('contact', 'desk1_role', 'Admission Counselor Cell')) ?>
               </span>
             </div>
-            <h3 class="font-bold text-primary text-base sm:text-lg mb-2">
+            <h3 class="font-bold text-[#1E3A8A] text-base sm:text-lg mb-2">
               <?= htmlspecialchars(get_text('contact', 'desk1_name', 'Admissions & Student Enrollment')) ?>
             </h3>
-            <p class="text-xs text-on-surface-variant flex items-center gap-1.5 mb-4">
-              <span class="material-symbols-outlined text-[16px] text-[#C9A24B]">schedule</span>
+            <p class="text-xs text-[#1E40AF]/80 flex items-center gap-1.5 mb-4">
+              <span class="material-symbols-outlined text-[16px] text-[#2563EB]">schedule</span>
               <span><?= htmlspecialchars(get_text('contact', 'desk1_timing', '8:00 AM – 2:30 PM (Mon–Sat)')) ?></span>
             </p>
           </div>
-          <div class="pt-4 border-t border-border-warm">
+          <div class="pt-4 border-t border-[#DBEAFE]">
             <?php $d1_contact = get_text('contact', 'desk1_contact', '+91 70158 90094'); ?>
-            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $d1_contact) ?>" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:text-[#C9A24B] transition-colors">
+            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $d1_contact) ?>" class="inline-flex items-center gap-2 text-[#1D4ED8] hover:text-[#1E3A8A] font-bold text-sm transition-colors">
               <span class="material-symbols-outlined text-[18px]">call</span>
               <span><?= htmlspecialchars($d1_contact) ?></span>
             </a>
@@ -267,27 +238,27 @@ require_once __DIR__ . '/core/header.php';
         </div>
 
         <!-- Desk 2: Transport -->
-        <div class="bg-surface-pure p-6 rounded-2xl border border-border-warm shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+        <div class="bg-[#FFF7ED] p-6 rounded-2xl border border-[#FED7AA] hover:border-[#EA580C] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#F97316] to-[#C2410C] text-white shadow-sm flex items-center justify-center">
                 <span class="material-symbols-outlined text-[24px]">directions_bus</span>
               </div>
-              <span class="text-[11px] font-bold text-[#C9A24B] bg-[#C9A24B]/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
+              <span class="text-[10px] sm:text-[11px] font-bold text-[#9A3412] bg-[#FFEDD5] px-2.5 py-1 rounded-full uppercase tracking-wider border border-[#FED7AA]">
                 <?= htmlspecialchars(get_text('contact', 'desk2_role', 'Fleet & Route Operations')) ?>
               </span>
             </div>
-            <h3 class="font-bold text-primary text-base sm:text-lg mb-2">
+            <h3 class="font-bold text-[#7C2D12] text-base sm:text-lg mb-2">
               <?= htmlspecialchars(get_text('contact', 'desk2_name', 'School Bus & Transport Incharge')) ?>
             </h3>
-            <p class="text-xs text-on-surface-variant flex items-center gap-1.5 mb-4">
-              <span class="material-symbols-outlined text-[16px] text-[#C9A24B]">schedule</span>
+            <p class="text-xs text-[#9A3412]/80 flex items-center gap-1.5 mb-4">
+              <span class="material-symbols-outlined text-[16px] text-[#EA580C]">schedule</span>
               <span><?= htmlspecialchars(get_text('contact', 'desk2_timing', '7:00 AM – 3:30 PM (School Days)')) ?></span>
             </p>
           </div>
-          <div class="pt-4 border-t border-border-warm">
+          <div class="pt-4 border-t border-[#FFEDD5]">
             <?php $d2_contact = get_text('contact', 'desk2_contact', '+91 99920 89284'); ?>
-            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $d2_contact) ?>" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:text-[#C9A24B] transition-colors">
+            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $d2_contact) ?>" class="inline-flex items-center gap-2 text-[#C2410C] hover:text-[#7C2D12] font-bold text-sm transition-colors">
               <span class="material-symbols-outlined text-[18px]">call</span>
               <span><?= htmlspecialchars($d2_contact) ?></span>
             </a>
@@ -295,56 +266,69 @@ require_once __DIR__ . '/core/header.php';
         </div>
 
         <!-- Desk 3: Accounts -->
-        <div class="bg-surface-pure p-6 rounded-2xl border border-border-warm shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+        <div class="bg-[#ECFDF5] p-6 rounded-2xl border border-[#A7F3D0] hover:border-[#059669] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#10B981] to-[#047857] text-white shadow-sm flex items-center justify-center">
                 <span class="material-symbols-outlined text-[24px]">payments</span>
               </div>
-              <span class="text-[11px] font-bold text-[#C9A24B] bg-[#C9A24B]/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
+              <span class="text-[10px] sm:text-[11px] font-bold text-[#065F46] bg-[#D1FAE5] px-2.5 py-1 rounded-full uppercase tracking-wider border border-[#A7F3D0]">
                 <?= htmlspecialchars(get_text('contact', 'desk3_role', 'Finance & Scholarship Desk')) ?>
               </span>
             </div>
-            <h3 class="font-bold text-primary text-base sm:text-lg mb-2">
+            <h3 class="font-bold text-[#064E3B] text-base sm:text-lg mb-2">
               <?= htmlspecialchars(get_text('contact', 'desk3_name', 'Accounts & Fee Counter')) ?>
             </h3>
-            <p class="text-xs text-on-surface-variant flex items-center gap-1.5 mb-4">
-              <span class="material-symbols-outlined text-[16px] text-[#C9A24B]">schedule</span>
+            <p class="text-xs text-[#065F46]/80 flex items-center gap-1.5 mb-4">
+              <span class="material-symbols-outlined text-[16px] text-[#059669]">schedule</span>
               <span><?= htmlspecialchars(get_text('contact', 'desk3_timing', '9:00 AM – 2:00 PM (Working Days)')) ?></span>
             </p>
           </div>
-          <div class="pt-4 border-t border-border-warm">
-            <?php $d3_contact = get_text('contact', 'desk3_contact', '+91 70158 90094 / accounts@sunriseschool.com'); ?>
-            <span class="inline-flex items-center gap-2 text-primary font-bold text-xs sm:text-sm">
-              <span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
-              <span class="truncate"><?= htmlspecialchars($d3_contact) ?></span>
-            </span>
+          <div class="pt-4 border-t border-[#D1FAE5] flex flex-col gap-1.5">
+            <?php 
+              $d3_raw = get_text('contact', 'desk3_contact', '+91 70158 90094 / accounts@sunrisesrsecschool.com');
+              $d3_raw = str_replace('accounts@sunriseschool.com', 'accounts@sunrisesrsecschool.com', $d3_raw);
+              $parts = array_map('trim', explode('/', $d3_raw));
+              $d3_phone = $parts[0] ?? '+91 70158 90094';
+              $d3_email = $parts[1] ?? 'accounts@sunrisesrsecschool.com';
+            ?>
+            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $d3_phone) ?>" class="inline-flex items-center gap-2 text-[#047857] hover:text-[#064E3B] font-bold text-xs sm:text-sm transition-colors">
+              <span class="material-symbols-outlined text-[16px]">call</span>
+              <span><?= htmlspecialchars($d3_phone) ?></span>
+            </a>
+            <a href="mailto:<?= htmlspecialchars($d3_email) ?>" class="inline-flex items-center gap-2 text-[#047857] hover:text-[#064E3B] font-bold text-xs sm:text-sm transition-colors break-all">
+              <span class="material-symbols-outlined text-[16px]">mail</span>
+              <span><?= htmlspecialchars($d3_email) ?></span>
+            </a>
           </div>
         </div>
 
         <!-- Desk 4: Principal's Office -->
-        <div class="bg-surface-pure p-6 rounded-2xl border border-border-warm shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+        <div class="bg-[#F5EEFD] p-6 rounded-2xl border border-[#E2CEFC] hover:border-[#7C3AED] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col justify-between">
           <div>
             <div class="flex items-center justify-between mb-4">
-              <div class="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+              <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] text-white shadow-sm flex items-center justify-center">
                 <span class="material-symbols-outlined text-[24px]">shield_person</span>
               </div>
-              <span class="text-[11px] font-bold text-[#C9A24B] bg-[#C9A24B]/10 px-2.5 py-1 rounded-full uppercase tracking-wider">
+              <span class="text-[10px] sm:text-[11px] font-bold text-[#581C87] bg-[#EDE9FE] px-2.5 py-1 rounded-full uppercase tracking-wider border border-[#E2CEFC]">
                 <?= htmlspecialchars(get_text('contact', 'desk4_role', 'Executive Administration')) ?>
               </span>
             </div>
-            <h3 class="font-bold text-primary text-base sm:text-lg mb-2">
+            <h3 class="font-bold text-[#3B0764] text-base sm:text-lg mb-2">
               <?= htmlspecialchars(get_text('contact', 'desk4_name', 'Principal Office & Appointments')) ?>
             </h3>
-            <p class="text-xs text-on-surface-variant flex items-center gap-1.5 mb-4">
-              <span class="material-symbols-outlined text-[16px] text-[#C9A24B]">schedule</span>
+            <p class="text-xs text-[#581C87]/80 flex items-center gap-1.5 mb-4">
+              <span class="material-symbols-outlined text-[16px] text-[#7C3AED]">schedule</span>
               <span><?= htmlspecialchars(get_text('contact', 'desk4_timing', '11:00 AM – 1:30 PM (By Prior Appointment)')) ?></span>
             </p>
           </div>
-          <div class="pt-4 border-t border-border-warm">
-            <?php $d4_contact = get_text('contact', 'desk4_contact', 'info@sunriseschool.com'); ?>
-            <a href="mailto:<?= htmlspecialchars($d4_contact) ?>" class="inline-flex items-center gap-2 text-primary font-bold text-sm hover:text-[#C9A24B] transition-colors">
-              <span class="material-symbols-outlined text-[18px]">mail</span>
+          <div class="pt-4 border-t border-[#EDE9FE] flex flex-col gap-1.5">
+            <?php 
+              $d4_contact = get_text('contact', 'desk4_contact', $site_email);
+              $d4_contact = str_replace('info@sunriseschool.com', $site_email, $d4_contact);
+            ?>
+            <a href="mailto:<?= htmlspecialchars($d4_contact) ?>" class="inline-flex items-center gap-2 text-[#6D28D9] hover:text-[#3B0764] font-bold text-xs sm:text-sm transition-colors break-all">
+              <span class="material-symbols-outlined text-[16px]">mail</span>
               <span><?= htmlspecialchars($d4_contact) ?></span>
             </a>
           </div>
@@ -452,7 +436,7 @@ require_once __DIR__ . '/core/header.php';
           <span class="material-symbols-outlined text-[#C9A24B] transition-transform duration-200 flex-shrink-0">expand_more</span>
         </button>
         <div class="faq-answer hidden px-6 pb-5 pt-1 text-on-surface-variant text-xs sm:text-sm leading-relaxed border-t border-border-warm/60">
-          <?= nl2br(htmlspecialchars(get_text('contact', 'faq2_a', 'Yes, to ensure dedicated time without interruptions, we request parents to schedule appointments with the Principal office by calling +91 70158 90094 or emailing info@sunriseschool.com.'))) ?>
+          <?= nl2br(htmlspecialchars(get_text('contact', 'faq2_a', 'Yes, to ensure dedicated time without interruptions, we request parents to schedule appointments with the Principal office by calling +91 70158 90094 or emailing info@sunrisesrsecschool.com.'))) ?>
         </div>
       </div>
 

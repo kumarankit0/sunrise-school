@@ -15,21 +15,26 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 1px solid transparent;
+  border: 1px solid rgba(0, 17, 41, 0.08);
   cursor: pointer;
-  background-color: var(--surface-container-low);
+  background-color: #ffffff;
   color: var(--primary);
   width: 100%;
+  box-shadow: 0 1px 3px rgba(0, 17, 41, 0.04);
 }
 
 .level-btn:hover {
-  background-color: var(--surface-container);
+  background-color: #ffffff;
+  border-color: rgba(201, 162, 75, 0.4);
+  transform: translateX(4px);
 }
 
 .level-btn.active {
   background-color: var(--primary);
   color: var(--on-primary);
-  box-shadow: 0 4px 14px rgba(0, 17, 41, 0.15);
+  border-color: var(--primary);
+  box-shadow: 0 4px 14px rgba(0, 17, 41, 0.18);
+  transform: none;
 }
 
 .level-content {

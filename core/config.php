@@ -20,6 +20,13 @@ $site_estd           = get_text('general', 'site_estd', '2007');
 $site_affiliation    = get_text('general', 'site_affiliation', 'HBSE');
 $site_logo           = get_image('general', 'site_logo', 'assets/images/logo.svg');
 
+// Social Media Channels (Configurable via Admin Dashboard)
+$social_facebook     = get_text('general', 'social_facebook', 'https://facebook.com');
+$social_instagram    = get_text('general', 'social_instagram', 'https://instagram.com');
+$social_youtube      = get_text('general', 'social_youtube', 'https://youtube.com');
+$social_whatsapp     = get_text('general', 'social_whatsapp', 'https://wa.me/917015890094');
+$social_twitter      = get_text('general', 'social_twitter', 'https://twitter.com');
+
 // Base path for original school images
 define('SCHOOL_IMG_DIR', 'assets/images/sunrise school image/');
 define('SCHOOL_IMG_URI', 'assets/images/sunrise%20school%20image/');
@@ -48,12 +55,6 @@ $nav_menu = [
                 'url' => 'about-us.php#leadership',
                 'icon' => 'workspace_premium',
                 'desc' => 'Message from Chairman & Principal'
-            ],
-            'disclosure' => [
-                'title' => 'Mandatory Disclosure',
-                'url' => 'about-us.php#mandatory-disclosure',
-                'icon' => 'verified_user',
-                'desc' => 'Affiliation, Society & Compliance'
             ],
             'faculty-staff' => [
                 'title' => 'Faculty & Mentors',
@@ -139,11 +140,11 @@ $nav_menu = [
                 'icon' => 'sports_cricket',
                 'desc' => 'Athletics, Volleyball & Yoga'
             ],
-            'gallery' => [
-                'title' => 'Photo & Video Gallery',
-                'url' => 'gallery.php',
-                'icon' => 'photo_library',
-                'desc' => 'Memories & Celebrations on Campus'
+            'student-clubs' => [
+                'title' => 'Clubs & Cultural Life',
+                'url' => 'events.php#activities',
+                'icon' => 'palette',
+                'desc' => 'Music, Arts, Debating & Drama'
             ]
         ]
     ],
@@ -177,21 +178,27 @@ $nav_menu = [
             ]
         ]
     ],
-    'career' => [
-        'title' => get_text('general', 'nav_item6_text', 'CAREER'),
-        'url' => get_text('general', 'nav_item6_url', 'contact-us.php#career'),
+    'gallery' => [
+        'title' => get_text('general', 'nav_item6_text', 'GALLERY'),
+        'url' => get_text('general', 'nav_item6_url', 'gallery.php'),
         'subitems' => [
-            'openings' => [
-                'title' => 'Join Our Faculty Team',
-                'url' => 'contact-us.php#career',
-                'icon' => 'work',
-                'desc' => 'Teaching & Non-Teaching Openings'
+            'photo-gallery' => [
+                'title' => 'Photo Gallery',
+                'url' => 'gallery.php',
+                'icon' => 'photo_library',
+                'desc' => 'Campus Moments & Celebrations'
             ],
-            'apply' => [
-                'title' => 'Apply Online',
-                'url' => 'contact-us.php',
-                'icon' => 'upload_file',
-                'desc' => 'Submit Resume for Review'
+            'campus-glimpses' => [
+                'title' => 'Campus Life Glimpses',
+                'url' => 'gallery.php#campus-life',
+                'icon' => 'camera_indoor',
+                'desc' => 'Vibrant School Activities'
+            ],
+            'annual-events' => [
+                'title' => 'Events & Festivals',
+                'url' => 'events.php',
+                'icon' => 'theater_comedy',
+                'desc' => 'Functions & Sports Day Memories'
             ]
         ]
     ],
@@ -235,9 +242,9 @@ function is_nav_active($key, $current) {
         'about-us' => ['about-us', 'faculty-staff', 'leadership', 'disclosure'],
         'admissions' => ['admissions', 'admission-proc', 'online-apply', 'fee-struct', 'admission-faq'],
         'academics' => ['academics', 'curriculum', 'streams', 'calendar', 'toppers'],
-        'activities' => ['events-news', 'gallery', 'sports-meet'],
+        'activities' => ['events-news', 'sports-meet', 'student-clubs'],
         'campus' => ['campus-life', 'smart-labs', 'library', 'transport'],
-        'career' => ['career', 'openings', 'apply'],
+        'gallery' => ['gallery', 'photo-gallery', 'campus-glimpses', 'annual-events'],
         'connect' => ['contact', 'map', 'alumni']
     ];
 

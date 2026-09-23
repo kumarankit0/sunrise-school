@@ -678,7 +678,11 @@ h3.font-headline-sm,
   inset: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden !important;
+  clip-path: inset(0) !important;
+  -webkit-clip-path: inset(0) !important;
+  contain: paint strict !important;
+  isolation: isolate;
   z-index: 0;
   background-color: var(--primary);
   pointer-events: none;
@@ -695,6 +699,9 @@ h3.font-headline-sm,
   background-repeat: no-repeat;
   opacity: 1;
   will-change: background-image;
+  overflow: hidden;
+  clip-path: inset(0);
+  -webkit-clip-path: inset(0);
 }
 
 .hero-grid-container {
@@ -702,16 +709,19 @@ h3.font-headline-sm,
   inset: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
+  overflow: hidden !important;
+  clip-path: inset(0) !important;
+  -webkit-clip-path: inset(0) !important;
+  contain: paint strict !important;
   pointer-events: none;
   z-index: 2;
 }
 
 .hero-mosaic-tile {
   position: absolute;
-  overflow: hidden;
+  overflow: hidden !important;
   background-repeat: no-repeat;
-  will-change: transform, opacity, box-shadow;
+  will-change: transform, opacity;
   box-sizing: border-box;
   opacity: 0;
   transform-origin: center center;
@@ -775,12 +785,20 @@ h3.font-headline-sm,
 }
 
 /* ==========================================================================
-   Universal Hero Section Responsive Mobile Styles (Compact & Perfect)
+   Universal Hero Section Responsive Mobile Styles (Strict Boundary & Overflow Containment)
    ========================================================================== */
 .hero-section {
+  position: relative;
+  width: 100%;
   min-height: 60vh;
   padding-top: 3.25rem !important;
   padding-bottom: 3.25rem !important;
+  overflow: hidden !important;
+  clip-path: inset(0) !important;
+  -webkit-clip-path: inset(0) !important;
+  contain: paint !important;
+  isolation: isolate;
+  z-index: 1;
 }
 
 @media (min-width: 480px) {
@@ -805,6 +823,25 @@ h3.font-headline-sm,
     padding-top: 5.5rem !important;
     padding-bottom: 5.5rem !important;
   }
+}
+
+/* Ensure all hero background banners across all pages stay perfectly inside container */
+.hero-section [class*="absolute"][class*="bg-cover"],
+.hero-section .hero-slide-base,
+.hero-section .hero-bg-banner {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat !important;
+  pointer-events: none;
+  overflow: hidden;
+  clip-path: inset(0);
+  -webkit-clip-path: inset(0);
+  transform: translateZ(0);
 }
 
 .hero-content {

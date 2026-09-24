@@ -18,18 +18,24 @@
 
 /* Page Main Container: Responsive Top Offset matching Fixed Navbar */
 main {
-  padding-top: 102px !important;
+  padding-top: 122px !important;
+}
+
+@media (min-width: 480px) {
+  main {
+    padding-top: 125px !important;
+  }
 }
 
 @media (min-width: 640px) {
   main {
-    padding-top: 108px !important;
+    padding-top: 130px !important;
   }
 }
 
 @media (min-width: 1024px) {
   main {
-    padding-top: 110px !important;
+    padding-top: 136px !important;
   }
 }
 
@@ -367,9 +373,9 @@ main {
 }
 
 .brand-logo-img {
-  height: 2.35rem;
-  width: 2.35rem;
-  min-width: 2.35rem;
+  height: 2.65rem;
+  width: 2.65rem;
+  min-width: 2.65rem;
   object-fit: contain;
   flex-shrink: 0;
   transition: transform var(--transition-fast);
@@ -377,9 +383,9 @@ main {
 
 @media (min-width: 640px) {
   .brand-logo-img {
-    height: 2.5rem;
-    width: 2.5rem;
-    min-width: 2.5rem;
+    height: 2.85rem;
+    width: 2.85rem;
+    min-width: 2.85rem;
   }
 }
 
@@ -393,6 +399,75 @@ main {
   min-width: 0;
   overflow: hidden;
   justify-content: center;
+}
+
+/* St. Joseph Pattern Institutional Typography Lockup - Exact Proportions */
+.brand-stj-lockup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+  min-width: 0;
+  user-select: none;
+}
+
+.brand-stj-top {
+  display: flex;
+  align-items: baseline;
+  font-family: 'Cinzel', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  line-height: 0.9;
+  letter-spacing: 0.02em;
+}
+
+.brand-stj-drop {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.75rem, 3.6vw, 2.35rem);
+  font-weight: 900;
+  color: #001129;
+  line-height: 0.85;
+  margin-right: 0.5px;
+  letter-spacing: -0.01em;
+  display: inline-block;
+  transform: translateY(1.5px);
+}
+
+.brand-stj-rest {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  font-weight: 900;
+  color: #001129;
+  letter-spacing: 0.06em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.brand-stj-bottom {
+  font-family: 'Cinzel', 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-size: clamp(0.62rem, 1.35vw, 0.76rem);
+  font-weight: 700;
+  color: #001129;
+  letter-spacing: 0.23em;
+  text-transform: uppercase;
+  margin-top: 3.5px;
+  padding-left: 1px;
+  white-space: nowrap;
+  line-height: 1;
+  display: block;
+}
+
+@media (max-width: 480px) {
+  .brand-stj-drop {
+    font-size: 1.55rem;
+  }
+  .brand-stj-rest {
+    font-size: 1.05rem;
+    letter-spacing: 0.04em;
+  }
+  .brand-stj-bottom {
+    font-size: 0.54rem;
+    letter-spacing: 0.16em;
+    margin-top: 2px;
+  }
 }
 
 .brand-logo-line1 {
@@ -460,28 +535,29 @@ main {
 @media (min-width: 1024px) {
   .desktop-nav-menu {
     display: flex;
+    gap: 0.1rem;
   }
 }
 
 @media (min-width: 1200px) {
   .desktop-nav-menu {
-    gap: 0.15rem;
+    gap: 0.12rem;
   }
 }
 
 @media (min-width: 1360px) {
   .desktop-nav-menu {
-    gap: 0.25rem;
+    gap: 0.15rem;
   }
 }
 
 .nav-link {
   font-family: 'Inter', sans-serif;
-  font-size: 0.76rem;
+  font-size: 16px;
   font-weight: 700;
   text-transform: uppercase;
   color: #001129;
-  padding: 0 0.35rem;
+  padding: 0 0.25rem;
   position: relative;
   transition: color 0.18s ease;
   text-decoration: none;
@@ -489,7 +565,7 @@ main {
   letter-spacing: -0.015em;
   display: inline-flex;
   align-items: center;
-  gap: 2.5px;
+  gap: 2px;
   height: 4.5rem;
   background: transparent;
   border: none;
@@ -498,18 +574,18 @@ main {
 
 @media (min-width: 1200px) {
   .nav-link {
-    font-size: 0.795rem;
-    padding: 0 0.45rem;
-    gap: 2.5px;
+    font-size: 16px;
+    padding: 0 0.3rem;
+    gap: 2px;
     letter-spacing: -0.012em;
   }
 }
 
 @media (min-width: 1360px) {
   .nav-link {
-    font-size: 0.82rem;
-    padding: 0 0.55rem;
-    gap: 3px;
+    font-size: 16px;
+    padding: 0 0.35rem;
+    gap: 2.5px;
     letter-spacing: -0.01em;
   }
 }
@@ -521,9 +597,9 @@ main {
 
 .nav-link .nav-arrow {
   color: #94a3b8;
-  font-size: 15px;
-  width: 15px;
-  height: 15px;
+  font-size: 16px;
+  width: 16px;
+  height: 16px;
   display: inline-flex;
   align-items: center;
   justify-content: center;

@@ -34,35 +34,35 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Campus Visual Stats Strip -->
-  <section class="w-full max-w-7xl mx-auto px-6 lg:px-12 -mt-10 sm:-mt-12 relative z-30">
-    <div class="bg-surface-pure rounded-2xl shadow-xl border border-border-warm grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-border-warm overflow-hidden">
-      <div class="p-5 sm:p-6 text-center flex flex-col items-center justify-center">
-        <span class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight"><?= get_text('gallery', 'stat1_num', '1,200+') ?></span>
-        <span class="text-xs sm:text-sm font-medium text-on-surface-variant mt-1"><?= get_text('gallery', 'stat1_lbl', 'Active Students') ?></span>
+  <section class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 -mt-8 sm:-mt-10 relative z-30">
+    <div class="bg-primary text-on-primary rounded-xl shadow-lg border border-white/10 grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-white/15 overflow-hidden">
+      <div class="py-3.5 sm:py-4 px-3 sm:px-4 text-center flex flex-col items-center justify-center">
+        <span class="text-xl sm:text-2xl font-bold text-[#C9A24B] tracking-tight"><?= get_text('gallery', 'stat1_num', '1,200+') ?></span>
+        <span class="text-[11px] sm:text-xs font-medium text-white/90 mt-0.5"><?= get_text('gallery', 'stat1_lbl', 'Active Students') ?></span>
       </div>
-      <div class="p-5 sm:p-6 text-center flex flex-col items-center justify-center">
-        <span class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight"><?= get_text('gallery', 'stat2_num', '25+') ?></span>
-        <span class="text-xs sm:text-sm font-medium text-on-surface-variant mt-1"><?= get_text('gallery', 'stat2_lbl', 'Annual Events & Fests') ?></span>
+      <div class="py-3.5 sm:py-4 px-3 sm:px-4 text-center flex flex-col items-center justify-center">
+        <span class="text-xl sm:text-2xl font-bold text-[#C9A24B] tracking-tight"><?= get_text('gallery', 'stat2_num', '25+') ?></span>
+        <span class="text-[11px] sm:text-xs font-medium text-white/90 mt-0.5"><?= get_text('gallery', 'stat2_lbl', 'Annual Events & Fests') ?></span>
       </div>
-      <div class="p-5 sm:p-6 text-center flex flex-col items-center justify-center">
-        <span class="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight"><?= get_text('gallery', 'stat3_num', '5+ Acres') ?></span>
-        <span class="text-xs sm:text-sm font-medium text-on-surface-variant mt-1"><?= get_text('gallery', 'stat3_lbl', 'Lush Green Campus') ?></span>
+      <div class="py-3.5 sm:py-4 px-3 sm:px-4 text-center flex flex-col items-center justify-center">
+        <span class="text-xl sm:text-2xl font-bold text-[#C9A24B] tracking-tight"><?= get_text('gallery', 'stat3_num', '5+ Acres') ?></span>
+        <span class="text-[11px] sm:text-xs font-medium text-white/90 mt-0.5"><?= get_text('gallery', 'stat3_lbl', 'Lush Green Campus') ?></span>
       </div>
-      <div class="p-5 sm:p-6 text-center flex flex-col items-center justify-center">
-        <span class="text-2xl sm:text-3xl font-extrabold text-[#C9A24B] tracking-tight"><?= get_text('gallery', 'stat4_num', '100%') ?></span>
-        <span class="text-xs sm:text-sm font-medium text-on-surface-variant mt-1"><?= get_text('gallery', 'stat4_lbl', 'Memorable Moments') ?></span>
+      <div class="py-3.5 sm:py-4 px-3 sm:px-4 text-center flex flex-col items-center justify-center">
+        <span class="text-xl sm:text-2xl font-bold text-[#C9A24B] tracking-tight"><?= get_text('gallery', 'stat4_num', '100%') ?></span>
+        <span class="text-[11px] sm:text-xs font-medium text-white/90 mt-0.5"><?= get_text('gallery', 'stat4_lbl', 'Memorable Moments') ?></span>
       </div>
     </div>
   </section>
 
   <!-- Filter Navigation Bar & Directory Intro -->
-  <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-10 w-full" id="gallery-filters">
-    <div class="text-center max-w-3xl mx-auto mb-10">
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 pt-10 sm:pt-12 pb-6 sm:pb-8 w-full" id="gallery-filters">
+    <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
       <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('gallery', 'gallery_intro_eyebrow', 'Curated Photographic Archive') ?></span>
       <h2 class="text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('gallery', 'gallery_intro_title', 'Moments That Define Our School') ?></h2>
-      <p class="font-body-md text-on-surface-variant mt-3 text-sm sm:text-base"><?= get_text('gallery', 'gallery_intro_desc', 'Filter by category to explore science exhibitions, sports championships, national day celebrations, board exam toppers, campus facilities, and dedicated faculty.') ?></p>
+      <p class="font-body-md text-on-surface-variant mt-2 sm:mt-3 text-sm sm:text-base"><?= get_text('gallery', 'gallery_intro_desc', 'Filter by category to explore science exhibitions, sports championships, national day celebrations, board exam toppers, campus facilities, and dedicated faculty.') ?></p>
     </div>
-    <div class="flex flex-wrap items-center justify-center gap-2.5 border-b border-border-warm pb-6">
+    <div class="flex flex-wrap items-center justify-center gap-2.5 border-b border-border-warm pb-4">
       <button class="gallery-filter-btn active" data-filter="all" onclick="filterGallery('all')">All Photos</button>
       <button class="gallery-filter-btn" data-filter="exhibitions" onclick="filterGallery('exhibitions')">Exhibitions &amp; Science</button>
       <button class="gallery-filter-btn" data-filter="events" onclick="filterGallery('events')">Events &amp; Awards</button>
@@ -74,7 +74,7 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Gallery Grid (12 Curated Showcase Cards) -->
-  <section class="max-w-7xl mx-auto px-6 lg:px-12 pb-24 w-full">
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 pb-12 sm:pb-16 w-full">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
 
       <!-- Item 1: Exhibitions -->
@@ -285,7 +285,7 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Campus Life Highlights & Traditions Section -->
-  <section class="relative w-full py-16 sm:py-24 px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10" style="background-color: #F7EFE8; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.10) 0%, transparent 42%), radial-gradient(circle at 85% 80%, rgba(184, 134, 102, 0.09) 0%, transparent 46%);">
+  <section class="relative w-full py-10 sm:py-12 lg:py-14 px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10" style="background-color: #F7EFE8; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.10) 0%, transparent 42%), radial-gradient(circle at 85% 80%, rgba(184, 134, 102, 0.09) 0%, transparent 46%);">
     <!-- Subtle Warm Nude Geometric / Academic Pattern Overlays -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.38]" style="background-image: radial-gradient(#8d6e53 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
     <div class="absolute inset-0 pointer-events-none opacity-[0.20]" style="background-image: linear-gradient(to right, rgba(141, 110, 83, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(141, 110, 83, 0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
@@ -295,58 +295,76 @@ require_once __DIR__ . '/core/header.php';
     <div class="absolute -left-20 -bottom-20 w-96 h-96 rounded-full bg-[#C9A24B]/12 blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto relative z-10 w-full">
-      <div class="text-center max-w-3xl mx-auto mb-12">
+      <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
         <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('gallery', 'life_eyebrow', 'Holistic Student Experience') ?></span>
         <h2 class="text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('gallery', 'life_heading', 'Vibrant Campus Life Beyond Classrooms') ?></h2>
-        <p class="font-body-md text-on-surface-variant mt-3 text-sm sm:text-base"><?= get_text('gallery', 'life_desc', 'At Sun Rise School, education flourishes through daily morning assemblies, active sports clubs, cultural celebrations, and community values.') ?></p>
+        <p class="font-body-md text-on-surface-variant mt-2 sm:mt-3 text-sm sm:text-base"><?= get_text('gallery', 'life_desc', 'At Sun Rise School, education flourishes through daily morning assemblies, active sports clubs, cultural celebrations, and community values.') ?></p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
         <!-- Pillar 1: Morning Assembly & Moral Values -->
-        <div class="bg-[#F5EEFD] p-8 rounded-2xl border border-[#E2CEFC] hover:border-[#7C3AED] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col gap-4">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] text-white shadow-md flex items-center justify-center">
-            <span class="material-symbols-outlined text-[30px]"><?= get_text('gallery', 'life1_icon', 'self_improvement') ?></span>
+        <div class="bg-[#F5EEFD] p-5 sm:p-6 rounded-xl border border-[#E2CEFC] hover:border-[#7C3AED] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between">
+          <div class="flex flex-col gap-3">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] text-white shadow-sm flex items-center justify-center">
+              <span class="material-symbols-outlined text-[26px]"><?= get_text('gallery', 'life1_icon', 'self_improvement') ?></span>
+            </div>
+            <h3 class="font-headline-sm text-base sm:text-lg font-bold text-[#3B0764]"><?= get_text('gallery', 'life1_title', 'Morning Assembly & Moral Values') ?></h3>
+            <p class="text-xs sm:text-sm text-[#581C87]/80 leading-relaxed line-clamp-2"><?= get_text('gallery', 'life1_desc', 'Daily prayer, news recitation, motivational thought sharing, and patriotic anthems shaping disciplined character.') ?></p>
           </div>
-          <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-[#3B0764]"><?= get_text('gallery', 'life1_title', 'Morning Assembly & Moral Values') ?></h3>
-          <p class="text-sm text-[#581C87]/80 leading-relaxed"><?= get_text('gallery', 'life1_desc', 'Daily prayer, news recitation, motivational thought sharing, and patriotic anthems shaping disciplined character.') ?></p>
+          <div class="pt-3 border-t border-[#E2CEFC]/60 mt-3 flex items-center text-xs font-semibold text-[#7C3AED] hover:text-[#5B21B6] transition-colors cursor-pointer" onclick="openLightbox(document.querySelector('.gallery-item[data-category=events]'))">
+            <span>Read More</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+          </div>
         </div>
 
         <!-- Pillar 2: Annual Cultural Pageants & Fests -->
-        <div class="bg-[#FDF2F8] p-8 rounded-2xl border border-[#FBCFE8] hover:border-[#DB2777] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col gap-4">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#EC4899] to-[#BE185D] text-white shadow-md flex items-center justify-center">
-            <span class="material-symbols-outlined text-[30px]"><?= get_text('gallery', 'life2_icon', 'celebration') ?></span>
+        <div class="bg-[#FDF2F8] p-5 sm:p-6 rounded-xl border border-[#FBCFE8] hover:border-[#DB2777] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between">
+          <div class="flex flex-col gap-3">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#EC4899] to-[#BE185D] text-white shadow-sm flex items-center justify-center">
+              <span class="material-symbols-outlined text-[26px]"><?= get_text('gallery', 'life2_icon', 'celebration') ?></span>
+            </div>
+            <h3 class="font-headline-sm text-base sm:text-lg font-bold text-[#831843]"><?= get_text('gallery', 'life2_title', 'Annual Cultural Pageants & Fests') ?></h3>
+            <p class="text-xs sm:text-sm text-[#9D174D]/80 leading-relaxed line-clamp-2"><?= get_text('gallery', 'life2_desc', 'Theatrical productions, folk dance performances, music recitals, and national festival celebrations on campus.') ?></p>
           </div>
-          <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-[#831843]"><?= get_text('gallery', 'life2_title', 'Annual Cultural Pageants & Fests') ?></h3>
-          <p class="text-sm text-[#9D174D]/80 leading-relaxed"><?= get_text('gallery', 'life2_desc', 'Theatrical productions, folk dance performances, music recitals, and national festival celebrations on campus.') ?></p>
+          <div class="pt-3 border-t border-[#FBCFE8]/60 mt-3 flex items-center text-xs font-semibold text-[#DB2777] hover:text-[#9D174D] transition-colors cursor-pointer" onclick="openLightbox(document.querySelector('.gallery-item[data-category=events]'))">
+            <span>Read More</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+          </div>
         </div>
 
         <!-- Pillar 3: Inter-House Athletics & Yoga Drills -->
-        <div class="bg-[#ECFDF5] p-8 rounded-2xl border border-[#A7F3D0] hover:border-[#059669] shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all flex flex-col gap-4">
-          <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#10B981] to-[#047857] text-white shadow-md flex items-center justify-center">
-            <span class="material-symbols-outlined text-[30px]"><?= get_text('gallery', 'life3_icon', 'sports_gymnastics') ?></span>
+        <div class="bg-[#ECFDF5] p-5 sm:p-6 rounded-xl border border-[#A7F3D0] hover:border-[#059669] shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all flex flex-col justify-between">
+          <div class="flex flex-col gap-3">
+            <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#10B981] to-[#047857] text-white shadow-sm flex items-center justify-center">
+              <span class="material-symbols-outlined text-[26px]"><?= get_text('gallery', 'life3_icon', 'sports_gymnastics') ?></span>
+            </div>
+            <h3 class="font-headline-sm text-base sm:text-lg font-bold text-[#064E3B]"><?= get_text('gallery', 'life3_title', 'Inter-House Athletics & Yoga Drills') ?></h3>
+            <p class="text-xs sm:text-sm text-[#065F46]/80 leading-relaxed line-clamp-2"><?= get_text('gallery', 'life3_desc', 'Dedicated sports periods, athletics conditioning, yoga asanas, and district-level tournament coaching.') ?></p>
           </div>
-          <h3 class="font-headline-sm text-lg sm:text-xl font-bold text-[#064E3B]"><?= get_text('gallery', 'life3_title', 'Inter-House Athletics & Yoga Drills') ?></h3>
-          <p class="text-sm text-[#065F46]/80 leading-relaxed"><?= get_text('gallery', 'life3_desc', 'Dedicated sports periods, athletics conditioning, yoga asanas, and district-level tournament coaching.') ?></p>
+          <div class="pt-3 border-t border-[#A7F3D0]/60 mt-3 flex items-center text-xs font-semibold text-[#059669] hover:text-[#047857] transition-colors cursor-pointer" onclick="openLightbox(document.querySelector('.gallery-item[data-category=sports]'))">
+            <span>Read More</span>
+            <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Experience Campus CTA Banner -->
-  <section class="w-full py-16 sm:py-24 px-6 lg:px-12 bg-surface">
-    <div class="max-w-7xl mx-auto rounded-3xl overflow-hidden relative shadow-2xl">
+  <section class="w-full py-10 sm:py-14 px-6 lg:px-12 bg-surface">
+    <div class="max-w-7xl mx-auto rounded-2xl overflow-hidden relative shadow-xl">
       <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('<?= get_image('gallery', 'cta_bg', school_img('school_nightview.webp')) ?>')"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/85 to-primary/60"></div>
-      <div class="relative z-10 px-8 py-14 sm:px-16 sm:py-20 max-w-2xl flex flex-col items-start gap-5 text-on-primary">
-        <span class="hero-badge text-gold-light uppercase font-bold tracking-widest bg-white/10 px-4 py-1.5 rounded-full text-xs border border-[#C9A24B]/30"><?= get_text('gallery', 'cta_eyebrow', 'Experience In Person') ?></span>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-headline-lg font-bold text-white leading-tight"><?= get_text('gallery', 'cta_heading', 'Witness the Vibrant Energy of Sun Rise School') ?></h2>
-        <p class="text-sm sm:text-base text-surface-cream/90 leading-relaxed"><?= get_text('gallery', 'cta_desc', 'Photographs only tell part of the story. Visit our Dobhi campus to experience our smart classrooms, open playgrounds, science labs, and meet our teachers.') ?></p>
-        <div class="flex flex-wrap items-center gap-4 pt-2">
-          <a class="btn-gold shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('gallery', 'cta_btn1_link', 'contact-us.php')) ?>">
+      <div class="relative z-10 px-6 py-8 sm:px-12 sm:py-12 max-w-2xl flex flex-col items-start gap-4 text-on-primary">
+        <span class="hero-badge text-gold-light uppercase font-bold tracking-widest bg-white/10 px-3.5 py-1 rounded-full text-[11px] border border-[#C9A24B]/30"><?= get_text('gallery', 'cta_eyebrow', 'Experience In Person') ?></span>
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-headline-lg font-bold text-white leading-tight"><?= get_text('gallery', 'cta_heading', 'Witness the Vibrant Energy of Sun Rise School') ?></h2>
+        <p class="text-xs sm:text-sm text-surface-cream/90 leading-relaxed"><?= get_text('gallery', 'cta_desc', 'Photographs only tell part of the story. Visit our Dobhi campus to experience our smart classrooms, open playgrounds, science labs, and meet our teachers.') ?></p>
+        <div class="flex flex-wrap items-center gap-3.5 pt-1">
+          <a class="btn-gold shadow-md hover:shadow-lg transition-all text-xs sm:text-sm py-2.5 px-5" href="<?= htmlspecialchars(get_text('gallery', 'cta_btn1_link', 'contact-us.php')) ?>">
             <span><?= get_text('gallery', 'cta_btn1_text', 'Schedule Campus Visit') ?></span>
-            <span class="material-symbols-outlined">arrow_forward</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
           </a>
-          <a class="btn-outline-white shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('gallery', 'cta_btn2_link', 'admission.php')) ?>">
+          <a class="btn-outline-white shadow-md hover:shadow-lg transition-all text-xs sm:text-sm py-2.5 px-5" href="<?= htmlspecialchars(get_text('gallery', 'cta_btn2_link', 'admission.php')) ?>">
             <span><?= get_text('gallery', 'cta_btn2_text', 'Admissions Information') ?></span>
           </a>
         </div>

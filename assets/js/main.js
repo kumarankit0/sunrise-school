@@ -4,6 +4,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+  initHeaderOffsetSync();
   initMobileMenu();
   initNavDropdowns();
   initHeaderModals();
@@ -402,4 +403,26 @@ function initToppersModal() {
     openModal();
   }, 600);
 }
+
+/* --------------------------------------------------------------------------
+   Dynamic Header Offset Synchronizer (Prevents Navbar from Hiding Hero Content)
+   -------------------------------------------------------------------------- */
+function initHeaderOffsetSync() {
+  const header = document.querySelector('.site-header');
+  const main = document.querySelector('main');
+  if (!header || !main) return;
+
+  function updateOffset() {
+    const headerHeight = header.offsetHeight;
+    if (headerHeight > 40) {
+      main.style.paddingTop = `${headerHeight}px`;
+    }
+  }
+
+  updateOffset();
+  window.addEventListener('resize', updateOffset, { passive: true });
+  window.addEventListener('orientationchange', updateOffset, { passive: true });
+  window.addEventListener('load', updateOffset, { passive: true });
+}
+
 

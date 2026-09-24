@@ -157,10 +157,6 @@
           const dRight = cols - 1 - c;
           const minDist = Math.min(dTop, dBottom, dLeft, dRight);
 
-          let startX = 0;
-          let startY = 0;
-          let startRotate = 0;
-
           // In-Place Mosaic Reveal: Stay 100% within container bounds (never cross container edges or overlap navbar)
           const dirX = (c < cx) ? -1 : (c > cx ? 1 : 0);
           const dirY = (r < cy) ? -1 : (r > cy ? 1 : 0);

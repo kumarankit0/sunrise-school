@@ -41,10 +41,10 @@ $current_page = isset($current_page) ? $current_page : 'home';
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
   <!-- Optimized Font Loading (Non-blocking with display=swap) -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" media="print" onload="this.media='all'"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap" media="print" onload="this.media='all'"/>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" media="print" onload="this.media='all'"/>
   <noscript>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"/>
   </noscript>
 
@@ -195,11 +195,13 @@ $current_page = isset($current_page) ? $current_page : 'home';
     <!-- Main Navigation Bar -->
     <div class="nav-container">
       <a href="index.php" class="brand-logo-link" title="<?= htmlspecialchars($site_name) ?>">
-        <img alt="<?= htmlspecialchars($site_name) ?> Crest" class="brand-logo-img" src="<?= $site_logo ?>" width="42" height="42"/>
-        <div class="brand-logo-text-group">
-          <span class="brand-logo-line1">Sun Rise</span>
-          <span class="brand-logo-line2">Sr. Sec. School</span>
-          <span class="brand-logo-sub"><?= htmlspecialchars(get_text('general', 'nav_sub_title', 'Dobhi, Hisar • HBSE Affiliated')) ?></span>
+        <img alt="<?= htmlspecialchars($site_name) ?> Crest" class="brand-logo-img" src="<?= $site_logo ?>" width="46" height="46"/>
+        <div class="brand-logo-text-group brand-stj-lockup">
+          <div class="brand-stj-top">
+            <span class="brand-stj-drop">S</span>
+            <span class="brand-stj-rest">UN RISE</span>
+          </div>
+          <span class="brand-stj-bottom">SR. SEC. SCHOOL</span>
         </div>
       </a>
 

@@ -59,7 +59,7 @@ $pages_config = [
     'home' => [
         'title' => 'Home Page',
         'icon'  => 'home',
-        'desc'  => 'Complete Home Page Control: 6 Hero Slider Photos, Ticker Strip, Legacy Stats, 3 Pillars, Director & Principal Messages, Events, 12 Gallery Photos, Affiliations & CTA',
+        'desc'  => 'Complete Home Page Control: 6 Hero Slider Photos, Ticker Strip, Legacy Stats, Live Events Tracker, 3 Pillars, Director Message, Events & News (3 Cards), 12 Glimpses Photos, Affiliations & CTA',
         'sections' => [
             // Section 1: Hero Banner, 4-Direction Mosaic Box Slider & Headlines
             [
@@ -704,7 +704,7 @@ $pages_config = [
                         'kind' => 'image',
                         'key' => 'director_photo',
                         'label' => 'Director Portrait Photo',
-                        'default' => 'assets/images/sunrise school image/speaker.webp',
+                        'default' => 'assets/images/sunrise school image/director.png',
                         'alt' => 'Mr. Bhader Singh Swami, Founder & Director',
                         'help' => 'Photo displayed on the left of director message.'
                     ],
@@ -729,7 +729,7 @@ $pages_config = [
                         'key' => 'director_quote',
                         'label' => 'Featured Director Quote',
                         'type' => 'text',
-                        'default' => '“Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society.”',
+                        'default' => '"Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society."',
                         'help' => 'Prominent blockquote with gold border.'
                     ],
                     [
@@ -766,147 +766,9 @@ $pages_config = [
                     ]
                 ]
             ],
-            // Section 5: School Leadership (Principal & Coordinator)
+            // Section 5: School Events & News (3 Cards)
             [
-                'title' => 'Section 5: School Leadership (Principal & Coordinator)',
-                'icon'  => 'school',
-                'desc'  => '2-column leadership section on homepage featuring Principal (Left) and Coordinator (Right) photos, designations, experience, and full profiles.',
-                'fields' => [
-                    [
-                        'kind' => 'text',
-                        'key' => 'leadership_tagline',
-                        'label' => 'Leadership Section Eyebrow Tagline',
-                        'type' => 'text',
-                        'default' => 'SCHOOL LEADERSHIP',
-                        'help' => 'Eyebrow label above the section heading.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leadership_heading',
-                        'label' => 'Leadership Section Heading',
-                        'type' => 'text',
-                        'default' => 'Guiding Young Minds Towards Academic Excellence & Character',
-                        'help' => 'Main heading for the 2-column leadership section.'
-                    ],
-                    // Left Column: Principal
-                    [
-                        'kind' => 'image',
-                        'key' => 'principal_photo',
-                        'label' => 'Principal Photo (Left Column)',
-                        'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
-                        'alt' => 'Mr. Rajbir Singh, Principal',
-                        'help' => 'Photo displayed on the left column for the Principal.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'principal_role_badge',
-                        'label' => 'Principal Role Badge',
-                        'type' => 'text',
-                        'default' => 'Principal',
-                        'help' => 'Badge overlay on the Principal photo.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'principal_tag',
-                        'label' => 'Principal Eyebrow Tag',
-                        'type' => 'text',
-                        'default' => 'Academic Head',
-                        'help' => 'Small uppercase tag above the Principal name.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'principal_name',
-                        'label' => 'Principal Name',
-                        'type' => 'text',
-                        'default' => 'Mr. Rajbir Singh',
-                        'help' => 'Full name of the Principal.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'principal_title',
-                        'label' => 'Principal Designation & Qualifications',
-                        'type' => 'text',
-                        'default' => 'Principal | M.A., B.Ed.',
-                        'help' => 'Official designation and degree qualifications.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'principal_exp',
-                        'label' => 'Principal Experience Badge',
-                        'type' => 'text',
-                        'default' => '16 Years Professional Experience',
-                        'help' => 'Experience badge text.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'principal_desc',
-                        'label' => 'Principal Description & Profile',
-                        'type' => 'text',
-                        'default' => 'With 16 years of professional experience in the field of education, Mr. Rajbir Singh serves as the Principal of Sun Rise Sr. Sec. School. He holds M.A. and B.Ed. qualifications and brings a committed approach towards academic administration and student development. As the academic head of the institution, his role encompasses fostering a disciplined and purposeful learning environment, supporting teachers, and ensuring that students receive balanced opportunities for academic, personal, and holistic development.',
-                        'help' => 'Full biography and description of the Principal.'
-                    ],
-                    // Right Column: Coordinator
-                    [
-                        'kind' => 'image',
-                        'key' => 'coordinator_photo',
-                        'label' => 'Coordinator Photo (Right Column)',
-                        'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
-                        'alt' => 'Mr. Indra Dev, Coordinator',
-                        'help' => 'Photo displayed on the right column for the Coordinator.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'coordinator_role_badge',
-                        'label' => 'Coordinator Role Badge',
-                        'type' => 'text',
-                        'default' => 'Coordinator',
-                        'help' => 'Badge overlay on the Coordinator photo.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'coordinator_tag',
-                        'label' => 'Coordinator Eyebrow Tag',
-                        'type' => 'text',
-                        'default' => 'Administration & Coordination',
-                        'help' => 'Small uppercase tag above the Coordinator name.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'coordinator_name',
-                        'label' => 'Coordinator Name',
-                        'type' => 'text',
-                        'default' => 'Mr. Indra Dev',
-                        'help' => 'Full name of the Coordinator.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'coordinator_title',
-                        'label' => 'Coordinator Designation & Qualifications',
-                        'type' => 'text',
-                        'default' => 'Coordinator | B.A., M.A., LL.B., LL.M.',
-                        'help' => 'Official designation and degree qualifications.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'coordinator_exp',
-                        'label' => 'Coordinator Experience Badge',
-                        'type' => 'text',
-                        'default' => '22 Years Exp • Former GM, RBI',
-                        'help' => 'Experience badge text.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'coordinator_desc',
-                        'label' => 'Coordinator Description & Profile',
-                        'type' => 'text',
-                        'default' => 'Mr. Indra Dev brings 22 years of professional experience and a distinguished academic background comprising B.A., M.A., LL.B., and LL.M. qualifications. Prior to his association with Sun Rise Sr. Sec. School, he served as a General Manager at the Reserve Bank of India (RBI), a position reflecting substantial professional responsibility and administrative experience. His diverse academic and professional background brings a distinctive perspective to the institution, contributing to its organisational discipline, administrative framework, and educational development. His experience across education, law, and institutional administration strengthens the school’s endeavour to maintain high standards of professionalism and responsible leadership.',
-                        'help' => 'Full biography and description of the Coordinator.'
-                    ]
-                ]
-            ],
-            // Section 6: School Events & News (3 Cards)
-            [
-                'title' => 'Section 6: School Events & News (3 Cards)',
+                'title' => 'Section 5: School Events & News (3 Cards)',
                 'icon'  => 'event_note',
                 'desc'  => 'Three event cards displayed on homepage with tags, badges, titles, descriptions, and venue locations.',
                 'fields' => [
@@ -915,7 +777,7 @@ $pages_config = [
                         'key' => 'events_eyebrow',
                         'label' => 'Events Eyebrow',
                         'type' => 'text',
-                        'default' => 'NOTICES & HAPPENINGS',
+                        'default' => 'LATEST EVENTS AND NEWS',
                         'help' => 'Eyebrow label.'
                     ],
                     [
@@ -1030,7 +892,7 @@ $pages_config = [
                         'key' => 'event3_tag',
                         'label' => 'Event 3: Category Tag',
                         'type' => 'text',
-                        'default' => 'CULTURE',
+                        'default' => 'CELEBRATION',
                         'help' => 'Category label.'
                     ],
                     [
@@ -1038,7 +900,7 @@ $pages_config = [
                         'key' => 'event3_badge',
                         'label' => 'Event 3: Badge',
                         'type' => 'text',
-                        'default' => 'SPECIAL',
+                        'default' => 'NATIONAL',
                         'help' => 'Status badge.'
                     ],
                     [
@@ -1062,7 +924,7 @@ $pages_config = [
                         'key' => 'event3_loc',
                         'label' => 'Event 3: Venue / Location',
                         'type' => 'text',
-                        'default' => 'Open Grounds',
+                        'default' => 'Assembly Ground',
                         'help' => 'Location info.'
                     ],
                     [
@@ -1075,11 +937,11 @@ $pages_config = [
                     ]
                 ]
             ],
-            // Section 7: Campus Glimpses Showcase (Dual-Row 12 Photos)
+            // Section 6: Campus Glimpses Showcase (Dual-Row 12 Photos)
             [
-                'title' => 'Section 7: Campus Glimpses Dual-Row Showcase (12 Photos)',
+                'title' => 'Section 6: Campus Glimpses Dual-Row Showcase (12 Photos)',
                 'icon'  => 'photo_library',
-                'desc'  => 'Upload and manage all 12 photos across Row 1 (moving left) and Row 2 (moving right) for the infinite sliding gallery strip.',
+                'desc'  => 'Upload and manage all 12 photos with titles and captions across Row 1 (moving left) and Row 2 (moving right) for the infinite sliding gallery strip.',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -1109,10 +971,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse1_title',
-                        'label' => 'Row 1 - Photo 1 Caption Title',
+                        'label' => 'Row 1 - Photo 1 Title',
                         'type' => 'text',
                         'default' => 'Main Campus Building',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse1_caption',
+                        'label' => 'Row 1 - Photo 1 Caption',
+                        'type' => 'text',
+                        'default' => 'Illuminated view of Sun Rise School architecture.',
+                        'help' => 'Photo description/caption.'
                     ],
                     [
                         'kind' => 'image',
@@ -1125,10 +995,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse2_title',
-                        'label' => 'Row 1 - Photo 2 Caption Title',
+                        'label' => 'Row 1 - Photo 2 Title',
                         'type' => 'text',
                         'default' => 'Interactive Classrooms',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse2_caption',
+                        'label' => 'Row 1 - Photo 2 Caption',
+                        'type' => 'text',
+                        'default' => 'Engaged students in an active learning environment.',
+                        'help' => 'Photo description/caption.'
                     ],
                     [
                         'kind' => 'image',
@@ -1141,10 +1019,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse3_title',
-                        'label' => 'Row 1 - Photo 3 Caption Title',
+                        'label' => 'Row 1 - Photo 3 Title',
                         'type' => 'text',
                         'default' => 'Dedicated Teaching Faculty',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse3_caption',
+                        'label' => 'Row 1 - Photo 3 Caption',
+                        'type' => 'text',
+                        'default' => 'Experienced mentors guiding students every step.',
+                        'help' => 'Photo description/caption.'
                     ],
                     [
                         'kind' => 'image',
@@ -1157,10 +1043,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse7_title',
-                        'label' => 'Row 1 - Photo 4 Caption Title',
+                        'label' => 'Row 1 - Photo 4 Title',
                         'type' => 'text',
                         'default' => 'Science & Innovation Fair',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse7_caption',
+                        'label' => 'Row 1 - Photo 4 Caption',
+                        'type' => 'text',
+                        'default' => 'Working scientific models and robotics experiments.',
+                        'help' => 'Photo description/caption.'
                     ],
                     [
                         'kind' => 'image',
@@ -1173,10 +1067,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse8_title',
-                        'label' => 'Row 1 - Photo 5 Caption Title',
+                        'label' => 'Row 1 - Photo 5 Title',
                         'type' => 'text',
                         'default' => 'Annual Awards Felicitation',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse8_caption',
+                        'label' => 'Row 1 - Photo 5 Caption',
+                        'type' => 'text',
+                        'default' => 'Merit distinctions and trophy presentations.',
+                        'help' => 'Photo description/caption.'
                     ],
                     [
                         'kind' => 'image',
@@ -1189,10 +1091,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse9_title',
-                        'label' => 'Row 1 - Photo 6 Caption Title',
+                        'label' => 'Row 1 - Photo 6 Title',
                         'type' => 'text',
                         'default' => 'Morning Assembly & Prayer',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse9_caption',
+                        'label' => 'Row 1 - Photo 6 Caption',
+                        'type' => 'text',
+                        'default' => 'Starting the day with moral values and discipline.',
+                        'help' => 'Photo description/caption.'
                     ],
                     // Row 2 (Slots 4, 5, 6, 10, 11, 12)
                     [
@@ -1206,10 +1116,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse4_title',
-                        'label' => 'Row 2 - Photo 7 Caption Title',
+                        'label' => 'Row 2 - Photo 7 Title',
                         'type' => 'text',
                         'default' => 'Student Community',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse4_caption',
+                        'label' => 'Row 2 - Photo 7 Caption',
+                        'type' => 'text',
+                        'default' => 'A vibrant and cheerful environment for every learner.',
+                        'help' => 'Photo description/caption.'
                     ],
                     [
                         'kind' => 'image',
@@ -1222,10 +1140,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse5_title',
-                        'label' => 'Row 2 - Photo 8 Caption Title',
+                        'label' => 'Row 2 - Photo 8 Title',
                         'type' => 'text',
                         'default' => 'Yoga & Holistic Health',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse5_caption',
+                        'label' => 'Row 2 - Photo 8 Caption',
+                        'type' => 'text',
+                        'default' => 'Physical wellness, meditation, and self-discipline.',
+                        'help' => 'Photo description/caption.'
                     ],
                     [
                         'kind' => 'image',
@@ -1238,10 +1164,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse6_title',
-                        'label' => 'Row 2 - Photo 9 Caption Title',
+                        'label' => 'Row 2 - Photo 9 Title',
                         'type' => 'text',
                         'default' => 'Science Projects',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse6_caption',
+                        'label' => 'Row 2 - Photo 9 Caption',
+                        'type' => 'text',
+                        'default' => 'Inspiring young scientists with practical exhibitions.',
+                        'help' => 'Photo description/caption.'
                     ],
                     [
                         'kind' => 'image',
@@ -1254,10 +1188,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse10_title',
-                        'label' => 'Row 2 - Photo 10 Caption Title',
+                        'label' => 'Row 2 - Photo 10 Title',
                         'type' => 'text',
                         'default' => 'Athletics & Sports Ground',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse10_caption',
+                        'label' => 'Row 2 - Photo 10 Caption',
+                        'type' => 'text',
+                        'default' => 'Playgrounds for track, volleyball, football, and fitness.',
+                        'help' => 'Photo description/caption.'
                     ],
                     [
                         'kind' => 'image',
@@ -1270,10 +1212,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse11_title',
-                        'label' => 'Row 2 - Photo 11 Caption Title',
+                        'label' => 'Row 2 - Photo 11 Title',
                         'type' => 'text',
                         'default' => 'Experiential Learning',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse11_caption',
+                        'label' => 'Row 2 - Photo 11 Caption',
+                        'type' => 'text',
+                        'default' => 'Hands-on practical exploration in sciences.',
+                        'help' => 'Photo description/caption.'
                     ],
                     [
                         'kind' => 'image',
@@ -1286,16 +1236,24 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'glimpse12_title',
-                        'label' => 'Row 2 - Photo 12 Caption Title',
+                        'label' => 'Row 2 - Photo 12 Title',
                         'type' => 'text',
                         'default' => 'Student-Faculty Mentorship',
-                        'help' => 'Caption title.'
+                        'help' => 'Hover title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'glimpse12_caption',
+                        'label' => 'Row 2 - Photo 12 Caption',
+                        'type' => 'text',
+                        'default' => 'Personalized guidance and caring educator support.',
+                        'help' => 'Photo description/caption.'
                     ]
                 ]
             ],
-            // Section 8: Affiliations & Recognized By Strip
+            // Section 7: Affiliations & Recognized By Strip
             [
-                'title' => 'Section 8: Affiliations & Accreditations Strip',
+                'title' => 'Section 7: Affiliations & Accreditations Strip',
                 'icon'  => 'verified',
                 'desc'  => 'Headline and 4 accreditation badges displayed in the horizontal strip.',
                 'fields' => [
@@ -1341,9 +1299,9 @@ $pages_config = [
                     ]
                 ]
             ],
-            // Section 9: Final Admissions CTA Banner
+            // Section 8: Final Admissions CTA Banner
             [
-                'title' => 'Section 9: Final Admissions Call to Action (CTA)',
+                'title' => 'Section 8: Final Admissions Call to Action (CTA)',
                 'icon'  => 'call_to_action',
                 'desc'  => 'Bottom banner prompting parents to apply online or visit campus.',
                 'fields' => [
@@ -1647,19 +1605,27 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'image',
-                        'key' => 'founder_photo',
-                        'label' => 'Founder Portrait Photo (Optional)',
-                        'default' => '',
+                        'key' => 'founder_card_img',
+                        'label' => 'Founder Portrait Photo',
+                        'default' => 'assets/images/clean_director.png',
                         'alt' => 'Mr. Bhader Singh Swami - Founder & Director',
-                        'help' => 'Upload portrait photo of founder Mr. Bhader Singh Swami (if blank, displays classic school crest).'
+                        'help' => 'Upload portrait photo of founder Mr. Bhader Singh Swami.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'founder_badge',
-                        'label' => 'Founder Badge Label',
+                        'label' => 'Founder Role Badge (Overlay)',
+                        'type' => 'text',
+                        'default' => 'Founder & Director',
+                        'help' => 'Gold badge overlaid on the bottom of the photo.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_subbadge',
+                        'label' => 'Founder Sub-Badge',
                         'type' => 'text',
                         'default' => 'Institutional Founder',
-                        'help' => 'Gold pill label above founder name.'
+                        'help' => 'Small uppercase tag below photo.'
                     ],
                     [
                         'kind' => 'text',
@@ -1671,11 +1637,11 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'founder_role',
-                        'label' => 'Founder Designation / Role',
+                        'key' => 'founder_org',
+                        'label' => 'Founder Organization Subtitle',
                         'type' => 'text',
-                        'default' => 'Founder & Director',
-                        'help' => 'Official role and designation.'
+                        'default' => 'Sun Rise Sr. Sec. School, Dobhi',
+                        'help' => 'Organization label below name.'
                     ],
                     [
                         'kind' => 'text',
@@ -1684,6 +1650,14 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'Est. 2007 • Dobhi, Hisar',
                         'help' => 'Footer badge with year and location.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_eyebrow',
+                        'label' => 'Founder Story Eyebrow',
+                        'type' => 'text',
+                        'default' => "FOUNDER'S JOURNEY",
+                        'help' => 'Small uppercase tag above founder story heading.'
                     ],
                     [
                         'kind' => 'text',
@@ -1698,7 +1672,7 @@ $pages_config = [
                         'key' => 'founder_p1',
                         'label' => 'Founder Story Paragraph 1 (Inception & Struggle)',
                         'type' => 'html',
-                        'default' => 'The institution was founded by <strong>Mr. Bhader Singh Swami</strong>, whose own journey was shaped by the struggles and limitations of growing up in a lower-middle-class family. Having experienced the challenges surrounding access to quality education, he developed a deep conviction that every child, irrespective of background, deserves the opportunity to learn, grow, and aspire.',
+                        'default' => 'The institution was founded by <strong class="text-white">Mr. Bhader Singh Swami</strong>, whose own journey was shaped by the struggles and limitations of growing up in a lower-middle-class family. Having experienced the challenges surrounding access to quality education, he developed a deep conviction that every child, irrespective of background, deserves the opportunity to learn, grow, and aspire.',
                         'help' => 'First story paragraph detailing background.'
                     ],
                     [
@@ -2070,7 +2044,7 @@ $pages_config = [
                         'kind' => 'image',
                         'key' => 'leader1_photo',
                         'label' => 'Director Photo (Column 1)',
-                        'default' => 'assets/images/sunrise school image/speaker.webp',
+                        'default' => 'assets/images/sunrise school image/director.png',
                         'alt' => 'Mr. Bhader Singh Swami - Founder & Director',
                         'help' => 'Portrait photo of Founder & Director.'
                     ],
@@ -2081,6 +2055,14 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'Founder & Director',
                         'help' => 'Badge overlaid on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_tag',
+                        'label' => 'Director Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Visionary Leadership',
+                        'help' => 'Gold tag above director name.'
                     ],
                     [
                         'kind' => 'text',
@@ -2133,6 +2115,14 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'text',
+                        'key' => 'leader2_tag',
+                        'label' => 'Principal Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Academic Administration',
+                        'help' => 'Gold tag above principal name.'
+                    ],
+                    [
+                        'kind' => 'text',
                         'key' => 'leader2_name',
                         'label' => 'Principal Full Name',
                         'type' => 'text',
@@ -2179,6 +2169,14 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'Coordinator',
                         'help' => 'Badge overlaid on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_tag',
+                        'label' => 'Coordinator Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Administration & Coordination',
+                        'help' => 'Gold tag above coordinator name.'
                     ],
                     [
                         'kind' => 'text',
@@ -5907,7 +5905,7 @@ $pages_config = [
                         'key' => 'news1_link_text',
                         'label' => 'News 1 Link Text',
                         'type' => 'text',
-                        'default' => 'View Gallery Photos',
+                        'default' => 'Read More',
                         'help' => 'Card link label.'
                     ],
                     [
@@ -5965,7 +5963,7 @@ $pages_config = [
                         'key' => 'news2_link_text',
                         'label' => 'News 2 Link Text',
                         'type' => 'text',
-                        'default' => 'View Celebrations',
+                        'default' => 'Read More',
                         'help' => 'Card link label.'
                     ],
                     [
@@ -6023,7 +6021,7 @@ $pages_config = [
                         'key' => 'news3_link_text',
                         'label' => 'News 3 Link Text',
                         'type' => 'text',
-                        'default' => 'Read About Us',
+                        'default' => 'Read More',
                         'help' => 'Card link label.'
                     ],
                     [
@@ -6081,7 +6079,7 @@ $pages_config = [
                         'key' => 'news4_link_text',
                         'label' => 'News 4 Link Text',
                         'type' => 'text',
-                        'default' => 'View Academic Results',
+                        'default' => 'Read More',
                         'help' => 'Card link label.'
                     ],
                     [

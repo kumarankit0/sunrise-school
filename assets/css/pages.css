@@ -274,8 +274,8 @@ img {
 
 .toppers-modal-dialog {
   position: relative;
-  width: 100%;
-  max-width: 460px;
+  width: fit-content;
+  max-width: min(92vw, 410px);
   max-height: 94vh;
   background-color: #ffffff;
   border-radius: 16px;
@@ -286,6 +286,7 @@ img {
   z-index: 10;
   transform: scale(0.92) translateY(20px);
   transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: auto;
 }
 
 .toppers-modal.open .toppers-modal-dialog {
@@ -334,10 +335,8 @@ img {
   max-height: 68vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #001129;
+  display: block;
   line-height: 0;
 }
 
@@ -345,7 +344,7 @@ img {
   width: 100%;
   height: auto;
   max-height: 68vh;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
 }
 
@@ -360,7 +359,7 @@ img {
     padding: 0.5rem;
   }
   .toppers-modal-dialog {
-    max-width: 100%;
+    max-width: 95vw;
     border-radius: 14px;
     max-height: 96vh;
   }

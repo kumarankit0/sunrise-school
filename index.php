@@ -42,7 +42,7 @@ $hero_slides = [
       </p>
       <div class="hero-cta-group flex items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2 w-full">
         <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('home', 'hero_btn1_link', 'admission.php')) ?>">
-          <span><?= get_text('home', 'hero_btn1_text', 'Admissions 2026–27') ?></span>
+          <span><?= get_text('home', 'hero_btn1_text', 'Admissions 2026â€“27') ?></span>
           <span class="material-symbols-outlined">arrow_forward</span>
         </a>
         <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('home', 'hero_btn2_link', 'campus.php')) ?>">
@@ -79,7 +79,7 @@ $hero_slides = [
           <?php foreach ($ticker_items as $t_item): ?>
             <?php if (!empty(trim(strip_tags($t_item)))): ?>
               <span class="inline-flex items-center gap-2.5">
-                <span class="text-[#C9A24B] font-bold text-base">★</span>
+                <span class="text-[#C9A24B] font-bold text-base">â˜…</span>
                 <span><?= $t_item ?></span>
               </span>
             <?php endif; ?>
@@ -91,7 +91,7 @@ $hero_slides = [
           <?php foreach ($ticker_items as $t_item): ?>
             <?php if (!empty(trim(strip_tags($t_item)))): ?>
               <span class="inline-flex items-center gap-2.5">
-                <span class="text-[#C9A24B] font-bold text-base">★</span>
+                <span class="text-[#C9A24B] font-bold text-base">â˜…</span>
                 <span><?= $t_item ?></span>
               </span>
             <?php endif; ?>
@@ -102,10 +102,10 @@ $hero_slides = [
   </div>
 
   <!-- Welcome / Spotlight & Stats Section -->
-  <section class="w-full py-14 lg:py-24 bg-surface relative overflow-hidden">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+  <section class="w-full py-8 lg:py-12 bg-surface relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-stretch">
       <div class="lg:col-span-6 flex flex-col gap-5 sm:gap-6">
-        <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'legacy_tagline', 'THE SUN RISE LEGACY • ESTD. 2007') ?></div>
+        <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'legacy_tagline', 'THE SUN RISE LEGACY â€¢ ESTD. 2007') ?></div>
         <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug">
           <?= get_text('home', 'legacy_heading', 'A Tradition of Holistic Education &amp; Outstanding Results') ?>
         </h2>
@@ -132,7 +132,7 @@ $hero_slides = [
         </div>
       </div>
       <!-- Live Event Tracker (Replaces 4 Number Cards as Requested) -->
-      <div class="lg:col-span-6 w-full">
+      <div class="lg:col-span-6 w-full flex flex-col h-full">
         <?php 
           $tracker_events = get_live_tracker_events(); 
           $tracker_gold   = get_text('home', 'live_tracker_gold', 'UPCOMING');
@@ -142,10 +142,6 @@ $hero_slides = [
         <div class="live-tracker-card" aria-label="Upcoming School Events & Live Tracker">
           <!-- Header (Matching Reference Design: UPCOMING in Gold, EVENTS in White) -->
           <div class="live-tracker-header">
-            <div class="live-tracker-badge">
-              <span class="live-tracker-pulse-dot" aria-hidden="true"></span>
-              <span><?= htmlspecialchars($tracker_badge) ?></span>
-            </div>
             <h3 class="live-tracker-title">
               <span class="title-gold"><?= htmlspecialchars($tracker_gold) ?></span>
               <span class="title-white"><?= htmlspecialchars($tracker_white) ?></span>
@@ -208,8 +204,8 @@ $hero_slides = [
   </section>
 
   <!-- 3-Card Feature Row: Academics, Sports, Co-curricular -->
-  <section class="w-full py-16 sm:py-24 bg-[#000e21] relative text-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-12 sm:gap-16">
+  <section class="w-full py-8 sm:py-12 bg-[#000e21] relative text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 flex flex-col gap-8 sm:gap-10">
       <!-- Section Header (Centered, 100% Width, Mobile Responsive) -->
       <div class="w-full max-w-4xl mx-auto flex flex-col items-center text-center gap-3">
         <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'pillars_eyebrow', 'WHY CHOOSE SUN RISE') ?></div>
@@ -221,251 +217,194 @@ $hero_slides = [
           <?= get_text('home', 'pillars_desc', 'Our balanced framework ensures intellectual achievement is complemented by discipline, sportsmanship, and creative expression.') ?>
         </p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <!-- Card 1: Academics -->
         <div class="bg-white rounded-xl overflow-hidden border border-white/10 hover:border-[#C9A24B]/50 flex flex-col group hover:-translate-y-1.5 transition-all duration-300 shadow-xl">
-          <div class="h-64 w-full bg-cover bg-center overflow-hidden" style="background-image: url('<?= get_image('home', 'card1_image', school_img('project.webp')) ?>')"></div>
-          <div class="p-8 flex flex-col flex-1 justify-between gap-6">
+          <div class="h-48 w-full bg-cover bg-center overflow-hidden" style="background-image: url('<?= get_image('home', 'card1_image', school_img('project.webp')) ?>')"></div>
+          <div class="p-5 flex flex-col flex-1 justify-between gap-4">
             <div class="flex flex-col gap-3">
               <span class="text-eyebrow text-[#C9A24B]"><?= get_text('home', 'card1_tag', 'HBSE CURRICULUM') ?></span>
               <h3 class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'card1_title', 'Science &amp; Practical Labs') ?></h3>
-              <p class="text-body-md text-on-surface-variant"><?= get_text('home', 'card1_desc', 'State-of-the-art Physics, Chemistry, Biology, and Computer Science laboratories enabling experiential, hands-on scientific learning.') ?></p>
+              <p class="text-body-md text-on-surface-variant pillar-desc line-clamp-2"><?= get_text('home', 'card1_desc', 'State-of-the-art Physics, Chemistry, Biology, and Computer Science laboratories enabling experiential, hands-on scientific learning.') ?></p>
             </div>
-            <a class="inline-flex items-center gap-2 text-label-md text-primary font-bold hover:text-[#C9A24B] transition-colors" href="<?= htmlspecialchars(get_text('home', 'card1_link_url', 'academics.php')) ?>">
-              <?= get_text('home', 'card1_link_text', 'Read More') ?> <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </a>
+            <div class="flex items-center gap-4 flex-wrap">
+              <button class="pillar-readmore inline-flex items-center gap-1 text-sm text-primary font-bold hover:text-[#C9A24B] transition-colors">Read More <span class="material-symbols-outlined text-[15px]">expand_more</span></button>
+              <a class="inline-flex items-center gap-1 text-label-md text-primary font-bold hover:text-[#C9A24B] transition-colors" href="<?= htmlspecialchars(get_text('home', 'card1_link_url', 'academics.php')) ?>">
+                <?= get_text('home', 'card1_link_text', 'Visit Page') ?> <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
           </div>
         </div>
         <!-- Card 2: Sports -->
         <div class="bg-white rounded-xl overflow-hidden border border-white/10 hover:border-[#C9A24B]/50 flex flex-col group hover:-translate-y-1.5 transition-all duration-300 shadow-xl">
-          <div class="h-64 w-full bg-cover bg-center overflow-hidden" style="background-image: url('<?= get_image('home', 'card2_image', school_img('students_ground.webp')) ?>')"></div>
-          <div class="p-8 flex flex-col flex-1 justify-between gap-6">
+          <div class="h-48 w-full bg-cover bg-center overflow-hidden" style="background-image: url('<?= get_image('home', 'card2_image', school_img('students_ground.webp')) ?>')"></div>
+          <div class="p-5 flex flex-col flex-1 justify-between gap-4">
             <div class="flex flex-col gap-3">
               <span class="text-eyebrow text-[#C9A24B]"><?= get_text('home', 'card2_tag', 'ATHLETICS &amp; FITNESS') ?></span>
               <h3 class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'card2_title', 'Sports Ground &amp; Yoga') ?></h3>
-              <p class="text-body-md text-on-surface-variant"><?= get_text('home', 'card2_desc', 'Spacious athletic playfields, track events, cricket, volleyball, football, and daily morning yoga for physical and mental vigour.') ?></p>
+              <p class="text-body-md text-on-surface-variant pillar-desc line-clamp-2"><?= get_text('home', 'card2_desc', 'Spacious athletic playfields, track events, cricket, volleyball, football, and daily morning yoga for physical and mental vigour.') ?></p>
             </div>
-            <a class="inline-flex items-center gap-2 text-label-md text-primary font-bold hover:text-[#C9A24B] transition-colors" href="<?= htmlspecialchars(get_text('home', 'card2_link_url', 'campus.php')) ?>">
-              <?= get_text('home', 'card2_link_text', 'Read More') ?> <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </a>
+            <div class="flex items-center gap-4 flex-wrap">
+              <button class="pillar-readmore inline-flex items-center gap-1 text-sm text-primary font-bold hover:text-[#C9A24B] transition-colors">Read More <span class="material-symbols-outlined text-[15px]">expand_more</span></button>
+              <a class="inline-flex items-center gap-1 text-label-md text-primary font-bold hover:text-[#C9A24B] transition-colors" href="<?= htmlspecialchars(get_text('home', 'card2_link_url', 'campus.php')) ?>">
+                <?= get_text('home', 'card2_link_text', 'Visit Page') ?> <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
           </div>
         </div>
         <!-- Card 3: Co-curricular -->
         <div class="bg-white rounded-xl overflow-hidden border border-white/10 hover:border-[#C9A24B]/50 flex flex-col group hover:-translate-y-1.5 transition-all duration-300 shadow-xl">
-          <div class="h-64 w-full bg-cover bg-center overflow-hidden" style="background-image: url('<?= get_image('home', 'card3_image', school_img('exhibition.webp')) ?>')"></div>
-          <div class="p-8 flex flex-col flex-1 justify-between gap-6">
+          <div class="h-48 w-full bg-cover bg-center overflow-hidden" style="background-image: url('<?= get_image('home', 'card3_image', school_img('exhibition.webp')) ?>')"></div>
+          <div class="p-5 flex flex-col flex-1 justify-between gap-4">
             <div class="flex flex-col gap-3">
               <span class="text-eyebrow text-[#C9A24B]"><?= get_text('home', 'card3_tag', 'INNOVATION &amp; ART') ?></span>
               <h3 class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'card3_title', 'Science &amp; Art Exhibitions') ?></h3>
-              <p class="text-body-md text-on-surface-variant"><?= get_text('home', 'card3_desc', 'Annual science exhibitions, model-making fairs, cultural assemblies, debate contests, and creative arts celebrations.') ?></p>
+              <p class="text-body-md text-on-surface-variant pillar-desc line-clamp-2"><?= get_text('home', 'card3_desc', 'Annual science exhibitions, model-making fairs, cultural assemblies, debate contests, and creative arts celebrations.') ?></p>
             </div>
-            <a class="inline-flex items-center gap-2 text-label-md text-primary font-bold hover:text-[#C9A24B] transition-colors" href="<?= htmlspecialchars(get_text('home', 'card3_link_url', 'gallery.php')) ?>">
-              <?= get_text('home', 'card3_link_text', 'Read More') ?> <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
-            </a>
+            <div class="flex items-center gap-4 flex-wrap">
+              <button class="pillar-readmore inline-flex items-center gap-1 text-sm text-primary font-bold hover:text-[#C9A24B] transition-colors">Read More <span class="material-symbols-outlined text-[15px]">expand_more</span></button>
+              <a class="inline-flex items-center gap-1 text-label-md text-primary font-bold hover:text-[#C9A24B] transition-colors" href="<?= htmlspecialchars(get_text('home', 'card3_link_url', 'gallery.php')) ?>">
+                <?= get_text('home', 'card3_link_text', 'Visit Page') ?> <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+  <script>
+  document.querySelectorAll('.pillar-readmore').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var card = btn.closest('[class*="p-5"]');
+      var desc = card.querySelector('.pillar-desc');
+      var icon = btn.querySelector('.material-symbols-outlined');
+      var isClamped = desc.classList.toggle('line-clamp-2');
+      btn.firstChild.textContent = isClamped ? 'Read More ' : 'Read Less ';
+      icon.textContent = isClamped ? 'expand_more' : 'expand_less';
+    });
+  });
+  </script>
+
 
   <!-- Founder & Director's Message (Image Left, Content Right) -->
-  <section class="w-full py-16 lg:py-24 bg-surface relative">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-5 relative">
-        <div class="absolute -top-4 -left-4 w-full h-full bg-[#C9A24B]/10 rounded-2xl"></div>
-        <div class="relative rounded-xl overflow-hidden shadow-xl aspect-[4/5] bg-cover bg-center" style="background-image: url('<?= get_image('home', 'director_photo', school_img('speaker.webp')) ?>')"></div>
+  <section class="w-full py-8 lg:py-12 bg-surface relative">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+      <!-- Left: Photo â€” smaller col -->
+      <div class="lg:col-span-4 relative flex flex-col">
+        <div class="absolute -top-3 -left-3 w-full h-full bg-[#C9A24B]/10 rounded-2xl"></div>
+        <div class="relative rounded-xl overflow-hidden shadow-xl flex-1 min-h-[320px] bg-cover bg-center" style="background-image: url('<?= get_image('home', 'director_photo', school_img('speaker.webp')) ?>')"></div>
       </div>
-      <div class="lg:col-span-7 flex flex-col gap-5 lg:pl-10">
-        <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'director_tagline', "DIRECTOR'S MESSAGE") ?></div>
-        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug">
-          <?= get_text('home', 'director_heading', "Empowering Dreams &amp; Shaping Tomorrow's Leaders") ?>
-        </h2>
-        <blockquote class="text-title-editorial font-headline-md italic text-on-surface border-l-4 border-[#C9A24B] pl-6 py-2 my-1">
-          <?= get_text('home', 'director_quote', '“Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society.”') ?>
-        </blockquote>
-        <div class="text-body-md text-on-surface-variant font-body flex flex-col gap-3 leading-relaxed">
-          <p>
-            <?= get_text('home', 'director_p1', 'It gives me immense pleasure to welcome you to Sun Rise Sr. Sec. School, Dobhi—a place where we believe that every child is not just a student, but a unique individual with dreams, abilities, and limitless potential. For us, education is much more than books, classrooms, and examinations. It is about shaping minds, nurturing hearts, building character, and preparing young individuals for life.') ?>
-          </p>
-          <p>
-            <?= get_text('home', 'director_p2', 'We strive for the holistic development of every student through quality academics, sports, creativity, cultural activities, discipline, and strong moral values. Along with knowledge, we seek to nurture kindness, confidence, responsibility, resilience, and respect for others. At Sun Rise Sr. Sec. School, we do not simply prepare children for tomorrow; we nurture the individuals who will shape tomorrow.') ?>
-          </p>
-        </div>
-        <div class="pt-3 flex items-center gap-4 border-t border-[#E5E2DA]">
-          <div>
-            <div class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'director_name', 'Mr. Bhader Singh Swami') ?></div>
-            <div class="text-body-sm text-on-surface-variant font-medium"><?= get_text('home', 'director_title', 'Founder &amp; Director, Sun Rise Sr. Sec. School, Dobhi') ?></div>
+      <!-- Right: Content â€” same height as image via items-stretch -->
+      <div class="lg:col-span-8 flex flex-col gap-4 lg:pl-8 justify-between">
+        <div class="flex flex-col gap-3">
+          <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'director_tagline', "DIRECTOR'S MESSAGE") ?></div>
+          <h2 class="text-[1.05rem] sm:text-[1.15rem] font-headline-lg font-bold text-primary tracking-tight leading-snug">
+            <?= get_text('home', 'director_heading', "Empowering Dreams &amp; Shaping Tomorrow's Leaders") ?>
+          </h2>
+          <blockquote class="text-sm italic text-on-surface border-l-4 border-[#C9A24B] pl-4 py-1">
+            <?= get_text('home', 'director_quote', '"Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society."') ?>
+          </blockquote>
+          <div class="text-body-md text-on-surface-variant font-body leading-relaxed">
+            <div id="director-content" class="line-clamp-4">
+              <p><?= get_text('home', 'director_p1', 'It gives me immense pleasure to welcome you to Sun Rise Sr. Sec. School, Dobhiâ€”a place where we believe that every child is not just a student, but a unique individual with dreams, abilities, and limitless potential. For us, education is much more than books, classrooms, and examinations. It is about shaping minds, nurturing hearts, building character, and preparing young individuals for life.') ?></p>
+              <p class="mt-2"><?= get_text('home', 'director_p2', 'We strive for the holistic development of every student through quality academics, sports, creativity, cultural activities, discipline, and strong moral values. Along with knowledge, we seek to nurture kindness, confidence, responsibility, resilience, and respect for others. At Sun Rise Sr. Sec. School, we do not simply prepare children for tomorrow; we nurture the individuals who will shape tomorrow.') ?></p>
+            </div>
+            <button id="director-readmore" class="mt-2 inline-flex items-center gap-1 text-sm text-primary font-bold hover:text-[#C9A24B] transition-colors">
+              Read More <span class="material-symbols-outlined text-[15px]">expand_more</span>
+            </button>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Leadership: Principal & Coordinator (2-Column Responsive Layout) -->
-  <section class="w-full py-16 lg:py-24 bg-[#eaf0f8] relative border-t border-b border-[#000e21]/10">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-10">
-      <!-- Section Header -->
-      <div class="text-center max-w-3xl mx-auto">
-        <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold">
-          <?= get_text('home', 'leadership_tagline', get_text('home', 'principal_tagline', "SCHOOL LEADERSHIP")) ?>
-        </div>
-        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2">
-          <?= get_text('home', 'leadership_heading', get_text('home', 'principal_heading', "Guiding Young Minds Towards Academic Excellence & Character")) ?>
-        </h2>
-      </div>
-
-      <!-- 2 Columns Grid: Left = Principal, Right = Coordinator -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10 items-stretch">
-        <!-- Left Column: Principal -->
-        <div class="bg-surface rounded-2xl border border-border-warm shadow-sm hover:shadow-md transition-all duration-300 flex flex-col p-6 sm:p-8 relative overflow-hidden group">
-          <div class="absolute top-0 left-0 w-full h-1.5 bg-[#001129]"></div>
-          
-          <div class="flex flex-col sm:flex-row gap-6 items-start">
-            <!-- Principal Image -->
-            <div class="relative w-full sm:w-44 h-56 sm:h-52 rounded-xl overflow-hidden shadow-md flex-shrink-0 bg-cover bg-center" style="background-image: url('<?= get_image('home', 'principal_photo', school_img('all_staffmembers.webp')) ?>')">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-2.5 bg-primary/95 text-white text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm">
-                <?= get_text('home', 'principal_role_badge', 'Principal') ?>
-              </span>
-            </div>
-            
-            <!-- Principal Info Header -->
-            <div class="flex flex-col justify-center flex-1">
-              <span class="text-xs font-bold uppercase tracking-widest text-[#C9A24B]">
-                <?= get_text('home', 'principal_tag', 'Academic Head') ?>
-              </span>
-              <h3 class="text-xl sm:text-2xl font-bold text-primary mt-1">
-                <?= get_text('home', 'principal_name', 'Mr. Rajbir Singh') ?>
-              </h3>
-              <div class="text-sm font-semibold text-[#B38C37] mt-0.5">
-                <?= get_text('home', 'principal_title', 'Principal | M.A., B.Ed.') ?>
-              </div>
-              <div class="inline-flex items-center gap-1.5 bg-[#F9F4E8] text-[#B38C37] text-xs font-bold px-2.5 py-1 rounded mt-2.5 border border-[#C9A24B]/30 self-start">
-                <span class="material-symbols-outlined text-[15px]">workspace_premium</span>
-                <?= get_text('home', 'principal_exp', '16 Years Professional Experience') ?>
-              </div>
-            </div>
-          </div>
-
-          <!-- Description -->
-          <div class="mt-6 pt-5 border-t border-border-warm flex-1 flex flex-col justify-between">
-            <p class="text-body-sm sm:text-body-md text-on-surface-variant leading-relaxed text-justify">
-              <?= nl2br(htmlspecialchars(get_text('home', 'principal_desc', 'With 16 years of professional experience in the field of education, Mr. Rajbir Singh serves as the Principal of Sun Rise Sr. Sec. School. He holds M.A. and B.Ed. qualifications and brings a committed approach towards academic administration and student development. As the academic head of the institution, his role encompasses fostering a disciplined and purposeful learning environment, supporting teachers, and ensuring that students receive balanced opportunities for academic, personal, and holistic development.'))) ?>
-            </p>
-            <div class="mt-4 pt-3 flex items-center justify-between text-xs text-on-surface-variant font-medium">
-              <span class="text-primary font-bold">Sun Rise Sr. Sec. School</span>
-              <span class="text-[#C9A24B] font-semibold">Dobhi, Hisar</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column: Coordinator -->
-        <div class="bg-surface rounded-2xl border border-border-warm shadow-sm hover:shadow-md transition-all duration-300 flex flex-col p-6 sm:p-8 relative overflow-hidden group">
-          <div class="absolute top-0 left-0 w-full h-1.5 bg-[#C9A24B]"></div>
-          
-          <div class="flex flex-col sm:flex-row gap-6 items-start">
-            <!-- Coordinator Image -->
-            <div class="relative w-full sm:w-44 h-56 sm:h-52 rounded-xl overflow-hidden shadow-md flex-shrink-0 bg-cover bg-center" style="background-image: url('<?= get_image('home', 'coordinator_photo', school_img('all_staffmembers.webp')) ?>')">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent"></div>
-              <span class="absolute bottom-2.5 left-2.5 bg-[#C9A24B] text-[#001129] text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm">
-                <?= get_text('home', 'coordinator_role_badge', 'Coordinator') ?>
-              </span>
-            </div>
-            
-            <!-- Coordinator Info Header -->
-            <div class="flex flex-col justify-center flex-1">
-              <span class="text-xs font-bold uppercase tracking-widest text-[#C9A24B]">
-                <?= get_text('home', 'coordinator_tag', 'Administration & Coordination') ?>
-              </span>
-              <h3 class="text-xl sm:text-2xl font-bold text-primary mt-1">
-                <?= get_text('home', 'coordinator_name', 'Mr. Indra Dev') ?>
-              </h3>
-              <div class="text-sm font-semibold text-[#B38C37] mt-0.5">
-                <?= get_text('home', 'coordinator_title', 'Coordinator | B.A., M.A., LL.B., LL.M.') ?>
-              </div>
-              <div class="inline-flex items-center gap-1.5 bg-[#F9F4E8] text-[#B38C37] text-xs font-bold px-2.5 py-1 rounded mt-2.5 border border-[#C9A24B]/30 self-start">
-                <span class="material-symbols-outlined text-[15px]">workspace_premium</span>
-                <?= get_text('home', 'coordinator_exp', '22 Years Exp • Former GM, RBI') ?>
-              </div>
-            </div>
-          </div>
-
-          <!-- Description -->
-          <div class="mt-6 pt-5 border-t border-border-warm flex-1 flex flex-col justify-between">
-            <p class="text-body-sm sm:text-body-md text-on-surface-variant leading-relaxed text-justify">
-              <?= nl2br(htmlspecialchars(get_text('home', 'coordinator_desc', 'Mr. Indra Dev brings 22 years of professional experience and a distinguished academic background comprising B.A., M.A., LL.B., and LL.M. qualifications. Prior to his association with Sun Rise Sr. Sec. School, he served as a General Manager at the Reserve Bank of India (RBI), a position reflecting substantial professional responsibility and administrative experience. His diverse academic and professional background brings a distinctive perspective to the institution, contributing to its organisational discipline, administrative framework, and educational development. His experience across education, law, and institutional administration strengthens the school’s endeavour to maintain high standards of professionalism and responsible leadership.'))) ?>
-            </p>
-            <div class="mt-4 pt-3 flex items-center justify-between text-xs text-on-surface-variant font-medium">
-              <span class="text-primary font-bold">Sun Rise Sr. Sec. School</span>
-              <span class="text-[#C9A24B] font-semibold">Dobhi, Hisar</span>
-            </div>
-          </div>
+        <div class="pt-3 border-t border-[#E5E2DA]">
+          <div class="text-headline-sm font-headline-sm text-primary font-bold"><?= get_text('home', 'director_name', 'Mr. Bhader Singh Swami') ?></div>
+          <div class="text-body-sm text-on-surface-variant font-medium mt-0.5"><?= get_text('home', 'director_title', 'Founder &amp; Director, Sun Rise Sr. Sec. School, Dobhi') ?></div>
         </div>
       </div>
     </div>
   </section>
+  <script>
+  (function() {
+    var btn = document.getElementById('director-readmore');
+    var content = document.getElementById('director-content');
+    if (btn && content) {
+      btn.addEventListener('click', function() {
+        var clamped = content.classList.toggle('line-clamp-4');
+        var icon = btn.querySelector('.material-symbols-outlined');
+        btn.firstChild.textContent = clamped ? 'Read More ' : 'Read Less ';
+        icon.textContent = clamped ? 'expand_more' : 'expand_less';
+      });
+    }
+  })();
+  </script>
+
+
+
+
+
+
+
 
   <!-- Upcoming Events & News Section -->
-  <section class="w-full py-24 bg-surface-container-low">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-12">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+  <section class="w-full py-8 sm:py-12 bg-[#000e21]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'events_eyebrow', 'NOTICES &amp; HAPPENINGS') ?></div>
-          <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('home', 'events_heading', 'School Events &amp; News') ?></h2>
+          <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'events_eyebrow', 'LATEST EVENTS AND NEWS') ?></div>
+          <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-white tracking-tight leading-snug mt-1"><?= get_text('home', 'events_heading', 'School Events &amp; News') ?></h2>
         </div>
-        <a class="inline-flex items-center gap-2 text-label-md text-primary font-bold hover:text-[#C9A24B] transition-colors" href="events.php">
+        <a class="inline-flex items-center gap-2 text-label-md text-[#C9A24B] font-bold hover:text-white transition-colors" href="events.php">
           View All Events <span class="material-symbols-outlined text-[16px]">arrow_forward</span>
         </a>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <!-- Event Card 1 -->
-        <div class="bg-surface rounded-xl overflow-hidden border border-border-warm flex flex-col justify-between p-8 gap-6 shadow-sm">
-          <div class="flex flex-col gap-4">
+        <div class="bg-[#f0f6ff] rounded-xl overflow-hidden border border-blue-100 flex flex-col justify-between p-6 gap-5 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 duration-300">
+          <div class="flex flex-col gap-3">
             <div class="flex justify-between items-center">
-              <span class="bg-[#C9A24B]/10 text-[#C9A24B] px-3 py-1 rounded text-eyebrow font-bold"><?= get_text('home', 'event1_tag', 'ACADEMIC') ?></span>
-              <span class="text-body-sm text-on-surface-variant font-bold"><?= get_text('home', 'event1_badge', 'ANNUAL') ?></span>
+              <span class="bg-[#C9A24B]/15 text-[#8B6914] px-3 py-1 rounded text-eyebrow font-bold"><?= get_text('home', 'event1_tag', 'ACADEMIC') ?></span>
+              <span class="text-body-sm text-slate-500 font-bold"><?= get_text('home', 'event1_badge', 'ANNUAL') ?></span>
             </div>
-            <h3 class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'event1_title', 'Annual Science &amp; Innovation Exhibition') ?></h3>
-            <p class="text-body-md text-on-surface-variant"><?= get_text('home', 'event1_desc', 'Students display innovative working models, robotics experiments, and environmental science projects.') ?></p>
+            <h3 class="text-headline-sm font-headline-sm text-[#001129]"><?= get_text('home', 'event1_title', 'Annual Science &amp; Innovation Exhibition') ?></h3>
+            <p class="text-body-md text-slate-600"><?= get_text('home', 'event1_desc', 'Students display innovative working models, robotics experiments, and environmental science projects.') ?></p>
           </div>
-          <div class="pt-4 border-t border-border-warm flex justify-between items-center">
-            <span class="text-body-sm font-bold text-primary"><?= get_text('home', 'event1_loc', 'School Campus') ?></span>
-            <a class="text-label-md text-[#C9A24B] font-bold hover:underline" href="<?= htmlspecialchars(get_text('home', 'event1_link', 'events.php')) ?>">Explore Details →</a>
+          <div class="pt-3 border-t border-blue-200 flex justify-between items-center">
+            <span class="text-body-sm font-bold text-[#001129]"><?= get_text('home', 'event1_loc', 'School Campus') ?></span>
+            <a class="text-label-md text-[#C9A24B] font-bold hover:underline" href="<?= htmlspecialchars(get_text('home', 'event1_link', 'events.php')) ?>">Explore Details â†’</a>
           </div>
         </div>
         <!-- Event Card 2 -->
-        <div class="bg-surface rounded-xl overflow-hidden border border-border-warm flex flex-col justify-between p-8 gap-6 shadow-sm">
-          <div class="flex flex-col gap-4">
+        <div class="bg-[#f0f6ff] rounded-xl overflow-hidden border border-blue-100 flex flex-col justify-between p-6 gap-5 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 duration-300">
+          <div class="flex flex-col gap-3">
             <div class="flex justify-between items-center">
-              <span class="bg-[#C9A24B]/10 text-[#C9A24B] px-3 py-1 rounded text-eyebrow font-bold"><?= get_text('home', 'event2_tag', 'CEREMONY') ?></span>
-              <span class="text-body-sm text-on-surface-variant font-bold"><?= get_text('home', 'event2_badge', 'AWARDS') ?></span>
+              <span class="bg-[#C9A24B]/15 text-[#8B6914] px-3 py-1 rounded text-eyebrow font-bold"><?= get_text('home', 'event2_tag', 'CEREMONY') ?></span>
+              <span class="text-body-sm text-slate-500 font-bold"><?= get_text('home', 'event2_badge', 'AWARDS') ?></span>
             </div>
-            <h3 class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'event2_title', 'Prize Distribution &amp; Felicitation Day') ?></h3>
-            <p class="text-body-md text-on-surface-variant"><?= get_text('home', 'event2_desc', 'Honouring board exam toppers, scholarship achievers, and sports champions with merit awards.') ?></p>
+            <h3 class="text-headline-sm font-headline-sm text-[#001129]"><?= get_text('home', 'event2_title', 'Prize Distribution &amp; Felicitation Day') ?></h3>
+            <p class="text-body-md text-slate-600"><?= get_text('home', 'event2_desc', 'Honouring board exam toppers, scholarship achievers, and sports champions with merit awards.') ?></p>
           </div>
-          <div class="pt-4 border-t border-border-warm flex justify-between items-center">
-            <span class="text-body-sm font-bold text-primary"><?= get_text('home', 'event2_loc', 'Main Auditorium') ?></span>
-            <a class="text-label-md text-[#C9A24B] font-bold hover:underline" href="<?= htmlspecialchars(get_text('home', 'event2_link', 'events.php')) ?>">Learn More →</a>
+          <div class="pt-3 border-t border-blue-200 flex justify-between items-center">
+            <span class="text-body-sm font-bold text-[#001129]"><?= get_text('home', 'event2_loc', 'Main Auditorium') ?></span>
+            <a class="text-label-md text-[#C9A24B] font-bold hover:underline" href="<?= htmlspecialchars(get_text('home', 'event2_link', 'events.php')) ?>">Learn More â†’</a>
           </div>
         </div>
         <!-- Event Card 3 -->
-        <div class="bg-surface rounded-xl overflow-hidden border border-border-warm flex flex-col justify-between p-8 gap-6 shadow-sm">
-          <div class="flex flex-col gap-4">
+        <div class="bg-[#f0f6ff] rounded-xl overflow-hidden border border-blue-100 flex flex-col justify-between p-6 gap-5 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 duration-300">
+          <div class="flex flex-col gap-3">
             <div class="flex justify-between items-center">
-              <span class="bg-[#C9A24B]/10 text-[#C9A24B] px-3 py-1 rounded text-eyebrow font-bold"><?= get_text('home', 'event3_tag', 'CELEBRATION') ?></span>
-              <span class="text-body-sm text-on-surface-variant font-bold"><?= get_text('home', 'event3_badge', 'NATIONAL') ?></span>
+              <span class="bg-[#C9A24B]/15 text-[#8B6914] px-3 py-1 rounded text-eyebrow font-bold"><?= get_text('home', 'event3_tag', 'CELEBRATION') ?></span>
+              <span class="text-body-sm text-slate-500 font-bold"><?= get_text('home', 'event3_badge', 'NATIONAL') ?></span>
             </div>
-            <h3 class="text-headline-sm font-headline-sm text-primary"><?= get_text('home', 'event3_title', 'National Festivals &amp; Cultural Assemblies') ?></h3>
-            <p class="text-body-md text-on-surface-variant"><?= get_text('home', 'event3_desc', 'Flag hoisting ceremony, patriotic songs, cultural dances, and speeches commemorating national heritage.') ?></p>
+            <h3 class="text-headline-sm font-headline-sm text-[#001129]"><?= get_text('home', 'event3_title', 'National Festivals &amp; Cultural Assemblies') ?></h3>
+            <p class="text-body-md text-slate-600"><?= get_text('home', 'event3_desc', 'Flag hoisting ceremony, patriotic songs, cultural dances, and speeches commemorating national heritage.') ?></p>
           </div>
-          <div class="pt-4 border-t border-border-warm flex justify-between items-center">
-            <span class="text-body-sm font-bold text-primary"><?= get_text('home', 'event3_loc', 'Assembly Ground') ?></span>
-            <a class="text-label-md text-[#C9A24B] font-bold hover:underline" href="<?= htmlspecialchars(get_text('home', 'event3_link', 'events.php')) ?>">View Gallery →</a>
+          <div class="pt-3 border-t border-blue-200 flex justify-between items-center">
+            <span class="text-body-sm font-bold text-[#001129]"><?= get_text('home', 'event3_loc', 'Assembly Ground') ?></span>
+            <a class="text-label-md text-[#C9A24B] font-bold hover:underline" href="<?= htmlspecialchars(get_text('home', 'event3_link', 'events.php')) ?>">View Gallery â†’</a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
 
   <!-- Photo Gallery Preview (Dual-Row Infinite Sliding Showcase) -->
   <?php
@@ -487,8 +426,8 @@ $hero_slides = [
       ['img' => get_image('home', 'glimpse12_img', school_img('teachers_and_students.webp')), 'title' => get_text('home', 'glimpse12_title', 'Student-Faculty Mentorship'), 'desc' => get_text('home', 'glimpse12_caption', 'Personalized guidance and caring educator support.')],
     ];
   ?>
-  <section class="w-full py-16 sm:py-24 bg-[#eaf0f8] relative overflow-hidden" style="background-color: rgb(234 240 248 / var(--tw-bg-opacity, 1));">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-6 mb-8 sm:mb-10">
+  <section class="w-full py-8 sm:py-12 bg-[#eaf0f8] relative overflow-hidden" style="background-color: rgb(234 240 248 / var(--tw-bg-opacity, 1));">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 flex flex-col gap-4 mb-5 sm:mb-6">
       <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
           <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'gallery_eyebrow', 'CAMPUS GLIMPSES') ?></div>

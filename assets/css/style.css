@@ -440,6 +440,7 @@ h3.font-headline-sm,
 
 .live-tracker-card {
   width: 100%;
+  height: 100%;
   background-color: #ffffff;
   border-radius: 1.25rem;
   border: 1px solid #E5E2DA;
@@ -452,14 +453,14 @@ h3.font-headline-sm,
 
 /* Tracker Header */
 .live-tracker-header {
-  padding: 1.25rem 1.5rem 1.1rem;
+  padding: 0.75rem 1.5rem;
   background-color: #000e21;
   border-bottom: 1px solid rgba(201, 162, 75, 0.35);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.45rem;
+  gap: 0.3rem;
   position: relative;
   z-index: 2;
 }
@@ -522,7 +523,8 @@ h3.font-headline-sm,
 
 /* Scroll Window & Mask */
 .live-tracker-window {
-  height: 310px;
+  flex: 1 1 0;
+  min-height: 0;
   overflow: hidden;
   position: relative;
   padding: 0.5rem 1.25rem;

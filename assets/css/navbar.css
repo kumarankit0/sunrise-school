@@ -33,31 +33,31 @@ main {
   }
 }
 
-/* Top Utility Bar (Exact layout from reference with Navy/Gold Theme) */
+/* Top Utility Bar (Green Theme) */
 .top-utility-bar {
-  background-color: #001129;
+  background-color: #1a6b2e;
   color: #f1f5f9;
-  padding: 0.28rem 0;
-  font-size: 11px;
+  padding: 0.85rem 0;
+  font-size: 13px;
   font-weight: 600;
   width: 100%;
   transition: all var(--transition-normal);
-  border-bottom: 1px solid rgba(201, 162, 75, 0.22);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   font-family: 'Inter', sans-serif;
   overflow-x: clip;
 }
 
 @media (min-width: 640px) {
   .top-utility-bar {
-    padding: 0.35rem 0;
-    font-size: 12px;
+    padding: 0.9rem 0;
+    font-size: 14px;
   }
 }
 
 @media (min-width: 1024px) {
   .top-utility-bar {
-    padding: 0.4rem 0;
-    font-size: 12.5px;
+    padding: 0.95rem 0;
+    font-size: 15px;
   }
 }
 
@@ -115,7 +115,7 @@ main {
 .top-nav-item {
   color: #f1f5f9;
   text-decoration: none;
-  font-size: 12.5px;
+  font-size: 15px;
   font-weight: 500;
   transition: color 0.18s ease;
   white-space: nowrap;

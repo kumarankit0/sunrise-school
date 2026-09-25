@@ -787,66 +787,111 @@ h3.font-headline-sm,
 }
 
 /* ==========================================================================
-   Universal Hero Section Responsive Mobile Styles (Strict Boundary & Overflow Containment)
+   Universal Hero Section Responsive Styles (Fixed Height & Strict Containment)
    ========================================================================== */
 .hero-section {
-  position: relative;
-  width: 100%;
-  min-height: 60vh;
-  padding-top: 3.25rem !important;
-  padding-bottom: 3.25rem !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 58vh !important;
+  min-height: 380px !important;
+  max-height: 520px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   overflow: hidden !important;
-  clip-path: inset(0) !important;
-  -webkit-clip-path: inset(0) !important;
-  contain: paint !important;
-  isolation: isolate;
-  z-index: 1;
+  clip-path: inset(0px) !important;
+  -webkit-clip-path: inset(0px) !important;
+  contain: layout paint size !important;
+  isolation: isolate !important;
+  z-index: 1 !important;
+  box-sizing: border-box !important;
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
 }
 
-@media (min-width: 480px) {
+/* Homepage Hero Slider Specific Height */
+.hero-section:has(#hero-box-slider) {
+  height: 68vh !important;
+  min-height: 440px !important;
+  max-height: 620px !important;
+}
+
+@media (max-width: 640px) {
   .hero-section {
-    min-height: 65vh;
-    padding-top: 3.75rem !important;
-    padding-bottom: 3.75rem !important;
+    height: 52vh !important;
+    min-height: 340px !important;
+    max-height: 420px !important;
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .hero-section:has(#hero-box-slider) {
+    height: 58vh !important;
+    min-height: 380px !important;
+    max-height: 480px !important;
   }
 }
 
-@media (min-width: 640px) {
+@media (min-width: 641px) and (max-width: 1023px) {
   .hero-section {
-    min-height: 72vh;
-    padding-top: 4.5rem !important;
-    padding-bottom: 4.5rem !important;
+    height: 56vh !important;
+    min-height: 380px !important;
+    max-height: 480px !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .hero-section:has(#hero-box-slider) {
+    height: 64vh !important;
+    min-height: 420px !important;
+    max-height: 560px !important;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-section {
-    min-height: 85vh;
-    padding-top: 5.5rem !important;
-    padding-bottom: 5.5rem !important;
+    height: 62vh !important;
+    min-height: 420px !important;
+    max-height: 540px !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
+  .hero-section:has(#hero-box-slider) {
+    height: 70vh !important;
+    min-height: 480px !important;
+    max-height: 640px !important;
   }
 }
 
-/* Ensure all hero background banners across all pages stay perfectly inside container */
+/* Ensure all hero background banners and slider images stay strictly inside container */
 .hero-section [class*="absolute"][class*="bg-cover"],
 .hero-section .hero-slide-base,
-.hero-section .hero-bg-banner {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  background-size: cover;
-  background-position: center center;
+.hero-section .hero-bg-banner,
+.hero-section img.hero-bg-banner {
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  background-size: cover !important;
+  background-position: center center !important;
   background-repeat: no-repeat !important;
-  pointer-events: none;
-  overflow: hidden;
-  clip-path: inset(0);
-  -webkit-clip-path: inset(0);
-  transform: translateZ(0);
+  pointer-events: none !important;
+  overflow: hidden !important;
+  clip-path: inset(0px) !important;
+  -webkit-clip-path: inset(0px) !important;
+  transform: translateZ(0) !important;
+  z-index: 0 !important;
 }
 
 .hero-content {
+  position: relative !important;
+  z-index: 10 !important;
+  max-height: 100% !important;
   gap: 0.75rem !important;
 }
 

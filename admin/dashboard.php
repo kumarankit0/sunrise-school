@@ -1,19 +1,10 @@
 <?php
-/**
- * Superuser Admin CMS Dashboard
- * Sun Rise Sr. Sec. School, Dobhi
- *
- * Full-featured visual administration interface organized section-by-section
- * from top to bottom matching each webpage. Allows superusers to edit text,
- * rich HTML, and replace images directly without opening codebase.
- */
 
 require_once __DIR__ . '/../includes/auth.php';
 require_once __DIR__ . '/../includes/csrf.php';
 require_once __DIR__ . '/../includes/db.php';
 require_once __DIR__ . '/../includes/content_helper.php';
 
-// Enforce authentication
 require_login();
 
 $user = get_logged_in_user();
@@ -3960,22 +3951,6 @@ $pages_config = [
                         'default' => '15 - 17 Years',
                         'help' => 'Card 1 age.'
                     ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c1_monthly_fee',
-                        'label' => 'Card 1 Monthly Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '1000',
-                        'help' => 'Monthly tuition fee in rupees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c1_reg_fee',
-                        'label' => 'Card 1 Registration Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '300',
-                        'help' => 'Registration form fee in rupees.'
-                    ],
 
                     // Card 2: Class 11 Med
                     [
@@ -4009,22 +3984,6 @@ $pages_config = [
                         'type' => 'text',
                         'default' => '15 - 17 Years',
                         'help' => 'Card 2 age.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c2_monthly_fee',
-                        'label' => 'Card 2 Monthly Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '1000',
-                        'help' => 'Monthly tuition fee in rupees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c2_reg_fee',
-                        'label' => 'Card 2 Registration Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '300',
-                        'help' => 'Registration form fee in rupees.'
                     ],
 
                     // Card 3: Class 11 Commerce & Arts
@@ -4060,22 +4019,6 @@ $pages_config = [
                         'default' => '15 - 17 Years',
                         'help' => 'Card 3 age.'
                     ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c3_monthly_fee',
-                        'label' => 'Card 3 Monthly Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '950',
-                        'help' => 'Monthly tuition fee in rupees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c3_reg_fee',
-                        'label' => 'Card 3 Registration Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '300',
-                        'help' => 'Registration form fee in rupees.'
-                    ],
 
                     // Card 4: Secondary Class 9 & 10
                     [
@@ -4109,22 +4052,6 @@ $pages_config = [
                         'type' => 'text',
                         'default' => '13 - 15 Years',
                         'help' => 'Card 4 age.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c4_monthly_fee',
-                        'label' => 'Card 4 Monthly Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '900',
-                        'help' => 'Monthly tuition fee in rupees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c4_reg_fee',
-                        'label' => 'Card 4 Registration Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '250',
-                        'help' => 'Registration form fee in rupees.'
                     ],
 
                     // Card 5: Middle Wing 6 to 8
@@ -4160,22 +4087,6 @@ $pages_config = [
                         'default' => '10 - 13 Years',
                         'help' => 'Card 5 age.'
                     ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c5_monthly_fee',
-                        'label' => 'Card 5 Monthly Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '800',
-                        'help' => 'Monthly tuition fee in rupees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c5_reg_fee',
-                        'label' => 'Card 5 Registration Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '200',
-                        'help' => 'Registration form fee in rupees.'
-                    ],
 
                     // Card 6: Primary Wing 1 to 5
                     [
@@ -4209,22 +4120,6 @@ $pages_config = [
                         'type' => 'text',
                         'default' => '5 - 10 Years',
                         'help' => 'Card 6 age.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c6_monthly_fee',
-                        'label' => 'Card 6 Monthly Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '700',
-                        'help' => 'Monthly tuition fee in rupees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c6_reg_fee',
-                        'label' => 'Card 6 Registration Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '200',
-                        'help' => 'Registration form fee in rupees.'
                     ],
 
                     // Card 7: Pre-Primary Nursery & KG
@@ -4260,22 +4155,6 @@ $pages_config = [
                         'default' => '3 - 5 Years',
                         'help' => 'Card 7 age.'
                     ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c7_monthly_fee',
-                        'label' => 'Card 7 Monthly Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '600',
-                        'help' => 'Monthly tuition fee in rupees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c7_reg_fee',
-                        'label' => 'Card 7 Registration Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '200',
-                        'help' => 'Registration form fee in rupees.'
-                    ],
 
                     // Card 8: Class 12 Transfer Entry
                     [
@@ -4309,22 +4188,6 @@ $pages_config = [
                         'type' => 'text',
                         'default' => '16 - 18 Years',
                         'help' => 'Card 8 age.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c8_monthly_fee',
-                        'label' => 'Card 8 Monthly Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '1000',
-                        'help' => 'Monthly tuition fee in rupees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'c8_reg_fee',
-                        'label' => 'Card 8 Registration Fee (in ₹)',
-                        'type' => 'text',
-                        'default' => '350',
-                        'help' => 'Registration form fee in rupees.'
                     ]
                 ]
             ],
@@ -4333,7 +4196,7 @@ $pages_config = [
             [
                 'title' => 'Section 4: School Bus Transit & Document Verification Checklist',
                 'icon'  => 'directions_bus',
-                'desc'  => 'Bus network coverage description, default route fare, and required document upload item titles.',
+                'desc'  => 'Bus network coverage description, default route details, and required document upload item titles.',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -4366,14 +4229,6 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'Pick-up at Main Stand / Doorway (₹300/month)',
                         'help' => 'Bus route details.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'bus_route_fare',
-                        'label' => 'Default Bus Monthly Fare (in ₹)',
-                        'type' => 'text',
-                        'default' => '300',
-                        'help' => 'Numeric monthly bus fare used in checkout calculation.'
                     ],
                     [
                         'kind' => 'text',
@@ -4466,240 +4321,15 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'discount_title',
-                        'label' => 'Welcome Concession Title',
-                        'type' => 'text',
-                        'default' => 'Special Welcome Discount',
-                        'help' => 'Title of discount pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'discount_desc',
-                        'label' => 'Welcome Concession Subtitle',
-                        'type' => 'text',
-                        'default' => '₹200 concession applied on 1st month',
-                        'help' => 'Discount explanation.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'discount_val',
-                        'label' => 'Welcome Concession Amount (in ₹)',
-                        'type' => 'text',
-                        'default' => '200',
-                        'help' => 'Numeric discount subtracted in live checkout calculation.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'token_val',
-                        'label' => 'Seat Lock Token Base Amount (in ₹)',
-                        'type' => 'text',
-                        'default' => '500',
-                        'help' => 'Numeric base amount for token tier.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'upi_vpa',
-                        'label' => 'Official School UPI VPA Address',
-                        'type' => 'text',
-                        'default' => 'sunrise.dobhi@icici',
-                        'help' => 'UPI ID displayed below the QR code.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'upi_instruction',
-                        'label' => 'UPI QR Instruction Line',
-                        'type' => 'text',
-                        'default' => 'Scan via GPay, PhonePe, Paytm or BHIM',
-                        'help' => 'Instruction above the VPA address.'
-                    ],
-                    [
-                        'kind' => 'text',
                         'key' => 'checkout_cta_btn',
                         'label' => 'Checkout Primary Button Text',
                         'type' => 'text',
                         'default' => 'Proceed to Secure Checkout & Reserve Seat →',
                         'help' => 'Label for the main checkout button.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'checkout_refund_note',
-                        'label' => '100% Refund Policy Guarantee Note',
-                        'type' => 'textarea',
-                        'default' => '* Note: If entrance assessment is not cleared, 100% tuition and seat advance is refunded within 7 working days to source bank.',
-                        'help' => 'Notice shown below checkout trust badges.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'checkout_help_text',
-                        'label' => 'Checkout Micro-Helpdesk Prompt',
-                        'type' => 'text',
-                        'default' => 'Facing issues with online payment?',
-                        'help' => 'Prompt text in the bottom checkout widget.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'checkout_help_phone',
-                        'label' => 'Checkout Micro-Helpdesk Contact Line',
-                        'type' => 'text',
-                        'default' => 'Direct Help Desk: +91 70158 90094 / +91 79883 5710',
-                        'help' => 'Phone numbers shown in the bottom checkout widget.'
                     ]
                 ]
             ],
 
-            // Section 6: Class-wise Fee Schedule Table & Prospectus Download
-            [
-                'title' => 'Section 6: Class-wise Fee Schedule Table & Prospectus Download',
-                'icon'  => 'payments',
-                'desc'  => 'Section header, prospectus PDF download button, and annual fee estimates for each grade bracket.',
-                'fields' => [
-                    [
-                        'kind' => 'text',
-                        'key' => 'fee_matrix_eyebrow',
-                        'label' => 'Fee Matrix Eyebrow Tag',
-                        'type' => 'text',
-                        'default' => 'Transparent Fee Schedule',
-                        'help' => 'Eyebrow tag.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'fee_matrix_heading',
-                        'label' => 'Fee Matrix Heading',
-                        'type' => 'text',
-                        'default' => 'Class-wise Academic Year Matrix (2026–27)',
-                        'help' => 'Table headline.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'fee_matrix_desc',
-                        'label' => 'Fee Matrix Subtitle',
-                        'type' => 'text',
-                        'default' => 'No hidden charges. Highly affordable monthly tuition (₹600 – ₹1,000 / month) with concessions for merit scholars and siblings.',
-                        'help' => 'Table subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'prospectus_pdf_text',
-                        'label' => 'Prospectus Download Button Text',
-                        'type' => 'text',
-                        'default' => 'Download Official Fee Prospectus PDF',
-                        'help' => 'Button label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'prospectus_pdf_url',
-                        'label' => 'Prospectus PDF Document URL',
-                        'type' => 'text',
-                        'default' => '#',
-                        'help' => 'Target path or URL for the fee prospectus file.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'table_r1_annual',
-                        'label' => 'Pre-Primary Annual Estimate (in ₹)',
-                        'type' => 'text',
-                        'default' => '₹7,800',
-                        'help' => 'Annual estimate in row 1.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'table_r2_annual',
-                        'label' => 'Primary School Annual Estimate (in ₹)',
-                        'type' => 'text',
-                        'default' => '₹9,100',
-                        'help' => 'Annual estimate in row 2.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'table_r3_annual',
-                        'label' => 'Middle School Annual Estimate (in ₹)',
-                        'type' => 'text',
-                        'default' => '₹10,400',
-                        'help' => 'Annual estimate in row 3.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'table_r4_annual',
-                        'label' => 'Secondary School Annual Estimate (in ₹)',
-                        'type' => 'text',
-                        'default' => '₹11,850',
-                        'help' => 'Annual estimate in row 4.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'table_r5_annual',
-                        'label' => 'Senior Sec Science Annual Estimate (in ₹)',
-                        'type' => 'text',
-                        'default' => '₹13,300',
-                        'help' => 'Annual estimate in row 5.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'table_r6_annual',
-                        'label' => 'Senior Sec Commerce Annual Estimate (in ₹)',
-                        'type' => 'text',
-                        'default' => '₹12,500',
-                        'help' => 'Annual estimate in row 6.'
-                    ]
-                ]
-            ],
-
-            // Section 7: Fee Concessions & Welfare Schemes
-            [
-                'title' => 'Section 7: Fee Concessions & Welfare Schemes (3 Policy Cards)',
-                'icon'  => 'redeem',
-                'desc'  => 'Titles and terms for Merit Scholarships, Sibling Concessions, and Defence Personnel benefits.',
-                'fields' => [
-                    [
-                        'kind' => 'text',
-                        'key' => 'scheme1_title',
-                        'label' => 'Scheme 1 Title (Merit Scholarship)',
-                        'type' => 'text',
-                        'default' => 'Merit Scholarship (HBSE 90%+)',
-                        'help' => 'Card 1 title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'scheme1_desc',
-                        'label' => 'Scheme 1 Description',
-                        'type' => 'text',
-                        'default' => 'Up to 25% waiver on monthly tuition fees for students scoring above 90% in prior board exams.',
-                        'help' => 'Card 1 details.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'scheme2_title',
-                        'label' => 'Scheme 2 Title (Sibling Concession)',
-                        'type' => 'text',
-                        'default' => 'Sibling Concession Scheme',
-                        'help' => 'Card 2 title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'scheme2_desc',
-                        'label' => 'Scheme 2 Description',
-                        'type' => 'text',
-                        'default' => '15% discount on monthly tuition fees for the second biological child studying concurrently in school.',
-                        'help' => 'Card 2 details.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'scheme3_title',
-                        'label' => 'Scheme 3 Title (Defence & Police)',
-                        'type' => 'text',
-                        'default' => 'Defence & Police Personnel',
-                        'help' => 'Card 3 title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'scheme3_desc',
-                        'label' => 'Scheme 3 Description',
-                        'type' => 'text',
-                        'default' => 'Special educational welfare concession of ₹300 / month for children of armed service personnel.',
-                        'help' => 'Card 3 details.'
-                    ]
-                ]
-            ],
 
             // Section 8: Document Verification Checklist & Campus Tour Booking
             [
@@ -7252,9 +6882,9 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'dept3_icon',
-                        'label' => 'Dept 3 Icon (e.g. query_stats, account_balance)',
+                        'label' => 'Dept 3 Icon (e.g. trending_up, account_balance)',
                         'type' => 'text',
-                        'default' => 'query_stats',
+                        'default' => 'trending_up',
                         'help' => 'Icon identifier.'
                     ],
                     [
@@ -8569,20 +8199,12 @@ $pages_config = [
                         'help' => 'Visiting policy note.'
                     ],
                     [
-                        'kind' => 'image',
-                        'key' => 'campus_photo',
-                        'label' => 'Campus View Photo',
-                        'default' => 'assets/images/sunrise school image/school2.webp',
-                        'alt' => 'Sun Rise Campus View, Dobhi',
-                        'help' => 'Featured photo card image.'
-                    ],
-                    [
                         'kind' => 'text',
-                        'key' => 'campus_caption',
-                        'label' => 'Campus Photo Caption Badge',
+                        'key' => 'info_status_badge',
+                        'label' => 'Admissions Desk Status Badge',
                         'type' => 'text',
-                        'default' => 'Sun Rise Campus View, Dobhi',
-                        'help' => 'Caption pill on top of the campus photo.'
+                        'default' => 'Admissions Desk Open',
+                        'help' => 'Status pill badge at the bottom of the contact card (e.g. Admissions Desk Open).'
                     ]
                 ]
             ],
@@ -9384,130 +9006,42 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'footer_col2_link5_text',
-                        'label' => 'Col 2 - Link 5 Text',
+                        'key' => 'footer_col2_link7_text',
+                        'label' => 'Col 2 - Link 5 Text (Careers)',
                         'type' => 'text',
-                        'default' => 'Fee Structure',
-                        'help' => 'Link 5 label.'
+                        'default' => 'Careers & Vacancies',
+                        'help' => 'Link 5 label in footer.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'footer_col2_link5_url',
+                        'key' => 'footer_col2_link7_url',
                         'label' => 'Col 2 - Link 5 URL',
                         'type' => 'text',
-                        'default' => 'admission.php#fee-structure',
-                        'help' => 'Link 5 destination.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col2_link6_text',
-                        'label' => 'Col 2 - Link 6 Text',
-                        'type' => 'text',
-                        'default' => 'TC & Certificates',
-                        'help' => 'Link 6 label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col2_link6_url',
-                        'label' => 'Col 2 - Link 6 URL',
-                        'type' => 'text',
-                        'default' => 'contact-us.php',
-                        'help' => 'Link 6 destination.'
+                        'default' => 'contact-us.php#careers',
+                        'help' => 'Link 5 destination in footer.'
                     ]
                 ]
             ],
             [
-                'title' => 'Section 6: Footer Column 3 & 4 (Other Projects & Campus Map)',
+                'title' => 'Section 6: Footer Column 3 & 4 (Social Connect & Campus Map)',
                 'icon'  => 'map',
-                'desc'  => 'Column 3 Initiative links, and Column 4 Google Map embed iframe with external map button.',
+                'desc'  => 'Column 3 Heading & description, and Column 4 Google Map embed iframe with external map button.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'footer_col3_title',
                         'label' => 'Footer Column 3 Heading',
                         'type' => 'text',
-                        'default' => 'Other Projects',
+                        'default' => 'Connect With Us',
                         'help' => 'Third column header.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'footer_col3_link1_text',
-                        'label' => 'Col 3 - Link 1 Text',
-                        'type' => 'text',
-                        'default' => 'Sun Rise Educational Society',
-                        'help' => 'Initiative 1 label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col3_link1_url',
-                        'label' => 'Col 3 - Link 1 URL',
-                        'type' => 'text',
-                        'default' => 'about-us.php',
-                        'help' => 'Initiative 1 destination.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col3_link2_text',
-                        'label' => 'Col 3 - Link 2 Text',
-                        'type' => 'text',
-                        'default' => 'Modern Science & Computer Labs',
-                        'help' => 'Initiative 2 label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col3_link2_url',
-                        'label' => 'Col 3 - Link 2 URL',
-                        'type' => 'text',
-                        'default' => 'campus.php#labs',
-                        'help' => 'Initiative 2 destination.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col3_link3_text',
-                        'label' => 'Col 3 - Link 3 Text',
-                        'type' => 'text',
-                        'default' => 'Sports & Athletics Club',
-                        'help' => 'Initiative 3 label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col3_link3_url',
-                        'label' => 'Col 3 - Link 3 URL',
-                        'type' => 'text',
-                        'default' => 'campus.php#sports',
-                        'help' => 'Initiative 3 destination.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col3_link4_text',
-                        'label' => 'Col 3 - Link 4 Text',
-                        'type' => 'text',
-                        'default' => 'Safe GPS Bus Transport Network',
-                        'help' => 'Initiative 4 label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col3_link4_url',
-                        'label' => 'Col 3 - Link 4 URL',
-                        'type' => 'text',
-                        'default' => 'campus.php#transport',
-                        'help' => 'Initiative 4 destination.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col3_link5_text',
-                        'label' => 'Col 3 - Link 5 Text',
-                        'type' => 'text',
-                        'default' => 'Board Exam Merit Achievers',
-                        'help' => 'Initiative 5 label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_col3_link5_url',
-                        'label' => 'Col 3 - Link 5 URL',
-                        'type' => 'text',
-                        'default' => 'academics.php#toppers',
-                        'help' => 'Initiative 5 destination.'
+                        'key' => 'footer_social_desc',
+                        'label' => 'Social Connect Subtitle Note',
+                        'type' => 'textarea',
+                        'default' => 'Follow our official channels for news, event updates & announcements.',
+                        'help' => 'Short explanatory note below Connect With Us header in footer.'
                     ],
                     [
                         'kind' => 'text',
@@ -9627,14 +9161,6 @@ $pages_config = [
                 'icon'  => 'share',
                 'desc'  => 'Official Social Media Handles displayed in the site footer (Facebook, Instagram, YouTube, WhatsApp, and X/Twitter).',
                 'fields' => [
-                    [
-                        'kind' => 'text',
-                        'key' => 'footer_social_heading',
-                        'label' => 'Social Section Heading',
-                        'type' => 'text',
-                        'default' => 'Follow & Connect:',
-                        'help' => 'Heading label displayed above social media icons in footer.'
-                    ],
                     [
                         'kind' => 'text',
                         'key' => 'social_facebook',

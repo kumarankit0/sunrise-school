@@ -539,6 +539,7 @@ require_once __DIR__ . '/core/header.php';
         <div class="w-56 sm:w-64 lg:w-72 rounded-xl overflow-hidden shadow-2xl border-2 border-[#C9A24B]/50 cursor-pointer" onclick="openLightbox(this)">
           <img src="<?= get_image('academics', 'toppers_poster', school_img('pop-up image.webp')) ?>" alt="<?= htmlspecialchars(get_image_alt('academics', 'toppers_poster', 'Sun Rise Board Toppers Poster')) ?>" class="w-full h-auto object-cover" loading="lazy"/>
         </div>
+        <span class="text-xs text-surface-cream/80 mt-2 flex items-center gap-1 font-medium cursor-pointer" onclick="openLightbox(this.previousElementSibling)"><span class="material-symbols-outlined text-[14px] text-[#C9A24B]">zoom_in</span> <?= get_text('academics', 'toppers_poster_hint', 'Click to view toppers poster') ?></span>
       </div>
     </div>
   </section>

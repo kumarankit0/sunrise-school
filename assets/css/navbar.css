@@ -9,7 +9,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1200 !important;
+  z-index: 9999 !important;
   background-color: #ffffff;
   border-bottom: 1px solid #E5E2DA;
   box-shadow: 0 4px 18px rgba(0, 17, 41, 0.08);

@@ -58,6 +58,10 @@ require_once __DIR__ . '/core/header.php';
               <span class="material-symbols-outlined text-[#C9A24B] text-base">assignment_turned_in</span>
               <span><?= get_text('admissions', 'badge_token', 'Instant Application Acknowledgement') ?></span>
             </div>
+            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold">
+              <span class="material-symbols-outlined text-[#C9A24B] text-base">security</span>
+              <span><?= get_text('admissions', 'badge_escrow', 'RBI & PCI-DSS 256-Bit Escrow') ?></span>
+            </div>
           </div>
         </div>
 

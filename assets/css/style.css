@@ -787,14 +787,14 @@ h3.font-headline-sm,
 }
 
 /* ==========================================================================
-   Universal Hero Section Responsive Styles (Fixed Height & Strict Containment)
+   Universal Hero Section Responsive Styles (Increased Height & Top Focus)
    ========================================================================== */
 .hero-section {
   position: relative !important;
   width: 100% !important;
-  height: 58vh !important;
-  min-height: 380px !important;
-  max-height: 520px !important;
+  height: 68vh !important;
+  min-height: 460px !important;
+  max-height: 620px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -809,59 +809,59 @@ h3.font-headline-sm,
   padding-bottom: 2rem !important;
 }
 
-/* Homepage Hero Slider Specific Height */
+/* Homepage Hero Slider Specific Height (Spacious & Majestic Display) */
 .hero-section:has(#hero-box-slider) {
-  height: 68vh !important;
-  min-height: 440px !important;
-  max-height: 620px !important;
+  height: 84vh !important;
+  min-height: 600px !important;
+  max-height: 840px !important;
 }
 
 @media (max-width: 640px) {
   .hero-section {
-    height: 52vh !important;
-    min-height: 340px !important;
-    max-height: 420px !important;
+    height: 58vh !important;
+    min-height: 380px !important;
+    max-height: 480px !important;
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
   }
   .hero-section:has(#hero-box-slider) {
-    height: 58vh !important;
-    min-height: 380px !important;
-    max-height: 480px !important;
+    height: 68vh !important;
+    min-height: 460px !important;
+    max-height: 580px !important;
   }
 }
 
 @media (min-width: 641px) and (max-width: 1023px) {
   .hero-section {
-    height: 56vh !important;
-    min-height: 380px !important;
-    max-height: 480px !important;
+    height: 64vh !important;
+    min-height: 440px !important;
+    max-height: 560px !important;
     padding-top: 2rem !important;
     padding-bottom: 2rem !important;
   }
   .hero-section:has(#hero-box-slider) {
-    height: 64vh !important;
-    min-height: 420px !important;
-    max-height: 560px !important;
+    height: 76vh !important;
+    min-height: 540px !important;
+    max-height: 720px !important;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-section {
-    height: 62vh !important;
-    min-height: 420px !important;
-    max-height: 540px !important;
+    height: 70vh !important;
+    min-height: 480px !important;
+    max-height: 640px !important;
     padding-top: 2.5rem !important;
     padding-bottom: 2.5rem !important;
   }
   .hero-section:has(#hero-box-slider) {
-    height: 70vh !important;
-    min-height: 480px !important;
-    max-height: 640px !important;
+    height: 85vh !important;
+    min-height: 620px !important;
+    max-height: 860px !important;
   }
 }
 
-/* Ensure all hero background banners and slider images stay strictly inside container */
+/* Ensure all hero background banners and slider images focus on top 15% so heads/roofs never get cut off */
 .hero-section [class*="absolute"][class*="bg-cover"],
 .hero-section .hero-slide-base,
 .hero-section .hero-bg-banner,
@@ -878,7 +878,7 @@ h3.font-headline-sm,
   max-height: 100% !important;
   object-fit: cover !important;
   background-size: cover !important;
-  background-position: center center !important;
+  background-position: center 15% !important;
   background-repeat: no-repeat !important;
   pointer-events: none !important;
   overflow: hidden !important;

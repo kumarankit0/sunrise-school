@@ -81,7 +81,8 @@
   inset: 0;
   background-color: rgba(0, 17, 41, 0.92);
   backdrop-filter: blur(8px);
-  z-index: 2000;
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 99999 !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -249,11 +250,11 @@ img {
 .toppers-modal {
   position: fixed;
   inset: 0;
-  z-index: 2500;
+  z-index: 99999 !important;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem;
+  padding: 1.5rem 0.75rem;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s cubic-bezier(0.16, 1, 0.3, 1);
@@ -274,11 +275,11 @@ img {
 
 .toppers-modal-dialog {
   position: relative;
-  width: fit-content;
-  max-width: min(92vw, 410px);
-  max-height: 94vh;
+  width: min(92vw, 390px);
+  max-width: 390px;
+  max-height: calc(100vh - 2.5rem);
   background-color: #ffffff;
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 25px 60px -12px rgba(0, 17, 41, 0.5), 0 0 0 1px rgba(229, 226, 218, 0.7);
   display: flex;
@@ -295,21 +296,23 @@ img {
 
 .toppers-close-btn {
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: 0.65rem;
+  right: 0.65rem;
   width: 2.2rem;
   height: 2.2rem;
   border-radius: 9999px;
-  background-color: rgba(0, 17, 41, 0.88);
+  background-color: rgba(0, 17, 41, 0.82);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   color: #ffffff;
-  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  border: 1.5px solid rgba(255, 255, 255, 0.6);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  z-index: 20;
+  z-index: 50;
   transition: all 0.2s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
 }
 
 .toppers-close-btn:hover {
@@ -318,60 +321,52 @@ img {
   transform: scale(1.08) rotate(90deg);
 }
 
-.toppers-modal-header {
-  background: linear-gradient(135deg, #001129 0%, #0b2647 100%);
-  color: #ffffff;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid #C9A24B;
-  padding-right: 3.2rem;
-}
-
 .toppers-img-container {
   position: relative;
-  width: 100%;
-  max-height: 68vh;
+  width: 100% !important;
+  max-height: 65vh;
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: #001129;
+  background-color: #ffffff !important;
   display: block;
   line-height: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .toppers-modal-img {
-  width: 100%;
-  height: auto;
-  max-height: 68vh;
-  object-fit: cover;
+  width: 100% !important;
+  height: auto !important;
+  max-height: 65vh;
+  object-fit: contain;
   display: block;
+  margin: 0;
+  padding: 0;
 }
 
 .toppers-modal-footer {
-  background-color: #faf9f6;
+  background-color: #ffffff;
   padding: 0.75rem 1rem;
   border-top: 1px solid #E5E2DA;
+  flex-shrink: 0;
 }
 
 @media (max-width: 480px) {
   .toppers-modal {
-    padding: 0.5rem;
+    padding: 0.75rem 0.5rem;
   }
   .toppers-modal-dialog {
+    width: 95vw;
     max-width: 95vw;
-    border-radius: 14px;
-    max-height: 96vh;
+    border-radius: 16px;
+    max-height: calc(100vh - 1.5rem);
   }
   .toppers-img-container {
-    max-height: 62vh;
+    max-height: 60vh;
+    background-color: #ffffff !important;
   }
   .toppers-modal-img {
-    max-height: 62vh;
-  }
-  .toppers-modal-header {
-    padding: 0.65rem 0.85rem;
-    padding-right: 3rem;
+    max-height: 60vh;
   }
   .toppers-modal-footer {
     padding: 0.65rem 0.85rem;

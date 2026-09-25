@@ -166,17 +166,8 @@ require_once __DIR__ . '/config.php';
     <div class="toppers-modal-dialog">
       <!-- Cross Close Icon Button -->
       <button id="toppersModalClose" class="toppers-close-btn" aria-label="Close Announcement" type="button">
-        <span class="material-symbols-outlined text-[24px]">close</span>
+        <span class="material-symbols-outlined text-[22px]">close</span>
       </button>
-
-      <!-- Modal Header / Banner -->
-      <div class="toppers-modal-header">
-        <div class="flex items-center gap-2">
-          <span class="material-symbols-outlined text-[#C9A24B] text-[22px]">military_tech</span>
-          <span class="font-bold text-xs sm:text-sm uppercase tracking-wider text-gold-light">Board Exam Merit Achievers</span>
-        </div>
-        <span class="text-[11px] bg-[#C9A24B] text-primary px-2.5 py-0.5 rounded-full font-bold uppercase">100% Results</span>
-      </div>
 
       <!-- Image Container for pop-up image.webp -->
       <div class="toppers-img-container">

@@ -121,7 +121,7 @@
       const bgW = natural.w * coverScale;
       const bgH = natural.h * coverScale;
       const bgX = (width - bgW) / 2;
-      const bgY = (height - bgH) / 2;
+      const bgY = (height - bgH) * 0.15;
 
       // Reset grid container
       gridContainer.style.opacity = '1';

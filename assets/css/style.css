@@ -846,7 +846,7 @@ h3.font-headline-sm,
   z-index: 20 !important;
 }
 
-/* ----- All slide backgrounds: fill container with natural proportion ----- */
+/* ----- All slide backgrounds: fill container matching Image 1's height ----- */
 .hero-slide-base,
 .hero-bg-banner,
 img.hero-bg-banner {
@@ -855,10 +855,10 @@ img.hero-bg-banner {
   width: 100% !important;
   height: 100% !important;
   background-color: transparent !important;
-  background-size: 100% 100% !important;
+  background-size: cover !important;
   background-position: center center !important;
   background-repeat: no-repeat !important;
-  object-fit: contain !important;
+  object-fit: cover !important;
   pointer-events: none !important;
   transform: translateZ(0) !important;
   z-index: 0 !important;

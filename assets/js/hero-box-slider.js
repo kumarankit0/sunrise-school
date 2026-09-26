@@ -56,16 +56,10 @@
       img.src = src;
     }
 
-    // Preload slides for instant rotation
-    if (slides[0]) preloadSingleSlide(slides[0]);
-    setTimeout(() => {
-      if (slides[1]) preloadSingleSlide(slides[1]);
-    }, 800);
-    setTimeout(() => {
-      for (let i = 2; i < slides.length; i++) {
-        preloadSingleSlide(slides[i]);
-      }
-    }, 2500);
+    // Preload all slides immediately for instant smooth rotation
+    slides.forEach(src => {
+      if (src) preloadSingleSlide(src);
+    });
 
     // Set initial image on base slide
     if (baseSlide && slides.length > 0) {
@@ -124,14 +118,13 @@
       const tileW = width / cols;
       const tileH = height / rows;
 
-      // Compute tile backgrounds for 'background-size: 100% 100%' mode.
-      // Container padding-top = image's natural ratio (75% for 4:3 → 1920x1440).
-      // So container W×H IS the image's display size → no scale needed, no gaps.
-      // Each tile just shows its own slice of the full-size background.
-      const bgW = width;
-      const bgH = height;
-      const bgX = 0;
-      const bgY = 0;
+      // Scale tiles to fit the exact container height (height of image 1) cleanly using cover math
+      const natural = imgDimsCache[nextImgSrc] || { w: width, h: height };
+      const scale = Math.max(width / natural.w, height / natural.h);
+      const bgW = natural.w * scale;
+      const bgH = natural.h * scale;
+      const bgX = (width - bgW) / 2;
+      const bgY = (height - bgH) / 2;
 
       // Reset grid container
       gridContainer.style.opacity = '1';
@@ -155,11 +148,11 @@
           tile.style.left = `${x}px`;
           tile.style.top = `${y}px`;
 
-          // Each tile = a pixel-perfect slice of the full container-size background
+          // Each tile displays its slice of the image, perfectly fitted to Image 1's height
           tile.style.backgroundImage = `url("${nextImgSrc}")`;
           tile.style.backgroundColor = '#00122e';
           tile.style.backgroundSize = `${bgW.toFixed(1)}px ${bgH.toFixed(1)}px`;
-          tile.style.backgroundPosition = `${(-x).toFixed(1)}px ${(-y).toFixed(1)}px`;
+          tile.style.backgroundPosition = `${(bgX - x).toFixed(1)}px ${(bgY - y).toFixed(1)}px`;
 
           // Distance from 4 outer boundaries
           const dTop = r;
@@ -216,11 +209,9 @@
 
           // Handover when all boxes have collected and formed the image
           setTimeout(() => {
-            // 1. Update underlying <img> and base slide to new image
-            const mainImg = document.getElementById('hero-slider-img');
-            if (mainImg) {
-              mainImg.src = nextImgSrc;
-            }
+            // Update underlying base slide to new image
+            // Note: hero-slider-img is kept on Image 1 so the container height stays
+            // perfectly locked to the exact height of the 1st image across all slides!
             if (baseSlide) {
               baseSlide.style.backgroundImage = `url("${nextImgSrc}")`;
             }

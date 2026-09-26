@@ -8,28 +8,37 @@ require_once __DIR__ . '/core/header.php';
 ?>
 
 <div class="flex flex-col w-full">
-  <!-- Hero Section -->
-  <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 bg-primary text-on-primary px-4 sm:px-6 lg:px-12 overflow-hidden flex items-center justify-center text-center">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('campus', 'hero_banner', school_img('school.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/40 via-primary/15 to-primary/60"></div>
-    <div class="hero-content relative max-w-6xl w-full mx-auto flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6 z-10">
-      <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2.5 bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full text-gold-light uppercase font-bold shadow-md">
-        <span class="material-symbols-outlined text-[14px] sm:text-[18px] text-[#C9A24B]">domain</span> 
-        <span><?= get_text('campus', 'hero_badge', 'Modern Campus Infrastructure') ?></span>
-      </div>
-      <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md">
-        <?= get_text('campus', 'hero_title', 'A Vibrant & Safe Campus Built for Excellence') ?>
-      </h1>
-      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl drop-shadow">
-        <?= get_text('campus', 'hero_subtitle', 'Explore our purpose-built campus in Dobhi, Haryana designed to nurture academic focus, athletic vigor, scientific curiosity, and cultural creativity.') ?>
-      </p>
-      <div class="hero-cta-group flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
-        <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('campus', 'hero_btn1_link', '#facilities-grid')) ?>">
-          <?= get_text('campus', 'hero_btn1_text', 'Explore Facilities') ?>
-        </a>
-        <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('campus', 'hero_btn2_link', 'contact-us.php')) ?>">
-          <span class="material-symbols-outlined">calendar_month</span> <?= get_text('campus', 'hero_btn2_text', 'Book Campus Tour') ?>
-        </a>
+  <!-- Hero Section — full image, no crop, no side gap -->
+  <section class="hero-section relative w-full bg-[#00122e]">
+    <img
+      src="<?= get_image('campus', 'hero_banner', school_img('school.webp')) ?>"
+      alt="Sun Rise Sr. Sec. School Campus — Infrastructure Hero Banner"
+      class="hero-full-img"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/20 to-primary/65 pointer-events-none" style="z-index:5;"></div>
+    <div class="hero-overlay-wrap">
+      <div class="hero-content relative max-w-6xl w-full mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-3 sm:gap-5 lg:gap-6">
+        <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2.5 bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full text-gold-light uppercase font-bold shadow-md">
+          <span class="material-symbols-outlined text-[14px] sm:text-[18px] text-[#C9A24B]">domain</span>
+          <span><?= get_text('campus', 'hero_badge', 'Modern Campus Infrastructure') ?></span>
+        </div>
+        <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md">
+          <?= get_text('campus', 'hero_title', 'A Vibrant & Safe Campus Built for Excellence') ?>
+        </h1>
+        <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl drop-shadow">
+          <?= get_text('campus', 'hero_subtitle', 'Explore our purpose-built campus in Dobhi, Haryana designed to nurture academic focus, athletic vigor, scientific curiosity, and cultural creativity.') ?>
+        </p>
+        <div class="hero-cta-group flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
+          <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('campus', 'hero_btn1_link', '#facilities-grid')) ?>">
+            <?= get_text('campus', 'hero_btn1_text', 'Explore Facilities') ?>
+          </a>
+          <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('campus', 'hero_btn2_link', 'contact-us.php')) ?>">
+            <span class="material-symbols-outlined">calendar_month</span>
+            <?= get_text('campus', 'hero_btn2_text', 'Book Campus Tour') ?>
+          </a>
+        </div>
       </div>
     </div>
   </section>

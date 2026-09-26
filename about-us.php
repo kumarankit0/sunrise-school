@@ -8,41 +8,53 @@ require_once __DIR__ . '/core/header.php';
 ?>
 
 <div class="flex flex-col w-full bg-surface text-on-surface">
-  <!-- Section 1: Hero Banner -->
-  <section class="hero-section relative w-full min-h-[50vh] sm:min-h-[60vh] lg:min-h-[68vh] py-16 sm:py-24 lg:py-28 bg-primary text-on-primary flex items-center justify-center overflow-hidden">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('about', 'hero_banner', school_img('school_home2.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/45 via-primary/20 to-primary/60"></div>
-    <div class="hero-content relative z-10 max-w-6xl w-full mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-3.5 sm:gap-5">
-      <span class="hero-badge text-gold-light uppercase tracking-widest font-bold bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1.5 rounded-full shadow-md text-xs sm:text-sm">
-        <?= get_text('about', 'hero_badge', 'Institutional Legacy &amp; Future Vision') ?>
-      </span>
-      <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md text-2xl sm:text-4xl lg:text-5xl">
-        <?= get_text('about', 'hero_title', 'About Sun Rise Sr. Sec. School') ?>
-      </h1>
-      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl mx-auto font-body drop-shadow text-xs sm:text-sm lg:text-base leading-relaxed">
-        <?= get_text('about', 'hero_subtitle', 'Cultivating academic rigor, moral integrity, and lifelong curiosity within a vibrant and disciplined campus environment in Dobhi, Haryana.') ?>
-      </p>
+  <!-- Section 1: Hero Banner — full image, no crop, no side gap -->
+  <section class="hero-section relative w-full bg-[#00122e]">
+    <!-- Real <img> tag: width:100% height:auto drives container height from image's natural ratio -->
+    <img
+      src="<?= get_image('about', 'hero_banner', school_img('school_home2.webp')) ?>"
+      alt="Sun Rise Sr. Sec. School — About Us Hero Banner"
+      class="hero-full-img"
+      loading="eager"
+      decoding="async"
+    />
+    <!-- Gradient overlay for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/20 to-primary/65 pointer-events-none" style="z-index:5;"></div>
+    <!-- Text content overlay — centered over the image -->
+    <div class="hero-overlay-wrap">
+      <div class="hero-content relative max-w-6xl w-full mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-3.5 sm:gap-5">
+        <span class="hero-badge text-gold-light uppercase tracking-widest font-bold bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1.5 rounded-full shadow-md text-xs sm:text-sm">
+          <?= get_text('about', 'hero_badge', 'Institutional Legacy &amp; Future Vision') ?>
+        </span>
+        <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md text-2xl sm:text-4xl lg:text-5xl">
+          <?= get_text('about', 'hero_title', 'About Sun Rise Sr. Sec. School') ?>
+        </h1>
+        <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl mx-auto font-body drop-shadow text-xs sm:text-sm lg:text-base leading-relaxed">
+          <?= get_text('about', 'hero_subtitle', 'Cultivating academic rigor, moral integrity, and lifelong curiosity within a vibrant and disciplined campus environment in Dobhi, Haryana.') ?>
+        </p>
+      </div>
     </div>
   </section>
 
+
   <!-- Section 2: Milestones & Achievements Stat Strip -->
-  <section class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 -mt-6 sm:-mt-8 w-full">
-    <div class="bg-surface-pure rounded-2xl shadow-[0_12px_28px_rgba(11,38,71,0.08)] p-4 sm:p-6 lg:p-8 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 border border-border-warm/60">
-      <div class="flex flex-col items-center text-center">
-        <span class="font-display-hero text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary"><?= get_text('about', 'stat1_num', '2007') ?></span>
-        <span class="font-eyebrow text-[10px] sm:text-xs md:text-sm text-on-surface-variant uppercase mt-1 sm:mt-2 font-bold leading-tight"><?= get_text('about', 'stat1_lbl', 'Year Established') ?></span>
+  <section class="relative z-20 max-w-4xl lg:max-w-5xl mx-auto px-4 sm:px-6 -mt-6 sm:-mt-8 w-full">
+    <div class="bg-gradient-to-r from-[#00122e] via-[#0b2647] to-[#00122e] text-white rounded-xl sm:rounded-2xl shadow-[0_10px_30px_-5px_rgba(0,17,41,0.5)] py-3.5 sm:py-4 px-3 sm:px-6 grid grid-cols-2 md:grid-cols-4 gap-2 sm:gap-4 border border-[#C9A24B]/35 backdrop-blur-sm">
+      <div class="flex flex-col items-center text-center py-1 sm:py-1.5 px-2">
+        <span class="font-display-hero text-lg sm:text-xl lg:text-2xl font-bold text-[#F3C352] tracking-tight"><?= get_text('about', 'stat1_num', '2007') ?></span>
+        <span class="font-eyebrow text-[9px] sm:text-[11px] text-slate-200/90 uppercase mt-0.5 sm:mt-1 font-semibold tracking-wider leading-tight"><?= get_text('about', 'stat1_lbl', 'Year Established') ?></span>
       </div>
-      <div class="flex flex-col items-center text-center">
-        <span class="font-display-hero text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary"><?= get_text('about', 'stat2_num', '700+') ?></span>
-        <span class="font-eyebrow text-[10px] sm:text-xs md:text-sm text-on-surface-variant uppercase mt-1 sm:mt-2 font-bold leading-tight"><?= get_text('about', 'stat2_lbl', 'Enrolled Students') ?></span>
+      <div class="flex flex-col items-center text-center py-1 sm:py-1.5 px-2 md:border-l md:border-white/15">
+        <span class="font-display-hero text-lg sm:text-xl lg:text-2xl font-bold text-[#F3C352] tracking-tight"><?= get_text('about', 'stat2_num', '700+') ?></span>
+        <span class="font-eyebrow text-[9px] sm:text-[11px] text-slate-200/90 uppercase mt-0.5 sm:mt-1 font-semibold tracking-wider leading-tight"><?= get_text('about', 'stat2_lbl', 'Enrolled Students') ?></span>
       </div>
-      <div class="flex flex-col items-center text-center">
-        <span class="font-display-hero text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary"><?= get_text('about', 'stat3_num', '28+') ?></span>
-        <span class="font-eyebrow text-[10px] sm:text-xs md:text-sm text-on-surface-variant uppercase mt-1 sm:mt-2 font-bold leading-tight"><?= get_text('about', 'stat3_lbl', 'Experienced Teachers') ?></span>
+      <div class="flex flex-col items-center text-center py-1 sm:py-1.5 px-2 md:border-l md:border-white/15">
+        <span class="font-display-hero text-lg sm:text-xl lg:text-2xl font-bold text-[#F3C352] tracking-tight"><?= get_text('about', 'stat3_num', '28+') ?></span>
+        <span class="font-eyebrow text-[9px] sm:text-[11px] text-slate-200/90 uppercase mt-0.5 sm:mt-1 font-semibold tracking-wider leading-tight"><?= get_text('about', 'stat3_lbl', 'Experienced Teachers') ?></span>
       </div>
-      <div class="flex flex-col items-center text-center">
-        <span class="font-display-hero text-2xl sm:text-3xl lg:text-4xl font-bold text-secondary"><?= get_text('about', 'stat4_num', '100%') ?></span>
-        <span class="font-eyebrow text-[10px] sm:text-xs md:text-sm text-on-surface-variant uppercase mt-1 sm:mt-2 font-bold leading-tight"><?= get_text('about', 'stat4_lbl', 'HBSE Board Results') ?></span>
+      <div class="flex flex-col items-center text-center py-1 sm:py-1.5 px-2 md:border-l md:border-white/15">
+        <span class="font-display-hero text-lg sm:text-xl lg:text-2xl font-bold text-[#F3C352] tracking-tight"><?= get_text('about', 'stat4_num', '100%') ?></span>
+        <span class="font-eyebrow text-[9px] sm:text-[11px] text-slate-200/90 uppercase mt-0.5 sm:mt-1 font-semibold tracking-wider leading-tight"><?= get_text('about', 'stat4_lbl', 'HBSE Board Results') ?></span>
       </div>
     </div>
   </section>

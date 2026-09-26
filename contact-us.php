@@ -8,52 +8,60 @@ require_once __DIR__ . '/core/header.php';
 ?>
 
 <div class="flex flex-col w-full">
-  <!-- Hero Section -->
-  <section class="hero-section relative w-full min-h-[38vh] sm:min-h-[44vh] lg:min-h-[48vh] py-10 sm:py-14 lg:py-16 bg-primary px-4 sm:px-6 lg:px-12 text-on-primary overflow-hidden flex items-center justify-center text-center">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('contact', 'hero_banner', school_img('school3.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/30 to-primary/70"></div>
-    <div class="hero-content max-w-4xl w-full mx-auto relative z-10 flex flex-col items-center text-center gap-3 sm:gap-4">
-      <span class="hero-badge text-gold-light uppercase tracking-widest font-bold bg-black/45 border border-[#C9A24B]/60 px-3.5 py-1 sm:px-5 sm:py-1.5 rounded-full shadow-lg text-[11px] sm:text-xs">
-        <?= get_text('contact', 'hero_badge', 'Get in Touch') ?>
-      </span>
-      <h1 class="hero-heading font-headline-lg font-bold tracking-tight text-white w-full drop-shadow-lg text-2xl sm:text-3xl lg:text-4xl leading-tight">
-        <?= get_text('contact', 'hero_title', 'Connect with Sun Rise School') ?>
-      </h1>
-      <p class="hero-subtitle text-surface-cream/95 w-full max-w-2xl drop-shadow text-xs sm:text-sm lg:text-base leading-relaxed line-clamp-2">
-        <?= get_text('contact', 'hero_subtitle', 'We welcome parents, prospective students, and guardians to visit our campus or get in touch for admissions, bus routes, and general inquiries.') ?>
-      </p>
+  <!-- Hero Section — full image, no crop, no gap -->
+  <section class="hero-section relative w-full bg-[#00122e]">
+    <img
+      src="<?= get_image('contact', 'hero_banner', school_img('school3.webp')) ?>"
+      alt="Sun Rise School — Contact Us Hero Banner"
+      class="hero-full-img"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/55 via-primary/35 to-primary/70 pointer-events-none" style="z-index:5;"></div>
+    <div class="hero-overlay-wrap">
+      <div class="hero-content max-w-4xl w-full mx-auto relative px-4 sm:px-6 text-center flex flex-col items-center gap-3 sm:gap-4">
+        <span class="hero-badge text-gold-light uppercase tracking-widest font-bold bg-black/45 border border-[#C9A24B]/60 px-3.5 py-1 sm:px-5 sm:py-1.5 rounded-full shadow-lg text-[11px] sm:text-xs">
+          <?= get_text('contact', 'hero_badge', 'Get in Touch') ?>
+        </span>
+        <h1 class="hero-heading font-headline-lg font-bold tracking-tight text-white w-full drop-shadow-lg text-2xl sm:text-3xl lg:text-4xl leading-tight">
+          <?= get_text('contact', 'hero_title', 'Connect with Sun Rise School') ?>
+        </h1>
+        <p class="hero-subtitle text-surface-cream/95 w-full max-w-2xl drop-shadow text-xs sm:text-sm lg:text-base leading-relaxed line-clamp-2">
+          <?= get_text('contact', 'hero_subtitle', 'We welcome parents, prospective students, and guardians to visit our campus or get in touch for admissions, bus routes, and general inquiries.') ?>
+        </p>
 
-      <!-- Quick Contact Pills -->
-      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mt-1">
-        <?php if ($pill1 = get_text('contact', 'hero_pill1_text', 'Dobhi, Hisar (Haryana)')): ?>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium text-white shadow-sm">
-            <span class="material-symbols-outlined text-[#C9A24B] text-[16px]">location_on</span>
-            <span><?= htmlspecialchars($pill1) ?></span>
-          </div>
-        <?php endif; ?>
-        <?php if ($pill2 = get_text('contact', 'hero_pill2_text', '+91 70158 90094')): ?>
-          <a href="tel:<?= preg_replace('/[^0-9+]/', '', $pill2) ?>" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium text-white hover:bg-white/20 transition-colors shadow-sm">
-            <span class="material-symbols-outlined text-[#C9A24B] text-[16px]">call</span>
-            <span><?= htmlspecialchars($pill2) ?></span>
-          </a>
-        <?php endif; ?>
-        <?php if ($pill3 = get_text('contact', 'hero_pill3_text', 'Mon–Sat: 8:00 AM – 2:30 PM')): ?>
-          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium text-white shadow-sm">
-            <span class="material-symbols-outlined text-[#C9A24B] text-[16px]">schedule</span>
-            <span><?= htmlspecialchars($pill3) ?></span>
+        <!-- Quick Contact Pills -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mt-1">
+          <?php if ($pill1 = get_text('contact', 'hero_pill1_text', 'Dobhi, Hisar (Haryana)')): ?>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium text-white shadow-sm">
+              <span class="material-symbols-outlined text-[#C9A24B] text-[16px]">location_on</span>
+              <span><?= htmlspecialchars($pill1) ?></span>
+            </div>
+          <?php endif; ?>
+          <?php if ($pill2 = get_text('contact', 'hero_pill2_text', '+91 70158 90094')): ?>
+            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $pill2) ?>" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium text-white hover:bg-white/20 transition-colors shadow-sm">
+              <span class="material-symbols-outlined text-[#C9A24B] text-[16px]">call</span>
+              <span><?= htmlspecialchars($pill2) ?></span>
+            </a>
+          <?php endif; ?>
+          <?php if ($pill3 = get_text('contact', 'hero_pill3_text', 'Mon–Sat: 8:00 AM – 2:30 PM')): ?>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs font-medium text-white shadow-sm">
+              <span class="material-symbols-outlined text-[#C9A24B] text-[16px]">schedule</span>
+              <span><?= htmlspecialchars($pill3) ?></span>
+            </div>
+          <?php endif; ?>
+        </div>
+
+        <!-- Hero CTA Button -->
+        <?php if ($hero_btn = get_text('contact', 'hero_btn_text', 'Send an Online Message')): ?>
+          <div class="mt-1">
+            <a href="<?= htmlspecialchars(get_text('contact', 'hero_btn_link', '#inquiry-form')) ?>" class="btn-gold inline-flex items-center gap-1.5 px-5 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all">
+              <span><?= htmlspecialchars($hero_btn) ?></span>
+              <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+            </a>
           </div>
         <?php endif; ?>
       </div>
-
-      <!-- Hero CTA Button -->
-      <?php if ($hero_btn = get_text('contact', 'hero_btn_text', 'Send an Online Message')): ?>
-        <div class="mt-1">
-          <a href="<?= htmlspecialchars(get_text('contact', 'hero_btn_link', '#inquiry-form')) ?>" class="btn-gold inline-flex items-center gap-1.5 px-5 py-2 sm:px-6 sm:py-2.5 text-xs sm:text-sm font-bold rounded-xl shadow-md hover:shadow-lg transition-all">
-            <span><?= htmlspecialchars($hero_btn) ?></span>
-            <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
-          </a>
-        </div>
-      <?php endif; ?>
     </div>
   </section>
 

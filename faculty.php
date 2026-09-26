@@ -9,16 +9,22 @@ require_once __DIR__ . '/core/header.php';
 ?>
 
 <div class="flex flex-col w-full bg-surface">
-  <!-- 1. Hero banner -->
-  <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 bg-primary text-on-primary px-4 sm:px-6 lg:px-12 overflow-hidden flex flex-col justify-center items-center text-center">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('faculty', 'hero_banner', school_img('teachers_and_students.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
-    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-surface-tint/20 blur-3xl pointer-events-none"></div>
-    <div class="absolute -bottom-24 -right-24 w-96 h-96 rounded-full bg-[#C9A24B]/10 blur-3xl pointer-events-none"></div>
-    <div class="hero-content relative z-10 max-w-6xl w-full mx-auto flex flex-col items-center gap-3 sm:gap-5 lg:gap-6">
-      <span class="hero-badge px-3.5 py-1 sm:px-5 sm:py-2 rounded-full bg-black/40 text-gold-light uppercase font-bold tracking-widest border border-[#C9A24B]/50 shadow-md"><?= get_text('faculty', 'hero_badge', 'Dedicated Educators') ?></span>
-      <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md"><?= get_text('faculty', 'hero_title', 'Our Distinguished Faculty & Staff') ?></h1>
-      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl font-body drop-shadow"><?= get_text('faculty', 'hero_subtitle', 'Meet the passionate educators, experienced subject mentors, and visionary leadership shaping young minds at Sun Rise Sr. Sec. School, Dobhi.') ?></p>
+  <!-- 1. Hero banner — full image, no crop, no gap -->
+  <section class="hero-section relative w-full bg-[#00122e]">
+    <img
+      src="<?= get_image('faculty', 'hero_banner', school_img('teachers_and_students.webp')) ?>"
+      alt="Sun Rise School Faculty & Staff — Hero Banner"
+      class="hero-full-img"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/20 to-primary/65 pointer-events-none" style="z-index:5;"></div>
+    <div class="hero-overlay-wrap">
+      <div class="hero-content relative max-w-6xl w-full mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-3 sm:gap-5 lg:gap-6">
+        <span class="hero-badge px-3.5 py-1 sm:px-5 sm:py-2 rounded-full bg-black/40 text-gold-light uppercase font-bold tracking-widest border border-[#C9A24B]/50 shadow-md"><?= get_text('faculty', 'hero_badge', 'Dedicated Educators') ?></span>
+        <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md"><?= get_text('faculty', 'hero_title', 'Our Distinguished Faculty & Staff') ?></h1>
+        <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl font-body drop-shadow"><?= get_text('faculty', 'hero_subtitle', 'Meet the passionate educators, experienced subject mentors, and visionary leadership shaping young minds at Sun Rise Sr. Sec. School, Dobhi.') ?></p>
+      </div>
     </div>
   </section>
 

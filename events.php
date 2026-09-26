@@ -8,26 +8,34 @@ require_once __DIR__ . '/core/header.php';
 ?>
 
 <div class="flex flex-col w-full">
-  <!-- Hero Section with Background Banner -->
-  <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary text-on-primary">
-    <div class="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('events', 'featured_banner', school_img('award_ceremony.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50 z-10"></div>
-    <div class="hero-content relative z-20 max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12 flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6">
-      <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2 bg-[#C9A24B] text-primary px-3.5 py-1 sm:px-5 sm:py-1.5 rounded-full uppercase tracking-widest font-bold shadow-md">
-        <span class="material-symbols-outlined text-[13px] sm:text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
-        <span><?= get_text('events', 'featured_badge', 'Featured Event') ?></span>
+  <!-- Hero Section with Background Banner — full image, no crop, no gap -->
+  <section class="hero-section relative w-full bg-[#00122e]">
+    <img
+      src="<?= get_image('events', 'featured_banner', school_img('award_ceremony.webp')) ?>"
+      alt="Sun Rise School Events & News — Hero Banner"
+      class="hero-full-img"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/20 to-primary/65 pointer-events-none" style="z-index:5;"></div>
+    <div class="hero-overlay-wrap">
+      <div class="hero-content relative max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12 flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6">
+        <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2 bg-[#C9A24B] text-primary px-3.5 py-1 sm:px-5 sm:py-1.5 rounded-full uppercase tracking-widest font-bold shadow-md">
+          <span class="material-symbols-outlined text-[13px] sm:text-[16px]" style="font-variation-settings: 'FILL' 1;">star</span>
+          <span><?= get_text('events', 'featured_badge', 'Featured Event') ?></span>
+        </div>
+        <h1 class="hero-heading font-headline-lg text-white font-bold w-full max-w-4xl drop-shadow-md"><?= get_text('events', 'featured_title', 'Annual Science & Art Exhibition 2026') ?></h1>
+        <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl drop-shadow"><?= get_text('events', 'featured_subtitle', 'Experience the ingenuity of our students as they demonstrate live working science models, robotics experiments, sustainable agriculture concepts, and artistic creations.') ?></p>
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-base text-surface-cream font-medium">
+          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#C9A24B] text-[15px] sm:text-[18px]">calendar_today</span> <?= get_text('events', 'featured_session_tag', 'Annual Session') ?></span>
+          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#C9A24B] text-[15px] sm:text-[18px]">schedule</span> <?= get_text('events', 'featured_time', '09:30 AM - 03:00 PM') ?></span>
+          <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#C9A24B] text-[15px] sm:text-[18px]">location_on</span> <?= get_text('events', 'featured_location', 'Main Campus Auditorium & Grounds') ?></span>
+        </div>
+        <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all mt-1" href="<?= htmlspecialchars(get_text('events', 'featured_btn_link', 'contact-us.php')) ?>">
+          <span><?= get_text('events', 'featured_btn_text', 'Inquire / Visit Campus') ?></span>
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </a>
       </div>
-      <h1 class="hero-heading font-headline-lg text-white font-bold w-full max-w-4xl drop-shadow-md"><?= get_text('events', 'featured_title', 'Annual Science & Art Exhibition 2026') ?></h1>
-      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl drop-shadow"><?= get_text('events', 'featured_subtitle', 'Experience the ingenuity of our students as they demonstrate live working science models, robotics experiments, sustainable agriculture concepts, and artistic creations.') ?></p>
-      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-base text-surface-cream font-medium">
-        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#C9A24B] text-[15px] sm:text-[18px]">calendar_today</span> <?= get_text('events', 'featured_session_tag', 'Annual Session') ?></span>
-        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#C9A24B] text-[15px] sm:text-[18px]">schedule</span> <?= get_text('events', 'featured_time', '09:30 AM - 03:00 PM') ?></span>
-        <span class="flex items-center gap-1.5"><span class="material-symbols-outlined text-[#C9A24B] text-[15px] sm:text-[18px]">location_on</span> <?= get_text('events', 'featured_location', 'Main Campus Auditorium & Grounds') ?></span>
-      </div>
-      <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all mt-1" href="<?= htmlspecialchars(get_text('events', 'featured_btn_link', 'contact-us.php')) ?>">
-        <span><?= get_text('events', 'featured_btn_text', 'Inquire / Visit Campus') ?></span>
-        <span class="material-symbols-outlined">arrow_forward</span>
-      </a>
     </div>
   </section>
 

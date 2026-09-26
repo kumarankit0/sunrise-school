@@ -19,7 +19,17 @@ $hero_slides = [
 
 <div class="flex flex-col w-full">
   <!-- Hero Section with Dynamic 4-Direction Box Mosaic Slider -->
-  <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary">
+  <section class="hero-section relative w-full bg-[#00122e]" id="hero-section-main">
+    <!-- Real <img> tag: width:100% height:auto drives container height naturally from image's true ratio -->
+    <img
+      id="hero-slider-img"
+      src="<?= $hero_slides[0] ?>"
+      alt="Sun Rise Sr. Sec. School Banner"
+      class="hero-full-img"
+      loading="eager"
+      decoding="async"
+    />
+
     <!-- Dynamic Hero 4-Direction Box Slider Container -->
     <div id="hero-box-slider" class="hero-box-slider" data-slides='<?= htmlspecialchars(json_encode($hero_slides), ENT_QUOTES, 'UTF-8') ?>' aria-hidden="true">
       <div class="hero-slide-base" style="background-image: url('<?= $hero_slides[0] ?>')"></div>
@@ -27,31 +37,35 @@ $hero_slides = [
       <!-- Slide Indicator Dots -->
       <div id="heroSliderIndicators" class="hero-slider-indicators"></div>
     </div>
-    <!-- Soft Light Brand Gradient Overlay for vibrant bright campus photos & crisp text -->
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/45 z-10 pointer-events-none"></div>
-    <div class="hero-content relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-7">
-      <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2.5 bg-black/40 backdrop-blur-md border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full text-gold-light font-bold shadow-lg">
-        <span class="material-symbols-outlined text-[14px] sm:text-[18px] text-[#C9A24B]">military_tech</span>
-        <span><?= get_text('home', 'hero_badge', 'AFFILIATED TO HBSE &bull; PRE-PRIMARY TO SENIOR SECONDARY (10+2)') ?></span>
-      </div>
-      <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md">
-        <?= get_text('home', 'hero_title', 'Empowering Minds, Inspiring Character & <span class="text-[#C9A24B] italic">Academic Excellence</span>') ?>
-      </h1>
-      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl font-body drop-shadow">
-        <?= get_text('home', 'hero_subtitle', 'Welcome to Sun Rise Sr. Sec. School, Dobhi. We foster an enriching educational environment combining rigorous HBSE scholarship, moral values, modern technology, and sportsmanship.') ?>
-      </p>
-      <div class="hero-cta-group flex items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2 w-full">
-        <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('home', 'hero_btn1_link', 'admission.php')) ?>">
-          <span><?= get_text('home', 'hero_btn1_text', 'Admissions 2026–27') ?></span>
-          <span class="material-symbols-outlined">arrow_forward</span>
-        </a>
-        <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('home', 'hero_btn2_link', 'campus.php')) ?>">
-          <span><?= get_text('home', 'hero_btn2_text', 'Explore Campus') ?></span>
-          <span class="material-symbols-outlined">domain</span>
-        </a>
+    <!-- Soft gradient overlay for text readability -->
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/45 pointer-events-none" style="z-index:10;"></div>
+    <!-- Text content overlay — centered over the slider -->
+    <div class="hero-overlay-wrap">
+      <div class="hero-content relative z-20 max-w-6xl mx-auto px-4 sm:px-6 lg:px-12 w-full flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-7">
+        <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2.5 bg-black/40 backdrop-blur-md border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full text-gold-light font-bold shadow-lg">
+          <span class="material-symbols-outlined text-[14px] sm:text-[18px] text-[#C9A24B]">military_tech</span>
+          <span><?= get_text('home', 'hero_badge', 'AFFILIATED TO HBSE &bull; PRE-PRIMARY TO SENIOR SECONDARY (10+2)') ?></span>
+        </div>
+        <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md">
+          <?= get_text('home', 'hero_title', 'Empowering Minds, Inspiring Character &amp; <span class="text-[#C9A24B] italic">Academic Excellence</span>') ?>
+        </h1>
+        <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl font-body drop-shadow">
+          <?= get_text('home', 'hero_subtitle', 'Welcome to Sun Rise Sr. Sec. School, Dobhi. We foster an enriching educational environment combining rigorous HBSE scholarship, moral values, modern technology, and sportsmanship.') ?>
+        </p>
+        <div class="hero-cta-group flex items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2 w-full">
+          <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('home', 'hero_btn1_link', 'admission.php')) ?>">
+            <span><?= get_text('home', 'hero_btn1_text', 'Admissions 2026–27') ?></span>
+            <span class="material-symbols-outlined">arrow_forward</span>
+          </a>
+          <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('home', 'hero_btn2_link', 'campus.php')) ?>">
+            <span><?= get_text('home', 'hero_btn2_text', 'Explore Campus') ?></span>
+            <span class="material-symbols-outlined">domain</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>
+
 
   <!-- Continuous Moving School Ticker Strip (Right to Left Marquee) -->
   <?php

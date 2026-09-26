@@ -674,37 +674,8 @@ h3.font-headline-sm,
 
 /* ==========================================================================
    Hero 4-Direction Dynamic Box Mosaic Slider
+   (Full rules are in the Universal Hero Section block below)
    ========================================================================== */
-.hero-box-slider {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden !important;
-  clip-path: inset(0) !important;
-  -webkit-clip-path: inset(0) !important;
-  contain: paint strict !important;
-  isolation: isolate;
-  z-index: 0;
-  background-color: var(--primary);
-  pointer-events: none;
-  opacity: 0.92;
-}
-
-.hero-slide-base {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 1;
-  will-change: background-image;
-  overflow: hidden;
-  clip-path: inset(0);
-  -webkit-clip-path: inset(0);
-}
 
 .hero-grid-container {
   position: absolute;
@@ -787,106 +758,112 @@ h3.font-headline-sm,
 }
 
 /* ==========================================================================
-   Universal Hero Section Responsive Styles (Increased Height & Top Focus)
+   Universal Hero Section — Auto-height from image aspect ratio
+   NO fixed vh heights. NO min/max-height. Image drives container height.
    ========================================================================== */
 .hero-section {
   position: relative !important;
   width: 100% !important;
-  height: 68vh !important;
-  min-height: 460px !important;
-  max-height: 620px !important;
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
+  /* height auto — driven by image or padding-top on slider */
+  height: auto !important;
+  min-height: unset !important;
+  max-height: unset !important;
+  display: block !important;       /* block so img inside flows naturally */
   overflow: hidden !important;
-  clip-path: inset(0px) !important;
-  -webkit-clip-path: inset(0px) !important;
-  contain: layout paint size !important;
   isolation: isolate !important;
   z-index: 1 !important;
   box-sizing: border-box !important;
-  padding-top: 2rem !important;
-  padding-bottom: 2rem !important;
+  background-color: #00122e !important; /* dark navy — no side gaps show */
 }
 
-/* Homepage Hero Slider Specific Height (Spacious & Majestic Display) */
-.hero-section:has(#hero-box-slider) {
-  height: 84vh !important;
-  min-height: 600px !important;
-  max-height: 840px !important;
+/* ----- Static-banner hero (about-us etc.) ----- */
+/* The <img class="hero-full-img"> inside drives height automatically */
+.hero-full-img {
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important; /* natural proportions — no stretching, no cropping */
+  vertical-align: top !important;
+  pointer-events: none !important;
+  z-index: 0 !important;
+  position: relative !important;
 }
 
-@media (max-width: 640px) {
-  .hero-section {
-    height: 58vh !important;
-    min-height: 380px !important;
-    max-height: 480px !important;
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
-  }
-  .hero-section:has(#hero-box-slider) {
-    height: 68vh !important;
-    min-height: 460px !important;
-    max-height: 580px !important;
-  }
+/* ----- Overlay container that sits on top of the image ----- */
+.hero-overlay-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 10 !important;
+  padding: 1.25rem 1rem !important;
 }
 
-@media (min-width: 641px) and (max-width: 1023px) {
-  .hero-section {
-    height: 64vh !important;
-    min-height: 440px !important;
-    max-height: 560px !important;
-    padding-top: 2rem !important;
-    padding-bottom: 2rem !important;
-  }
-  .hero-section:has(#hero-box-slider) {
-    height: 76vh !important;
-    min-height: 540px !important;
-    max-height: 720px !important;
+@media (min-width: 640px) {
+  .hero-overlay-wrap {
+    padding: 2rem 1.5rem !important;
   }
 }
 
 @media (min-width: 1024px) {
-  .hero-section {
-    height: 70vh !important;
-    min-height: 480px !important;
-    max-height: 640px !important;
-    padding-top: 2.5rem !important;
-    padding-bottom: 2.5rem !important;
-  }
-  .hero-section:has(#hero-box-slider) {
-    height: 85vh !important;
-    min-height: 620px !important;
-    max-height: 860px !important;
+  .hero-overlay-wrap {
+    padding: 3rem 3rem !important;
   }
 }
 
-/* Ensure all hero background banners and slider images focus on top 15% so heads/roofs never get cut off */
-.hero-section [class*="absolute"][class*="bg-cover"],
-.hero-section .hero-slide-base,
-.hero-section .hero-bg-banner,
-.hero-section img.hero-bg-banner {
+/* ----- Homepage slider hero — natural height driven by hero-full-img ----- */
+/* NO hardcoded padding-top! Height matches image's true proportions natively. */
+.hero-section:has(#hero-box-slider) {
+  height: auto !important;
+  min-height: unset !important;
+  max-height: unset !important;
+  padding-top: 0 !important;
+  display: block !important;
+}
+
+/* ----- Slider fills its container — container height = image natural height ----- */
+.hero-box-slider {
   position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
   inset: 0 !important;
   width: 100% !important;
   height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  object-fit: cover !important;
-  background-size: cover !important;
-  background-position: center 15% !important;
-  background-repeat: no-repeat !important;
-  pointer-events: none !important;
   overflow: hidden !important;
-  clip-path: inset(0px) !important;
-  -webkit-clip-path: inset(0px) !important;
+  clip-path: inset(0) !important;
+  -webkit-clip-path: inset(0) !important;
+  contain: paint strict !important;
+  isolation: isolate;
+  z-index: 1;
+  background-color: transparent !important;
+  pointer-events: none;
+}
+
+/* Slider gradient & content overlays */
+.hero-section:has(#hero-box-slider) .hero-overlay-wrap {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 20 !important;
+}
+
+/* ----- All slide backgrounds: fill container with natural proportion ----- */
+.hero-slide-base,
+.hero-bg-banner,
+img.hero-bg-banner {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: transparent !important;
+  background-size: 100% 100% !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  object-fit: contain !important;
+  pointer-events: none !important;
   transform: translateZ(0) !important;
   z-index: 0 !important;
 }
+
 
 .hero-content {
   position: relative !important;

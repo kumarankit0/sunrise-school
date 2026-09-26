@@ -8,27 +8,35 @@ require_once __DIR__ . '/core/header.php';
 ?>
 
 <div class="flex flex-col w-full bg-surface">
-  <!-- Hero Section with Background Banner -->
-  <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 flex items-center justify-center overflow-hidden bg-primary text-on-primary">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('gallery', 'hero_banner', school_img('exhibition1.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
-    <div class="hero-content max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12 relative z-10 flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6">
-      <span class="hero-badge text-gold-light uppercase font-bold tracking-widest bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full shadow-md"><?= get_text('gallery', 'hero_badge', 'Visual Chronicle') ?></span>
-      <h1 class="hero-heading font-headline-lg font-bold text-white tracking-tight w-full max-w-4xl drop-shadow-md"><?= get_text('gallery', 'hero_title', 'Life & Moments at Sun Rise School') ?></h1>
-      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl drop-shadow"><?= get_text('gallery', 'hero_subtitle', 'Explore photographs capturing academic curiosity, hands-on science exhibitions, athletic triumphs, yoga mornings, and merit celebrations across our Dobhi campus.') ?></p>
-      <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2.5 bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full text-gold-light font-bold shadow-md">
-        <span class="material-symbols-outlined text-[#C9A24B] text-[13px] sm:text-[16px]" style="font-variation-settings: 'FILL' 1;">photo_library</span>
-        <span><?= get_text('gallery', 'hero_archive_badge', 'Official School Photo Archive • 100+ High-Resolution Moments') ?></span>
-      </div>
-      <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-2">
-        <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('gallery', 'hero_btn1_link', '#gallery-filters')) ?>">
-          <span><?= get_text('gallery', 'hero_btn1_text', 'Browse Photo Categories') ?></span>
-          <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
-        </a>
-        <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('gallery', 'hero_btn2_link', 'contact-us.php')) ?>">
-          <span><?= get_text('gallery', 'hero_btn2_text', 'Schedule Campus Visit') ?></span>
-          <span class="material-symbols-outlined text-[18px]">calendar_month</span>
-        </a>
+  <!-- Hero Section with Background Banner — full image, no crop, no gap -->
+  <section class="hero-section relative w-full bg-[#00122e]">
+    <img
+      src="<?= get_image('gallery', 'hero_banner', school_img('exhibition1.webp')) ?>"
+      alt="Sun Rise School Visual Gallery — Photo Archive Hero Banner"
+      class="hero-full-img"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/20 to-primary/65 pointer-events-none" style="z-index:5;"></div>
+    <div class="hero-overlay-wrap">
+      <div class="hero-content max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-12 relative flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6">
+        <span class="hero-badge text-gold-light uppercase font-bold tracking-widest bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full shadow-md"><?= get_text('gallery', 'hero_badge', 'Visual Chronicle') ?></span>
+        <h1 class="hero-heading font-headline-lg font-bold text-white tracking-tight w-full max-w-4xl drop-shadow-md"><?= get_text('gallery', 'hero_title', 'Life & Moments at Sun Rise School') ?></h1>
+        <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl drop-shadow"><?= get_text('gallery', 'hero_subtitle', 'Explore photographs capturing academic curiosity, hands-on science exhibitions, athletic triumphs, yoga mornings, and merit celebrations across our Dobhi campus.') ?></p>
+        <div class="hero-badge inline-flex items-center gap-1.5 sm:gap-2.5 bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full text-gold-light font-bold shadow-md">
+          <span class="material-symbols-outlined text-[#C9A24B] text-[13px] sm:text-[16px]" style="font-variation-settings: 'FILL' 1;">photo_library</span>
+          <span><?= get_text('gallery', 'hero_archive_badge', 'Official School Photo Archive • 100+ High-Resolution Moments') ?></span>
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-2">
+          <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('gallery', 'hero_btn1_link', '#gallery-filters')) ?>">
+            <span><?= get_text('gallery', 'hero_btn1_text', 'Browse Photo Categories') ?></span>
+            <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+          </a>
+          <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('gallery', 'hero_btn2_link', 'contact-us.php')) ?>">
+            <span><?= get_text('gallery', 'hero_btn2_text', 'Schedule Campus Visit') ?></span>
+            <span class="material-symbols-outlined text-[18px]">calendar_month</span>
+          </a>
+        </div>
       </div>
     </div>
   </section>

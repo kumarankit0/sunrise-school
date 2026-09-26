@@ -30,8 +30,20 @@
     let isPaused = false;
     const SLIDE_DURATION = 3000; // 3.0s autoplay interval (fast rotation)
 
-    // Cache preloaded image natural dimensions for pixel-perfect cover math
+    // Cache preloaded image natural dimensions
     const imgDimsCache = {};
+
+    // Clear any leftover inline paddingTop on hero section — height is driven by hero-slider-img
+    const heroSection = slider.closest('section');
+    if (heroSection) {
+      heroSection.style.paddingTop = '';
+    }
+
+    const mainImg = document.getElementById('hero-slider-img');
+    if (mainImg && slides[0]) {
+      mainImg.src = slides[0];
+    }
+
     function preloadSingleSlide(src) {
       if (!src || imgDimsCache[src]) return;
       const img = new Image();
@@ -44,13 +56,11 @@
       img.src = src;
     }
 
-    // Load active slide immediately
+    // Preload slides for instant rotation
     if (slides[0]) preloadSingleSlide(slides[0]);
-    // Preload next slide shortly after render
     setTimeout(() => {
       if (slides[1]) preloadSingleSlide(slides[1]);
     }, 800);
-    // Defer remaining slides when network is completely idle
     setTimeout(() => {
       for (let i = 2; i < slides.length; i++) {
         preloadSingleSlide(slides[i]);
@@ -114,14 +124,14 @@
       const tileW = width / cols;
       const tileH = height / rows;
 
-      // Compute exact 'background-size: cover; background-position: center;' parameters
-      // so tiles match the underlying base slide down to the exact subpixel with zero distortion!
-      const natural = imgDimsCache[nextImgSrc] || { w: 1920, h: 1080 };
-      const coverScale = Math.max(width / natural.w, height / natural.h);
-      const bgW = natural.w * coverScale;
-      const bgH = natural.h * coverScale;
-      const bgX = (width - bgW) / 2;
-      const bgY = (height - bgH) * 0.15;
+      // Compute tile backgrounds for 'background-size: 100% 100%' mode.
+      // Container padding-top = image's natural ratio (75% for 4:3 → 1920x1440).
+      // So container W×H IS the image's display size → no scale needed, no gaps.
+      // Each tile just shows its own slice of the full-size background.
+      const bgW = width;
+      const bgH = height;
+      const bgX = 0;
+      const bgY = 0;
 
       // Reset grid container
       gridContainer.style.opacity = '1';
@@ -145,10 +155,11 @@
           tile.style.left = `${x}px`;
           tile.style.top = `${y}px`;
 
-          // Pixel-perfect background slice identical to 'cover; center'
+          // Each tile = a pixel-perfect slice of the full container-size background
           tile.style.backgroundImage = `url("${nextImgSrc}")`;
+          tile.style.backgroundColor = '#00122e';
           tile.style.backgroundSize = `${bgW.toFixed(1)}px ${bgH.toFixed(1)}px`;
-          tile.style.backgroundPosition = `${(bgX - x).toFixed(1)}px ${(bgY - y).toFixed(1)}px`;
+          tile.style.backgroundPosition = `${(-x).toFixed(1)}px ${(-y).toFixed(1)}px`;
 
           // Distance from 4 outer boundaries
           const dTop = r;
@@ -205,7 +216,11 @@
 
           // Handover when all boxes have collected and formed the image
           setTimeout(() => {
-            // 1. Update underlying base slide to new image (invisible under assembled tiles)
+            // 1. Update underlying <img> and base slide to new image
+            const mainImg = document.getElementById('hero-slider-img');
+            if (mainImg) {
+              mainImg.src = nextImgSrc;
+            }
             if (baseSlide) {
               baseSlide.style.backgroundImage = `url("${nextImgSrc}")`;
             }
@@ -256,12 +271,13 @@
       startTimer();
     }
 
-    // Pause on hover over hero section
-    const heroSection = slider.closest('section');
+
+    // Pause on hover over hero section (heroSection already declared above)
     if (heroSection) {
       heroSection.addEventListener('mouseenter', () => { isPaused = true; });
       heroSection.addEventListener('mouseleave', () => { isPaused = false; });
     }
+
 
     // Tab visibility handling
     document.addEventListener('visibilitychange', () => {

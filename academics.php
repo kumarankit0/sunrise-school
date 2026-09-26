@@ -8,27 +8,35 @@ require_once __DIR__ . '/core/header.php';
 ?>
 
 <div class="flex flex-col w-full">
-  <!-- Hero Banner -->
-  <section class="hero-section relative w-full min-h-[60vh] sm:min-h-[70vh] lg:min-h-[85vh] py-14 sm:py-20 lg:py-28 bg-primary text-on-primary px-4 sm:px-6 lg:px-12 overflow-hidden flex items-center justify-center text-center">
-    <div class="absolute inset-0 bg-cover bg-center bg-no-repeat pointer-events-none hero-bg-banner" style="background-image: url('<?= get_image('academics', 'hero_banner', school_img('exhibition.webp')) ?>')"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-primary/35 via-primary/10 to-primary/50"></div>
-    <div class="hero-content max-w-6xl w-full mx-auto relative z-10 flex flex-col items-center text-center gap-3 sm:gap-5 lg:gap-6">
-      <span class="hero-badge text-gold-light uppercase tracking-widest bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full font-bold shadow-md">
-        <?= get_text('academics', 'hero_badge', 'Academic Excellence') ?>
-      </span>
-      <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md">
-        <?= get_text('academics', 'hero_title', 'Rigorous HBSE Curriculum Designed for Success') ?>
-      </h1>
-      <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl drop-shadow">
-        <?= get_text('academics', 'hero_subtitle', 'Discover an enriching academic framework from Pre-Primary to Class 12, fostering analytical thinking, practical lab experimentation, moral values, and board examination distinction.') ?>
-      </p>
-      <div class="hero-cta-group flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
-        <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('academics', 'hero_btn1_link', '#curriculum-levels')) ?>">
-          <?= get_text('academics', 'hero_btn1_text', 'Explore Stages') ?>
-        </a>
-        <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('academics', 'hero_btn2_link', '#streams')) ?>">
-          <?= get_text('academics', 'hero_btn2_text', 'Senior Secondary Streams') ?>
-        </a>
+  <!-- Hero Banner — full image, no crop, no side gap -->
+  <section class="hero-section relative w-full bg-[#00122e]">
+    <img
+      src="<?= get_image('academics', 'hero_banner', school_img('exhibition.webp')) ?>"
+      alt="Academics at Sun Rise Sr. Sec. School — HBSE Curriculum Hero Banner"
+      class="hero-full-img"
+      loading="eager"
+      decoding="async"
+    />
+    <div class="absolute inset-0 bg-gradient-to-b from-primary/50 via-primary/20 to-primary/65 pointer-events-none" style="z-index:5;"></div>
+    <div class="hero-overlay-wrap">
+      <div class="hero-content relative max-w-6xl w-full mx-auto px-4 sm:px-6 text-center flex flex-col items-center gap-3 sm:gap-5 lg:gap-6">
+        <span class="hero-badge text-gold-light uppercase tracking-widest bg-black/40 border border-[#C9A24B]/50 px-3.5 py-1 sm:px-5 sm:py-2 rounded-full font-bold shadow-md">
+          <?= get_text('academics', 'hero_badge', 'Academic Excellence') ?>
+        </span>
+        <h1 class="hero-heading font-headline-lg font-bold text-white w-full max-w-4xl tracking-tight drop-shadow-md">
+          <?= get_text('academics', 'hero_title', 'Rigorous HBSE Curriculum Designed for Success') ?>
+        </h1>
+        <p class="hero-subtitle text-surface-cream/95 w-full max-w-3xl drop-shadow">
+          <?= get_text('academics', 'hero_subtitle', 'Discover an enriching academic framework from Pre-Primary to Class 12, fostering analytical thinking, practical lab experimentation, moral values, and board examination distinction.') ?>
+        </p>
+        <div class="hero-cta-group flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 pt-1 sm:pt-2">
+          <a class="btn-gold hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('academics', 'hero_btn1_link', '#curriculum-levels')) ?>">
+            <?= get_text('academics', 'hero_btn1_text', 'Explore Stages') ?>
+          </a>
+          <a class="btn-outline-white hero-cta-btn shadow-md hover:shadow-lg transition-all" href="<?= htmlspecialchars(get_text('academics', 'hero_btn2_link', '#streams')) ?>">
+            <?= get_text('academics', 'hero_btn2_text', 'Senior Secondary Streams') ?>
+          </a>
+        </div>
       </div>
     </div>
   </section>

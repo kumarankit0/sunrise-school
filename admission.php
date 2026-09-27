@@ -152,8 +152,8 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Interactive Class / Stream Matrix Selector (Light Pastel Cards on White/Grey Background) -->
-  <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto w-full scroll-mt-24" id="step-1-classes">
-    <span id="fee-structure" class="scroll-mt-28 block -mt-28 pointer-events-none"></span>
+  <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto w-full scroll-mt-24 relative" id="step-1-classes">
+    <span id="fee-structure" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-8">
       <div>
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">

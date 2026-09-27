@@ -369,9 +369,9 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Dedicated Safe Transport & Boarding Deep-Dive Section -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-12 sm:mb-16 scroll-mt-28" id="transport">
-    <span id="boarding" class="scroll-mt-28 block -mt-28 pointer-events-none"></span>
-    <span id="transport-section" class="scroll-mt-28 block -mt-28 pointer-events-none"></span>
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mt-12 sm:mt-16 mb-12 sm:mb-16 scroll-mt-28 relative" id="transport">
+    <span id="boarding" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
+    <span id="transport-section" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
     <div class="bg-gradient-to-br from-[#001129] via-[#0b2647] to-[#001129] text-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-[#C9A24B]/30 relative overflow-hidden">
       <!-- Soft ambient glow -->
       <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#C9A24B]/15 blur-3xl pointer-events-none"></div>

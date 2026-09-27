@@ -66,8 +66,8 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Main Content Layout (Form & Campus Office Info) -->
-  <section id="inquiry-form" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 w-full scroll-mt-24">
-    <span id="careers" class="scroll-mt-28 block -mt-28 pointer-events-none"></span>
+  <section id="inquiry-form" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 w-full scroll-mt-24 relative">
+    <span id="careers" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
       <!-- Left Column: Contact Form (Elevated Card) -->
       <div class="lg:col-span-7 bg-surface-pure p-5 sm:p-7 lg:p-8 rounded-xl shadow-sm relative border border-border-warm h-full flex flex-col justify-between">

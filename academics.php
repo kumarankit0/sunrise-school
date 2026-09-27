@@ -417,7 +417,7 @@ require_once __DIR__ . '/core/header.php';
 
   <!-- Examination System & Evaluation Framework (Dark Blue Theme, Full-Width & Compact Padding) -->
   <section class="py-10 sm:py-12 px-4 sm:px-6 lg:px-12 w-full bg-primary text-white relative overflow-hidden border-y border-[#C9A24B]/30 scroll-mt-24" id="examination-system">
-    <span id="academic-calendar" class="scroll-mt-28 block -mt-28 pointer-events-none"></span>
+    <span id="academic-calendar" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
     <!-- Subtle Background Pattern / Ambient Glow -->
     <div class="absolute inset-0 pointer-events-none opacity-10 bg-[radial-gradient(#C9A24B_1px,transparent_1px)] [background-size:20px_20px]"></div>
     <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#C9A24B]/10 blur-3xl pointer-events-none"></div>

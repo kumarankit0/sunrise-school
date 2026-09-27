@@ -224,7 +224,7 @@ require_once __DIR__ . '/core/header.php';
 
   <!-- School Functions & Co-Curricular Activities Section -->
   <section class="relative w-full py-10 sm:py-12 lg:py-14 px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10 scroll-mt-24" id="functions-activities" style="background-color: #F7EFE8; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.10) 0%, transparent 42%), radial-gradient(circle at 85% 80%, rgba(184, 134, 102, 0.09) 0%, transparent 46%);">
-    <span id="activities" class="scroll-mt-28 block -mt-28 pointer-events-none"></span>
+    <span id="activities" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
     <!-- Subtle Warm Nude Geometric / Academic Pattern Overlays -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.38]" style="background-image: radial-gradient(#8d6e53 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
     <div class="absolute inset-0 pointer-events-none opacity-[0.20]" style="background-image: linear-gradient(to right, rgba(141, 110, 83, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(141, 110, 83, 0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>

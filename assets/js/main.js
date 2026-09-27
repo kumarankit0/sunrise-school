@@ -481,18 +481,24 @@ function initHashSmoothScroll() {
       // Calculate header offset
       const header = document.querySelector('.site-header');
       const headerHeight = header ? header.getBoundingClientRect().height : 90;
-      const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
-      const offsetPosition = Math.max(0, elementPosition - headerHeight - 16);
+      const scrollBaseEl = (target.tagName === 'SPAN' && target.offsetHeight === 0 && target.parentElement)
+        ? target.parentElement
+        : target;
+      const elementPosition = scrollBaseEl.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = Math.max(0, elementPosition - headerHeight - 20);
 
       window.scrollTo({
         top: offsetPosition,
         behavior: 'smooth'
       });
 
-      // Highlight target with glowing pulse
-      target.classList.add('highlight-target');
+      // Highlight target with glowing pulse (or parent container if target is an invisible anchor span)
+      const highlightElement = (target.tagName === 'SPAN' && target.parentElement)
+        ? (target.parentElement.querySelector('.rounded-3xl, .rounded-2xl, .bg-gradient-to-br') || target.parentElement)
+        : target;
+      highlightElement.classList.add('highlight-target');
       setTimeout(() => {
-        target.classList.remove('highlight-target');
+        highlightElement.classList.remove('highlight-target');
       }, 2500);
     } catch (e) {
       console.warn('Scroll to hash error:', e);

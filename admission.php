@@ -88,7 +88,7 @@ require_once __DIR__ . '/core/header.php';
       <div class="mt-4 bg-white rounded-xl p-3.5 sm:p-5 shadow-xs border border-border-warm">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           <!-- Step 1 -->
-          <div class="flex items-center gap-2.5">
+          <a href="#step-1-classes" class="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
             <div class="w-8 h-8 rounded-full bg-primary text-white font-bold flex items-center justify-center text-xs shadow-xs shrink-0">
               1
             </div>
@@ -96,37 +96,37 @@ require_once __DIR__ . '/core/header.php';
               <span class="text-[10px] text-secondary font-bold uppercase">Step 01</span>
               <span class="text-xs font-bold text-primary truncate"><?= get_text('admissions', 'step1_title', 'Class & Stream Choice') ?></span>
             </div>
-          </div>
+          </a>
           <!-- Step 2 -->
-          <div class="flex items-center gap-2.5">
+          <a href="#step-2-student" class="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
             <div class="w-8 h-8 rounded-full bg-[#C9A24B] text-primary font-bold flex items-center justify-center text-xs shadow-xs shrink-0">
               2
             </div>
             <div class="flex flex-col min-w-0">
               <span class="text-[10px] text-secondary font-bold uppercase">Step 02</span>
-              <span class="text-xs font-bold text-primary truncate"><?= get_text('admissions', 'step2_title', 'Student Profile Info') ?></span>
+              <span class="text-xs font-bold text-primary truncate"><?= get_text('admissions', 'step2_title', 'Student Details') ?></span>
             </div>
-          </div>
+          </a>
           <!-- Step 3 -->
-          <div class="flex items-center gap-2.5">
+          <a href="#step-3-parent" class="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
             <div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-bold flex items-center justify-center text-xs shrink-0">
               3
             </div>
             <div class="flex flex-col min-w-0">
               <span class="text-[10px] text-on-surface-variant uppercase">Step 03</span>
-              <span class="text-xs font-semibold text-on-surface truncate"><?= get_text('admissions', 'step3_title', 'Transit & Documents') ?></span>
+              <span class="text-xs font-semibold text-on-surface truncate"><?= get_text('admissions', 'step3_title', 'Parent Details') ?></span>
             </div>
-          </div>
+          </a>
           <!-- Step 4 -->
-          <div class="flex items-center gap-2.5">
+          <a href="#step-4-transit" class="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
             <div class="w-8 h-8 rounded-full bg-surface-container-high text-on-surface font-bold flex items-center justify-center text-xs shrink-0">
               4
             </div>
             <div class="flex flex-col min-w-0">
               <span class="text-[10px] text-on-surface-variant uppercase">Step 04</span>
-              <span class="text-xs font-semibold text-on-surface truncate"><?= get_text('admissions', 'step4_title', 'Review & Submission') ?></span>
+              <span class="text-xs font-semibold text-on-surface truncate"><?= get_text('admissions', 'step4_title', 'Transit & Submit') ?></span>
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -134,12 +134,15 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Interactive Class / Stream Matrix Selector (Light Pastel Cards on White/Grey Background) -->
-  <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto w-full">
+  <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto w-full" id="step-1-classes">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-8">
       <div>
-        <span class="text-eyebrow text-[#C9A24B] uppercase font-bold tracking-widest text-xs"><?= get_text('admissions', 'grade_selector_eyebrow', 'Select Admission Grade') ?></span>
+        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">
+          <span class="w-2 h-2 rounded-full bg-[#C9A24B] animate-pulse"></span>
+          <span>STEP 1 OF 4</span> • <span>Choose Admission Class</span>
+        </div>
         <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-primary tracking-tight leading-snug mt-0.5"><?= get_text('admissions', 'grade_selector_heading', 'Available Classes & Grade Options') ?></h2>
-        <p class="text-on-surface-variant text-xs sm:text-sm mt-0.5"><?= get_text('admissions', 'grade_selector_desc', 'Choose the prospective grade level to start your online registration application.') ?></p>
+        <p class="text-on-surface-variant text-xs sm:text-sm mt-0.5"><?= get_text('admissions', 'grade_selector_desc', 'Click on your child\'s prospective grade level below to start your online registration application.') ?></p>
       </div>
 
       <!-- Segment Filters -->
@@ -415,6 +418,24 @@ require_once __DIR__ . '/core/header.php';
       </div>
 
     </div>
+
+    <!-- Step 1 Confirmation & Proceed CTA Banner -->
+    <div class="mt-6 p-4 sm:p-5 rounded-2xl bg-[#001129] text-white flex flex-col sm:flex-row items-center justify-between gap-4 shadow-md border border-[#C9A24B]/30" id="selected-class-banner">
+      <div class="flex items-center gap-3.5">
+        <div class="w-11 h-11 rounded-xl bg-[#C9A24B] text-[#001129] flex items-center justify-center font-bold shrink-0 shadow-xs">
+          <span class="material-symbols-outlined text-2xl">check_circle</span>
+        </div>
+        <div>
+          <span class="text-[11px] text-[#C9A24B] font-bold uppercase tracking-wider block">Class Selected for Registration</span>
+          <span class="text-base sm:text-lg font-bold text-white" id="banner-active-grade">Class 11 - Science (Non-Medical)</span>
+          <span class="text-xs text-slate-300 block mt-0.5">Click below to proceed to Student Details form</span>
+        </div>
+      </div>
+      <a href="#step-2-student" class="w-full sm:w-auto px-6 py-3 bg-[#C9A24B] hover:bg-[#d6ad52] text-[#001129] font-bold rounded-xl text-xs sm:text-sm flex items-center justify-center gap-2 shadow-md transition-all shrink-0">
+        <span>Proceed to Step 2: Student Details</span>
+        <span class="material-symbols-outlined text-[18px]">arrow_downward</span>
+      </a>
+    </div>
   </section>
 
   <!-- Comprehensive Two-Column Admission Application & Registration System -->
@@ -424,13 +445,29 @@ require_once __DIR__ . '/core/header.php';
       <!-- LEFT COLUMN: All Form Subsections -->
       <div class="lg:col-span-7 flex flex-col gap-6 text-on-surface">
         
+        <!-- Form Header Active Step Banner -->
+        <div class="bg-surface-cream rounded-xl p-3.5 sm:p-4 border border-[#E5E2DA] flex items-center justify-between shadow-xs">
+          <div class="flex items-center gap-2.5">
+            <span class="material-symbols-outlined text-[#C9A24B] text-2xl">school</span>
+            <div>
+              <span class="text-[11px] text-on-surface-variant font-medium block">Applicant Admission Form</span>
+              <span class="text-xs sm:text-sm font-bold text-primary" id="form-top-grade">Applying for: Class 11 - Science (Non-Medical)</span>
+            </div>
+          </div>
+          <a href="#step-1-classes" class="text-xs text-[#C9A24B] font-bold hover:text-primary underline flex items-center gap-1">
+            <span>Change Class</span>
+            <span class="material-symbols-outlined text-sm">edit</span>
+          </a>
+        </div>
+
         <!-- Subsection 1: Student Information -->
-        <div class="bg-white rounded-xl p-5 sm:p-6 shadow-xs border border-border-warm">
+        <div class="bg-white rounded-xl p-5 sm:p-6 shadow-xs border border-border-warm" id="step-2-student">
           <div class="flex items-center gap-3 pb-4 border-b border-border-warm">
             <div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold">
               <span class="material-symbols-outlined text-xl">person</span>
             </div>
             <div>
+              <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#C9A24B]/15 text-[#001129] text-[10px] font-bold mb-0.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Step 2 of 4</div>
               <h3 class="font-bold text-primary text-base">Student Identity Credentials</h3>
               <p class="text-xs text-on-surface-variant">Provide legal identity matching Aadhaar and official school records</p>
             </div>
@@ -440,18 +477,18 @@ require_once __DIR__ . '/core/header.php';
             <!-- Full Name -->
             <div class="flex flex-col gap-1 md:col-span-2">
               <label class="text-xs text-primary font-bold">Student's Full Name (As per birth record) *</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_student_name" placeholder="e.g. Aryan Sheoran" type="text" value="Aarav Sharma">
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_student_name" placeholder="Enter student's full legal name" type="text" value="">
             </div>
             <!-- Date of Birth -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Date of Birth *</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" type="date" value="2009-08-14">
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_dob" type="date" value="">
             </div>
             <!-- Gender -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Gender *</label>
-              <select class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm">
-                <option selected="" value="male">Male</option>
+              <select class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_gender">
+                <option value="male" selected>Male</option>
                 <option value="female">Female</option>
                 <option value="other">Other</option>
               </select>
@@ -459,48 +496,56 @@ require_once __DIR__ . '/core/header.php';
             <!-- Blood Group -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Blood Group</label>
-              <select class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm">
-                <option value="O+">O Positive (O+)</option>
-                <option selected="" value="A+">A Positive (A+)</option>
+              <select class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_blood_group">
+                <option value="">Select Blood Group (Optional)</option>
+                <option value="A+">A Positive (A+)</option>
+                <option value="A-">A Negative (A-)</option>
                 <option value="B+">B Positive (B+)</option>
-                <option value="AB+">AB Positive (AB+)</option>
+                <option value="B-">B Negative (B-)</option>
+                <option value="O+">O Positive (O+)</option>
                 <option value="O-">O Negative (O-)</option>
+                <option value="AB+">AB Positive (AB+)</option>
+                <option value="AB-">AB Negative (AB-)</option>
               </select>
             </div>
             <!-- Aadhaar Number -->
             <div class="flex flex-col gap-1">
-              <label class="text-xs text-primary font-bold">Student Aadhaar Number *</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" placeholder="XXXX - XXXX - 4821" type="text" value="7823 4412 8901">
+              <label class="text-xs text-primary font-bold">Student Aadhaar Number (Optional)</label>
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_aadhaar" placeholder="XXXX - XXXX - XXXX" type="text" value="">
             </div>
             <!-- Prior School Details -->
             <div class="flex flex-col gap-1 md:col-span-2">
-              <label class="text-xs text-primary font-bold">Previous School Name & Board *</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" placeholder="e.g. Model Public School / HBSE" type="text" value="Government Model Sr. Sec. School, Dobhi (HBSE)">
+              <label class="text-xs text-primary font-bold">Previous School Name & Board</label>
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_prev_school" placeholder="e.g. Model Public School / HBSE" type="text" value="">
             </div>
             <!-- Last Grade Passed -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Last Class Passed / Status</label>
-              <select class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm">
-                <option value="10">Passed Class 10 (Awaiting Result)</option>
-                <option selected="" value="10-passed">Passed Class 10 (Result Declared)</option>
+              <select class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_last_class">
+                <option value="10-passed">Passed Class 10 (Result Declared)</option>
+                <option value="10-awaiting">Passed Class 10 (Awaiting Result)</option>
                 <option value="9">Passed Class 9</option>
+                <option value="8">Passed Class 8</option>
+                <option value="primary">Primary Level Completed</option>
+                <option value="nursery">New Admission (Nursery / KG)</option>
                 <option value="other">Other Equivalent Grade</option>
               </select>
             </div>
             <div class="flex flex-col gap-1">
-              <label class="text-xs text-primary font-bold">Aggregate Percentage / Grade *</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" placeholder="e.g. 91.4% or A1 Grade" type="text" value="92.6%">
+              <label class="text-xs text-primary font-bold">Aggregate Percentage / Grade</label>
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_percentage" placeholder="e.g. 85.4% or A1 Grade" type="text" value="">
             </div>
           </div>
         </div>
 
         <!-- Subsection 2: Parent & Guardian Details -->
-        <div class="bg-white rounded-xl p-5 sm:p-6 shadow-xs border border-border-warm">
+        <div class="bg-white rounded-xl p-5 sm:p-6 shadow-xs border border-border-warm" id="step-3-parent">
           <div class="flex items-center gap-3 pb-4 border-b border-border-warm">
             <div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold">
               <span class="material-symbols-outlined text-xl">family_restroom</span>
             </div>
             <div>
+              <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#C9A24B]/15 text-[#001129] text-[10px] font-bold mb-0.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Step 3 of 4</div>
               <h3 class="font-bold text-primary text-base">Parent & Guardian Information</h3>
               <p class="text-xs text-on-surface-variant">Primary correspondence and emergency contact points</p>
             </div>
@@ -510,46 +555,47 @@ require_once __DIR__ . '/core/header.php';
             <!-- Father's Name -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Father / Guardian's Full Name *</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" placeholder="e.g. Rajender Sharma" type="text" value="Rajender Sharma">
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_father_name" placeholder="Enter father's full name" type="text" value="">
             </div>
             <!-- Father's Occupation -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Father's Occupation</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" placeholder="e.g. Agriculture / Govt. Employee" type="text" value="Agriculture & Business">
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_father_occ" placeholder="e.g. Agriculture / Business / Service" type="text" value="">
             </div>
             <!-- Mother's Name -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Mother's Full Name *</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" placeholder="e.g. Sunita Devi" type="text" value="Sunita Devi">
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_mother_name" placeholder="Enter mother's full name" type="text" value="">
             </div>
             <!-- Mother's Occupation -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Mother's Occupation</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" placeholder="e.g. Homemaker / Teacher" type="text" value="Homemaker">
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_mother_occ" placeholder="e.g. Homemaker / Teacher / Service" type="text" value="">
             </div>
             <!-- WhatsApp Mobile Contact -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Primary Contact / WhatsApp Number *</label>
               <div class="flex">
                 <span class="h-11 px-3 bg-surface-container text-text-charcoal flex items-center justify-center font-bold text-xs rounded-l-lg border border-r-0 border-border-warm">+91</span>
-                <input class="w-full h-11 px-3.5 rounded-r-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" placeholder="98120 XXXXX" type="tel" value="98124 55432">
+                <input class="w-full h-11 px-3.5 rounded-r-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_phone" placeholder="Enter 10-digit mobile number" type="tel" value="">
               </div>
             </div>
             <!-- Email Address -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Parent Email Address (Optional)</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" placeholder="parent@example.com" type="email" value="rajender.sharma.dobhi@gmail.com">
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_email" placeholder="parent@example.com" type="email" value="">
             </div>
           </div>
         </div>
 
         <!-- Subsection 3: Local Address & Bus Transit Selection -->
-        <div class="bg-white rounded-xl p-5 sm:p-6 shadow-xs border border-border-warm">
+        <div class="bg-white rounded-xl p-5 sm:p-6 shadow-xs border border-border-warm" id="step-4-transit">
           <div class="flex items-center gap-3 pb-4 border-b border-border-warm">
             <div class="w-9 h-9 rounded-lg bg-primary/10 text-primary flex items-center justify-center font-bold shrink-0">
               <span class="material-symbols-outlined text-xl">directions_bus</span>
             </div>
             <div>
+              <div class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-[#C9A24B]/15 text-[#001129] text-[10px] font-bold mb-0.5"><span class="w-1.5 h-1.5 rounded-full bg-[#C9A24B]"></span> Step 4 of 4</div>
               <h3 class="font-bold text-primary text-base"><?= get_text('admissions', 'bus_facility_title', 'Residence & Daily School Bus Facility') ?></h3>
               <p class="text-xs text-on-surface-variant"><?= get_text('admissions', 'bus_facility_desc', 'Fleet covering 35+ villages in Hisar and neighboring rural belts') ?></p>
             </div>
@@ -559,7 +605,7 @@ require_once __DIR__ . '/core/header.php';
             <!-- Village / Local Address -->
             <div class="flex flex-col gap-1 md:col-span-2">
               <label class="text-xs text-primary font-bold">Permanent Village / Street Address *</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" placeholder="House No., Street, Landmark" type="text" value="Ward No. 4, Near Shiv Mandir, Main Dobhi Chowk">
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_address" placeholder="House No., Street, Landmark, Village / Colony" type="text" value="">
             </div>
             <!-- District & State -->
             <div class="flex flex-col gap-1">
@@ -569,7 +615,7 @@ require_once __DIR__ . '/core/header.php';
             <!-- Pin Code -->
             <div class="flex flex-col gap-1">
               <label class="text-xs text-primary font-bold">Postal Pin Code *</label>
-              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" type="text" value="125001">
+              <input class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm" id="input_pincode" placeholder="e.g. 125001" type="text" value="125001">
             </div>
             <!-- Bus Route Option Selector -->
             <div class="flex flex-col gap-1 md:col-span-2 mt-1">
@@ -600,7 +646,7 @@ require_once __DIR__ . '/core/header.php';
             <!-- Additional Villages Dropdown with all 14 Villages -->
             <div class="flex flex-col gap-1 md:col-span-2" id="village-bus-dropdown">
               <label class="text-xs text-primary font-bold">Select Your Village / Daily Bus Route Stop (14 Villages Connected) *</label>
-              <select class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm font-medium">
+              <select class="w-full h-11 px-3.5 rounded-lg bg-surface-container-low text-text-charcoal text-xs sm:text-sm focus:bg-white focus:outline-none focus:ring-2 focus:ring-secondary border border-border-warm font-medium" id="select_village">
                 <option value="dobhi" selected>1. Dobhi (Main Campus / Bus Stop)</option>
                 <option value="kharia">2. Kharia</option>
                 <option value="telanwali">3. Telanwali</option>
@@ -617,13 +663,42 @@ require_once __DIR__ . '/core/header.php';
                 <option value="aryanagar">14. Aryanagar</option>
               </select>
             </div>
+
+            <!-- Step 4 Form Completion Notice (Redirects to Single Submit Button in Summary) -->
+            <div class="md:col-span-2 mt-4 pt-4 border-t border-border-warm flex flex-col gap-3">
+              <div class="p-3 bg-surface-cream rounded-xl border border-[#E5E2DA] flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2">
+                  <span class="material-symbols-outlined text-[#C9A24B] text-xl shrink-0">task_alt</span>
+                  <span class="text-primary font-medium">Ready to submit for: <strong class="font-bold" id="form-bottom-grade">Class 11 - Science (Non-Medical)</strong></span>
+                </div>
+                <a href="#step-1-classes" class="text-xs text-[#C9A24B] font-bold hover:text-primary underline shrink-0">Change Class</a>
+              </div>
+
+              <!-- Primary Submit Button (The Single Submit Button on the Page) -->
+              <button class="w-full h-12 sm:h-13 bg-secondary hover:bg-gold-hover text-primary font-bold rounded-xl shadow-md hover:shadow-lg transition-all transform active:scale-95 flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer" id="btn-submit-registration" type="button">
+                <span class="material-symbols-outlined text-[22px]">send</span>
+                <span>Complete & Submit Admission Registration →</span>
+              </button>
+
+              <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-5 text-[11px] text-on-surface-variant text-center pt-0.5">
+                <span class="flex items-center gap-1 text-emerald-700 font-semibold">
+                  <span class="material-symbols-outlined text-sm">verified</span> Instant Reference ID
+                </span>
+                <span class="flex items-center gap-1 text-emerald-700 font-semibold">
+                  <span class="material-symbols-outlined text-sm">lock</span> 100% Free &amp; Secure
+                </span>
+                <span class="flex items-center gap-1 text-primary font-semibold">
+                  <span class="material-symbols-outlined text-sm">call</span> Helpline: +91 70158 90094
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
       </div>
 
       <!-- RIGHT COLUMN: Sticky Application Summary, Verification Checklist & Help Desk -->
-      <div class="lg:col-span-5 flex flex-col gap-5 w-full">
+      <div class="lg:col-span-5 flex flex-col gap-5 w-full lg:sticky lg:top-24">
         
         <!-- Summary Box -->
         <div class="bg-white rounded-2xl shadow-md overflow-hidden border border-border-warm">
@@ -687,11 +762,11 @@ require_once __DIR__ . '/core/header.php';
               </span>
             </div>
 
-            <!-- Primary Action Button -->
-            <button class="w-full h-12 bg-secondary hover:bg-gold-hover text-primary font-bold rounded-xl shadow-xs transition-all transform active:scale-95 flex items-center justify-center gap-2 text-xs sm:text-sm mt-2 cursor-pointer" id="btn-submit-registration" type="button">
-              <span class="material-symbols-outlined text-[20px]">send</span>
-              <span><?= get_text('admissions', 'checkout_cta_btn', 'Submit Admission Registration →') ?></span>
-            </button>
+            <!-- Application Status Note -->
+            <div class="p-3 bg-surface-cream rounded-xl border border-secondary/30 text-xs flex items-center gap-2.5 text-primary mt-2">
+              <span class="material-symbols-outlined text-secondary text-xl shrink-0">edit_note</span>
+              <span class="text-[11px] leading-relaxed font-medium">Please fill student and parent details on the left, then click <strong>Submit</strong> at the bottom of the form.</span>
+            </div>
 
             <!-- Status Notice -->
             <div class="flex flex-col gap-1.5 pt-1 text-center text-xs text-on-surface-variant">
@@ -774,10 +849,10 @@ require_once __DIR__ . '/core/header.php';
             </div>
             <div class="text-xs">
               <span class="font-bold text-primary block">Admission Help Desk</span>
-              <span class="text-on-surface-variant font-medium">+91 70158 90094 / +91 79883 5710</span>
+              <span class="text-on-surface-variant font-medium">+91 70158 90094 / +91 79882 35710</span>
             </div>
           </div>
-          <a class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold flex items-center gap-1 shadow-xs transition-colors shrink-0" href="https://wa.me/<?= preg_replace('/[^0-9]/', '', get_text('admissions', 'help_whatsapp', '917015890094')) ?>" target="_blank">
+          <a class="px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg text-xs font-bold flex items-center gap-1 shadow-xs transition-colors shrink-0" href="https://wa.me/<?= preg_replace('/[^0-9]/', '', get_text('admissions', 'help_whatsapp', '918307560664')) ?>" target="_blank">
             <span class="material-symbols-outlined text-[14px]">chat</span> WhatsApp
           </a>
         </div>
@@ -967,7 +1042,7 @@ require_once __DIR__ . '/core/header.php';
           <span class="material-symbols-outlined text-[16px]">call</span>
           <span><?= get_text('admissions', 'help_phone', '+91 70158 90094') ?></span>
         </a>
-        <a class="px-4 py-2 rounded-lg bg-secondary hover:bg-gold-hover text-primary text-xs font-bold flex items-center gap-1.5 shadow-md transition-colors" href="https://wa.me/<?= preg_replace('/[^0-9]/', '', get_text('admissions', 'help_whatsapp', '917015890094')) ?>" target="_blank">
+        <a class="px-4 py-2 rounded-lg bg-secondary hover:bg-gold-hover text-primary text-xs font-bold flex items-center gap-1.5 shadow-md transition-colors" href="https://wa.me/<?= preg_replace('/[^0-9]/', '', get_text('admissions', 'help_whatsapp', '918307560664')) ?>" target="_blank">
           <span class="material-symbols-outlined text-[16px]">chat</span>
           <span>WhatsApp Us</span>
         </a>
@@ -986,6 +1061,9 @@ require_once __DIR__ . '/core/header.php';
 
       const summaryGradeName = document.getElementById('summary-grade-name');
       const summaryTransitChoice = document.getElementById('summary-transit-choice');
+      const bannerActiveGrade = document.getElementById('banner-active-grade');
+      const formTopGrade = document.getElementById('form-top-grade');
+      const formBottomGrade = document.getElementById('form-bottom-grade');
       const btnSubmit = document.getElementById('btn-submit-registration');
 
       function updateCardSelection(selectedCard) {
@@ -1012,12 +1090,13 @@ require_once __DIR__ . '/core/header.php';
           activeIcon.classList.remove('text-outline-variant');
         }
 
-        // Update state & summary
+        // Update state & all grade labels across the workflow
         state.gradeId = selectedCard.getAttribute('data-grade-id');
-        state.gradeName = selectedCard.getAttribute('data-grade-name');
-        if (summaryGradeName) {
-          summaryGradeName.textContent = state.gradeName;
-        }
+        state.gradeName = selectedCard.getAttribute('data-grade-name') || 'Selected Class';
+        if (summaryGradeName) summaryGradeName.textContent = state.gradeName;
+        if (bannerActiveGrade) bannerActiveGrade.textContent = state.gradeName;
+        if (formTopGrade) formTopGrade.textContent = state.gradeName;
+        if (formBottomGrade) formBottomGrade.textContent = state.gradeName;
       }
 
       // Card clicks
@@ -1089,26 +1168,58 @@ require_once __DIR__ . '/core/header.php';
         });
       });
 
-      // Submit Button Action
+      // Unified Form Submission Handler with validation & feedback
+      function handleAdmissionSubmit() {
+        const studentNameInput = document.getElementById('input_student_name');
+        const phoneInput = document.getElementById('input_phone');
+        const fatherNameInput = document.getElementById('input_father_name');
+
+        const studentName = studentNameInput ? studentNameInput.value.trim() : '';
+        const phone = phoneInput ? phoneInput.value.trim() : '';
+        const fatherName = fatherNameInput ? fatherNameInput.value.trim() : '';
+
+        // Validation with smooth scroll to offending field
+        if (!studentName) {
+          alert('Please enter the Student Full Name before submitting.');
+          if (studentNameInput) {
+            studentNameInput.focus();
+            studentNameInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          return;
+        }
+
+        if (!phone || phone.length < 10) {
+          alert('Please provide a valid 10-digit mobile number for communication.');
+          if (phoneInput) {
+            phoneInput.focus();
+            phoneInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+          return;
+        }
+
+        if (!btnSubmit) return;
+
+        btnSubmit.disabled = true;
+        btnSubmit.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> <span>Submitting Application...</span>';
+
+        setTimeout(() => {
+          btnSubmit.innerHTML = '<span class="material-symbols-outlined text-emerald-800 text-[20px]">verified</span> <span class="text-primary font-bold">Application Submitted!</span>';
+          btnSubmit.classList.remove('bg-secondary', 'text-primary');
+          btnSubmit.classList.add('bg-emerald-400');
+
+          const token = 'SRS-2026-' + Math.floor(100000 + Math.random() * 900000);
+          alert('Admission Registration Submitted Successfully!\n\n' +
+                'Student Name: ' + studentName + '\n' +
+                (fatherName ? 'Father\'s Name: ' + fatherName + '\n' : '') +
+                'Selected Grade: ' + state.gradeName + '\n' +
+                'Mobile Contact: +91 ' + phone + '\n' +
+                'Registration Reference ID: ' + token + '\n\n' +
+                'Thank you for registering at Sun Rise Sr. Sec. School, Dobhi. Our admissions desk will contact you shortly.');
+        }, 1000);
+      }
+
       if (btnSubmit) {
-        btnSubmit.addEventListener('click', function() {
-          const studentName = document.getElementById('input_student_name').value || 'Student';
-          btnSubmit.disabled = true;
-          btnSubmit.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> <span>Submitting Application...</span>';
-
-          setTimeout(() => {
-            btnSubmit.innerHTML = '<span class="material-symbols-outlined text-emerald-800 text-[20px]">verified</span> <span class="text-primary font-bold">Application Submitted!</span>';
-            btnSubmit.classList.remove('bg-secondary', 'text-primary');
-            btnSubmit.classList.add('bg-emerald-400');
-
-            const token = 'SRS-2026-' + Math.floor(100000 + Math.random() * 900000);
-            alert('Admission Registration Submitted Successfully!\n\n' +
-                  'Applicant: ' + studentName + '\n' +
-                  'Grade Level: ' + state.gradeName + '\n' +
-                  'Registration Ref No: ' + token + '\n\n' +
-                  'Thank you for applying to Sun Rise Sr. Sec. School, Dobhi. Our admissions desk will contact you shortly for document verification.');
-          }, 1000);
-        });
+        btnSubmit.addEventListener('click', handleAdmissionSubmit);
       }
     })();
   </script>

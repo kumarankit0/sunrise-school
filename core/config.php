@@ -10,7 +10,7 @@ require_once __DIR__ . '/../includes/content_helper.php';
 $site_name           = get_text('general', 'site_name', 'Sun Rise Sr. Sec. School, Dobhi');
 $site_tagline        = get_text('general', 'site_tagline', 'Nurturing Knowledge, Character & Academic Excellence | Affiliated to HBSE');
 $site_phone          = get_text('general', 'site_phone', '+91 70158 90094');
-$site_phone_alt      = get_text('general', 'site_phone_alt', '+91 79883 5710');
+$site_phone_alt      = get_text('general', 'site_phone_alt', '+91 79882 35710');
 $site_email          = get_text('general', 'site_email', 'info@sunrisesrsecschool.com');
 $site_info_email     = get_text('general', 'site_info_email', 'info@sunrisesrsecschool.com');
 $site_address        = get_text('general', 'site_address', 'Main Road Dobhi, Near Primary Health Center, Dobhi, Hisar (Haryana) - 125001');
@@ -21,10 +21,10 @@ $site_affiliation    = get_text('general', 'site_affiliation', 'HBSE');
 $site_logo           = get_image('general', 'site_logo', 'assets/images/logo.svg');
 
 // Social Media Channels (Configurable via Admin Dashboard)
-$social_facebook     = get_text('general', 'social_facebook', 'https://facebook.com');
-$social_instagram    = get_text('general', 'social_instagram', 'https://instagram.com');
-$social_youtube      = get_text('general', 'social_youtube', 'https://youtube.com');
-$social_whatsapp     = get_text('general', 'social_whatsapp', 'https://wa.me/917015890094');
+$social_facebook     = get_text('general', 'social_facebook', 'https://www.facebook.com/sunrise6691/');
+$social_instagram    = get_text('general', 'social_instagram', 'https://www.instagram.com/sunrise_sr.sec.school?stkn=YWhqZ3B6dGZiM3J4');
+$social_youtube      = get_text('general', 'social_youtube', 'https://www.youtube.com/@sunriseschool06691');
+$social_whatsapp     = get_text('general', 'social_whatsapp', 'https://wa.me/918307560664');
 $social_twitter      = get_text('general', 'social_twitter', 'https://twitter.com');
 
 // Base path for original school images

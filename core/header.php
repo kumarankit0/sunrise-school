@@ -322,7 +322,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
         <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="mobile-footer-contact-item">
           <span class="material-symbols-outlined text-[15px] text-primary">call</span> Call Us
         </a>
-        <a href="<?= htmlspecialchars(get_text('general', 'nav_mobile_wa_url', 'https://wa.me/917015890094')) ?>" target="_blank" rel="noopener" class="mobile-footer-contact-item">
+        <a href="<?= htmlspecialchars(get_text('general', 'nav_mobile_wa_url', 'https://wa.me/918307560664')) ?>" target="_blank" rel="noopener" class="mobile-footer-contact-item">
           <span class="material-symbols-outlined text-[15px] text-emerald-600">chat</span> WhatsApp
         </a>
         <a href="contact-us.php" class="mobile-footer-contact-item">

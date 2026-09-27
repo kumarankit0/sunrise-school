@@ -8636,7 +8636,7 @@ $pages_config = [
                         'key' => 'site_phone_alt',
                         'label' => 'Secondary Contact Phone',
                         'type' => 'text',
-                        'default' => '+91 79883 5710',
+                        'default' => '+91 79882 35710',
                         'help' => 'Secondary phone number displayed in footer and contact desks.'
                     ],
                     [
@@ -8906,7 +8906,7 @@ $pages_config = [
                         'key' => 'nav_mobile_wa_url',
                         'label' => 'Mobile Drawer WhatsApp URL',
                         'type' => 'text',
-                        'default' => 'https://wa.me/917015890094',
+                        'default' => 'https://wa.me/918307560664',
                         'help' => 'WhatsApp link inside mobile menu.'
                     ]
                 ]
@@ -9032,8 +9032,8 @@ $pages_config = [
                         'key' => 'footer_col3_title',
                         'label' => 'Footer Column 3 Heading',
                         'type' => 'text',
-                        'default' => 'Connect With Us',
-                        'help' => 'Third column header.'
+                        'default' => 'School Timings',
+                        'help' => 'Third column header (School Timings).'
                     ],
                     [
                         'kind' => 'text',
@@ -9166,7 +9166,7 @@ $pages_config = [
                         'key' => 'social_facebook',
                         'label' => 'Facebook Page URL',
                         'type' => 'text',
-                        'default' => 'https://facebook.com',
+                        'default' => 'https://www.facebook.com/sunrise6691/',
                         'help' => 'Link to official school Facebook page.'
                     ],
                     [
@@ -9174,7 +9174,7 @@ $pages_config = [
                         'key' => 'social_instagram',
                         'label' => 'Instagram Profile URL',
                         'type' => 'text',
-                        'default' => 'https://instagram.com',
+                        'default' => 'https://www.instagram.com/sunrise_sr.sec.school?stkn=YWhqZ3B6dGZiM3J4',
                         'help' => 'Link to official school Instagram profile.'
                     ],
                     [
@@ -9182,7 +9182,7 @@ $pages_config = [
                         'key' => 'social_youtube',
                         'label' => 'YouTube Channel URL',
                         'type' => 'text',
-                        'default' => 'https://youtube.com',
+                        'default' => 'https://www.youtube.com/@sunriseschool06691',
                         'help' => 'Link to official school YouTube channel.'
                     ],
                     [
@@ -9190,7 +9190,7 @@ $pages_config = [
                         'key' => 'social_whatsapp',
                         'label' => 'WhatsApp Helpline / Chat Link',
                         'type' => 'text',
-                        'default' => 'https://wa.me/917015890094',
+                        'default' => 'https://wa.me/918307560664',
                         'help' => 'Direct WhatsApp chat URL (e.g. https://wa.me/91XXXXXXXXXX).'
                     ],
                     [

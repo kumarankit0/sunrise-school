@@ -412,7 +412,7 @@ require_once __DIR__ . '/core/header.php';
           </p>
         </div>
       </div>
-      <a class="bg-emerald-600 hover:bg-emerald-700 text-white font-label-md px-5 py-2.5 sm:h-11 rounded-xl transition-colors flex items-center gap-2 shadow-md flex-shrink-0 font-bold text-xs sm:text-sm" href="<?= htmlspecialchars(get_text('contact', 'wa_btn_link', 'https://wa.me/917015890094')) ?>" target="_blank" rel="noopener">
+      <a class="bg-emerald-600 hover:bg-emerald-700 text-white font-label-md px-5 py-2.5 sm:h-11 rounded-xl transition-colors flex items-center gap-2 shadow-md flex-shrink-0 font-bold text-xs sm:text-sm" href="<?= htmlspecialchars(get_text('contact', 'wa_btn_link', 'https://wa.me/918307560664')) ?>" target="_blank" rel="noopener">
         <span class="material-symbols-outlined text-[18px]">chat</span>
         <span><?= htmlspecialchars(get_text('contact', 'wa_btn_text', 'Open WhatsApp Chat')) ?></span>
       </a>

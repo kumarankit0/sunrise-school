@@ -82,7 +82,7 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Gallery Grid (12 Curated Showcase Cards) -->
-  <section class="max-w-7xl mx-auto px-6 lg:px-12 pb-12 sm:pb-16 w-full">
+  <section class="max-w-7xl mx-auto px-6 lg:px-12 pb-12 sm:pb-16 w-full scroll-mt-28" id="campus-life">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
 
       <!-- Item 1: Exhibitions -->

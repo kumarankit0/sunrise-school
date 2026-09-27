@@ -66,7 +66,8 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Main Content Layout (Form & Campus Office Info) -->
-  <section id="inquiry-form" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 w-full scroll-mt-20">
+  <section id="inquiry-form" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 w-full scroll-mt-24">
+    <span id="careers" class="scroll-mt-28 block -mt-28 pointer-events-none"></span>
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
       <!-- Left Column: Contact Form (Elevated Card) -->
       <div class="lg:col-span-7 bg-surface-pure p-5 sm:p-7 lg:p-8 rounded-xl shadow-sm relative border border-border-warm h-full flex flex-col justify-between">
@@ -351,7 +352,7 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Interactive Google Map & Campus Location Section -->
-  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 w-full">
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-8 sm:py-12 w-full scroll-mt-28" id="map">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-5 sm:mb-6">
       <div>
         <span class="font-eyebrow text-eyebrow uppercase text-[#C9A24B] mb-1 block font-bold tracking-wider text-xs">

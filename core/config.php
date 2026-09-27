@@ -52,7 +52,7 @@ $nav_menu = [
             ],
             'leadership' => [
                 'title' => 'Leadership & Management',
-                'url' => 'about-us.php#leadership',
+                'url' => 'management.php',
                 'icon' => 'workspace_premium',
                 'desc' => 'Message from Chairman & Principal'
             ],
@@ -239,7 +239,7 @@ function is_nav_active($key, $current) {
     
     // Page to menu category mapping
     $mapping = [
-        'about-us' => ['about-us', 'faculty-staff', 'leadership', 'disclosure'],
+        'about-us' => ['about-us', 'faculty-staff', 'leadership', 'management', 'disclosure'],
         'admissions' => ['admissions', 'admission-proc', 'online-apply', 'fee-struct', 'admission-faq'],
         'academics' => ['academics', 'curriculum', 'streams', 'calendar', 'toppers'],
         'activities' => ['events-news', 'sports-meet', 'student-clubs'],

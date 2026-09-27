@@ -9,18 +9,36 @@ require_once __DIR__ . '/core/header.php';
 
 <div class="flex flex-col w-full bg-[#f8fafc] text-on-surface">
 
-  <!-- Top Breadcrumb & Hero Header -->
-  <section class="relative py-8 sm:py-12 px-4 sm:px-6 lg:px-12 overflow-hidden border-b border-[#000e21]/10" style="background-color: #f1f5f9; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.08) 0%, transparent 40%), radial-gradient(circle at 85% 75%, rgba(11, 38, 71, 0.06) 0%, transparent 45%);">
-    <!-- Subtle Architectural / Geometric Dot Overlay -->
-    <div class="absolute inset-0 pointer-events-none opacity-[0.35]" style="background-image: radial-gradient(#001129 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
-    
-    <!-- Ambient Glow Orbs -->
-    <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#C9A24B]/10 blur-3xl pointer-events-none"></div>
-    <div class="absolute -left-20 bottom-0 w-80 h-80 rounded-full bg-primary/8 blur-3xl pointer-events-none"></div>
+  <!-- Top Breadcrumb & Hero Header with Dynamic Blurred Campus Background -->
+  <?php
+    $admission_hero_bg = get_image('admissions', 'hero_bg_image', school_img('school_home1.webp'));
+    $admission_hero_alt = get_image_alt('admissions', 'hero_bg_image', 'Sun Rise Sr. Sec. School Campus');
+  ?>
+  <section class="relative py-8 sm:py-12 px-4 sm:px-6 lg:px-12 overflow-hidden border-b border-[#000e21]/10 bg-slate-100">
+    <!-- Blurred Campus Photo Background Layer -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
+      <img
+        src="<?= $admission_hero_bg ?>"
+        alt="<?= $admission_hero_alt ?>"
+        class="w-full h-full object-cover object-center scale-110 filter blur-[8px] md:blur-[12px] brightness-[0.96] contrast-[1.04] transform will-change-transform"
+        loading="eager"
+        decoding="async"
+      />
+      <!-- Soft translucent multi-tone gradient overlay to ensure crisp typography & brand warmth -->
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-50/94 via-white/88 to-[#fef9ee]/92 backdrop-blur-[1px]"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-slate-100/90"></div>
+
+      <!-- Subtle Architectural / Geometric Dot Overlay -->
+      <div class="absolute inset-0 opacity-[0.22]" style="background-image: radial-gradient(#001129 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
+
+      <!-- Ambient Glow Orbs -->
+      <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#C9A24B]/15 blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-20 bottom-0 w-80 h-80 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+    </div>
 
     <div class="max-w-7xl mx-auto relative z-10 flex flex-col gap-5">
       <!-- Breadcrumb -->
-      <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-on-surface-variant">
+      <nav aria-label="Breadcrumb" class="flex items-center gap-2 text-xs text-on-surface-variant font-medium">
         <a class="hover:text-primary transition-colors flex items-center gap-1" href="index.php">
           <span class="material-symbols-outlined text-[15px]">home</span> Home
         </a>
@@ -33,32 +51,32 @@ require_once __DIR__ . '/core/header.php';
       <!-- Header Content Grid -->
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
         <div class="lg:col-span-8 flex flex-col gap-2.5 sm:gap-3.5">
-          <div class="hero-badge inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full bg-[#C9A24B]/15 text-[#8A6A1C] border border-[#C9A24B]/30 font-bold uppercase tracking-wider text-[11px] shadow-xs">
+          <div class="hero-badge inline-flex items-center gap-1.5 self-start px-3 py-1 rounded-full bg-[#C9A24B]/15 text-[#8A6A1C] border border-[#C9A24B]/35 font-bold uppercase tracking-wider text-[11px] shadow-xs backdrop-blur-sm">
             <span class="w-2 h-2 rounded-full bg-[#C9A24B] animate-ping"></span>
             <?= get_text('admissions', 'session_badge', 'Academic Session 2026–27 Registrations Open') ?>
           </div>
-          <h1 class="hero-heading font-headline-lg font-bold text-primary text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight">
+          <h1 class="hero-heading font-headline-lg font-bold text-primary text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight drop-shadow-xs">
             <?= get_text('admissions', 'hero_title', 'Admissions Open: Sun Rise Sr. Sec. School, Dobhi') ?>
           </h1>
-          <p class="hero-subtitle text-on-surface-variant w-full max-w-3xl text-xs sm:text-sm leading-relaxed">
+          <p class="hero-subtitle text-[#334155] w-full max-w-3xl text-xs sm:text-sm leading-relaxed">
             <?= get_text('admissions', 'hero_desc', 'Cultivating scholarship, strong character, and competitive excellence in Hisar district. Select your grade stream, fill student credentials, choose village bus transit, and submit your admission application online.') ?>
           </p>
 
           <!-- Key Highlights Badges -->
           <div class="flex flex-wrap items-center gap-2.5 pt-1">
-            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold">
+            <div class="flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold hover:bg-white transition-all">
               <span class="material-symbols-outlined text-[#C9A24B] text-base">verified</span>
               <span><?= get_text('admissions', 'badge_HBSE', 'HBSE Affiliation #530XXX (Dobhi, Hisar)') ?></span>
             </div>
-            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold">
+            <div class="flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold hover:bg-white transition-all">
               <span class="material-symbols-outlined text-[#C9A24B] text-base">bolt</span>
               <span><?= get_text('admissions', 'badge_digital', '100% Digital Fast-Track Registration') ?></span>
             </div>
-            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold">
+            <div class="flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold hover:bg-white transition-all">
               <span class="material-symbols-outlined text-[#C9A24B] text-base">assignment_turned_in</span>
               <span><?= get_text('admissions', 'badge_token', 'Instant Application Acknowledgement') ?></span>
             </div>
-            <div class="flex items-center gap-1.5 bg-white px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold">
+            <div class="flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold hover:bg-white transition-all">
               <span class="material-symbols-outlined text-[#C9A24B] text-base">security</span>
               <span><?= get_text('admissions', 'badge_escrow', 'RBI & PCI-DSS 256-Bit Escrow') ?></span>
             </div>
@@ -67,7 +85,7 @@ require_once __DIR__ . '/core/header.php';
 
         <!-- School Crest Credential Card -->
         <div class="lg:col-span-4 flex justify-start lg:justify-end">
-          <div class="w-full max-w-xs bg-white rounded-xl p-5 shadow-md border border-border-warm flex flex-col items-center text-center gap-2.5">
+          <div class="w-full max-w-xs bg-white/95 backdrop-blur-md rounded-xl p-5 shadow-md border border-border-warm flex flex-col items-center text-center gap-2.5">
             <div class="w-20 h-20 p-1.5 rounded-full bg-surface-cream flex items-center justify-center shadow-xs">
               <img alt="Sun Rise Sr. Sec. School Dobhi Official Crest" class="w-16 h-16 object-contain drop-shadow-sm" src="<?= $site_logo ?>" width="64" height="64" loading="eager" decoding="async">
             </div>
@@ -76,7 +94,7 @@ require_once __DIR__ . '/core/header.php';
               <span class="font-bold text-primary text-base">Sun Rise Sr. Sec. School</span>
               <span class="text-xs text-on-surface-variant"><?= get_text('admissions', 'school_location_tag', 'Dobhi, Dist. Hisar, Haryana – 125001') ?></span>
             </div>
-            <div class="w-full bg-surface-container-low rounded-lg p-2 flex items-center justify-between text-xs">
+            <div class="w-full bg-surface-container-low/80 rounded-lg p-2 flex items-center justify-between text-xs">
               <span class="text-on-surface-variant font-medium">Admission Status:</span>
               <span class="font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded text-[10px] uppercase"><?= get_text('admissions', 'admission_status_pill', 'Active Now') ?></span>
             </div>
@@ -85,7 +103,7 @@ require_once __DIR__ . '/core/header.php';
       </div>
 
       <!-- Multi-Step Progress Tracker Bar -->
-      <div class="mt-4 bg-white rounded-xl p-3.5 sm:p-5 shadow-xs border border-border-warm">
+      <div class="mt-4 bg-white/95 backdrop-blur-md rounded-xl p-3.5 sm:p-5 shadow-xs border border-border-warm">
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
           <!-- Step 1 -->
           <a href="#step-1-classes" class="flex items-center gap-2.5 hover:opacity-90 transition-opacity">
@@ -134,7 +152,8 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Interactive Class / Stream Matrix Selector (Light Pastel Cards on White/Grey Background) -->
-  <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto w-full" id="step-1-classes">
+  <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto w-full scroll-mt-24" id="step-1-classes">
+    <span id="fee-structure" class="scroll-mt-28 block -mt-28 pointer-events-none"></span>
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-8">
       <div>
         <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">
@@ -439,7 +458,7 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
   <!-- Comprehensive Two-Column Admission Application & Registration System -->
-  <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto w-full">
+  <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto w-full scroll-mt-24" id="register-form">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
       
       <!-- LEFT COLUMN: All Form Subsections -->
@@ -958,7 +977,7 @@ require_once __DIR__ . '/core/header.php';
       </div>
 
       <!-- Right: FAQ Accordion -->
-      <div class="lg:col-span-7 flex flex-col gap-3">
+      <div class="lg:col-span-7 flex flex-col gap-3 scroll-mt-28" id="faqs">
         <div>
           <span class="text-eyebrow text-[#C9A24B] uppercase font-bold tracking-wider text-xs"><?= get_text('admissions', 'faq_eyebrow', "Parents' FAQ Desk") ?></span>
           <h2 class="text-lg sm:text-xl font-bold text-primary tracking-tight leading-snug mt-0.5"><?= get_text('admissions', 'faq_heading', 'Frequently Asked Questions') ?></h2>

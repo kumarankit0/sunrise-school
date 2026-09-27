@@ -2000,209 +2000,6 @@ $pages_config = [
                 ]
             ],
 
-            // Section 7: Leadership Team (3 Columns: Director, Principal & Coordinator)
-            [
-                'title' => 'Section 7: Leadership Team (3 Columns: Director, Principal & Coordinator)',
-                'icon'  => 'groups',
-                'desc'  => '3-column leadership grid featuring Director, Principal, and Coordinator with top photos, designations, experience badges, and detailed profiles.',
-                'fields' => [
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader_tagline',
-                        'label' => 'Leadership Section Eyebrow',
-                        'type' => 'text',
-                        'default' => 'OUR LEADERSHIP TEAM',
-                        'help' => 'Eyebrow pill tag.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader_heading',
-                        'label' => 'Leadership Main Headline',
-                        'type' => 'text',
-                        'default' => 'Inspiring Minds, Cultivating Character & Excellence',
-                        'help' => 'Main headline on leadership card.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader_desc',
-                        'label' => 'Leadership Section Subtext',
-                        'type' => 'text',
-                        'default' => 'Guided by seasoned visionaries dedicated to academic distinction, moral integrity, and holistic student growth.',
-                        'help' => 'Introductory subtext paragraph below heading.'
-                    ],
-                    // Column 1: Founder & Director
-                    [
-                        'kind' => 'image',
-                        'key' => 'leader1_photo',
-                        'label' => 'Director Photo (Column 1)',
-                        'default' => 'assets/images/sunrise school image/director.png',
-                        'alt' => 'Mr. Bhader Singh Swami - Founder & Director',
-                        'help' => 'Portrait photo of Founder & Director.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader1_badge',
-                        'label' => 'Director Photo Overlay Badge',
-                        'type' => 'text',
-                        'default' => 'Founder & Director',
-                        'help' => 'Badge overlaid on photo.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader1_tag',
-                        'label' => 'Director Eyebrow Tag',
-                        'type' => 'text',
-                        'default' => 'Visionary Leadership',
-                        'help' => 'Gold tag above director name.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader1_name',
-                        'label' => 'Director Full Name',
-                        'type' => 'text',
-                        'default' => 'Mr. Bhader Singh Swami',
-                        'help' => 'Director name.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader1_role',
-                        'label' => 'Director Role & Qualifications',
-                        'type' => 'text',
-                        'default' => 'Founder & Director | M.A., B.Ed.',
-                        'help' => 'Director title and degrees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader1_exp',
-                        'label' => 'Director Experience Badge',
-                        'type' => 'text',
-                        'default' => '36+ Years in Education',
-                        'help' => 'Experience badge.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader1_desc',
-                        'label' => 'Director Biography / Profile',
-                        'type' => 'text',
-                        'default' => 'With 36 years of teaching experience and 26 years of school management, Mr. Bhader Singh Swami has devoted his journey to education grounded in discipline, values, character, and academic excellence.',
-                        'help' => 'Director profile description.'
-                    ],
-                    // Column 2: Principal
-                    [
-                        'kind' => 'image',
-                        'key' => 'leader2_photo',
-                        'label' => 'Principal Photo (Column 2)',
-                        'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
-                        'alt' => 'Mr. Rajbir Singh - Principal',
-                        'help' => 'Portrait photo of Principal.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader2_badge',
-                        'label' => 'Principal Photo Overlay Badge',
-                        'type' => 'text',
-                        'default' => 'Principal',
-                        'help' => 'Badge overlaid on photo.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader2_tag',
-                        'label' => 'Principal Eyebrow Tag',
-                        'type' => 'text',
-                        'default' => 'Academic Administration',
-                        'help' => 'Gold tag above principal name.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader2_name',
-                        'label' => 'Principal Full Name',
-                        'type' => 'text',
-                        'default' => 'Mr. Rajbir Singh',
-                        'help' => 'Principal name.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader2_role',
-                        'label' => 'Principal Role & Qualifications',
-                        'type' => 'text',
-                        'default' => 'Principal | M.A., B.Ed.',
-                        'help' => 'Principal title and degrees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader2_exp',
-                        'label' => 'Principal Experience Badge',
-                        'type' => 'text',
-                        'default' => '16 Years Experience',
-                        'help' => 'Experience badge.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader2_desc',
-                        'label' => 'Principal Biography / Profile',
-                        'type' => 'text',
-                        'default' => 'Serving as the academic head, Mr. Rajbir Singh fosters a disciplined and purposeful learning environment, supporting teachers and ensuring students receive balanced opportunities for holistic development.',
-                        'help' => 'Principal profile description.'
-                    ],
-                    // Column 3: Coordinator
-                    [
-                        'kind' => 'image',
-                        'key' => 'leader3_photo',
-                        'label' => 'Coordinator Photo (Column 3)',
-                        'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
-                        'alt' => 'Mr. Indra Dev - Coordinator',
-                        'help' => 'Portrait photo of Coordinator.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader3_badge',
-                        'label' => 'Coordinator Photo Overlay Badge',
-                        'type' => 'text',
-                        'default' => 'Coordinator',
-                        'help' => 'Badge overlaid on photo.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader3_tag',
-                        'label' => 'Coordinator Eyebrow Tag',
-                        'type' => 'text',
-                        'default' => 'Administration & Coordination',
-                        'help' => 'Gold tag above coordinator name.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader3_name',
-                        'label' => 'Coordinator Full Name',
-                        'type' => 'text',
-                        'default' => 'Mr. Indra Dev',
-                        'help' => 'Coordinator name.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader3_role',
-                        'label' => 'Coordinator Role & Qualifications',
-                        'type' => 'text',
-                        'default' => 'Coordinator | B.A., M.A., LL.B., LL.M.',
-                        'help' => 'Coordinator title and degrees.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader3_exp',
-                        'label' => 'Coordinator Experience Badge',
-                        'type' => 'text',
-                        'default' => '22 Years Exp • Former GM, RBI',
-                        'help' => 'Experience badge.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'leader3_desc',
-                        'label' => 'Coordinator Biography / Profile',
-                        'type' => 'text',
-                        'default' => 'Mr. Indra Dev brings 22 years of professional experience and deep administrative acumen from the Reserve Bank of India (RBI), strengthening the school’s organizational discipline and excellence.',
-                        'help' => 'Coordinator profile description.'
-                    ]
-                ]
-            ],
 
             // Section 8: Campus Visual Tour Collage
             [
@@ -2534,6 +2331,347 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'For physical verification of original statutory records and certificates, please visit the administrative office during school hours.',
                         'help' => 'Instructions for parents / authorities inspecting records.'
+                    ]
+                ]
+            ]
+        ]
+    ],
+    'management' => [
+        'title' => 'Management Page',
+        'icon'  => 'workspace_premium',
+        'desc'  => 'School Management Directorate: Hero Header with Blurred Campus Background & 3-Column Leadership Team (Principal, Founder & Director, Coordinator)',
+        'sections' => [
+            // Section 1: Hero Banner & Badges (Matching About Us style)
+            [
+                'title' => 'Section 1: Hero Banner & Main Headlines',
+                'icon'  => 'flag',
+                'desc'  => 'Top banner photo (same full-width style as About Us), eyebrow badge, main title, and introductory subtitle description.',
+                'fields' => [
+                    [
+                        'kind' => 'image',
+                        'key' => 'hero_banner',
+                        'label' => 'Hero Banner Background Image',
+                        'default' => 'assets/images/sunrise school image/school_home2.webp',
+                        'alt' => 'Sun Rise Sr. Sec. School Campus — Management',
+                        'help' => 'High-resolution campus banner image.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_badge',
+                        'label' => 'Hero Status / Eyebrow Pill Badge',
+                        'type' => 'text',
+                        'default' => 'Administrative & Academic Leadership',
+                        'help' => 'Pill badge at top of hero section.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_title',
+                        'label' => 'Hero Headline',
+                        'type' => 'text',
+                        'default' => 'School Management & Leadership',
+                        'help' => 'Main headline on Management page.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_subtitle',
+                        'label' => 'Hero Subtitle Description',
+                        'type' => 'textarea',
+                        'default' => 'Guided by seasoned educationalists, administrators, and mentors dedicated to fostering an inspiring environment of academic rigor, character building, and comprehensive student empowerment.',
+                        'help' => 'Introductory text under hero headline.'
+                    ]
+                ]
+            ],
+
+            // Section 2: Milestones & Stats Strip
+            [
+                'title' => 'Section 2: Stats Strip (4 Counters)',
+                'icon'  => 'analytics',
+                'desc'  => 'Floating counter bar below hero banner with 4 milestone numbers and labels.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat1_num',
+                        'label' => 'Stat 1 Number',
+                        'type' => 'text',
+                        'default' => '36+',
+                        'help' => 'e.g. 36+'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat1_lbl',
+                        'label' => 'Stat 1 Label',
+                        'type' => 'text',
+                        'default' => 'Years of Heritage',
+                        'help' => 'Label under stat 1'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat2_num',
+                        'label' => 'Stat 2 Number',
+                        'type' => 'text',
+                        'default' => '100%',
+                        'help' => 'e.g. 100%'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat2_lbl',
+                        'label' => 'Stat 2 Label',
+                        'type' => 'text',
+                        'default' => 'HBSE Pass Rate',
+                        'help' => 'Label under stat 2'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat3_num',
+                        'label' => 'Stat 3 Number',
+                        'type' => 'text',
+                        'default' => '28+',
+                        'help' => 'e.g. 28+'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat3_lbl',
+                        'label' => 'Stat 3 Label',
+                        'type' => 'text',
+                        'default' => 'Faculty & Mentors',
+                        'help' => 'Label under stat 3'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat4_num',
+                        'label' => 'Stat 4 Number',
+                        'type' => 'text',
+                        'default' => '700+',
+                        'help' => 'e.g. 700+'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat4_lbl',
+                        'label' => 'Stat 4 Label',
+                        'type' => 'text',
+                        'default' => 'Enrolled Scholars',
+                        'help' => 'Label under stat 4'
+                    ]
+                ]
+            ],
+
+            // Section 3: Leadership Team (3 Columns: Principal, Director, Coordinator)
+            [
+                'title' => 'Section 3: Leadership Team (Principal, Founder & Director, Coordinator)',
+                'icon'  => 'groups',
+                'desc'  => '3-column leadership grid featuring Principal, Founder & Director, and Coordinator with top photos, designations, experience badges, and detailed profiles.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader_tagline',
+                        'label' => 'Leadership Section Eyebrow',
+                        'type' => 'text',
+                        'default' => 'OUR LEADERSHIP TEAM',
+                        'help' => 'Eyebrow pill tag.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader_heading',
+                        'label' => 'Leadership Main Headline',
+                        'type' => 'text',
+                        'default' => 'Inspiring Minds, Cultivating Character & Excellence',
+                        'help' => 'Main headline on leadership card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader_desc',
+                        'label' => 'Leadership Section Subtext',
+                        'type' => 'textarea',
+                        'default' => 'Guided by seasoned visionaries dedicated to academic distinction, moral integrity, and holistic student growth.',
+                        'help' => 'Introductory subtext paragraph below heading.'
+                    ],
+                    // Column 1: Principal
+                    [
+                        'kind' => 'image',
+                        'key' => 'leader1_photo',
+                        'label' => 'Principal Photo (Column 1)',
+                        'default' => 'assets/images/sunrise school image/clean_director.png',
+                        'alt' => 'Mr. Rajbir Singh - Principal',
+                        'help' => 'Portrait photo of Principal.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_badge',
+                        'label' => 'Principal Photo Overlay Badge',
+                        'type' => 'text',
+                        'default' => 'Principal',
+                        'help' => 'Badge overlaid on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_tag',
+                        'label' => 'Principal Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Academic Administration',
+                        'help' => 'Gold tag above principal name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_name',
+                        'label' => 'Principal Full Name',
+                        'type' => 'text',
+                        'default' => 'Mr. Rajbir Singh',
+                        'help' => 'Principal name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_role',
+                        'label' => 'Principal Role & Qualifications',
+                        'type' => 'text',
+                        'default' => 'Principal | M.A., B.Ed.',
+                        'help' => 'Principal title and degrees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_exp',
+                        'label' => 'Principal Experience Badge',
+                        'type' => 'text',
+                        'default' => '16 Years in Education',
+                        'help' => 'Experience badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader1_desc',
+                        'label' => 'Principal Biography / Profile',
+                        'type' => 'textarea',
+                        'default' => 'Serving as the academic head, Mr. Rajbir Singh fosters a disciplined and purposeful learning environment, supporting teachers and ensuring students receive balanced opportunities for holistic development.',
+                        'help' => 'Principal profile description.'
+                    ],
+                    // Column 2: Founder & Director
+                    [
+                        'kind' => 'image',
+                        'key' => 'leader2_photo',
+                        'label' => 'Director Photo (Column 2)',
+                        'default' => 'assets/images/sunrise school image/director.png',
+                        'alt' => 'Mr. Bhader Singh Swami - Founder & Director',
+                        'help' => 'Portrait photo of Founder & Director.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_badge',
+                        'label' => 'Director Photo Overlay Badge',
+                        'type' => 'text',
+                        'default' => 'Founder & Director',
+                        'help' => 'Badge overlaid on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_tag',
+                        'label' => 'Director Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Visionary Leadership',
+                        'help' => 'Gold tag above director name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_name',
+                        'label' => 'Director Full Name',
+                        'type' => 'text',
+                        'default' => 'Mr. Bhader Singh Swami',
+                        'help' => 'Director name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_role',
+                        'label' => 'Director Role & Qualifications',
+                        'type' => 'text',
+                        'default' => 'Founder & Director | M.A., B.Ed.',
+                        'help' => 'Director title and degrees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_exp',
+                        'label' => 'Director Experience Badge',
+                        'type' => 'text',
+                        'default' => '36+ Years in Education',
+                        'help' => 'Experience badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader2_desc',
+                        'label' => 'Director Biography / Profile',
+                        'type' => 'textarea',
+                        'default' => 'With 36 years of teaching experience and 26 years of school management, Mr. Bhader Singh Swami has devoted his journey to education grounded in discipline, values, character, and academic excellence.',
+                        'help' => 'Director profile description.'
+                    ],
+                    // Column 3: Coordinator
+                    [
+                        'kind' => 'image',
+                        'key' => 'leader3_photo',
+                        'label' => 'Coordinator Photo (Column 3)',
+                        'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
+                        'alt' => 'Mr. Indra Dev - Coordinator',
+                        'help' => 'Portrait photo of Coordinator.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_badge',
+                        'label' => 'Coordinator Photo Overlay Badge',
+                        'type' => 'text',
+                        'default' => 'Coordinator',
+                        'help' => 'Badge overlaid on photo.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_tag',
+                        'label' => 'Coordinator Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Administration & Coordination',
+                        'help' => 'Gold tag above coordinator name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_name',
+                        'label' => 'Coordinator Full Name',
+                        'type' => 'text',
+                        'default' => 'Mr. Indra Dev',
+                        'help' => 'Coordinator name.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_role',
+                        'label' => 'Coordinator Role & Qualifications',
+                        'type' => 'text',
+                        'default' => 'Coordinator | B.A., M.A., LL.B., LL.M.',
+                        'help' => 'Coordinator title and degrees.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_exp',
+                        'label' => 'Coordinator Experience Badge',
+                        'type' => 'text',
+                        'default' => '22 Years Exp • Former GM, RBI',
+                        'help' => 'Experience badge.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader3_desc',
+                        'label' => 'Coordinator Biography / Profile',
+                        'type' => 'textarea',
+                        'default' => 'Mr. Indra Dev brings 22 years of professional experience and deep administrative acumen from the Reserve Bank of India (RBI), strengthening the school’s organizational discipline and excellence.',
+                        'help' => 'Coordinator profile description.'
+                    ],
+                    // Bottom Button
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader_btn_text',
+                        'label' => 'Bottom Action Button Text',
+                        'type' => 'text',
+                        'default' => 'Meet Full Leadership & Faculty Team',
+                        'help' => 'Button label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'leader_btn_url',
+                        'label' => 'Bottom Action Button Destination URL',
+                        'type' => 'text',
+                        'default' => 'faculty.php',
+                        'help' => 'Button target link.'
                     ]
                 ]
             ]
@@ -3759,10 +3897,18 @@ $pages_config = [
         'sections' => [
             // Section 1: Top Hero Banner & Status
             [
-                'title' => 'Section 1: Top Hero Banner, Session Status & Key Badges',
+                'title' => 'Section 1: Top Hero Banner, Background Image & Key Badges',
                 'icon'  => 'flag',
-                'desc'  => 'Academic session registration status, main headline, introductory summary, and 4 institutional trust badges.',
+                'desc'  => 'Campus background photo (with blur effect), academic session registration status, main headline, introductory summary, and 4 institutional trust badges.',
                 'fields' => [
+                    [
+                        'kind' => 'image',
+                        'key' => 'hero_bg_image',
+                        'label' => 'Hero Section Background Campus Image (Blurred)',
+                        'default' => 'assets/images/sunrise school image/school_home1.webp',
+                        'alt' => 'Sun Rise Sr. Sec. School Campus',
+                        'help' => 'Campus background photo shown with a stylish blur & soft illumination behind the Admissions Hero section. Select any campus photo or upload a new one.'
+                    ],
                     [
                         'kind' => 'text',
                         'key' => 'session_badge',
@@ -9391,6 +9537,7 @@ $current_page_data = $pages_config[$active_tab];
                         $tab_to_url = [
                             'home'       => 'index.php',
                             'about'      => 'about-us.php',
+                            'management' => 'management.php',
                             'academics'  => 'academics.php',
                             'admissions' => 'admission.php',
                             'campus'     => 'campus.php',

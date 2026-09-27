@@ -120,7 +120,7 @@ require_once __DIR__ . '/core/header.php';
       </div>
 
       <!-- 2. Science Laboratory -->
-      <div class="campus-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border-warm flex flex-col group cursor-pointer" data-category="academics" id="labs" onclick="openLightbox(this)">
+      <div class="campus-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border-warm flex flex-col group cursor-pointer scroll-mt-28" data-category="academics" id="labs" onclick="openLightbox(this)">
         <div class="relative h-48 sm:h-52 overflow-hidden">
           <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('<?= get_image('campus', 'fac2_img', school_img('exhibition2.webp')) ?>')"></div>
           <div class="absolute top-3 left-3 bg-primary/85 backdrop-blur-md text-on-primary p-2 rounded-lg">
@@ -170,7 +170,7 @@ require_once __DIR__ . '/core/header.php';
       </div>
 
       <!-- 4. Library & Learning Center -->
-      <div class="campus-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border-warm flex flex-col group cursor-pointer" data-category="academics" id="library" onclick="openLightbox(this)">
+      <div class="campus-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border-warm flex flex-col group cursor-pointer scroll-mt-28" data-category="academics" id="library" onclick="openLightbox(this)">
         <div class="relative h-48 sm:h-52 overflow-hidden">
           <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('<?= get_image('campus', 'fac_lib_img', school_img('exhibition.webp')) ?>')"></div>
           <div class="absolute top-3 left-3 bg-primary/85 backdrop-blur-md text-on-primary p-2 rounded-lg">
@@ -195,7 +195,7 @@ require_once __DIR__ . '/core/header.php';
       </div>
 
       <!-- 5. Playground & Sports Facility -->
-      <div class="campus-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border-warm flex flex-col group cursor-pointer" data-category="sports" id="sports" onclick="openLightbox(this)">
+      <div class="campus-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border-warm flex flex-col group cursor-pointer scroll-mt-28" data-category="sports" id="sports" onclick="openLightbox(this)">
         <div class="relative h-48 sm:h-52 overflow-hidden">
           <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('<?= get_image('campus', 'fac3_img', school_img('students_ground.webp')) ?>')"></div>
           <div class="absolute top-3 left-3 bg-primary/85 backdrop-blur-md text-on-primary p-2 rounded-lg">
@@ -219,8 +219,8 @@ require_once __DIR__ . '/core/header.php';
         </div>
       </div>
 
-      <!-- 6. Transport Facility -->
-      <div class="campus-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border-warm flex flex-col group cursor-pointer" data-category="community" id="transport" onclick="openLightbox(this)">
+      <!-- 6. Safe Transport & Boarding Facility -->
+      <div class="campus-card bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-border-warm flex flex-col group cursor-pointer scroll-mt-28" data-category="community" id="transport-card" onclick="openLightbox(this)">
         <div class="relative h-48 sm:h-52 overflow-hidden">
           <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('<?= get_image('campus', 'fac_trans_img', school_img('school_home1.webp')) ?>')"></div>
           <div class="absolute top-3 left-3 bg-primary/85 backdrop-blur-md text-on-primary p-2 rounded-lg">
@@ -229,17 +229,18 @@ require_once __DIR__ . '/core/header.php';
         </div>
         <div class="p-5 sm:p-6 flex flex-col flex-1 justify-between gap-3 sm:gap-4">
           <div class="flex flex-col gap-1.5">
-            <span class="text-eyebrow text-[#C9A24B] uppercase font-bold text-[11px]"><?= get_text('campus', 'fac_trans_tag', 'Safe Commute') ?></span>
-            <h3 class="font-headline-sm text-base sm:text-lg font-bold text-primary group-hover:text-[#C9A24B] transition-colors"><?= get_text('campus', 'fac_trans_title', 'Transport Transit Facility') ?></h3>
+            <span class="text-eyebrow text-[#C9A24B] uppercase font-bold text-[11px]"><?= get_text('campus', 'fac_trans_tag', 'Safe Commute &amp; Boarding') ?></span>
+            <h3 class="font-headline-sm text-base sm:text-lg font-bold text-primary group-hover:text-[#C9A24B] transition-colors"><?= get_text('campus', 'fac_trans_title', 'Safe Transport &amp; Boarding') ?></h3>
             <p class="text-body-md text-on-surface-variant text-xs sm:text-sm line-clamp-2 leading-relaxed mt-0.5">
-              <?= get_text('campus', 'fac_trans_desc', 'A dependable, dedicated school bus fleet connecting Dobhi with 35+ surrounding villages and townships, operated by trained drivers and safety staff.') ?>
+              <?= get_text('campus', 'fac_trans_desc', 'A dependable, dedicated GPS-enabled school bus fleet connecting Dobhi with 35+ surrounding villages and townships, operated by verified drivers, lady attendants, speed governors, and safe residential boarding support.') ?>
             </p>
           </div>
           <div class="pt-3 border-t border-border-warm flex items-center justify-between mt-auto">
-            <span class="text-xs font-semibold text-on-surface-variant truncate mr-2"><?= get_text('campus', 'fac_trans_feature', 'Doorstep Rural Routes') ?></span>
-            <span class="inline-flex items-center gap-1 text-xs font-bold text-primary group-hover:text-[#C9A24B] transition-colors shrink-0">
-              Read More <span class="material-symbols-outlined text-[15px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-            </span>
+            <span class="text-xs font-semibold text-on-surface-variant truncate mr-2"><?= get_text('campus', 'fac_trans_feature', 'GPS Bus Network &amp; Safe Transit') ?></span>
+            <a href="#transport" class="inline-flex items-center gap-1 text-xs font-bold text-primary hover:text-[#C9A24B] transition-colors shrink-0" onclick="event.stopPropagation();">
+              <span>View Routes &amp; Boarding</span>
+              <span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+            </a>
           </div>
         </div>
       </div>
@@ -360,6 +361,96 @@ require_once __DIR__ . '/core/header.php';
                 <span><?= get_text('campus', 'safety_btn_text', 'Plan a Campus Visit') ?></span>
                 <span class="material-symbols-outlined text-[14px]">arrow_forward</span>
               </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dedicated Safe Transport & Boarding Deep-Dive Section -->
+  <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 mb-12 sm:mb-16 scroll-mt-28" id="transport">
+    <span id="boarding" class="scroll-mt-28 block -mt-28 pointer-events-none"></span>
+    <span id="transport-section" class="scroll-mt-28 block -mt-28 pointer-events-none"></span>
+    <div class="bg-gradient-to-br from-[#001129] via-[#0b2647] to-[#001129] text-white rounded-3xl p-6 sm:p-8 lg:p-10 shadow-2xl border border-[#C9A24B]/30 relative overflow-hidden">
+      <!-- Soft ambient glow -->
+      <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#C9A24B]/15 blur-3xl pointer-events-none"></div>
+      <div class="absolute -left-20 bottom-0 w-80 h-80 rounded-full bg-white/5 blur-3xl pointer-events-none"></div>
+
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Left 7 cols: Content & Features -->
+        <div class="lg:col-span-7 flex flex-col gap-4">
+          <div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-[#C9A24B]/20 border border-[#C9A24B]/40 text-[#F3C352] text-xs font-bold uppercase tracking-wider">
+            <span class="material-symbols-outlined text-[16px]">directions_bus</span>
+            <span>Comprehensive Transit &amp; Boarding Support</span>
+          </div>
+
+          <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight leading-snug">
+            Safe GPS-Enabled School Transport &amp; Boarding Network
+          </h2>
+
+          <p class="text-surface-cream/85 text-xs sm:text-sm leading-relaxed">
+            Sun Rise Sr. Sec. School operates a safe, GPS-tracked, speed-governed transport fleet connecting Dobhi with over 35+ surrounding villages across Hisar, Balsamand, and adjoining regions. Every route is managed with experienced drivers, dedicated female attendants, and CCTV surveillance for complete peace of mind.
+          </p>
+
+          <!-- 4 Pillars Grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            <div class="p-3 rounded-xl bg-white/[0.06] border border-white/10 flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-[#F3C352] text-[20px] mt-0.5">location_on</span>
+              <div class="text-xs">
+                <span class="font-bold text-white block">35+ Rural &amp; Town Routes</span>
+                <span class="text-surface-cream/70 text-[11px]">Doorstep pick-and-drop covering Dobhi, Balsamand, Arya Nagar &amp; nearby tehsils.</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-white/[0.06] border border-white/10 flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-[#F3C352] text-[20px] mt-0.5">verified_user</span>
+              <div class="text-xs">
+                <span class="font-bold text-white block">Real-Time GPS &amp; Speed Control</span>
+                <span class="text-surface-cream/70 text-[11px]">Every bus is equipped with GPS tracking, speed governors, and CCTV security.</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-white/[0.06] border border-white/10 flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-[#F3C352] text-[20px] mt-0.5">female</span>
+              <div class="text-xs">
+                <span class="font-bold text-white block">Lady Attendants on Board</span>
+                <span class="text-surface-cream/70 text-[11px]">Female staff escort students for Kindergarten &amp; primary children's safe commute.</span>
+              </div>
+            </div>
+
+            <div class="p-3 rounded-xl bg-white/[0.06] border border-white/10 flex items-start gap-2.5">
+              <span class="material-symbols-outlined text-[#F3C352] text-[20px] mt-0.5">home</span>
+              <div class="text-xs">
+                <span class="font-bold text-white block">Safe Boarding Support</span>
+                <span class="text-surface-cream/70 text-[11px]">Supervised lodging support, study hours, nutritious food, and caring mentors.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-2 flex flex-wrap items-center gap-3">
+            <a href="contact-us.php" class="btn-gold text-xs sm:text-sm font-bold inline-flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px]">alt_route</span>
+              <span>Enquire Transport Route / Boarding</span>
+            </a>
+            <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="btn-outline-white text-xs sm:text-sm font-bold inline-flex items-center gap-2">
+              <span class="material-symbols-outlined text-[18px]">call</span>
+              <span>Call Transport Desk</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right 5 cols: Image preview with badge -->
+        <div class="lg:col-span-5 relative">
+          <div class="rounded-2xl overflow-hidden border-2 border-[#C9A24B]/40 shadow-xl group">
+            <img src="<?= get_image('campus', 'fac_trans_img', school_img('school_home1.webp')) ?>" alt="Sun Rise School Transport Bus Fleet" class="w-full h-64 sm:h-72 object-cover group-hover:scale-105 transition-transform duration-500"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent pointer-events-none"></div>
+            <div class="absolute bottom-3 left-3 right-3 p-3 bg-black/60 backdrop-blur-md rounded-xl border border-white/10 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] text-[#F3C352] font-bold block">Sun Rise School Bus Fleet</span>
+                <span class="text-[10px] text-white/80">Affiliated to HBSE • VPO Dobhi (Hisar)</span>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 font-bold text-[10px] border border-emerald-500/40">ACTIVE ROUTES</span>
             </div>
           </div>
         </div>

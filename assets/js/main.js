@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeaderModals();
   initLightbox();
   initToppersModal();
+  initHashSmoothScroll();
 });
 
 /* --------------------------------------------------------------------------
@@ -104,24 +105,37 @@ function initNavDropdowns() {
     if (!btn) return;
 
     btn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = wrapper.classList.contains('open');
-      // Close all other dropdowns
-      wrappers.forEach(w => {
-        if (w !== wrapper) {
-          w.classList.remove('open');
-          const b = w.querySelector('.nav-dropdown-btn');
-          if (b) b.setAttribute('aria-expanded', 'false');
-        }
-      });
+      // If clicking the arrow specifically or if on a touch device without hover
+      if (e.target.closest('.nav-arrow')) {
+        e.preventDefault();
+        e.stopPropagation();
+        const isOpen = wrapper.classList.contains('open');
+        // Close all other dropdowns
+        wrappers.forEach(w => {
+          if (w !== wrapper) {
+            w.classList.remove('open');
+            const b = w.querySelector('.nav-dropdown-btn');
+            if (b) b.setAttribute('aria-expanded', 'false');
+          }
+        });
 
-      if (isOpen) {
+        if (isOpen) {
+          wrapper.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        } else {
+          wrapper.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      }
+    });
+
+    // Close dropdown immediately when any dropdown sublink is clicked
+    const sublinks = wrapper.querySelectorAll('.nav-dropdown-item');
+    sublinks.forEach(sublink => {
+      sublink.addEventListener('click', () => {
         wrapper.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
-      } else {
-        wrapper.classList.add('open');
-        btn.setAttribute('aria-expanded', 'true');
-      }
+      });
     });
   });
 
@@ -174,6 +188,14 @@ function initMobileMenu() {
   toggleBtn.addEventListener('click', openMenu);
   if (closeBtn) closeBtn.addEventListener('click', closeMenu);
   overlay.addEventListener('click', closeMenu);
+
+  // Close drawer when any link inside drawer is clicked
+  const drawerLinks = drawer.querySelectorAll('a');
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      closeMenu();
+    });
+  });
 
   // Mobile Accordion items
   const groupBtns = drawer.querySelectorAll('.mobile-nav-group-btn');
@@ -423,6 +445,106 @@ function initHeaderOffsetSync() {
   window.addEventListener('resize', updateOffset, { passive: true });
   window.addEventListener('orientationchange', updateOffset, { passive: true });
   window.addEventListener('load', updateOffset, { passive: true });
+}
+
+/* --------------------------------------------------------------------------
+   Hash & Anchor Smooth Scrolling Controller with Header Offset Sync
+   -------------------------------------------------------------------------- */
+function initHashSmoothScroll() {
+  function scrollToTarget(hash) {
+    if (!hash || hash === '#') return;
+    try {
+      const target = document.querySelector(hash);
+      if (!target) return;
+
+      // If inside campus.php and card is currently hidden by category filter, show all cards
+      if (target.classList.contains('campus-card') || target.closest('.campus-card')) {
+        const card = target.classList.contains('campus-card') ? target : target.closest('.campus-card');
+        card.style.display = 'flex';
+
+        // Reset filter bar buttons if present
+        const filterBtns = document.querySelectorAll('.campus-filter-btn');
+        if (filterBtns.length > 0) {
+          filterBtns.forEach(b => {
+            b.classList.remove('active', 'bg-primary', 'text-on-primary', 'shadow-sm');
+            b.classList.add('bg-surface-pure', 'text-on-surface-variant', 'border', 'border-border-warm');
+          });
+          const allBtn = document.querySelector('.campus-filter-btn[data-category="all"]');
+          if (allBtn) {
+            allBtn.classList.add('active', 'bg-primary', 'text-on-primary', 'shadow-sm');
+            allBtn.classList.remove('bg-surface-pure', 'text-on-surface-variant', 'border', 'border-border-warm');
+          }
+          document.querySelectorAll('.campus-card').forEach(c => c.style.display = 'flex');
+        }
+      }
+
+      // Calculate header offset
+      const header = document.querySelector('.site-header');
+      const headerHeight = header ? header.getBoundingClientRect().height : 90;
+      const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = Math.max(0, elementPosition - headerHeight - 16);
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+
+      // Highlight target with glowing pulse
+      target.classList.add('highlight-target');
+      setTimeout(() => {
+        target.classList.remove('highlight-target');
+      }, 2500);
+    } catch (e) {
+      console.warn('Scroll to hash error:', e);
+    }
+  }
+
+  // Intercept clicks on links that point to the current page with a hash
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    const hashIndex = href.indexOf('#');
+    if (hashIndex === -1) return;
+
+    const hash = href.substring(hashIndex);
+    const path = href.substring(0, hashIndex);
+    const currentFile = window.location.pathname.split('/').pop() || 'index.php';
+
+    // If link points to current page (e.g. "campus.php#transport" on "campus.php" or just "#transport")
+    if (path === '' || path === currentFile) {
+      const target = document.querySelector(hash);
+      if (target) {
+        e.preventDefault();
+        history.pushState(null, null, hash);
+        scrollToTarget(hash);
+
+        // Close mobile drawer
+        const drawer = document.getElementById('mobileNavDrawer');
+        const overlay = document.getElementById('mobileNavOverlay');
+        if (drawer) drawer.classList.remove('open');
+        if (overlay) overlay.classList.remove('open');
+        document.body.style.overflow = '';
+
+        // Close desktop dropdowns
+        document.querySelectorAll('.nav-dropdown-wrapper').forEach(w => {
+          w.classList.remove('open');
+          const b = w.querySelector('.nav-dropdown-btn');
+          if (b) b.setAttribute('aria-expanded', 'false');
+        });
+      }
+    }
+  });
+
+  // Handle hash on initial page load / refresh
+  if (window.location.hash) {
+    setTimeout(() => {
+      scrollToTarget(window.location.hash);
+    }, 350);
+  }
 }
 
 

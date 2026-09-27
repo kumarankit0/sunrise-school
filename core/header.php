@@ -212,13 +212,13 @@ $current_page = isset($current_page) ? $current_page : 'home';
           $is_active = is_nav_active($key, $current_page);
         ?>
           <div class="nav-dropdown-wrapper <?= $is_active ? 'active' : '' ?>">
-            <button class="nav-link nav-dropdown-btn <?= $is_active ? 'active' : '' ?>" 
-                    type="button"
-                    aria-expanded="false" 
-                    aria-haspopup="true">
+            <a href="<?= htmlspecialchars($item['url']) ?>" 
+               class="nav-link nav-dropdown-btn <?= $is_active ? 'active' : '' ?>" 
+               aria-expanded="false" 
+               aria-haspopup="true">
               <span><?= htmlspecialchars($item['title']) ?></span>
               <span class="material-symbols-outlined nav-arrow">keyboard_arrow_down</span>
-            </button>
+            </a>
 
             <?php if ($has_sub): ?>
               <div class="nav-dropdown-menu" role="menu">

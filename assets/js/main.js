@@ -325,12 +325,19 @@ function openLightbox(el) {
     if (match) bgUrl = match[1];
   }
 
-  const title = el.querySelector('h3, h4') ? el.querySelector('h3, h4').innerText : 'Campus Chronicle';
-  const desc = el.querySelector('p') ? el.querySelector('p').innerText : 'Sun Rise Sr. Sec. School, Dobhi';
+  const title = el.querySelector('h3, h4') ? el.querySelector('h3, h4').innerText : '';
+  const descElFound = el.querySelector('p');
+  const desc = descElFound ? descElFound.innerText : '';
 
   if (imgElement && bgUrl) imgElement.src = bgUrl;
-  if (titleElement) titleElement.innerText = title;
-  if (descElement) descElement.innerText = desc;
+  if (titleElement) {
+    titleElement.innerText = title;
+    titleElement.style.display = title ? '' : 'none';
+  }
+  if (descElement) {
+    descElement.innerText = desc;
+    descElement.style.display = desc ? '' : 'none';
+  }
 
   modal.classList.add('open');
   document.body.style.overflow = 'hidden';

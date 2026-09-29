@@ -7242,917 +7242,69 @@ $pages_config = [
                 ]
             ],
 
-                        // Section 4: Visual Archive Photographs (Curated Showcase & New Photo Uploads)
+            // Section 4: Category — Media Coverage
             [
-                'title' => 'Section 4: Visual Archive Photographs (Curated Showcase & New Photo Uploads)',
-                'icon'  => 'grid_on',
-                'desc'  => 'Manage photos, category filters (cultural / result / activity / competition / diwali / media), badge tags, subtitles, headlines, and descriptions.',
-                'fields' => [
-                    // Photo 1
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img1',
-                        'label' => 'Photo 1 Image (Cultural Fest)',
-                        'default' => 'assets/images/sunrise school image/exhibition.webp',
-                        'alt' => 'Cultural Fest & Folk Performances',
-                        'help' => 'Photo 1 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat1',
-                        'label' => 'Photo 1 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'cultural',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag1',
-                        'label' => 'Photo 1 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Cultural Fest',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow1',
-                        'label' => 'Photo 1 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Annual Celebration',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title1',
-                        'label' => 'Photo 1 Title',
-                        'type' => 'text',
-                        'default' => 'Cultural Fest & Folk Performances',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc1',
-                        'label' => 'Photo 1 Description',
-                        'type' => 'textarea',
-                        'default' => 'Students presenting rich traditional dance, theatrical skits, and folk musical performances.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 2
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img2',
-                        'label' => 'Photo 2 Image (Result Day)',
-                        'default' => 'assets/images/sunrise school image/award_ceremony.webp',
-                        'alt' => 'Annual Result Declaration Day & Awards',
-                        'help' => 'Photo 2 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat2',
-                        'label' => 'Photo 2 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'result',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag2',
-                        'label' => 'Photo 2 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Result Day',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow2',
-                        'label' => 'Photo 2 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Academic Felicitation',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title2',
-                        'label' => 'Photo 2 Title',
-                        'type' => 'text',
-                        'default' => 'Annual Result Declaration & Award Ceremony',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc2',
-                        'label' => 'Photo 2 Description',
-                        'type' => 'textarea',
-                        'default' => 'Honoring top percentiles, grade toppers, and scholastic excellence across all classes.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 3
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img3',
-                        'label' => 'Photo 3 Image (School Activity)',
-                        'default' => 'assets/images/sunrise school image/students_ground.webp',
-                        'alt' => 'School Activity - Sports & Athletics',
-                        'help' => 'Photo 3 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat3',
-                        'label' => 'Photo 3 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'activity',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag3',
-                        'label' => 'Photo 3 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'School Activity',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow3',
-                        'label' => 'Photo 3 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Campus Life',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title3',
-                        'label' => 'Photo 3 Title',
-                        'type' => 'text',
-                        'default' => 'Outdoor Sports & Physical Drills',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc3',
-                        'label' => 'Photo 3 Description',
-                        'type' => 'textarea',
-                        'default' => 'Active athletic drills, sprint conditioning, and outdoor teamwork sports on the school grounds.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 4
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img4',
-                        'label' => 'Photo 4 Image (School Activity)',
-                        'default' => 'assets/images/sunrise school image/yoga.webp',
-                        'alt' => 'School Activity - Yoga',
-                        'help' => 'Photo 4 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat4',
-                        'label' => 'Photo 4 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'activity',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag4',
-                        'label' => 'Photo 4 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'School Activity',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow4',
-                        'label' => 'Photo 4 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Morning Assembly',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title4',
-                        'label' => 'Photo 4 Title',
-                        'type' => 'text',
-                        'default' => 'International Yoga Day Demonstrations',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc4',
-                        'label' => 'Photo 4 Description',
-                        'type' => 'textarea',
-                        'default' => 'Disciplined mass yoga asanas cultivating concentration, stamina, and mindfulness.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 5
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img5',
-                        'label' => 'Photo 5 Image (Result Day)',
-                        'default' => 'assets/images/sunrise school image/toppers.webp',
-                        'alt' => 'HBSE Board Exam Toppers',
-                        'help' => 'Photo 5 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat5',
-                        'label' => 'Photo 5 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'result',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag5',
-                        'label' => 'Photo 5 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Result Day',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow5',
-                        'label' => 'Photo 5 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Board Merit',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title5',
-                        'label' => 'Photo 5 Title',
-                        'type' => 'text',
-                        'default' => 'HBSE Board Exam Result Celebrations',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc5',
-                        'label' => 'Photo 5 Description',
-                        'type' => 'textarea',
-                        'default' => 'Celebrating top state ranks and 100% board passing results in Class 10th and 12th.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 6
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img6',
-                        'label' => 'Photo 6 Image (Competition)',
-                        'default' => 'assets/images/sunrise school image/shinning_stars.webp',
-                        'alt' => 'Academic Competition Winners',
-                        'help' => 'Photo 6 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat6',
-                        'label' => 'Photo 6 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'competition',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag6',
-                        'label' => 'Photo 6 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Competition',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow6',
-                        'label' => 'Photo 6 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Academic Contests',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title6',
-                        'label' => 'Photo 6 Title',
-                        'type' => 'text',
-                        'default' => 'Inter-School Science & Quiz Competition',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc6',
-                        'label' => 'Photo 6 Description',
-                        'type' => 'textarea',
-                        'default' => 'High-achieving students competing in district-level olympiads, science projects, and quiz bowls.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 7
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img7',
-                        'label' => 'Photo 7 Image (School Activity)',
-                        'default' => 'assets/images/sunrise school image/school_home1.webp',
-                        'alt' => 'School Activity - Assembly',
-                        'help' => 'Photo 7 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat7',
-                        'label' => 'Photo 7 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'activity',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag7',
-                        'label' => 'Photo 7 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'School Activity',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow7',
-                        'label' => 'Photo 7 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Campus Activities',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title7',
-                        'label' => 'Photo 7 Title',
-                        'type' => 'text',
-                        'default' => 'Morning Assembly & Special Celebrations',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc7',
-                        'label' => 'Photo 7 Description',
-                        'type' => 'textarea',
-                        'default' => 'Daily moral value recitations, national anthems, and vibrant campus co-curricular activities.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 8
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img8',
-                        'label' => 'Photo 8 Image (Competition)',
-                        'default' => 'assets/images/sunrise school image/children_sitting.webp',
-                        'alt' => 'Art & Debate Competition',
-                        'help' => 'Photo 8 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat8',
-                        'label' => 'Photo 8 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'competition',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag8',
-                        'label' => 'Photo 8 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Competition',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow8',
-                        'label' => 'Photo 8 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Skill Contests',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title8',
-                        'label' => 'Photo 8 Title',
-                        'type' => 'text',
-                        'default' => 'Art, Essay & Debate Competition',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc8',
-                        'label' => 'Photo 8 Description',
-                        'type' => 'textarea',
-                        'default' => 'Students showcasing exceptional elocution, creative writing, and painting prowess in inter-house events.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 9
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img9',
-                        'label' => 'Photo 9 Image (Diwali Fest)',
-                        'default' => 'assets/images/sunrise school image/lab_class.webp',
-                        'alt' => 'Diwali Celebration',
-                        'help' => 'Photo 9 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat9',
-                        'label' => 'Photo 9 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'diwali',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag9',
-                        'label' => 'Photo 9 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Diwali Fest',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow9',
-                        'label' => 'Photo 9 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Festive Joy',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title9',
-                        'label' => 'Photo 9 Title',
-                        'type' => 'text',
-                        'default' => 'Diwali Celebration & Rangoli Contest',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc9',
-                        'label' => 'Photo 9 Description',
-                        'type' => 'textarea',
-                        'default' => 'Grand festive campus decorations, colorful floral rangolis, and traditional illumination festivities.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 10
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img10',
-                        'label' => 'Photo 10 Image (Cultural Fest)',
-                        'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
-                        'alt' => 'Cultural Fest Stage Pageant',
-                        'help' => 'Photo 10 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat10',
-                        'label' => 'Photo 10 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'cultural',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag10',
-                        'label' => 'Photo 10 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Cultural Fest',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow10',
-                        'label' => 'Photo 10 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Music & Arts',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title10',
-                        'label' => 'Photo 10 Title',
-                        'type' => 'text',
-                        'default' => 'Grand Stage Musical Pageant',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc10',
-                        'label' => 'Photo 10 Description',
-                        'type' => 'textarea',
-                        'default' => 'Vocal choir harmonies, classical instrumental recitals, and cultural heritage exhibits by students.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 11
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img11',
-                        'label' => 'Photo 11 Image (Diwali Fest)',
-                        'default' => 'assets/images/sunrise school image/exhibition3.webp',
-                        'alt' => 'Eco-Friendly Deepawali Festival',
-                        'help' => 'Photo 11 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat11',
-                        'label' => 'Photo 11 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'diwali',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag11',
-                        'label' => 'Photo 11 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Diwali Fest',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow11',
-                        'label' => 'Photo 11 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Diwali Festivities',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title11',
-                        'label' => 'Photo 11 Title',
-                        'type' => 'text',
-                        'default' => 'Eco-Friendly Deepawali Festival',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc11',
-                        'label' => 'Photo 11 Description',
-                        'type' => 'textarea',
-                        'default' => 'Spreading joy and sustainable green Diwali messages through handmade diyas and creative craft work.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 12
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img12',
-                        'label' => 'Photo 12 Image (Media Coverage)',
-                        'default' => 'assets/images/sunrise school image/IMG_20210815_093156~2.webp',
-                        'alt' => 'Newspaper & Media Coverage',
-                        'help' => 'Photo 12 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat12',
-                        'label' => 'Photo 12 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'media',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag12',
-                        'label' => 'Photo 12 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Media Coverage',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow12',
-                        'label' => 'Photo 12 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Press & Honors',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title12',
-                        'label' => 'Photo 12 Title',
-                        'type' => 'text',
-                        'default' => 'Newspaper & Media Feature Coverage',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc12',
-                        'label' => 'Photo 12 Description',
-                        'type' => 'textarea',
-                        'default' => 'Media accolades and state news recognition honoring Sun Rise School for educational and board achievements.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 13
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img13',
-                        'label' => 'Photo 13 Image (Cultural Fest)',
-                        'default' => '',
-                        'alt' => 'Gallery Photo 13',
-                        'help' => 'Photo 13 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat13',
-                        'label' => 'Photo 13 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'cultural',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag13',
-                        'label' => 'Photo 13 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Cultural Fest',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow13',
-                        'label' => 'Photo 13 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Cultural Celebrations',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title13',
-                        'label' => 'Photo 13 Title',
-                        'type' => 'text',
-                        'default' => 'Cultural Highlights & Drama Pageant',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc13',
-                        'label' => 'Photo 13 Description',
-                        'type' => 'textarea',
-                        'default' => 'Vibrant cultural performances celebrating India\'s diverse heritage.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 14
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img14',
-                        'label' => 'Photo 14 Image (Result Day)',
-                        'default' => '',
-                        'alt' => 'Gallery Photo 14',
-                        'help' => 'Photo 14 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat14',
-                        'label' => 'Photo 14 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'result',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag14',
-                        'label' => 'Photo 14 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Result Day',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow14',
-                        'label' => 'Photo 14 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Merit Recognition',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title14',
-                        'label' => 'Photo 14 Title',
-                        'type' => 'text',
-                        'default' => 'Annual Merit Shield Distribution',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc14',
-                        'label' => 'Photo 14 Description',
-                        'type' => 'textarea',
-                        'default' => 'Presentation of mementos and certificates to annual examination toppers.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 15
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img15',
-                        'label' => 'Photo 15 Image (School Activity)',
-                        'default' => '',
-                        'alt' => 'Gallery Photo 15',
-                        'help' => 'Photo 15 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat15',
-                        'label' => 'Photo 15 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'activity',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag15',
-                        'label' => 'Photo 15 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'School Activity',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow15',
-                        'label' => 'Photo 15 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Campus Activities',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title15',
-                        'label' => 'Photo 15 Title',
-                        'type' => 'text',
-                        'default' => 'Interactive Science & Project Fair',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc15',
-                        'label' => 'Photo 15 Description',
-                        'type' => 'textarea',
-                        'default' => 'Hands-on practical models and scientific discovery exhibits by students.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 16
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img16',
-                        'label' => 'Photo 16 Image (Competition)',
-                        'default' => '',
-                        'alt' => 'Gallery Photo 16',
-                        'help' => 'Photo 16 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat16',
-                        'label' => 'Photo 16 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'competition',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag16',
-                        'label' => 'Photo 16 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Competition',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow16',
-                        'label' => 'Photo 16 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Sports Tournament',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title16',
-                        'label' => 'Photo 16 Title',
-                        'type' => 'text',
-                        'default' => 'Inter-School Sports & Kabaddi Trophy',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc16',
-                        'label' => 'Photo 16 Description',
-                        'type' => 'textarea',
-                        'default' => 'Athletes competing with fervor and sporting discipline in district championship matches.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 17
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img17',
-                        'label' => 'Photo 17 Image (Diwali Fest)',
-                        'default' => '',
-                        'alt' => 'Gallery Photo 17',
-                        'help' => 'Photo 17 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat17',
-                        'label' => 'Photo 17 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'diwali',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag17',
-                        'label' => 'Photo 17 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Diwali Fest',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow17',
-                        'label' => 'Photo 17 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'Festive Spirit',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title17',
-                        'label' => 'Photo 17 Title',
-                        'type' => 'text',
-                        'default' => 'Diwali Card & Diya Decoration Fair',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc17',
-                        'label' => 'Photo 17 Description',
-                        'type' => 'textarea',
-                        'default' => 'Creative hand-crafted greetings and festive expressions by elementary school students.',
-                        'help' => 'Description.'
-                    ],
-
-                    // Photo 18
-                    [
-                        'kind' => 'image',
-                        'key' => 'gallery_img18',
-                        'label' => 'Photo 18 Image (Media Coverage)',
-                        'default' => '',
-                        'alt' => 'Gallery Photo 18',
-                        'help' => 'Photo 18 upload slot.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_cat18',
-                        'label' => 'Photo 18 Category Key (cultural / result / activity / competition / diwali / media)',
-                        'type' => 'text',
-                        'default' => 'media',
-                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_tag18',
-                        'label' => 'Photo 18 Top-Right Badge',
-                        'type' => 'text',
-                        'default' => 'Media Coverage',
-                        'help' => 'Badge pill.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_eyebrow18',
-                        'label' => 'Photo 18 Eyebrow Subtitle',
-                        'type' => 'text',
-                        'default' => 'State Recognition',
-                        'help' => 'Gold subtitle.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_title18',
-                        'label' => 'Photo 18 Title',
-                        'type' => 'text',
-                        'default' => 'Print Media Accolades & Highlights',
-                        'help' => 'Title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'gallery_desc18',
-                        'label' => 'Photo 18 Description',
-                        'type' => 'textarea',
-                        'default' => 'Prominent publications highlighting Sun Rise Sr. Sec. School\'s excellence in rural education.',
-                        'help' => 'Description.'
-                    ]
-                ]
+                'title'   => 'Category 1: Media Coverage',
+                'icon'    => 'newspaper',
+                'desc'    => 'Add or manage Media Coverage photo cards. Each card only requires an image and a single heading.',
+                'type'    => 'gallery_category',
+                'cat_key' => 'media',
+                'fields'  => []
             ],
 
-            // Section 5: Campus Life Highlights & Traditions
+            // Section 5: Category — Annual Result Declaration Day
             [
-                'title' => 'Section 5: Campus Life Highlights & Traditions (3 Feature Pillars)',
+                'title'   => 'Category 2: Annual Result Declaration Day',
+                'icon'    => 'workspace_premium',
+                'desc'    => 'Add or manage Annual Result Declaration Day photo cards. Each card only requires an image and a single heading.',
+                'type'    => 'gallery_category',
+                'cat_key' => 'result',
+                'fields'  => []
+            ],
+
+            // Section 6: Category — Cultural Fest
+            [
+                'title'   => 'Category 3: Cultural Fest',
+                'icon'    => 'celebration',
+                'desc'    => 'Add or manage Cultural Fest photo cards. Each card only requires an image and a single heading.',
+                'type'    => 'gallery_category',
+                'cat_key' => 'cultural',
+                'fields'  => []
+            ],
+
+            // Section 7: Category — School Activity
+            [
+                'title'   => 'Category 4: School Activity',
+                'icon'    => 'sports_kabaddi',
+                'desc'    => 'Add or manage School Activity photo cards. Each card only requires an image and a single heading.',
+                'type'    => 'gallery_category',
+                'cat_key' => 'activity',
+                'fields'  => []
+            ],
+
+            // Section 8: Category — Competition
+            [
+                'title'   => 'Category 5: Competition',
+                'icon'    => 'emoji_events',
+                'desc'    => 'Add or manage Competition photo cards. Each card only requires an image and a single heading.',
+                'type'    => 'gallery_category',
+                'cat_key' => 'competition',
+                'fields'  => []
+            ],
+
+            // Section 9: Category — Diwali Celebration
+            [
+                'title'   => 'Category 6: Diwali Celebration',
+                'icon'    => 'festival',
+                'desc'    => 'Add or manage Diwali Celebration photo cards. Each card only requires an image and a single heading.',
+                'type'    => 'gallery_category',
+                'cat_key' => 'diwali',
+                'fields'  => []
+            ],
+
+            // Section 10: Campus Life Highlights & Traditions
+            [
+                'title' => 'Section 10: Campus Life Highlights & Traditions (3 Feature Pillars)',
                 'icon'  => 'auto_stories',
                 'desc'  => 'Header titles and 3 holistic student experience cards covering prayer assemblies, fests, and sports.',
                 'fields' => [
@@ -9374,11 +8526,11 @@ $pages_config = [
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'footer_social_desc',
-                        'label' => 'Social Connect Subtitle Note',
-                        'type' => 'textarea',
-                        'default' => 'Follow our official channels for news, event updates & announcements.',
-                        'help' => 'Short explanatory note below Connect With Us header in footer.'
+                        'key' => 'footer_social_title',
+                        'label' => 'Social Media Section Label',
+                        'type' => 'text',
+                        'default' => 'Social Media Accounts',
+                        'help' => 'Sub-heading displayed above social media icons below School Timings.'
                     ],
                     [
                         'kind' => 'text',
@@ -9755,11 +8907,17 @@ $current_page_data = $pages_config[$active_tab];
                 $quill_editors = [];
                 $field_counter = 0;
                 foreach ($current_page_data['sections'] as $sec_idx => $sec): 
+                    $is_gal_cat = (!empty($sec['type']) && $sec['type'] === 'gallery_category');
+                    if ($is_gal_cat) {
+                        $cat_key   = $sec['cat_key'];
+                        $cat_cards = get_gallery_category_cards($cat_key, true);
+                        $cat_slots = get_gallery_category_slots($cat_key);
+                    }
                 ?>
                     <div class="bg-white rounded-2xl border border-gray-200/80 shadow-sm overflow-hidden" id="sec_<?= $sec_idx ?>">
                         
                         <!-- Section Header -->
-                        <div class="px-6 py-4 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white flex items-center justify-between">
+                        <div class="px-6 py-4 border-b border-gray-100 bg-gradient-to-r from-gray-50 to-white flex flex-wrap items-center justify-between gap-3">
                             <div class="flex items-center gap-3">
                                 <div class="w-8 h-8 rounded-lg bg-[#001129] text-[#C9A24B] flex items-center justify-center font-bold text-sm shadow-sm">
                                     <span class="material-symbols-outlined text-lg"><?= htmlspecialchars($sec['icon']) ?></span>
@@ -9773,11 +8931,158 @@ $current_page_data = $pages_config[$active_tab];
                                     <?php endif; ?>
                                 </div>
                             </div>
-                            <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-gray-100 text-gray-600">
-                                <?= count($sec['fields']) ?> item(s)
-                            </span>
+
+                            <?php if ($is_gal_cat): ?>
+                                <div class="flex items-center gap-2.5">
+                                    <span id="cat_count_badge_<?= htmlspecialchars($cat_key) ?>" class="text-xs font-semibold px-2.5 py-1 rounded-md bg-gray-100 text-gray-600">
+                                        <?= count($cat_cards) ?> Card(s)
+                                    </span>
+                                    <button 
+                                        type="button" 
+                                        onclick="addGalleryCategoryCard('<?= htmlspecialchars($cat_key) ?>', '<?= htmlspecialchars(addslashes($sec['title'])) ?>')"
+                                        class="px-3.5 py-2 bg-[#001129] hover:bg-[#071f45] text-white text-xs font-bold rounded-xl shadow-sm hover:shadow transition flex items-center gap-1.5 cursor-pointer"
+                                    >
+                                        <span class="material-symbols-outlined text-[#C9A24B] text-base">add_circle</span>
+                                        <span>+ Add Card</span>
+                                    </button>
+                                </div>
+                            <?php else: ?>
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-gray-100 text-gray-600">
+                                    <?= count($sec['fields']) ?> item(s)
+                                </span>
+                            <?php endif; ?>
                         </div>
 
+                        <?php if ($is_gal_cat): ?>
+                            <!-- Gallery Category Cards Grid (Only Image + Single Heading per Card) -->
+                            <div class="p-6" data-cat-section="<?= htmlspecialchars($cat_key) ?>" data-cat-slots="<?= htmlspecialchars(implode(',', $cat_slots)) ?>">
+                                <div id="gal_cat_grid_<?= htmlspecialchars($cat_key) ?>" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    <?php foreach ($cat_cards as $c_num => $card): 
+                                        $slot = $card['slot'];
+                                        $preview_url = !empty($card['img']) ? get_admin_img_preview($card['img']) : '../assets/images/logo.svg';
+                                        $img_preview_id = "gal_prv_{$cat_key}_{$slot}";
+                                    ?>
+                                        <div class="gallery-admin-card rounded-2xl border border-gray-200 bg-gray-50/40 p-5 shadow-sm hover:border-[#C9A24B]/60 transition flex flex-col justify-between" data-cat="<?= htmlspecialchars($cat_key) ?>" data-slot="<?= (int)$slot ?>">
+                                            <form method="POST" action="?tab=gallery" onsubmit="return handleGalleryCardSubmit(event, this)" class="gallery-card-unified-form space-y-4" data-cat="<?= htmlspecialchars($cat_key) ?>" data-slot="<?= (int)$slot ?>" data-preview-id="<?= htmlspecialchars($img_preview_id) ?>">
+                                                <!-- Card Top Bar -->
+                                                <div class="flex items-center justify-between border-b border-gray-200/80 pb-3">
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="w-6 h-6 rounded-full bg-[#001129] text-[#C9A24B] text-xs font-bold flex items-center justify-center card-seq-num"><?= $c_num + 1 ?></span>
+                                                        <span class="font-bold text-gray-800 text-sm">Photo Card</span>
+                                                    </div>
+                                                    <button 
+                                                        type="button" 
+                                                        onclick="removeGalleryCategoryCard('<?= htmlspecialchars($cat_key) ?>', <?= (int)$slot ?>, this)"
+                                                        class="text-xs text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-2.5 py-1 rounded-lg font-semibold flex items-center gap-1 transition cursor-pointer"
+                                                        title="Remove this card"
+                                                    >
+                                                        <span class="material-symbols-outlined text-sm">delete</span>
+                                                        <span>Remove</span>
+                                                    </button>
+                                                </div>
+
+                                                <!-- 1. Image Preview & Upload -->
+                                                <div class="space-y-3">
+                                                    <div class="relative group rounded-xl overflow-hidden border border-gray-200 bg-gray-100 shadow-sm aspect-video flex items-center justify-center">
+                                                        <img 
+                                                            id="<?= htmlspecialchars($img_preview_id) ?>" 
+                                                            src="<?= htmlspecialchars($preview_url) ?>" 
+                                                            alt="<?= htmlspecialchars($card['title']) ?>"
+                                                            class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                                                            onerror="this.onerror=null; this.src='../assets/images/logo.svg';"
+                                                        />
+                                                        <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/75 text-white text-[10px] font-medium backdrop-blur-sm flex items-center gap-1">
+                                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                                            Card Image
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="block text-xs font-semibold text-gray-700 mb-1">
+                                                            Upload Photo (Auto-converted to WEBP &bull; Max 2.5MB)
+                                                        </label>
+                                                        <input 
+                                                            type="file" 
+                                                            name="image_file" 
+                                                            accept="image/jpeg,image/png,image/webp"
+                                                            onchange="previewImage(this, '<?= htmlspecialchars($img_preview_id) ?>')"
+                                                            class="block w-full text-xs text-gray-500 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-[#001129] file:text-white hover:file:bg-[#071f45] file:cursor-pointer cursor-pointer border border-gray-300 rounded-xl bg-white"
+                                                        />
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="block text-[11px] font-semibold text-gray-500 mb-1">
+                                                            Or Select School Image / Custom Path:
+                                                        </label>
+                                                        <div class="flex flex-col sm:flex-row gap-2">
+                                                            <select 
+                                                                onchange="if(this.value){ const inp = this.form.elements['custom_path']; inp.value = 'assets/images/sunrise school image/' + this.value; const prv = document.getElementById('<?= htmlspecialchars($img_preview_id) ?>'); if(prv){ prv.src = '../assets/images/sunrise%20school%20image/' + encodeURIComponent(this.value); } }" 
+                                                                class="sm:w-1/2 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-xs text-gray-700 focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                                            >
+                                                                <option value="">-- Choose School Photo --</option>
+                                                                <?php foreach ($available_school_images as $img_file): ?>
+                                                                    <option value="<?= htmlspecialchars($img_file) ?>" <?= (strpos($card['img'], $img_file) !== false) ? 'selected' : '' ?>>
+                                                                        <?= htmlspecialchars($img_file) ?>
+                                                                    </option>
+                                                                <?php endforeach; ?>
+                                                            </select>
+                                                            <input 
+                                                                type="text" 
+                                                                name="custom_path" 
+                                                                placeholder="assets/images/... or https://..."
+                                                                value="<?= (strpos($card['img'], 'uploads/') === false) ? htmlspecialchars(rawurldecode($card['img'])) : '' ?>"
+                                                                onchange="if(this.value){ const prv = document.getElementById('<?= htmlspecialchars($img_preview_id) ?>'); if(prv){ prv.src = (this.value.startsWith('http') ? this.value : '../' + this.value); } }"
+                                                                class="flex-1 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-gray-800 text-xs focus:ring-2 focus:ring-[#C9A24B] outline-none font-mono"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 2. Single Heading Input (Only Heading on Image) -->
+                                                <div>
+                                                    <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1.5">
+                                                        <span class="material-symbols-outlined text-[#C9A24B] text-base">title</span>
+                                                        <span>Heading on Image</span>
+                                                    </label>
+                                                    <input 
+                                                        type="text" 
+                                                        name="card_heading" 
+                                                        value="<?= htmlspecialchars($card['title']) ?>"
+                                                        placeholder="Enter heading to display on photo..."
+                                                        class="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-xl text-gray-900 text-sm font-medium focus:ring-2 focus:ring-[#C9A24B] focus:border-[#C9A24B] outline-none"
+                                                    />
+                                                </div>
+
+                                                <!-- Save Button -->
+                                                <div class="pt-1">
+                                                    <button 
+                                                        type="submit" 
+                                                        class="submit-btn w-full py-2.5 px-4 bg-[#C9A24B] hover:bg-[#B38C37] text-[#001129] font-bold text-xs rounded-xl shadow-sm hover:shadow transition flex items-center justify-center gap-1.5 cursor-pointer"
+                                                    >
+                                                        <span class="btn-icon material-symbols-outlined text-base">save</span>
+                                                        <span class="btn-text">Save Card</span>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    <?php endforeach; ?>
+
+                                    <!-- Add New Card Tile (+) -->
+                                    <button 
+                                        type="button" 
+                                        id="add_tile_<?= htmlspecialchars($cat_key) ?>"
+                                        onclick="addGalleryCategoryCard('<?= htmlspecialchars($cat_key) ?>', '<?= htmlspecialchars(addslashes($sec['title'])) ?>')"
+                                        class="min-h-[260px] rounded-2xl border-2 border-dashed border-gray-300 hover:border-[#C9A24B] bg-gray-50/40 hover:bg-[#C9A24B]/5 transition flex flex-col items-center justify-center gap-2.5 p-6 text-gray-500 hover:text-[#001129] group cursor-pointer"
+                                    >
+                                        <div class="w-12 h-12 rounded-full bg-white border border-gray-200 group-hover:border-[#C9A24B] group-hover:bg-[#001129] group-hover:text-[#C9A24B] flex items-center justify-center shadow-sm transition">
+                                            <span class="material-symbols-outlined text-2xl">add</span>
+                                        </div>
+                                        <span class="font-bold text-sm">Add New Card</span>
+                                        <span class="text-xs text-gray-400 text-center">Click + to add a new photo &amp; heading in <?= htmlspecialchars($sec['title']) ?></span>
+                                    </button>
+                                </div>
+                            </div>
+                        <?php else: ?>
                         <!-- Section Fields (Both Images & Text Blocks Together!) -->
                         <div class="p-6 space-y-6 divide-y divide-gray-100">
                             <?php foreach ($sec['fields'] as $f_idx => $field): 
@@ -9843,8 +9148,8 @@ $current_page_data = $pages_config[$active_tab];
                                                     <!-- Option A: Direct File Upload with DB Backup -->
                                                     <div>
                                                         <label class="block text-xs font-semibold text-gray-700 mb-1 flex items-center justify-between">
-                                                            <span>Upload New Photo (Auto-saved to Cloud DB for Git-Push Safety &bull; Max 2MB)</span>
-                                                            <span class="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded font-bold">Push Safe</span>
+                                                            <span>Upload New Photo (Auto-converted to WEBP &bull; Max 2.5MB)</span>
+                                                            <span class="text-[10px] text-emerald-700 bg-emerald-50 border border-emerald-200 px-1.5 py-0.5 rounded font-bold">Auto WebP</span>
                                                         </label>
                                                         <input 
                                                             type="file" 
@@ -9979,6 +9284,7 @@ $current_page_data = $pages_config[$active_tab];
                                 </div>
                             <?php endforeach; ?>
                         </div>
+                        <?php endif; ?>
                     </div>
                 <?php endforeach; ?>
 
@@ -9991,6 +9297,10 @@ $current_page_data = $pages_config[$active_tab];
 
     <!-- Interactive Scripts: Live Image Preview, Quill, Seamless AJAX & Scroll Restoration -->
     <script>
+        const ADMIN_CSRF_TOKEN = <?= json_encode(csrf_token()) ?>;
+        const AVAILABLE_SCHOOL_IMAGES = <?= json_encode(array_values($available_school_images)) ?>;
+        const MAX_IMAGE_BYTES = Math.floor(2.5 * 1024 * 1024); // 2.5 MB
+
         // Floating Toast Notification Helper
         function showToast(message, type = 'success') {
             const container = document.getElementById('adminToastContainer');
@@ -10027,12 +9337,53 @@ $current_page_data = $pages_config[$active_tab];
             }, 3500);
         }
 
-        // Live image preview reader
-        function previewImage(input, previewId) {
+        // Convert any selected JPG/PNG File object into a high-efficiency WebP File object
+        function convertImageFileToWebp(file, quality = 0.86) {
+            return new Promise((resolve) => {
+                if (!file || file.type === 'image/webp') {
+                    resolve(file);
+                    return;
+                }
+                const img = new Image();
+                const objectUrl = URL.createObjectURL(file);
+                img.onload = function() {
+                    URL.revokeObjectURL(objectUrl);
+                    const canvas = document.createElement('canvas');
+                    canvas.width = img.naturalWidth || img.width;
+                    canvas.height = img.naturalHeight || img.height;
+                    const ctx = canvas.getContext('2d');
+                    if (!ctx) {
+                        resolve(file);
+                        return;
+                    }
+                    ctx.drawImage(img, 0, 0);
+                    canvas.toBlob((blob) => {
+                        if (!blob) {
+                            resolve(file);
+                            return;
+                        }
+                        const baseName = file.name.replace(/\.[^/.]+$/, "");
+                        const webpFile = new File([blob], `${baseName}.webp`, {
+                            type: 'image/webp',
+                            lastModified: Date.now()
+                        });
+                        resolve(webpFile);
+                    }, 'image/webp', quality);
+                };
+                img.onerror = function() {
+                    URL.revokeObjectURL(objectUrl);
+                    resolve(file);
+                };
+                img.src = objectUrl;
+            });
+        }
+
+        // Live image preview reader + automatic WebP conversion
+        async function previewImage(input, previewId) {
             if (input.files && input.files[0]) {
                 const file = input.files[0];
-                if (file.size > 2 * 1024 * 1024) {
-                    showToast("Selected file is larger than 2MB. Please choose a smaller image.", "error");
+                if (file.size > MAX_IMAGE_BYTES) {
+                    showToast("Selected file is larger than 2.5MB. Please choose an image up to 2.5MB.", "error");
                     input.value = "";
                     return;
                 }
@@ -10044,7 +9395,339 @@ $current_page_data = $pages_config[$active_tab];
                     }
                 };
                 reader.readAsDataURL(file);
+
+                // Auto-convert JPG/PNG to WebP in-place inside the file input
+                if (file.type !== 'image/webp') {
+                    const webpFile = await convertImageFileToWebp(file);
+                    if (webpFile && webpFile.type === 'image/webp' && typeof DataTransfer !== 'undefined') {
+                        const dt = new DataTransfer();
+                        dt.items.add(webpFile);
+                        input.files = dt.files;
+                    }
+                }
             }
+        }
+
+        // Helper: Persist active slots list for a gallery category
+        async function saveCategorySlotsList(catKey, slotsArray) {
+            const val = slotsArray.length > 0 ? slotsArray.join(',') : 'NONE';
+            const fd = new FormData();
+            fd.append('csrf_token', ADMIN_CSRF_TOKEN);
+            fd.append('page_key', 'gallery');
+            fd.append('section_key', `gal_${catKey}_slots`);
+            fd.append('content_type', 'text');
+            fd.append('content_value', val);
+            fd.append('ajax', '1');
+
+            await fetch('save_content.php', {
+                method: 'POST',
+                body: fd,
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            });
+        }
+
+        // Helper: Renumber visible cards & update badge count in a category
+        function refreshCategoryCardNumbers(catKey) {
+            const grid = document.getElementById(`gal_cat_grid_${catKey}`);
+            if (!grid) return;
+            const cards = grid.querySelectorAll('.gallery-admin-card');
+            cards.forEach((card, idx) => {
+                const numBadge = card.querySelector('.card-seq-num');
+                if (numBadge) numBadge.textContent = idx + 1;
+            });
+            const badge = document.getElementById(`cat_count_badge_${catKey}`);
+            if (badge) {
+                badge.textContent = `${cards.length} Card(s)`;
+            }
+        }
+
+        // Unified submit handler for a Gallery Category Card form (Never reloads page)
+        async function handleGalleryCardSubmit(e, form) {
+            if (e) e.preventDefault();
+            if (!form) return false;
+
+            const catKey    = form.getAttribute('data-cat');
+            const slot      = parseInt(form.getAttribute('data-slot'), 10);
+            const previewId = form.getAttribute('data-preview-id');
+            const heading   = (form.elements['card_heading'] ? form.elements['card_heading'].value : '').trim();
+            const fileInput = form.elements['image_file'];
+            const customInp = form.elements['custom_path'];
+            const hasFile   = fileInput && fileInput.files && fileInput.files.length > 0;
+            const hasCustom = customInp && customInp.value.trim() !== '';
+
+            if (hasFile && fileInput.files[0].size > MAX_IMAGE_BYTES) {
+                showToast("Selected file is larger than 2.5MB. Please choose an image up to 2.5MB.", "error");
+                return false;
+            }
+
+            const btn     = form.querySelector('.submit-btn');
+            const btnIcon = btn ? btn.querySelector('.btn-icon') : null;
+            const btnText = btn ? btn.querySelector('.btn-text') : null;
+
+            if (btn) btn.disabled = true;
+            if (btnText) btnText.textContent = 'Saving Card...';
+            if (btnIcon) {
+                btnIcon.textContent = 'progress_activity';
+                btnIcon.classList.add('animate-spin');
+            }
+
+            try {
+                // 1. Ensure slot is saved in category's active slots list
+                const secWrap = document.querySelector(`[data-cat-section="${catKey}"]`);
+                if (secWrap) {
+                    const rawSlots = secWrap.getAttribute('data-cat-slots') || '';
+                    const slots = rawSlots ? rawSlots.split(',').map(n => parseInt(n, 10)).filter(n => n > 0) : [];
+                    if (!slots.includes(slot)) {
+                        slots.push(slot);
+                        secWrap.setAttribute('data-cat-slots', slots.join(','));
+                    }
+                    await saveCategorySlotsList(catKey, slots);
+                }
+
+                // 2. Save Heading text via save_content.php
+                const textFd = new FormData();
+                textFd.append('csrf_token', ADMIN_CSRF_TOKEN);
+                textFd.append('page_key', 'gallery');
+                textFd.append('section_key', `gal_${catKey}_title_${slot}`);
+                textFd.append('content_type', 'text');
+                textFd.append('content_value', heading);
+                textFd.append('ajax', '1');
+
+                const textRes = await fetch('save_content.php', {
+                    method: 'POST',
+                    body: textFd,
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
+                const textJson = await textRes.json();
+                if (!textJson.success) {
+                    throw new Error(textJson.message || 'Failed to save card heading.');
+                }
+
+                // 3. Save Image if uploaded or selected (auto-converted to WebP)
+                if (hasFile || hasCustom) {
+                    const imgFd = new FormData();
+                    imgFd.append('csrf_token', ADMIN_CSRF_TOKEN);
+                    imgFd.append('page_key', 'gallery');
+                    imgFd.append('image_key', `gal_${catKey}_img_${slot}`);
+                    imgFd.append('alt_text', heading || 'Gallery Photo');
+                    imgFd.append('ajax', '1');
+                    if (hasFile) {
+                        const webpFile = await convertImageFileToWebp(fileInput.files[0]);
+                        imgFd.append('image_file', webpFile);
+                    } else if (hasCustom) {
+                        imgFd.append('custom_path', customInp.value.trim());
+                    }
+
+                    const imgRes = await fetch('upload_image.php', {
+                        method: 'POST',
+                        body: imgFd,
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+                    const imgJson = await imgRes.json();
+                    if (!imgJson.success) {
+                        throw new Error(imgJson.message || 'Failed to save card image.');
+                    }
+                    if (imgJson.preview_url && previewId) {
+                        const prv = document.getElementById(previewId);
+                        if (prv) prv.src = imgJson.preview_url;
+                    }
+                    if (hasFile) {
+                        fileInput.value = '';
+                        if (customInp) customInp.value = '';
+                    }
+                }
+
+                showToast('Gallery card saved (WebP optimized)!', 'success');
+
+                if (btn) {
+                    btn.classList.remove('bg-[#C9A24B]', 'hover:bg-[#B38C37]', 'text-[#001129]');
+                    btn.classList.add('!bg-emerald-700', '!text-white');
+                }
+                if (btnIcon) {
+                    btnIcon.classList.remove('animate-spin');
+                    btnIcon.textContent = 'check';
+                }
+                if (btnText) btnText.textContent = 'Card Saved!';
+
+                setTimeout(() => {
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.classList.remove('!bg-emerald-700', '!text-white');
+                        btn.classList.add('bg-[#C9A24B]', 'hover:bg-[#B38C37]', 'text-[#001129]');
+                    }
+                    if (btnIcon) btnIcon.textContent = 'save';
+                    if (btnText) btnText.textContent = 'Save Card';
+                }, 2000);
+            } catch (err) {
+                showToast(err.message || 'Error saving gallery card.', 'error');
+                if (btn) btn.disabled = false;
+                if (btnIcon) {
+                    btnIcon.classList.remove('animate-spin');
+                    btnIcon.textContent = 'save';
+                }
+                if (btnText) btnText.textContent = 'Save Card';
+            }
+            return false;
+        }
+
+        // Bind unified save handler to a Gallery Category Card form
+        function bindGalleryCardForm(form) {
+            if (!form || form.getAttribute('data-bound') === '1') return;
+            form.setAttribute('data-bound', '1');
+            form.onsubmit = (e) => handleGalleryCardSubmit(e, form);
+        }
+
+        // Add a new card slot dynamically to a Gallery Category
+        async function addGalleryCategoryCard(catKey, catTitle) {
+            const secWrap = document.querySelector(`[data-cat-section="${catKey}"]`);
+            const grid    = document.getElementById(`gal_cat_grid_${catKey}`);
+            const addTile = document.getElementById(`add_tile_${catKey}`);
+            if (!secWrap || !grid || !addTile) return;
+
+            const rawSlots = secWrap.getAttribute('data-cat-slots') || '';
+            const slots = rawSlots ? rawSlots.split(',').map(n => parseInt(n, 10)).filter(n => n > 0) : [];
+            const nextSlot = slots.length > 0 ? (Math.max(...slots) + 1) : 1;
+            slots.push(nextSlot);
+            secWrap.setAttribute('data-cat-slots', slots.join(','));
+
+            const previewId = `gal_prv_${catKey}_${nextSlot}`;
+            const optionsHtml = AVAILABLE_SCHOOL_IMAGES.map(img => 
+                `<option value="${img.replace(/"/g, '&quot;')}">${img}</option>`
+            ).join('');
+
+            const cardEl = document.createElement('div');
+            cardEl.className = 'gallery-admin-card rounded-2xl border-2 border-[#C9A24B] bg-amber-50/20 p-5 shadow-md transition flex flex-col justify-between';
+            cardEl.setAttribute('data-cat', catKey);
+            cardEl.setAttribute('data-slot', nextSlot);
+
+            cardEl.innerHTML = `
+                <form method="POST" action="?tab=gallery" onsubmit="return handleGalleryCardSubmit(event, this)" class="gallery-card-unified-form space-y-4" data-cat="${catKey}" data-slot="${nextSlot}" data-preview-id="${previewId}">
+                    <div class="flex items-center justify-between border-b border-gray-200/80 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-[#001129] text-[#C9A24B] text-xs font-bold flex items-center justify-center card-seq-num">${slots.length}</span>
+                            <span class="font-bold text-gray-800 text-sm">New Photo Card</span>
+                            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-800">New</span>
+                        </div>
+                        <button 
+                            type="button" 
+                            onclick="removeGalleryCategoryCard('${catKey}', ${nextSlot}, this)"
+                            class="text-xs text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-2.5 py-1 rounded-lg font-semibold flex items-center gap-1 transition cursor-pointer"
+                            title="Remove this card"
+                        >
+                            <span class="material-symbols-outlined text-sm">delete</span>
+                            <span>Remove</span>
+                        </button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="relative group rounded-xl overflow-hidden border border-gray-200 bg-gray-100 shadow-sm aspect-video flex items-center justify-center">
+                            <img 
+                                id="${previewId}" 
+                                src="../assets/images/logo.svg" 
+                                alt="New Card Preview"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                            />
+                            <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/75 text-white text-[10px] font-medium backdrop-blur-sm flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                                Select or Upload Image
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">
+                                Upload Photo (Auto-converted to WEBP &bull; Max 2.5MB)
+                            </label>
+                            <input 
+                                type="file" 
+                                name="image_file" 
+                                accept="image/jpeg,image/png,image/webp"
+                                onchange="previewImage(this, '${previewId}')"
+                                class="block w-full text-xs text-gray-500 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-[#001129] file:text-white hover:file:bg-[#071f45] file:cursor-pointer cursor-pointer border border-gray-300 rounded-xl bg-white"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-500 mb-1">
+                                Or Select School Image / Custom Path:
+                            </label>
+                            <div class="flex flex-col sm:flex-row gap-2">
+                                <select 
+                                    onchange="if(this.value){ const inp = this.form.elements['custom_path']; inp.value = 'assets/images/sunrise school image/' + this.value; const prv = document.getElementById('${previewId}'); if(prv){ prv.src = '../assets/images/sunrise%20school%20image/' + encodeURIComponent(this.value); } }" 
+                                    class="sm:w-1/2 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-xs text-gray-700 focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                >
+                                    <option value="">-- Choose School Photo --</option>
+                                    ${optionsHtml}
+                                </select>
+                                <input 
+                                    type="text" 
+                                    name="custom_path" 
+                                    placeholder="assets/images/... or https://..."
+                                    value=""
+                                    onchange="if(this.value){ const prv = document.getElementById('${previewId}'); if(prv){ prv.src = (this.value.startsWith('http') ? this.value : '../' + this.value); } }"
+                                    class="flex-1 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-gray-800 text-xs focus:ring-2 focus:ring-[#C9A24B] outline-none font-mono"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[#C9A24B] text-base">title</span>
+                            <span>Heading on Image</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            name="card_heading" 
+                            value=""
+                            placeholder="Enter heading to display on photo..."
+                            class="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-xl text-gray-900 text-sm font-medium focus:ring-2 focus:ring-[#C9A24B] focus:border-[#C9A24B] outline-none"
+                        />
+                    </div>
+
+                    <div class="pt-1">
+                        <button 
+                            type="submit" 
+                            class="submit-btn w-full py-2.5 px-4 bg-[#C9A24B] hover:bg-[#B38C37] text-[#001129] font-bold text-xs rounded-xl shadow-sm hover:shadow transition flex items-center justify-center gap-1.5 cursor-pointer"
+                        >
+                            <span class="btn-icon material-symbols-outlined text-base">save</span>
+                            <span class="btn-text">Save Card</span>
+                        </button>
+                    </div>
+                </form>
+            `;
+
+            grid.insertBefore(cardEl, addTile);
+            const newForm = cardEl.querySelector('.gallery-card-unified-form');
+            if (newForm) bindGalleryCardForm(newForm);
+
+            refreshCategoryCardNumbers(catKey);
+            await saveCategorySlotsList(catKey, slots);
+
+            cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const headingInp = cardEl.querySelector('input[name="card_heading"]');
+            if (headingInp) setTimeout(() => headingInp.focus(), 300);
+            showToast('New card added! Upload an image and enter a heading, then click Save Card.', 'success');
+        }
+
+        // Remove a card from a Gallery Category
+        async function removeGalleryCategoryCard(catKey, slot, btnEl) {
+            if (!confirm('Are you sure you want to remove this photo card?')) return;
+            const secWrap = document.querySelector(`[data-cat-section="${catKey}"]`);
+            if (!secWrap) return;
+
+            const rawSlots = secWrap.getAttribute('data-cat-slots') || '';
+            const slots = rawSlots
+                .split(',')
+                .map(n => parseInt(n, 10))
+                .filter(n => n > 0 && n !== slot);
+
+            secWrap.setAttribute('data-cat-slots', slots.join(','));
+            const cardEl = btnEl.closest('.gallery-admin-card');
+            if (cardEl) cardEl.remove();
+
+            refreshCategoryCardNumbers(catKey);
+            await saveCategorySlotsList(catKey, slots);
+            showToast('Card removed from category.', 'success');
         }
 
         // Global map of Quill editor instances
@@ -10052,6 +9735,9 @@ $current_page_data = $pages_config[$active_tab];
 
         // Initialize all active Quill Rich Text Editors
         document.addEventListener('DOMContentLoaded', () => {
+            // Bind all Gallery Category Card forms
+            document.querySelectorAll('.gallery-card-unified-form').forEach(bindGalleryCardForm);
+
             // 1. Instant Scroll Restoration (Prevents jumping to top under all conditions)
             const savedScrollY = sessionStorage.getItem('admin_scroll_y');
             if (savedScrollY !== null) {
@@ -10173,10 +9859,17 @@ $current_page_data = $pages_config[$active_tab];
                 });
             });
 
-            // 4. AJAX Submission for Image Forms (Zero Page Reload, Updates Preview Instantly)
+            // 4. AJAX Submission for Image Forms (Zero Page Reload, Auto WebP Conversion & Instant Preview)
             document.querySelectorAll('.ajax-image-form').forEach(form => {
                 form.addEventListener('submit', async (e) => {
                     e.preventDefault();
+
+                    const fileInput = form.querySelector('input[type="file"]');
+                    const hasFile = fileInput && fileInput.files && fileInput.files.length > 0;
+                    if (hasFile && fileInput.files[0].size > MAX_IMAGE_BYTES) {
+                        showToast("Selected file is larger than 2.5MB. Please choose an image up to 2.5MB.", "error");
+                        return;
+                    }
 
                     const btn = form.querySelector('.submit-btn');
                     const btnIcon = btn ? btn.querySelector('.btn-icon') : null;
@@ -10189,7 +9882,7 @@ $current_page_data = $pages_config[$active_tab];
                     sessionStorage.setItem('admin_scroll_y', window.scrollY);
 
                     if (btn) btn.disabled = true;
-                    if (btnText) btnText.textContent = 'Saving...';
+                    if (btnText) btnText.textContent = 'Converting & Saving...';
                     if (btnIcon) {
                         btnIcon.textContent = 'progress_activity';
                         btnIcon.classList.add('animate-spin');
@@ -10197,6 +9890,11 @@ $current_page_data = $pages_config[$active_tab];
 
                     try {
                         const formData = new FormData(form);
+                        if (hasFile) {
+                            const webpFile = await convertImageFileToWebp(fileInput.files[0]);
+                            formData.set('image_file', webpFile);
+                        }
+
                         const response = await fetch('upload_image.php', {
                             method: 'POST',
                             body: formData,
@@ -10208,7 +9906,7 @@ $current_page_data = $pages_config[$active_tab];
                         const result = await response.json();
 
                         if (result.success) {
-                            showToast(result.message || 'Image updated successfully!', 'success');
+                            showToast(result.message || 'Image converted to WebP and saved!', 'success');
 
                             // Instant live preview update
                             if (result.preview_url && previewId) {
@@ -10219,7 +9917,6 @@ $current_page_data = $pages_config[$active_tab];
                             }
 
                             // Clear file input
-                            const fileInput = form.querySelector('input[type="file"]');
                             if (fileInput) fileInput.value = '';
 
                             if (btn) {

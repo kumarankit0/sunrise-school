@@ -89,144 +89,29 @@ require_once __DIR__ . '/core/header.php';
   <section class="max-w-7xl mx-auto px-6 lg:px-12 pb-12 sm:pb-16 w-full scroll-mt-28" id="campus-life">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
       <?php
-      // Default initial 12 curated showcase items with new category tags
-      $default_gallery_items = [
-          1 => [
-              'img' => school_img('exhibition.webp'),
-              'cat' => 'cultural',
-              'tag' => 'Cultural Fest',
-              'eyebrow' => 'Annual Celebration',
-              'title' => 'Cultural Fest & Folk Performances',
-              'desc' => 'Students presenting rich traditional dance, theatrical skits, and folk musical performances.'
-          ],
-          2 => [
-              'img' => school_img('award_ceremony.webp'),
-              'cat' => 'result',
-              'tag' => 'Result Day',
-              'eyebrow' => 'Academic Felicitation',
-              'title' => 'Annual Result Declaration & Award Ceremony',
-              'desc' => 'Honoring top percentiles, grade toppers, and scholastic excellence across all classes.'
-          ],
-          3 => [
-              'img' => school_img('students_ground.webp'),
-              'cat' => 'activity',
-              'tag' => 'School Activity',
-              'eyebrow' => 'Campus Life',
-              'title' => 'Outdoor Sports & Physical Drills',
-              'desc' => 'Active athletic drills, sprint conditioning, and outdoor teamwork sports on the school grounds.'
-          ],
-          4 => [
-              'img' => school_img('yoga.webp'),
-              'cat' => 'activity',
-              'tag' => 'School Activity',
-              'eyebrow' => 'Morning Assembly',
-              'title' => 'International Yoga Day Demonstrations',
-              'desc' => 'Disciplined mass yoga asanas cultivating concentration, stamina, and mindfulness.'
-          ],
-          5 => [
-              'img' => school_img('toppers.webp'),
-              'cat' => 'result',
-              'tag' => 'Result Day',
-              'eyebrow' => 'Board Merit',
-              'title' => 'HBSE Board Exam Result Celebrations',
-              'desc' => 'Celebrating top state ranks and 100% board passing results in Class 10th and 12th.'
-          ],
-          6 => [
-              'img' => school_img('shinning_stars.webp'),
-              'cat' => 'competition',
-              'tag' => 'Competition',
-              'eyebrow' => 'Academic Contests',
-              'title' => 'Inter-School Science & Quiz Competition',
-              'desc' => 'High-achieving students competing in district-level olympiads, science projects, and quiz bowls.'
-          ],
-          7 => [
-              'img' => school_img('school_home1.webp'),
-              'cat' => 'activity',
-              'tag' => 'School Activity',
-              'eyebrow' => 'Campus Activities',
-              'title' => 'Morning Assembly & Special Celebrations',
-              'desc' => 'Daily moral value recitations, national anthems, and vibrant campus co-curricular activities.'
-          ],
-          8 => [
-              'img' => school_img('children_sitting.webp'),
-              'cat' => 'competition',
-              'tag' => 'Competition',
-              'eyebrow' => 'Skill Contests',
-              'title' => 'Art, Essay & Debate Competition',
-              'desc' => 'Students showcasing exceptional elocution, creative writing, and painting prowess in inter-house events.'
-          ],
-          9 => [
-              'img' => school_img('lab_class.webp'),
-              'cat' => 'diwali',
-              'tag' => 'Diwali Fest',
-              'eyebrow' => 'Festive Joy',
-              'title' => 'Diwali Celebration & Rangoli Contest',
-              'desc' => 'Grand festive campus decorations, colorful floral rangolis, and traditional illumination festivities.'
-          ],
-          10 => [
-              'img' => school_img('all_staffmembers.webp'),
-              'cat' => 'cultural',
-              'tag' => 'Cultural Fest',
-              'eyebrow' => 'Music & Arts',
-              'title' => 'Grand Stage Musical Pageant',
-              'desc' => 'Vocal choir harmonies, classical instrumental recitals, and cultural heritage exhibits by students.'
-          ],
-          11 => [
-              'img' => school_img('exhibition3.webp'),
-              'cat' => 'diwali',
-              'tag' => 'Diwali Fest',
-              'eyebrow' => 'Diwali Festivities',
-              'title' => 'Eco-Friendly Deepawali Festival',
-              'desc' => 'Spreading joy and sustainable green Diwali messages through handmade diyas and creative craft work.'
-          ],
-          12 => [
-              'img' => school_img('IMG_20210815_093156~2.webp'),
-              'cat' => 'media',
-              'tag' => 'Media Coverage',
-              'eyebrow' => 'Press & Honors',
-              'title' => 'Newspaper & Media Feature Coverage',
-              'desc' => 'Media accolades and state news recognition honoring Sun Rise School for educational and board achievements.'
-          ]
-      ];
-
-      for ($i = 1; $i <= 24; $i++) {
-          $def = $default_gallery_items[$i] ?? null;
-          $img_key = 'gallery_img' . $i;
-          $cat_key = 'gallery_cat' . $i;
-          $tag_key = 'gallery_tag' . $i;
-          $eyebrow_key = 'gallery_eyebrow' . $i;
-          $title_key = 'gallery_title' . $i;
-          $desc_key = 'gallery_desc' . $i;
-
-          $item_img = get_image('gallery', $img_key, $def ? $def['img'] : '');
-          if (empty($item_img) && !$def) {
-              continue; // Skip empty slots beyond defaults
-          }
-
-          $item_cat = get_text('gallery', $cat_key, $def ? $def['cat'] : 'activity');
-          $item_tag = get_text('gallery', $tag_key, $def ? $def['tag'] : 'School Activity');
-          $item_eyebrow = get_text('gallery', $eyebrow_key, $def ? $def['eyebrow'] : 'Campus Life');
-          $item_title = get_text('gallery', $title_key, $def ? $def['title'] : 'Gallery Showcase #' . $i);
-          $item_desc = get_text('gallery', $desc_key, $def ? $def['desc'] : 'Sun Rise Sr. Sec. School photographic chronicle moment.');
+      $gallery_cards = get_gallery_category_cards(null, false);
+      foreach ($gallery_cards as $idx => $card):
+          $item_cat   = $card['cat'];
+          $item_img   = $card['img'];
+          $item_title = $card['title'];
           $is_visible = ($active_cat === 'all' || $item_cat === $active_cat);
       ?>
-        <!-- Item <?= $i ?>: <?= htmlspecialchars($item_title) ?> -->
+        <!-- Card: <?= htmlspecialchars($item_title) ?> -->
         <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars($item_cat) ?>" onclick="openLightbox(this)" <?= $is_visible ? '' : 'style="display:none;"' ?>>
           <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= $item_img ?>')"></div>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-          <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= htmlspecialchars($item_tag) ?></div>
-          <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-            <span class="text-eyebrow text-gold-light uppercase mb-1"><?= htmlspecialchars($item_eyebrow) ?></span>
-            <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= htmlspecialchars($item_title) ?></h3>
-            <p class="text-body-sm text-surface-dim line-clamp-1"><?= htmlspecialchars($item_desc) ?></p>
-          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/15 to-transparent"></div>
+          <?php if (!empty(trim($item_title))): ?>
+            <div class="absolute bottom-0 inset-x-0 p-5 sm:p-6 flex flex-col justify-end">
+              <h3 class="text-headline-sm text-base sm:text-lg font-bold text-white leading-snug drop-shadow-sm"><?= htmlspecialchars($item_title) ?></h3>
+            </div>
+          <?php endif; ?>
           <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
             <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
               <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
             </div>
           </div>
         </div>
-      <?php } ?>
+      <?php endforeach; ?>
     </div>
   </section>
 
@@ -257,7 +142,7 @@ require_once __DIR__ . '/core/header.php';
             <h3 class="font-headline-sm text-base sm:text-lg font-bold text-[#3B0764]"><?= get_text('gallery', 'life1_title', 'Morning Assembly & Moral Values') ?></h3>
             <p class="text-xs sm:text-sm text-[#581C87]/80 leading-relaxed line-clamp-2"><?= get_text('gallery', 'life1_desc', 'Daily prayer, news recitation, motivational thought sharing, and patriotic anthems shaping disciplined character.') ?></p>
           </div>
-          <div class="pt-3 border-t border-[#E2CEFC]/60 mt-3 flex items-center text-xs font-semibold text-[#7C3AED] hover:text-[#5B21B6] transition-colors cursor-pointer" onclick="openLightbox(document.querySelector('.gallery-item[data-category=events]'))">
+          <div class="pt-3 border-t border-[#E2CEFC]/60 mt-3 flex items-center text-xs font-semibold text-[#7C3AED] hover:text-[#5B21B6] transition-colors cursor-pointer" onclick="openLightbox(document.querySelector('.gallery-item[data-category=activity]'))">
             <span>Read More</span>
             <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
           </div>
@@ -272,7 +157,7 @@ require_once __DIR__ . '/core/header.php';
             <h3 class="font-headline-sm text-base sm:text-lg font-bold text-[#831843]"><?= get_text('gallery', 'life2_title', 'Annual Cultural Pageants & Fests') ?></h3>
             <p class="text-xs sm:text-sm text-[#9D174D]/80 leading-relaxed line-clamp-2"><?= get_text('gallery', 'life2_desc', 'Theatrical productions, folk dance performances, music recitals, and national festival celebrations on campus.') ?></p>
           </div>
-          <div class="pt-3 border-t border-[#FBCFE8]/60 mt-3 flex items-center text-xs font-semibold text-[#DB2777] hover:text-[#9D174D] transition-colors cursor-pointer" onclick="openLightbox(document.querySelector('.gallery-item[data-category=events]'))">
+          <div class="pt-3 border-t border-[#FBCFE8]/60 mt-3 flex items-center text-xs font-semibold text-[#DB2777] hover:text-[#9D174D] transition-colors cursor-pointer" onclick="openLightbox(document.querySelector('.gallery-item[data-category=cultural]'))">
             <span>Read More</span>
             <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
           </div>
@@ -287,7 +172,7 @@ require_once __DIR__ . '/core/header.php';
             <h3 class="font-headline-sm text-base sm:text-lg font-bold text-[#064E3B]"><?= get_text('gallery', 'life3_title', 'Inter-House Athletics & Yoga Drills') ?></h3>
             <p class="text-xs sm:text-sm text-[#065F46]/80 leading-relaxed line-clamp-2"><?= get_text('gallery', 'life3_desc', 'Dedicated sports periods, athletics conditioning, yoga asanas, and district-level tournament coaching.') ?></p>
           </div>
-          <div class="pt-3 border-t border-[#A7F3D0]/60 mt-3 flex items-center text-xs font-semibold text-[#059669] hover:text-[#047857] transition-colors cursor-pointer" onclick="openLightbox(document.querySelector('.gallery-item[data-category=sports]'))">
+          <div class="pt-3 border-t border-[#A7F3D0]/60 mt-3 flex items-center text-xs font-semibold text-[#059669] hover:text-[#047857] transition-colors cursor-pointer" onclick="openLightbox(document.querySelector('.gallery-item[data-category=activity]'))">
             <span>Read More</span>
             <span class="material-symbols-outlined text-[16px] ml-1">arrow_forward</span>
           </div>

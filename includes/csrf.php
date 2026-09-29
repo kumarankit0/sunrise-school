@@ -46,6 +46,12 @@ function csrf_token() {
     return $_SESSION['csrf_token'];
 }
 
+if (!function_exists('generate_csrf_token')) {
+    function generate_csrf_token() {
+        return csrf_token();
+    }
+}
+
 /**
  * Returns a ready-to-use HTML hidden input field with the CSRF token
  *

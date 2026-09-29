@@ -220,10 +220,10 @@ if ($file['error'] !== UPLOAD_ERR_OK) {
     respond_image(false, $msg, $page_key);
 }
 
-// Validate File Size: Max 2MB (2,097,152 bytes)
-$max_size = 2 * 1024 * 1024;
+// Validate File Size: Max 2.5MB (2,621,440 bytes)
+$max_size = (int)(2.5 * 1024 * 1024);
 if ($file['size'] > $max_size) {
-    respond_image(false, 'File exceeds the maximum allowed size of 2MB.', $page_key);
+    respond_image(false, 'File exceeds the maximum allowed size of 2.5MB.', $page_key);
 }
 
 // Validate Extension
@@ -262,17 +262,49 @@ if (!is_dir($upload_dir)) {
     }
 }
 
-// Generate an unguessable unique filename
-$safe_ext = ($raw_ext === 'jpeg') ? 'jpg' : $raw_ext;
+// Generate an unguessable unique filename & auto-convert JPG/PNG to WebP if GD WebP is available
 $random_hash = bin2hex(random_bytes(10));
 $timestamp = time();
-$new_filename = "img_{$page_key}_{$image_key}_{$timestamp}_{$random_hash}.{$safe_ext}";
-$destination_path = $upload_dir . $new_filename;
-$relative_db_path = "uploads/" . $new_filename;
+$converted_to_webp = false;
 
-// Move the uploaded file from PHP temporary storage
-if (!move_uploaded_file($file['tmp_name'], $destination_path)) {
-    respond_image(false, 'Failed to save the uploaded image to the server disk.', $page_key);
+if ($mime_type !== 'image/webp' && function_exists('imagewebp')) {
+    $src_img = null;
+    if ($mime_type === 'image/jpeg' && function_exists('imagecreatefromjpeg')) {
+        $src_img = @imagecreatefromjpeg($file['tmp_name']);
+    } elseif ($mime_type === 'image/png' && function_exists('imagecreatefrompng')) {
+        $src_img = @imagecreatefrompng($file['tmp_name']);
+        if ($src_img) {
+            @imagepalettetotruecolor($src_img);
+            @imagealphablending($src_img, true);
+            @imagesavealpha($src_img, true);
+        }
+    }
+
+    if ($src_img) {
+        $webp_filename = "img_{$page_key}_{$image_key}_{$timestamp}_{$random_hash}.webp";
+        $webp_dest = $upload_dir . $webp_filename;
+        if (@imagewebp($src_img, $webp_dest, 86)) {
+            $converted_to_webp = true;
+            $safe_ext = 'webp';
+            $mime_type = 'image/webp';
+            $new_filename = $webp_filename;
+            $destination_path = $webp_dest;
+            $relative_db_path = "uploads/" . $webp_filename;
+        }
+        @imagedestroy($src_img);
+    }
+}
+
+if (!$converted_to_webp) {
+    $safe_ext = ($raw_ext === 'jpeg') ? 'jpg' : $raw_ext;
+    $new_filename = "img_{$page_key}_{$image_key}_{$timestamp}_{$random_hash}.{$safe_ext}";
+    $destination_path = $upload_dir . $new_filename;
+    $relative_db_path = "uploads/" . $new_filename;
+
+    // Move the uploaded file from PHP temporary storage
+    if (!move_uploaded_file($file['tmp_name'], $destination_path)) {
+        respond_image(false, 'Failed to save the uploaded image to the server disk.', $page_key);
+    }
 }
 
 // Read binary data and generate persistent Base64 Data URI for DB storage

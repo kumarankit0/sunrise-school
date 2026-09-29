@@ -333,3 +333,188 @@ function get_live_tracker_events() {
 
     return !empty($events) ? $events : $defaults;
 }
+
+/**
+ * Returns the structured schema and default cards for each Gallery Category
+ * in the exact order displayed on gallery.php and the Admin Panel.
+ *
+ * @return array
+ */
+function get_gallery_categories_schema() {
+    return [
+        'media' => [
+            'title' => 'Media Coverage',
+            'icon'  => 'newspaper',
+            'desc'  => 'Manage newspaper clippings, press releases, and media feature cards. Click "+ Add Card" to add more photos with a heading.',
+            'defaults' => [
+                1 => [
+                    'img'   => 'assets/images/sunrise school image/IMG_20210815_093156~2.webp',
+                    'title' => 'Newspaper & Media Feature Coverage'
+                ]
+            ]
+        ],
+        'result' => [
+            'title' => 'Annual Result Declaration Day',
+            'icon'  => 'workspace_premium',
+            'desc'  => 'Manage board result celebrations, merit felicitations, and award ceremony photo cards.',
+            'defaults' => [
+                1 => [
+                    'img'   => 'assets/images/sunrise school image/award_ceremony.webp',
+                    'title' => 'Annual Result Declaration & Award Ceremony'
+                ],
+                2 => [
+                    'img'   => 'assets/images/sunrise school image/toppers.webp',
+                    'title' => 'HBSE Board Exam Result Celebrations'
+                ]
+            ]
+        ],
+        'cultural' => [
+            'title' => 'Cultural Fest',
+            'icon'  => 'celebration',
+            'desc'  => 'Manage cultural fest, folk dance, drama, and stage performance photo cards.',
+            'defaults' => [
+                1 => [
+                    'img'   => 'assets/images/sunrise school image/exhibition.webp',
+                    'title' => 'Cultural Fest & Folk Performances'
+                ],
+                2 => [
+                    'img'   => 'assets/images/sunrise school image/all_staffmembers.webp',
+                    'title' => 'Grand Stage Musical Pageant'
+                ]
+            ]
+        ],
+        'activity' => [
+            'title' => 'School Activity',
+            'icon'  => 'sports_kabaddi',
+            'desc'  => 'Manage outdoor sports, morning assembly, yoga demonstrations, and campus activity photo cards.',
+            'defaults' => [
+                1 => [
+                    'img'   => 'assets/images/sunrise school image/students_ground.webp',
+                    'title' => 'Outdoor Sports & Physical Drills'
+                ],
+                2 => [
+                    'img'   => 'assets/images/sunrise school image/yoga.webp',
+                    'title' => 'International Yoga Day Demonstrations'
+                ],
+                3 => [
+                    'img'   => 'assets/images/sunrise school image/school_home1.webp',
+                    'title' => 'Morning Assembly & Special Celebrations'
+                ]
+            ]
+        ],
+        'competition' => [
+            'title' => 'Competition',
+            'icon'  => 'emoji_events',
+            'desc'  => 'Manage inter-school science exhibitions, quiz contests, art, and debate competition photo cards.',
+            'defaults' => [
+                1 => [
+                    'img'   => 'assets/images/sunrise school image/shinning_stars.webp',
+                    'title' => 'Inter-School Science & Quiz Competition'
+                ],
+                2 => [
+                    'img'   => 'assets/images/sunrise school image/children_sitting.webp',
+                    'title' => 'Art, Essay & Debate Competition'
+                ]
+            ]
+        ],
+        'diwali' => [
+            'title' => 'Diwali Celebration',
+            'icon'  => 'festival',
+            'desc'  => 'Manage Diwali celebration, rangoli contest, and festive decoration photo cards.',
+            'defaults' => [
+                1 => [
+                    'img'   => 'assets/images/sunrise school image/lab_class.webp',
+                    'title' => 'Diwali Celebration & Rangoli Contest'
+                ],
+                2 => [
+                    'img'   => 'assets/images/sunrise school image/exhibition3.webp',
+                    'title' => 'Eco-Friendly Deepawali Festival'
+                ]
+            ]
+        ]
+    ];
+}
+
+/**
+ * Returns the active slot numbers for a given gallery category.
+ *
+ * @param string $cat_key
+ * @return array<int>
+ */
+function get_gallery_category_slots($cat_key) {
+    $schema = get_gallery_categories_schema();
+    if (!isset($schema[$cat_key])) {
+        return [];
+    }
+    $defaults = $schema[$cat_key]['defaults'];
+    $default_slots_str = implode(',', array_keys($defaults));
+    $raw_slots = get_text('gallery', "gal_{$cat_key}_slots", $default_slots_str);
+
+    if (trim($raw_slots) === 'NONE') {
+        return [];
+    }
+
+    $parts = array_filter(array_map('intval', explode(',', $raw_slots)), function($n) {
+        return $n > 0;
+    });
+
+    // Deduplicate while preserving order
+    $slots = array_values(array_unique($parts));
+    return $slots;
+}
+
+/**
+ * Returns all cards for a specific gallery category (or all categories if $cat_key is null).
+ * Each returned card has:
+ *   - 'cat'       => category key
+ *   - 'slot'      => slot number
+ *   - 'img_key'   => site_images key
+ *   - 'title_key' => site_content key
+ *   - 'img'       => resolved image URL
+ *   - 'raw_img'   => raw default or stored image path
+ *   - 'title'     => card heading
+ *
+ * @param string|null $cat_key
+ * @param bool $include_empty Whether to include newly added empty slots (true for Admin, false for Frontend)
+ * @return array
+ */
+function get_gallery_category_cards($cat_key = null, $include_empty = false) {
+    $schema = get_gallery_categories_schema();
+    $categories_to_load = $cat_key ? [$cat_key => $schema[$cat_key]] : $schema;
+    $cards = [];
+
+    foreach ($categories_to_load as $c_key => $c_info) {
+        if (!$c_info) continue;
+        $slots = get_gallery_category_slots($c_key);
+        foreach ($slots as $slot) {
+            $def = $c_info['defaults'][$slot] ?? null;
+            $img_key   = "gal_{$c_key}_img_{$slot}";
+            $title_key = "gal_{$c_key}_title_{$slot}";
+
+            $def_img   = $def ? $def['img'] : '';
+            $def_title = $def ? $def['title'] : '';
+
+            $resolved_img = get_image('gallery', $img_key, $def_img);
+            $resolved_title = get_text('gallery', $title_key, $def_title);
+
+            if (!$include_empty && empty($resolved_img)) {
+                continue;
+            }
+
+            $cards[] = [
+                'cat'       => $c_key,
+                'cat_title' => $c_info['title'],
+                'slot'      => $slot,
+                'img_key'   => $img_key,
+                'title_key' => $title_key,
+                'img'       => $resolved_img,
+                'def_img'   => $def_img,
+                'title'     => $resolved_title,
+                'def_title' => $def_title
+            ];
+        }
+    }
+
+    return $cards;
+}
+

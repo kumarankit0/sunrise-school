@@ -1677,10 +1677,18 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'founder_p3',
-                        'label' => 'Founder Story Paragraph 3 (Perseverance & Community)',
+                        'label' => 'Founder Story Paragraph 3 (Perseverance & Community / Read More)',
                         'type' => 'html',
                         'default' => 'The early years were marked by challenges and perseverance, but with unwavering dedication from the management, teachers, and the trust of local families, the foundation was steadily strengthened.',
-                        'help' => 'Third story paragraph detailing perseverance.'
+                        'help' => 'Third story paragraph (appears under Read More button).'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'founder_p4',
+                        'label' => 'Founder Story Paragraph 4 (Additional Narrative / Read More)',
+                        'type' => 'html',
+                        'default' => '',
+                        'help' => 'Optional fourth story paragraph (appears under Read More button).'
                     ]
                 ]
             ],
@@ -6719,17 +6727,16 @@ $pages_config = [
                     ]
                 ]
             ],
-            // Section 2: Mentors in Action Gallery (6 Photographs)
+            // Section 2: Faculty Showcase & Story (Horizontal Image & Narrative)
             [
-                'title' => 'Section 2: Mentors in Action Gallery (6 Photographs)',
-                'icon'  => 'collections',
-                'desc'  => 'Header text and 6 photographic showcases with category tags and titles.',
+                'title' => 'Section 2: Faculty Showcase & Story (Horizontal Image & Narrative)',
+                'icon'  => 'badge',
+                'desc'  => 'Configure the faculty showcase horizontal image, heading, badge, and descriptive paragraphs with expandable Read More support.',
                 'fields' => [
-                    // Section Header
                     [
                         'kind' => 'text',
                         'key' => 'staff_section_eyebrow',
-                        'label' => 'Gallery Section Eyebrow',
+                        'label' => 'Showcase Eyebrow Tag',
                         'type' => 'text',
                         'default' => 'Our Teaching Force',
                         'help' => 'Small uppercase gold text above title.'
@@ -6737,174 +6744,58 @@ $pages_config = [
                     [
                         'kind' => 'text',
                         'key' => 'staff_section_title',
-                        'label' => 'Gallery Section Title',
+                        'label' => 'Showcase Heading / Title',
                         'type' => 'text',
                         'default' => 'Mentors in Action',
-                        'help' => 'Main gallery heading.'
+                        'help' => 'Main showcase heading.'
                     ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'staff_section_desc',
-                        'label' => 'Gallery Section Subtitle',
-                        'type' => 'text',
-                        'default' => 'Capturing the dedication, teamwork, and pedagogical spirit of the Sun Rise Sr. Sec. School teaching community.',
-                        'help' => 'Descriptive text under the gallery heading.'
-                    ],
-
-                    // Photo 1
                     [
                         'kind' => 'image',
-                        'key' => 'staff_img1',
-                        'label' => 'Staff Photo 1 (Full Staff Group)',
+                        'key' => 'staff_showcase_img',
+                        'label' => 'Faculty Showcase Landscape Photo',
                         'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
-                        'alt' => 'All Staff Members - Sun Rise School',
-                        'help' => 'Staff photo 1.'
+                        'alt' => 'Teaching Faculty - Sun Rise Sr. Sec. School',
+                        'help' => 'Upload horizontal/landscape group photo of the teaching staff.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'staff_badge1',
-                        'label' => 'Staff Photo 1 Category Badge',
+                        'key' => 'staff_badge',
+                        'label' => 'Image Badge (Overlay)',
                         'type' => 'text',
-                        'default' => 'Full Staff Group',
-                        'help' => 'Gold category pill on photo.'
+                        'default' => 'Dedicated Faculty',
+                        'help' => 'Gold category badge on the bottom-left of the photo.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'staff_title1',
-                        'label' => 'Staff Photo 1 Caption Title',
-                        'type' => 'text',
-                        'default' => 'Sun Rise Teaching & Admin Staff',
-                        'help' => 'Title overlay.'
-                    ],
-
-                    // Photo 2
-                    [
-                        'kind' => 'image',
-                        'key' => 'staff_img2',
-                        'label' => 'Staff Photo 2 (Mentorship)',
-                        'default' => 'assets/images/sunrise school image/teachers_and_students.webp',
-                        'alt' => 'Teachers and Students - Sun Rise School',
-                        'help' => 'Staff photo 2.'
+                        'key' => 'staff_story_p1',
+                        'label' => 'Faculty Story Paragraph 1',
+                        'type' => 'html',
+                        'default' => 'At Sun Rise Sr. Sec. School, our faculty represents a dedicated team of passionate educators, subject specialists, and compassionate mentors committed to nurturing every student\'s intellectual, creative, and moral growth.',
+                        'help' => 'First story paragraph visible upfront.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'staff_badge2',
-                        'label' => 'Staff Photo 2 Category Badge',
-                        'type' => 'text',
-                        'default' => 'Mentorship',
-                        'help' => 'Gold category pill on photo.'
+                        'key' => 'staff_story_p2',
+                        'label' => 'Faculty Story Paragraph 2',
+                        'type' => 'html',
+                        'default' => 'Our teachers combine traditional pedagogical rigor with modern interactive teaching techniques, ensuring students develop conceptual clarity, critical thinking, and confidence in every academic discipline.',
+                        'help' => 'Second story paragraph visible upfront.'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'staff_title2',
-                        'label' => 'Staff Photo 2 Caption Title',
-                        'type' => 'text',
-                        'default' => 'Faculty & High Achievers',
-                        'help' => 'Title overlay.'
-                    ],
-
-                    // Photo 3
-                    [
-                        'kind' => 'image',
-                        'key' => 'staff_img3',
-                        'label' => 'Staff Photo 3 (Academic Planning)',
-                        'default' => 'assets/images/sunrise school image/teachers_sitting.webp',
-                        'alt' => 'Teachers Meeting - Sun Rise School',
-                        'help' => 'Staff photo 3.'
+                        'key' => 'staff_story_p3',
+                        'label' => 'Faculty Story Paragraph 3 (Read More)',
+                        'type' => 'html',
+                        'default' => 'Through personalized guidance, regular remedial sessions, and co-curricular mentorship, our educators foster a vibrant learning environment where curiosity thrives and values endure.',
+                        'help' => 'Additional narrative paragraph (appears under Read More button).'
                     ],
                     [
                         'kind' => 'text',
-                        'key' => 'staff_badge3',
-                        'label' => 'Staff Photo 3 Category Badge',
-                        'type' => 'text',
-                        'default' => 'Academic Session',
-                        'help' => 'Gold category pill on photo.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'staff_title3',
-                        'label' => 'Staff Photo 3 Caption Title',
-                        'type' => 'text',
-                        'default' => 'Faculty Planning & Review',
-                        'help' => 'Title overlay.'
-                    ],
-
-                    // Photo 4
-                    [
-                        'kind' => 'image',
-                        'key' => 'staff_img4',
-                        'label' => 'Staff Photo 4 (Department Team)',
-                        'default' => 'assets/images/sunrise school image/school_staff.webp',
-                        'alt' => 'School Staff Members',
-                        'help' => 'Staff photo 4.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'staff_badge4',
-                        'label' => 'Staff Photo 4 Category Badge',
-                        'type' => 'text',
-                        'default' => 'Staff Team',
-                        'help' => 'Gold category pill on photo.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'staff_title4',
-                        'label' => 'Staff Photo 4 Caption Title',
-                        'type' => 'text',
-                        'default' => 'Department Educators',
-                        'help' => 'Title overlay.'
-                    ],
-
-                    // Photo 5
-                    [
-                        'kind' => 'image',
-                        'key' => 'staff_img5',
-                        'label' => 'Staff Photo 5 (Senior Mentors)',
-                        'default' => 'assets/images/sunrise school image/teachers.webp',
-                        'alt' => 'Senior School Mentors',
-                        'help' => 'Staff photo 5.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'staff_badge5',
-                        'label' => 'Staff Photo 5 Category Badge',
-                        'type' => 'text',
-                        'default' => 'Pedagogy',
-                        'help' => 'Gold category pill on photo.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'staff_title5',
-                        'label' => 'Staff Photo 5 Caption Title',
-                        'type' => 'text',
-                        'default' => 'Senior School Mentors',
-                        'help' => 'Title overlay.'
-                    ],
-
-                    // Photo 6
-                    [
-                        'kind' => 'image',
-                        'key' => 'staff_img6',
-                        'label' => 'Staff Photo 6 (Campus Life Bonding)',
-                        'default' => 'assets/images/sunrise school image/students_teachers.webp',
-                        'alt' => 'Student & Mentor Bonding',
-                        'help' => 'Staff photo 6.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'staff_badge6',
-                        'label' => 'Staff Photo 6 Category Badge',
-                        'type' => 'text',
-                        'default' => 'Campus Life',
-                        'help' => 'Gold category pill on photo.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'staff_title6',
-                        'label' => 'Staff Photo 6 Caption Title',
-                        'type' => 'text',
-                        'default' => 'Student & Mentor Bonding',
-                        'help' => 'Title overlay.'
+                        'key' => 'staff_story_p4',
+                        'label' => 'Faculty Story Paragraph 4 (Read More)',
+                        'type' => 'html',
+                        'default' => '',
+                        'help' => 'Optional fourth story paragraph (appears under Read More button).'
                     ]
                 ]
             ],
@@ -7345,49 +7236,49 @@ $pages_config = [
                         'key' => 'gallery_intro_desc',
                         'label' => 'Directory Overview Description',
                         'type' => 'textarea',
-                        'default' => 'Filter by category to explore science exhibitions, sports championships, national day celebrations, board exam toppers, campus facilities, and dedicated faculty.',
+                        'default' => 'Filter by category to explore cultural fests, annual result declaration days, school activities, academic competitions, Diwali celebrations, and media coverage.',
                         'help' => 'Summary text.'
                     ]
                 ]
             ],
 
-            // Section 4: Visual Archive Photographs (12 Curated Showcase Cards)
+                        // Section 4: Visual Archive Photographs (Curated Showcase & New Photo Uploads)
             [
-                'title' => 'Section 4: Visual Archive Photographs (12 Curated Showcase Cards)',
+                'title' => 'Section 4: Visual Archive Photographs (Curated Showcase & New Photo Uploads)',
                 'icon'  => 'grid_on',
-                'desc'  => 'Photos, category filters, pill tags, subtitles, headlines, and descriptions for all 12 gallery cards.',
+                'desc'  => 'Manage photos, category filters (cultural / result / activity / competition / diwali / media), badge tags, subtitles, headlines, and descriptions.',
                 'fields' => [
                     // Photo 1
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img1',
-                        'label' => 'Photo 1 Image (Science Exhibition)',
+                        'label' => 'Photo 1 Image (Cultural Fest)',
                         'default' => 'assets/images/sunrise school image/exhibition.webp',
-                        'alt' => 'Annual Science Exhibition',
-                        'help' => 'Photo 1.'
+                        'alt' => 'Cultural Fest & Folk Performances',
+                        'help' => 'Photo 1 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat1',
-                        'label' => 'Photo 1 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 1 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'exhibitions',
-                        'help' => 'Filter key.'
+                        'default' => 'cultural',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag1',
                         'label' => 'Photo 1 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Exhibition',
-                        'help' => 'Badge.'
+                        'default' => 'Cultural Fest',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow1',
                         'label' => 'Photo 1 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Science & Innovation',
+                        'default' => 'Annual Celebration',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7395,7 +7286,7 @@ $pages_config = [
                         'key' => 'gallery_title1',
                         'label' => 'Photo 1 Title',
                         'type' => 'text',
-                        'default' => 'Annual Science Exhibition',
+                        'default' => 'Cultural Fest & Folk Performances',
                         'help' => 'Title.'
                     ],
                     [
@@ -7403,7 +7294,7 @@ $pages_config = [
                         'key' => 'gallery_desc1',
                         'label' => 'Photo 1 Description',
                         'type' => 'textarea',
-                        'default' => 'Students presenting working models of solar technology and environmental systems.',
+                        'default' => 'Students presenting rich traditional dance, theatrical skits, and folk musical performances.',
                         'help' => 'Description.'
                     ],
 
@@ -7411,33 +7302,33 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img2',
-                        'label' => 'Photo 2 Image (Annual Prize Distribution)',
+                        'label' => 'Photo 2 Image (Result Day)',
                         'default' => 'assets/images/sunrise school image/award_ceremony.webp',
-                        'alt' => 'Annual Prize Distribution',
-                        'help' => 'Photo 2.'
+                        'alt' => 'Annual Result Declaration Day & Awards',
+                        'help' => 'Photo 2 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat2',
-                        'label' => 'Photo 2 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 2 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'events',
-                        'help' => 'Filter key.'
+                        'default' => 'result',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag2',
                         'label' => 'Photo 2 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Awards',
-                        'help' => 'Badge.'
+                        'default' => 'Result Day',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow2',
                         'label' => 'Photo 2 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Felicitation',
+                        'default' => 'Academic Felicitation',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7445,7 +7336,7 @@ $pages_config = [
                         'key' => 'gallery_title2',
                         'label' => 'Photo 2 Title',
                         'type' => 'text',
-                        'default' => 'Annual Prize Distribution',
+                        'default' => 'Annual Result Declaration & Award Ceremony',
                         'help' => 'Title.'
                     ],
                     [
@@ -7453,7 +7344,7 @@ $pages_config = [
                         'key' => 'gallery_desc2',
                         'label' => 'Photo 2 Description',
                         'type' => 'textarea',
-                        'default' => 'Honoring academic and extracurricular achievers on stage with trophies.',
+                        'default' => 'Honoring top percentiles, grade toppers, and scholastic excellence across all classes.',
                         'help' => 'Description.'
                     ],
 
@@ -7461,33 +7352,33 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img3',
-                        'label' => 'Photo 3 Image (Sports Activities)',
+                        'label' => 'Photo 3 Image (School Activity)',
                         'default' => 'assets/images/sunrise school image/students_ground.webp',
-                        'alt' => 'Outdoor Ground Activities',
-                        'help' => 'Photo 3.'
+                        'alt' => 'School Activity - Sports & Athletics',
+                        'help' => 'Photo 3 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat3',
-                        'label' => 'Photo 3 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 3 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'sports',
-                        'help' => 'Filter key.'
+                        'default' => 'activity',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag3',
                         'label' => 'Photo 3 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Sports',
-                        'help' => 'Badge.'
+                        'default' => 'School Activity',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow3',
                         'label' => 'Photo 3 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Athletics',
+                        'default' => 'Campus Life',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7495,7 +7386,7 @@ $pages_config = [
                         'key' => 'gallery_title3',
                         'label' => 'Photo 3 Title',
                         'type' => 'text',
-                        'default' => 'Outdoor Ground Activities',
+                        'default' => 'Outdoor Sports & Physical Drills',
                         'help' => 'Title.'
                     ],
                     [
@@ -7503,7 +7394,7 @@ $pages_config = [
                         'key' => 'gallery_desc3',
                         'label' => 'Photo 3 Description',
                         'type' => 'textarea',
-                        'default' => 'Students actively participating in outdoor sports, track drills, and team games.',
+                        'default' => 'Active athletic drills, sprint conditioning, and outdoor teamwork sports on the school grounds.',
                         'help' => 'Description.'
                     ],
 
@@ -7511,26 +7402,26 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img4',
-                        'label' => 'Photo 4 Image (Yoga Day)',
+                        'label' => 'Photo 4 Image (School Activity)',
                         'default' => 'assets/images/sunrise school image/yoga.webp',
-                        'alt' => 'International Yoga Day',
-                        'help' => 'Photo 4.'
+                        'alt' => 'School Activity - Yoga',
+                        'help' => 'Photo 4 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat4',
-                        'label' => 'Photo 4 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 4 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'sports',
-                        'help' => 'Filter key.'
+                        'default' => 'activity',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag4',
                         'label' => 'Photo 4 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Wellness',
-                        'help' => 'Badge.'
+                        'default' => 'School Activity',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
@@ -7545,7 +7436,7 @@ $pages_config = [
                         'key' => 'gallery_title4',
                         'label' => 'Photo 4 Title',
                         'type' => 'text',
-                        'default' => 'International Yoga Day',
+                        'default' => 'International Yoga Day Demonstrations',
                         'help' => 'Title.'
                     ],
                     [
@@ -7553,7 +7444,7 @@ $pages_config = [
                         'key' => 'gallery_desc4',
                         'label' => 'Photo 4 Description',
                         'type' => 'textarea',
-                        'default' => 'Mass yoga demonstration cultivating discipline, physical stamina, and peace of mind.',
+                        'default' => 'Disciplined mass yoga asanas cultivating concentration, stamina, and mindfulness.',
                         'help' => 'Description.'
                     ],
 
@@ -7561,33 +7452,33 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img5',
-                        'label' => 'Photo 5 Image (Board Exam Toppers)',
+                        'label' => 'Photo 5 Image (Result Day)',
                         'default' => 'assets/images/sunrise school image/toppers.webp',
                         'alt' => 'HBSE Board Exam Toppers',
-                        'help' => 'Photo 5.'
+                        'help' => 'Photo 5 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat5',
-                        'label' => 'Photo 5 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 5 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'toppers',
-                        'help' => 'Filter key.'
+                        'default' => 'result',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag5',
                         'label' => 'Photo 5 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Board Toppers',
-                        'help' => 'Badge.'
+                        'default' => 'Result Day',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow5',
                         'label' => 'Photo 5 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Merit Ranks',
+                        'default' => 'Board Merit',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7595,7 +7486,7 @@ $pages_config = [
                         'key' => 'gallery_title5',
                         'label' => 'Photo 5 Title',
                         'type' => 'text',
-                        'default' => 'HBSE Board Exam Toppers',
+                        'default' => 'HBSE Board Exam Result Celebrations',
                         'help' => 'Title.'
                     ],
                     [
@@ -7603,7 +7494,7 @@ $pages_config = [
                         'key' => 'gallery_desc5',
                         'label' => 'Photo 5 Description',
                         'type' => 'textarea',
-                        'default' => 'Celebrating our star achievers securing top percentiles in Class 10 & 12 exams.',
+                        'default' => 'Celebrating top state ranks and 100% board passing results in Class 10th and 12th.',
                         'help' => 'Description.'
                     ],
 
@@ -7611,33 +7502,33 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img6',
-                        'label' => 'Photo 6 Image (Shining Stars)',
+                        'label' => 'Photo 6 Image (Competition)',
                         'default' => 'assets/images/sunrise school image/shinning_stars.webp',
-                        'alt' => 'Shining Stars of Sun Rise',
-                        'help' => 'Photo 6.'
+                        'alt' => 'Academic Competition Winners',
+                        'help' => 'Photo 6 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat6',
-                        'label' => 'Photo 6 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 6 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'toppers',
-                        'help' => 'Filter key.'
+                        'default' => 'competition',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag6',
                         'label' => 'Photo 6 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Merit Board',
-                        'help' => 'Badge.'
+                        'default' => 'Competition',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow6',
                         'label' => 'Photo 6 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Star Performers',
+                        'default' => 'Academic Contests',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7645,7 +7536,7 @@ $pages_config = [
                         'key' => 'gallery_title6',
                         'label' => 'Photo 6 Title',
                         'type' => 'text',
-                        'default' => 'Shining Stars of Sun Rise',
+                        'default' => 'Inter-School Science & Quiz Competition',
                         'help' => 'Title.'
                     ],
                     [
@@ -7653,7 +7544,7 @@ $pages_config = [
                         'key' => 'gallery_desc6',
                         'label' => 'Photo 6 Description',
                         'type' => 'textarea',
-                        'default' => 'Outstanding scholarship winners and position holders across all school grades.',
+                        'default' => 'High-achieving students competing in district-level olympiads, science projects, and quiz bowls.',
                         'help' => 'Description.'
                     ],
 
@@ -7661,33 +7552,33 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img7',
-                        'label' => 'Photo 7 Image (Campus Building)',
+                        'label' => 'Photo 7 Image (School Activity)',
                         'default' => 'assets/images/sunrise school image/school_home1.webp',
-                        'alt' => 'Main Campus Facade',
-                        'help' => 'Photo 7.'
+                        'alt' => 'School Activity - Assembly',
+                        'help' => 'Photo 7 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat7',
-                        'label' => 'Photo 7 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 7 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'campus',
-                        'help' => 'Filter key.'
+                        'default' => 'activity',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag7',
                         'label' => 'Photo 7 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Campus',
-                        'help' => 'Badge.'
+                        'default' => 'School Activity',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow7',
                         'label' => 'Photo 7 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Architecture',
+                        'default' => 'Campus Activities',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7695,7 +7586,7 @@ $pages_config = [
                         'key' => 'gallery_title7',
                         'label' => 'Photo 7 Title',
                         'type' => 'text',
-                        'default' => 'Sun Rise School Front Elevation',
+                        'default' => 'Morning Assembly & Special Celebrations',
                         'help' => 'Title.'
                     ],
                     [
@@ -7703,7 +7594,7 @@ $pages_config = [
                         'key' => 'gallery_desc7',
                         'label' => 'Photo 7 Description',
                         'type' => 'textarea',
-                        'default' => 'Grand campus frontage with landscaped green areas in Dobhi, Haryana.',
+                        'default' => 'Daily moral value recitations, national anthems, and vibrant campus co-curricular activities.',
                         'help' => 'Description.'
                     ],
 
@@ -7711,33 +7602,33 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img8',
-                        'label' => 'Photo 8 Image (Interactive Smart Classes)',
+                        'label' => 'Photo 8 Image (Competition)',
                         'default' => 'assets/images/sunrise school image/children_sitting.webp',
-                        'alt' => 'Interactive Smart Classes',
-                        'help' => 'Photo 8.'
+                        'alt' => 'Art & Debate Competition',
+                        'help' => 'Photo 8 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat8',
-                        'label' => 'Photo 8 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 8 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'campus',
-                        'help' => 'Filter key.'
+                        'default' => 'competition',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag8',
                         'label' => 'Photo 8 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Classroom',
-                        'help' => 'Badge.'
+                        'default' => 'Competition',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow8',
                         'label' => 'Photo 8 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Student Focus',
+                        'default' => 'Skill Contests',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7745,7 +7636,7 @@ $pages_config = [
                         'key' => 'gallery_title8',
                         'label' => 'Photo 8 Title',
                         'type' => 'text',
-                        'default' => 'Interactive Smart Classes',
+                        'default' => 'Art, Essay & Debate Competition',
                         'help' => 'Title.'
                     ],
                     [
@@ -7753,7 +7644,7 @@ $pages_config = [
                         'key' => 'gallery_desc8',
                         'label' => 'Photo 8 Description',
                         'type' => 'textarea',
-                        'default' => 'Students engaged in dynamic discussion and visual conceptual learning.',
+                        'default' => 'Students showcasing exceptional elocution, creative writing, and painting prowess in inter-house events.',
                         'help' => 'Description.'
                     ],
 
@@ -7761,33 +7652,33 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img9',
-                        'label' => 'Photo 9 Image (Science Lab Practicals)',
+                        'label' => 'Photo 9 Image (Diwali Fest)',
                         'default' => 'assets/images/sunrise school image/lab_class.webp',
-                        'alt' => 'Senior Science Lab Practicals',
-                        'help' => 'Photo 9.'
+                        'alt' => 'Diwali Celebration',
+                        'help' => 'Photo 9 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat9',
-                        'label' => 'Photo 9 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 9 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'exhibitions',
-                        'help' => 'Filter key.'
+                        'default' => 'diwali',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag9',
                         'label' => 'Photo 9 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Science Lab',
-                        'help' => 'Badge.'
+                        'default' => 'Diwali Fest',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow9',
                         'label' => 'Photo 9 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Practical Learning',
+                        'default' => 'Festive Joy',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7795,7 +7686,7 @@ $pages_config = [
                         'key' => 'gallery_title9',
                         'label' => 'Photo 9 Title',
                         'type' => 'text',
-                        'default' => 'Senior Science Lab Practicals',
+                        'default' => 'Diwali Celebration & Rangoli Contest',
                         'help' => 'Title.'
                     ],
                     [
@@ -7803,7 +7694,7 @@ $pages_config = [
                         'key' => 'gallery_desc9',
                         'label' => 'Photo 9 Description',
                         'type' => 'textarea',
-                        'default' => 'Hands-on experimentation under the supervision of experienced physics & chemistry faculty.',
+                        'default' => 'Grand festive campus decorations, colorful floral rangolis, and traditional illumination festivities.',
                         'help' => 'Description.'
                     ],
 
@@ -7811,33 +7702,33 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img10',
-                        'label' => 'Photo 10 Image (Faculty & Mentors)',
+                        'label' => 'Photo 10 Image (Cultural Fest)',
                         'default' => 'assets/images/sunrise school image/all_staffmembers.webp',
-                        'alt' => 'Complete Teaching Faculty',
-                        'help' => 'Photo 10.'
+                        'alt' => 'Cultural Fest Stage Pageant',
+                        'help' => 'Photo 10 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat10',
-                        'label' => 'Photo 10 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 10 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'faculty',
-                        'help' => 'Filter key.'
+                        'default' => 'cultural',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag10',
                         'label' => 'Photo 10 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Staff Team',
-                        'help' => 'Badge.'
+                        'default' => 'Cultural Fest',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow10',
                         'label' => 'Photo 10 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Academic Mentors',
+                        'default' => 'Music & Arts',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7845,7 +7736,7 @@ $pages_config = [
                         'key' => 'gallery_title10',
                         'label' => 'Photo 10 Title',
                         'type' => 'text',
-                        'default' => 'Complete Teaching Faculty',
+                        'default' => 'Grand Stage Musical Pageant',
                         'help' => 'Title.'
                     ],
                     [
@@ -7853,7 +7744,7 @@ $pages_config = [
                         'key' => 'gallery_desc10',
                         'label' => 'Photo 10 Description',
                         'type' => 'textarea',
-                        'default' => 'The passionate educators steering Sun Rise Sr. Sec. School to educational greatness.',
+                        'default' => 'Vocal choir harmonies, classical instrumental recitals, and cultural heritage exhibits by students.',
                         'help' => 'Description.'
                     ],
 
@@ -7861,33 +7752,33 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img11',
-                        'label' => 'Photo 11 Image (Exhibition Models & Innovation)',
+                        'label' => 'Photo 11 Image (Diwali Fest)',
                         'default' => 'assets/images/sunrise school image/exhibition3.webp',
-                        'alt' => 'Interactive Science Models',
-                        'help' => 'Photo 11.'
+                        'alt' => 'Eco-Friendly Deepawali Festival',
+                        'help' => 'Photo 11 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat11',
-                        'label' => 'Photo 11 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 11 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'exhibitions',
-                        'help' => 'Filter key.'
+                        'default' => 'diwali',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag11',
                         'label' => 'Photo 11 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'Projects',
-                        'help' => 'Badge.'
+                        'default' => 'Diwali Fest',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow11',
                         'label' => 'Photo 11 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Student Innovation',
+                        'default' => 'Diwali Festivities',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7895,7 +7786,7 @@ $pages_config = [
                         'key' => 'gallery_title11',
                         'label' => 'Photo 11 Title',
                         'type' => 'text',
-                        'default' => 'Interactive Science Models',
+                        'default' => 'Eco-Friendly Deepawali Festival',
                         'help' => 'Title.'
                     ],
                     [
@@ -7903,7 +7794,7 @@ $pages_config = [
                         'key' => 'gallery_desc11',
                         'label' => 'Photo 11 Description',
                         'type' => 'textarea',
-                        'default' => 'Creative working models designed by students demonstrating physics principles.',
+                        'default' => 'Spreading joy and sustainable green Diwali messages through handmade diyas and creative craft work.',
                         'help' => 'Description.'
                     ],
 
@@ -7911,33 +7802,33 @@ $pages_config = [
                     [
                         'kind' => 'image',
                         'key' => 'gallery_img12',
-                        'label' => 'Photo 12 Image (National Day Celebration)',
+                        'label' => 'Photo 12 Image (Media Coverage)',
                         'default' => 'assets/images/sunrise school image/IMG_20210815_093156~2.webp',
-                        'alt' => 'Independence Day Celebration',
-                        'help' => 'Photo 12.'
+                        'alt' => 'Newspaper & Media Coverage',
+                        'help' => 'Photo 12 upload slot.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_cat12',
-                        'label' => 'Photo 12 Filter Category (exhibitions/events/sports/toppers/campus/faculty)',
+                        'label' => 'Photo 12 Category Key (cultural / result / activity / competition / diwali / media)',
                         'type' => 'text',
-                        'default' => 'events',
-                        'help' => 'Filter key.'
+                        'default' => 'media',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_tag12',
                         'label' => 'Photo 12 Top-Right Badge',
                         'type' => 'text',
-                        'default' => 'National Day',
-                        'help' => 'Badge.'
+                        'default' => 'Media Coverage',
+                        'help' => 'Badge pill.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'gallery_eyebrow12',
                         'label' => 'Photo 12 Eyebrow Subtitle',
                         'type' => 'text',
-                        'default' => 'Patriotism',
+                        'default' => 'Press & Honors',
                         'help' => 'Gold subtitle.'
                     ],
                     [
@@ -7945,7 +7836,7 @@ $pages_config = [
                         'key' => 'gallery_title12',
                         'label' => 'Photo 12 Title',
                         'type' => 'text',
-                        'default' => 'Independence Day Celebration',
+                        'default' => 'Newspaper & Media Feature Coverage',
                         'help' => 'Title.'
                     ],
                     [
@@ -7953,7 +7844,307 @@ $pages_config = [
                         'key' => 'gallery_desc12',
                         'label' => 'Photo 12 Description',
                         'type' => 'textarea',
-                        'default' => 'Flag hoisting, patriotic songs, and cultural march-past by students.',
+                        'default' => 'Media accolades and state news recognition honoring Sun Rise School for educational and board achievements.',
+                        'help' => 'Description.'
+                    ],
+
+                    // Photo 13
+                    [
+                        'kind' => 'image',
+                        'key' => 'gallery_img13',
+                        'label' => 'Photo 13 Image (Cultural Fest)',
+                        'default' => '',
+                        'alt' => 'Gallery Photo 13',
+                        'help' => 'Photo 13 upload slot.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat13',
+                        'label' => 'Photo 13 Category Key (cultural / result / activity / competition / diwali / media)',
+                        'type' => 'text',
+                        'default' => 'cultural',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag13',
+                        'label' => 'Photo 13 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Cultural Fest',
+                        'help' => 'Badge pill.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow13',
+                        'label' => 'Photo 13 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Cultural Celebrations',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_title13',
+                        'label' => 'Photo 13 Title',
+                        'type' => 'text',
+                        'default' => 'Cultural Highlights & Drama Pageant',
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_desc13',
+                        'label' => 'Photo 13 Description',
+                        'type' => 'textarea',
+                        'default' => 'Vibrant cultural performances celebrating India\'s diverse heritage.',
+                        'help' => 'Description.'
+                    ],
+
+                    // Photo 14
+                    [
+                        'kind' => 'image',
+                        'key' => 'gallery_img14',
+                        'label' => 'Photo 14 Image (Result Day)',
+                        'default' => '',
+                        'alt' => 'Gallery Photo 14',
+                        'help' => 'Photo 14 upload slot.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat14',
+                        'label' => 'Photo 14 Category Key (cultural / result / activity / competition / diwali / media)',
+                        'type' => 'text',
+                        'default' => 'result',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag14',
+                        'label' => 'Photo 14 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Result Day',
+                        'help' => 'Badge pill.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow14',
+                        'label' => 'Photo 14 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Merit Recognition',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_title14',
+                        'label' => 'Photo 14 Title',
+                        'type' => 'text',
+                        'default' => 'Annual Merit Shield Distribution',
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_desc14',
+                        'label' => 'Photo 14 Description',
+                        'type' => 'textarea',
+                        'default' => 'Presentation of mementos and certificates to annual examination toppers.',
+                        'help' => 'Description.'
+                    ],
+
+                    // Photo 15
+                    [
+                        'kind' => 'image',
+                        'key' => 'gallery_img15',
+                        'label' => 'Photo 15 Image (School Activity)',
+                        'default' => '',
+                        'alt' => 'Gallery Photo 15',
+                        'help' => 'Photo 15 upload slot.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat15',
+                        'label' => 'Photo 15 Category Key (cultural / result / activity / competition / diwali / media)',
+                        'type' => 'text',
+                        'default' => 'activity',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag15',
+                        'label' => 'Photo 15 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'School Activity',
+                        'help' => 'Badge pill.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow15',
+                        'label' => 'Photo 15 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Campus Activities',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_title15',
+                        'label' => 'Photo 15 Title',
+                        'type' => 'text',
+                        'default' => 'Interactive Science & Project Fair',
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_desc15',
+                        'label' => 'Photo 15 Description',
+                        'type' => 'textarea',
+                        'default' => 'Hands-on practical models and scientific discovery exhibits by students.',
+                        'help' => 'Description.'
+                    ],
+
+                    // Photo 16
+                    [
+                        'kind' => 'image',
+                        'key' => 'gallery_img16',
+                        'label' => 'Photo 16 Image (Competition)',
+                        'default' => '',
+                        'alt' => 'Gallery Photo 16',
+                        'help' => 'Photo 16 upload slot.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat16',
+                        'label' => 'Photo 16 Category Key (cultural / result / activity / competition / diwali / media)',
+                        'type' => 'text',
+                        'default' => 'competition',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag16',
+                        'label' => 'Photo 16 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Competition',
+                        'help' => 'Badge pill.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow16',
+                        'label' => 'Photo 16 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Sports Tournament',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_title16',
+                        'label' => 'Photo 16 Title',
+                        'type' => 'text',
+                        'default' => 'Inter-School Sports & Kabaddi Trophy',
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_desc16',
+                        'label' => 'Photo 16 Description',
+                        'type' => 'textarea',
+                        'default' => 'Athletes competing with fervor and sporting discipline in district championship matches.',
+                        'help' => 'Description.'
+                    ],
+
+                    // Photo 17
+                    [
+                        'kind' => 'image',
+                        'key' => 'gallery_img17',
+                        'label' => 'Photo 17 Image (Diwali Fest)',
+                        'default' => '',
+                        'alt' => 'Gallery Photo 17',
+                        'help' => 'Photo 17 upload slot.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat17',
+                        'label' => 'Photo 17 Category Key (cultural / result / activity / competition / diwali / media)',
+                        'type' => 'text',
+                        'default' => 'diwali',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag17',
+                        'label' => 'Photo 17 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Diwali Fest',
+                        'help' => 'Badge pill.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow17',
+                        'label' => 'Photo 17 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'Festive Spirit',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_title17',
+                        'label' => 'Photo 17 Title',
+                        'type' => 'text',
+                        'default' => 'Diwali Card & Diya Decoration Fair',
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_desc17',
+                        'label' => 'Photo 17 Description',
+                        'type' => 'textarea',
+                        'default' => 'Creative hand-crafted greetings and festive expressions by elementary school students.',
+                        'help' => 'Description.'
+                    ],
+
+                    // Photo 18
+                    [
+                        'kind' => 'image',
+                        'key' => 'gallery_img18',
+                        'label' => 'Photo 18 Image (Media Coverage)',
+                        'default' => '',
+                        'alt' => 'Gallery Photo 18',
+                        'help' => 'Photo 18 upload slot.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_cat18',
+                        'label' => 'Photo 18 Category Key (cultural / result / activity / competition / diwali / media)',
+                        'type' => 'text',
+                        'default' => 'media',
+                        'help' => 'Filter key: cultural | result | activity | competition | diwali | media'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_tag18',
+                        'label' => 'Photo 18 Top-Right Badge',
+                        'type' => 'text',
+                        'default' => 'Media Coverage',
+                        'help' => 'Badge pill.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_eyebrow18',
+                        'label' => 'Photo 18 Eyebrow Subtitle',
+                        'type' => 'text',
+                        'default' => 'State Recognition',
+                        'help' => 'Gold subtitle.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_title18',
+                        'label' => 'Photo 18 Title',
+                        'type' => 'text',
+                        'default' => 'Print Media Accolades & Highlights',
+                        'help' => 'Title.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'gallery_desc18',
+                        'label' => 'Photo 18 Description',
+                        'type' => 'textarea',
+                        'default' => 'Prominent publications highlighting Sun Rise Sr. Sec. School\'s excellence in rural education.',
                         'help' => 'Description.'
                     ]
                 ]

@@ -29,90 +29,126 @@ require_once __DIR__ . '/core/header.php';
   </section>
 
 
-  <!-- 3. Faculty Photo Gallery Section -->
-  <section class="bg-surface-container-low py-8 sm:py-12 px-4 sm:px-6 lg:px-12 w-full">
+  <!-- 3. Faculty Showcase Section (Horizontal Image Left + Heading & Description with Read More Right) -->
+  <section class="bg-surface-container-low py-8 sm:py-12 px-4 sm:px-6 lg:px-12 w-full border-t border-b border-border-warm/60">
     <div class="max-w-7xl mx-auto">
-      <div class="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
-        <span class="text-eyebrow text-[#B38C37] uppercase tracking-widest block mb-1 font-bold text-xs"><?= get_text('faculty', 'staff_section_eyebrow', 'Our Teaching Force') ?></span>
-        <h2 class="text-lg sm:text-xl lg:text-2xl font-headline-lg font-bold text-primary tracking-tight leading-snug mb-1.5"><?= get_text('faculty', 'staff_section_title', 'Mentors in Action') ?></h2>
-        <p class="text-body-md text-on-surface-variant text-xs sm:text-sm"><?= get_text('faculty', 'staff_section_desc', 'Capturing the dedication, teamwork, and pedagogical spirit of the Sun Rise Sr. Sec. School teaching community.') ?></p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
-        <!-- Photo 1 -->
-        <div class="bg-surface-pure rounded-xl overflow-hidden border border-border-warm shadow-xs hover:shadow-md transition-all group cursor-pointer" onclick="openLightbox(this)">
-          <div class="relative h-44 sm:h-48 overflow-hidden">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="<?= get_image_alt('faculty', 'staff_img1', 'All Staff Members - Sun Rise School') ?>" src="<?= get_image('faculty', 'staff_img1', school_img('all_staffmembers.webp')) ?>" width="400" height="256" loading="lazy" decoding="async"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-            <div class="absolute bottom-3 left-3 right-3 text-white">
-              <span class="text-[10px] font-bold uppercase bg-[#C9A24B] text-primary px-2 py-0.5 rounded inline-block mb-1 shadow-xs"><?= get_text('faculty', 'staff_badge1', 'Full Staff Group') ?></span>
-              <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-white"><?= get_text('faculty', 'staff_title1', 'Sun Rise Teaching & Admin Staff') ?></h4>
+      <div class="bg-surface-pure rounded-2xl p-5 sm:p-6 lg:p-8 shadow-md border border-border-warm relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+          
+          <!-- Left Column: Horizontal Showcase Image -->
+          <div class="lg:col-span-6">
+            <div class="relative w-full h-64 sm:h-72 md:h-80 lg:h-96 rounded-xl overflow-hidden shadow-md border border-border-warm group">
+              <img src="<?= get_image('faculty', 'staff_showcase_img', school_img('all_staffmembers.webp')) ?>" 
+                   alt="<?= get_image_alt('faculty', 'staff_showcase_img', 'Teaching Faculty & Mentors - Sun Rise Sr. Sec. School') ?>" 
+                   class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                   loading="lazy" decoding="async">
+              <div class="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-transparent pointer-events-none"></div>
+              <span class="absolute bottom-3 left-3 bg-[#C9A24B] text-primary text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm">
+                <?= get_text('faculty', 'staff_badge', 'Dedicated Faculty') ?>
+              </span>
             </div>
           </div>
-        </div>
 
-        <!-- Photo 2 -->
-        <div class="bg-surface-pure rounded-xl overflow-hidden border border-border-warm shadow-xs hover:shadow-md transition-all group cursor-pointer" onclick="openLightbox(this)">
-          <div class="relative h-44 sm:h-48 overflow-hidden">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="<?= get_image_alt('faculty', 'staff_img2', 'Teachers and Students - Sun Rise School') ?>" src="<?= get_image('faculty', 'staff_img2', school_img('teachers_and_students.webp')) ?>" width="400" height="256" loading="lazy" decoding="async"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-            <div class="absolute bottom-3 left-3 right-3 text-white">
-              <span class="text-[10px] font-bold uppercase bg-[#C9A24B] text-primary px-2 py-0.5 rounded inline-block mb-1 shadow-xs"><?= get_text('faculty', 'staff_badge2', 'Mentorship') ?></span>
-              <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-white"><?= get_text('faculty', 'staff_title2', 'Faculty & High Achievers') ?></h4>
-            </div>
-          </div>
-        </div>
+          <!-- Right Column: Heading & Description with Read More -->
+          <div class="lg:col-span-6 flex flex-col justify-between gap-3 text-on-surface leading-relaxed text-xs sm:text-sm">
+            <div>
+              <span class="text-eyebrow text-[#B38C37] uppercase font-bold tracking-widest text-[11px] block mb-1">
+                <?= get_text('faculty', 'staff_section_eyebrow', 'Our Teaching Force') ?>
+              </span>
+              <h2 class="text-lg sm:text-xl lg:text-2xl font-headline-lg font-bold text-primary tracking-tight leading-snug mb-3">
+                <?= get_text('faculty', 'staff_section_title', 'Mentors in Action') ?>
+              </h2>
+              
+              <?php
+              $raw_faculty_texts = [
+                  get_text('faculty', 'staff_story_p1', 'At Sun Rise Sr. Sec. School, our faculty represents a dedicated team of passionate educators, subject specialists, and compassionate mentors committed to nurturing every student\'s intellectual, creative, and moral growth.'),
+                  get_text('faculty', 'staff_story_p2', 'Our teachers combine traditional pedagogical rigor with modern interactive teaching techniques, ensuring students develop conceptual clarity, critical thinking, and confidence in every academic discipline.'),
+                  get_text('faculty', 'staff_story_p3', 'Through personalized guidance, regular remedial sessions, and co-curricular mentorship, our educators foster a vibrant learning environment where curiosity thrives and values endure.'),
+                  get_text('faculty', 'staff_story_p4', '')
+              ];
 
-        <!-- Photo 3 -->
-        <div class="bg-surface-pure rounded-xl overflow-hidden border border-border-warm shadow-xs hover:shadow-md transition-all group cursor-pointer" onclick="openLightbox(this)">
-          <div class="relative h-44 sm:h-48 overflow-hidden">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="<?= get_image_alt('faculty', 'staff_img3', 'Teachers Meeting - Sun Rise School') ?>" src="<?= get_image('faculty', 'staff_img3', school_img('teachers_sitting.webp')) ?>" width="400" height="256" loading="lazy" decoding="async"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-            <div class="absolute bottom-3 left-3 right-3 text-white">
-              <span class="text-[10px] font-bold uppercase bg-[#C9A24B] text-primary px-2 py-0.5 rounded inline-block mb-1 shadow-xs"><?= get_text('faculty', 'staff_badge3', 'Academic Session') ?></span>
-              <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-white"><?= get_text('faculty', 'staff_title3', 'Faculty Planning & Review') ?></h4>
-            </div>
-          </div>
-        </div>
+              $faculty_paragraphs = [];
+              foreach ($raw_faculty_texts as $raw_text) {
+                  if (empty(trim($raw_text))) continue;
+                  if (stripos($raw_text, '<p') !== false) {
+                      preg_match_all('/<p\b[^>]*>(.*?)<\/p>/is', $raw_text, $matches);
+                      if (!empty($matches[1])) {
+                          foreach ($matches[1] as $p_inner) {
+                              $plain = trim(html_entity_decode(strip_tags($p_inner), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+                              if (!empty($plain)) {
+                                  $faculty_paragraphs[] = trim($p_inner);
+                              }
+                          }
+                          continue;
+                      }
+                  }
+                  $parts = preg_split('/(\r\n\r\n|\n\n|\r\r)+/', trim($raw_text));
+                  foreach ($parts as $part) {
+                      $plain = trim(html_entity_decode(strip_tags($part), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+                      if (!empty($plain)) {
+                          $faculty_paragraphs[] = trim($part);
+                      }
+                  }
+              }
 
-        <!-- Photo 4 -->
-        <div class="bg-surface-pure rounded-xl overflow-hidden border border-border-warm shadow-xs hover:shadow-md transition-all group cursor-pointer" onclick="openLightbox(this)">
-          <div class="relative h-44 sm:h-48 overflow-hidden">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="<?= get_image_alt('faculty', 'staff_img4', 'School Staff Members') ?>" src="<?= get_image('faculty', 'staff_img4', school_img('school_staff.webp')) ?>" width="400" height="256" loading="lazy" decoding="async"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-            <div class="absolute bottom-3 left-3 right-3 text-white">
-              <span class="text-[10px] font-bold uppercase bg-[#C9A24B] text-primary px-2 py-0.5 rounded inline-block mb-1 shadow-xs"><?= get_text('faculty', 'staff_badge4', 'Staff Team') ?></span>
-              <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-white"><?= get_text('faculty', 'staff_title4', 'Department Educators') ?></h4>
-            </div>
-          </div>
-        </div>
+              $primary_faculty_paragraphs = array_slice($faculty_paragraphs, 0, 2);
+              $remaining_faculty_paragraphs = array_slice($faculty_paragraphs, 2);
+              ?>
 
-        <!-- Photo 5 -->
-        <div class="bg-surface-pure rounded-xl overflow-hidden border border-border-warm shadow-xs hover:shadow-md transition-all group cursor-pointer" onclick="openLightbox(this)">
-          <div class="relative h-44 sm:h-48 overflow-hidden">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="<?= get_image_alt('faculty', 'staff_img5', 'Teachers Panel') ?>" src="<?= get_image('faculty', 'staff_img5', school_img('teachers.webp')) ?>" width="400" height="256" loading="lazy" decoding="async"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-            <div class="absolute bottom-3 left-3 right-3 text-white">
-              <span class="text-[10px] font-bold uppercase bg-[#C9A24B] text-primary px-2 py-0.5 rounded inline-block mb-1 shadow-xs"><?= get_text('faculty', 'staff_badge5', 'Pedagogy') ?></span>
-              <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-white"><?= get_text('faculty', 'staff_title5', 'Senior School Mentors') ?></h4>
-            </div>
-          </div>
-        </div>
+              <!-- Primary Visible Paragraphs (First 2) -->
+              <div class="space-y-3 font-body-md text-on-surface-variant leading-relaxed text-xs sm:text-sm">
+                <?php foreach ($primary_faculty_paragraphs as $p): ?>
+                  <p><?= $p ?></p>
+                <?php endforeach; ?>
+              </div>
 
-        <!-- Photo 6 -->
-        <div class="bg-surface-pure rounded-xl overflow-hidden border border-border-warm shadow-xs hover:shadow-md transition-all group cursor-pointer" onclick="openLightbox(this)">
-          <div class="relative h-44 sm:h-48 overflow-hidden">
-            <img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" alt="<?= get_image_alt('faculty', 'staff_img6', 'Students with Teachers') ?>" src="<?= get_image('faculty', 'staff_img6', school_img('students_teachers.webp')) ?>" width="400" height="256" loading="lazy" decoding="async"/>
-            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity"></div>
-            <div class="absolute bottom-3 left-3 right-3 text-white">
-              <span class="text-[10px] font-bold uppercase bg-[#C9A24B] text-primary px-2 py-0.5 rounded inline-block mb-1 shadow-xs"><?= get_text('faculty', 'staff_badge6', 'Campus Life') ?></span>
-              <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-white"><?= get_text('faculty', 'staff_title6', 'Student & Mentor Bonding') ?></h4>
+              <?php if (!empty($remaining_faculty_paragraphs)): ?>
+                <!-- Expandable Read More Section for Remaining Paragraphs -->
+                <div id="facultyMoreWrapper" class="hidden flex-col gap-3 pt-3 border-t border-border-warm/70 mt-3 space-y-3 font-body-md text-on-surface-variant leading-relaxed text-xs sm:text-sm transition-all duration-300">
+                  <?php foreach ($remaining_faculty_paragraphs as $p): ?>
+                    <p><?= $p ?></p>
+                  <?php endforeach; ?>
+                </div>
+
+                <!-- Read More / Read Less Toggle Button -->
+                <div class="pt-3">
+                  <button type="button" 
+                          id="facultyToggleBtn" 
+                          onclick="toggleFacultyExpand()" 
+                          class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary transition-all uppercase tracking-wider py-1.5 px-3.5 rounded-lg bg-secondary hover:bg-[#F3C352] cursor-pointer border border-secondary focus:outline-none shadow-sm">
+                    <span id="facultyToggleText">Read More</span>
+                    <span id="facultyToggleIcon" class="material-symbols-outlined text-[16px] transition-transform duration-300">expand_more</span>
+                  </button>
+                </div>
+              <?php endif; ?>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  <script>
+    function toggleFacultyExpand() {
+      const wrapper = document.getElementById('facultyMoreWrapper');
+      const btnText = document.getElementById('facultyToggleText');
+      const btnIcon = document.getElementById('facultyToggleIcon');
+      if (!wrapper || !btnText || !btnIcon) return;
+
+      const isHidden = wrapper.classList.contains('hidden');
+      if (isHidden) {
+        wrapper.classList.remove('hidden');
+        wrapper.classList.add('flex');
+        btnText.textContent = 'Read Less';
+        btnIcon.style.transform = 'rotate(180deg)';
+      } else {
+        wrapper.classList.add('hidden');
+        wrapper.classList.remove('flex');
+        btnText.textContent = 'Read More';
+        btnIcon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
 
   <!-- 4. Academic Departments -->
   <section class="w-full py-8 sm:py-12 bg-primary text-white border-t border-b border-[#C9A24B]/30 relative overflow-hidden">

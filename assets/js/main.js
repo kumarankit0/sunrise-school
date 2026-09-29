@@ -517,15 +517,23 @@ function initHashSmoothScroll() {
     if (hashIndex === -1) return;
 
     const hash = href.substring(hashIndex);
-    const path = href.substring(0, hashIndex);
+    const pathWithQuery = href.substring(0, hashIndex);
+    const path = pathWithQuery.split('?')[0];
     const currentFile = window.location.pathname.split('/').pop() || 'index.php';
 
-    // If link points to current page (e.g. "campus.php#transport" on "campus.php" or just "#transport")
+    // If link points to current page (e.g. "gallery.php?cat=media#gallery-filters" or "campus.php#transport")
     if (path === '' || path === currentFile) {
+      // Check if URL has a cat parameter for gallery filtering
+      const urlMatch = href.match(/[?&]cat=([^&#]+)/);
+      if (urlMatch && typeof filterGallery === 'function') {
+        const cat = decodeURIComponent(urlMatch[1]);
+        filterGallery(cat);
+      }
+
       const target = document.querySelector(hash);
       if (target) {
         e.preventDefault();
-        history.pushState(null, null, hash);
+        history.pushState(null, null, href);
         scrollToTarget(hash);
 
         // Close mobile drawer
@@ -545,7 +553,13 @@ function initHashSmoothScroll() {
     }
   });
 
-  // Handle hash on initial page load / refresh
+  // Handle hash / query on initial page load / refresh
+  const urlParams = new URLSearchParams(window.location.search);
+  const catParam = urlParams.get('cat');
+  if (catParam && typeof filterGallery === 'function') {
+    filterGallery(catParam);
+  }
+
   if (window.location.hash) {
     setTimeout(() => {
       scrollToTarget(window.location.hash);

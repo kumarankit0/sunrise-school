@@ -203,6 +203,26 @@ require_once __DIR__ . '/core/header.php';
         btnIcon.style.transform = 'rotate(0deg)';
       }
     }
+
+    function toggleFounderExpand() {
+      const wrapper = document.getElementById('founderMoreWrapper');
+      const btnText = document.getElementById('founderToggleText');
+      const btnIcon = document.getElementById('founderToggleIcon');
+      if (!wrapper || !btnText || !btnIcon) return;
+
+      const isHidden = wrapper.classList.contains('hidden');
+      if (isHidden) {
+        wrapper.classList.remove('hidden');
+        wrapper.classList.add('flex');
+        btnText.textContent = 'Read Less';
+        btnIcon.style.transform = 'rotate(180deg)';
+      } else {
+        wrapper.classList.add('hidden');
+        wrapper.classList.remove('flex');
+        btnText.textContent = 'Read More';
+        btnIcon.style.transform = 'rotate(0deg)';
+      }
+    }
   </script>
 
   <!-- Section 4 & 5: Complete Official History Section & Chronological Milestones -->
@@ -258,17 +278,69 @@ require_once __DIR__ . '/core/header.php';
             <div>
               <span class="text-eyebrow text-secondary uppercase font-bold tracking-wider text-[11px] block mb-1"><?= get_text('about', 'founder_eyebrow', "FOUNDER'S JOURNEY") ?></span>
               <h3 class="text-lg sm:text-xl font-bold text-white mb-2.5 leading-snug"><?= get_text('about', 'founder_heading', 'A Vision Born from Conviction & Dedication') ?></h3>
+              
+              <?php
+              $raw_founder_texts = [
+                  get_text('about', 'founder_p1', 'The institution was founded by <strong class="text-white">Mr. Bhader Singh Swami</strong>, whose own journey was shaped by the struggles and limitations of growing up in a lower-middle-class family. Having experienced the challenges surrounding access to quality education, he developed a deep conviction that every child, irrespective of background, deserves the opportunity to learn, grow, and aspire.'),
+                  get_text('about', 'founder_p2', 'His years of teaching in different schools further strengthened this conviction and eventually gave form to the vision that became Sun Rise Sr. Sec. School. The beginning was modest: with approximately 90 students, education up to Class X, and limited resources, the school initially operated from small premises at different locations.'),
+                  get_text('about', 'founder_p3', 'The early years were marked by challenges and perseverance, but with unwavering dedication from the management, teachers, and the trust of local families, the foundation was steadily strengthened.'),
+                  get_text('about', 'founder_p4', '')
+              ];
+
+              $founder_paragraphs = [];
+              foreach ($raw_founder_texts as $raw_text) {
+                  if (empty(trim($raw_text))) continue;
+                  if (stripos($raw_text, '<p') !== false) {
+                      preg_match_all('/<p\b[^>]*>(.*?)<\/p>/is', $raw_text, $matches);
+                      if (!empty($matches[1])) {
+                          foreach ($matches[1] as $p_inner) {
+                              $plain = trim(html_entity_decode(strip_tags($p_inner), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+                              if (!empty($plain)) {
+                                  $founder_paragraphs[] = trim($p_inner);
+                              }
+                          }
+                          continue;
+                      }
+                  }
+                  $parts = preg_split('/(\r\n\r\n|\n\n|\r\r)+/', trim($raw_text));
+                  foreach ($parts as $part) {
+                      $plain = trim(html_entity_decode(strip_tags($part), ENT_QUOTES | ENT_HTML5, 'UTF-8'));
+                      if (!empty($plain)) {
+                          $founder_paragraphs[] = trim($part);
+                      }
+                  }
+              }
+
+              $primary_founder_paragraphs = array_slice($founder_paragraphs, 0, 2);
+              $remaining_founder_paragraphs = array_slice($founder_paragraphs, 2);
+              ?>
+
+              <!-- Primary Visible Paragraphs (First 2 Paragraphs) -->
               <div class="space-y-3 font-body-md text-surface-cream/85 leading-relaxed">
-                <p>
-                  <?= get_text('about', 'founder_p1', 'The institution was founded by <strong class="text-white">Mr. Bhader Singh Swami</strong>, whose own journey was shaped by the struggles and limitations of growing up in a lower-middle-class family. Having experienced the challenges surrounding access to quality education, he developed a deep conviction that every child, irrespective of background, deserves the opportunity to learn, grow, and aspire.') ?>
-                </p>
-                <p>
-                  <?= get_text('about', 'founder_p2', 'His years of teaching in different schools further strengthened this conviction and eventually gave form to the vision that became Sun Rise Sr. Sec. School. The beginning was modest: with approximately 90 students, education up to Class X, and limited resources, the school initially operated from small premises at different locations.') ?>
-                </p>
-                <p>
-                  <?= get_text('about', 'founder_p3', 'The early years were marked by challenges and perseverance, but with unwavering dedication from the management, teachers, and the trust of local families, the foundation was steadily strengthened.') ?>
-                </p>
+                <?php foreach ($primary_founder_paragraphs as $p): ?>
+                  <p><?= $p ?></p>
+                <?php endforeach; ?>
               </div>
+
+              <?php if (!empty($remaining_founder_paragraphs)): ?>
+                <!-- Expandable Read More Section for Remaining Paragraphs -->
+                <div id="founderMoreWrapper" class="hidden flex-col gap-3 pt-3 border-t border-white/15 mt-3 space-y-3 font-body-md text-surface-cream/85 leading-relaxed transition-all duration-300">
+                  <?php foreach ($remaining_founder_paragraphs as $p): ?>
+                    <p><?= $p ?></p>
+                  <?php endforeach; ?>
+                </div>
+
+                <!-- Read More / Read Less Toggle Button -->
+                <div class="pt-3">
+                  <button type="button" 
+                          id="founderToggleBtn" 
+                          onclick="toggleFounderExpand()" 
+                          class="inline-flex items-center gap-1.5 text-xs font-bold text-primary hover:text-primary transition-all uppercase tracking-wider py-1.5 px-3.5 rounded-lg bg-secondary hover:bg-[#F3C352] cursor-pointer border border-secondary focus:outline-none shadow-md">
+                    <span id="founderToggleText">Read More</span>
+                    <span id="founderToggleIcon" class="material-symbols-outlined text-[16px] transition-transform duration-300">expand_more</span>
+                  </button>
+                </div>
+              <?php endif; ?>
             </div>
           </div>
         </div>

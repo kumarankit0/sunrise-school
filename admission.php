@@ -15,18 +15,18 @@ require_once __DIR__ . '/core/header.php';
     $admission_hero_alt = get_image_alt('admissions', 'hero_bg_image', 'Sun Rise Sr. Sec. School Campus');
   ?>
   <section class="relative py-8 sm:py-12 px-4 sm:px-6 lg:px-12 overflow-hidden border-b border-[#000e21]/10 bg-slate-100">
-    <!-- Blurred Campus Photo Background Layer -->
+    <!-- Campus Photo Background Layer (Crisp & Low Blur) -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none z-0">
       <img
         src="<?= $admission_hero_bg ?>"
         alt="<?= $admission_hero_alt ?>"
-        class="w-full h-full object-cover object-center scale-110 filter blur-[8px] md:blur-[12px] brightness-[0.96] contrast-[1.04] transform will-change-transform"
+        class="w-full h-full object-cover object-center scale-105 filter blur-[2px] md:blur-[3px] brightness-[0.98] contrast-[1.02] transform will-change-transform"
         loading="eager"
         decoding="async"
       />
       <!-- Soft translucent multi-tone gradient overlay to ensure crisp typography & brand warmth -->
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-50/94 via-white/88 to-[#fef9ee]/92 backdrop-blur-[1px]"></div>
-      <div class="absolute inset-0 bg-gradient-to-b from-white/70 via-transparent to-slate-100/90"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-slate-50/86 via-white/78 to-[#fef9ee]/82"></div>
+      <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-slate-100/75"></div>
 
       <!-- Subtle Architectural / Geometric Dot Overlay -->
       <div class="absolute inset-0 opacity-[0.22]" style="background-image: radial-gradient(#001129 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>

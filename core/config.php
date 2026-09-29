@@ -182,23 +182,41 @@ $nav_menu = [
         'title' => get_text('general', 'nav_item6_text', 'GALLERY'),
         'url' => get_text('general', 'nav_item6_url', 'gallery.php'),
         'subitems' => [
+            'gallery-media' => [
+                'title' => 'Media Coverage',
+                'url' => 'gallery.php?cat=media#gallery-filters',
+                'icon' => 'newspaper',
+                'desc' => 'Press releases & state news features'
+            ],
+            'gallery-result' => [
+                'title' => 'Annual Result Declaration Day',
+                'url' => 'gallery.php?cat=result#gallery-filters',
+                'icon' => 'workspace_premium',
+                'desc' => 'Board toppers & merit awards'
+            ],
+            'gallery-cultural' => [
+                'title' => 'Cultural Fest',
+                'url' => 'gallery.php?cat=cultural#gallery-filters',
+                'icon' => 'celebration',
+                'desc' => 'Folk dance, drama & annual fests'
+            ],
+            'gallery-activity' => [
+                'title' => 'School Activities & Sports',
+                'url' => 'gallery.php?cat=activity#gallery-filters',
+                'icon' => 'sports_kabaddi',
+                'desc' => 'Morning assemblies & athletic drills'
+            ],
+            'gallery-competition' => [
+                'title' => 'Competitions & Diwali Celebration',
+                'url' => 'gallery.php?cat=competition#gallery-filters',
+                'icon' => 'emoji_events',
+                'desc' => 'Olympiads, contests & celebrations'
+            ],
             'photo-gallery' => [
-                'title' => 'Photo Gallery',
+                'title' => 'All Photo Archives',
                 'url' => 'gallery.php',
                 'icon' => 'photo_library',
-                'desc' => 'Campus Moments & Celebrations'
-            ],
-            'campus-glimpses' => [
-                'title' => 'Campus Life Glimpses',
-                'url' => 'gallery.php#campus-life',
-                'icon' => 'camera_indoor',
-                'desc' => 'Vibrant School Activities'
-            ],
-            'annual-events' => [
-                'title' => 'Events & Festivals',
-                'url' => 'events.php',
-                'icon' => 'theater_comedy',
-                'desc' => 'Functions & Sports Day Memories'
+                'desc' => 'Explore complete photo chronicle'
             ]
         ]
     ],

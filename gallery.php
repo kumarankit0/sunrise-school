@@ -68,227 +68,165 @@ require_once __DIR__ . '/core/header.php';
     <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
       <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('gallery', 'gallery_intro_eyebrow', 'Curated Photographic Archive') ?></span>
       <h2 class="text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('gallery', 'gallery_intro_title', 'Moments That Define Our School') ?></h2>
-      <p class="font-body-md text-on-surface-variant mt-2 sm:mt-3 text-sm sm:text-base"><?= get_text('gallery', 'gallery_intro_desc', 'Filter by category to explore science exhibitions, sports championships, national day celebrations, board exam toppers, campus facilities, and dedicated faculty.') ?></p>
+      <p class="font-body-md text-on-surface-variant mt-2 sm:mt-3 text-sm sm:text-base"><?= get_text('gallery', 'gallery_intro_desc', 'Filter by category to explore cultural fests, annual result declaration days, school activities, academic competitions, Diwali celebrations, and media coverage.') ?></p>
     </div>
+    <?php
+    $valid_filters = ['cultural', 'result', 'activity', 'competition', 'diwali', 'media'];
+    $active_cat = (isset($_GET['cat']) && in_array($_GET['cat'], $valid_filters)) ? $_GET['cat'] : 'all';
+    ?>
     <div class="flex flex-wrap items-center justify-center gap-2.5 border-b border-border-warm pb-4">
-      <button class="gallery-filter-btn active" data-filter="all" onclick="filterGallery('all')">All Photos</button>
-      <button class="gallery-filter-btn" data-filter="exhibitions" onclick="filterGallery('exhibitions')">Exhibitions &amp; Science</button>
-      <button class="gallery-filter-btn" data-filter="events" onclick="filterGallery('events')">Events &amp; Awards</button>
-      <button class="gallery-filter-btn" data-filter="sports" onclick="filterGallery('sports')">Sports &amp; Yoga</button>
-      <button class="gallery-filter-btn" data-filter="toppers" onclick="filterGallery('toppers')">Toppers &amp; Merit</button>
-      <button class="gallery-filter-btn" data-filter="campus" onclick="filterGallery('campus')">Campus &amp; Classes</button>
-      <button class="gallery-filter-btn" data-filter="faculty" onclick="filterGallery('faculty')">Faculty &amp; Staff</button>
+      <button class="gallery-filter-btn <?= ($active_cat === 'all') ? 'active' : '' ?>" data-filter="all" onclick="filterGallery('all')">All Photos</button>
+      <button class="gallery-filter-btn <?= ($active_cat === 'media') ? 'active' : '' ?>" data-filter="media" onclick="filterGallery('media')">Media Coverage</button>
+      <button class="gallery-filter-btn <?= ($active_cat === 'result') ? 'active' : '' ?>" data-filter="result" onclick="filterGallery('result')">Annual Result Declaration Day</button>
+      <button class="gallery-filter-btn <?= ($active_cat === 'cultural') ? 'active' : '' ?>" data-filter="cultural" onclick="filterGallery('cultural')">Cultural Fest</button>
+      <button class="gallery-filter-btn <?= ($active_cat === 'activity') ? 'active' : '' ?>" data-filter="activity" onclick="filterGallery('activity')">School Activity</button>
+      <button class="gallery-filter-btn <?= ($active_cat === 'competition') ? 'active' : '' ?>" data-filter="competition" onclick="filterGallery('competition')">Competition</button>
+      <button class="gallery-filter-btn <?= ($active_cat === 'diwali') ? 'active' : '' ?>" data-filter="diwali" onclick="filterGallery('diwali')">Diwali Celebration</button>
     </div>
   </section>
 
-  <!-- Gallery Grid (12 Curated Showcase Cards) -->
+  <!-- Gallery Grid (Curated Showcase Cards) -->
   <section class="max-w-7xl mx-auto px-6 lg:px-12 pb-12 sm:pb-16 w-full scroll-mt-28" id="campus-life">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery-grid">
+      <?php
+      // Default initial 12 curated showcase items with new category tags
+      $default_gallery_items = [
+          1 => [
+              'img' => school_img('exhibition.webp'),
+              'cat' => 'cultural',
+              'tag' => 'Cultural Fest',
+              'eyebrow' => 'Annual Celebration',
+              'title' => 'Cultural Fest & Folk Performances',
+              'desc' => 'Students presenting rich traditional dance, theatrical skits, and folk musical performances.'
+          ],
+          2 => [
+              'img' => school_img('award_ceremony.webp'),
+              'cat' => 'result',
+              'tag' => 'Result Day',
+              'eyebrow' => 'Academic Felicitation',
+              'title' => 'Annual Result Declaration & Award Ceremony',
+              'desc' => 'Honoring top percentiles, grade toppers, and scholastic excellence across all classes.'
+          ],
+          3 => [
+              'img' => school_img('students_ground.webp'),
+              'cat' => 'activity',
+              'tag' => 'School Activity',
+              'eyebrow' => 'Campus Life',
+              'title' => 'Outdoor Sports & Physical Drills',
+              'desc' => 'Active athletic drills, sprint conditioning, and outdoor teamwork sports on the school grounds.'
+          ],
+          4 => [
+              'img' => school_img('yoga.webp'),
+              'cat' => 'activity',
+              'tag' => 'School Activity',
+              'eyebrow' => 'Morning Assembly',
+              'title' => 'International Yoga Day Demonstrations',
+              'desc' => 'Disciplined mass yoga asanas cultivating concentration, stamina, and mindfulness.'
+          ],
+          5 => [
+              'img' => school_img('toppers.webp'),
+              'cat' => 'result',
+              'tag' => 'Result Day',
+              'eyebrow' => 'Board Merit',
+              'title' => 'HBSE Board Exam Result Celebrations',
+              'desc' => 'Celebrating top state ranks and 100% board passing results in Class 10th and 12th.'
+          ],
+          6 => [
+              'img' => school_img('shinning_stars.webp'),
+              'cat' => 'competition',
+              'tag' => 'Competition',
+              'eyebrow' => 'Academic Contests',
+              'title' => 'Inter-School Science & Quiz Competition',
+              'desc' => 'High-achieving students competing in district-level olympiads, science projects, and quiz bowls.'
+          ],
+          7 => [
+              'img' => school_img('school_home1.webp'),
+              'cat' => 'activity',
+              'tag' => 'School Activity',
+              'eyebrow' => 'Campus Activities',
+              'title' => 'Morning Assembly & Special Celebrations',
+              'desc' => 'Daily moral value recitations, national anthems, and vibrant campus co-curricular activities.'
+          ],
+          8 => [
+              'img' => school_img('children_sitting.webp'),
+              'cat' => 'competition',
+              'tag' => 'Competition',
+              'eyebrow' => 'Skill Contests',
+              'title' => 'Art, Essay & Debate Competition',
+              'desc' => 'Students showcasing exceptional elocution, creative writing, and painting prowess in inter-house events.'
+          ],
+          9 => [
+              'img' => school_img('lab_class.webp'),
+              'cat' => 'diwali',
+              'tag' => 'Diwali Fest',
+              'eyebrow' => 'Festive Joy',
+              'title' => 'Diwali Celebration & Rangoli Contest',
+              'desc' => 'Grand festive campus decorations, colorful floral rangolis, and traditional illumination festivities.'
+          ],
+          10 => [
+              'img' => school_img('all_staffmembers.webp'),
+              'cat' => 'cultural',
+              'tag' => 'Cultural Fest',
+              'eyebrow' => 'Music & Arts',
+              'title' => 'Grand Stage Musical Pageant',
+              'desc' => 'Vocal choir harmonies, classical instrumental recitals, and cultural heritage exhibits by students.'
+          ],
+          11 => [
+              'img' => school_img('exhibition3.webp'),
+              'cat' => 'diwali',
+              'tag' => 'Diwali Fest',
+              'eyebrow' => 'Diwali Festivities',
+              'title' => 'Eco-Friendly Deepawali Festival',
+              'desc' => 'Spreading joy and sustainable green Diwali messages through handmade diyas and creative craft work.'
+          ],
+          12 => [
+              'img' => school_img('IMG_20210815_093156~2.webp'),
+              'cat' => 'media',
+              'tag' => 'Media Coverage',
+              'eyebrow' => 'Press & Honors',
+              'title' => 'Newspaper & Media Feature Coverage',
+              'desc' => 'Media accolades and state news recognition honoring Sun Rise School for educational and board achievements.'
+          ]
+      ];
 
-      <!-- Item 1: Exhibitions -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat1', 'exhibitions')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img1', school_img('exhibition.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag1', 'Exhibition') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow1', 'Science & Innovation') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title1', 'Annual Science Exhibition') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc1', 'Students presenting working models of solar technology and environmental systems.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
+      for ($i = 1; $i <= 24; $i++) {
+          $def = $default_gallery_items[$i] ?? null;
+          $img_key = 'gallery_img' . $i;
+          $cat_key = 'gallery_cat' . $i;
+          $tag_key = 'gallery_tag' . $i;
+          $eyebrow_key = 'gallery_eyebrow' . $i;
+          $title_key = 'gallery_title' . $i;
+          $desc_key = 'gallery_desc' . $i;
+
+          $item_img = get_image('gallery', $img_key, $def ? $def['img'] : '');
+          if (empty($item_img) && !$def) {
+              continue; // Skip empty slots beyond defaults
+          }
+
+          $item_cat = get_text('gallery', $cat_key, $def ? $def['cat'] : 'activity');
+          $item_tag = get_text('gallery', $tag_key, $def ? $def['tag'] : 'School Activity');
+          $item_eyebrow = get_text('gallery', $eyebrow_key, $def ? $def['eyebrow'] : 'Campus Life');
+          $item_title = get_text('gallery', $title_key, $def ? $def['title'] : 'Gallery Showcase #' . $i);
+          $item_desc = get_text('gallery', $desc_key, $def ? $def['desc'] : 'Sun Rise Sr. Sec. School photographic chronicle moment.');
+          $is_visible = ($active_cat === 'all' || $item_cat === $active_cat);
+      ?>
+        <!-- Item <?= $i ?>: <?= htmlspecialchars($item_title) ?> -->
+        <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars($item_cat) ?>" onclick="openLightbox(this)" <?= $is_visible ? '' : 'style="display:none;"' ?>>
+          <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= $item_img ?>')"></div>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
+          <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= htmlspecialchars($item_tag) ?></div>
+          <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
+            <span class="text-eyebrow text-gold-light uppercase mb-1"><?= htmlspecialchars($item_eyebrow) ?></span>
+            <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= htmlspecialchars($item_title) ?></h3>
+            <p class="text-body-sm text-surface-dim line-clamp-1"><?= htmlspecialchars($item_desc) ?></p>
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
+            <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
+              <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
+            </div>
           </div>
         </div>
-      </div>
-
-      <!-- Item 2: Events & Awards -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat2', 'events')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img2', school_img('award_ceremony.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag2', 'Awards') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow2', 'Felicitation') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title2', 'Annual Prize Distribution') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc2', 'Honoring academic and extracurricular achievers on stage with trophies.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 3: Sports & Fitness -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat3', 'sports')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img3', school_img('students_ground.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag3', 'Sports') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow3', 'Athletics') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title3', 'Outdoor Ground Activities') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc3', 'Students actively participating in outdoor sports, track drills, and team games.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 4: Yoga & Wellness -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat4', 'sports')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img4', school_img('yoga.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag4', 'Wellness') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow4', 'Morning Assembly') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title4', 'International Yoga Day') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc4', 'Mass yoga demonstration cultivating discipline, physical stamina, and peace of mind.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 5: Toppers & Merit -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat5', 'toppers')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img5', school_img('toppers.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag5', 'Board Toppers') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow5', 'Merit Ranks') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title5', 'HBSE Board Exam Toppers') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc5', 'Celebrating our star achievers securing top percentiles in Class 10 &amp; 12 exams.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 6: Shining Stars -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat6', 'toppers')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img6', school_img('shinning_stars.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag6', 'Merit Board') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow6', 'Star Performers') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title6', 'Shining Stars of Sun Rise') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc6', 'Outstanding scholarship winners and position holders across all school grades.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 7: Campus Building -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat7', 'campus')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img7', school_img('school_home1.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag7', 'Campus') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow7', 'Architecture') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title7', 'Sun Rise School Front Elevation') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc7', 'Grand campus frontage with landscaped green areas in Dobhi, Haryana.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 8: Classroom Sessions -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat8', 'campus')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img8', school_img('children_sitting.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag8', 'Classroom') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow8', 'Student Focus') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title8', 'Interactive Smart Classes') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc8', 'Students engaged in dynamic discussion and visual conceptual learning.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 9: Science Lab Class -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat9', 'exhibitions')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img9', school_img('lab_class.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag9', 'Science Lab') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow9', 'Practical Learning') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title9', 'Senior Science Lab Practicals') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc9', 'Hands-on experimentation under the supervision of experienced physics &amp; chemistry faculty.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 10: Faculty Group -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat10', 'faculty')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img10', school_img('all_staffmembers.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag10', 'Staff Team') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow10', 'Academic Mentors') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title10', 'Complete Teaching Faculty') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc10', 'The passionate educators steering Sun Rise Sr. Sec. School to educational greatness.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 11: Exhibition Project Display -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat11', 'exhibitions')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img11', school_img('exhibition3.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag11', 'Projects') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow11', 'Student Innovation') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title11', 'Interactive Science Models') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc11', 'Creative working models designed by students demonstrating physics principles.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Item 12: Independence Day Celebration -->
-      <div class="gallery-item group relative overflow-hidden rounded-2xl bg-surface-container shadow-sm hover:shadow-xl transition-all duration-300 cursor-pointer h-72" data-category="<?= htmlspecialchars(get_text('gallery', 'gallery_cat12', 'events')) ?>" onclick="openLightbox(this)">
-        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105" style="background-image: url('<?= get_image('gallery', 'gallery_img12', school_img('IMG_20210815_093156~2.webp')) ?>')"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-primary/75 via-primary/10 to-transparent"></div>
-        <div class="absolute top-4 right-4 bg-primary/80 backdrop-blur-md px-3 py-1 rounded-full text-[11px] font-bold text-gold-light border border-[#C9A24B]/30 uppercase"><?= get_text('gallery', 'gallery_tag12', 'National Day') ?></div>
-        <div class="absolute bottom-0 inset-x-0 p-6 flex flex-col justify-end">
-          <span class="text-eyebrow text-gold-light uppercase mb-1"><?= get_text('gallery', 'gallery_eyebrow12', 'Patriotism') ?></span>
-          <h3 class="text-headline-sm text-lg font-bold text-white mb-1"><?= get_text('gallery', 'gallery_title12', 'Independence Day Celebration') ?></h3>
-          <p class="text-body-sm text-surface-dim line-clamp-1"><?= get_text('gallery', 'gallery_desc12', 'Flag hoisting, patriotic songs, and cultural march-past by students.') ?></p>
-        </div>
-        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-primary/30 backdrop-blur-[2px]">
-          <div class="w-12 h-12 rounded-full bg-[#C9A24B] text-primary flex items-center justify-center shadow-lg transform scale-75 group-hover:scale-100 transition-transform">
-            <span class="material-symbols-outlined text-2xl font-bold">zoom_in</span>
-          </div>
-        </div>
-      </div>
-
+      <?php } ?>
     </div>
   </section>
 

@@ -309,41 +309,41 @@ $hero_slides = [
   <!-- Founder & Director's Message (Image Left, Content Right) -->
   <section class="w-full py-8 lg:py-12 bg-surface relative">
     <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <!-- Left: Photo — self-start and fixed aspect ratio so it never elongates when content expands -->
-      <div class="lg:col-span-4 relative self-start w-full">
+      <!-- Left: Photo — perfectly sized to match right side content height -->
+      <div class="lg:col-span-4 relative self-start w-full max-w-sm mx-auto lg:max-w-none">
         <div class="absolute -top-3 -left-3 w-full h-full bg-[#C9A24B]/10 rounded-2xl pointer-events-none"></div>
-        <div class="relative rounded-xl overflow-hidden shadow-xl w-full aspect-[4/5] sm:aspect-[3/4] max-h-[460px] bg-slate-100">
+        <div class="relative rounded-xl overflow-hidden shadow-xl w-full h-[280px] sm:h-[310px] lg:h-[325px] bg-slate-100">
           <img 
             src="<?= get_image('home', 'director_photo', school_img('director.png')) ?>" 
             alt="<?= htmlspecialchars(get_image_alt('home', 'director_photo', 'Founder & Director - Mr. Bhader Singh Swami')) ?>" 
-            class="w-full h-full object-cover" 
+            class="w-full h-full object-cover object-top" 
             loading="lazy"
           />
         </div>
       </div>
       <!-- Right: Content -->
-      <div class="lg:col-span-8 flex flex-col gap-4 lg:pl-8 justify-between">
-        <div class="flex flex-col gap-3">
-          <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'director_tagline', "DIRECTOR'S MESSAGE") ?></div>
-          <h2 class="text-[1.05rem] sm:text-[1.15rem] font-headline-lg font-bold text-primary tracking-tight leading-snug">
+      <div class="lg:col-span-8 flex flex-col gap-3.5 lg:pl-6 justify-between min-h-[325px]">
+        <div class="flex flex-col gap-2.5">
+          <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold text-xs"><?= get_text('home', 'director_tagline', "DIRECTOR'S MESSAGE") ?></div>
+          <h2 class="text-lg sm:text-xl font-headline-lg font-bold text-primary tracking-tight leading-snug">
             <?= get_text('home', 'director_heading', "Empowering Dreams &amp; Shaping Tomorrow's Leaders") ?>
           </h2>
-          <blockquote class="text-sm italic text-on-surface border-l-4 border-[#C9A24B] pl-4 py-1">
+          <blockquote class="text-xs sm:text-sm italic text-on-surface border-l-4 border-[#C9A24B] pl-3.5 py-1 leading-relaxed">
             <?= get_text('home', 'director_quote', '"Education is not merely the acquisition of knowledge; it is the cultivation of character, values, confidence, and the ability to contribute meaningfully to society."') ?>
           </blockquote>
-          <div class="text-body-md text-on-surface-variant font-body leading-relaxed">
+          <div class="text-xs sm:text-sm text-on-surface-variant font-body leading-relaxed">
             <div id="director-content" class="line-clamp-4">
               <p><?= get_text('home', 'director_p1', 'It gives me immense pleasure to welcome you to Sun Rise Sr. Sec. School, Dobhi-a place where we believe that every child is not just a student, but a unique individual with dreams, abilities, and limitless potential. For us, education is much more than books, classrooms, and examinations. It is about shaping minds, nurturing hearts, building character, and preparing young individuals for life.') ?></p>
               <p class="mt-2"><?= get_text('home', 'director_p2', 'We strive for the holistic development of every student through quality academics, sports, creativity, cultural activities, discipline, and strong moral values. Along with knowledge, we seek to nurture kindness, confidence, responsibility, resilience, and respect for others. At Sun Rise Sr. Sec. School, we do not simply prepare children for tomorrow; we nurture the individuals who will shape tomorrow.') ?></p>
             </div>
-            <button id="director-readmore" class="mt-2 inline-flex items-center gap-1 text-sm text-primary font-bold hover:text-[#C9A24B] transition-colors cursor-pointer outline-none focus:outline-none focus:ring-0">
+            <button id="director-readmore" class="mt-1.5 inline-flex items-center gap-1 text-xs sm:text-sm text-primary font-bold hover:text-[#C9A24B] transition-colors cursor-pointer outline-none focus:outline-none focus:ring-0">
               Read More <span class="material-symbols-outlined text-[15px]">expand_more</span>
             </button>
           </div>
         </div>
-        <div class="pt-3 border-t border-[#E5E2DA]">
-          <div class="text-headline-sm font-headline-sm text-primary font-bold"><?= get_text('home', 'director_name', 'Mr. Bhader Singh Swami') ?></div>
-          <div class="text-body-sm text-on-surface-variant font-medium mt-0.5"><?= get_text('home', 'director_title', 'Founder &amp; Director, Sun Rise Sr. Sec. School, Dobhi') ?></div>
+        <div class="pt-2.5 mt-1 border-t border-[#E5E2DA]">
+          <div class="text-sm sm:text-base font-headline-sm text-primary font-bold leading-tight"><?= get_text('home', 'director_name', 'Mr. Bhader Singh Swami') ?></div>
+          <div class="text-xs text-on-surface-variant font-medium mt-0.5"><?= get_text('home', 'director_title', 'Founder &amp; Director, Sun Rise Sr. Sec. School, Dobhi') ?></div>
         </div>
       </div>
     </div>

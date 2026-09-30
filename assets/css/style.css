@@ -724,7 +724,7 @@ h3.font-headline-sm,
 
 .hero-mosaic-tile.tile-animating {
   transition-property: transform, opacity, box-shadow;
-  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Slide Indicator Dots */

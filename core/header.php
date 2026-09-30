@@ -170,7 +170,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
         <nav class="top-bar-left-links" aria-label="Quick Utility Navigation">
           <a href="<?= htmlspecialchars(get_text('general', 'top_link1_url', 'index.php')) ?>" class="top-nav-item <?= ($current_page === 'home') ? 'active' : '' ?>"><?= htmlspecialchars(get_text('general', 'top_link1_text', 'Home')) ?></a>
           <a href="<?= htmlspecialchars(get_text('general', 'top_link2_url', '#student-portal')) ?>" class="top-nav-item" id="topNavStudentLogin"><?= htmlspecialchars(get_text('general', 'top_link2_text', 'Student Login')) ?></a>
-          <a href="<?= htmlspecialchars(get_text('general', 'top_link3_url', 'events.php#alumni')) ?>" class="top-nav-item"><?= htmlspecialchars(get_text('general', 'top_link3_text', 'Alumni')) ?></a>
+          <a href="<?= htmlspecialchars(get_text('general', 'top_link3_url', 'alumni.php')) ?>" class="top-nav-item <?= ($current_page === 'alumni') ? 'active' : '' ?>"><?= htmlspecialchars(get_text('general', 'top_link3_text', 'Alumni')) ?></a>
           <a href="<?= htmlspecialchars(get_text('general', 'top_link4_url', '#mandatory-disclosure')) ?>" class="top-nav-item" id="topNavDisclosure"><?= htmlspecialchars(get_text('general', 'top_link4_text', 'Mandatory Disclosure')) ?></a>
         </nav>
 

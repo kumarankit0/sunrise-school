@@ -8169,7 +8169,7 @@ $pages_config = [
                         'key' => 'top_link3_url',
                         'label' => 'Top Bar Link 3 URL',
                         'type' => 'text',
-                        'default' => 'events.php#alumni',
+                        'default' => 'alumni.php',
                         'help' => 'URL for top bar link 3.'
                     ],
                     [

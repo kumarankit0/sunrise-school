@@ -87,11 +87,12 @@ require_once __DIR__ . '/core/header.php';
 
           <?php
             $success_msg = get_text('contact', 'form_success_msg', 'Thank you for reaching out to Sun Rise Sr. Sec. School. Your message has been received by our office desk and we will contact you shortly.');
+            $career_success_msg = get_text('contact', 'form_career_success_msg', 'Thank you for your application! Your resume link and details have been received by our recruitment cell. We will contact shortlisted candidates.');
           ?>
-          <form class="space-y-4" onsubmit="event.preventDefault(); alert(<?= json_encode($success_msg) ?>); this.reset();">
+          <form id="contactInquiryForm" class="space-y-4" onsubmit="handleContactSubmit(event)">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div class="flex flex-col gap-1.5">
-                <label class="font-label-md text-primary font-bold text-xs" for="fullName">Your Full Name <span class="text-error">*</span></label>
+                <label class="font-label-md text-primary font-bold text-xs" for="fullName">Your Full Name <span class="text-error text-red-600">*</span></label>
                 <input class="h-10 px-3.5 bg-surface-container-low rounded-lg border border-border-warm text-on-surface text-xs sm:text-sm focus:outline-none focus:border-primary transition-colors" id="fullName" placeholder="e.g. Ramesh Kumar" required="" type="text"/>
               </div>
               <div class="flex flex-col gap-1.5">
@@ -99,28 +100,68 @@ require_once __DIR__ . '/core/header.php';
                 <input class="h-10 px-3.5 bg-surface-container-low rounded-lg border border-border-warm text-on-surface text-xs sm:text-sm focus:outline-none focus:border-primary transition-colors" id="email" placeholder="e.g. ramesh@example.com" type="email"/>
               </div>
             </div>
+
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div class="flex flex-col gap-1.5">
-                <label class="font-label-md text-primary font-bold text-xs" for="phone">Phone Number <span class="text-error">*</span></label>
+                <label class="font-label-md text-primary font-bold text-xs" for="phone">Phone Number <span class="text-error text-red-600">*</span></label>
                 <input class="h-10 px-3.5 bg-surface-container-low rounded-lg border border-border-warm text-on-surface text-xs sm:text-sm focus:outline-none focus:border-primary transition-colors" id="phone" placeholder="+91 70158 90094" required="" type="tel"/>
               </div>
               <div class="flex flex-col gap-1.5">
                 <label class="font-label-md text-primary font-bold text-xs" for="department">Inquiry Type</label>
-                <select class="h-10 px-3.5 bg-surface-container-low rounded-lg border border-border-warm text-on-surface text-xs sm:text-sm focus:outline-none focus:border-primary transition-colors cursor-pointer" id="department">
-                  <option>Admissions (Nursery to 12th)</option>
-                  <option>School Bus &amp; Transport Routes</option>
-                  <option>Fee Structure &amp; Concessions</option>
-                  <option>Faculty / Career Opportunities</option>
-                  <option>General Administration &amp; Appointments</option>
+                <select class="h-10 px-3.5 bg-surface-container-low rounded-lg border border-border-warm text-on-surface text-xs sm:text-sm focus:outline-none focus:border-primary transition-colors cursor-pointer" id="department" onchange="toggleCareerFields()">
+                  <option value="admissions">Admissions (Nursery to 12th)</option>
+                  <option value="transport">School Bus &amp; Transport Routes</option>
+                  <option value="fee">Fee Structure &amp; Concessions</option>
+                  <option value="careers">Faculty / Career Opportunities</option>
+                  <option value="general">General Administration &amp; Appointments</option>
                 </select>
               </div>
             </div>
+
+            <!-- Career & Resume Link Section (Visible when Career Opportunities is selected) -->
+            <div id="careerFieldsGroup" class="hidden space-y-3.5 p-3.5 sm:p-4 rounded-xl bg-[#F0FDF4] border border-[#BBF7D0] transition-all">
+              <div class="flex items-center gap-2 text-xs font-bold text-[#166534]">
+                <span class="material-symbols-outlined text-[18px] text-[#15803D]">badge</span>
+                <span>Educator / Staff Application Details</span>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="flex flex-col gap-1.5">
+                  <label class="font-label-md text-[#166534] font-bold text-xs" for="appliedPosition">Post / Subject Applying For <span class="text-red-600">*</span></label>
+                  <input class="h-10 px-3.5 bg-white rounded-lg border border-[#86EFAC] text-on-surface text-xs sm:text-sm focus:outline-none focus:border-[#15803D] transition-colors" id="appliedPosition" placeholder="e.g. PGT Physics, TGT English, PRT, Sports Coach" type="text"/>
+                </div>
+                <div class="flex flex-col gap-1.5">
+                  <label class="font-label-md text-[#166534] font-bold text-xs" for="experienceYears">Total Teaching Experience</label>
+                  <input class="h-10 px-3.5 bg-white rounded-lg border border-[#86EFAC] text-on-surface text-xs sm:text-sm focus:outline-none focus:border-[#15803D] transition-colors" id="experienceYears" placeholder="e.g. Fresher / 3+ Years" type="text"/>
+                </div>
+              </div>
+
+              <!-- Public Resume Link Input -->
+              <div class="flex flex-col gap-1.5">
+                <div class="flex items-center justify-between">
+                  <label class="font-label-md text-[#166534] font-bold text-xs flex items-center gap-1.5" for="resumeLink">
+                    <span class="material-symbols-outlined text-[16px] text-[#15803D]">link</span>
+                    <span>Public Resume / CV Link (Google Drive / OneDrive / LinkedIn / Dropbox) <span class="text-red-600">*</span></span>
+                  </label>
+                </div>
+                <div class="relative flex items-center">
+                  <span class="absolute left-3 text-slate-400 material-symbols-outlined text-[18px] pointer-events-none">link</span>
+                  <input class="w-full h-10 pl-9 pr-3.5 bg-white rounded-lg border border-[#86EFAC] text-on-surface text-xs sm:text-sm focus:outline-none focus:border-[#15803D] focus:ring-1 focus:ring-[#15803D] transition-colors" id="resumeLink" placeholder="https://drive.google.com/file/d/.../view?usp=sharing or LinkedIn URL" type="url"/>
+                </div>
+                <p class="text-[11px] text-[#166534]/85 leading-snug flex items-start gap-1 mt-0.5">
+                  <span class="material-symbols-outlined text-[14px] text-[#15803D] shrink-0 mt-0.5">info</span>
+                  <span><strong>Important:</strong> Upload your CV/Resume on Google Drive, Dropbox, or LinkedIn and make sure access permission is set to <em>"Anyone with the link can view"</em>.</span>
+                </p>
+              </div>
+            </div>
+
             <div class="flex flex-col gap-1.5">
-              <label class="font-label-md text-primary font-bold text-xs" for="message">Message / Details <span class="text-error">*</span></label>
+              <label class="font-label-md text-primary font-bold text-xs" for="message" id="messageLabel">Message / Details <span class="text-error text-red-600">*</span></label>
               <textarea class="p-3 bg-surface-container-low rounded-lg border border-border-warm text-on-surface text-xs sm:text-sm focus:outline-none focus:border-primary transition-colors resize-none leading-relaxed" id="message" placeholder="Please mention student's current class, residential village/city, and any specific questions you have..." required="" rows="3"></textarea>
             </div>
-            <button class="btn-gold w-full text-center h-11 sm:h-12 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 rounded-xl shadow-md hover:shadow-lg transition-all" type="submit">
-              <span><?= htmlspecialchars(get_text('contact', 'form_btn_text', 'Submit Message')) ?></span>
+
+            <button id="formSubmitBtn" class="btn-gold w-full text-center h-11 sm:h-12 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 rounded-xl shadow-md hover:shadow-lg transition-all cursor-pointer" type="submit">
+              <span id="formSubmitBtnText"><?= htmlspecialchars(get_text('contact', 'form_btn_text', 'Submit Message')) ?></span>
               <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
             </button>
           </form>
@@ -480,6 +521,95 @@ require_once __DIR__ . '/core/header.php';
 </div>
 
 <script>
+function toggleCareerFields() {
+  const deptSelect = document.getElementById('department');
+  const careerGroup = document.getElementById('careerFieldsGroup');
+  const resumeLinkInput = document.getElementById('resumeLink');
+  const appliedPositionInput = document.getElementById('appliedPosition');
+  const messageInput = document.getElementById('message');
+  const messageLabel = document.getElementById('messageLabel');
+  const submitBtnText = document.getElementById('formSubmitBtnText');
+
+  if (!deptSelect || !careerGroup) return;
+
+  const isCareer = (deptSelect.value === 'careers');
+
+  if (isCareer) {
+    careerGroup.classList.remove('hidden');
+    if (resumeLinkInput) resumeLinkInput.required = true;
+    if (appliedPositionInput) appliedPositionInput.required = true;
+    if (messageInput) {
+      messageInput.placeholder = "Briefly describe your educational qualifications (B.Ed, M.Sc, etc.), past teaching experience, subjects, and current residence...";
+    }
+    if (messageLabel) {
+      messageLabel.innerHTML = 'Cover Note / Qualifications <span class="text-error text-red-600">*</span>';
+    }
+    if (submitBtnText) {
+      submitBtnText.textContent = "Submit Application & Resume Link";
+    }
+  } else {
+    careerGroup.classList.add('hidden');
+    if (resumeLinkInput) {
+      resumeLinkInput.required = false;
+      resumeLinkInput.value = '';
+    }
+    if (appliedPositionInput) {
+      appliedPositionInput.required = false;
+      appliedPositionInput.value = '';
+    }
+    if (messageInput) {
+      messageInput.placeholder = "Please mention student's current class, residential village/city, and any specific questions you have...";
+    }
+    if (messageLabel) {
+      messageLabel.innerHTML = 'Message / Details <span class="text-error text-red-600">*</span>';
+    }
+    if (submitBtnText) {
+      submitBtnText.textContent = "Submit Message";
+    }
+  }
+}
+
+function checkCareersHash() {
+  if (window.location.hash === '#careers' || window.location.hash.includes('career')) {
+    const deptSelect = document.getElementById('department');
+    if (deptSelect) {
+      deptSelect.value = 'careers';
+      toggleCareerFields();
+      const formSection = document.getElementById('inquiry-form');
+      if (formSection) {
+        setTimeout(() => {
+          formSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 150);
+      }
+    }
+  }
+}
+
+window.addEventListener('DOMContentLoaded', checkCareersHash);
+window.addEventListener('hashchange', checkCareersHash);
+
+function handleContactSubmit(event) {
+  event.preventDefault();
+  const form = event.target;
+  const deptSelect = document.getElementById('department');
+  const isCareer = deptSelect && deptSelect.value === 'careers';
+
+  if (isCareer) {
+    const resumeLink = document.getElementById('resumeLink')?.value.trim();
+    if (!resumeLink || (!resumeLink.startsWith('http://') && !resumeLink.startsWith('https://'))) {
+      alert("Please enter a valid public link (starting with https:// or http://) for your Resume / CV.");
+      document.getElementById('resumeLink')?.focus();
+      return;
+    }
+    alert("Thank you for applying to Sun Rise Sr. Sec. School!\n\nYour application and public resume link have been received by our recruitment desk. Our academic panel will review your profile and contact you soon.");
+  } else {
+    alert("Thank you for reaching out to Sun Rise Sr. Sec. School.\n\nYour message has been received by our campus office and we will contact you shortly.");
+  }
+
+  form.reset();
+  toggleCareerFields();
+}
+
 function toggleContactFaq(button) {
   const answer = button.nextElementSibling;
   const icon = button.querySelector('.material-symbols-outlined');

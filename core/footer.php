@@ -63,6 +63,9 @@ require_once __DIR__ . '/config.php';
             <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col2_link7_url', 'contact-us.php#careers')) ?>">
               <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col2_link7_text', 'Careers & Vacancies')) ?>
             </a>
+            <a class="footer-link" href="<?= htmlspecialchars(get_text('general', 'footer_col2_link8_url', 'alumni.php')) ?>">
+              <span class="footer-chevron">&gt;</span> <?= htmlspecialchars(get_text('general', 'footer_col2_link8_text', 'Alumni Network')) ?>
+            </a>
           </nav>
         </div>
 

@@ -518,3 +518,295 @@ function get_gallery_category_cards($cat_key = null, $include_empty = false) {
     return $cards;
 }
 
+/**
+ * Returns the default schema for Event & News Highlight Cards on events.php
+ *
+ * @return array
+ */
+function get_event_news_schema() {
+    return [
+        1 => [
+            'img'       => 'assets/images/sunrise school image/exhibition7.webp',
+            'date'      => '24 OCT',
+            'tag'       => 'Award Function',
+            'category'  => 'academic',
+            'title'     => 'District Level Science Model Showcase',
+            'desc'      => 'Students demonstrated innovative research prototypes and hydraulic mechanics models with outstanding presentation skills.',
+            'link_text' => 'Read More',
+            'link_url'  => 'gallery.php'
+        ],
+        2 => [
+            'img'       => 'assets/images/sunrise school image/IMG_20210815_093156~2.webp',
+            'date'      => '15 AUG',
+            'tag'       => 'National Day',
+            'category'  => 'cultural',
+            'title'     => 'Independence Day Flag Hoisting & Parade',
+            'desc'      => 'Celebrated with patriotic enthusiasm, tri-color flag unfurling by management, and spirited cultural performances.',
+            'link_text' => 'Read More',
+            'link_url'  => 'gallery.php'
+        ],
+        3 => [
+            'img'       => 'assets/images/sunrise school image/award_to_school.webp',
+            'date'      => '05 SEP',
+            'tag'       => 'Honors',
+            'category'  => 'campus',
+            'title'     => 'Institutional Excellence Award to School',
+            'desc'      => 'Sun Rise Sr. Sec. School recognized for exceptional academic standards and community educational leadership in Hisar region.',
+            'link_text' => 'Read More',
+            'link_url'  => 'about-us.php'
+        ],
+        4 => [
+            'img'       => 'assets/images/sunrise school image/image_news.webp',
+            'date'      => '12 MAY',
+            'tag'       => 'Press',
+            'category'  => 'academic',
+            'title'     => 'Media Coverage: Board Exam Triumphs',
+            'desc'      => 'Prominent regional newspapers report on the extraordinary 100% HBSE board passing rate and high scoring records of our students.',
+            'link_text' => 'Read More',
+            'link_url'  => 'admission.php'
+        ]
+    ];
+}
+
+/**
+ * Returns active slot numbers for Event & News Highlight Cards
+ *
+ * @return array<int>
+ */
+function get_event_news_slots() {
+    $schema = get_event_news_schema();
+    $default_slots_str = implode(',', array_keys($schema));
+    $raw_slots = get_text('events', 'event_news_slots', $default_slots_str);
+
+    if (trim($raw_slots) === 'NONE') {
+        return [];
+    }
+
+    $parts = array_filter(array_map('intval', explode(',', $raw_slots)), function($n) {
+        return $n > 0;
+    });
+
+    return array_values(array_unique($parts));
+}
+
+/**
+ * Returns all active event & news cards
+ *
+ * @param bool $include_empty
+ * @return array
+ */
+function get_event_news_cards($include_empty = false) {
+    $schema = get_event_news_schema();
+    $slots = get_event_news_slots();
+    $cards = [];
+
+    foreach ($slots as $slot) {
+        $def = $schema[$slot] ?? [
+            'img'       => 'assets/images/sunrise school image/exhibition1.webp',
+            'date'      => date('d M'),
+            'tag'       => 'Event',
+            'category'  => 'academic',
+            'title'     => 'School Event Highlight',
+            'desc'      => 'Description of school event and student achievements.',
+            'link_text' => 'Read More',
+            'link_url'  => 'gallery.php'
+        ];
+
+        $img_key       = "news{$slot}_img";
+        $date_key      = "news{$slot}_date";
+        $tag_key       = "news{$slot}_tag";
+        $cat_key       = "news{$slot}_cat";
+        $title_key     = "news{$slot}_title";
+        $desc_key      = "news{$slot}_desc";
+        $link_text_key = "news{$slot}_link_text";
+        $link_url_key  = "news{$slot}_link_url";
+
+        $img       = get_image('events', $img_key, $def['img']);
+        $date      = get_text('events', $date_key, $def['date']);
+        $tag       = get_text('events', $tag_key, $def['tag']);
+        $category  = get_text('events', $cat_key, $def['category']);
+        $title     = get_text('events', $title_key, $def['title']);
+        $desc      = get_text('events', $desc_key, $def['desc']);
+        $link_text = get_text('events', $link_text_key, $def['link_text']);
+        $link_url  = get_text('events', $link_url_key, $def['link_url']);
+
+        if (!$include_empty && empty($img) && empty($title)) {
+            continue;
+        }
+
+        $cards[] = [
+            'slot'          => $slot,
+            'img_key'       => $img_key,
+            'date_key'      => $date_key,
+            'tag_key'       => $tag_key,
+            'cat_key'       => $cat_key,
+            'title_key'     => $title_key,
+            'desc_key'      => $desc_key,
+            'link_text_key' => $link_text_key,
+            'link_url_key'  => $link_url_key,
+            'img'           => $img,
+            'date'          => $date,
+            'tag'           => $tag,
+            'category'      => $category,
+            'title'         => $title,
+            'desc'          => $desc,
+            'link_text'     => $link_text,
+            'link_url'      => $link_url,
+            'def'           => $def
+        ];
+    }
+
+    return $cards;
+}
+
+/**
+ * Returns the default schema for Alumni Profile Cards on alumni.php
+ *
+ * @return array
+ */
+function get_alumni_schema() {
+    return [
+        1 => [
+            'photo' => 'assets/images/sunrise school image/toppers.webp',
+            'name'  => 'Pooja Sharma',
+            'batch' => 'Batch of 2016',
+            'role'  => 'Software Development Engineer',
+            'org'   => 'Microsoft India • B.Tech (CSE)',
+            'quote' => 'Sun Rise School provided the mathematical clarity, dedicated mentors, and discipline that laid the cornerstone for my engineering career.',
+            'link'  => 'https://linkedin.com'
+        ],
+        2 => [
+            'photo' => 'assets/images/sunrise school image/IMG_20210815_093156~2.webp',
+            'name'  => 'Dr. Aman Verma',
+            'batch' => 'Batch of 2017',
+            'role'  => 'Medical Officer (MBBS)',
+            'org'   => 'Govt. Medical College • Science (PCB)',
+            'quote' => 'The thorough science labs, personal doubt clearing by teachers, and moral values learned here continue to guide my medical service.',
+            'link'  => 'https://linkedin.com'
+        ],
+        3 => [
+            'photo' => 'assets/images/sunrise school image/award_ceremony.webp',
+            'name'  => 'Vikram Singh',
+            'batch' => 'Batch of 2018',
+            'role'  => 'Assistant Commandant / Defence',
+            'org'   => 'Indian Armed Forces • Commerce & Sports',
+            'quote' => 'Rigorous sports drills, NCC discipline, and patriotic values at Sun Rise inspired me to proudly serve our great nation in uniform.',
+            'link'  => 'https://linkedin.com'
+        ],
+        4 => [
+            'photo' => 'assets/images/sunrise school image/shinning_stars.webp',
+            'name'  => 'Neha Choudhary',
+            'batch' => 'Batch of 2019',
+            'role'  => 'Chartered Accountant (CA)',
+            'org'   => 'Deloitte India • Commerce Stream Ranker',
+            'quote' => 'The conceptual rigor in Accountancy and continuous testing culture at Sun Rise made clearing the CA exams on the first attempt possible.',
+            'link'  => 'https://linkedin.com'
+        ],
+        5 => [
+            'photo' => 'assets/images/sunrise school image/children_sitting.webp',
+            'name'  => 'Rahul Beniwal',
+            'batch' => 'Batch of 2020',
+            'role'  => 'Data Scientist & AI Researcher',
+            'org'   => 'IIT Delhi (M.Tech) • Non-Medical',
+            'quote' => 'Encouragement to participate in Science Exhibitions and state Olympiads sparked my passion for research and technology.',
+            'link'  => 'https://linkedin.com'
+        ],
+        6 => [
+            'photo' => 'assets/images/sunrise school image/exhibition1.webp',
+            'name'  => 'Priya Rani',
+            'batch' => 'Batch of 2021',
+            'role'  => 'Civil Services Aspirant & Educator',
+            'org'   => 'Delhi University • Arts Stream Block Topper',
+            'quote' => 'Exceptional literature and social studies mentorship nurtured my analytical writing and public speaking skills.',
+            'link'  => 'https://linkedin.com'
+        ]
+    ];
+}
+
+/**
+ * Returns active slot numbers for Alumni Cards
+ *
+ * @return array<int>
+ */
+function get_alumni_slots() {
+    $schema = get_alumni_schema();
+    $default_slots_str = implode(',', array_keys($schema));
+    $raw_slots = get_text('alumni', 'alumni_slots', $default_slots_str);
+
+    if (trim($raw_slots) === 'NONE') {
+        return [];
+    }
+
+    $parts = array_filter(array_map('intval', explode(',', $raw_slots)), function($n) {
+        return $n > 0;
+    });
+
+    return array_values(array_unique($parts));
+}
+
+/**
+ * Returns all active alumni cards
+ *
+ * @param bool $include_empty
+ * @return array
+ */
+function get_alumni_cards($include_empty = false) {
+    $schema = get_alumni_schema();
+    $slots = get_alumni_slots();
+    $cards = [];
+
+    foreach ($slots as $slot) {
+        $def = $schema[$slot] ?? [
+            'photo' => 'assets/images/sunrise school image/toppers.webp',
+            'name'  => 'Alumnus Name',
+            'batch' => 'Class of ' . (date('Y') - 5),
+            'role'  => 'Profession / Designation',
+            'org'   => 'Organization / University',
+            'quote' => 'A memorable quote or tribute to Sun Rise Sr. Sec. School.',
+            'link'  => ''
+        ];
+
+        $photo_key = "alumni_{$slot}_photo";
+        $name_key  = "alumni_{$slot}_name";
+        $batch_key = "alumni_{$slot}_batch";
+        $role_key  = "alumni_{$slot}_role";
+        $org_key   = "alumni_{$slot}_org";
+        $quote_key = "alumni_{$slot}_quote";
+        $link_key  = "alumni_{$slot}_link";
+
+        $photo = get_image('alumni', $photo_key, $def['photo']);
+        $name  = get_text('alumni', $name_key, $def['name']);
+        $batch = get_text('alumni', $batch_key, $def['batch']);
+        $role  = get_text('alumni', $role_key, $def['role']);
+        $org   = get_text('alumni', $org_key, $def['org']);
+        $quote = get_text('alumni', $quote_key, $def['quote']);
+        $link  = get_text('alumni', $link_key, $def['link']);
+
+        if (!$include_empty && empty($name) && empty($photo)) {
+            continue;
+        }
+
+        $cards[] = [
+            'slot'      => $slot,
+            'photo_key' => $photo_key,
+            'name_key'  => $name_key,
+            'batch_key' => $batch_key,
+            'role_key'  => $role_key,
+            'org_key'   => $org_key,
+            'quote_key' => $quote_key,
+            'link_key'  => $link_key,
+            'photo'     => $photo,
+            'name'      => $name,
+            'batch'     => $batch,
+            'role'      => $role,
+            'org'       => $org,
+            'quote'     => $quote,
+            'link'      => $link,
+            'def'       => $def
+        ];
+    }
+
+    return $cards;
+}
+
+

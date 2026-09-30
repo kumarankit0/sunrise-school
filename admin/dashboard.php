@@ -3772,6 +3772,22 @@ $pages_config = [
                         'type' => 'text',
                         'default' => '8:30 AM – 2:30 PM',
                         'help' => 'Winter school hours.'
+                    ],
+                    [
+                        'kind' => 'image',
+                        'key' => 'exam_calendar_file_img',
+                        'label' => 'Upload Exam Calendar / Date Sheet Image (For Download)',
+                        'default' => 'assets/images/pop-up image.webp',
+                        'alt' => 'Sun Rise School Exam Calendar Date Sheet',
+                        'help' => 'Upload or replace the examination schedule / date sheet image or PDF that students & parents can download.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'exam_calendar_btn_text',
+                        'label' => 'Exam Calendar Download Button Text',
+                        'type' => 'text',
+                        'default' => 'Download Exam Date Sheet & Schedule',
+                        'help' => 'Label text shown on the download button in Academics page.'
                     ]
                 ]
             ],
@@ -5620,11 +5636,12 @@ $pages_config = [
                 ]
             ],
 
-            // Section 2: School News & Key Highlights (4 Main Story Cards)
+            // Section 2: School News & Key Highlights (Dynamic Event Cards Manager)
             [
-                'title' => 'Section 2: School News & Key Highlights (4 Main Story Cards)',
+                'title' => 'Section 2: School News & Key Highlights (Event Cards Manager)',
                 'icon'  => 'newspaper',
-                'desc'  => 'Titles, dates, category tags, images, summaries, and action links for 4 prominent school news stories.',
+                'desc'  => 'Add, edit, or remove news cards, event highlights, dates, tags, photos and links.',
+                'type'  => 'event_news_cards',
                 'fields' => [
                     [
                         'kind' => 'text',
@@ -5641,238 +5658,6 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'School News & Key Highlights',
                         'help' => 'Main headline.'
-                    ],
-
-                    // News 1
-                    [
-                        'kind' => 'image',
-                        'key' => 'news1_img',
-                        'label' => 'News 1 Photo (Science Fair)',
-                        'default' => 'assets/images/sunrise school image/exhibition7.webp',
-                        'alt' => 'District Level Science Model Showcase',
-                        'help' => 'Photo for news card 1.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news1_date',
-                        'label' => 'News 1 Date (e.g. 24 OCT)',
-                        'type' => 'text',
-                        'default' => '24 OCT',
-                        'help' => 'Day & Month.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news1_tag',
-                        'label' => 'News 1 Category Badge',
-                        'type' => 'text',
-                        'default' => 'Science Fair',
-                        'help' => 'Badge.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news1_title',
-                        'label' => 'News 1 Headline',
-                        'type' => 'text',
-                        'default' => 'District Level Science Model Showcase',
-                        'help' => 'Card title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news1_desc',
-                        'label' => 'News 1 Summary',
-                        'type' => 'textarea',
-                        'default' => 'Students demonstrated innovative research prototypes and hydraulic mechanics models with outstanding presentation skills.',
-                        'help' => 'Card summary.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news1_link_text',
-                        'label' => 'News 1 Link Text',
-                        'type' => 'text',
-                        'default' => 'Read More',
-                        'help' => 'Card link label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news1_link_url',
-                        'label' => 'News 1 Target Link',
-                        'type' => 'text',
-                        'default' => 'gallery.php',
-                        'help' => 'Card link URL.'
-                    ],
-
-                    // News 2
-                    [
-                        'kind' => 'image',
-                        'key' => 'news2_img',
-                        'label' => 'News 2 Photo (National Day)',
-                        'default' => 'assets/images/sunrise school image/IMG_20210815_093156~2.webp',
-                        'alt' => 'Independence Day Flag Hoisting',
-                        'help' => 'Photo for news card 2.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news2_date',
-                        'label' => 'News 2 Date (e.g. 15 AUG)',
-                        'type' => 'text',
-                        'default' => '15 AUG',
-                        'help' => 'Day & Month.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news2_tag',
-                        'label' => 'News 2 Category Badge',
-                        'type' => 'text',
-                        'default' => 'National Day',
-                        'help' => 'Badge.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news2_title',
-                        'label' => 'News 2 Headline',
-                        'type' => 'text',
-                        'default' => 'Independence Day Flag Hoisting & Parade',
-                        'help' => 'Card title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news2_desc',
-                        'label' => 'News 2 Summary',
-                        'type' => 'textarea',
-                        'default' => 'Celebrated with patriotic enthusiasm, tri-color flag unfurling by management, and spirited cultural performances.',
-                        'help' => 'Card summary.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news2_link_text',
-                        'label' => 'News 2 Link Text',
-                        'type' => 'text',
-                        'default' => 'Read More',
-                        'help' => 'Card link label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news2_link_url',
-                        'label' => 'News 2 Target Link',
-                        'type' => 'text',
-                        'default' => 'gallery.php',
-                        'help' => 'Card link URL.'
-                    ],
-
-                    // News 3
-                    [
-                        'kind' => 'image',
-                        'key' => 'news3_img',
-                        'label' => 'News 3 Photo (Institutional Award)',
-                        'default' => 'assets/images/sunrise school image/award_to_school.webp',
-                        'alt' => 'Institutional Excellence Award',
-                        'help' => 'Photo for news card 3.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news3_date',
-                        'label' => 'News 3 Date (e.g. 05 SEP)',
-                        'type' => 'text',
-                        'default' => '05 SEP',
-                        'help' => 'Day & Month.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news3_tag',
-                        'label' => 'News 3 Category Badge',
-                        'type' => 'text',
-                        'default' => 'Honors',
-                        'help' => 'Badge.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news3_title',
-                        'label' => 'News 3 Headline',
-                        'type' => 'text',
-                        'default' => 'Institutional Excellence Award to School',
-                        'help' => 'Card title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news3_desc',
-                        'label' => 'News 3 Summary',
-                        'type' => 'textarea',
-                        'default' => 'Sun Rise Sr. Sec. School recognized for exceptional academic standards and community educational leadership in Hisar region.',
-                        'help' => 'Card summary.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news3_link_text',
-                        'label' => 'News 3 Link Text',
-                        'type' => 'text',
-                        'default' => 'Read More',
-                        'help' => 'Card link label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news3_link_url',
-                        'label' => 'News 3 Target Link',
-                        'type' => 'text',
-                        'default' => 'about-us.php',
-                        'help' => 'Card link URL.'
-                    ],
-
-                    // News 4
-                    [
-                        'kind' => 'image',
-                        'key' => 'news4_img',
-                        'label' => 'News 4 Photo (Media Coverage)',
-                        'default' => 'assets/images/sunrise school image/image_news.webp',
-                        'alt' => 'Media Coverage of Board Results',
-                        'help' => 'Photo for news card 4.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news4_date',
-                        'label' => 'News 4 Date (e.g. 12 MAY)',
-                        'type' => 'text',
-                        'default' => '12 MAY',
-                        'help' => 'Day & Month.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news4_tag',
-                        'label' => 'News 4 Category Badge',
-                        'type' => 'text',
-                        'default' => 'Press',
-                        'help' => 'Badge.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news4_title',
-                        'label' => 'News 4 Headline',
-                        'type' => 'text',
-                        'default' => 'Media Coverage: Board Exam Triumphs',
-                        'help' => 'Card title.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news4_desc',
-                        'label' => 'News 4 Summary',
-                        'type' => 'textarea',
-                        'default' => 'Prominent regional newspapers report on the extraordinary 100% HBSE board passing rate and high scoring records of our students.',
-                        'help' => 'Card summary.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news4_link_text',
-                        'label' => 'News 4 Link Text',
-                        'type' => 'text',
-                        'default' => 'Read More',
-                        'help' => 'Card link label.'
-                    ],
-                    [
-                        'kind' => 'text',
-                        'key' => 'news4_link_url',
-                        'label' => 'News 4 Target Link',
-                        'type' => 'text',
-                        'default' => 'admission.php',
-                        'help' => 'Card link URL.'
                     ]
                 ]
             ],
@@ -5908,20 +5693,28 @@ $pages_config = [
                         'help' => 'Calendar summary.'
                     ],
                     [
+                        'kind' => 'image',
+                        'key' => 'calendar_file_img',
+                        'label' => 'Upload School Calendar Image / PDF (For Download)',
+                        'default' => '',
+                        'alt' => 'Sun Rise School Academic Calendar',
+                        'help' => 'Upload your academic calendar image or schedule here. When visitors click the button on events.php, this calendar file will be downloaded to their device.'
+                    ],
+                    [
                         'kind' => 'text',
                         'key' => 'calendar_btn_text',
                         'label' => 'Calendar Box Button Text',
                         'type' => 'text',
-                        'default' => 'View Academic Syllabus',
+                        'default' => 'Download School Calendar',
                         'help' => 'Calendar CTA button label.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'calendar_btn_link',
-                        'label' => 'Calendar Box Button Target Link',
+                        'label' => 'Calendar Alternative Target Link (Optional if Image Uploaded)',
                         'type' => 'text',
                         'default' => 'academics.php',
-                        'help' => 'Calendar CTA destination.'
+                        'help' => 'Fallback link if no image is uploaded.'
                     ],
                     [
                         'kind' => 'text',
@@ -7487,6 +7280,162 @@ $pages_config = [
             ]
         ]
     ],
+    'alumni' => [
+        'title' => 'Alumni Page',
+        'icon'  => 'diversity_3',
+        'desc'  => 'Hero Banner, 4 Stat Milestones, Dynamic Alumni Success Profile Cards (Add & Delete), and Reconnect CTA Banner',
+        'sections' => [
+            [
+                'title' => 'Section 1: Hero Banner & Milestones Stat Strip',
+                'icon'  => 'flag',
+                'desc'  => 'Top hero background image, badge tag, main headline, description, and 4 statistical highlight counters matching About Us.',
+                'fields' => [
+                    [
+                        'kind' => 'image',
+                        'key' => 'hero_banner',
+                        'label' => 'Alumni Page Hero Banner Image',
+                        'default' => 'assets/images/sunrise school image/school_home2.webp',
+                        'alt' => 'Sun Rise School Alumni Network',
+                        'help' => 'Top background image on alumni.php.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_badge',
+                        'label' => 'Hero Badge / Tagline',
+                        'type' => 'text',
+                        'default' => 'Our Global Legacy & Pride',
+                        'help' => 'Small rounded badge at top of hero banner.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_title',
+                        'label' => 'Hero Main Heading',
+                        'type' => 'text',
+                        'default' => 'Sun Rise Alumni Network',
+                        'help' => 'Main headline on alumni.php.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'hero_subtitle',
+                        'label' => 'Hero Subtitle / Overview',
+                        'type' => 'text',
+                        'default' => 'Celebrating the journeys, accomplishments, and inspiring contributions of our past students excelling across defence, medicine, technology, academia, and public service worldwide.',
+                        'help' => 'Hero subtitle paragraph.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat1_num',
+                        'label' => 'Stat 1 Figure',
+                        'type' => 'text',
+                        'default' => '2007',
+                        'help' => 'First counter number.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat1_lbl',
+                        'label' => 'Stat 1 Label',
+                        'type' => 'text',
+                        'default' => 'Year Established',
+                        'help' => 'First counter label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat2_num',
+                        'label' => 'Stat 2 Figure',
+                        'type' => 'text',
+                        'default' => '1500+',
+                        'help' => 'Second counter number.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat2_lbl',
+                        'label' => 'Stat 2 Label',
+                        'type' => 'text',
+                        'default' => 'Graduated Alumni',
+                        'help' => 'Second counter label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat3_num',
+                        'label' => 'Stat 3 Figure',
+                        'type' => 'text',
+                        'default' => '100%',
+                        'help' => 'Third counter number.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat3_lbl',
+                        'label' => 'Stat 3 Label',
+                        'type' => 'text',
+                        'default' => 'Board Pass Record',
+                        'help' => 'Third counter label.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat4_num',
+                        'label' => 'Stat 4 Figure',
+                        'type' => 'text',
+                        'default' => '50+',
+                        'help' => 'Fourth counter number.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'stat4_lbl',
+                        'label' => 'Stat 4 Label',
+                        'type' => 'text',
+                        'default' => 'Global Careers & Fields',
+                        'help' => 'Fourth counter label.'
+                    ]
+                ]
+            ],
+            [
+                'title' => 'Section 2: Dynamic Alumni Profile Cards (Add / Remove)',
+                'icon'  => 'groups',
+                'desc'  => 'Add and manage alumni success story cards. Each card includes photo, name, batch year, current role, university/organization, memory quote, and LinkedIn/profile link.',
+                'type'  => 'alumni_cards',
+                'fields' => []
+            ],
+            [
+                'title' => 'Section 3: Reconnect & Join Network CTA Banner',
+                'icon'  => 'campaign',
+                'desc'  => 'Bottom banner encouraging past students to get in touch, submit profiles, or connect on WhatsApp.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_title',
+                        'label' => 'CTA Heading',
+                        'type' => 'text',
+                        'default' => 'Are You a Sun Rise Alumnus?',
+                        'help' => 'Title of the bottom call to action banner.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_desc',
+                        'label' => 'CTA Description',
+                        'type' => 'text',
+                        'default' => 'Join our official alumni network to mentor graduating batches, attend annual reunions, and share your inspiring career milestones with your alma mater.',
+                        'help' => 'Description text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn1_text',
+                        'label' => 'CTA Button Text',
+                        'type' => 'text',
+                        'default' => 'Submit Alumni Profile',
+                        'help' => 'Button text.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'cta_btn1_url',
+                        'label' => 'CTA Button URL',
+                        'type' => 'text',
+                        'default' => 'contact-us.php',
+                        'help' => 'Button link target.'
+                    ]
+                ]
+            ]
+        ]
+    ],
     'contact' => [
         'title' => 'Contact Us',
         'icon'  => 'contact_support',
@@ -8907,11 +8856,20 @@ $current_page_data = $pages_config[$active_tab];
                 $quill_editors = [];
                 $field_counter = 0;
                 foreach ($current_page_data['sections'] as $sec_idx => $sec): 
-                    $is_gal_cat = (!empty($sec['type']) && $sec['type'] === 'gallery_category');
+                    $is_gal_cat    = (!empty($sec['type']) && $sec['type'] === 'gallery_category');
+                    $is_event_news = (!empty($sec['type']) && $sec['type'] === 'event_news_cards');
+                    $is_alumni     = (!empty($sec['type']) && $sec['type'] === 'alumni_cards');
+
                     if ($is_gal_cat) {
                         $cat_key   = $sec['cat_key'];
                         $cat_cards = get_gallery_category_cards($cat_key, true);
                         $cat_slots = get_gallery_category_slots($cat_key);
+                    } elseif ($is_event_news) {
+                        $event_cards = get_event_news_cards(true);
+                        $event_slots = get_event_news_slots();
+                    } elseif ($is_alumni) {
+                        $alumni_cards_admin = get_alumni_cards(true);
+                        $alumni_slots_admin = get_alumni_slots();
                     }
                 ?>
                     <div class="bg-white rounded-2xl border border-gray-200/80 shadow-sm overflow-hidden" id="sec_<?= $sec_idx ?>">
@@ -8944,6 +8902,34 @@ $current_page_data = $pages_config[$active_tab];
                                     >
                                         <span class="material-symbols-outlined text-[#C9A24B] text-base">add_circle</span>
                                         <span>+ Add Card</span>
+                                    </button>
+                                </div>
+                            <?php elseif ($is_event_news): ?>
+                                <div class="flex items-center gap-2.5">
+                                    <span id="event_news_count_badge" class="text-xs font-semibold px-2.5 py-1 rounded-md bg-gray-100 text-gray-600">
+                                        <?= count($event_cards) ?> Card(s)
+                                    </span>
+                                    <button 
+                                        type="button" 
+                                        onclick="addEventNewsCard()"
+                                        class="px-3.5 py-2 bg-[#001129] hover:bg-[#071f45] text-white text-xs font-bold rounded-xl shadow-sm hover:shadow transition flex items-center gap-1.5 cursor-pointer"
+                                    >
+                                        <span class="material-symbols-outlined text-[#C9A24B] text-base">add_circle</span>
+                                        <span>+ Add Event Card</span>
+                                    </button>
+                                </div>
+                            <?php elseif ($is_alumni): ?>
+                                <div class="flex items-center gap-2.5">
+                                    <span id="alumni_count_badge" class="text-xs font-semibold px-2.5 py-1 rounded-md bg-gray-100 text-gray-600">
+                                        <?= count($alumni_cards_admin) ?> Card(s)
+                                    </span>
+                                    <button 
+                                        type="button" 
+                                        onclick="addAlumniCard()"
+                                        class="px-3.5 py-2 bg-[#001129] hover:bg-[#071f45] text-white text-xs font-bold rounded-xl shadow-sm hover:shadow transition flex items-center gap-1.5 cursor-pointer"
+                                    >
+                                        <span class="material-symbols-outlined text-[#C9A24B] text-base">add_circle</span>
+                                        <span>+ Add Alumni Card</span>
                                     </button>
                                 </div>
                             <?php else: ?>
@@ -9079,6 +9065,451 @@ $current_page_data = $pages_config[$active_tab];
                                         </div>
                                         <span class="font-bold text-sm">Add New Card</span>
                                         <span class="text-xs text-gray-400 text-center">Click + to add a new photo &amp; heading in <?= htmlspecialchars($sec['title']) ?></span>
+                                    </button>
+                                </div>
+                            </div>
+                        <?php elseif ($is_event_news): ?>
+                            <!-- Event News Dynamic Cards Grid -->
+                            <div class="p-6 space-y-6" data-event-news-section="1" data-event-slots="<?= htmlspecialchars(implode(',', $event_slots)) ?>">
+                                <!-- Section Top Header Text (Eyebrow & Heading) -->
+                                <div class="p-4 rounded-xl bg-gray-50 border border-gray-200/80 space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-bold text-gray-700 mb-1">Section Eyebrow Tag</label>
+                                            <input type="text" id="ev_news_eyebrow" value="<?= htmlspecialchars(get_text('events', 'news_eyebrow', 'Happenings & Notices')) ?>" onchange="saveQuickField('events', 'news_eyebrow', this.value)" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs" />
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-gray-700 mb-1">Section Main Heading</label>
+                                            <input type="text" id="ev_news_heading" value="<?= htmlspecialchars(get_text('events', 'news_heading', 'School News & Key Highlights')) ?>" onchange="saveQuickField('events', 'news_heading', this.value)" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs font-semibold" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div id="event_news_grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    <?php foreach ($event_cards as $c_num => $card): 
+                                        $slot = $card['slot'];
+                                        $preview_url = !empty($card['img']) ? get_admin_img_preview($card['img']) : '../assets/images/logo.svg';
+                                        $img_preview_id = "event_news_prv_{$slot}";
+                                    ?>
+                                        <div class="event-news-admin-card rounded-2xl border border-gray-200 bg-gray-50/40 p-5 shadow-sm hover:border-[#C9A24B]/60 transition flex flex-col justify-between" data-slot="<?= (int)$slot ?>">
+                                            <form method="POST" action="?tab=events" onsubmit="return handleEventNewsCardSubmit(event, this)" class="event-card-unified-form space-y-4" data-slot="<?= (int)$slot ?>" data-preview-id="<?= htmlspecialchars($img_preview_id) ?>">
+                                                <!-- Card Top Bar -->
+                                                <div class="flex items-center justify-between border-b border-gray-200/80 pb-3">
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="w-6 h-6 rounded-full bg-[#001129] text-[#C9A24B] text-xs font-bold flex items-center justify-center card-seq-num"><?= $c_num + 1 ?></span>
+                                                        <span class="font-bold text-gray-800 text-sm">Event / News Card</span>
+                                                    </div>
+                                                    <button 
+                                                        type="button" 
+                                                        onclick="removeEventNewsCard(<?= (int)$slot ?>, this)"
+                                                        class="text-xs text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-2.5 py-1 rounded-lg font-semibold flex items-center gap-1 transition cursor-pointer"
+                                                        title="Remove this card"
+                                                    >
+                                                        <span class="material-symbols-outlined text-sm">delete</span>
+                                                        <span>Remove</span>
+                                                    </button>
+                                                </div>
+
+                                                <!-- 1. Image Preview & Upload -->
+                                                <div class="space-y-3">
+                                                    <div class="relative group rounded-xl overflow-hidden border border-gray-200 bg-gray-100 shadow-sm aspect-video flex items-center justify-center">
+                                                        <img 
+                                                            id="<?= htmlspecialchars($img_preview_id) ?>" 
+                                                            src="<?= htmlspecialchars($preview_url) ?>" 
+                                                            alt="<?= htmlspecialchars($card['title']) ?>"
+                                                            class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                                                            onerror="this.onerror=null; this.src='../assets/images/logo.svg';"
+                                                        />
+                                                        <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/75 text-white text-[10px] font-medium backdrop-blur-sm flex items-center gap-1">
+                                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                                                            Event Photo
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="block text-xs font-semibold text-gray-700 mb-1">
+                                                            Upload Photo (Auto-converted to WEBP &bull; Max 2.5MB)
+                                                        </label>
+                                                        <input 
+                                                            type="file" 
+                                                            name="image_file" 
+                                                            accept="image/jpeg,image/png,image/webp"
+                                                            onchange="previewImage(this, '<?= htmlspecialchars($img_preview_id) ?>')"
+                                                            class="block w-full text-xs text-gray-500 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-[#001129] file:text-white hover:file:bg-[#071f45] file:cursor-pointer cursor-pointer border border-gray-300 rounded-xl bg-white"
+                                                        />
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="block text-[11px] font-semibold text-gray-500 mb-1">
+                                                            Or Select School Image / Custom Path:
+                                                        </label>
+                                                        <div class="flex flex-col sm:flex-row gap-2">
+                                                            <select 
+                                                                onchange="if(this.value){ const inp = this.form.elements['custom_path']; inp.value = 'assets/images/sunrise school image/' + this.value; const prv = document.getElementById('<?= htmlspecialchars($img_preview_id) ?>'); if(prv){ prv.src = '../assets/images/sunrise%20school%20image/' + encodeURIComponent(this.value); } }" 
+                                                                class="sm:w-1/2 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-xs text-gray-700 focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                                            >
+                                                                <option value="">-- Choose School Photo --</option>
+                                                                <?php foreach ($available_school_images as $img_file): ?>
+                                                                    <option value="<?= htmlspecialchars($img_file) ?>" <?= (strpos($card['img'], $img_file) !== false) ? 'selected' : '' ?>>
+                                                                        <?= htmlspecialchars($img_file) ?>
+                                                                    </option>
+                                                                <?php endforeach; ?>
+                                                            </select>
+                                                            <input 
+                                                                type="text" 
+                                                                name="custom_path" 
+                                                                placeholder="assets/images/... or https://..."
+                                                                value="<?= (strpos($card['img'], 'uploads/') === false) ? htmlspecialchars(rawurldecode($card['img'])) : '' ?>"
+                                                                onchange="if(this.value){ const prv = document.getElementById('<?= htmlspecialchars($img_preview_id) ?>'); if(prv){ prv.src = (this.value.startsWith('http') ? this.value : '../' + this.value); } }"
+                                                                class="flex-1 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-gray-800 text-xs focus:ring-2 focus:ring-[#C9A24B] outline-none font-mono"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 2. Date, Tag & Filter Category -->
+                                                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                                                    <div>
+                                                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                                            <span class="material-symbols-outlined text-[#C9A24B] text-sm">calendar_month</span>
+                                                            <span>Date (Day &amp; Month)</span>
+                                                        </label>
+                                                        <input 
+                                                            type="text" 
+                                                            name="card_date" 
+                                                            value="<?= htmlspecialchars($card['date']) ?>"
+                                                            placeholder="e.g. 24 OCT"
+                                                            class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-semibold focus:ring-2 focus:ring-[#C9A24B] outline-none uppercase"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                                            <span class="material-symbols-outlined text-[#C9A24B] text-sm">label</span>
+                                                            <span>Tag on Image</span>
+                                                        </label>
+                                                        <input 
+                                                            type="text" 
+                                                            name="card_tag" 
+                                                            value="<?= htmlspecialchars($card['tag']) ?>"
+                                                            placeholder="e.g. Science Fair, Honors"
+                                                            class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                                            <span class="material-symbols-outlined text-[#C9A24B] text-sm">filter_list</span>
+                                                            <span>Filter Category</span>
+                                                        </label>
+                                                        <select 
+                                                            name="card_category"
+                                                            class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none cursor-pointer"
+                                                        >
+                                                            <option value="academic" <?= ($card['category'] === 'academic') ? 'selected' : '' ?>>Academic</option>
+                                                            <option value="cultural" <?= ($card['category'] === 'cultural') ? 'selected' : '' ?>>Celebrations</option>
+                                                            <option value="campus" <?= ($card['category'] === 'campus') ? 'selected' : '' ?>>Campus</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 3. Headline & Description -->
+                                                <div class="space-y-3">
+                                                    <div>
+                                                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1.5">
+                                                            <span class="material-symbols-outlined text-[#C9A24B] text-base">title</span>
+                                                            <span>Headline / Title</span>
+                                                        </label>
+                                                        <input 
+                                                            type="text" 
+                                                            name="card_title" 
+                                                            value="<?= htmlspecialchars($card['title']) ?>"
+                                                            placeholder="Enter event / news title..."
+                                                            class="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-xl text-gray-900 text-sm font-medium focus:ring-2 focus:ring-[#C9A24B] focus:border-[#C9A24B] outline-none"
+                                                        />
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1.5">
+                                                            <span class="material-symbols-outlined text-[#C9A24B] text-base">notes</span>
+                                                            <span>Short Description / Summary</span>
+                                                        </label>
+                                                        <textarea 
+                                                            name="card_desc" 
+                                                            rows="2"
+                                                            placeholder="Enter brief summary of the event..."
+                                                            class="w-full p-3 bg-white border border-gray-300 rounded-xl text-gray-900 text-xs focus:ring-2 focus:ring-[#C9A24B] focus:border-[#C9A24B] outline-none resize-none leading-relaxed"
+                                                        ><?= htmlspecialchars($card['desc']) ?></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 4. Read More Link -->
+                                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                                    <div>
+                                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Button Text</label>
+                                                        <input 
+                                                            type="text" 
+                                                            name="card_link_text" 
+                                                            value="<?= htmlspecialchars($card['link_text']) ?>"
+                                                            placeholder="Read More"
+                                                            class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-xs font-semibold text-gray-700 mb-1">Target Page URL</label>
+                                                        <input 
+                                                            type="text" 
+                                                            name="card_link_url" 
+                                                            value="<?= htmlspecialchars($card['link_url']) ?>"
+                                                            placeholder="gallery.php / about-us.php"
+                                                            class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-mono"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <!-- Save Button -->
+                                                <div class="pt-1">
+                                                    <button 
+                                                        type="submit" 
+                                                        class="submit-btn w-full py-2.5 px-4 bg-[#C9A24B] hover:bg-[#B38C37] text-[#001129] font-bold text-xs rounded-xl shadow-sm hover:shadow transition flex items-center justify-center gap-1.5 cursor-pointer"
+                                                    >
+                                                        <span class="btn-icon material-symbols-outlined text-base">save</span>
+                                                        <span class="btn-text">Save Event Card</span>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    <?php endforeach; ?>
+
+                                    <!-- Add New Card Tile (+) -->
+                                    <button 
+                                        type="button" 
+                                        id="add_tile_event_news"
+                                        onclick="addEventNewsCard()"
+                                        class="min-h-[300px] rounded-2xl border-2 border-dashed border-gray-300 hover:border-[#C9A24B] bg-gray-50/40 hover:bg-[#C9A24B]/5 transition flex flex-col items-center justify-center gap-2.5 p-6 text-gray-500 hover:text-[#001129] group cursor-pointer"
+                                    >
+                                        <div class="w-12 h-12 rounded-full bg-white border border-gray-200 group-hover:border-[#C9A24B] group-hover:bg-[#001129] group-hover:text-[#C9A24B] flex items-center justify-center shadow-sm transition">
+                                            <span class="material-symbols-outlined text-2xl">add</span>
+                                        </div>
+                                        <span class="font-bold text-sm">Add New Event / News Card</span>
+                                        <span class="text-xs text-gray-400 text-center">Click + to add a new event card with photo, date, tag &amp; summary</span>
+                                    </button>
+                                </div>
+                            </div>
+                        <?php elseif ($is_alumni): ?>
+                            <!-- Alumni Dynamic Profile Cards Grid -->
+                            <div class="p-6 space-y-6" data-alumni-section="1" data-alumni-slots="<?= htmlspecialchars(implode(',', $alumni_slots_admin)) ?>">
+                                <!-- Section Top Header Text (Eyebrow, Heading & Desc) -->
+                                <div class="p-4 rounded-xl bg-gray-50 border border-gray-200/80 space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <div>
+                                            <label class="block text-xs font-bold text-gray-700 mb-1">Section Eyebrow Tag</label>
+                                            <input type="text" id="al_cards_eyebrow" value="<?= htmlspecialchars(get_text('alumni', 'cards_eyebrow', 'Distinguished Ex-Students')) ?>" onchange="saveQuickField('alumni', 'cards_eyebrow', this.value)" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs" />
+                                        </div>
+                                        <div>
+                                            <label class="block text-xs font-bold text-gray-700 mb-1">Section Main Heading</label>
+                                            <input type="text" id="al_cards_heading" value="<?= htmlspecialchars(get_text('alumni', 'cards_heading', 'Inspiring Journeys & Success Stories')) ?>" onchange="saveQuickField('alumni', 'cards_heading', this.value)" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs font-semibold" />
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-bold text-gray-700 mb-1">Section Description</label>
+                                        <input type="text" id="al_cards_desc" value="<?= htmlspecialchars(get_text('alumni', 'cards_desc', 'Our alumni continue to make notable strides across industries and institutions. Discover their career milestones and fond memories from their formative years at Sun Rise.')) ?>" onchange="saveQuickField('alumni', 'cards_desc', this.value)" class="w-full px-3 py-2 bg-white border border-gray-300 rounded-lg text-xs" />
+                                    </div>
+                                </div>
+
+                                <div id="alumni_cards_grid" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    <?php foreach ($alumni_cards_admin as $c_num => $card): 
+                                        $slot = $card['slot'];
+                                        $preview_url = !empty($card['photo']) ? get_admin_img_preview($card['photo']) : '../assets/images/logo.svg';
+                                        $img_preview_id = "alumni_prv_{$slot}";
+                                    ?>
+                                        <div class="alumni-admin-card rounded-2xl border border-gray-200 bg-gray-50/40 p-5 shadow-sm hover:border-[#C9A24B]/60 transition flex flex-col justify-between" data-slot="<?= (int)$slot ?>">
+                                            <form method="POST" action="?tab=alumni" onsubmit="return handleAlumniCardSubmit(event, this)" class="alumni-card-unified-form space-y-4" data-slot="<?= (int)$slot ?>" data-preview-id="<?= htmlspecialchars($img_preview_id) ?>">
+                                                <!-- Card Top Bar -->
+                                                <div class="flex items-center justify-between border-b border-gray-200/80 pb-3">
+                                                    <div class="flex items-center gap-2">
+                                                        <span class="w-6 h-6 rounded-full bg-[#001129] text-[#C9A24B] text-xs font-bold flex items-center justify-center card-seq-num"><?= $c_num + 1 ?></span>
+                                                        <span class="font-bold text-gray-800 text-sm">Alumni Card</span>
+                                                    </div>
+                                                    <button 
+                                                        type="button" 
+                                                        onclick="removeAlumniCard(<?= (int)$slot ?>, this)"
+                                                        class="text-xs text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-2.5 py-1 rounded-lg font-semibold flex items-center gap-1 transition cursor-pointer"
+                                                        title="Remove this alumni card"
+                                                    >
+                                                        <span class="material-symbols-outlined text-sm">delete</span>
+                                                        <span>Remove</span>
+                                                    </button>
+                                                </div>
+
+                                                <!-- 1. Photo Preview & Upload -->
+                                                <div class="space-y-3">
+                                                    <div class="flex items-center gap-4">
+                                                        <div class="relative group rounded-full overflow-hidden border-2 border-[#C9A24B] bg-gray-100 shadow-sm w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 flex items-center justify-center">
+                                                            <img 
+                                                                id="<?= htmlspecialchars($img_preview_id) ?>" 
+                                                                src="<?= htmlspecialchars($preview_url) ?>" 
+                                                                alt="<?= htmlspecialchars($card['name']) ?>" 
+                                                                class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                                                                onerror="this.onerror=null; this.src='../assets/images/logo.svg';"
+                                                            />
+                                                        </div>
+                                                        <div class="flex-1 space-y-1.5">
+                                                            <label class="block text-xs font-semibold text-gray-700">
+                                                                Upload Alumni Photo (WEBP / JPG &bull; Max 2.5MB)
+                                                            </label>
+                                                            <input 
+                                                                type="file" 
+                                                                name="image_file" 
+                                                                accept="image/jpeg,image/png,image/webp"
+                                                                onchange="previewImage(this, '<?= htmlspecialchars($img_preview_id) ?>')"
+                                                                class="block w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-[#001129] file:text-white hover:file:bg-[#071f45] file:cursor-pointer cursor-pointer border border-gray-300 rounded-xl bg-white"
+                                                            />
+                                                        </div>
+                                                    </div>
+
+                                                    <div>
+                                                        <label class="block text-[11px] font-semibold text-gray-500 mb-1">
+                                                            Or Select School Photo / Custom Path:
+                                                        </label>
+                                                        <div class="flex flex-col sm:flex-row gap-2">
+                                                            <select 
+                                                                onchange="if(this.value){ const inp = this.form.elements['custom_path']; inp.value = 'assets/images/sunrise school image/' + this.value; const prv = document.getElementById('<?= htmlspecialchars($img_preview_id) ?>'); if(prv){ prv.src = '../assets/images/sunrise%20school%20image/' + encodeURIComponent(this.value); } }" 
+                                                                class="sm:w-1/2 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-xs text-gray-700 focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                                            >
+                                                                <option value="">-- Choose School Photo --</option>
+                                                                <?php foreach ($available_school_images as $img_file): ?>
+                                                                    <option value="<?= htmlspecialchars($img_file) ?>" <?= (strpos($card['photo'], $img_file) !== false) ? 'selected' : '' ?>>
+                                                                        <?= htmlspecialchars($img_file) ?>
+                                                                    </option>
+                                                                <?php endforeach; ?>
+                                                            </select>
+                                                            <input 
+                                                                type="text" 
+                                                                name="custom_path" 
+                                                                placeholder="assets/images/... or https://..."
+                                                                value="<?= (strpos($card['photo'], 'uploads/') === false) ? htmlspecialchars(rawurldecode($card['photo'])) : '' ?>"
+                                                                onchange="if(this.value){ const prv = document.getElementById('<?= htmlspecialchars($img_preview_id) ?>'); if(prv){ prv.src = (this.value.startsWith('http') ? this.value : '../' + this.value); } }"
+                                                                class="flex-1 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-gray-800 text-xs focus:ring-2 focus:ring-[#C9A24B] outline-none font-mono"
+                                                            />
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- 2. Name & Passing Batch -->
+                                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                                    <div>
+                                                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                                            <span class="material-symbols-outlined text-[#C9A24B] text-sm">person</span>
+                                                            <span>Alumnus Full Name</span>
+                                                        </label>
+                                                        <input 
+                                                            type="text" 
+                                                            name="card_name" 
+                                                            value="<?= htmlspecialchars($card['name']) ?>"
+                                                            placeholder="e.g. Pooja Sharma"
+                                                            class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-semibold focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                                            required
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                                            <span class="material-symbols-outlined text-[#C9A24B] text-sm">school</span>
+                                                            <span>Passing Year / Batch</span>
+                                                        </label>
+                                                        <input 
+                                                            type="text" 
+                                                            name="card_batch" 
+                                                            value="<?= htmlspecialchars($card['batch']) ?>"
+                                                            placeholder="e.g. Batch of 2017"
+                                                            class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <!-- 3. Current Role & University / Company -->
+                                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                                    <div>
+                                                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                                            <span class="material-symbols-outlined text-[#C9A24B] text-sm">work</span>
+                                                            <span>Current Role / Profession</span>
+                                                        </label>
+                                                        <input 
+                                                            type="text" 
+                                                            name="card_role" 
+                                                            value="<?= htmlspecialchars($card['role']) ?>"
+                                                            placeholder="e.g. Software Engineer, Doctor, Captain"
+                                                            class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                                        />
+                                                    </div>
+                                                    <div>
+                                                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                                            <span class="material-symbols-outlined text-[#C9A24B] text-sm">account_balance</span>
+                                                            <span>Organization / University</span>
+                                                        </label>
+                                                        <input 
+                                                            type="text" 
+                                                            name="card_org" 
+                                                            value="<?= htmlspecialchars($card['org']) ?>"
+                                                            placeholder="e.g. Microsoft India, AIIMS, IIT Delhi"
+                                                            class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                <!-- 4. Memory Quote / Story -->
+                                                <div>
+                                                    <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1.5">
+                                                        <span class="material-symbols-outlined text-[#C9A24B] text-base">format_quote</span>
+                                                        <span>Alumni Quote / Message</span>
+                                                    </label>
+                                                    <textarea 
+                                                        name="card_quote" 
+                                                        rows="2"
+                                                        placeholder="Enter short tribute or memory about Sun Rise School..."
+                                                        class="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-xl text-gray-900 text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] focus:border-[#C9A24B] outline-none"
+                                                    ><?= htmlspecialchars($card['quote']) ?></textarea>
+                                                </div>
+
+                                                <!-- 5. Profile Link / LinkedIn -->
+                                                <div>
+                                                    <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1.5">
+                                                        <span class="material-symbols-outlined text-[#C9A24B] text-base">link</span>
+                                                        <span>LinkedIn / Social / Profile URL</span>
+                                                    </label>
+                                                    <input 
+                                                        type="text" 
+                                                        name="card_link" 
+                                                        value="<?= htmlspecialchars($card['link']) ?>"
+                                                        placeholder="https://linkedin.com/in/... (optional)"
+                                                        class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-mono text-gray-700 focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                                    />
+                                                </div>
+
+                                                <!-- Save Button -->
+                                                <div class="pt-1">
+                                                    <button 
+                                                        type="submit" 
+                                                        class="submit-btn w-full py-2.5 px-4 bg-[#C9A24B] hover:bg-[#B38C37] text-[#001129] font-bold text-xs rounded-xl shadow-sm hover:shadow transition flex items-center justify-center gap-1.5 cursor-pointer"
+                                                    >
+                                                        <span class="btn-icon material-symbols-outlined text-base">save</span>
+                                                        <span class="btn-text">Save Alumni Card</span>
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    <?php endforeach; ?>
+
+                                    <!-- Add New Alumni Card Tile (+) -->
+                                    <button 
+                                        type="button" 
+                                        id="add_tile_alumni"
+                                        onclick="addAlumniCard()"
+                                        class="min-h-[260px] rounded-2xl border-2 border-dashed border-gray-300 hover:border-[#C9A24B] bg-gray-50/40 hover:bg-[#C9A24B]/5 transition flex flex-col items-center justify-center gap-2.5 p-6 text-gray-500 hover:text-[#001129] group cursor-pointer"
+                                    >
+                                        <div class="w-12 h-12 rounded-full bg-white border border-gray-200 group-hover:border-[#C9A24B] group-hover:bg-[#001129] group-hover:text-[#C9A24B] flex items-center justify-center shadow-sm transition">
+                                            <span class="material-symbols-outlined text-2xl">add</span>
+                                        </div>
+                                        <span class="font-bold text-sm">Add New Alumni Card</span>
+                                        <span class="text-xs text-gray-400 text-center">Click + to add a new alumni profile to the directory</span>
                                     </button>
                                 </div>
                             </div>
@@ -9730,13 +10161,857 @@ $current_page_data = $pages_config[$active_tab];
             showToast('Card removed from category.', 'success');
         }
 
+        // Helper: Quick save single text field (e.g. section eyebrow or heading)
+        async function saveQuickField(pageKey, sectionKey, val) {
+            const fd = new FormData();
+            fd.append('csrf_token', ADMIN_CSRF_TOKEN);
+            fd.append('page_key', pageKey);
+            fd.append('section_key', sectionKey);
+            fd.append('content_type', 'text');
+            fd.append('content_value', val);
+            fd.append('ajax', '1');
+
+            try {
+                const res = await fetch('save_content.php', {
+                    method: 'POST',
+                    body: fd,
+                    headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                });
+                const data = await res.json();
+                if (data.success) {
+                    showToast('Section heading updated!', 'success');
+                }
+            } catch (err) {
+                console.error(err);
+            }
+        }
+
+        // Helper: Persist active slots list for Event News Cards
+        async function saveEventNewsSlotsList(slotsArray) {
+            const val = slotsArray.length > 0 ? slotsArray.join(',') : 'NONE';
+            const fd = new FormData();
+            fd.append('csrf_token', ADMIN_CSRF_TOKEN);
+            fd.append('page_key', 'events');
+            fd.append('section_key', 'event_news_slots');
+            fd.append('content_type', 'text');
+            fd.append('content_value', val);
+            fd.append('ajax', '1');
+
+            await fetch('save_content.php', {
+                method: 'POST',
+                body: fd,
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            });
+        }
+
+        // Helper: Renumber visible Event Cards & update badge count
+        function refreshEventNewsCardNumbers() {
+            const grid = document.getElementById('event_news_grid');
+            if (!grid) return;
+            const cards = grid.querySelectorAll('.event-news-admin-card');
+            cards.forEach((card, idx) => {
+                const numBadge = card.querySelector('.card-seq-num');
+                if (numBadge) numBadge.textContent = idx + 1;
+            });
+            const badge = document.getElementById('event_news_count_badge');
+            if (badge) {
+                badge.textContent = `${cards.length} Card(s)`;
+            }
+        }
+
+        // Unified submit handler for an Event News Card form (Zero reload)
+        async function handleEventNewsCardSubmit(e, form) {
+            if (e) e.preventDefault();
+            if (!form) return false;
+
+            const slot        = parseInt(form.getAttribute('data-slot'), 10);
+            const previewId   = form.getAttribute('data-preview-id');
+            const cardDate    = (form.elements['card_date'] ? form.elements['card_date'].value : '').trim();
+            const cardTag     = (form.elements['card_tag'] ? form.elements['card_tag'].value : '').trim();
+            const cardCategory= (form.elements['card_category'] ? form.elements['card_category'].value : 'academic').trim();
+            const cardTitle   = (form.elements['card_title'] ? form.elements['card_title'].value : '').trim();
+            const cardDesc    = (form.elements['card_desc'] ? form.elements['card_desc'].value : '').trim();
+            const cardLinkText= (form.elements['card_link_text'] ? form.elements['card_link_text'].value : 'Read More').trim();
+            const cardLinkUrl = (form.elements['card_link_url'] ? form.elements['card_link_url'].value : 'gallery.php').trim();
+            const fileInput   = form.elements['image_file'];
+            const customInp   = form.elements['custom_path'];
+            const hasFile     = fileInput && fileInput.files && fileInput.files.length > 0;
+            const hasCustom   = customInp && customInp.value.trim() !== '';
+
+            if (hasFile && fileInput.files[0].size > MAX_IMAGE_BYTES) {
+                showToast("Selected file is larger than 2.5MB. Please choose an image up to 2.5MB.", "error");
+                return false;
+            }
+
+            const btn     = form.querySelector('.submit-btn');
+            const btnIcon = btn ? btn.querySelector('.btn-icon') : null;
+            const btnText = btn ? btn.querySelector('.btn-text') : null;
+
+            if (btn) btn.disabled = true;
+            if (btnText) btnText.textContent = 'Saving Card...';
+            if (btnIcon) {
+                btnIcon.textContent = 'progress_activity';
+                btnIcon.classList.add('animate-spin');
+            }
+
+            try {
+                // 1. Ensure slot is in event_news_slots list
+                const secWrap = document.querySelector('[data-event-news-section="1"]');
+                if (secWrap) {
+                    const rawSlots = secWrap.getAttribute('data-event-slots') || '';
+                    const slots = rawSlots ? rawSlots.split(',').map(n => parseInt(n, 10)).filter(n => n > 0) : [];
+                    if (!slots.includes(slot)) {
+                        slots.push(slot);
+                        secWrap.setAttribute('data-event-slots', slots.join(','));
+                    }
+                    await saveEventNewsSlotsList(slots);
+                }
+
+                // 2. Save text fields
+                const fieldsToSave = [
+                    { key: `news${slot}_date`, val: cardDate },
+                    { key: `news${slot}_tag`, val: cardTag },
+                    { key: `news${slot}_cat`, val: cardCategory },
+                    { key: `news${slot}_title`, val: cardTitle },
+                    { key: `news${slot}_desc`, val: cardDesc },
+                    { key: `news${slot}_link_text`, val: cardLinkText },
+                    { key: `news${slot}_link_url`, val: cardLinkUrl }
+                ];
+
+                for (const item of fieldsToSave) {
+                    const textFd = new FormData();
+                    textFd.append('csrf_token', ADMIN_CSRF_TOKEN);
+                    textFd.append('page_key', 'events');
+                    textFd.append('section_key', item.key);
+                    textFd.append('content_type', 'text');
+                    textFd.append('content_value', item.val);
+                    textFd.append('ajax', '1');
+
+                    await fetch('save_content.php', {
+                        method: 'POST',
+                        body: textFd,
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+                }
+
+                // 3. Save Image if uploaded or selected
+                if (hasFile || hasCustom) {
+                    const imgFd = new FormData();
+                    imgFd.append('csrf_token', ADMIN_CSRF_TOKEN);
+                    imgFd.append('page_key', 'events');
+                    imgFd.append('image_key', `news${slot}_img`);
+                    imgFd.append('alt_text', cardTitle || 'Event Highlight Photo');
+                    imgFd.append('ajax', '1');
+                    if (hasFile) {
+                        const webpFile = await convertImageFileToWebp(fileInput.files[0]);
+                        imgFd.append('image_file', webpFile);
+                    } else if (hasCustom) {
+                        imgFd.append('custom_path', customInp.value.trim());
+                    }
+
+                    const imgRes = await fetch('upload_image.php', {
+                        method: 'POST',
+                        body: imgFd,
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+                    const imgJson = await imgRes.json();
+                    if (!imgJson.success) {
+                        throw new Error(imgJson.message || 'Failed to save event photo.');
+                    }
+                    if (imgJson.preview_url && previewId) {
+                        const prv = document.getElementById(previewId);
+                        if (prv) prv.src = imgJson.preview_url;
+                    }
+                    if (hasFile) {
+                        fileInput.value = '';
+                        if (customInp) customInp.value = '';
+                    }
+                }
+
+                showToast('Event card saved successfully!', 'success');
+
+                if (btn) {
+                    btn.classList.remove('bg-[#C9A24B]', 'hover:bg-[#B38C37]', 'text-[#001129]');
+                    btn.classList.add('!bg-emerald-700', '!text-white');
+                }
+                if (btnIcon) {
+                    btnIcon.classList.remove('animate-spin');
+                    btnIcon.textContent = 'check';
+                }
+                if (btnText) btnText.textContent = 'Card Saved!';
+
+                setTimeout(() => {
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.classList.remove('!bg-emerald-700', '!text-white');
+                        btn.classList.add('bg-[#C9A24B]', 'hover:bg-[#B38C37]', 'text-[#001129]');
+                    }
+                    if (btnIcon) btnIcon.textContent = 'save';
+                    if (btnText) btnText.textContent = 'Save Event Card';
+                }, 2000);
+            } catch (err) {
+                showToast(err.message || 'Error saving event card.', 'error');
+                if (btn) btn.disabled = false;
+                if (btnIcon) {
+                    btnIcon.classList.remove('animate-spin');
+                    btnIcon.textContent = 'save';
+                }
+                if (btnText) btnText.textContent = 'Save Event Card';
+            }
+            return false;
+        }
+
+        // Bind handler to an Event News Card form
+        function bindEventNewsCardForm(form) {
+            if (!form || form.getAttribute('data-bound') === '1') return;
+            form.setAttribute('data-bound', '1');
+            form.onsubmit = (e) => handleEventNewsCardSubmit(e, form);
+        }
+
+        // Add a new dynamic Event News Card
+        async function addEventNewsCard() {
+            const secWrap = document.querySelector('[data-event-news-section="1"]');
+            const grid    = document.getElementById('event_news_grid');
+            const addTile = document.getElementById('add_tile_event_news');
+            if (!secWrap || !grid || !addTile) return;
+
+            const rawSlots = secWrap.getAttribute('data-event-slots') || '';
+            const slots = rawSlots ? rawSlots.split(',').map(n => parseInt(n, 10)).filter(n => n > 0) : [];
+            const nextSlot = slots.length > 0 ? (Math.max(...slots) + 1) : 1;
+            slots.push(nextSlot);
+            secWrap.setAttribute('data-event-slots', slots.join(','));
+
+            const previewId = `event_news_prv_${nextSlot}`;
+            const optionsHtml = AVAILABLE_SCHOOL_IMAGES.map(img => 
+                `<option value="${img.replace(/"/g, '&quot;')}">${img}</option>`
+            ).join('');
+
+            const cardEl = document.createElement('div');
+            cardEl.className = 'event-news-admin-card rounded-2xl border-2 border-[#C9A24B] bg-amber-50/20 p-5 shadow-md transition flex flex-col justify-between';
+            cardEl.setAttribute('data-slot', nextSlot);
+
+            const now = new Date();
+            const months = ['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV','DEC'];
+            const defaultDate = `${String(now.getDate()).padStart(2, '0')} ${months[now.getMonth()]}`;
+
+            cardEl.innerHTML = `
+                <form method="POST" action="?tab=events" onsubmit="return handleEventNewsCardSubmit(event, this)" class="event-card-unified-form space-y-4" data-slot="${nextSlot}" data-preview-id="${previewId}">
+                    <div class="flex items-center justify-between border-b border-gray-200/80 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-[#001129] text-[#C9A24B] text-xs font-bold flex items-center justify-center card-seq-num">${slots.length}</span>
+                            <span class="font-bold text-gray-800 text-sm">New Event Card</span>
+                            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-800">New</span>
+                        </div>
+                        <button 
+                            type="button" 
+                            onclick="removeEventNewsCard(${nextSlot}, this)"
+                            class="text-xs text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-2.5 py-1 rounded-lg font-semibold flex items-center gap-1 transition cursor-pointer"
+                            title="Remove this card"
+                        >
+                            <span class="material-symbols-outlined text-sm">delete</span>
+                            <span>Remove</span>
+                        </button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="relative group rounded-xl overflow-hidden border border-gray-200 bg-gray-100 shadow-sm aspect-video flex items-center justify-center">
+                            <img 
+                                id="${previewId}" 
+                                src="../assets/images/logo.svg" 
+                                alt="Event Image"
+                                class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                                onerror="this.onerror=null; this.src='../assets/images/logo.svg';"
+                            />
+                            <div class="absolute bottom-2 left-2 px-2 py-0.5 rounded bg-black/75 text-white text-[10px] font-medium backdrop-blur-sm flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                                New Image
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">
+                                Upload Photo (Auto-converted to WEBP &bull; Max 2.5MB)
+                            </label>
+                            <input 
+                                type="file" 
+                                name="image_file" 
+                                accept="image/jpeg,image/png,image/webp"
+                                onchange="previewImage(this, '${previewId}')"
+                                class="block w-full text-xs text-gray-500 file:mr-3 file:py-2 file:px-3.5 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-[#001129] file:text-white hover:file:bg-[#071f45] file:cursor-pointer cursor-pointer border border-gray-300 rounded-xl bg-white"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-500 mb-1">
+                                Or Select School Image / Custom Path:
+                            </label>
+                            <div class="flex flex-col sm:flex-row gap-2">
+                                <select 
+                                    onchange="if(this.value){ const inp = this.form.elements['custom_path']; inp.value = 'assets/images/sunrise school image/' + this.value; const prv = document.getElementById('${previewId}'); if(prv){ prv.src = '../assets/images/sunrise%20school%20image/' + encodeURIComponent(this.value); } }" 
+                                    class="sm:w-1/2 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-xs text-gray-700 focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                >
+                                    <option value="">-- Choose School Photo --</option>
+                                    ${optionsHtml}
+                                </select>
+                                <input 
+                                    type="text" 
+                                    name="custom_path" 
+                                    placeholder="assets/images/... or https://..."
+                                    value=""
+                                    onchange="if(this.value){ const prv = document.getElementById('${previewId}'); if(prv){ prv.src = (this.value.startsWith('http') ? this.value : '../' + this.value); } }"
+                                    class="flex-1 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-gray-800 text-xs focus:ring-2 focus:ring-[#C9A24B] outline-none font-mono"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[#C9A24B] text-sm">calendar_month</span>
+                                <span>Date (Day &amp; Month)</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                name="card_date" 
+                                value="${defaultDate}"
+                                placeholder="e.g. 24 OCT"
+                                class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-semibold focus:ring-2 focus:ring-[#C9A24B] outline-none uppercase"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[#C9A24B] text-sm">label</span>
+                                <span>Tag on Image</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                name="card_tag" 
+                                value="Event"
+                                placeholder="e.g. Science Fair, Honors"
+                                class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[#C9A24B] text-sm">filter_list</span>
+                                <span>Filter Category</span>
+                            </label>
+                            <select 
+                                name="card_category"
+                                class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none cursor-pointer"
+                            >
+                                <option value="academic" selected>Academic</option>
+                                <option value="cultural">Celebrations</option>
+                                <option value="campus">Campus</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[#C9A24B] text-base">title</span>
+                                <span>Headline / Title</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                name="card_title" 
+                                value=""
+                                placeholder="Enter event / news title..."
+                                class="w-full px-3.5 py-2.5 bg-white border border-gray-300 rounded-xl text-gray-900 text-sm font-medium focus:ring-2 focus:ring-[#C9A24B] focus:border-[#C9A24B] outline-none"
+                            />
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1.5">
+                                <span class="material-symbols-outlined text-[#C9A24B] text-base">notes</span>
+                                <span>Short Description / Summary</span>
+                            </label>
+                            <textarea 
+                                name="card_desc" 
+                                rows="2"
+                                placeholder="Enter brief summary of the event..."
+                                class="w-full p-3 bg-white border border-gray-300 rounded-xl text-gray-900 text-xs focus:ring-2 focus:ring-[#C9A24B] focus:border-[#C9A24B] outline-none resize-none leading-relaxed"
+                            ></textarea>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Button Text</label>
+                            <input 
+                                type="text" 
+                                name="card_link_text" 
+                                value="Read More"
+                                placeholder="Read More"
+                                class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-gray-700 mb-1">Target Page URL</label>
+                            <input 
+                                type="text" 
+                                name="card_link_url" 
+                                value="gallery.php"
+                                placeholder="gallery.php / about-us.php"
+                                class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-mono"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="pt-1">
+                        <button 
+                            type="submit" 
+                            class="submit-btn w-full py-2.5 px-4 bg-[#C9A24B] hover:bg-[#B38C37] text-[#001129] font-bold text-xs rounded-xl shadow-sm hover:shadow transition flex items-center justify-center gap-1.5 cursor-pointer"
+                        >
+                            <span class="btn-icon material-symbols-outlined text-base">save</span>
+                            <span class="btn-text">Save Event Card</span>
+                        </button>
+                    </div>
+                </form>
+            `;
+
+            grid.insertBefore(cardEl, addTile);
+            const newForm = cardEl.querySelector('.event-card-unified-form');
+            if (newForm) bindEventNewsCardForm(newForm);
+
+            refreshEventNewsCardNumbers();
+            await saveEventNewsSlotsList(slots);
+
+            cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const titleInp = cardEl.querySelector('input[name="card_title"]');
+            if (titleInp) setTimeout(() => titleInp.focus(), 300);
+            showToast('New event card added! Fill in the details and click Save Event Card.', 'success');
+        }
+
+        // Remove an Event News Card
+        async function removeEventNewsCard(slot, btnEl) {
+            if (!confirm('Are you sure you want to remove this event card?')) return;
+            const secWrap = document.querySelector('[data-event-news-section="1"]');
+            if (!secWrap) return;
+
+            const rawSlots = secWrap.getAttribute('data-event-slots') || '';
+            const slots = rawSlots
+                .split(',')
+                .map(n => parseInt(n, 10))
+                .filter(n => n > 0 && n !== slot);
+
+            secWrap.setAttribute('data-event-slots', slots.join(','));
+            const cardEl = btnEl.closest('.event-news-admin-card');
+            if (cardEl) cardEl.remove();
+
+            refreshEventNewsCardNumbers();
+            await saveEventNewsSlotsList(slots);
+            showToast('Event card removed.', 'success');
+        }
+
+        // ==========================================
+        // ALUMNI DYNAMIC CARDS MANAGER (Zero Reload)
+        // ==========================================
+        async function saveAlumniSlotsList(slotsArray) {
+            const val = slotsArray.length > 0 ? slotsArray.join(',') : 'NONE';
+            const fd = new FormData();
+            fd.append('csrf_token', ADMIN_CSRF_TOKEN);
+            fd.append('page_key', 'alumni');
+            fd.append('section_key', 'alumni_slots');
+            fd.append('content_type', 'text');
+            fd.append('content_value', val);
+            fd.append('ajax', '1');
+
+            await fetch('save_content.php', {
+                method: 'POST',
+                body: fd,
+                headers: { 'X-Requested-With': 'XMLHttpRequest' }
+            });
+        }
+
+        function refreshAlumniCardNumbers() {
+            const cards = document.querySelectorAll('#alumni_cards_grid .alumni-admin-card');
+            cards.forEach((card, idx) => {
+                const seq = card.querySelector('.card-seq-num');
+                if (seq) seq.textContent = idx + 1;
+            });
+            const badge = document.getElementById('alumni_count_badge');
+            if (badge) badge.textContent = `${cards.length} Card(s)`;
+        }
+
+        async function handleAlumniCardSubmit(e, form) {
+            if (e) e.preventDefault();
+            if (!form) return false;
+
+            const slot        = parseInt(form.getAttribute('data-slot'), 10);
+            const previewId   = form.getAttribute('data-preview-id');
+            const cardName    = (form.elements['card_name'] ? form.elements['card_name'].value : '').trim();
+            const cardBatch   = (form.elements['card_batch'] ? form.elements['card_batch'].value : '').trim();
+            const cardRole    = (form.elements['card_role'] ? form.elements['card_role'].value : '').trim();
+            const cardOrg     = (form.elements['card_org'] ? form.elements['card_org'].value : '').trim();
+            const cardQuote   = (form.elements['card_quote'] ? form.elements['card_quote'].value : '').trim();
+            const cardLink    = (form.elements['card_link'] ? form.elements['card_link'].value : '').trim();
+            const fileInput   = form.elements['image_file'];
+            const customInp   = form.elements['custom_path'];
+            const hasFile     = fileInput && fileInput.files && fileInput.files.length > 0;
+            const hasCustom   = customInp && customInp.value.trim() !== '';
+
+            if (!cardName) {
+                showToast("Please provide the alumnus full name.", "error");
+                return false;
+            }
+
+            if (hasFile && fileInput.files[0].size > MAX_IMAGE_BYTES) {
+                showToast("Selected file is larger than 2.5MB. Please choose an image up to 2.5MB.", "error");
+                return false;
+            }
+
+            const btn     = form.querySelector('.submit-btn');
+            const btnIcon = btn ? btn.querySelector('.btn-icon') : null;
+            const btnText = btn ? btn.querySelector('.btn-text') : null;
+
+            if (btn) btn.disabled = true;
+            if (btnText) btnText.textContent = 'Saving Card...';
+            if (btnIcon) {
+                btnIcon.textContent = 'progress_activity';
+                btnIcon.classList.add('animate-spin');
+            }
+
+            try {
+                // 1. Ensure slot is in alumni_slots list
+                const secWrap = document.querySelector('[data-alumni-section="1"]');
+                if (secWrap) {
+                    const rawSlots = secWrap.getAttribute('data-alumni-slots') || '';
+                    const slots = rawSlots ? rawSlots.split(',').map(n => parseInt(n, 10)).filter(n => n > 0) : [];
+                    if (!slots.includes(slot)) {
+                        slots.push(slot);
+                        secWrap.setAttribute('data-alumni-slots', slots.join(','));
+                    }
+                    await saveAlumniSlotsList(slots);
+                }
+
+                // 2. Save text fields
+                const fieldsToSave = [
+                    { key: `alumni_${slot}_name`, val: cardName },
+                    { key: `alumni_${slot}_batch`, val: cardBatch },
+                    { key: `alumni_${slot}_role`, val: cardRole },
+                    { key: `alumni_${slot}_org`, val: cardOrg },
+                    { key: `alumni_${slot}_quote`, val: cardQuote },
+                    { key: `alumni_${slot}_link`, val: cardLink }
+                ];
+
+                for (const item of fieldsToSave) {
+                    const textFd = new FormData();
+                    textFd.append('csrf_token', ADMIN_CSRF_TOKEN);
+                    textFd.append('page_key', 'alumni');
+                    textFd.append('section_key', item.key);
+                    textFd.append('content_type', 'text');
+                    textFd.append('content_value', item.val);
+                    textFd.append('ajax', '1');
+
+                    await fetch('save_content.php', {
+                        method: 'POST',
+                        body: textFd,
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+                }
+
+                // 3. Save Image if uploaded or selected
+                if (hasFile || hasCustom) {
+                    const imgFd = new FormData();
+                    imgFd.append('csrf_token', ADMIN_CSRF_TOKEN);
+                    imgFd.append('page_key', 'alumni');
+                    imgFd.append('image_key', `alumni_${slot}_photo`);
+                    imgFd.append('alt_text', cardName + ' - Sun Rise Alumni');
+                    imgFd.append('ajax', '1');
+                    if (hasFile) {
+                        const webpFile = await convertImageFileToWebp(fileInput.files[0]);
+                        imgFd.append('image_file', webpFile);
+                    } else if (hasCustom) {
+                        imgFd.append('custom_path', customInp.value.trim());
+                    }
+
+                    const imgRes = await fetch('upload_image.php', {
+                        method: 'POST',
+                        body: imgFd,
+                        headers: { 'X-Requested-With': 'XMLHttpRequest' }
+                    });
+                    const imgJson = await imgRes.json();
+                    if (!imgJson.success) {
+                        throw new Error(imgJson.message || 'Failed to save alumni photo.');
+                    }
+                    if (imgJson.preview_url && previewId) {
+                        const prv = document.getElementById(previewId);
+                        if (prv) prv.src = imgJson.preview_url;
+                    }
+                    if (hasFile) {
+                        fileInput.value = '';
+                        if (customInp) customInp.value = '';
+                    }
+                }
+
+                showToast('Alumni card saved successfully!', 'success');
+
+                if (btn) {
+                    btn.classList.remove('bg-[#C9A24B]', 'hover:bg-[#B38C37]', 'text-[#001129]');
+                    btn.classList.add('!bg-emerald-700', '!text-white');
+                }
+                if (btnIcon) {
+                    btnIcon.classList.remove('animate-spin');
+                    btnIcon.textContent = 'check';
+                }
+                if (btnText) btnText.textContent = 'Card Saved!';
+
+                setTimeout(() => {
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.classList.remove('!bg-emerald-700', '!text-white');
+                        btn.classList.add('bg-[#C9A24B]', 'hover:bg-[#B38C37]', 'text-[#001129]');
+                    }
+                    if (btnIcon) btnIcon.textContent = 'save';
+                    if (btnText) btnText.textContent = 'Save Alumni Card';
+                }, 2000);
+            } catch (err) {
+                showToast(err.message || 'Error saving alumni card.', 'error');
+                if (btn) btn.disabled = false;
+                if (btnIcon) {
+                    btnIcon.classList.remove('animate-spin');
+                    btnIcon.textContent = 'save';
+                }
+                if (btnText) btnText.textContent = 'Save Alumni Card';
+            }
+            return false;
+        }
+
+        function bindAlumniCardForm(form) {
+            if (!form || form.getAttribute('data-bound') === '1') return;
+            form.setAttribute('data-bound', '1');
+            form.onsubmit = (e) => handleAlumniCardSubmit(e, form);
+        }
+
+        async function addAlumniCard() {
+            const secWrap = document.querySelector('[data-alumni-section="1"]');
+            const grid    = document.getElementById('alumni_cards_grid');
+            const addTile = document.getElementById('add_tile_alumni');
+            if (!secWrap || !grid || !addTile) return;
+
+            const rawSlots = secWrap.getAttribute('data-alumni-slots') || '';
+            const slots = rawSlots ? rawSlots.split(',').map(n => parseInt(n, 10)).filter(n => n > 0) : [];
+            const nextSlot = slots.length > 0 ? (Math.max(...slots) + 1) : 1;
+            slots.push(nextSlot);
+            secWrap.setAttribute('data-alumni-slots', slots.join(','));
+
+            const previewId = `alumni_prv_${nextSlot}`;
+            const optionsHtml = AVAILABLE_SCHOOL_IMAGES.map(img => 
+                `<option value="${img.replace(/"/g, '&quot;')}">${img}</option>`
+            ).join('');
+
+            const cardEl = document.createElement('div');
+            cardEl.className = 'alumni-admin-card rounded-2xl border-2 border-[#C9A24B] bg-amber-50/20 p-5 shadow-md transition flex flex-col justify-between';
+            cardEl.setAttribute('data-slot', nextSlot);
+
+            cardEl.innerHTML = `
+                <form method="POST" action="?tab=alumni" onsubmit="return handleAlumniCardSubmit(event, this)" class="alumni-card-unified-form space-y-4" data-slot="${nextSlot}" data-preview-id="${previewId}">
+                    <div class="flex items-center justify-between border-b border-gray-200/80 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="w-6 h-6 rounded-full bg-[#001129] text-[#C9A24B] text-xs font-bold flex items-center justify-center card-seq-num">${slots.length}</span>
+                            <span class="font-bold text-gray-800 text-sm">New Alumni Profile</span>
+                            <span class="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-amber-100 text-amber-800">New</span>
+                        </div>
+                        <button 
+                            type="button" 
+                            onclick="removeAlumniCard(${nextSlot}, this)"
+                            class="text-xs text-red-600 hover:text-red-700 bg-red-50 hover:bg-red-100 px-2.5 py-1 rounded-lg font-semibold flex items-center gap-1 transition cursor-pointer"
+                            title="Remove this card"
+                        >
+                            <span class="material-symbols-outlined text-sm">delete</span>
+                            <span>Remove</span>
+                        </button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-4">
+                            <div class="relative group rounded-full overflow-hidden border-2 border-[#C9A24B] bg-gray-100 shadow-sm w-16 h-16 sm:w-20 sm:h-20 flex-shrink-0 flex items-center justify-center">
+                                <img 
+                                    id="${previewId}" 
+                                    src="../assets/images/logo.svg" 
+                                    alt="Alumni Photo" 
+                                    class="w-full h-full object-cover transition duration-300 group-hover:scale-105"
+                                    onerror="this.onerror=null; this.src='../assets/images/logo.svg';"
+                                />
+                            </div>
+                            <div class="flex-1 space-y-1.5">
+                                <label class="block text-xs font-semibold text-gray-700">
+                                    Upload Alumni Photo (WEBP / JPG &bull; Max 2.5MB)
+                                </label>
+                                <input 
+                                    type="file" 
+                                    name="image_file" 
+                                    accept="image/jpeg,image/png,image/webp"
+                                    onchange="previewImage(this, '${previewId}')"
+                                    class="block w-full text-xs text-gray-500 file:mr-3 file:py-1.5 file:px-3 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-[#001129] file:text-white hover:file:bg-[#071f45] file:cursor-pointer cursor-pointer border border-gray-300 rounded-xl bg-white"
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-[11px] font-semibold text-gray-500 mb-1">
+                                Or Select School Photo / Custom Path:
+                            </label>
+                            <div class="flex flex-col sm:flex-row gap-2">
+                                <select 
+                                    onchange="if(this.value){ const inp = this.form.elements['custom_path']; inp.value = 'assets/images/sunrise school image/' + this.value; const prv = document.getElementById('${previewId}'); if(prv){ prv.src = '../assets/images/sunrise%20school%20image/' + encodeURIComponent(this.value); } }" 
+                                    class="sm:w-1/2 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-xs text-gray-700 focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                >
+                                    <option value="">-- Choose School Photo --</option>
+                                    ${optionsHtml}
+                                </select>
+                                <input 
+                                    type="text" 
+                                    name="custom_path" 
+                                    placeholder="assets/images/... or https://..."
+                                    value=""
+                                    onchange="if(this.value){ const prv = document.getElementById('${previewId}'); if(prv){ prv.src = (this.value.startsWith('http') ? this.value : '../' + this.value); } }"
+                                    class="flex-1 px-2.5 py-1.5 bg-white border border-gray-300 rounded-lg text-gray-800 text-xs focus:ring-2 focus:ring-[#C9A24B] outline-none font-mono"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[#C9A24B] text-sm">person</span>
+                                <span>Alumnus Full Name</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                name="card_name" 
+                                value=""
+                                placeholder="e.g. Alumnus Name"
+                                class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-semibold focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                                required
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[#C9A24B] text-sm">school</span>
+                                <span>Passing Year / Batch</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                name="card_batch" 
+                                value="Batch of 2022"
+                                placeholder="e.g. Batch of 2018"
+                                class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                            />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[#C9A24B] text-sm">work</span>
+                                <span>Current Role / Profession</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                name="card_role" 
+                                value=""
+                                placeholder="e.g. Software Engineer, Doctor, Officer"
+                                class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                            />
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1">
+                                <span class="material-symbols-outlined text-[#C9A24B] text-sm">account_balance</span>
+                                <span>Organization / University</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                name="card_org" 
+                                value=""
+                                placeholder="e.g. Company or University Name"
+                                class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                            />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[#C9A24B] text-base">format_quote</span>
+                            <span>Alumni Quote / Message</span>
+                        </label>
+                        <textarea 
+                            name="card_quote" 
+                            rows="2"
+                            placeholder="Enter short tribute or memory about Sun Rise School..."
+                            class="w-full px-3.5 py-2 bg-white border border-gray-300 rounded-xl text-gray-900 text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] focus:border-[#C9A24B] outline-none"
+                        ></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-bold text-gray-800 mb-1 flex items-center gap-1.5">
+                            <span class="material-symbols-outlined text-[#C9A24B] text-base">link</span>
+                            <span>LinkedIn / Social / Profile URL</span>
+                        </label>
+                        <input 
+                            type="text" 
+                            name="card_link" 
+                            value=""
+                            placeholder="https://linkedin.com/in/... (optional)"
+                            class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-mono text-gray-700 focus:ring-2 focus:ring-[#C9A24B] outline-none"
+                        />
+                    </div>
+
+                    <div class="pt-1">
+                        <button 
+                            type="submit" 
+                            class="submit-btn w-full py-2.5 px-4 bg-[#C9A24B] hover:bg-[#B38C37] text-[#001129] font-bold text-xs rounded-xl shadow-sm hover:shadow transition flex items-center justify-center gap-1.5 cursor-pointer"
+                        >
+                            <span class="btn-icon material-symbols-outlined text-base">save</span>
+                            <span class="btn-text">Save Alumni Card</span>
+                        </button>
+                    </div>
+                </form>
+            `;
+
+            grid.insertBefore(cardEl, addTile);
+            bindAlumniCardForm(cardEl.querySelector('form'));
+            refreshAlumniCardNumbers();
+            await saveAlumniSlotsList(slots);
+
+            const nameInp = cardEl.querySelector('input[name="card_name"]');
+            if (nameInp) setTimeout(() => nameInp.focus(), 300);
+            showToast('New alumni card added! Fill in the details and click Save Alumni Card.', 'success');
+        }
+
+        async function removeAlumniCard(slot, btnEl) {
+            if (!confirm('Are you sure you want to remove this alumni card?')) return;
+            const secWrap = document.querySelector('[data-alumni-section="1"]');
+            if (!secWrap) return;
+
+            const rawSlots = secWrap.getAttribute('data-alumni-slots') || '';
+            const slots = rawSlots
+                .split(',')
+                .map(n => parseInt(n, 10))
+                .filter(n => n > 0 && n !== slot);
+
+            secWrap.setAttribute('data-alumni-slots', slots.join(','));
+            const cardEl = btnEl.closest('.alumni-admin-card');
+            if (cardEl) cardEl.remove();
+
+            refreshAlumniCardNumbers();
+            await saveAlumniSlotsList(slots);
+            showToast('Alumni card removed.', 'success');
+        }
+
         // Global map of Quill editor instances
         window.quillMap = {};
 
         // Initialize all active Quill Rich Text Editors
         document.addEventListener('DOMContentLoaded', () => {
-            // Bind all Gallery Category Card forms
+            // Bind all Gallery Category Card forms, Event News Card forms & Alumni Card forms
             document.querySelectorAll('.gallery-card-unified-form').forEach(bindGalleryCardForm);
+            document.querySelectorAll('.event-card-unified-form').forEach(bindEventNewsCardForm);
+            document.querySelectorAll('.alumni-card-unified-form').forEach(bindAlumniCardForm);
 
             // 1. Instant Scroll Restoration (Prevents jumping to top under all conditions)
             const savedScrollY = sessionStorage.getItem('admin_scroll_y');

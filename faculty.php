@@ -233,10 +233,10 @@ require_once __DIR__ . '/core/header.php';
       <div class="flex flex-col gap-1.5">
         <span class="text-eyebrow text-[#C9A24B] uppercase font-bold text-xs"><?= get_text('faculty', 'cta_eyebrow', 'Career Opportunities') ?></span>
         <h3 class="text-xl sm:text-2xl font-bold text-white"><?= get_text('faculty', 'cta_heading', 'Want to Join Our Teaching Team?') ?></h3>
-        <p class="text-body-md text-surface-cream/80 max-w-xl text-xs sm:text-sm"><?= get_text('faculty', 'cta_desc', 'We are always looking for passionate, certified educators who love teaching and inspiring students. Send us your resume.') ?></p>
+        <p class="text-body-md text-surface-cream/80 max-w-xl text-xs sm:text-sm"><?= get_text('faculty', 'cta_desc', 'We are always looking for passionate, certified educators who love teaching and inspiring students. Submit your application online with your public resume link (Google Drive / LinkedIn).') ?></p>
       </div>
       <a class="btn-gold shrink-0" href="<?= htmlspecialchars(get_text('faculty', 'cta_btn_link', 'contact-us.php#careers')) ?>">
-        <span><?= get_text('faculty', 'cta_btn_text', 'Apply as Educator') ?></span>
+        <span><?= get_text('faculty', 'cta_btn_text', 'Apply Online with Resume Link') ?></span>
         <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
       </a>
     </div>

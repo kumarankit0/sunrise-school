@@ -308,13 +308,20 @@ $hero_slides = [
 
   <!-- Founder & Director's Message (Image Left, Content Right) -->
   <section class="w-full py-8 lg:py-12 bg-surface relative">
-    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
-      <!-- Left: Photo — smaller col -->
-      <div class="lg:col-span-4 relative flex flex-col">
-        <div class="absolute -top-3 -left-3 w-full h-full bg-[#C9A24B]/10 rounded-2xl"></div>
-        <div class="relative rounded-xl overflow-hidden shadow-xl flex-1 min-h-[320px] bg-cover bg-center" style="background-image: url('<?= get_image('home', 'director_photo', school_img('director.png')) ?>')"></div>
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      <!-- Left: Photo — self-start and fixed aspect ratio so it never elongates when content expands -->
+      <div class="lg:col-span-4 relative self-start w-full">
+        <div class="absolute -top-3 -left-3 w-full h-full bg-[#C9A24B]/10 rounded-2xl pointer-events-none"></div>
+        <div class="relative rounded-xl overflow-hidden shadow-xl w-full aspect-[4/5] sm:aspect-[3/4] max-h-[460px] bg-slate-100">
+          <img 
+            src="<?= get_image('home', 'director_photo', school_img('director.png')) ?>" 
+            alt="<?= htmlspecialchars(get_image_alt('home', 'director_photo', 'Founder & Director - Mr. Bhader Singh Swami')) ?>" 
+            class="w-full h-full object-cover" 
+            loading="lazy"
+          />
+        </div>
       </div>
-      <!-- Right: Content — same height as image via items-stretch -->
+      <!-- Right: Content -->
       <div class="lg:col-span-8 flex flex-col gap-4 lg:pl-8 justify-between">
         <div class="flex flex-col gap-3">
           <div class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('home', 'director_tagline', "DIRECTOR'S MESSAGE") ?></div>
@@ -326,10 +333,10 @@ $hero_slides = [
           </blockquote>
           <div class="text-body-md text-on-surface-variant font-body leading-relaxed">
             <div id="director-content" class="line-clamp-4">
-              <p><?= get_text('home', 'director_p1', 'It gives me immense pleasure to welcome you to Sun Rise Sr. Sec. School, Dobhi—a place where we believe that every child is not just a student, but a unique individual with dreams, abilities, and limitless potential. For us, education is much more than books, classrooms, and examinations. It is about shaping minds, nurturing hearts, building character, and preparing young individuals for life.') ?></p>
+              <p><?= get_text('home', 'director_p1', 'It gives me immense pleasure to welcome you to Sun Rise Sr. Sec. School, Dobhi-a place where we believe that every child is not just a student, but a unique individual with dreams, abilities, and limitless potential. For us, education is much more than books, classrooms, and examinations. It is about shaping minds, nurturing hearts, building character, and preparing young individuals for life.') ?></p>
               <p class="mt-2"><?= get_text('home', 'director_p2', 'We strive for the holistic development of every student through quality academics, sports, creativity, cultural activities, discipline, and strong moral values. Along with knowledge, we seek to nurture kindness, confidence, responsibility, resilience, and respect for others. At Sun Rise Sr. Sec. School, we do not simply prepare children for tomorrow; we nurture the individuals who will shape tomorrow.') ?></p>
             </div>
-            <button id="director-readmore" class="mt-2 inline-flex items-center gap-1 text-sm text-primary font-bold hover:text-[#C9A24B] transition-colors">
+            <button id="director-readmore" class="mt-2 inline-flex items-center gap-1 text-sm text-primary font-bold hover:text-[#C9A24B] transition-colors cursor-pointer outline-none focus:outline-none focus:ring-0">
               Read More <span class="material-symbols-outlined text-[15px]">expand_more</span>
             </button>
           </div>

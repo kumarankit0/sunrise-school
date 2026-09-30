@@ -238,7 +238,7 @@ $nav_menu = [
             ],
             'alumni' => [
                 'title' => 'Alumni Network',
-                'url' => 'events.php#alumni',
+                'url' => 'alumni.php',
                 'icon' => 'diversity_3',
                 'desc' => 'Connect with Past Students'
             ]

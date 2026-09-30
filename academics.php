@@ -428,6 +428,18 @@ require_once __DIR__ . '/core/header.php';
         <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold text-xs"><?= get_text('academics', 'exam_eyebrow', 'Continuous &amp; Comprehensive Assessment') ?></span>
         <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-white tracking-tight leading-snug mt-1"><?= get_text('academics', 'exam_heading', 'Examination &amp; Evaluation System') ?></h2>
         <p class="text-xs sm:text-sm text-surface-cream/80 mt-1.5"><?= get_text('academics', 'exam_desc', 'At Sun Rise Sr. Sec. School, our evaluation framework ensures continuous learning, diagnostic feedback, and thorough board examination readiness.') ?></p>
+        
+        <!-- Exam Calendar Download Button -->
+        <?php
+          $exam_cal_img = get_image('academics', 'exam_calendar_file_img', school_img('pop-up image.webp'));
+          $exam_cal_btn_text = get_text('academics', 'exam_calendar_btn_text', 'Download Exam Date Sheet &amp; Schedule');
+        ?>
+        <div class="mt-4 flex flex-wrap items-center justify-center gap-3">
+          <button type="button" onclick="downloadExamCalendar('<?= htmlspecialchars($exam_cal_img, ENT_QUOTES) ?>', 'Sun_Rise_Exam_Calendar_Schedule')" class="inline-flex items-center gap-2 bg-[#C9A24B] hover:bg-[#b08d3b] text-primary font-bold px-5 py-2.5 rounded-xl shadow-lg hover:shadow-xl hover:scale-105 active:scale-95 transition-all text-xs sm:text-sm cursor-pointer border border-[#E5C158]">
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            <span><?= $exam_cal_btn_text ?></span>
+          </button>
+        </div>
       </div>
 
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
@@ -553,6 +565,52 @@ require_once __DIR__ . '/core/header.php';
     </div>
   </section>
 </div>
+
+<script>
+function downloadExamCalendar(fileUrl, fileName) {
+  if (!fileUrl) {
+    alert("Exam calendar / date sheet is currently being updated by the school examination cell.");
+    return;
+  }
+
+  // Attempt blob download to ensure it downloads directly without navigating away
+  fetch(fileUrl)
+    .then(res => {
+      if (!res.ok) throw new Error('Network error');
+      return res.blob();
+    })
+    .then(blob => {
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = blobUrl;
+      
+      const extMatch = fileUrl.match(/\.([a-zA-Z0-9]+)(\?.*)?$/);
+      const ext = extMatch ? extMatch[1] : 'webp';
+      a.download = `${fileName || 'Sun_Rise_Exam_Calendar'}.${ext}`;
+      
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        window.URL.revokeObjectURL(blobUrl);
+        a.remove();
+      }, 1000);
+    })
+    .catch(() => {
+      // Direct anchor download fallback
+      const a = document.createElement('a');
+      a.href = fileUrl;
+      a.setAttribute('download', fileName || 'Sun_Rise_Exam_Calendar');
+      a.target = '_blank';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => a.remove(), 1000);
+    });
+}
+function downloadCalendarFile(fileUrl, fileName) {
+  downloadExamCalendar(fileUrl, fileName);
+}
+</script>
 
 <?php
 require_once __DIR__ . '/core/footer.php';

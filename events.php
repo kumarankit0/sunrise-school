@@ -58,99 +58,44 @@ require_once __DIR__ . '/core/header.php';
           </div>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="events-news-grid">
           <?php
-          $d1 = explode(' ', get_text('events', 'news1_date', '24 OCT'));
-          $d2 = explode(' ', get_text('events', 'news2_date', '15 AUG'));
-          $d3 = explode(' ', get_text('events', 'news3_date', '05 SEP'));
-          $d4 = explode(' ', get_text('events', 'news4_date', '12 MAY'));
           $ag1 = explode(' ', get_text('events', 'agenda1_date', '10 OCT'));
           $ag2 = explode(' ', get_text('events', 'agenda2_date', '14 NOV'));
           $ag3 = explode(' ', get_text('events', 'agenda3_date', '22 DEC'));
+
+          $event_cards = get_event_news_cards(false);
+          foreach ($event_cards as $card):
+              $d_parts = explode(' ', trim($card['date']));
+              $d_day   = $d_parts[0] ?? '01';
+              $d_month = $d_parts[1] ?? 'JAN';
+              $cat_attr = !empty($card['category']) ? $card['category'] : 'academic';
           ?>
-          <!-- Card 1: Science Exhibition -->
-          <div class="event-card bg-surface-pure rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group border border-border-warm" data-category="academic">
-            <div class="relative h-56 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
-              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('<?= get_image('events', 'news1_img', school_img('exhibition7.webp')) ?>')"></div>
-              <div class="absolute top-4 left-4 bg-primary text-on-primary p-3 rounded-lg text-center shadow-md">
-                <span class="block font-headline-lg text-lg font-bold leading-none"><?= htmlspecialchars($d1[0] ?? '24') ?></span>
-                <span class="block text-eyebrow uppercase text-[#C9A24B]"><?= htmlspecialchars($d1[1] ?? 'OCT') ?></span>
+            <!-- Card #<?= (int)$card['slot'] ?>: <?= htmlspecialchars($card['title']) ?> -->
+            <div class="event-card bg-surface-pure rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group border border-border-warm" data-category="<?= htmlspecialchars($cat_attr) ?>">
+              <div class="relative h-56 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
+                <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('<?= htmlspecialchars($card['img']) ?>')"></div>
+                <div class="absolute top-4 left-4 bg-primary text-on-primary p-3 rounded-lg text-center shadow-md">
+                  <span class="block font-headline-lg text-lg font-bold leading-none"><?= htmlspecialchars($d_day) ?></span>
+                  <span class="block text-eyebrow uppercase text-[#C9A24B]"><?= htmlspecialchars($d_month) ?></span>
+                </div>
+                <?php if (!empty($card['tag'])): ?>
+                  <span class="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-md text-primary text-eyebrow px-3 py-1 rounded-md uppercase font-bold"><?= htmlspecialchars($card['tag']) ?></span>
+                <?php endif; ?>
               </div>
-              <span class="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-md text-primary text-eyebrow px-3 py-1 rounded-md uppercase font-bold"><?= get_text('events', 'news1_tag', 'Science Fair') ?></span>
-            </div>
-            <div class="p-6 flex flex-col flex-1 justify-between gap-4">
-              <div>
-                <h3 class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-[#C9A24B] transition-colors"><?= get_text('events', 'news1_title', 'District Level Science Model Showcase') ?></h3>
-                <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-1"><?= get_text('events', 'news1_desc', 'Students demonstrated innovative research prototypes and hydraulic mechanics models with outstanding presentation skills.') ?></p>
+              <div class="p-6 flex flex-col flex-1 justify-between gap-4">
+                <div>
+                  <h3 class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-[#C9A24B] transition-colors"><?= htmlspecialchars($card['title']) ?></h3>
+                  <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-2"><?= htmlspecialchars($card['desc']) ?></p>
+                </div>
+                <?php if (!empty($card['link_url'])): ?>
+                  <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="<?= htmlspecialchars($card['link_url']) ?>">
+                    <?= htmlspecialchars($card['link_text'] ?: 'Read More') ?> <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                  </a>
+                <?php endif; ?>
               </div>
-              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="<?= htmlspecialchars(get_text('events', 'news1_link_url', 'gallery.php')) ?>">
-                <?= get_text('events', 'news1_link_text', 'Read More') ?> <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </a>
             </div>
-          </div>
-
-          <!-- Card 2: Independence Day -->
-          <div class="event-card bg-surface-pure rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group border border-border-warm" data-category="cultural">
-            <div class="relative h-56 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
-              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('<?= get_image('events', 'news2_img', school_img('IMG_20210815_093156~2.webp')) ?>')"></div>
-              <div class="absolute top-4 left-4 bg-primary text-on-primary p-3 rounded-lg text-center shadow-md">
-                <span class="block font-headline-lg text-lg font-bold leading-none"><?= htmlspecialchars($d2[0] ?? '15') ?></span>
-                <span class="block text-eyebrow uppercase text-[#C9A24B]"><?= htmlspecialchars($d2[1] ?? 'AUG') ?></span>
-              </div>
-              <span class="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-md text-primary text-eyebrow px-3 py-1 rounded-md uppercase font-bold"><?= get_text('events', 'news2_tag', 'National Day') ?></span>
-            </div>
-            <div class="p-6 flex flex-col flex-1 justify-between gap-4">
-              <div>
-                <h3 class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-[#C9A24B] transition-colors"><?= get_text('events', 'news2_title', 'Independence Day Flag Hoisting & Parade') ?></h3>
-                <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-1"><?= get_text('events', 'news2_desc', 'Celebrated with patriotic enthusiasm, tri-color flag unfurling by management, and spirited cultural performances.') ?></p>
-              </div>
-              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="<?= htmlspecialchars(get_text('events', 'news2_link_url', 'gallery.php')) ?>">
-                <?= get_text('events', 'news2_link_text', 'Read More') ?> <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 3: Award Ceremony & Felicitation -->
-          <div class="event-card bg-surface-pure rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group border border-border-warm" data-category="campus">
-            <div class="relative h-56 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
-              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('<?= get_image('events', 'news3_img', school_img('award_to_school.webp')) ?>')"></div>
-              <div class="absolute top-4 left-4 bg-primary text-on-primary p-3 rounded-lg text-center shadow-md">
-                <span class="block font-headline-lg text-lg font-bold leading-none"><?= htmlspecialchars($d3[0] ?? '05') ?></span>
-                <span class="block text-eyebrow uppercase text-[#C9A24B]"><?= htmlspecialchars($d3[1] ?? 'SEP') ?></span>
-              </div>
-              <span class="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-md text-primary text-eyebrow px-3 py-1 rounded-md uppercase font-bold"><?= get_text('events', 'news3_tag', 'Honors') ?></span>
-            </div>
-            <div class="p-6 flex flex-col flex-1 justify-between gap-4">
-              <div>
-                <h3 class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-[#C9A24B] transition-colors"><?= get_text('events', 'news3_title', 'Institutional Excellence Award to School') ?></h3>
-                <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-1"><?= get_text('events', 'news3_desc', 'Sun Rise Sr. Sec. School recognized for exceptional academic standards and community educational leadership in Hisar region.') ?></p>
-              </div>
-              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="<?= htmlspecialchars(get_text('events', 'news3_link_url', 'about-us.php')) ?>">
-                <?= get_text('events', 'news3_link_text', 'Read More') ?> <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </a>
-            </div>
-          </div>
-
-          <!-- Card 4: News Coverage -->
-          <div class="event-card bg-surface-pure rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group border border-border-warm" data-category="academic">
-            <div class="relative h-56 overflow-hidden cursor-pointer" onclick="openLightbox(this)">
-              <div class="absolute inset-0 bg-cover bg-center group-hover:scale-105 transition-transform duration-500" style="background-image: url('<?= get_image('events', 'news4_img', school_img('image_news.webp')) ?>')"></div>
-              <div class="absolute top-4 left-4 bg-primary text-on-primary p-3 rounded-lg text-center shadow-md">
-                <span class="block font-headline-lg text-lg font-bold leading-none"><?= htmlspecialchars($d4[0] ?? '12') ?></span>
-                <span class="block text-eyebrow uppercase text-[#C9A24B]"><?= htmlspecialchars($d4[1] ?? 'MAY') ?></span>
-              </div>
-              <span class="absolute bottom-3 right-3 bg-surface/90 backdrop-blur-md text-primary text-eyebrow px-3 py-1 rounded-md uppercase font-bold"><?= get_text('events', 'news4_tag', 'Press') ?></span>
-            </div>
-            <div class="p-6 flex flex-col flex-1 justify-between gap-4">
-              <div>
-                <h3 class="font-headline-sm text-headline-sm text-primary font-bold group-hover:text-[#C9A24B] transition-colors"><?= get_text('events', 'news4_title', 'Media Coverage: Board Exam Triumphs') ?></h3>
-                <p class="font-body-md text-body-md text-on-surface-variant mt-2 line-clamp-1"><?= get_text('events', 'news4_desc', 'Prominent regional newspapers report on the extraordinary 100% HBSE board passing rate and high scoring records of our students.') ?></p>
-              </div>
-              <a class="inline-flex items-center gap-2 text-primary font-label-md group-hover:text-[#C9A24B] transition-colors mt-auto font-bold" href="<?= htmlspecialchars(get_text('events', 'news4_link_url', 'admission.php')) ?>">
-                <?= get_text('events', 'news4_link_text', 'Read More') ?> <span class="material-symbols-outlined text-[16px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
-              </a>
-            </div>
-          </div>
+          <?php endforeach; ?>
         </div>
       </div>
 
@@ -171,9 +116,14 @@ require_once __DIR__ . '/core/header.php';
             </div>
             <p class="font-body-md text-surface-cream text-body-md leading-relaxed"><?= get_text('events', 'calendar_desc', 'Check term schedules, periodic unit tests, quarterly assessments, board pre-boards, and gazetted school holidays.') ?></p>
           </div>
-          <a class="btn-gold w-full text-center mt-2" href="<?= htmlspecialchars(get_text('events', 'calendar_btn_link', 'academics.php')) ?>">
-            <span class="material-symbols-outlined text-[18px]">calendar_month</span> <?= get_text('events', 'calendar_btn_text', 'View Academic Syllabus') ?>
-          </a>
+          <?php
+          $cal_img = get_image('events', 'calendar_file_img', school_img('pop-up image.webp'));
+          $cal_btn_text = get_text('events', 'calendar_btn_text', 'Download School Calendar');
+          ?>
+          <button type="button" class="btn-gold w-full text-center mt-2 flex items-center justify-center gap-2 cursor-pointer shadow-md hover:shadow-lg transition-all" onclick="downloadCalendarFile('<?= htmlspecialchars($cal_img) ?>', 'Sun_Rise_School_Academic_Calendar')">
+            <span class="material-symbols-outlined text-[18px]">download</span>
+            <span><?= htmlspecialchars($cal_btn_text) ?></span>
+          </button>
         </div>
 
         <!-- Upcoming Events Mini-List -->
@@ -504,6 +454,49 @@ require_once __DIR__ . '/core/header.php';
     </div>
   </section>
 </div>
+
+<script>
+function downloadCalendarFile(fileUrl, fileName) {
+  if (!fileUrl) {
+    alert("Calendar image is currently being updated by the school office.");
+    return;
+  }
+
+  // Attempt blob download to ensure it downloads as a file without navigating away
+  fetch(fileUrl)
+    .then(res => {
+      if (!res.ok) throw new Error('Network error');
+      return res.blob();
+    })
+    .then(blob => {
+      const blobUrl = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.style.display = 'none';
+      a.href = blobUrl;
+      
+      const extMatch = fileUrl.match(/\.([a-zA-Z0-9]+)(\?.*)?$/);
+      const ext = extMatch ? extMatch[1] : 'webp';
+      a.download = `${fileName || 'Sun_Rise_School_Calendar'}.${ext}`;
+      
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => {
+        window.URL.revokeObjectURL(blobUrl);
+        a.remove();
+      }, 1000);
+    })
+    .catch(() => {
+      // Direct anchor download fallback
+      const a = document.createElement('a');
+      a.href = fileUrl;
+      a.setAttribute('download', fileName || 'Sun_Rise_School_Calendar');
+      a.target = '_blank';
+      document.body.appendChild(a);
+      a.click();
+      setTimeout(() => a.remove(), 1000);
+    });
+}
+</script>
 
 <?php
 require_once __DIR__ . '/core/footer.php';

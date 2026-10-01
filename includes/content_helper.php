@@ -345,7 +345,7 @@ function get_gallery_categories_schema() {
         'media' => [
             'title' => 'Media Coverage',
             'icon'  => 'newspaper',
-            'desc'  => 'Manage newspaper clippings, press releases, and media feature cards. Click "+ Add Card" to add more photos with a heading.',
+            'desc'  => 'Manage newspaper clippings, press releases, and media feature photo cards.',
             'defaults' => [
                 1 => [
                     'img'   => 'assets/images/sunrise school image/IMG_20210815_093156~2.webp',
@@ -353,25 +353,10 @@ function get_gallery_categories_schema() {
                 ]
             ]
         ],
-        'result' => [
-            'title' => 'Annual Result Declaration Day',
-            'icon'  => 'workspace_premium',
-            'desc'  => 'Manage board result celebrations, merit felicitations, and award ceremony photo cards.',
-            'defaults' => [
-                1 => [
-                    'img'   => 'assets/images/sunrise school image/award_ceremony.webp',
-                    'title' => 'Annual Result Declaration & Award Ceremony'
-                ],
-                2 => [
-                    'img'   => 'assets/images/sunrise school image/toppers.webp',
-                    'title' => 'HBSE Board Exam Result Celebrations'
-                ]
-            ]
-        ],
         'cultural' => [
-            'title' => 'Cultural Fest',
+            'title' => 'Cultural Fest & Celebrations',
             'icon'  => 'celebration',
-            'desc'  => 'Manage cultural fest, folk dance, drama, and stage performance photo cards.',
+            'desc'  => 'Manage cultural fest, folk dance, stage pageants, annual result day felicitations, and Diwali celebrations.',
             'defaults' => [
                 1 => [
                     'img'   => 'assets/images/sunrise school image/exhibition.webp',
@@ -380,6 +365,22 @@ function get_gallery_categories_schema() {
                 2 => [
                     'img'   => 'assets/images/sunrise school image/all_staffmembers.webp',
                     'title' => 'Grand Stage Musical Pageant'
+                ],
+                3 => [
+                    'img'   => 'assets/images/sunrise school image/award_ceremony.webp',
+                    'title' => 'Annual Result Declaration & Award Ceremony'
+                ],
+                4 => [
+                    'img'   => 'assets/images/sunrise school image/toppers.webp',
+                    'title' => 'HBSE Board Exam Result Celebrations'
+                ],
+                5 => [
+                    'img'   => 'assets/images/sunrise school image/lab_class.webp',
+                    'title' => 'Diwali Celebration & Rangoli Contest'
+                ],
+                6 => [
+                    'img'   => 'assets/images/sunrise school image/exhibition3.webp',
+                    'title' => 'Eco-Friendly Deepawali Festival'
                 ]
             ]
         ],
@@ -414,21 +415,6 @@ function get_gallery_categories_schema() {
                 2 => [
                     'img'   => 'assets/images/sunrise school image/children_sitting.webp',
                     'title' => 'Art, Essay & Debate Competition'
-                ]
-            ]
-        ],
-        'diwali' => [
-            'title' => 'Diwali Celebration',
-            'icon'  => 'festival',
-            'desc'  => 'Manage Diwali celebration, rangoli contest, and festive decoration photo cards.',
-            'defaults' => [
-                1 => [
-                    'img'   => 'assets/images/sunrise school image/lab_class.webp',
-                    'title' => 'Diwali Celebration & Rangoli Contest'
-                ],
-                2 => [
-                    'img'   => 'assets/images/sunrise school image/exhibition3.webp',
-                    'title' => 'Eco-Friendly Deepawali Festival'
                 ]
             ]
         ]
@@ -526,44 +512,44 @@ function get_gallery_category_cards($cat_key = null, $include_empty = false) {
 function get_event_news_schema() {
     return [
         1 => [
-            'img'       => 'assets/images/sunrise school image/exhibition7.webp',
-            'date'      => '24 OCT',
-            'tag'       => 'Award Function',
-            'category'  => 'academic',
-            'title'     => 'District Level Science Model Showcase',
-            'desc'      => 'Students demonstrated innovative research prototypes and hydraulic mechanics models with outstanding presentation skills.',
-            'link_text' => 'Read More',
-            'link_url'  => 'gallery.php'
+            'img'       => 'assets/images/sunrise school image/exhibition.webp',
+            'date'      => '14 NOV',
+            'tag'       => 'Cultural Fest',
+            'category'  => 'cultural',
+            'title'     => 'Cultural Fest & Folk Performances',
+            'desc'      => 'Students showcased vibrant folk dance, musical theatre, and dramatic pageants celebrating Indian heritage with extraordinary enthusiasm.',
+            'link_text' => 'View Gallery',
+            'link_url'  => 'gallery.php?cat=cultural#gallery-filters'
         ],
         2 => [
-            'img'       => 'assets/images/sunrise school image/IMG_20210815_093156~2.webp',
-            'date'      => '15 AUG',
-            'tag'       => 'National Day',
-            'category'  => 'cultural',
-            'title'     => 'Independence Day Flag Hoisting & Parade',
-            'desc'      => 'Celebrated with patriotic enthusiasm, tri-color flag unfurling by management, and spirited cultural performances.',
-            'link_text' => 'Read More',
-            'link_url'  => 'gallery.php'
+            'img'       => 'assets/images/sunrise school image/students_ground.webp',
+            'date'      => '28 OCT',
+            'tag'       => 'School Activity',
+            'category'  => 'activity',
+            'title'     => 'Outdoor Sports & Physical Drills',
+            'desc'      => 'Comprehensive physical fitness training, athletic track events, and team games organized across the school sports ground.',
+            'link_text' => 'View Gallery',
+            'link_url'  => 'gallery.php?cat=activity#gallery-filters'
         ],
         3 => [
-            'img'       => 'assets/images/sunrise school image/award_to_school.webp',
+            'img'       => 'assets/images/sunrise school image/all_staffmembers.webp',
             'date'      => '05 SEP',
-            'tag'       => 'Honors',
-            'category'  => 'campus',
-            'title'     => 'Institutional Excellence Award to School',
-            'desc'      => 'Sun Rise Sr. Sec. School recognized for exceptional academic standards and community educational leadership in Hisar region.',
-            'link_text' => 'Read More',
-            'link_url'  => 'about-us.php'
+            'tag'       => 'Cultural Fest',
+            'category'  => 'cultural',
+            'title'     => 'Grand Stage Musical Pageant',
+            'desc'      => 'Spectacular annual stage presentations featuring student musical choirs, moral value plays, and mentor felicitation with all staff members.',
+            'link_text' => 'View Gallery',
+            'link_url'  => 'gallery.php?cat=cultural#gallery-filters'
         ],
         4 => [
-            'img'       => 'assets/images/sunrise school image/image_news.webp',
-            'date'      => '12 MAY',
-            'tag'       => 'Press',
-            'category'  => 'academic',
-            'title'     => 'Media Coverage: Board Exam Triumphs',
-            'desc'      => 'Prominent regional newspapers report on the extraordinary 100% HBSE board passing rate and high scoring records of our students.',
-            'link_text' => 'Read More',
-            'link_url'  => 'admission.php'
+            'img'       => 'assets/images/sunrise school image/yoga.webp',
+            'date'      => '21 JUN',
+            'tag'       => 'School Activity',
+            'category'  => 'activity',
+            'title'     => 'International Yoga Day Demonstrations',
+            'desc'      => 'Students and faculty actively participate in mass yoga asanas and mindful meditation sessions cultivating mental focus and physical health.',
+            'link_text' => 'View Gallery',
+            'link_url'  => 'gallery.php?cat=activity#gallery-filters'
         ]
     ];
 }
@@ -605,7 +591,7 @@ function get_event_news_cards($include_empty = false) {
             'img'       => 'assets/images/sunrise school image/exhibition1.webp',
             'date'      => date('d M'),
             'tag'       => 'Event',
-            'category'  => 'academic',
+            'category'  => 'cultural',
             'title'     => 'School Event Highlight',
             'desc'      => 'Description of school event and student achievements.',
             'link_text' => 'Read More',

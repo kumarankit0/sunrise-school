@@ -402,19 +402,34 @@
 .footer-social-section {
   display: flex;
   flex-direction: column;
-  gap: 0.25rem;
-  margin-top: 0.1rem;
-  padding-top: 0.3rem;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  padding-top: 0.45rem;
   border-top: 1px dashed #E5E2DA;
 }
 
 .footer-social-label {
   font-family: 'Poppins', sans-serif;
-  font-size: 0.78rem;
+  font-size: 0.925rem;
   font-weight: 700;
   color: #001129;
-  line-height: 1.2;
+  margin: 0 0 0.15rem 0;
+  position: relative;
+  padding-bottom: 0.3rem;
   letter-spacing: -0.01em;
+  display: block;
+  width: fit-content;
+}
+
+.footer-social-label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background-color: #C9A24B;
+  border-radius: 2px;
 }
 
 .footer-social-icons {

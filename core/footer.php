@@ -82,7 +82,7 @@ require_once __DIR__ . '/config.php';
             </div>
           </div>
           <div class="footer-social-section">
-            <span class="footer-social-label"><?= htmlspecialchars(get_text('general', 'footer_social_title', 'Social Media Accounts')) ?></span>
+            <h4 class="footer-social-label"><?= htmlspecialchars(get_text('general', 'footer_social_title', 'Social Media Accounts')) ?></h4>
             <div class="footer-social-icons">
               <?php if (!empty($social_facebook)): ?>
                 <a href="<?= htmlspecialchars($social_facebook) ?>" target="_blank" rel="noopener noreferrer" class="footer-social-btn social-facebook" title="Follow us on Facebook" aria-label="Facebook">

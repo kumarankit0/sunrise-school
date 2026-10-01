@@ -433,19 +433,26 @@ require_once __DIR__ . '/core/header.php';
 
       <!-- Section 6: The "Sun Rise" Philosophy & Enduring Pledge Banner -->
       <div class="mt-10 grid grid-cols-1 md:grid-cols-12 gap-6">
-        <div class="md:col-span-5 bg-white rounded-2xl p-6 shadow-[0_4px_16px_rgba(11,38,71,0.06)] border border-border-warm flex flex-col justify-between">
-          <div class="flex flex-col gap-3">
-            <div class="w-10 h-10 rounded-xl bg-[#C9A24B]/15 text-[#C9A24B] flex items-center justify-center">
-              <span class="material-symbols-outlined text-2xl">wb_sunny</span>
+        <?php $sym_bg = get_image('about', 'symbolism_bg', 'assets/images/sunrise.png'); ?>
+        <div class="md:col-span-5 rounded-2xl p-6 sm:p-7 shadow-[0_6px_24px_rgba(11,38,71,0.08)] border border-[#E8DFC8] flex flex-col justify-between relative overflow-hidden group transition-all duration-300 hover:shadow-xl hover:border-[#C9A24B]/60" style="background: linear-gradient(135deg, rgba(255,255,255,0.92) 0%, rgba(255,251,245,0.89) 60%, rgba(254,243,199,0.82) 100%);">
+          <!-- Sunrise Background Image with Elegant Warm Texture -->
+          <div class="absolute inset-0 z-0 pointer-events-none opacity-25 group-hover:opacity-35 transition-opacity duration-500 bg-cover bg-center" style="background-image: url('<?= htmlspecialchars($sym_bg) ?>');"></div>
+          <!-- Soft Golden Glow at Corner -->
+          <div class="absolute -top-12 -right-12 w-44 h-44 bg-[#C9A24B]/15 rounded-full blur-2xl pointer-events-none z-0"></div>
+
+          <div class="flex flex-col gap-3 relative z-10">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-[#FEF3C7] to-[#FDE68A] text-[#B45309] flex items-center justify-center shadow-sm border border-[#FCD34D]/60">
+              <span class="material-symbols-outlined text-[26px]">wb_sunny</span>
             </div>
-            <span class="text-eyebrow text-secondary uppercase font-bold tracking-wider text-xs"><?= get_text('about', 'symbolism_badge', 'The Symbolism') ?></span>
-            <h3 class="text-base sm:text-lg font-bold text-primary"><?= get_text('about', 'symbolism_title', 'The Meaning Behind "Sun Rise"') ?></h3>
-            <p class="font-body-md text-on-surface-variant leading-relaxed text-xs sm:text-sm">
+            <span class="text-eyebrow text-[#B45309] uppercase font-bold tracking-wider text-xs"><?= get_text('about', 'symbolism_badge', 'The Symbolism') ?></span>
+            <h3 class="text-base sm:text-lg font-bold text-primary font-headline-md tracking-tight"><?= get_text('about', 'symbolism_title', 'The Meaning Behind "Sun Rise"') ?></h3>
+            <p class="font-body-md text-[#334155] leading-relaxed text-xs sm:text-sm">
               <?= get_text('about', 'symbolism_text', 'The name <strong>"Sun Rise"</strong> was chosen with purpose. Just as the rising sun brings warmth, dispels darkness, and heralds a new beginning filled with hope and possibilities, the school aspires to be a guiding light for every learner who walks through its doors.') ?>
             </p>
           </div>
-          <div class="mt-4 pt-3 border-t border-border-warm text-xs text-on-surface-variant italic">
-            <?= get_text('about', 'symbolism_footer', 'Light after darkness &bull; Hope &bull; New Beginnings') ?>
+          <div class="mt-5 pt-3.5 border-t border-[#E8DFC8] text-xs text-[#78350F] font-medium italic relative z-10 flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[15px] text-[#D97706] not-italic">flare</span>
+            <span><?= get_text('about', 'symbolism_footer', 'Light after darkness &bull; Hope &bull; New Beginnings') ?></span>
           </div>
         </div>
 

@@ -18,7 +18,7 @@ $site_timings_summer = get_text('general', 'timings_summer', '7:30 AM to 1:30 PM
 $site_timings_winter = get_text('general', 'timings_winter', '8:30 AM to 2:30 PM');
 $site_estd           = get_text('general', 'site_estd', '2007');
 $site_affiliation    = get_text('general', 'site_affiliation', 'HBSE');
-$site_logo           = get_image('general', 'site_logo', 'assets/images/logo.svg');
+$site_logo           = get_image('general', 'site_logo', 'assets/images/school-logo.png');
 
 // Social Media Channels (Configurable via Admin Dashboard)
 $social_facebook     = get_text('general', 'social_facebook', 'https://www.facebook.com/sunrise6691/');
@@ -121,6 +121,12 @@ $nav_menu = [
                 'url' => 'academics.php#toppers',
                 'icon' => 'military_tech',
                 'desc' => 'Our Pride & Board Merit Holders'
+            ],
+            'previous-results' => [
+                'title' => 'Previous Years Results',
+                'url' => 'academics.php#previous-results',
+                'icon' => 'history_edu',
+                'desc' => 'Board Records & Merit Showcase'
             ]
         ]
     ],
@@ -129,22 +135,22 @@ $nav_menu = [
         'url' => get_text('general', 'nav_item4_url', 'events.php'),
         'subitems' => [
             'events-news' => [
-                'title' => 'Events & Annual Functions',
+                'title' => 'Events & Highlights',
                 'url' => 'events.php',
                 'icon' => 'celebration',
-                'desc' => 'Festivals, Assemblies & Competitions'
+                'desc' => 'Cultural Fest, Assemblies & Notices'
             ],
             'sports-meet' => [
                 'title' => 'Sports & Physical Education',
-                'url' => 'campus.php#sports',
-                'icon' => 'sports_cricket',
-                'desc' => 'Athletics, Volleyball & Yoga'
+                'url' => 'events.php#sports-activities',
+                'icon' => 'sports_kabaddi',
+                'desc' => 'Athletics, Wrestling, Yoga & Games'
             ],
-            'student-clubs' => [
-                'title' => 'Clubs & Cultural Life',
-                'url' => 'events.php#activities',
-                'icon' => 'palette',
-                'desc' => 'Music, Arts, Debating & Drama'
+            'achievements' => [
+                'title' => 'Sports Accolades & Accolades',
+                'url' => 'events.php#achievements',
+                'icon' => 'emoji_events',
+                'desc' => 'Hall of Fame & State/National Medals'
             ]
         ]
     ],
@@ -183,40 +189,28 @@ $nav_menu = [
         'url' => get_text('general', 'nav_item6_url', 'gallery.php'),
         'subitems' => [
             'gallery-media' => [
-                'title' => 'Media Coverage',
+                'title' => 'Media Coverage & Press',
                 'url' => 'gallery.php?cat=media#gallery-filters',
                 'icon' => 'newspaper',
                 'desc' => 'Press releases & state news features'
             ],
-            'gallery-result' => [
-                'title' => 'Annual Result Declaration Day',
-                'url' => 'gallery.php?cat=result#gallery-filters',
-                'icon' => 'workspace_premium',
-                'desc' => 'Board toppers & merit awards'
-            ],
             'gallery-cultural' => [
-                'title' => 'Cultural Fest',
+                'title' => 'Cultural Fest & Celebrations',
                 'url' => 'gallery.php?cat=cultural#gallery-filters',
                 'icon' => 'celebration',
-                'desc' => 'Folk dance, drama & annual fests'
+                'desc' => 'Annual day, results & festive celebrations'
             ],
             'gallery-activity' => [
                 'title' => 'School Activities & Sports',
                 'url' => 'gallery.php?cat=activity#gallery-filters',
                 'icon' => 'sports_kabaddi',
-                'desc' => 'Morning assemblies & athletic drills'
+                'desc' => 'Morning assemblies, drills & yoga'
             ],
             'gallery-competition' => [
-                'title' => 'Competitions & Diwali Celebration',
+                'title' => 'Academic Competitions',
                 'url' => 'gallery.php?cat=competition#gallery-filters',
                 'icon' => 'emoji_events',
-                'desc' => 'Olympiads, contests & celebrations'
-            ],
-            'photo-gallery' => [
-                'title' => 'All Photo Archives',
-                'url' => 'gallery.php',
-                'icon' => 'photo_library',
-                'desc' => 'Explore complete photo chronicle'
+                'desc' => 'Science exhibitions, quizzes & debates'
             ]
         ]
     ],
@@ -235,12 +229,6 @@ $nav_menu = [
                 'url' => 'contact-us.php#map',
                 'icon' => 'location_on',
                 'desc' => 'VPO Dobhi, Hisar (Haryana)'
-            ],
-            'alumni' => [
-                'title' => 'Alumni Network',
-                'url' => 'alumni.php',
-                'icon' => 'diversity_3',
-                'desc' => 'Connect with Past Students'
             ]
         ]
     ]

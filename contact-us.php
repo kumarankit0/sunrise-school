@@ -407,7 +407,7 @@ require_once __DIR__ . '/core/header.php';
         </p>
       </div>
       <?php if ($map_btn_text = get_text('contact', 'map_btn_text', 'Open in Google Maps')): ?>
-        <a href="<?= htmlspecialchars(get_text('contact', 'map_btn_link', 'https://maps.google.com/?q=Sun+Rise+Sr+Sec+School+Dobhi+Hisar')) ?>" target="_blank" rel="noopener" class="btn-gold inline-flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all flex-shrink-0">
+        <a href="<?= htmlspecialchars(get_text('contact', 'map_btn_link', 'https://maps.google.com/?q=Sun+Rise+Sr.+Sec.+School+Dobhi+Hisar+Haryana')) ?>" target="_blank" rel="noopener" class="btn-gold inline-flex items-center gap-1.5 px-4 py-2 sm:px-5 sm:py-2.5 rounded-xl font-bold text-xs sm:text-sm shadow-sm hover:shadow-md transition-all flex-shrink-0">
           <span class="material-symbols-outlined text-[18px]">explore</span>
           <span><?= htmlspecialchars($map_btn_text) ?></span>
         </a>
@@ -426,7 +426,7 @@ require_once __DIR__ . '/core/header.php';
     <div class="w-full h-64 sm:h-72 lg:h-80 rounded-xl overflow-hidden border border-border-warm shadow-sm relative bg-surface-container">
       <iframe
         title="Sun Rise Sr. Sec. School Dobhi Location Map"
-        src="<?= htmlspecialchars(get_text('contact', 'map_embed_url', 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.5786358172945!2d75.5898517!3d29.0718507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391235bc6cfa35d3%3A0xe54ec09228d7b379!2sSun%20Rise%20Sr.%20Sec.%20School!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin')) ?>"
+        src="<?= htmlspecialchars(get_text('contact', 'map_embed_url', 'https://maps.google.com/maps?q=Sun+Rise+Sr.+Sec.+School,+Dobhi,+Hisar,+Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed')) ?>"
         class="w-full h-full border-0"
         allowfullscreen=""
         loading="lazy"

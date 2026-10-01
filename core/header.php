@@ -195,14 +195,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
     <!-- Main Navigation Bar -->
     <div class="nav-container">
       <a href="index.php" class="brand-logo-link" title="<?= htmlspecialchars($site_name) ?>">
-        <img alt="<?= htmlspecialchars($site_name) ?> Crest" class="brand-logo-img" src="<?= $site_logo ?>" width="46" height="46"/>
-        <div class="brand-logo-text-group brand-stj-lockup">
-          <div class="brand-stj-top">
-            <span class="brand-stj-drop">S</span>
-            <span class="brand-stj-rest">UN RISE</span>
-          </div>
-          <span class="brand-stj-bottom">SR. SEC. SCHOOL</span>
-        </div>
+        <img alt="<?= htmlspecialchars($site_name) ?> Logo" class="brand-logo-img" src="<?= $site_logo ?>" width="220" height="56"/>
       </a>
 
       <!-- Desktop Navigation Menu (7 Uppercase Items matching Reference) -->
@@ -259,14 +252,9 @@ $current_page = isset($current_page) ? $current_page : 'home';
   <div id="mobileNavDrawer" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
     <div class="mobile-drawer-body">
       <div class="mobile-drawer-header">
-        <div class="flex items-center gap-2.5 min-w-0">
-          <img src="<?= $site_logo ?>" alt="Logo" class="h-9 w-auto flex-shrink-0 object-contain"/>
-          <div class="flex flex-col min-w-0">
-            <span class="font-extrabold text-[#000c1e] text-sm sm:text-base font-sans leading-tight">Sun Rise</span>
-            <span class="text-xs font-extrabold text-[#0a192f] uppercase tracking-wider leading-tight">Sr. Sec. School</span>
-            <span class="text-[11px] text-[#1e293b] font-bold mt-0.5"><?= htmlspecialchars(get_text('general', 'nav_sub_title', 'Dobhi, Hisar • HBSE Affiliated')) ?></span>
-          </div>
-        </div>
+        <a href="index.php" class="flex items-center min-w-0" title="<?= htmlspecialchars($site_name) ?>">
+          <img src="<?= $site_logo ?>" alt="<?= htmlspecialchars($site_name) ?> Logo" class="h-11 w-auto max-w-[210px] flex-shrink-0 object-contain"/>
+        </a>
         <button id="mobileMenuClose" class="mobile-close-btn" aria-label="Close Navigation Menu" type="button">
           <span class="material-symbols-outlined text-[22px]">close</span>
         </button>

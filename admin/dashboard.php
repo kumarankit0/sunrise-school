@@ -1934,6 +1934,14 @@ $pages_config = [
                 'desc'  => 'The symbolism behind the school name and the royal navy enduring pledge banner card.',
                 'fields' => [
                     [
+                        'kind' => 'image',
+                        'key' => 'symbolism_bg',
+                        'label' => 'Symbolism Card Background Image',
+                        'default' => 'assets/images/sunrise.png',
+                        'alt' => 'Sunrise Background Artwork',
+                        'help' => 'Sunrise artwork displayed as a soft background texture on the symbolism card.'
+                    ],
+                    [
                         'kind' => 'text',
                         'key' => 'symbolism_badge',
                         'label' => 'Symbolism Card Eyebrow',
@@ -3911,6 +3919,107 @@ $pages_config = [
                         'help' => 'Hint below poster thumbnail.'
                     ]
                 ]
+            ],
+
+            // Section 7: Our School Previous Years’ Board Results (2 Images Showcase)
+            [
+                'title' => 'Section 7: Our School on Previous Years\' Results (2 Images Showcase)',
+                'icon'  => 'photo_library',
+                'desc'  => 'Add and manage 2 previous years board result merit posters or award images with titles, session tags, and descriptions.',
+                'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'prev_results_eyebrow',
+                        'label' => 'Results Section Eyebrow Tag',
+                        'type' => 'text',
+                        'default' => 'Academic Track Record',
+                        'help' => 'Eyebrow tag above the main heading.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'prev_results_heading',
+                        'label' => 'Results Main Heading',
+                        'type' => 'text',
+                        'default' => 'Our School on Previous Years\' Results',
+                        'help' => 'Main section headline.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'prev_results_desc',
+                        'label' => 'Results Section Overview Description',
+                        'type' => 'textarea',
+                        'default' => 'Explore our distinguished board examination results, merit lists, and stellar academic performance records over the preceding academic sessions.',
+                        'help' => 'Subtitle description below heading.'
+                    ],
+
+                    // Image 1
+                    [
+                        'kind' => 'image',
+                        'key' => 'prev_result_img1',
+                        'label' => 'Previous Year Result Image 1 (Poster / Certificate)',
+                        'default' => 'assets/images/pop-up image.webp',
+                        'alt' => 'Previous Academic Year Board Result & Toppers Merit List 1',
+                        'help' => 'First board result poster/image.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'prev_res1_badge',
+                        'label' => 'Image 1 Session Badge',
+                        'type' => 'text',
+                        'default' => 'HBSE Board Result 2024–25',
+                        'help' => 'Session badge on Card 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'prev_res1_title',
+                        'label' => 'Image 1 Card Title',
+                        'type' => 'text',
+                        'default' => 'Class 10th & 12th Board Merit Roll & Toppers',
+                        'help' => 'Title on Card 1.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'prev_res1_desc',
+                        'label' => 'Image 1 Card Description',
+                        'type' => 'textarea',
+                        'default' => 'Outstanding academic performance with multiple state & district rank holders across Science, Commerce, and Arts streams.',
+                        'help' => 'Description on Card 1.'
+                    ],
+
+                    // Image 2
+                    [
+                        'kind' => 'image',
+                        'key' => 'prev_result_img2',
+                        'label' => 'Previous Year Result Image 2 (Poster / Certificate)',
+                        'default' => 'assets/images/sunrise school image/certificate.webp',
+                        'alt' => 'Previous Academic Year Board Result & Toppers Merit List 2',
+                        'help' => 'Second board result poster/image.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'prev_res2_badge',
+                        'label' => 'Image 2 Session Badge',
+                        'type' => 'text',
+                        'default' => 'HBSE Board Result 2023–24',
+                        'help' => 'Session badge on Card 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'prev_res2_title',
+                        'label' => 'Image 2 Card Title',
+                        'type' => 'text',
+                        'default' => 'Annual Board Distinction & Subject-Wise Ranks',
+                        'help' => 'Title on Card 2.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'prev_res2_desc',
+                        'label' => 'Image 2 Card Description',
+                        'type' => 'textarea',
+                        'default' => 'Celebrating subject toppers securing 95%+ marks in Physics, Accountancy, Political Science, Mathematics & Chemistry.',
+                        'help' => 'Description on Card 2.'
+                    ]
+                ]
             ]
         ]
     ],
@@ -4020,8 +4129,24 @@ $pages_config = [
             [
                 'title' => 'Section 2: Multi-Step Admission Process Tracker (Steps 1–4)',
                 'icon'  => 'linear_scale',
-                'desc'  => 'Labels and headings for each of the 4 horizontal steps in the registration progress bar.',
+                'desc'  => 'Header labels and step titles for each of the 4 steps in the online registration progress bar.',
                 'fields' => [
+                    [
+                        'kind' => 'text',
+                        'key' => 'step_tracker_heading',
+                        'label' => 'Process Tracker Heading',
+                        'type' => 'text',
+                        'default' => 'Online Admission Process',
+                        'help' => 'Title shown on the multi-step progress bar.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'step_tracker_sub',
+                        'label' => 'Process Tracker Subtitle',
+                        'type' => 'text',
+                        'default' => 'Follow 4 simple steps to submit your application online',
+                        'help' => 'Subtitle on the progress bar.'
+                    ],
                     [
                         'kind' => 'text',
                         'key' => 'step1_title',
@@ -4035,7 +4160,7 @@ $pages_config = [
                         'key' => 'step2_title',
                         'label' => 'Step 02 Title',
                         'type' => 'text',
-                        'default' => 'Student Profile Info',
+                        'default' => 'Student Details',
                         'help' => 'Title for Step 2.'
                     ],
                     [
@@ -4043,7 +4168,7 @@ $pages_config = [
                         'key' => 'step3_title',
                         'label' => 'Step 03 Title',
                         'type' => 'text',
-                        'default' => 'Transit & Documents',
+                        'default' => 'Parent Details',
                         'help' => 'Title for Step 3.'
                     ],
                     [
@@ -4051,7 +4176,7 @@ $pages_config = [
                         'key' => 'step4_title',
                         'label' => 'Step 04 Title',
                         'type' => 'text',
-                        'default' => 'Fee Review & Checkout',
+                        'default' => 'Transit & Submit',
                         'help' => 'Title for Step 4.'
                     ]
                 ]
@@ -4642,6 +4767,54 @@ $pages_config = [
                         'type' => 'text',
                         'default' => 'contact-us.php',
                         'help' => 'Destination link.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'director_msg_eyebrow',
+                        'label' => 'Director Admission Quote Eyebrow',
+                        'type' => 'text',
+                        'default' => 'DIRECTOR\'S MESSAGE',
+                        'help' => 'Eyebrow tag in the director admission card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'director_msg_quote',
+                        'label' => 'Director Admission Message / Quote',
+                        'type' => 'textarea',
+                        'default' => 'Welcome to Sun Rise Sr. Sec. School, Dobhi for Academic Session 2026–27. Our mission is to provide every student with holistic education, strong values, and individual mentorship from early years to senior secondary competitive excellence.',
+                        'help' => 'Director\'s featured admission message.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'director_msg_author',
+                        'label' => 'Director Message Author Name',
+                        'type' => 'text',
+                        'default' => 'Director',
+                        'help' => 'Name/Designation below quote.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'director_msg_badge',
+                        'label' => 'Director Message Session Pill',
+                        'type' => 'text',
+                        'default' => 'Session 2026–27',
+                        'help' => 'Pill tag beside author.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'advisory_title',
+                        'label' => 'Admission Advisory Title',
+                        'type' => 'text',
+                        'default' => 'Quick Admission Advisory',
+                        'help' => 'Title in the advisory card.'
+                    ],
+                    [
+                        'kind' => 'text',
+                        'key' => 'advisory_desc',
+                        'label' => 'Admission Advisory Description',
+                        'type' => 'textarea',
+                        'default' => 'Online registration takes under 2 minutes. Once submitted, our admission counselor will coordinate your campus visit for document verification, entrance evaluation, and stream confirmation.',
+                        'help' => 'Advisory notice text.'
                     ]
                 ]
             ],
@@ -5636,11 +5809,11 @@ $pages_config = [
                 ]
             ],
 
-            // Section 2: School News & Key Highlights (Dynamic Event Cards Manager)
+            // Section 2: Cultural Fest & School Activity Highlight Cards (Dynamic Event Cards Manager)
             [
-                'title' => 'Section 2: School News & Key Highlights (Event Cards Manager)',
-                'icon'  => 'newspaper',
-                'desc'  => 'Add, edit, or remove news cards, event highlights, dates, tags, photos and links.',
+                'title' => 'Section 2: Cultural Fest & School Activity Highlight Cards',
+                'icon'  => 'celebration',
+                'desc'  => 'Manage Cultural Fest and School Activity highlight cards. Add new cards, upload photos, set dates, tags, summaries, and gallery links.',
                 'type'  => 'event_news_cards',
                 'fields' => [
                     [
@@ -5821,250 +5994,250 @@ $pages_config = [
                 ]
             ],
 
-            // Section 4: Functions & Student Co-Curricular Activities (12 Cards)
+            // Section 4: Sports & Physical Education Curriculum (12 Cards)
             [
-                'title' => 'Section 4: Functions & Student Co-Curricular Activities (12 Cards)',
-                'icon'  => 'theater_comedy',
-                'desc'  => 'Header details and custom titles/descriptions for all 12 co-curricular school function cards.',
+                'title' => 'Section 4: Sports & Physical Education Curriculum (12 Cards)',
+                'icon'  => 'sports_kabaddi',
+                'desc'  => 'Header details and custom titles/descriptions for all 12 sports, athletic coaching, combat games, and yoga disciplines.',
                 'fields' => [
                     [
                         'kind' => 'text',
                         'key' => 'functions_eyebrow',
-                        'label' => 'Functions Section Eyebrow Tag',
+                        'label' => 'Sports Section Eyebrow Tag',
                         'type' => 'text',
-                        'default' => 'Holistic Development',
+                        'default' => 'Athletics & Physical Fitness',
                         'help' => 'Eyebrow tag.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'functions_heading',
-                        'label' => 'Functions Section Main Heading',
+                        'label' => 'Sports Section Main Heading',
                         'type' => 'text',
-                        'default' => 'Functions & Student Activities',
+                        'default' => 'Sports & Physical Education',
                         'help' => 'Main headline.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'functions_desc',
-                        'label' => 'Functions Section Overview Subtitle',
+                        'label' => 'Sports Section Overview Subtitle',
                         'type' => 'textarea',
-                        'default' => 'From cultural pageants and annual sports meets to science exhibitions and academic olympiads, our students flourish across a vibrant calendar of events.',
+                        'default' => 'Fostering physical endurance, sportsmanship, team spirit, and mental resilience through dedicated athletic coaching, combat disciplines, traditional sports, and daily yoga.',
                         'help' => 'Overview description.'
                     ],
 
-                    // 1. Annual Function
+                    // 1. Track & Field Athletics
                     [
                         'kind' => 'text',
                         'key' => 'func1_title',
-                        'label' => 'Function 1 Title',
+                        'label' => 'Sports 1 Title',
                         'type' => 'text',
-                        'default' => 'Annual Function',
+                        'default' => 'Track & Field Athletics',
                         'help' => 'Card 1 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func1_desc',
-                        'label' => 'Function 1 Description',
+                        'label' => 'Sports 1 Description',
                         'type' => 'text',
-                        'default' => 'Grand cultural showcase featuring theatrical acts, music, and dance.',
+                        'default' => '100m/200m sprints, 4x100m relay races, long jump, shot put, and endurance running on athletic tracks.',
                         'help' => 'Card 1 description.'
                     ],
 
-                    // 2. Result Declaration Day
+                    // 2. Wrestling & Grappling
                     [
                         'kind' => 'text',
                         'key' => 'func2_title',
-                        'label' => 'Function 2 Title',
+                        'label' => 'Sports 2 Title',
                         'type' => 'text',
-                        'default' => 'Result Declaration Day',
+                        'default' => 'Wrestling & Grappling',
                         'help' => 'Card 2 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func2_desc',
-                        'label' => 'Function 2 Description',
+                        'label' => 'Sports 2 Description',
                         'type' => 'text',
-                        'default' => 'Annual academic felicitation day honoring class and board rankers.',
+                        'default' => 'National sub-junior medal-winning wrestling coaching with mat practice and strength drills.',
                         'help' => 'Card 2 description.'
                     ],
 
-                    // 3. Annual Sports Meet
+                    // 3. Kickboxing & Martial Arts
                     [
                         'kind' => 'text',
                         'key' => 'func3_title',
-                        'label' => 'Function 3 Title',
+                        'label' => 'Sports 3 Title',
                         'type' => 'text',
-                        'default' => 'Annual Sports Meet',
+                        'default' => 'Kickboxing & Martial Arts',
                         'help' => 'Card 3 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func3_desc',
-                        'label' => 'Function 3 Description',
+                        'label' => 'Sports 3 Description',
                         'type' => 'text',
-                        'default' => 'Inter-house track and field competitions, relay races, and games.',
+                        'default' => 'State tournament podium-winning combat sports training focusing on self-defense, agility, and reflexes.',
                         'help' => 'Card 3 description.'
                     ],
 
-                    // 4. Cultural Fest
+                    // 4. Yoga & Mindful Pranayama
                     [
                         'kind' => 'text',
                         'key' => 'func4_title',
-                        'label' => 'Function 4 Title',
+                        'label' => 'Sports 4 Title',
                         'type' => 'text',
-                        'default' => 'Cultural Fest',
+                        'default' => 'Yoga & Mindful Pranayama',
                         'help' => 'Card 4 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func4_desc',
-                        'label' => 'Function 4 Description',
+                        'label' => 'Sports 4 Description',
                         'type' => 'text',
-                        'default' => 'Folk traditions, patriotic celebrations, skits, and instrumental music.',
+                        'default' => 'Daily morning yogic asanas, surya namaskar, pranayama, and meditation cultivating mindfulness.',
                         'help' => 'Card 4 description.'
                     ],
 
-                    // 5. Farewell Ceremony
+                    // 5. Kabaddi & Kho-Kho
                     [
                         'kind' => 'text',
                         'key' => 'func5_title',
-                        'label' => 'Function 5 Title',
+                        'label' => 'Sports 5 Title',
                         'type' => 'text',
-                        'default' => 'Farewell Ceremony',
+                        'default' => 'Kabaddi & Kho-Kho',
                         'help' => 'Card 5 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func5_desc',
-                        'label' => 'Function 5 Description',
+                        'label' => 'Sports 5 Description',
                         'type' => 'text',
-                        'default' => 'Blessings, mentorship, and warm send-off for passing-out Class 12 batches.',
+                        'default' => 'Traditional Indian agility sports fostering team tactics, strategic raiding, fast reflexes, and stamina.',
                         'help' => 'Card 5 description.'
                     ],
 
-                    // 6. Alumni Meet
+                    // 6. Volleyball & Court Games
                     [
                         'kind' => 'text',
                         'key' => 'func6_title',
-                        'label' => 'Function 6 Title',
+                        'label' => 'Sports 6 Title',
                         'type' => 'text',
-                        'default' => 'Alumni Meet',
+                        'default' => 'Volleyball & Court Games',
                         'help' => 'Card 6 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func6_desc',
-                        'label' => 'Function 6 Description',
+                        'label' => 'Sports 6 Description',
                         'type' => 'text',
-                        'default' => 'Reconnecting former students serving in administration, defence, and academia.',
+                        'default' => 'Inter-house volleyball matches, smash techniques, service drills, and court coordination.',
                         'help' => 'Card 6 description.'
                     ],
 
-                    // 7. Quiz Competition
+                    // 7. Cricket & Net Practice
                     [
                         'kind' => 'text',
                         'key' => 'func7_title',
-                        'label' => 'Function 7 Title',
+                        'label' => 'Sports 7 Title',
                         'type' => 'text',
-                        'default' => 'Quiz Competition',
+                        'default' => 'Cricket & Net Practice',
                         'help' => 'Card 7 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func7_desc',
-                        'label' => 'Function 7 Description',
+                        'label' => 'Sports 7 Description',
                         'type' => 'text',
-                        'default' => 'Block and district level GK, science, and history quiz contests.',
+                        'default' => 'Structured cricket training including batting, pace and spin bowling nets, wicket-keeping, and match play.',
                         'help' => 'Card 7 description.'
                     ],
 
-                    // 8. Science Exhibition
+                    // 8. Football & Soccer Drills
                     [
                         'kind' => 'text',
                         'key' => 'func8_title',
-                        'label' => 'Function 8 Title',
+                        'label' => 'Sports 8 Title',
                         'type' => 'text',
-                        'default' => 'Science Exhibition',
+                        'default' => 'Football & Soccer Drills',
                         'help' => 'Card 8 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func8_desc',
-                        'label' => 'Function 8 Description',
+                        'label' => 'Sports 8 Description',
                         'type' => 'text',
-                        'default' => 'Interactive working models in robotics, physics, ecology, and chemistry.',
+                        'default' => 'Dribbling drills, passing precision, positional play, and high-stamina team games on campus grounds.',
                         'help' => 'Card 8 description.'
                     ],
 
-                    // 9. Rangoli Competitions
+                    // 9. Mass PT & Morning Drills
                     [
                         'kind' => 'text',
                         'key' => 'func9_title',
-                        'label' => 'Function 9 Title',
+                        'label' => 'Sports 9 Title',
                         'type' => 'text',
-                        'default' => 'Rangoli Competitions',
+                        'default' => 'Mass PT & Morning Drills',
                         'help' => 'Card 9 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func9_desc',
-                        'label' => 'Function 9 Description',
+                        'label' => 'Sports 9 Description',
                         'type' => 'text',
-                        'default' => 'Festive creativity celebrating Indian heritage, colors, and art forms.',
+                        'default' => 'Disciplined morning physical drills, synchronized squad exercise, posture correction, and rhythmic training.',
                         'help' => 'Card 9 description.'
                     ],
 
-                    // 10. Debate Competitions
+                    // 10. Annual Sports Day & Meet
                     [
                         'kind' => 'text',
                         'key' => 'func10_title',
-                        'label' => 'Function 10 Title',
+                        'label' => 'Sports 10 Title',
                         'type' => 'text',
-                        'default' => 'Debate Competitions',
+                        'default' => 'Annual Sports Day & Meet',
                         'help' => 'Card 10 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func10_desc',
-                        'label' => 'Function 10 Description',
+                        'label' => 'Sports 10 Description',
                         'type' => 'text',
-                        'default' => 'Honing articulate expression, critical thinking, and public speaking.',
+                        'default' => 'Grand annual inter-house sports festival featuring march past, track competitions, and championship trophies.',
                         'help' => 'Card 10 description.'
                     ],
 
-                    // 11. Olympiad Participation
+                    // 11. SPAT & Physical Aptitude
                     [
                         'kind' => 'text',
                         'key' => 'func11_title',
-                        'label' => 'Function 11 Title',
+                        'label' => 'Sports 11 Title',
                         'type' => 'text',
-                        'default' => 'Olympiad Participation',
+                        'default' => 'SPAT & Physical Aptitude',
                         'help' => 'Card 11 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func11_desc',
-                        'label' => 'Function 11 Description',
+                        'label' => 'Sports 11 Description',
                         'type' => 'text',
-                        'default' => 'National science, mathematics, and cyber olympiad competitive testing.',
+                        'default' => 'Dedicated guidance for the Haryana Sports Physical Aptitude Test (SPAT) and government talent scholarships.',
                         'help' => 'Card 11 description.'
                     ],
 
-                    // 12. Educational Seminars & Tours
+                    // 12. Health, Wellness & First Aid
                     [
                         'kind' => 'text',
                         'key' => 'func12_title',
-                        'label' => 'Function 12 Title',
+                        'label' => 'Sports 12 Title',
                         'type' => 'text',
-                        'default' => 'Seminars & Tours',
+                        'default' => 'Health, Wellness & First Aid',
                         'help' => 'Card 12 title.'
                     ],
                     [
                         'kind' => 'text',
                         'key' => 'func12_desc',
-                        'label' => 'Function 12 Description',
+                        'label' => 'Sports 12 Description',
                         'type' => 'text',
-                        'default' => 'Career guidance workshops and educational excursions to historic and scientific sites.',
+                        'default' => 'Sports safety guidelines, nutritional hydration guidance, sportsmanship values, and immediate first aid care.',
                         'help' => 'Card 12 description.'
                     ]
                 ]
@@ -7039,65 +7212,45 @@ $pages_config = [
             [
                 'title'   => 'Category 1: Media Coverage',
                 'icon'    => 'newspaper',
-                'desc'    => 'Add or manage Media Coverage photo cards. Each card only requires an image and a single heading.',
+                'desc'    => 'Manage newspaper clippings, press releases, and media feature photo cards.',
                 'type'    => 'gallery_category',
                 'cat_key' => 'media',
                 'fields'  => []
             ],
 
-            // Section 5: Category — Annual Result Declaration Day
+            // Section 5: Category — Cultural Fest & Celebrations
             [
-                'title'   => 'Category 2: Annual Result Declaration Day',
-                'icon'    => 'workspace_premium',
-                'desc'    => 'Add or manage Annual Result Declaration Day photo cards. Each card only requires an image and a single heading.',
-                'type'    => 'gallery_category',
-                'cat_key' => 'result',
-                'fields'  => []
-            ],
-
-            // Section 6: Category — Cultural Fest
-            [
-                'title'   => 'Category 3: Cultural Fest',
+                'title'   => 'Category 2: Cultural Fest & Celebrations',
                 'icon'    => 'celebration',
-                'desc'    => 'Add or manage Cultural Fest photo cards. Each card only requires an image and a single heading.',
+                'desc'    => 'Manage Cultural Fest, Annual Result Day, stage pageants, and Diwali celebration photo cards. Click "+ Add Card" to add more photos.',
                 'type'    => 'gallery_category',
                 'cat_key' => 'cultural',
                 'fields'  => []
             ],
 
-            // Section 7: Category — School Activity
+            // Section 6: Category — School Activity
             [
-                'title'   => 'Category 4: School Activity',
+                'title'   => 'Category 3: School Activity',
                 'icon'    => 'sports_kabaddi',
-                'desc'    => 'Add or manage School Activity photo cards. Each card only requires an image and a single heading.',
+                'desc'    => 'Manage outdoor sports, morning assembly, yoga demonstrations, and campus activity photo cards.',
                 'type'    => 'gallery_category',
                 'cat_key' => 'activity',
                 'fields'  => []
             ],
 
-            // Section 8: Category — Competition
+            // Section 7: Category — Competition
             [
-                'title'   => 'Category 5: Competition',
+                'title'   => 'Category 4: Competition',
                 'icon'    => 'emoji_events',
-                'desc'    => 'Add or manage Competition photo cards. Each card only requires an image and a single heading.',
+                'desc'    => 'Manage inter-school science exhibitions, quiz contests, art, and debate competition photo cards.',
                 'type'    => 'gallery_category',
                 'cat_key' => 'competition',
                 'fields'  => []
             ],
 
-            // Section 9: Category — Diwali Celebration
+            // Section 8: Campus Life Highlights & Traditions
             [
-                'title'   => 'Category 6: Diwali Celebration',
-                'icon'    => 'festival',
-                'desc'    => 'Add or manage Diwali Celebration photo cards. Each card only requires an image and a single heading.',
-                'type'    => 'gallery_category',
-                'cat_key' => 'diwali',
-                'fields'  => []
-            ],
-
-            // Section 10: Campus Life Highlights & Traditions
-            [
-                'title' => 'Section 10: Campus Life Highlights & Traditions (3 Feature Pillars)',
+                'title' => 'Section 8: Campus Life Highlights & Traditions (3 Feature Pillars)',
                 'icon'  => 'auto_stories',
                 'desc'  => 'Header titles and 3 holistic student experience cards covering prayer assemblies, fests, and sports.',
                 'fields' => [
@@ -7847,7 +8000,7 @@ $pages_config = [
                         'key' => 'map_btn_link',
                         'label' => 'Map Button Target URL',
                         'type' => 'text',
-                        'default' => 'https://maps.google.com/?q=Sun+Rise+Sr+Sec+School+Dobhi+Hisar',
+                        'default' => 'https://maps.google.com/?q=Sun+Rise+Sr.+Sec.+School+Dobhi+Hisar+Haryana',
                         'help' => 'URL opened when clicking map button.'
                     ],
                     [
@@ -7855,7 +8008,7 @@ $pages_config = [
                         'key' => 'map_embed_url',
                         'label' => 'Google Maps Embed iframe URL',
                         'type' => 'textarea',
-                        'default' => 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3493.5786358172945!2d75.5898517!3d29.0718507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391235bc6cfa35d3%3A0xe54ec09228d7b379!2sSun%20Rise%20Sr.%20Sec.%20School!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin',
+                        'default' => 'https://maps.google.com/maps?q=Sun+Rise+Sr.+Sec.+School,+Dobhi,+Hisar,+Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed',
                         'help' => 'Embed src URL for Google Maps iframe.'
                     ]
                 ]
@@ -8010,7 +8163,7 @@ $pages_config = [
                         'kind' => 'image',
                         'key' => 'site_logo',
                         'label' => 'Official School Logo / Crest',
-                        'default' => 'assets/images/logo.svg',
+                        'default' => 'assets/images/school-logo.png',
                         'alt' => 'Sun Rise Sr. Sec. School Crest',
                         'help' => 'Displayed across header navbar, mobile drawer, and site crests.'
                     ],
@@ -9204,9 +9357,8 @@ $current_page_data = $pages_config[$active_tab];
                                                             name="card_category"
                                                             class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none cursor-pointer"
                                                         >
-                                                            <option value="academic" <?= ($card['category'] === 'academic') ? 'selected' : '' ?>>Academic</option>
-                                                            <option value="cultural" <?= ($card['category'] === 'cultural') ? 'selected' : '' ?>>Celebrations</option>
-                                                            <option value="campus" <?= ($card['category'] === 'campus') ? 'selected' : '' ?>>Campus</option>
+                                                            <option value="cultural" <?= ($card['category'] === 'cultural') ? 'selected' : '' ?>>Cultural Fest</option>
+                                                            <option value="activity" <?= ($card['category'] === 'activity' || $card['category'] === 'campus') ? 'selected' : '' ?>>School Activity</option>
                                                         </select>
                                                     </div>
                                                 </div>
@@ -9289,8 +9441,8 @@ $current_page_data = $pages_config[$active_tab];
                                         <div class="w-12 h-12 rounded-full bg-white border border-gray-200 group-hover:border-[#C9A24B] group-hover:bg-[#001129] group-hover:text-[#C9A24B] flex items-center justify-center shadow-sm transition">
                                             <span class="material-symbols-outlined text-2xl">add</span>
                                         </div>
-                                        <span class="font-bold text-sm">Add New Event / News Card</span>
-                                        <span class="text-xs text-gray-400 text-center">Click + to add a new event card with photo, date, tag &amp; summary</span>
+                                        <span class="font-bold text-sm">Add New Highlight Card</span>
+                                        <span class="text-xs text-gray-400 text-center">Click + to add a Cultural Fest or School Activity card with photo, date, tag &amp; summary</span>
                                     </button>
                                 </div>
                             </div>
@@ -10487,8 +10639,8 @@ $current_page_data = $pages_config[$active_tab];
                             <input 
                                 type="text" 
                                 name="card_tag" 
-                                value="Event"
-                                placeholder="e.g. Science Fair, Honors"
+                                value="Cultural Fest"
+                                placeholder="e.g. Cultural Fest, School Activity"
                                 class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none"
                             />
                         </div>
@@ -10501,9 +10653,8 @@ $current_page_data = $pages_config[$active_tab];
                                 name="card_category"
                                 class="w-full px-3 py-2 bg-white border border-gray-300 rounded-xl text-xs font-medium focus:ring-2 focus:ring-[#C9A24B] outline-none cursor-pointer"
                             >
-                                <option value="academic" selected>Academic</option>
-                                <option value="cultural">Celebrations</option>
-                                <option value="campus">Campus</option>
+                                <option value="cultural" selected>Cultural Fest</option>
+                                <option value="activity">School Activity</option>
                             </select>
                         </div>
                     </div>

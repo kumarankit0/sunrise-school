@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightbox();
   initToppersModal();
   initHashSmoothScroll();
+  initActiveSectionScrollSpy();
 });
 
 /* --------------------------------------------------------------------------
@@ -574,4 +575,101 @@ function initHashSmoothScroll() {
   }
 }
 
+/* --------------------------------------------------------------------------
+   ScrollSpy & Hash-based Active Dropdown Section Marker
+   -------------------------------------------------------------------------- */
+function initActiveSectionScrollSpy() {
+  const currentPath = window.location.pathname.split('/').pop() || 'index.php';
+  const dropdownItems = document.querySelectorAll('.nav-dropdown-item, .mobile-sublink');
+
+  // Collect all links belonging to the current page
+  const pageLinks = [];
+  dropdownItems.forEach(item => {
+    const href = item.getAttribute('href');
+    if (!href) return;
+
+    const hashIdx = href.indexOf('#');
+    const path = (hashIdx !== -1 ? href.substring(0, hashIdx) : href).split('?')[0];
+    const hash = hashIdx !== -1 ? href.substring(hashIdx) : '';
+
+    if (path === '' || path === currentPath) {
+      let targetEl = null;
+      if (hash) {
+        try {
+          targetEl = document.querySelector(hash);
+        } catch (e) {}
+      }
+      pageLinks.push({ item, href, hash, targetEl });
+    }
+  });
+
+  if (pageLinks.length === 0) return;
+
+  function updateActiveLink() {
+    const scrollPos = window.scrollY + 140; // account for sticky header offset
+    const pageHeight = document.documentElement.scrollHeight;
+    const windowHeight = window.innerHeight;
+    const isAtBottom = (window.scrollY + windowHeight) >= (pageHeight - 60);
+
+    // Find all target sections with their positions
+    const sectionsWithPos = pageLinks
+      .filter(l => l.targetEl)
+      .map(l => {
+        const rect = l.targetEl.getBoundingClientRect();
+        const top = rect.top + window.scrollY;
+        return { ...l, top };
+      })
+      .sort((a, b) => a.top - b.top);
+
+    let activeHash = '';
+
+    if (isAtBottom && sectionsWithPos.length > 0) {
+      // If at very bottom of page, activate last section
+      activeHash = sectionsWithPos[sectionsWithPos.length - 1].hash;
+    } else {
+      // Find the latest section that we have scrolled past
+      for (let i = sectionsWithPos.length - 1; i >= 0; i--) {
+        if (scrollPos >= sectionsWithPos[i].top - 60) {
+          activeHash = sectionsWithPos[i].hash;
+          break;
+        }
+      }
+    }
+
+    // Apply active class
+    pageLinks.forEach(l => {
+      if (activeHash) {
+        if (l.hash === activeHash) {
+          l.item.classList.add('active');
+        } else {
+          l.item.classList.remove('active');
+        }
+      } else {
+        // If scrolled above the first hashed section (e.g. top of page),
+        // activate the first link that has no hash (or the first link)
+        if (!l.hash || l === pageLinks[0]) {
+          l.item.classList.add('active');
+        } else {
+          l.item.classList.remove('active');
+        }
+      }
+    });
+  }
+
+  // Run on scroll with RAF
+  let isTicking = false;
+  window.addEventListener('scroll', () => {
+    if (!isTicking) {
+      window.requestAnimationFrame(() => {
+        updateActiveLink();
+        isTicking = false;
+      });
+      isTicking = true;
+    }
+  }, { passive: true });
+
+  // Run on hashchange & initial load
+  window.addEventListener('hashchange', updateActiveLink);
+  updateActiveLink();
+}
 

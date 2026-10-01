@@ -18,24 +18,24 @@
 
 /* Page Main Container: Responsive Top Offset matching Fixed Navbar */
 main {
-  padding-top: 122px !important;
+  padding-top: 130px !important;
 }
 
 @media (min-width: 480px) {
   main {
-    padding-top: 125px !important;
+    padding-top: 135px !important;
   }
 }
 
 @media (min-width: 640px) {
   main {
-    padding-top: 130px !important;
+    padding-top: 144px !important;
   }
 }
 
 @media (min-width: 1024px) {
   main {
-    padding-top: 136px !important;
+    padding-top: 154px !important;
   }
 }
 
@@ -318,7 +318,7 @@ main {
 
 /* Main Navigation Bar Container */
 .nav-container {
-  height: 4.25rem;
+  height: 4.75rem;
   max-width: 90rem;
   width: 100%;
   margin-left: auto;
@@ -334,7 +334,7 @@ main {
 
 @media (min-width: 640px) {
   .nav-container {
-    height: 4.5rem;
+    height: 5.15rem;
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }
@@ -342,25 +342,26 @@ main {
 
 @media (min-width: 1024px) {
   .nav-container {
+    height: 5.65rem;
     padding-left: 2rem;
     padding-right: 2rem;
-    gap: 1rem;
+    gap: 1.25rem;
   }
 }
 
-/* Brand Logo & Title */
+/* Brand Logo */
 .brand-logo-link {
   display: flex;
   align-items: center;
   gap: 0.6rem;
   text-decoration: none;
-  flex: 1 1 auto;
+  flex: 0 0 auto;
   min-width: 0;
 }
 
 @media (max-width: 1023px) {
   .brand-logo-link {
-    max-width: calc(100% - 90px);
+    max-width: calc(100% - 70px);
   }
 }
 
@@ -373,9 +374,9 @@ main {
 }
 
 .brand-logo-img {
-  height: 2.65rem;
-  width: 2.65rem;
-  min-width: 2.65rem;
+  height: 3.4rem;
+  width: auto;
+  max-width: 240px;
   object-fit: contain;
   flex-shrink: 0;
   transition: transform var(--transition-fast);
@@ -383,14 +384,20 @@ main {
 
 @media (min-width: 640px) {
   .brand-logo-img {
-    height: 2.85rem;
-    width: 2.85rem;
-    min-width: 2.85rem;
+    height: 4.1rem;
+    max-width: 290px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .brand-logo-img {
+    height: 4.85rem;
+    max-width: 350px;
   }
 }
 
 .brand-logo-link:hover .brand-logo-img {
-  transform: scale(1.05);
+  transform: scale(1.03);
 }
 
 .brand-logo-text-group {
@@ -718,16 +725,22 @@ main {
   border-radius: 10px;
   text-decoration: none;
   color: #1a1c1a;
+  border: 1.5px solid transparent;
   transition: all 0.18s ease;
+  position: relative;
 }
 
 .nav-dropdown-item:hover {
   background-color: #F9F4E8;
+  border-color: #E5E2DA;
   transform: translateX(2px);
 }
 
 .nav-dropdown-item.active {
-  background-color: #F3EFEA;
+  background-color: #F6F3EE !important;
+  border: 1.5px solid #001129 !important;
+  box-shadow: 0 2px 8px rgba(0, 17, 41, 0.08) !important;
+  transform: translateX(2px);
 }
 
 .nav-dropdown-icon {
@@ -751,9 +764,10 @@ main {
 }
 
 .nav-dropdown-item.active .nav-dropdown-icon {
-  background: #001129;
-  border-color: #001129;
-  color: #C9A24B;
+  background: #001129 !important;
+  border-color: #001129 !important;
+  color: #C9A24B !important;
+  box-shadow: 0 2px 6px rgba(0, 17, 41, 0.25) !important;
 }
 
 .nav-dropdown-text {
@@ -782,8 +796,13 @@ main {
 }
 
 .nav-dropdown-item.active .nav-dropdown-title {
-  color: #001129;
-  font-weight: 800;
+  color: #001129 !important;
+  font-weight: 800 !important;
+}
+
+.nav-dropdown-item.active .nav-dropdown-desc {
+  color: #334155 !important;
+  font-weight: 500 !important;
 }
 
 /* Right Actions (Enquire & Profile Portal) */

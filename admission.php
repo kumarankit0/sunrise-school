@@ -28,9 +28,6 @@ require_once __DIR__ . '/core/header.php';
       <div class="absolute inset-0 bg-gradient-to-r from-slate-50/86 via-white/78 to-[#fef9ee]/82"></div>
       <div class="absolute inset-0 bg-gradient-to-b from-white/50 via-transparent to-slate-100/75"></div>
 
-      <!-- Subtle Architectural / Geometric Dot Overlay -->
-      <div class="absolute inset-0 opacity-[0.22]" style="background-image: radial-gradient(#001129 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
-
       <!-- Ambient Glow Orbs -->
       <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#C9A24B]/15 blur-3xl pointer-events-none"></div>
       <div class="absolute -left-20 bottom-0 w-80 h-80 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
@@ -58,7 +55,7 @@ require_once __DIR__ . '/core/header.php';
           <h1 class="hero-heading font-headline-lg font-bold text-primary text-2xl sm:text-3xl lg:text-4xl tracking-tight leading-tight drop-shadow-xs">
             <?= get_text('admissions', 'hero_title', 'Admissions Open: Sun Rise Sr. Sec. School, Dobhi') ?>
           </h1>
-          <p class="hero-subtitle text-[#334155] w-full max-w-3xl text-xs sm:text-sm leading-relaxed">
+          <p class="hero-subtitle text-white font-medium drop-shadow-sm w-full max-w-3xl text-xs sm:text-sm leading-relaxed">
             <?= get_text('admissions', 'hero_desc', 'Cultivating scholarship, strong character, and competitive excellence in Hisar district. Select your grade stream, fill student credentials, choose village bus transit, and submit your admission application online.') ?>
           </p>
 
@@ -75,10 +72,6 @@ require_once __DIR__ . '/core/header.php';
             <div class="flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold hover:bg-white transition-all">
               <span class="material-symbols-outlined text-[#C9A24B] text-base">assignment_turned_in</span>
               <span><?= get_text('admissions', 'badge_token', 'Instant Application Acknowledgement') ?></span>
-            </div>
-            <div class="flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-border-warm shadow-xs text-xs text-primary font-semibold hover:bg-white transition-all">
-              <span class="material-symbols-outlined text-[#C9A24B] text-base">security</span>
-              <span><?= get_text('admissions', 'badge_escrow', 'RBI & PCI-DSS 256-Bit Escrow') ?></span>
             </div>
           </div>
         </div>
@@ -154,23 +147,25 @@ require_once __DIR__ . '/core/header.php';
   <!-- Interactive Class / Stream Matrix Selector (Light Pastel Cards on White/Grey Background) -->
   <section class="py-8 sm:py-12 px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto w-full scroll-mt-24 relative" id="step-1-classes">
     <span id="fee-structure" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
-    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6 sm:mb-8">
-      <div>
-        <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2">
-          <span class="w-2 h-2 rounded-full bg-[#C9A24B] animate-pulse"></span>
-          <span>STEP 1 OF 4</span> • <span>Choose Admission Class</span>
-        </div>
-        <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-primary tracking-tight leading-snug mt-0.5"><?= get_text('admissions', 'grade_selector_heading', 'Available Classes & Grade Options') ?></h2>
-        <p class="text-on-surface-variant text-xs sm:text-sm mt-0.5"><?= get_text('admissions', 'grade_selector_desc', 'Click on your child\'s prospective grade level below to start your online registration application.') ?></p>
+    <div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+      <div class="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-2.5">
+        <span class="w-2 h-2 rounded-full bg-[#C9A24B] animate-pulse"></span>
+        <span>STEP 1 OF 4</span> • <span>Choose Admission Class</span>
       </div>
+      <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-primary tracking-tight leading-snug">
+        <?= get_text('admissions', 'grade_selector_heading', 'Admission Process: Select Class & Stream') ?>
+      </h2>
+      <p class="text-on-surface-variant text-xs sm:text-sm mt-1.5 max-w-2xl">
+        <?= get_text('admissions', 'grade_selector_desc', 'Click on your child\'s prospective grade level below to start your online registration application.') ?>
+      </p>
 
-      <!-- Segment Filters -->
-      <div class="flex flex-wrap gap-1.5 p-1 bg-surface-container-low rounded-xl border border-border-warm" id="grade-filter-container">
-        <button class="grade-filter-btn px-3 py-1.5 rounded-lg text-xs font-bold bg-primary text-white shadow-xs transition-all" data-category="all">All Grades</button>
-        <button class="grade-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-on-surface-variant hover:text-primary transition-all" data-category="senior">Senior Sec (XI - XII)</button>
-        <button class="grade-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-on-surface-variant hover:text-primary transition-all" data-category="secondary">Secondary (IX - X)</button>
-        <button class="grade-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-on-surface-variant hover:text-primary transition-all" data-category="middle">Middle & Primary (I - VIII)</button>
-        <button class="grade-filter-btn px-3 py-1.5 rounded-lg text-xs font-semibold text-on-surface-variant hover:text-primary transition-all" data-category="preprimary">Pre-Primary (KG)</button>
+      <!-- Segment Filters Centered -->
+      <div class="flex flex-wrap justify-center gap-1.5 p-1.5 bg-surface-container-low rounded-xl border border-border-warm mt-5 shadow-xs" id="grade-filter-container">
+        <button class="grade-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-bold bg-primary text-white shadow-xs transition-all" data-category="all">All Grades</button>
+        <button class="grade-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-on-surface-variant hover:text-primary transition-all" data-category="senior">Senior Sec (XI - XII)</button>
+        <button class="grade-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-on-surface-variant hover:text-primary transition-all" data-category="secondary">Secondary (IX - X)</button>
+        <button class="grade-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-on-surface-variant hover:text-primary transition-all" data-category="middle">Middle & Primary (I - VIII)</button>
+        <button class="grade-filter-btn px-3.5 py-1.5 rounded-lg text-xs font-semibold text-on-surface-variant hover:text-primary transition-all" data-category="preprimary">Pre-Primary (KG)</button>
       </div>
     </div>
 
@@ -881,19 +876,19 @@ require_once __DIR__ . '/core/header.php';
           <!-- Background Accents -->
           <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-[#C9A24B]/15 rounded-full blur-xl pointer-events-none"></div>
           <div class="relative z-10 flex flex-col gap-3">
-            <div class="flex items-center justify-between">
-              <span class="text-[10px] text-[#C9A24B] uppercase tracking-widest font-bold">Director's Message</span>
-              <span class="material-symbols-outlined text-[#C9A24B] text-2xl opacity-75">format_quote</span>
+            <div class="flex items-center justify-center relative pb-1">
+              <span class="text-[11px] text-[#C9A24B] uppercase tracking-widest font-bold text-center"><?= get_text('admissions', 'director_msg_eyebrow', "DIRECTOR'S MESSAGE") ?></span>
+              <span class="material-symbols-outlined text-[#C9A24B] text-xl opacity-75 absolute right-0">format_quote</span>
             </div>
-            <p class="text-xs text-white/90 italic leading-relaxed font-light">
-              "Education is not merely about syllabus completion; it is the igniting of curiosity, discipline, and noble character. Every child who enters Sun Rise School Dobhi is nurtured to lead tomorrow with courage and values."
+            <p class="text-xs text-white/90 italic leading-relaxed font-light text-center">
+              "<?= get_text('admissions', 'director_msg_quote', 'Welcome to Sun Rise Sr. Sec. School, Dobhi for Academic Session 2026–27. Our mission is to provide every student with holistic education, strong values, and individual mentorship from early years to senior secondary competitive excellence.') ?>"
             </p>
             <div class="pt-2 border-t border-white/10 flex items-center justify-between">
               <div class="flex flex-col">
-                <span class="text-xs font-bold text-white">Director & Academic Board</span>
-                <span class="text-[10px] text-white/70">Sun Rise Sr. Sec. School, Dobhi</span>
+                <span class="text-xs font-bold text-white"><?= get_text('admissions', 'director_msg_author', 'Director') ?></span>
+                <span class="text-[10px] text-white/70"><?= get_text('admissions', 'director_msg_school', 'Sun Rise Sr. Sec. School, Dobhi') ?></span>
               </div>
-              <span class="text-[10px] text-[#C9A24B] font-bold bg-white/10 px-2.5 py-1 rounded-md">Session 2026–27</span>
+              <span class="text-[10px] text-[#C9A24B] font-bold bg-white/10 px-2.5 py-1 rounded-md"><?= get_text('admissions', 'director_msg_badge', 'Session 2026–27') ?></span>
             </div>
           </div>
         </div>
@@ -902,9 +897,9 @@ require_once __DIR__ . '/core/header.php';
         <div class="p-4 bg-[#FFFBEB] rounded-xl border border-[#FDE68A] text-xs flex items-start gap-2.5">
           <span class="material-symbols-outlined text-[#B45309] text-xl shrink-0 mt-0.5">verified_user</span>
           <div>
-            <span class="font-bold text-[#92400E] block">Quick Admission Advisory</span>
+            <span class="font-bold text-[#92400E] block"><?= get_text('admissions', 'advisory_title', 'Quick Admission Advisory') ?></span>
             <span class="text-[#78350F] text-[11px] leading-relaxed block mt-0.5">
-              Online registration takes under 2 minutes. Once submitted, our admission counselor will coordinate your campus visit for document verification and stream allocation.
+              <?= get_text('admissions', 'advisory_desc', 'Online registration takes under 2 minutes. Once submitted, our admission counselor will coordinate your campus visit for document verification, entrance evaluation, and stream confirmation.') ?>
             </span>
           </div>
         </div>

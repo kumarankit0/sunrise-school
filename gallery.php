@@ -68,20 +68,22 @@ require_once __DIR__ . '/core/header.php';
     <div class="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
       <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('gallery', 'gallery_intro_eyebrow', 'Curated Photographic Archive') ?></span>
       <h2 class="text-[1.25rem] sm:text-[1.5rem] lg:text-[1.75rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-2"><?= get_text('gallery', 'gallery_intro_title', 'Moments That Define Our School') ?></h2>
-      <p class="font-body-md text-on-surface-variant mt-2 sm:mt-3 text-sm sm:text-base"><?= get_text('gallery', 'gallery_intro_desc', 'Filter by category to explore cultural fests, annual result declaration days, school activities, academic competitions, Diwali celebrations, and media coverage.') ?></p>
+      <p class="font-body-md text-on-surface-variant mt-2 sm:mt-3 text-sm sm:text-base"><?= get_text('gallery', 'gallery_intro_desc', 'Filter by category to explore cultural fests, annual result declaration days, Diwali celebrations, school activities, academic competitions, and media coverage.') ?></p>
     </div>
     <?php
-    $valid_filters = ['cultural', 'result', 'activity', 'competition', 'diwali', 'media'];
-    $active_cat = (isset($_GET['cat']) && in_array($_GET['cat'], $valid_filters)) ? $_GET['cat'] : 'all';
+    $valid_filters = ['cultural', 'activity', 'competition', 'media'];
+    $raw_cat = $_GET['cat'] ?? 'all';
+    if (in_array($raw_cat, ['result', 'diwali'])) {
+        $raw_cat = 'cultural';
+    }
+    $active_cat = in_array($raw_cat, $valid_filters) ? $raw_cat : 'all';
     ?>
     <div class="flex flex-wrap items-center justify-center gap-2.5 border-b border-border-warm pb-4">
       <button class="gallery-filter-btn <?= ($active_cat === 'all') ? 'active' : '' ?>" data-filter="all" onclick="filterGallery('all')">All Photos</button>
       <button class="gallery-filter-btn <?= ($active_cat === 'media') ? 'active' : '' ?>" data-filter="media" onclick="filterGallery('media')">Media Coverage</button>
-      <button class="gallery-filter-btn <?= ($active_cat === 'result') ? 'active' : '' ?>" data-filter="result" onclick="filterGallery('result')">Annual Result Declaration Day</button>
-      <button class="gallery-filter-btn <?= ($active_cat === 'cultural') ? 'active' : '' ?>" data-filter="cultural" onclick="filterGallery('cultural')">Cultural Fest</button>
+      <button class="gallery-filter-btn <?= ($active_cat === 'cultural') ? 'active' : '' ?>" data-filter="cultural" onclick="filterGallery('cultural')">Cultural Fest &amp; Celebrations</button>
       <button class="gallery-filter-btn <?= ($active_cat === 'activity') ? 'active' : '' ?>" data-filter="activity" onclick="filterGallery('activity')">School Activity</button>
       <button class="gallery-filter-btn <?= ($active_cat === 'competition') ? 'active' : '' ?>" data-filter="competition" onclick="filterGallery('competition')">Competition</button>
-      <button class="gallery-filter-btn <?= ($active_cat === 'diwali') ? 'active' : '' ?>" data-filter="diwali" onclick="filterGallery('diwali')">Diwali Celebration</button>
     </div>
   </section>
 

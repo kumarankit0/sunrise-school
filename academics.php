@@ -564,6 +564,74 @@ require_once __DIR__ . '/core/header.php';
       </div>
     </div>
   </section>
+
+  <!-- Previous Years' Board Results Section (2 Images Showcase with Lightbox & Consistency) -->
+  <section class="py-10 sm:py-14 px-4 sm:px-6 lg:px-12 w-full border-t border-border-warm bg-slate-50/70 relative overflow-hidden" id="previous-results">
+    <!-- Ambient subtle background glow -->
+    <div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-[#C9A24B]/10 blur-3xl pointer-events-none"></div>
+    <div class="absolute -left-20 bottom-0 w-80 h-80 rounded-full bg-primary/5 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10 w-full">
+      <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
+        <span class="font-eyebrow text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold text-xs"><?= get_text('academics', 'prev_results_eyebrow', 'Academic Track Record') ?></span>
+        <h2 class="text-xl sm:text-2xl lg:text-3xl font-bold text-primary tracking-tight leading-snug mt-1"><?= get_text('academics', 'prev_results_heading', 'Our School on Previous Years\' Results') ?></h2>
+        <p class="text-xs sm:text-sm text-on-surface-variant mt-1.5"><?= get_text('academics', 'prev_results_desc', 'Explore our distinguished board examination results, merit lists, and stellar academic performance records over the preceding academic sessions.') ?></p>
+      </div>
+
+      <!-- 2 Images Grid with Clean Professional Styling -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
+        <!-- Result Card 1 -->
+        <div class="bg-surface-pure rounded-2xl p-4 sm:p-5 border border-border-warm shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative rounded-xl overflow-hidden bg-slate-100 border border-border-warm aspect-[4/3] sm:aspect-[16/11] cursor-pointer flex items-center justify-center" onclick="openLightbox(this)">
+            <img
+              src="<?= get_image('academics', 'prev_result_img1', school_img('pop-up image.webp')) ?>"
+              alt="<?= htmlspecialchars(get_image_alt('academics', 'prev_result_img1', 'Previous Academic Year Board Result & Toppers Merit List 1')) ?>"
+              class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-primary/90 backdrop-blur-sm text-white px-3.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-md border border-[#C9A24B]/40">
+                <span class="material-symbols-outlined text-sm text-[#C9A24B]">zoom_in</span> Click to Enlarge
+              </span>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-col gap-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] uppercase font-bold text-[#8A6A1C] bg-[#C9A24B]/15 px-2.5 py-0.5 rounded-full border border-[#C9A24B]/30"><?= get_text('academics', 'prev_res1_badge', 'HBSE Board Result 2024–25') ?></span>
+              <span class="text-[11px] text-emerald-700 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> 100% Pass</span>
+            </div>
+            <h3 class="text-sm sm:text-base font-bold text-primary group-hover:text-secondary transition-colors"><?= get_text('academics', 'prev_res1_title', 'Class 10th & 12th Board Merit Roll & Toppers') ?></h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed"><?= get_text('academics', 'prev_res1_desc', 'Outstanding academic performance with multiple state & district rank holders across Science, Commerce, and Arts streams.') ?></p>
+          </div>
+        </div>
+
+        <!-- Result Card 2 -->
+        <div class="bg-surface-pure rounded-2xl p-4 sm:p-5 border border-border-warm shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group">
+          <div class="relative rounded-xl overflow-hidden bg-slate-100 border border-border-warm aspect-[4/3] sm:aspect-[16/11] cursor-pointer flex items-center justify-center" onclick="openLightbox(this)">
+            <img
+              src="<?= get_image('academics', 'prev_result_img2', school_img('certificate.webp')) ?>"
+              alt="<?= htmlspecialchars(get_image_alt('academics', 'prev_result_img2', 'Previous Academic Year Board Result & Toppers Merit List 2')) ?>"
+              class="w-full h-full object-contain p-2 group-hover:scale-105 transition-transform duration-500"
+              loading="lazy"
+            />
+            <div class="absolute inset-0 bg-primary/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span class="bg-primary/90 backdrop-blur-sm text-white px-3.5 py-1.5 rounded-lg text-xs font-bold flex items-center gap-1.5 shadow-md border border-[#C9A24B]/40">
+                <span class="material-symbols-outlined text-sm text-[#C9A24B]">zoom_in</span> Click to Enlarge
+              </span>
+            </div>
+          </div>
+          <div class="mt-4 flex flex-col gap-1.5">
+            <div class="flex items-center justify-between">
+              <span class="text-[10px] uppercase font-bold text-[#8A6A1C] bg-[#C9A24B]/15 px-2.5 py-0.5 rounded-full border border-[#C9A24B]/30"><?= get_text('academics', 'prev_res2_badge', 'HBSE Board Result 2023–24') ?></span>
+              <span class="text-[11px] text-emerald-700 font-bold flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Merit Distinction</span>
+            </div>
+            <h3 class="text-sm sm:text-base font-bold text-primary group-hover:text-secondary transition-colors"><?= get_text('academics', 'prev_res2_title', 'Annual Board Distinction & Subject-Wise Ranks') ?></h3>
+            <p class="text-xs text-on-surface-variant leading-relaxed"><?= get_text('academics', 'prev_res2_desc', 'Celebrating subject toppers securing 95%+ marks in Physics, Accountancy, Political Science, Mathematics & Chemistry.') ?></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
 
 <script>

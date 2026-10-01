@@ -49,12 +49,11 @@ require_once __DIR__ . '/core/header.php';
             <span class="text-eyebrow text-primary uppercase font-bold text-[#B38C37]"><?= get_text('events', 'news_eyebrow', 'Happenings & Notices') ?></span>
             <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-1"><?= get_text('events', 'news_heading', 'School News & Key Highlights') ?></h2>
           </div>
-          <!-- Filter Chips -->
+          <!-- Filter Chips: Cultural Fest & School Activity -->
           <div class="flex items-center gap-2 flex-wrap">
             <button class="event-filter-btn bg-primary text-on-primary px-4 py-2 rounded-lg text-label-sm transition-all shadow-sm font-bold" data-filter="all" onclick="filterEvents('all')">All</button>
-            <button class="event-filter-btn bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg text-label-sm transition-all font-bold" data-filter="academic" onclick="filterEvents('academic')">Academic</button>
-            <button class="event-filter-btn bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg text-label-sm transition-all font-bold" data-filter="cultural" onclick="filterEvents('cultural')">Celebrations</button>
-            <button class="event-filter-btn bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg text-label-sm transition-all font-bold" data-filter="campus" onclick="filterEvents('campus')">Campus</button>
+            <button class="event-filter-btn bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg text-label-sm transition-all font-bold" data-filter="cultural" onclick="filterEvents('cultural')">Cultural Fest</button>
+            <button class="event-filter-btn bg-surface-container-high hover:bg-surface-container-highest text-on-surface px-4 py-2 rounded-lg text-label-sm transition-all font-bold" data-filter="activity" onclick="filterEvents('activity')">School Activity</button>
           </div>
         </div>
 
@@ -69,7 +68,8 @@ require_once __DIR__ . '/core/header.php';
               $d_parts = explode(' ', trim($card['date']));
               $d_day   = $d_parts[0] ?? '01';
               $d_month = $d_parts[1] ?? 'JAN';
-              $cat_attr = !empty($card['category']) ? $card['category'] : 'academic';
+              $cat_raw  = strtolower(trim($card['category'] ?? 'cultural'));
+              $cat_attr = in_array($cat_raw, ['activity', 'campus']) ? 'activity' : 'cultural';
           ?>
             <!-- Card #<?= (int)$card['slot'] ?>: <?= htmlspecialchars($card['title']) ?> -->
             <div class="event-card bg-surface-pure rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group border border-border-warm" data-category="<?= htmlspecialchars($cat_attr) ?>">
@@ -172,9 +172,12 @@ require_once __DIR__ . '/core/header.php';
     </div>
   </section>
 
-  <!-- School Functions & Co-Curricular Activities Section -->
-  <section class="relative w-full py-10 sm:py-12 lg:py-14 px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10 scroll-mt-24" id="functions-activities" style="background-color: #F7EFE8; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.10) 0%, transparent 42%), radial-gradient(circle at 85% 80%, rgba(184, 134, 102, 0.09) 0%, transparent 46%);">
+  <!-- Sports & Physical Education Section -->
+  <section class="relative w-full py-10 sm:py-12 lg:py-14 px-6 lg:px-12 overflow-hidden border-t border-b border-[#000e21]/10 scroll-mt-24" id="sports-activities" style="background-color: #F7EFE8; background-image: radial-gradient(circle at 15% 20%, rgba(201, 162, 75, 0.10) 0%, transparent 42%), radial-gradient(circle at 85% 80%, rgba(184, 134, 102, 0.09) 0%, transparent 46%);">
+    <span id="sports" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
+    <span id="sports-physical-education" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
     <span id="activities" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
+    <span id="functions-activities" class="absolute -top-28 left-0 pointer-events-none w-0 h-0 opacity-0"></span>
     <!-- Subtle Warm Nude Geometric / Academic Pattern Overlays -->
     <div class="absolute inset-0 pointer-events-none opacity-[0.38]" style="background-image: radial-gradient(#8d6e53 0.85px, transparent 0.85px), radial-gradient(#C9A24B 0.85px, transparent 0.85px); background-size: 24px 24px; background-position: 0 0, 12px 12px;"></div>
     <div class="absolute inset-0 pointer-events-none opacity-[0.20]" style="background-image: linear-gradient(to right, rgba(141, 110, 83, 0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(141, 110, 83, 0.06) 1px, transparent 1px); background-size: 40px 40px;"></div>
@@ -185,118 +188,118 @@ require_once __DIR__ . '/core/header.php';
 
     <div class="max-w-7xl mx-auto relative z-10 w-full">
       <div class="text-center max-w-3xl mx-auto mb-8 sm:mb-10">
-        <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('events', 'functions_eyebrow', 'Holistic Development') ?></span>
-        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-1.5"><?= get_text('events', 'functions_heading', 'Functions & Student Activities') ?></h2>
-        <p class="font-body-md text-on-surface-variant mt-2 text-xs sm:text-sm"><?= get_text('events', 'functions_desc', 'From cultural pageants and annual sports meets to science exhibitions and academic olympiads, our students flourish across a vibrant calendar of events.') ?></p>
+        <span class="text-eyebrow text-[#C9A24B] uppercase tracking-widest font-bold"><?= get_text('events', 'functions_eyebrow', 'Athletics & Physical Fitness') ?></span>
+        <h2 class="text-[1.1rem] sm:text-[1.2rem] font-headline-lg font-bold text-primary tracking-tight leading-snug mt-1.5"><?= get_text('events', 'functions_heading', 'Sports & Physical Education') ?></h2>
+        <p class="font-body-md text-on-surface-variant mt-2 text-xs sm:text-sm"><?= get_text('events', 'functions_desc', 'Fostering physical endurance, sportsmanship, team spirit, and mental resilience through dedicated athletic coaching, combat disciplines, traditional sports, and daily yoga.') ?></p>
       </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4.5">
-        <!-- 1. Annual Function -->
+        <!-- 1. Track & Field Athletics -->
         <div class="bg-[#F5EEFD] p-3.5 sm:p-4 rounded-xl border border-[#E2CEFC] hover:border-[#7C3AED] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#8B5CF6] to-[#6D28D9] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">celebration</span>
+            <span class="material-symbols-outlined text-[22px]">sprint</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#3B0764]"><?= get_text('events', 'func1_title', 'Annual Function') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#581C87]/80 leading-snug"><?= get_text('events', 'func1_desc', 'Grand cultural showcase featuring theatrical acts, music, and dance.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#3B0764]"><?= get_text('events', 'func1_title', 'Track & Field Athletics') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#581C87]/80 leading-snug"><?= get_text('events', 'func1_desc', '100m/200m sprints, 4x100m relay races, long jump, shot put, and endurance running on athletic tracks.') ?></p>
         </div>
 
-        <!-- 2. Annual Result Declaration Day -->
+        <!-- 2. Wrestling & Grappling -->
         <div class="bg-[#FEF8E7] p-3.5 sm:p-4 rounded-xl border border-[#FDE68A] hover:border-[#D97706] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#F59E0B] to-[#B45309] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">military_tech</span>
+            <span class="material-symbols-outlined text-[22px]">sports_kabaddi</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#78350F]"><?= get_text('events', 'func2_title', 'Result Declaration Day') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#92400E]/80 leading-snug"><?= get_text('events', 'func2_desc', 'Annual academic felicitation day honoring class and board rankers.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#78350F]"><?= get_text('events', 'func2_title', 'Wrestling & Grappling') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#92400E]/80 leading-snug"><?= get_text('events', 'func2_desc', 'National sub-junior medal-winning wrestling coaching with mat practice and strength drills.') ?></p>
         </div>
 
-        <!-- 3. Annual Sports Meet -->
+        <!-- 3. Kickboxing & Martial Arts -->
         <div class="bg-[#FFF2EA] p-3.5 sm:p-4 rounded-xl border border-[#FDBA74] hover:border-[#EA580C] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#EA580C] to-[#C2410C] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">sports_score</span>
+            <span class="material-symbols-outlined text-[22px]">sports_martial_arts</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#7C2D12]"><?= get_text('events', 'func3_title', 'Annual Sports Meet') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#9A3412]/80 leading-snug"><?= get_text('events', 'func3_desc', 'Inter-house track and field competitions, relay races, and games.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#7C2D12]"><?= get_text('events', 'func3_title', 'Kickboxing & Martial Arts') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#9A3412]/80 leading-snug"><?= get_text('events', 'func3_desc', 'State tournament podium-winning combat sports training focusing on self-defense, agility, and reflexes.') ?></p>
         </div>
 
-        <!-- 4. Cultural Fest -->
+        <!-- 4. Yoga & Mindful Pranayama -->
         <div class="bg-[#FDF2F8] p-3.5 sm:p-4 rounded-xl border border-[#FBCFE8] hover:border-[#DB2777] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#EC4899] to-[#BE185D] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">theater_comedy</span>
+            <span class="material-symbols-outlined text-[22px]">self_improvement</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#831843]"><?= get_text('events', 'func4_title', 'Cultural Fest') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#9D174D]/80 leading-snug"><?= get_text('events', 'func4_desc', 'Folk traditions, patriotic celebrations, skits, and instrumental music.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#831843]"><?= get_text('events', 'func4_title', 'Yoga & Mindful Pranayama') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#9D174D]/80 leading-snug"><?= get_text('events', 'func4_desc', 'Daily morning yogic asanas, surya namaskar, pranayama, and meditation cultivating mindfulness.') ?></p>
         </div>
 
-        <!-- 5. Farewell Ceremony -->
+        <!-- 5. Kabaddi & Kho-Kho -->
         <div class="bg-[#EEF2FF] p-3.5 sm:p-4 rounded-xl border border-[#C7D2FE] hover:border-[#4F46E5] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#6366F1] to-[#4338CA] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">waving_hand</span>
+            <span class="material-symbols-outlined text-[22px]">sports_handball</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#1E1B4B]"><?= get_text('events', 'func5_title', 'Farewell Ceremony') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#312E81]/80 leading-snug"><?= get_text('events', 'func5_desc', 'Blessings, mentorship, and warm send-off for passing-out Class 12 batches.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#1E1B4B]"><?= get_text('events', 'func5_title', 'Kabaddi & Kho-Kho') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#312E81]/80 leading-snug"><?= get_text('events', 'func5_desc', 'Traditional Indian agility sports fostering team tactics, strategic raiding, fast reflexes, and stamina.') ?></p>
         </div>
 
-        <!-- 6. Alumni Meet -->
-        <div class="bg-[#ECFDF5] p-3.5 sm:p-4 rounded-xl border border-[#A7F3D0] hover:border-[#059669] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2 scroll-mt-28" id="alumni">
+        <!-- 6. Volleyball & Court Games -->
+        <div class="bg-[#ECFDF5] p-3.5 sm:p-4 rounded-xl border border-[#A7F3D0] hover:border-[#059669] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#10B981] to-[#047857] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">groups_3</span>
+            <span class="material-symbols-outlined text-[22px]">sports_volleyball</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#064E3B]"><?= get_text('events', 'func6_title', 'Alumni Meet') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#065F46]/80 leading-snug"><?= get_text('events', 'func6_desc', 'Reconnecting former students serving in administration, defence, and academia.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#064E3B]"><?= get_text('events', 'func6_title', 'Volleyball & Court Games') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#065F46]/80 leading-snug"><?= get_text('events', 'func6_desc', 'Inter-house volleyball matches, smash techniques, service drills, and court coordination.') ?></p>
         </div>
 
-        <!-- 7. Quiz Competition -->
+        <!-- 7. Cricket & Net Practice -->
         <div class="bg-[#F0F9FF] p-3.5 sm:p-4 rounded-xl border border-[#BAE6FD] hover:border-[#0284C7] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#0EA5E9] to-[#0369A1] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">psychology</span>
+            <span class="material-symbols-outlined text-[22px]">sports_cricket</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#0C4A6E]"><?= get_text('events', 'func7_title', 'Quiz Competition') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#075985]/80 leading-snug"><?= get_text('events', 'func7_desc', 'Block and district level GK, science, and history quiz contests.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#0C4A6E]"><?= get_text('events', 'func7_title', 'Cricket & Net Practice') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#075985]/80 leading-snug"><?= get_text('events', 'func7_desc', 'Structured cricket training including batting, pace and spin bowling nets, wicket-keeping, and match play.') ?></p>
         </div>
 
-        <!-- 8. Science Exhibition -->
+        <!-- 8. Football & Soccer Drills -->
         <div class="bg-[#F0FDFA] p-3.5 sm:p-4 rounded-xl border border-[#99F6E4] hover:border-[#0D9488] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#14B8A6] to-[#0F766E] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">science</span>
+            <span class="material-symbols-outlined text-[22px]">sports_soccer</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#134E4A]"><?= get_text('events', 'func8_title', 'Science Exhibition') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#115E59]/80 leading-snug"><?= get_text('events', 'func8_desc', 'Interactive working models in robotics, physics, ecology, and chemistry.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#134E4A]"><?= get_text('events', 'func8_title', 'Football & Soccer Drills') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#115E59]/80 leading-snug"><?= get_text('events', 'func8_desc', 'Dribbling drills, passing precision, positional play, and high-stamina team games on campus grounds.') ?></p>
         </div>
 
-        <!-- 9. Rangoli Competitions -->
+        <!-- 9. Mass PT & Morning Drills -->
         <div class="bg-[#FFF1F2] p-3.5 sm:p-4 rounded-xl border border-[#FECDD3] hover:border-[#E11D48] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#F43F5E] to-[#BE123C] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">palette</span>
+            <span class="material-symbols-outlined text-[22px]">exercise</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#881337]"><?= get_text('events', 'func9_title', 'Rangoli Competitions') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#9F1239]/80 leading-snug"><?= get_text('events', 'func9_desc', 'Festive creativity celebrating Indian heritage, colors, and art forms.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#881337]"><?= get_text('events', 'func9_title', 'Mass PT & Morning Drills') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#9F1239]/80 leading-snug"><?= get_text('events', 'func9_desc', 'Disciplined morning physical drills, synchronized squad exercise, posture correction, and rhythmic training.') ?></p>
         </div>
 
-        <!-- 10. Debate Competitions -->
+        <!-- 10. Annual Sports Day & Meet -->
         <div class="bg-[#FFFBEB] p-3.5 sm:p-4 rounded-xl border border-[#FDE68A] hover:border-[#CA8A04] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#EAB308] to-[#A16207] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">record_voice_over</span>
+            <span class="material-symbols-outlined text-[22px]">emoji_events</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#713F12]"><?= get_text('events', 'func10_title', 'Debate Competitions') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#854D0E]/80 leading-snug"><?= get_text('events', 'func10_desc', 'Honing articulate expression, critical thinking, and public speaking.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#713F12]"><?= get_text('events', 'func10_title', 'Annual Sports Day & Meet') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#854D0E]/80 leading-snug"><?= get_text('events', 'func10_desc', 'Grand annual inter-house sports festival featuring march past, track competitions, and championship trophies.') ?></p>
         </div>
 
-        <!-- 11. Olympiad Participation -->
+        <!-- 11. SPAT & Physical Aptitude -->
         <div class="bg-[#EFF6FF] p-3.5 sm:p-4 rounded-xl border border-[#BFDBFE] hover:border-[#2563EB] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#3B82F6] to-[#1D4ED8] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">award_star</span>
+            <span class="material-symbols-outlined text-[22px]">fitness_center</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#1E3A8A]"><?= get_text('events', 'func11_title', 'Olympiad Participation') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#1E40AF]/80 leading-snug"><?= get_text('events', 'func11_desc', 'National science, mathematics, and cyber olympiad competitive testing.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#1E3A8A]"><?= get_text('events', 'func11_title', 'SPAT & Physical Aptitude') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#1E40AF]/80 leading-snug"><?= get_text('events', 'func11_desc', 'Dedicated guidance for the Haryana Sports Physical Aptitude Test (SPAT) and government talent scholarships.') ?></p>
         </div>
 
-        <!-- 12. Educational Seminars & Tours -->
+        <!-- 12. Health, Wellness & First Aid -->
         <div class="bg-[#F7FEE7] p-3.5 sm:p-4 rounded-xl border border-[#D9F99D] hover:border-[#65A30D] shadow-sm hover:shadow-md hover:-translate-y-1 transition-all flex flex-col items-center text-center gap-2">
           <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-[#84CC16] to-[#4D7C0F] text-white shadow-sm flex items-center justify-center">
-            <span class="material-symbols-outlined text-[22px]">tour</span>
+            <span class="material-symbols-outlined text-[22px]">health_and_safety</span>
           </div>
-          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#365314]"><?= get_text('events', 'func12_title', 'Seminars & Tours') ?></h4>
-          <p class="text-[11px] sm:text-xs text-[#3F6212]/80 leading-snug"><?= get_text('events', 'func12_desc', 'Career guidance workshops and educational excursions to historic and scientific sites.') ?></p>
+          <h4 class="font-headline-sm text-xs sm:text-sm font-bold text-[#365314]"><?= get_text('events', 'func12_title', 'Health, Wellness & First Aid') ?></h4>
+          <p class="text-[11px] sm:text-xs text-[#3F6212]/80 leading-snug"><?= get_text('events', 'func12_desc', 'Sports safety guidelines, nutritional hydration guidance, sportsmanship values, and immediate first aid care.') ?></p>
         </div>
       </div>
     </div>

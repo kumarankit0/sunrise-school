@@ -100,7 +100,7 @@ require_once __DIR__ . '/core/header.php';
       </div>
 
       <!-- Sidebar (4 Cols) -->
-      <div class="lg:col-span-4 flex flex-col gap-6 lg:gap-8 h-full">
+      <div class="lg:col-span-4 flex flex-col gap-6 lg:gap-8 h-fit lg:sticky lg:top-24">
         <!-- Academic Calendar Info Box -->
         <div class="bg-primary text-on-primary rounded-xl p-6 sm:p-7 shadow-md relative overflow-hidden flex flex-col justify-between gap-5">
           <div class="absolute -right-10 -bottom-10 w-40 h-40 bg-[#C9A24B]/10 rounded-full blur-2xl pointer-events-none"></div>
@@ -127,12 +127,12 @@ require_once __DIR__ . '/core/header.php';
         </div>
 
         <!-- Upcoming Events Mini-List -->
-        <div class="bg-surface-pure rounded-xl p-6 sm:p-7 shadow-sm border border-border-warm flex flex-col flex-1 justify-between gap-5">
+        <div class="bg-surface-pure rounded-xl p-6 sm:p-7 shadow-sm border border-border-warm flex flex-col gap-5">
           <div class="flex items-center justify-between border-b border-border-warm pb-3">
             <h3 class="font-headline-sm text-headline-sm text-primary font-bold"><?= get_text('events', 'agenda_heading', 'Upcoming Agenda') ?></h3>
             <span class="material-symbols-outlined text-primary">event_upcoming</span>
           </div>
-          <div class="flex flex-col justify-around flex-1 gap-4 py-1">
+          <div class="flex flex-col gap-4 py-1">
             <div class="flex items-start gap-4 pb-3 border-b border-border-warm/60 group">
               <div class="bg-surface-container-low text-primary p-2.5 rounded-lg text-center min-w-[52px] shrink-0">
                 <span class="block font-headline-md text-md font-bold leading-none"><?= htmlspecialchars($ag1[0] ?? '10') ?></span>

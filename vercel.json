@@ -1,25 +1,5 @@
 {
-  "functions": {
-    "api/*.php": {
-      "runtime": "vercel-php@0.7.4"
-    }
-  },
-  "routes": [
-    {
-      "src": "/assets/(.*)",
-      "dest": "/assets/$1"
-    },
-    {
-      "src": "/uploads/(.*)",
-      "dest": "/uploads/$1"
-    },
-    {
-      "src": "/(.*\\.(?:png|jpg|jpeg|gif|svg|webp|ico|css|js|woff|woff2|ttf|eot|pdf|json|txt|xml))",
-      "dest": "/$1"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/api/index.php"
-    }
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/" }
   ]
 }

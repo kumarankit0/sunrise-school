@@ -3,5 +3,4 @@ cache/
 node_modules/
 Thumbs.db
 .DS_Store
-Dockerfile
 render.yaml

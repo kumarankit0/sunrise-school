@@ -3,12 +3,20 @@
   RewriteEngine On
   RewriteBase /
 
-  # Serve existing files and directories directly
+  # Serve existing files and directories directly (including assets, uploads)
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Allow clean URLs without .php extension
+  # Admin clean URL: /admin -> /admin/login.php
+  RewriteRule ^admin/?$ admin/login.php [L,QSA]
+
+  # Admin sub-routes without .php: /admin/dashboard -> /admin/dashboard.php
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/admin/%1.php -f
+  RewriteRule ^admin/([a-zA-Z0-9_-]+)$ admin/$1.php [L,QSA]
+
+  # Top-level clean URLs without .php: /about-us -> /about-us.php
   RewriteCond %{REQUEST_FILENAME}.php -f
   RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L,QSA]
 </IfModule>

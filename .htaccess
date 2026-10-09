@@ -1,24 +1,39 @@
+# MIME Types configuration for static assets
+<IfModule mod_mime.c>
+  AddType text/css .css
+  AddType application/javascript .js
+  AddType application/json .json
+  AddType image/svg+xml .svg
+  AddType image/webp .webp
+  AddType font/woff .woff
+  AddType font/woff2 .woff2
+  AddType font/ttf .ttf
+</IfModule>
+
 # Enable URL Rewriting
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
-  # Serve existing files and directories directly (including assets, uploads)
+  # Serve existing files and directories directly without rewriting
   RewriteCond %{REQUEST_FILENAME} -f [OR]
   RewriteCond %{REQUEST_FILENAME} -d
   RewriteRule ^ - [L]
 
-  # Admin clean URL: /admin -> /admin/login.php
+  # Clean Admin Login URL: /admin -> admin/login.php
   RewriteRule ^admin/?$ admin/login.php [L,QSA]
 
-  # Admin sub-routes without .php: /admin/dashboard -> /admin/dashboard.php
+  # Clean Admin Sub-routes: /admin/dashboard -> admin/dashboard.php
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{DOCUMENT_ROOT}/admin/%1.php -f
-  RewriteRule ^admin/([a-zA-Z0-9_-]+)$ admin/$1.php [L,QSA]
+  RewriteCond %{DOCUMENT_ROOT}/admin/$1.php -f [OR]
+  RewriteCond admin/$1.php -f
+  RewriteRule ^admin/([a-zA-Z0-9_-]+)/?$ admin/$1.php [L,QSA]
 
-  # Top-level clean URLs without .php: /about-us -> /about-us.php
-  RewriteCond %{REQUEST_FILENAME}.php -f
-  RewriteRule ^([a-zA-Z0-9_-]+)$ $1.php [L,QSA]
+  # Clean Front-End URLs: /about-us -> about-us.php
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{DOCUMENT_ROOT}/$1.php -f [OR]
+  RewriteCond $1.php -f
+  RewriteRule ^([a-zA-Z0-9_-]+)/?$ $1.php [L,QSA]
 </IfModule>
 
 # Security Headers
@@ -51,7 +66,7 @@
 
 # Cache-Control Headers for Static Files
 <IfModule mod_headers.c>
-  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|svg)$">
+  <FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|webp|js|css|swf|svg|woff|woff2|ttf)$">
     Header set Cache-Control "max-age=2592000, public"
   </FilesMatch>
 </IfModule>

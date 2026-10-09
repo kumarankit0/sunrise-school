@@ -41,9 +41,9 @@ RUN echo '<VirtualHost *:80>\n\
     CustomLog ${APACHE_LOG_DIR}/access.log combined\n\
 </VirtualHost>' > /etc/apache2/sites-available/000-default.conf
 
-# Set correct file permissions
+# Set correct file permissions (ensure all static assets and PHP files are readable)
 RUN chown -R www-data:www-data /var/www/html \
-    && find /var/www/html -type f -name "*.php" -exec chmod 644 {} \; \
+    && find /var/www/html -type f -exec chmod 644 {} \; \
     && find /var/www/html -type d -exec chmod 755 {} \;
 
 # Create cache directory with proper permissions

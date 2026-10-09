@@ -11,6 +11,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <base href="/"/>
   
   <!-- Primary SEO Meta Tags -->
   <title><?= $seo_title ?></title>

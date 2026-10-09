@@ -39,7 +39,7 @@ function respond($success, $message, $page_key = 'home') {
 }
 
 // Only accept POST requests
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     respond(false, 'Invalid request method. Expected POST.');
 }
 

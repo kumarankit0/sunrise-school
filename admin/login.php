@@ -23,7 +23,7 @@ if (isset($_GET['logged_out'])) {
     $success_message = 'You have been safely logged out.';
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if (($_SERVER['REQUEST_METHOD'] ?? '') === 'POST') {
     $submitted_token = $_POST['csrf_token'] ?? '';
     
     // Validate CSRF token

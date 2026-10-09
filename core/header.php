@@ -250,16 +250,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
   <!-- Mobile Navigation Overlay & Drawer -->
   <div id="mobileNavOverlay" class="mobile-nav-overlay" aria-hidden="true"></div>
   <div id="mobileNavDrawer" class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
-    <div class="mobile-drawer-body">
-      <div class="mobile-drawer-header">
-        <a href="index.php" class="flex items-center min-w-0" title="<?= htmlspecialchars($site_name) ?>">
-          <img src="<?= $site_logo ?>" alt="<?= htmlspecialchars($site_name) ?> Logo" class="h-11 w-auto max-w-[210px] flex-shrink-0 object-contain"/>
-        </a>
-        <button id="mobileMenuClose" class="mobile-close-btn" aria-label="Close Navigation Menu" type="button">
-          <span class="material-symbols-outlined text-[22px]">close</span>
-        </button>
-      </div>
-
+    <div class="mobile-drawer-body max-w-xl mx-auto w-full">
       <!-- Quick Blinking Online Registration in Mobile Drawer -->
       <div class="mb-3">
         <a href="<?= htmlspecialchars(get_text('general', 'top_reg_url', 'admission.php#register-form')) ?>" class="top-nav-blink-registration flex items-center justify-center py-2.5 text-center w-full">
@@ -304,7 +295,7 @@ $current_page = isset($current_page) ? $current_page : 'home';
         <?php endforeach; ?>
       </nav>
     </div>
-    <div class="mobile-drawer-footer">
+    <div class="mobile-drawer-footer max-w-xl mx-auto w-full">
       <a class="btn-gold w-full text-center" href="<?= htmlspecialchars(get_text('general', 'nav_mobile_cta_url', 'admission.php')) ?>"><?= htmlspecialchars(get_text('general', 'nav_mobile_cta_text', 'Enquire Now / Apply Online')) ?></a>
       <div class="flex items-center justify-between gap-2 pt-2 border-t border-border-warm">
         <a href="tel:<?= preg_replace('/[^0-9+]/', '', $site_phone) ?>" class="mobile-footer-contact-item">

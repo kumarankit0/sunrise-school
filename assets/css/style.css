@@ -802,12 +802,37 @@ h3.font-headline-sm,
   display: block !important;
   width: 100% !important;
   height: auto !important;
+  min-height: 520px !important;
   max-width: 100% !important;
-  object-fit: contain !important; /* natural proportions — no stretching, no cropping */
+  object-fit: cover !important;
   vertical-align: top !important;
   pointer-events: none !important;
   z-index: 0 !important;
   position: relative !important;
+}
+
+@media (min-width: 480px) {
+  .hero-full-img {
+    min-height: 560px !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-full-img {
+    min-height: 600px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-full-img {
+    min-height: 660px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-full-img {
+    min-height: 700px !important;
+  }
 }
 
 /* ----- Overlay container that sits on top of the image ----- */
@@ -818,29 +843,52 @@ h3.font-headline-sm,
   align-items: center !important;
   justify-content: center !important;
   z-index: 10 !important;
-  padding: 1.25rem 1rem !important;
+  padding: 1.5rem 1rem !important;
 }
 
 @media (min-width: 640px) {
   .hero-overlay-wrap {
-    padding: 2rem 1.5rem !important;
+    padding: 2.25rem 1.5rem !important;
   }
 }
 
 @media (min-width: 1024px) {
   .hero-overlay-wrap {
-    padding: 3rem 3rem !important;
+    padding: 3.5rem 3rem !important;
   }
 }
 
-/* ----- Homepage slider hero — natural height driven by hero-full-img ----- */
-/* NO hardcoded padding-top! Height matches image's true proportions natively. */
+/* ----- Homepage slider hero — increased spacious height ----- */
 .hero-section:has(#hero-box-slider) {
   height: auto !important;
-  min-height: unset !important;
+  min-height: 520px !important;
   max-height: unset !important;
   padding-top: 0 !important;
   display: block !important;
+}
+
+@media (min-width: 480px) {
+  .hero-section:has(#hero-box-slider) {
+    min-height: 560px !important;
+  }
+}
+
+@media (min-width: 640px) {
+  .hero-section:has(#hero-box-slider) {
+    min-height: 600px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section:has(#hero-box-slider) {
+    min-height: 660px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-section:has(#hero-box-slider) {
+    min-height: 700px !important;
+  }
 }
 
 /* ----- Slider fills its container — container height = image natural height ----- */

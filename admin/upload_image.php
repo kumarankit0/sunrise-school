@@ -46,7 +46,7 @@ function respond_image($success, $message, $page_key = 'home', $file_path = '', 
 }
 
 // Only accept POST requests
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+if (($_SERVER['REQUEST_METHOD'] ?? '') !== 'POST') {
     respond_image(false, 'Invalid request method. Expected POST.');
 }
 

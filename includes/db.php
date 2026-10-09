@@ -27,6 +27,8 @@ if (!empty($raw_db_url)) {
 }
 
 $is_render = getenv('RENDER') !== false || isset($_SERVER['RENDER']);
+$is_vercel = getenv('VERCEL') !== false || isset($_SERVER['VERCEL']) || getenv('VERCEL_ENV') !== false || getenv('AWS_LAMBDA_FUNCTION_NAME') !== false;
+$is_cloud  = $is_render || $is_vercel;
 
 if (!empty($raw_db_url)) {
     // Parse DATABASE_URL / SUPABASE_DB_URL (e.g. postgresql://user:pass@host:port/dbname)
@@ -51,9 +53,9 @@ if (!empty($raw_db_url)) {
     }
     $dbname = !empty($path_clean) ? $path_clean : ($driver === 'pgsql' ? 'postgres' : 'sunrise_school');
 } else {
-    // Individual Environment Variables (with Render cloud or local XAMPP defaults)
-    if ($is_render) {
-        // Fallback to verified Supabase credentials on Render if env var isn't set
+    // Individual Environment Variables (with Render / Vercel cloud or local XAMPP defaults)
+    if ($is_cloud) {
+        // Fallback to verified Supabase credentials on Vercel / Render if env var isn't set
         $host   = getenv('DB_HOST') ?: 'aws-0-ap-northeast-1.pooler.supabase.com';
         $port   = getenv('DB_PORT') ?: '6543';
         $dbname = getenv('DB_NAME') ?: 'postgres';

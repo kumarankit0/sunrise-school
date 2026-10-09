@@ -1,57 +1,26 @@
-﻿{
-  version: 2,
-  functions: {
-    api/*.php: {
-      runtime: vercel-php@0.7.3
-    },
-    *.php: {
-      runtime: vercel-php@0.7.3
+{
+  "version": 2,
+  "functions": {
+    "api/*.php": {
+      "runtime": "vercel-php@0.7.3"
     }
   },
-  routes: [
+  "routes": [
     {
-      src: /assets/(.*),
-      dest: /assets/
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
     },
     {
-      src: /,
-      dest: /index.php
+      "src": "/uploads/(.*)",
+      "dest": "/uploads/$1"
     },
     {
-      src: /about-us,
-      dest: /about-us.php
+      "src": "/(.*\\.(?:png|jpg|jpeg|gif|svg|webp|ico|css|js|woff|woff2|ttf|eot|pdf|json|txt|xml))",
+      "dest": "/$1"
     },
     {
-      src: /academics,
-      dest: /academics.php
-    },
-    {
-      src: /admission,
-      dest: /admission.php
-    },
-    {
-      src: /campus,
-      dest: /campus.php
-    },
-    {
-      src: /contact-us,
-      dest: /contact-us.php
-    },
-    {
-      src: /events,
-      dest: /events.php
-    },
-    {
-      src: /faculty,
-      dest: /faculty.php
-    },
-    {
-      src: /gallery,
-      dest: /gallery.php
-    },
-    {
-      src: /(.*),
-      dest: /
+      "src": "/(.*)",
+      "dest": "/api/index.php"
     }
   ]
 }

@@ -168,26 +168,47 @@ function initNavDropdowns() {
    -------------------------------------------------------------------------- */
 function initMobileMenu() {
   const toggleBtn = document.getElementById('mobileMenuToggle');
-  const closeBtn = document.getElementById('mobileMenuClose');
   const drawer = document.getElementById('mobileNavDrawer');
   const overlay = document.getElementById('mobileNavOverlay');
 
   if (!toggleBtn || !drawer || !overlay) return;
 
+  const toggleIcon = toggleBtn.querySelector('.material-symbols-outlined');
+
   function openMenu() {
+    const header = document.querySelector('.site-header');
+    if (header) {
+      document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+    }
+    drawer.scrollTop = 0;
     drawer.classList.add('open');
     overlay.classList.add('open');
+    toggleBtn.classList.add('open');
+    if (toggleIcon) toggleIcon.textContent = 'close';
+    toggleBtn.setAttribute('aria-expanded', 'true');
+    toggleBtn.setAttribute('aria-label', 'Close Navigation Menu');
     document.body.style.overflow = 'hidden';
   }
 
   function closeMenu() {
     drawer.classList.remove('open');
     overlay.classList.remove('open');
+    toggleBtn.classList.remove('open');
+    if (toggleIcon) toggleIcon.textContent = 'menu';
+    toggleBtn.setAttribute('aria-expanded', 'false');
+    toggleBtn.setAttribute('aria-label', 'Open Navigation Menu');
     document.body.style.overflow = '';
   }
 
-  toggleBtn.addEventListener('click', openMenu);
-  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  function toggleMenu() {
+    if (drawer.classList.contains('open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  toggleBtn.addEventListener('click', toggleMenu);
   overlay.addEventListener('click', closeMenu);
 
   // Close drawer when any link inside drawer is clicked
@@ -440,12 +461,15 @@ function initToppersModal() {
 function initHeaderOffsetSync() {
   const header = document.querySelector('.site-header');
   const main = document.querySelector('main');
-  if (!header || !main) return;
+  if (!header) return;
 
   function updateOffset() {
     const headerHeight = header.offsetHeight;
     if (headerHeight > 40) {
-      main.style.paddingTop = `${headerHeight}px`;
+      document.documentElement.style.setProperty('--header-height', `${headerHeight}px`);
+      if (main) {
+        main.style.paddingTop = `${headerHeight}px`;
+      }
     }
   }
 

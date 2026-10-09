@@ -1,10 +1,7 @@
-.git
-.gitignore
-.dockerignore
-Dockerfile
-render.yaml
 cache/
 *.log
 node_modules/
 Thumbs.db
 .DS_Store
+Dockerfile
+render.yaml
